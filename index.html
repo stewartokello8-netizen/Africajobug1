@@ -6,1716 +6,813 @@
     <title>Myqashapp · Premium earnings</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900;14..32,1000&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
     <style>
-        /* ----- RESET & BASE (Dark Blue Gradient) ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background: linear-gradient(145deg, #0a0a2e, #0a0a1a);
-            font-family: 'Inter', system-ui, sans-serif;
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-            font-size: 1.0625rem;
-            line-height: 1.6;
-        }
-        :root {
-            --primary: #1fbb7a;
-            --primary-dark: #0f7b5a;
-            --primary-glow: rgba(31, 187, 122, .3);
-            --gold: #f5d65a;
-            --radius: 16px;
-            --transition: all .4s cubic-bezier(.16, 1, .3, 1);
-        }
-
-        /* ----- LAYOUT ----- */
-        .page-wrap {
-            max-width: 600px;
-            width: 100%;
-            background: linear-gradient(145deg, #0a0a2e, #0a0a1a);
-            padding: 80px 14px 24px;
-            margin: 0 auto;
-            border: 1px solid rgba(31, 187, 122, .15);
-            box-shadow: 0 0 15px rgba(31, 187, 122, .15);
-            position: relative;
-        }
-        .page-wrap::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 20%;
-            right: 20%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--gold), var(--primary), transparent);
-            background-size: 300% 100%;
-            animation: shimmer 4s ease-in-out infinite;
-            border-radius: 0 0 50% 50%;
-        }
-        @keyframes shimmer {
-            0%,
-            100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        /* ----- HEADER ----- */
-        .header-row {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(10, 10, 46, .95);
-            backdrop-filter: blur(20px);
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 14px;
-            border-bottom: 1px solid rgba(255, 255, 255, .06);
-            width: 100%;
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .brand-icon {
-            font-size: 26px;
-            animation: pulse 3s ease-in-out infinite;
-        }
-        .brand-name {
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: -.3px;
-            white-space: nowrap;
-        }
-        .brand-name span {
-            background: linear-gradient(135deg, var(--primary), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .online-badge {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            background: rgba(255, 255, 255, .06);
-            padding: 4px 12px 4px 8px;
-            border-radius: 60px;
-            border: 1px solid rgba(255, 255, 255, .08);
-            font-weight: 700;
-            font-size: 13px;
-        }
-        .online-badge .live-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--primary);
-            border-radius: 50%;
-            box-shadow: 0 0 0 2px var(--primary-glow);
-            animation: pulse-dot 1.8s ease-in-out infinite;
-        }
-        .signup-btn {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            padding: 6px 14px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px var(--primary-glow);
-            border: 1px solid rgba(255, 255, 255, .1);
-            text-decoration: none;
-            white-space: nowrap;
-        }
-        .signup-btn:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 32px var(--primary-glow);
-        }
-
-        /* ----- SECTIONS ----- */
-        .section {
-            padding: 28px 18px 30px;
-            margin-bottom: 20px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, .06);
-            background: rgba(255, 255, 255, .02);
-            backdrop-filter: blur(4px);
-            animation: fadeUp .6s ease forwards;
-            opacity: 0;
-        }
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .hero-section {
-            background: linear-gradient(145deg, #12123a, #0a0a1a);
-            border: 2px solid rgba(31, 187, 122, .2);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(31, 187, 122, .08), transparent 60%);
-            animation: heroGlow 8s ease-in-out infinite;
-        }
-        @keyframes heroGlow {
-            0%,
-            100% {
-                transform: translate(0, 0);
-            }
-            50% {
-                transform: translate(10%, 10%);
-            }
-        }
-        .hero-title {
-            font-size: 42px;
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -.5px;
-        }
-        .hero-subtitle {
-            font-size: 32px;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--primary), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .btn-primary {
-            display: inline-flex;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            font-weight: 700;
-            padding: 14px 20px;
-            border-radius: 12px;
-            text-decoration: none;
-            border: 2px solid rgba(255, 255, 255, .08);
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px var(--primary-glow);
-            align-items: center;
-            justify-content: center;
-            min-width: 120px;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 8px 32px var(--primary-glow);
-        }
-        .btn-primary.gold {
-            background: linear-gradient(135deg, var(--gold), #e09d2e);
-            box-shadow: 0 4px 20px rgba(201, 168, 67, .3);
-        }
-        .btn-primary.navy {
-            background: linear-gradient(135deg, #2a3f5e, #0a0a1a);
-            box-shadow: 0 4px 20px rgba(10, 10, 26, .3);
-        }
-
-        /* ----- STATS & CARDS ----- */
-        .stats-grid {
-            display: flex;
-            gap: 12px;
-        }
-        .stats-grid .stat-item {
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(31, 187, 122, .12);
-            border-radius: var(--radius);
-            padding: 16px 8px;
-            flex: 1;
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--primary);
-        }
-        .stat-label {
-            font-size: 10px;
-            font-weight: 700;
-            color: rgba(255, 255, 255, .6);
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            margin-top: 4px;
-        }
-
-        .way-card {
-            display: flex;
-            gap: 14px;
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .06);
-            border-radius: var(--radius);
-            padding: 14px 16px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .way-card:hover {
-            background: rgba(255, 255, 255, .08);
-            border-color: var(--primary);
-            transform: translateX(6px) scale(1.01);
-        }
-        .way-card .way-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            object-fit: cover;
-            flex-shrink: 0;
-            border: 2px solid rgba(255, 255, 255, .06);
-        }
-        .way-card .way-name {
-            font-weight: 800;
-            font-size: 15px;
-        }
-        .way-card .way-desc {
-            font-size: 12px;
-            color: rgba(255, 255, 255, .7);
-        }
-        .way-card .way-earn {
-            font-weight: 900;
-            font-size: 15px;
-            color: var(--primary);
-        }
-        .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            padding: 6px 18px;
-            border-radius: 40px;
-            font-size: 11px;
-            font-weight: 700;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 2px 10px var(--primary-glow);
-        }
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 20px var(--primary-glow);
-        }
-        .cta-btn.gold {
-            background: linear-gradient(135deg, var(--gold), #e09d2e);
-            box-shadow: 0 2px 10px rgba(201, 168, 67, .3);
-        }
-
-        /* ----- VIDEO, CHAT, WITHDRAW ----- */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: var(--radius);
-            background: #000;
-            border: 2px solid rgba(255, 255, 255, .06);
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .user-card {
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .06);
-            border-radius: var(--radius);
-            padding: 16px 18px;
-            margin-bottom: 16px;
-            transition: var(--transition);
-        }
-        .user-card:hover {
-            background: rgba(255, 255, 255, .08);
-            border-color: rgba(31, 187, 122, .2);
-            transform: translateX(6px) scale(1.005);
-        }
-        .user-card img {
-            width: 56px;
-            height: 56px;
-            border-radius: 100%;
-            object-fit: cover;
-            border: 3px solid var(--primary);
-            flex-shrink: 0;
-        }
-        .user-card .user-top {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .user-card .user-info .name {
-            font-weight: 800;
-            font-size: 17px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .user-card .user-info .country {
-            font-size: 13px;
-            font-weight: 700;
-            color: rgba(255, 255, 255, .7);
-        }
-        .user-card .user-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(255, 255, 255, .04);
-        }
-        .user-card .user-actions a {
-            padding: 8px 24px;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 12px;
-            text-decoration: none;
-            transition: var(--transition);
-            text-align: center;
-        }
-        .user-card .user-actions .chat {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            box-shadow: 0 2px 10px var(--primary-glow);
-        }
-        .user-card .user-actions .watch {
-            background: rgba(255, 255, 255, .06);
-            color: rgba(255, 255, 255, .7);
-        }
-
-        .withdraw-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px 12px;
-            max-width: 420px;
-            margin: 0 auto;
-        }
-        .withdraw-grid .item {
-            background: rgba(255, 255, 255, .04);
-            padding: 8px 12px;
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, .04);
-            text-align: center;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .how-step {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .04);
-            border-radius: var(--radius);
-            padding: 14px 18px;
-            margin-bottom: 10px;
-        }
-        .how-step .step-num {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 16px;
-            flex-shrink: 0;
-            box-shadow: 0 4px 12px var(--primary-glow);
-        }
-        .how-step .step-title {
-            font-weight: 800;
-            font-size: 15px;
-        }
-        .how-step .step-desc {
-            font-size: 13px;
-            color: rgba(255, 255, 255, .7);
-        }
-
-        .story-card {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .04);
-            border-radius: var(--radius);
-            padding: 12px 16px;
-            margin-bottom: 10px;
-        }
-        .story-card img {
-            width: 52px;
-            height: 52px;
-            border-radius: 100%;
-            object-fit: cover;
-            border: 2px solid var(--primary);
-            flex-shrink: 0;
-        }
-        .story-card .samount {
-            font-weight: 800;
-            color: var(--primary);
-        }
-
-        /* ----- FAQ, FOOTER ----- */
-        details {
-            display: block;
-            margin-bottom: 8px;
-        }
-        details summary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 18px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 15px;
-            list-style: none;
-            border-radius: var(--radius);
-            background: rgba(255, 255, 255, .04);
-            border: 1px solid rgba(255, 255, 255, .04);
-            transition: var(--transition);
-        }
-        details summary:hover {
-            background: rgba(255, 255, 255, .08);
-            border-color: rgba(31, 187, 122, .2);
-        }
-        details summary::-webkit-details-marker {
-            display: none;
-        }
-        details .faq-content {
-            padding: 10px 18px 18px;
-            background: rgba(255, 255, 255, .02);
-            border: 1px solid rgba(255, 255, 255, .04);
-            border-top: none;
-            border-radius: 0 0 var(--radius) var(--radius);
-            color: rgba(255, 255, 255, .7);
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        .footer-section {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 2px solid rgba(255, 255, 255, .04);
-            background: rgba(0, 0, 0, .2);
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px 12px;
-            margin-bottom: 16px;
-        }
-        .footer-grid .col h4 {
-            font-size: 14px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: .5px;
-            margin-bottom: 8px;
-        }
-        .footer-grid .col ul {
-            list-style: none;
-            padding: 0;
-        }
-        .footer-grid .col ul li {
-            font-size: 14px;
-            color: rgba(255, 255, 255, .5);
-            padding: 4px 0;
-            font-weight: 500;
-        }
-        .footer-bottom {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding-top: 14px;
-            border-top: 1px solid rgba(255, 255, 255, .04);
-            font-size: 13px;
-            color: rgba(255, 255, 255, .4);
-        }
-
-        /* ----- POPUPS, OVERLAYS ----- */
-        .demo-page {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(145deg, #0a0a2e, #0a0a1a);
-            z-index: 20000;
-            display: none;
-            flex-direction: column;
-            overflow-y: auto;
-            padding: 24px 20px 40px;
-        }
-        .demo-page.active {
-            display: flex;
-        }
-        .demo-card {
-            background: rgba(255, 255, 255, .96);
-            border-radius: 20px;
-            padding: 28px 24px 32px;
-            max-width: 540px;
-            width: 100%;
-            margin: 0 auto;
-            color: #0a0a2e;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
-        }
-        .demo-card .activate-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold), #e09d2e);
-            color: #0a0a2e;
-            font-weight: 800;
-            font-size: 17px;
-            padding: 16px 32px;
-            border-radius: 80px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 8px 0 #b89a3a, 0 10px 30px rgba(245, 214, 90, .15);
-            cursor: pointer;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, .2);
-        }
-        .demo-card .activate-btn:active {
-            transform: scale(.97);
-        }
-        .demo-card .nav-chip {
-            padding: 10px 22px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #0a0a2e;
-            border: 1px solid rgba(10, 10, 46, .04);
-            cursor: pointer;
-            transition: var(--transition);
-            background: #f1f5f9;
-            display: inline-block;
-            margin: 4px;
-        }
-
-        .demo-action-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, .7);
-            backdrop-filter: blur(12px);
-            z-index: 30000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .demo-action-popup.active {
-            display: flex;
-        }
-        .demo-action-popup .popup-content {
-            background: #0a0a2e;
-            border-radius: 20px;
-            padding: 36px 28px 32px;
-            max-width: 560px;
-            width: 100%;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, .06);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, .8);
-        }
-        .claim-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold), #e09d2e);
-            color: #0a0a2e;
-            font-weight: 800;
-            font-size: 18px;
-            padding: 14px 40px;
-            border-radius: 12px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 20px rgba(201, 168, 67, .3);
-        }
-        .claim-btn:hover {
-            transform: scale(1.04);
-            box-shadow: 0 8px 32px rgba(201, 168, 67, .4);
-        }
-        .btn-close-popup {
-            background: rgba(255, 255, 255, .1);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, .1);
-            padding: 12px 36px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: var(--transition);
-            margin-top: 8px;
-        }
-        .btn-close-popup:hover {
-            background: rgba(255, 255, 255, .2);
-        }
-
-        .chat-page-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, .7);
-            backdrop-filter: blur(20px);
-            z-index: 10000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-        }
-        .chat-page-overlay.active {
-            display: flex;
-        }
-        .chat-page {
-            background: #0a0a2e;
-            border-radius: 20px;
-            max-width: 420px;
-            width: 100%;
-            height: 580px;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(255, 255, 255, .06);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, .6);
-        }
-        .chat-page-header {
-            padding: 16px 20px;
-            background: linear-gradient(135deg, var(--primary-dark), #0a0a2e);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            flex-shrink: 0;
-        }
-        .chat-page-header img {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, .1);
-            object-fit: cover;
-        }
-        .chat-messages-area {
-            flex: 1;
-            padding: 16px 18px;
-            overflow-y: auto;
-            background: rgba(255, 255, 255, .02);
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .chat-msg {
-            max-width: 80%;
-            padding: 12px 16px;
-            border-radius: 18px;
-            font-size: 14px;
-            line-height: 1.5;
-            word-break: break-word;
-        }
-        .chat-msg.received {
-            background: rgba(255, 255, 255, .06);
-            color: #fff;
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-        }
-        .chat-msg.sent {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-            box-shadow: 0 4px 16px var(--primary-glow);
-        }
-        .chat-page-footer {
-            padding: 12px 16px 16px;
-            background: rgba(255, 255, 255, .02);
-            border-top: 1px solid rgba(255, 255, 255, .02);
-            display: flex;
-            gap: 10px;
-            flex-shrink: 0;
-        }
-        .chat-page-footer input {
-            flex: 1;
-            padding: 12px 18px;
-            border-radius: 30px;
-            border: 2px solid rgba(255, 255, 255, .06);
-            font-size: 14px;
-            outline: none;
-            background: rgba(255, 255, 255, .04);
-            color: #fff;
-        }
-        .chat-page-footer button {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            box-shadow: 0 4px 16px var(--primary-glow);
-        }
-        .chat-upgrade-banner {
-            background: rgba(254, 249, 231, .1);
-            padding: 12px 16px;
-            text-align: center;
-            border-top: 2px solid var(--gold);
-            flex-shrink: 0;
-            display: none;
-            font-weight: 600;
-        }
-        .chat-upgrade-banner a {
-            color: #fff;
-            font-weight: 700;
-            text-decoration: none;
-            background: linear-gradient(135deg, var(--gold), #e09d2e);
-            padding: 6px 20px;
-            border-radius: 40px;
-            display: inline-block;
-            margin-top: 4px;
-            font-size: 13px;
-            box-shadow: 0 2px 10px rgba(201, 168, 67, .3);
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 9998;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-        .whatsapp-float .whatsapp-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            box-shadow: 0 8px 32px rgba(37, 211, 102, .3);
-            border: 2px solid #fff;
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .whatsapp-float .whatsapp-text {
-            background: rgba(10, 10, 46, .85);
-            backdrop-filter: blur(12px);
-            padding: 10px 18px;
-            border-radius: 60px;
-            border: 1px solid rgba(37, 211, 102, .3);
-            font-weight: 800;
-            font-size: 15px;
-            color: #fff;
-            white-space: nowrap;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, .3);
-        }
-
-        #withdrawalPopup {
-            position: fixed;
-            bottom: 120px;
-            right: 20px;
-            z-index: 9999;
-            max-width: 280px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        #withdrawalPopup .popup-card {
-            background: rgba(10, 10, 46, .95);
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(31, 187, 122, .15);
-            border-radius: 14px;
-            padding: 10px 14px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: slideUp .4s cubic-bezier(.16, 1, .3, 1) forwards;
-        }
-        #withdrawalPopup .popup-card img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary);
-            flex-shrink: 0;
-        }
-        #withdrawalPopup .popup-card .amount-display {
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--gold);
-            white-space: nowrap;
-        }
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(.96);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* ----- RESPONSIVE ----- */
-        @media (max-width:480px) {
-            .page-wrap {
-                padding: 76px 10px 20px;
-            }
-            .hero-title {
-                font-size: 30px;
-            }
-            .hero-subtitle {
-                font-size: 24px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .brand-name {
-                font-size: 19px;
-            }
-            .online-badge {
-                font-size: 11px;
-                padding: 4px 10px 4px 8px;
-            }
-            .signup-btn {
-                font-size: 10px;
-                padding: 5px 12px;
-            }
-            .whatsapp-float .whatsapp-icon {
-                width: 46px;
-                height: 46px;
-            }
-            .whatsapp-float .whatsapp-text {
-                font-size: 13px;
-                padding: 8px 14px;
-            }
-            .demo-card {
-                padding: 18px 16px 22px;
-            }
-            .chat-page {
-                height: 450px;
-            }
-        }
+        /* ===== DARK BLUE GRADIENT ===== */
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--p:#1fbb7a;--pd:#0f7b5a;--g:#f5d65a;--bg:#0a0a2e;--bg2:#0a0a1a}
+        body{background:linear-gradient(145deg,var(--bg),var(--bg2));font-family:'Inter',sans-serif;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;font-size:1rem;line-height:1.6}
+        .wrap{max-width:600px;width:100%;background:linear-gradient(145deg,var(--bg),var(--bg2));padding:76px 14px 24px;margin:0 auto;border:1px solid rgba(31,187,122,.15);position:relative}
+        .wrap::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:3px;background:linear-gradient(90deg,transparent,var(--p),var(--g),var(--p),transparent);background-size:300%100%;animation:s 4s ease-in-out infinite;border-radius:0 0 50%50%}
+        @keyframes s{0%,100%{background-position:0%50%}50%{background-position:100%50%}}
+        .hdr{position:fixed;top:0;left:0;right:0;max-width:600px;margin:0 auto;background:rgba(10,10,46,.95);backdrop-filter:blur(20px);z-index:999;display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);width:100%}
+        .brnd{display:flex;align-items:center;gap:6px}
+        .brnd span:first-child{font-size:26px;animation:p 3s ease-in-out infinite}
+        @keyframes p{0%,100%{opacity:1}50%{opacity:.6}}
+        .brnd b{font-size:22px;font-weight:900;letter-spacing:-.3px}
+        .brnd b i{background:linear-gradient(135deg,var(--p),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .ob{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.06);padding:4px 12px 4px 8px;border-radius:60px;border:1px solid rgba(255,255,255,.08);font-weight:700;font-size:13px}
+        .ob .d{width:8px;height:8px;background:var(--p);border-radius:50%;box-shadow:0 0 0 2px rgba(31,187,122,.3);animation:d 1.8s ease-in-out infinite;display:inline-block}
+        @keyframes d{0%,100%{transform:scale(.9);opacity:.6}50%{transform:scale(1.15);opacity:1}}
+        .su{background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;padding:6px 14px;border-radius:12px;font-weight:700;font-size:12px;cursor:pointer;transition:.3s;box-shadow:0 4px 20px rgba(31,187,122,.3);border:1px solid rgba(255,255,255,.1);text-decoration:none}
+        .su:hover{transform:translateY(-2px)scale(1.02)}
+        .sec{padding:28px 18px 30px;margin-bottom:20px;border-radius:16px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);animation:f .6s ease forwards;opacity:0}
+        @keyframes f{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        .hero{background:linear-gradient(145deg,#12123a,#0a0a1a);border:2px solid rgba(31,187,122,.2);text-align:center;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30%50%,rgba(31,187,122,.08),transparent 60%);animation:g 8s ease-in-out infinite}
+        @keyframes g{0%,100%{transform:translate(0,0)}50%{transform:translate(10%,10%)}}
+        .hero h1{font-size:42px;font-weight:900;line-height:1.1;letter-spacing:-.5px}
+        .hero h2{font-size:32px;font-weight:900;background:linear-gradient(135deg,var(--p),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .btn{display:inline-flex;background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;font-weight:700;padding:14px 20px;border-radius:12px;text-decoration:none;border:2px solid rgba(255,255,255,.08);cursor:pointer;transition:.3s;box-shadow:0 4px 20px rgba(31,187,122,.3);align-items:center;justify-content:center;min-width:120px}
+        .btn:hover{transform:translateY(-3px)scale(1.03)}
+        .btn.g{background:linear-gradient(135deg,var(--g),#e09d2e);box-shadow:0 4px 20px rgba(201,168,67,.3)}
+        .sh{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+        .sh .ic{width:40px;height:40px;background:linear-gradient(135deg,var(--p),var(--pd));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;box-shadow:0 4px 12px rgba(31,187,122,.3)}
+        .sh h2{font-size:20px;font-weight:800}
+        .bd{background:rgba(31,187,122,.2);padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;color:var(--p);margin-left:auto}
+        .bd.l{background:#dc2626;color:#fff}
+        .sg{display:flex;gap:12px}
+        .sg .si{background:rgba(255,255,255,.04);border:1px solid rgba(31,187,122,.12);border-radius:16px;padding:16px 8px;flex:1;text-align:center}
+        .sg .si .n{font-size:22px;font-weight:900;color:var(--p)}
+        .sg .si .l{font-size:10px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+        .wc{display:flex;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px 16px;margin-bottom:12px;cursor:pointer;transition:.3s}
+        .wc:hover{background:rgba(255,255,255,.08);border-color:var(--p);transform:translateX(6px)scale(1.01)}
+        .wc .wi{width:48px;height:48px;border-radius:12px;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,.06)}
+        .wn{font-weight:800;font-size:15px}
+        .wd{font-size:12px;color:rgba(255,255,255,.7)}
+        .we{font-weight:900;font-size:15px;color:var(--p)}
+        .ct{display:inline-block;background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;padding:6px 18px;border-radius:40px;font-size:11px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:.3s;box-shadow:0 2px 10px rgba(31,187,122,.3)}
+        .ct:hover{transform:scale(1.05)}
+        .ct.g{background:linear-gradient(135deg,var(--g),#e09d2e)}
+        .vc{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:16px;background:#000;border:2px solid rgba(255,255,255,.06)}
+        .vc iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+        .uc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:16px 18px;margin-bottom:16px;transition:.3s}
+        .uc:hover{background:rgba(255,255,255,.08);border-color:rgba(31,187,122,.2);transform:translateX(6px)scale(1.005)}
+        .uc img{width:56px;height:56px;border-radius:100%;object-fit:cover;border:3px solid var(--p);flex-shrink:0}
+        .uc .ut{display:flex;align-items:center;gap:16px}
+        .uc .ui .un{font-weight:800;font-size:17px;display:flex;align-items:center;gap:8px}
+        .uc .ui .c{font-size:13px;font-weight:700;color:rgba(255,255,255,.7)}
+        .uc .ua{display:flex;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.04)}
+        .uc .ua a{padding:8px 24px;border-radius:40px;font-weight:700;font-size:12px;text-decoration:none;transition:.3s;text-align:center}
+        .uc .ua .ch{background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;box-shadow:0 2px 10px rgba(31,187,122,.3)}
+        .uc .ua .wa{background:rgba(255,255,255,.06);color:rgba(255,255,255,.7)}
+        .wg{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;max-width:420px;margin:0 auto}
+        .wg .it{background:rgba(255,255,255,.04);padding:8px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.04);text-align:center;font-size:12px;font-weight:600}
+        .hs{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:14px 18px;margin-bottom:10px}
+        .hs .sn{width:40px;height:40px;background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0;box-shadow:0 4px 12px rgba(31,187,122,.3)}
+        .hs .st{font-weight:800;font-size:15px}
+        .hs .sd{font-size:13px;color:rgba(255,255,255,.7)}
+        .sc{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:12px 16px;margin-bottom:10px}
+        .sc img{width:52px;height:52px;border-radius:100%;object-fit:cover;border:2px solid var(--p);flex-shrink:0}
+        .sc .sa{font-weight:800;color:var(--p)}
+        details{margin-bottom:8px}
+        details summary{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;cursor:pointer;font-weight:700;font-size:15px;list-style:none;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.04);transition:.3s}
+        details summary:hover{background:rgba(255,255,255,.08);border-color:rgba(31,187,122,.2)}
+        details summary::-webkit-details-marker{display:none}
+        details .fq{padding:10px 18px 18px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-top:none;border-radius:0 0 16px 16px;color:rgba(255,255,255,.7);font-size:14px}
+        .ft{margin-top:24px;padding-top:24px;border-top:2px solid rgba(255,255,255,.04);background:rgba(0,0,0,.2)}
+        .fg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px 12px;margin-bottom:16px}
+        .fg .c h4{font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+        .fg .c ul{list-style:none;padding:0}
+        .fg .c ul li{font-size:14px;color:rgba(255,255,255,.5);padding:4px 0;font-weight:500}
+        .fb{display:flex;flex-wrap:wrap;justify-content:space-between;padding-top:14px;border-top:1px solid rgba(255,255,255,.04);font-size:13px;color:rgba(255,255,255,.4)}
+        .dp{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(145deg,#0a0a2e,#0a0a1a);z-index:20000;display:none;overflow-y:auto;padding:24px 20px 40px}
+        .dp.active{display:block}
+        .dc{background:rgba(255,255,255,.96);border-radius:20px;padding:28px 24px 32px;max-width:540px;width:100%;margin:0 auto;color:#0a0a2e;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+        .dc .ac{display:block;background:linear-gradient(135deg,var(--g),#e09d2e);color:#0a0a2e;font-weight:800;font-size:17px;padding:16px 32px;border-radius:80px;width:100%;text-align:center;box-shadow:0 8px 0 #b89a3a,0 10px 30px rgba(245,214,90,.15);cursor:pointer;text-decoration:none;border:1px solid rgba(255,255,255,.2)}
+        .dc .nc{padding:10px 22px;border-radius:12px;font-size:14px;font-weight:600;color:#0a0a2e;border:1px solid rgba(10,10,46,.04);cursor:pointer;transition:.3s;background:#f1f5f9;display:inline-block;margin:4px}
+        .ap{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);z-index:30000;display:none;align-items:center;justify-content:center;padding:20px}
+        .ap.active{display:flex}
+        .ap .pc{background:#0a0a2e;border-radius:20px;padding:36px 28px 32px;max-width:560px;width:100%;text-align:center;border:1px solid rgba(255,255,255,.06);box-shadow:0 30px 80px rgba(0,0,0,.8)}
+        .cl{display:inline-block;background:linear-gradient(135deg,var(--g),#e09d2e);color:#0a0a2e;font-weight:800;font-size:18px;padding:14px 40px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:.3s;box-shadow:0 4px 20px rgba(201,168,67,.3)}
+        .cl:hover{transform:scale(1.04)}
+        .bcp{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.1);padding:12px 36px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;transition:.3s;margin-top:8px}
+        .bcp:hover{background:rgba(255,255,255,.2)}
+        .co{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(20px);z-index:10000;display:none;align-items:center;justify-content:center;padding:16px}
+        .co.active{display:flex}
+        .cp{background:#0a0a2e;border-radius:20px;max-width:420px;width:100%;height:580px;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.06);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+        .cph{padding:16px 20px;background:linear-gradient(135deg,var(--pd),#0a0a2e);color:#fff;display:flex;align-items:center;gap:14px;flex-shrink:0}
+        .cph img{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.1);object-fit:cover}
+        .cma{flex:1;padding:16px 18px;overflow-y:auto;background:rgba(255,255,255,.02);display:flex;flex-direction:column;gap:8px}
+        .cm{max-width:80%;padding:12px 16px;border-radius:18px;font-size:14px;line-height:1.5;word-break:break-word}
+        .cm.r{background:rgba(255,255,255,.06);color:#fff;align-self:flex-start;border-bottom-left-radius:4px}
+        .cm.s{background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;align-self:flex-end;border-bottom-right-radius:4px;box-shadow:0 4px 16px rgba(31,187,122,.3)}
+        .cpf{padding:12px 16px 16px;background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.02);display:flex;gap:10px;flex-shrink:0}
+        .cpf input{flex:1;padding:12px 18px;border-radius:30px;border:2px solid rgba(255,255,255,.06);font-size:14px;outline:none;background:rgba(255,255,255,.04);color:#fff}
+        .cpf button{background:linear-gradient(135deg,var(--p),var(--pd));color:#fff;border:none;padding:12px 24px;border-radius:30px;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 16px rgba(31,187,122,.3)}
+        .cub{background:rgba(254,249,231,.1);padding:12px 16px;text-align:center;border-top:2px solid var(--g);flex-shrink:0;display:none;font-weight:600}
+        .cub a{color:#fff;font-weight:700;text-decoration:none;background:linear-gradient(135deg,var(--g),#e09d2e);padding:6px 20px;border-radius:40px;display:inline-block;margin-top:4px;font-size:13px;box-shadow:0 2px 10px rgba(201,168,67,.3)}
+        .wf{position:fixed;bottom:24px;right:24px;z-index:9998;display:flex;align-items:center;gap:12px;text-decoration:none}
+        .wf .wi2{width:50px;height:50px;border-radius:50%;box-shadow:0 8px 32px rgba(37,211,102,.3);border:2px solid #fff;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center}
+        .wf .wt{background:rgba(10,10,46,.85);backdrop-filter:blur(12px);padding:10px 18px;border-radius:60px;border:1px solid rgba(37,211,102,.3);font-weight:800;font-size:15px;color:#fff;white-space:nowrap}
+        #wp{position:fixed;bottom:120px;right:20px;z-index:9999;max-width:280px;display:flex;flex-direction:column;gap:8px}
+        #wp .pc2{background:rgba(10,10,46,.95);backdrop-filter:blur(20px);border:2px solid rgba(31,187,122,.15);border-radius:14px;padding:10px 14px;box-shadow:0 20px 60px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;animation:u .4s cubic-bezier(.16,1,.3,1) forwards}
+        #wp .pc2 img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid var(--p);flex-shrink:0}
+        #wp .pc2 .ad{font-size:16px;font-weight:900;color:var(--g);white-space:nowrap}
+        @keyframes u{from{opacity:0;transform:translateY(30px)scale(.96)}to{opacity:1;transform:translateY(0)scale(1)}}
+        .es{background:rgba(255,255,255,.06);border-radius:60px;padding:8px 12px;margin:8px 0 0;overflow:hidden;white-space:nowrap}
+        .es .lbl{background:var(--p);color:#fff;padding:4px 14px;border-radius:40px;font-size:9px;font-weight:800;display:inline-block;margin-right:8px}
+        .es .st{display:inline-block;font-weight:700;font-size:12px;animation:t 70s linear infinite;white-space:nowrap}
+        @keyframes t{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+        .gh{color:var(--p)!important;font-weight:900}
+        @media(max-width:480px){.wrap{padding:76px 10px 20px}.hero h1{font-size:30px}.hero h2{font-size:24px}.fg{grid-template-columns:1fr 1fr}.brnd b{font-size:19px}.ob{font-size:11px;padding:4px 10px 4px 8px}.su{font-size:10px;padding:5px 12px}.dc{padding:18px 16px 22px}.cp{height:450px}}
     </style>
 </head>
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
-    <div class="page-wrap">
-
-        <!-- HEADER -->
-        <div class="header-row">
-            <div class="brand"><span class="brand-icon">🌍</span><span class="brand-name">MYQASH<span>APP</span></span></div>
-            <div class="header-center">
-                <div class="online-badge"><span class="live-dot"></span><span class="count-number" id="liveCounter">3,300</span><span class="label">online</span></div>
-                <span class="pipe-sep">|</span>
-            </div>
-            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="signup-btn">Sign Up</a>
+<div class="wrap">
+    <!-- HEADER -->
+    <div class="hdr">
+        <div class="brnd"><span>🌍</span><b>MYQASH<i>APP</i></b></div>
+        <div style="display:flex;align-items:center;gap:6px 10px">
+            <div class="ob"><span class="d"></span><span class="count-number" id="lc">3,300</span><span style="font-weight:500;color:rgba(255,255,255,.6);font-size:11px">online</span></div>
+            <span style="color:rgba(255,255,255,.2);font-weight:300;font-size:18px;user-select:none">|</span>
         </div>
-
-        <!-- TRUST BADGE -->
-        <div class="trust-badge-wrapper"><div class="trust-badge">⭐ TRUSTED BY <span class="green-highlight" id="trustCounter">187,432</span>+ AFRICANS</div></div>
-
-        <!-- HERO -->
-        <div class="section hero-section">
-            <h1 class="hero-title">Get Paid <span style="color:#fff;">Every Time</span></h1>
-            <h2 class="hero-subtitle">Turn Clicks to Cash</h2>
-            <p class="hero-desc">Join <span class="green-highlight" id="heroCounter">187,450</span>+ Africans earning <strong>$30 – $150 daily</strong> by watching, answering questions, posting on status & more. <strong>Fast withdraw</strong> via Mobile Money, Mpesa.</p>
-            <div class="hero-buttons">
-                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="btn-primary">Register Now</a>
-                <div class="btn-group">
-                    <a href="#" class="btn-primary gold" onclick="openDemoPage();return!1">Try Free Demo</a>
-                    <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="btn-primary navy">Login</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- EARNING SCROLL -->
-        <div class="earnings-scroll" style="background:rgba(255,255,255,.06);border-radius:60px;padding:8px 12px;margin:8px 0 0;overflow:hidden;white-space:nowrap;">
-            <span style="background:var(--primary);color:#fff;padding:4px 14px;border-radius:40px;font-size:9px;font-weight:800;display:inline-block;margin-right:8px;">🔥 EARNING</span>
-            <span style="display:inline-block;font-weight:700;font-size:12px;animation:scrollText 70s linear infinite;white-space:nowrap;">
-                <span>🇰🇪 James K. earned KSh 1,612 &nbsp;|&nbsp; </span>
-                <span>🇬🇭 Maureen A. earned GH₵ 1,129 &nbsp;|&nbsp; </span>
-                <span>🇺🇬 Sarah N. earned UGX 56,240 &nbsp;|&nbsp; </span>
-                <span>🇳🇬 Chidi O. earned ₦ 16,800 &nbsp;|&nbsp; </span>
-                <span>🇿🇦 Lindiwe M. earned R 258 &nbsp;|&nbsp; </span>
-                <span>🇰🇪 Omar H. earned KSh 1,200 &nbsp;|&nbsp; </span>
-                <span>🇷🇼 Diane U. earned RWF 14,800 &nbsp;|&nbsp; </span>
-                <span>🇨🇲 Samuel B. earned XAF 6,200 &nbsp;|&nbsp; </span>
-                <span>🇧🇼 Kabelo S. earned BWP 19,400 &nbsp;|&nbsp; </span>
-                <span>🇬🇭 Akosua K. earned GH₵ 2,150 &nbsp;|&nbsp; </span>
-                <span>🇺🇬 Robert T. earned UGX 51,430 &nbsp;|&nbsp; </span>
-                <span>🇳🇬 Amara E. earned ₦ 32,500 &nbsp;|&nbsp; </span>
-                <span>🇰🇪 Grace W. earned KSh 1,445 &nbsp;|&nbsp; </span>
-                <span>🇳🇬 Tunde A. earned ₦ 25,500 &nbsp;|&nbsp; </span>
-                <span>🇺🇬 Moses O. earned UGX 189,810 &nbsp;|&nbsp; </span>
-                <span>🇿🇦 Zanele D. earned R 948 &nbsp;|&nbsp; </span>
-                <span>🇰🇪 Faith N. earned KSh 5,121 &nbsp;|&nbsp; </span>
-                <span>🇷🇼 Jean P. earned RWF 23,400 &nbsp;|&nbsp; </span>
-                <span>🇨🇲 Marie B. earned XAF 23,900 &nbsp;|&nbsp; </span>
-                <span>🇬🇭 Yaw A. earned GH₵ 4,850 &nbsp;|&nbsp; </span>
-                <span>🇺🇬 Esther K. earned UGX 215,340 &nbsp;|&nbsp; </span>
-            </span>
-        </div>
-
-        <!-- STATS -->
-        <div class="section">
-            <div class="section-header"><div class="icon">📊</div><h2>Live Stats</h2><span class="badge" style="background:#dc2626;color:#fff;padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;">🔴 LIVE</span></div>
-            <div class="stats-grid">
-                <div class="stat-item"><div class="stat-number" id="liveUsers">187,432</div><div class="stat-label">LIVE USERS</div></div>
-                <div class="stat-item"><div class="stat-number" id="totalPaid">$2.87M</div><div class="stat-label">TOTAL PAID</div></div>
-                <div class="stat-item"><div class="stat-number" id="onlineNow">3,300</div><div class="stat-label">ONLINE NOW</div></div>
-            </div>
-        </div>
-
-        <!-- VIDEO -->
-        <div class="section">
-            <div class="video-label" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-                <span style="background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:4px 16px;border-radius:40px;font-size:11px;font-weight:800;">▶️ WATCH</span>
-                <h3 style="font-size:17px;font-weight:700;">Explanation Video</h3>
-            </div>
-            <div class="video-explain" style="font-size:13px;color:rgba(255,255,255,.8);margin-bottom:16px;background:rgba(255,255,255,.04);padding:12px 16px;border-radius:12px;border-left:4px solid var(--primary);">
-                📹 <strong>Watch how Myqashapp works</strong> — See how you can earn by chatting, watching videos, and completing simple tasks.
-            </div>
-            <div class="video-container"><iframe src="https://www.youtube.com/embed/D2fil3ejVaU" title="YouTube" allowfullscreen></iframe></div>
-        </div>
-
-        <!-- LIVE FOREIGNERS -->
-        <div class="section" id="liveChatSection" style="background:#0a0a2e;border-color:rgba(59,130,246,.12);">
-            <div class="section-header"><div class="icon">💬</div><h2>Live Foreigners Online</h2><span class="badge" style="background:#dc2626;color:#fff;padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;">🔴 LIVE</span></div>
-            <div class="live-intro" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;background:rgba(59,130,246,.06);border-radius:12px;padding:12px 16px;margin-bottom:14px;border:1px solid rgba(59,130,246,.1);">
-                <span style="font-weight:800;font-size:17px;">👥 <span id="activeChatters">8</span> members online</span>
-                <span style="font-size:12px;color:rgba(255,255,255,.7);background:rgba(255,255,255,.04);padding:4px 14px;border-radius:40px;font-weight:600;">🔥 <span id="typingIndicator">Someone is typing...</span></span>
-            </div>
-            <div id="liveUserList"></div>
-        </div>
-
-        <!-- 7 WAYS TO EARN -->
-        <div class="section">
-            <div class="section-header"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge" style="background:rgba(31,187,122,.2);padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;color:var(--primary);">💰 EARN</span></div>
-            <p class="section-subtitle" style="font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px;">Every feature pays real money. Do them all every day and stack your earnings.</p>
-            <div class="ways-grid">
-                <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
-                    <img class="way-icon" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat">
-                    <div class="way-content"><div class="way-name">Chat with Foreigners</div><div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain.</div><div class="way-earn"><span class="sub" style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5);">per person</span></div><div class="way-cta"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn" onclick="event.stopPropagation();">Start Chatting</a></div></div>
-                </div>
-                <div class="way-card" onclick="handleQuestionsPopup()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Questions" style="background:#1a1a2e;padding:8px;object-fit:contain;">
-                    <div class="way-content"><div class="way-name">Answering Questions</div><div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div><div class="way-earn"><span class="sub" style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5);">per question</span></div><div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleQuestionsPopup();return!1">Start Answering</button></div></div>
-                </div>
-                <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok" style="background:#1a1a2e;padding:4px;">
-                    <div class="way-content"><div class="way-name">Paid TikTok Videos</div><div class="way-desc">Watch trending TikTok videos from creators worldwide.</div><div class="way-earn"><span class="sub" style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5);">per video</span></div><div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok');return!1">Watch Videos</button></div></div>
-                </div>
-                <div class="way-card" onclick="openAffiliateBonus()">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=100&h=100&fit=crop&crop=center" alt="Affiliate">
-                    <div class="way-content"><div class="way-name">Affiliate Bonus</div><div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential!</div><div class="way-earn">BONUS</div><div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();openAffiliateBonus();return!1">Start Promoting</button></div></div>
-                </div>
-                <div class="way-card" onclick="handleWhatsAppPosting()">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=100&h=100&fit=crop&crop=center" alt="WhatsApp">
-                    <div class="way-content"><div class="way-name">WhatsApp Posting</div><div class="way-desc">Share sponsored content on WhatsApp and earn per post.</div><div class="way-earn"><span class="sub" style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5);">per post</span></div><div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleWhatsAppPosting();return!1">Start Posting</button></div></div>
-                </div>
-                <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube" style="background:#1a1a2e;padding:4px;">
-                    <div class="way-content"><div class="way-name">YouTube Earning</div><div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards.</div><div class="way-earn"><span class="sub" style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5);">per day</span></div><div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">Start Watching</button></div></div>
-                </div>
-                <div class="way-card" onclick="handleSpinning()">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=100&h=100&fit=crop&crop=center" alt="Spinning">
-                    <div class="way-content"><div class="way-name">Paid Spinning</div><div class="way-desc">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div><div class="way-earn"><span class="sub" style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5);">per spin</span></div><div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleSpinning();return!1">Start Spinning</button></div></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- WITHDRAWAL -->
-        <div class="section">
-            <div class="section-header"><div class="icon" style="background:linear-gradient(135deg,var(--gold),#e09d2e);">🏦</div><h2>Withdrawal Methods</h2><span class="badge" style="background:var(--gold);color:#0a0a2e;padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;">💸 FAST</span></div>
-            <p class="section-subtitle" style="font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px;">By country — instant payouts</p>
-            <div style="background:rgba(255,255,255,.04);border-radius:var(--radius);padding:10px 8px;text-align:center;">
-                <div class="withdraw-grid">
-                    <div class="item">🇰🇪 Kenya → M-Pesa</div><div class="item">🇨🇲 Cameroon → MoMo</div>
-                    <div class="item">🇬🇭 Ghana → MoMo</div><div class="item">🇳🇬 Nigeria → MoMo</div>
-                    <div class="item">🇺🇬 Uganda → Mobile Money</div><div class="item">🇷🇼 Rwanda → Mobile Wallet</div>
-                    <div class="item">🇿🇦 South Africa → Bank Transfer</div><div class="item">🇧🇼 Botswana → Mobile Money</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- HOW IT WORKS -->
-        <div class="section">
-            <div class="section-header"><div class="icon">🚀</div><h2>How It Works</h2><span class="badge" style="background:rgba(31,187,122,.2);padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;color:var(--primary);">3 STEPS</span></div>
-            <p class="section-subtitle" style="font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px;">Start earning in 3 simple steps</p>
-            <div class="how-step"><div class="step-num">1</div><div class="step-info"><div class="step-title">Sign Up Free</div><div class="step-desc">Create account in 30 seconds — no card needed.</div></div></div>
-            <div class="how-step"><div class="step-num">2</div><div class="step-info"><div class="step-title">Complete Tasks</div><div class="step-desc">Watch videos, surveys, chat, WhatsApp posts, or train AI.</div></div></div>
-            <div class="how-step"><div class="step-num">3</div><div class="step-info"><div class="step-title">Withdraw Instantly</div><div class="step-desc">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
-            <div style="text-align:center;margin-top:12px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="btn-primary" style="font-size:16px;padding:14px 32px;">Get Started Now</a></div>
-        </div>
-
-        <!-- SUCCESS STORIES -->
-        <div class="section">
-            <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge" style="background:rgba(31,187,122,.2);padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;color:var(--primary);">REAL PEOPLE</span></div>
-            <div class="story-card"><img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Kelvin"><div class="story-info"><div class="sname">Kelvin O. · Lagos</div><div class="samount">$2,240 earned last week</div><div class="sdesc" style="font-size:13px;color:rgba(255,255,255,.7);">"Cleared my rent in 9 days. Absolutely legit!"</div></div></div>
-            <div class="story-card"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Amaka"><div class="story-info"><div class="sname">Amaka N. · Enugu</div><div class="samount">$1,860 earned this month</div><div class="sdesc" style="font-size:13px;color:rgba(255,255,255,.7);">"Chatting with foreigners while earning is the best!"</div></div></div>
-            <div class="story-card"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Kwame"><div class="story-info"><div class="sname">Kwame B. · Accra</div><div class="samount">$1,120 earned this week</div><div class="sdesc" style="font-size:13px;color:rgba(255,255,255,.7);">"MoMo withdrawal in seconds. So reliable!"</div></div></div>
-            <div class="story-card"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Faith"><div class="story-info"><div class="sname">Faith W. · Nairobi</div><div class="samount">$980 earned this week</div><div class="sdesc" style="font-size:13px;color:rgba(255,255,255,.7);">"Paid my school fees in just 2 weeks!"</div></div></div>
-        </div>
-
-        <!-- LIFETIME ACCESS -->
-        <div class="section" style="text-align:center;">
-            <div style="font-size:24px;font-weight:900;letter-spacing:-.5px;">Lifetime Access</div>
-            <p style="font-size:13px;color:rgba(255,255,255,.7);max-width:380px;margin:6px auto 8px;line-height:1.5;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
-            <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap;">
-                <span style="font-size:20px;font-weight:700;color:rgba(255,255,255,.4);text-decoration:line-through;">$10</span>
-                <span style="font-size:38px;font-weight:900;color:var(--primary);">$5</span>
-                <span style="background:rgba(201,168,67,.15);padding:6px 18px;border-radius:60px;font-weight:700;font-size:13px;color:var(--gold);border:1px solid rgba(201,168,67,.2);">🎯 LIMITED OFFER</span>
-            </div>
-            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="btn-primary" style="font-size:16px;padding:14px 32px;">Activate Lifetime Access</a>
-        </div>
-
-        <!-- FAQ -->
-        <div class="section">
-            <div class="section-header"><div class="icon">❓</div><h2>Frequent Questions</h2><span class="badge" style="background:rgba(31,187,122,.2);padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;color:var(--primary);">FAQ</span></div>
-            <details><summary>How much can I earn per day? <span style="font-size:14px;color:rgba(255,255,255,.4);">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
-            <details><summary>Do I need any experience? <span style="font-size:14px;color:rgba(255,255,255,.4);">▼</span></summary><div class="faq-content">None at all! Tasks are simple: watching videos, surveys, chatting, WhatsApp posts, and more. Anyone can start earning immediately.</div></details>
-            <details><summary>How do I withdraw? <span style="font-size:14px;color:rgba(255,255,255,.4);">▼</span></summary><div class="faq-content">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
-            <details><summary>Is it really free to join? <span style="font-size:14px;color:rgba(255,255,255,.4);">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
-            <details><summary>How long does it take to get paid? <span style="font-size:14px;color:rgba(255,255,255,.4);">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
-        </div>
-
-        <!-- FOOTER -->
-        <div class="footer-section">
-            <div class="footer-grid">
-                <div class="col"><h4>EARN</h4><ul><li>Chat with Foreigners</li><li>Answer Questions</li><li>Paid TikTok Videos</li><li>YouTube Earning</li><li>WhatsApp Posts</li><li>Affiliate Bonus</li></ul></div>
-                <div class="col"><h4>ACCOUNT</h4><ul><li><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="color:rgba(255,255,255,.5);text-decoration:none;">Create Account</a></li><li><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="color:rgba(255,255,255,.5);text-decoration:none;">Sign In</a></li><li><a href="#" onclick="document.getElementById('liveChatSection').scrollIntoView({behavior:'smooth'});return!1" style="color:rgba(255,255,255,.5);text-decoration:none;">Try Demo</a></li></ul></div>
-                <div class="col"><h4>COUNTRIES</h4><ul><li>Uganda</li><li>Kenya</li><li>Tanzania</li><li>Rwanda</li></ul></div>
-            </div>
-            <div class="footer-bottom"><span>© 2026 Myqash<span style="color:var(--primary);">App</span>. All rights reserved.</span><span>Built for Africa · <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="color:rgba(255,255,255,.4);text-decoration:none;">Login</a></span></div>
-        </div>
+        <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="su">Sign Up</a>
     </div>
 
-    <!-- BACK TO TOP -->
-    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:100px;left:24px;z-index:9997;background:var(--primary);color:#fff;width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 20px var(--primary-glow);display:none;font-size:20px;">↑</button>
+    <!-- TRUST -->
+    <div style="padding:12px 0 6px;text-align:center"><div style="display:inline-block;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);padding:4px 18px;border-radius:60px;font-size:12px;font-weight:700">⭐ TRUSTED BY <span class="gh" id="tc">187,432</span>+ AFRICANS</div></div>
 
-    <!-- DEMO PAGE -->
-    <div class="demo-page" id="demoPage">
-        <div class="demo-header" style="display:flex;justify-content:space-between;padding:12px 20px;background:rgba(255,255,255,.1);border-radius:16px;margin-bottom:24px;backdrop-filter:blur(8px);">
-            <button class="back-btn" onclick="closeDemoPage()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);padding:10px 24px;border-radius:12px;font-weight:700;color:#fff;cursor:pointer;">← Back</button>
-            <span style="font-size:22px;font-weight:900;color:#fff;">Dashboard</span>
-            <span style="width:80px;"></span>
-        </div>
-        <div class="demo-card">
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;" id="countryDashboards">
-                <button class="country-btn active" data-country="uganda" onclick="switchDashboard('uganda')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:var(--primary);color:#fff;border:none;cursor:pointer;">🇺🇬 Uganda</button>
-                <button class="country-btn" data-country="kenya" onclick="switchDashboard('kenya')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:none;cursor:pointer;">🇰🇪 Kenya</button>
-                <button class="country-btn" data-country="ghana" onclick="switchDashboard('ghana')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:none;cursor:pointer;">🇬🇭 Ghana</button>
-                <button class="country-btn" data-country="nigeria" onclick="switchDashboard('nigeria')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:none;cursor:pointer;">🇳🇬 Nigeria</button>
-                <button class="country-btn" data-country="usd" onclick="switchDashboard('usd')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:none;cursor:pointer;">🇺🇸 USD</button>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-                <span style="font-size:19px;font-weight:700;">Welcome: <span style="color:var(--primary);">myqashapp</span></span>
-                <span style="background:rgba(201,168,67,.1);padding:6px 18px;border-radius:60px;font-size:12px;font-weight:700;border:1px solid rgba(201,168,67,.1);">✦ PREMIUM</span>
-            </div>
-            <div style="background:rgba(10,10,46,.04);padding:12px 18px;border-radius:80px;border:1px solid rgba(10,10,46,.04);display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
-                <span style="background:var(--gold);font-weight:700;font-size:11px;padding:4px 16px;border-radius:40px;color:#0a0a2e;">🚀</span>
-                Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more.
-            </div>
-            <div id="dashboardStats" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;"></div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0;">
-                <span class="nav-chip" onclick="handleEarning('Chat with Foreigners', '$4.60', '💬')">💬 Chat</span>
-                <span class="nav-chip" onclick="handleQuestionsPopup()">❓ Questions</span>
-                <span class="nav-chip" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">🎬 TikTok</span>
-                <span class="nav-chip" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">📺 YouTube</span>
-                <span class="nav-chip" onclick="handleWhatsAppPosting()">📱 WhatsApp</span>
-            </div>
-            <a href="https://star-hela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank">🔓 Activate Account</a>
-        </div>
-    </div>
-
-    <!-- VIDEO PLAYER OVERLAY -->
-    <div class="demo-action-popup" id="videoPlayerOverlay">
-        <div class="popup-content" style="max-width:600px;padding:24px 20px 28px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-                <span style="font-size:20px;font-weight:800;color:#fff;" id="videoPlayerTitle">▶️ Now Playing</span>
-                <span style="font-size:16px;color:var(--primary);font-weight:700;" id="videoPlayerEarn">$0.00</span>
-            </div>
-            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;background:#000;">
-                <iframe id="videoPlayerIframe" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe>
-            </div>
-            <div style="margin-top:14px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="claim-btn">💰 Claim Rewards</a></div>
-            <button class="btn-close-popup" onclick="closeVideoPlayer()" style="margin-top:10px;">Close</button>
-        </div>
-    </div>
-
-    <!-- ACTION POPUP -->
-    <div class="demo-action-popup" id="demoActionPopup">
-        <div class="popup-content">
-            <div class="icon" id="actionIcon" style="font-size:48px;margin-bottom:10px;">🎵</div>
-            <h3 id="actionTitle" style="font-size:22px;font-weight:800;color:#fff;margin-bottom:8px;">Earn with Music</h3>
-            <p id="actionDesc" style="color:rgba(255,255,255,.7);font-size:14px;">You're about to earn real money!</p>
-            <div class="earn-amount" id="actionAmount" style="font-size:28px;font-weight:900;color:var(--primary);margin:6px 0 10px;">—</div>
-            <button class="btn-close-popup" onclick="closeDemoAction()">Got it!</button>
-        </div>
-    </div>
-
-    <!-- CHAT OVERLAY -->
-    <div class="chat-page-overlay" id="chatOverlay">
-        <div class="chat-page">
-            <div class="chat-page-header">
-                <img id="chatPageAvatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
-                <div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus" style="font-size:12px;opacity:.7;">🇺🇸 USA · Online</div></div>
-                <button class="close-btn" onclick="closeChatPage()" style="background:rgba(255,255,255,.06);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;">✕</button>
-            </div>
-            <div class="chat-messages-area" id="chatMessagesArea"></div>
-            <div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div>
-            <div class="chat-page-footer">
-                <input type="text" id="chatPageInput" placeholder="Type a message...">
-                <button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button>
+    <!-- HERO -->
+    <div class="sec hero">
+        <h1>Get Paid <span style="color:#fff">Every Time</span></h1>
+        <h2>Turn Clicks to Cash</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;max-width:420px;margin:0 auto 18px">Join <span class="gh" id="hc">187,450</span>+ Africans earning <strong>$30 – $150 daily</strong> by watching, answering questions, posting on status & more. <strong>Fast withdraw</strong> via Mobile Money, Mpesa.</p>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="btn">Register Now</a>
+            <div style="display:flex;flex-wrap:nowrap;justify-content:center;gap:10px;width:100%;max-width:380px">
+                <a href="#" class="btn g" onclick="openD();return!1">Try Free Demo</a>
+                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="btn" style="background:linear-gradient(135deg,#2a3f5e,#0a0a1a);box-shadow:0 4px 20px rgba(10,10,26,.3)">Login</a>
             </div>
         </div>
     </div>
 
-    <!-- WITHDRAWAL POPUP -->
-    <div id="withdrawalPopup">
-        <div class="popup-card" id="popupCard">
-            <img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User">
-            <div class="info" style="flex:1;min-width:0;">
-                <div class="title" style="font-weight:700;font-size:10px;color:var(--primary);text-transform:uppercase;letter-spacing:.5px;">💸 Live Withdrawal</div>
-                <div class="name" id="popupUserName" style="font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">🇰🇪 James K.</div>
-                <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;">
-                    <span id="popupMethod" style="font-size:10px;color:rgba(255,255,255,.5);">via M-Pesa</span>
-                    <span class="amount-display" id="popupAmount">KSh 2,580</span>
-                </div>
-            </div>
-            <button class="close" onclick="this.closest('.popup-card').style.display='none'" style="background:rgba(255,255,255,.04);border:none;color:rgba(255,255,255,.5);width:24px;height:24px;border-radius:50%;cursor:pointer;font-size:11px;font-weight:700;">✕</button>
+    <!-- EARNING TICKER -->
+    <div class="es"><span class="lbl">🔥 EARNING</span><span class="st"><span>🇰🇪 James K. earned KSh 1,612 &nbsp;|&nbsp; </span><span>🇬🇭 Maureen A. earned GH₵ 1,129 &nbsp;|&nbsp; </span><span>🇺🇬 Sarah N. earned UGX 56,240 &nbsp;|&nbsp; </span><span>🇳🇬 Chidi O. earned ₦ 16,800 &nbsp;|&nbsp; </span><span>🇿🇦 Lindiwe M. earned R 258 &nbsp;|&nbsp; </span><span>🇰🇪 Omar H. earned KSh 1,200 &nbsp;|&nbsp; </span><span>🇷🇼 Diane U. earned RWF 14,800 &nbsp;|&nbsp; </span><span>🇨🇲 Samuel B. earned XAF 6,200 &nbsp;|&nbsp; </span><span>🇧🇼 Kabelo S. earned BWP 19,400 &nbsp;|&nbsp; </span><span>🇬🇭 Akosua K. earned GH₵ 2,150 &nbsp;|&nbsp; </span><span>🇺🇬 Robert T. earned UGX 51,430 &nbsp;|&nbsp; </span><span>🇳🇬 Amara E. earned ₦ 32,500 &nbsp;|&nbsp; </span><span>🇰🇪 Grace W. earned KSh 1,445 &nbsp;|&nbsp; </span><span>🇳🇬 Tunde A. earned ₦ 25,500 &nbsp;|&nbsp; </span><span>🇺🇬 Moses O. earned UGX 189,810 &nbsp;|&nbsp; </span><span>🇿🇦 Zanele D. earned R 948 &nbsp;|&nbsp; </span><span>🇰🇪 Faith N. earned KSh 5,121 &nbsp;|&nbsp; </span><span>🇷🇼 Jean P. earned RWF 23,400 &nbsp;|&nbsp; </span><span>🇨🇲 Marie B. earned XAF 23,900 &nbsp;|&nbsp; </span><span>🇬🇭 Yaw A. earned GH₵ 4,850 &nbsp;|&nbsp; </span><span>🇺🇬 Esther K. earned UGX 215,340 &nbsp;|&nbsp; </span></span></div>
+
+    <!-- STATS -->
+    <div class="sec">
+        <div class="sh"><div class="ic">📊</div><h2>Live Stats</h2><span class="bd l">🔴 LIVE</span></div>
+        <div class="sg">
+            <div class="si"><div class="n" id="lu">187,432</div><div class="l">LIVE USERS</div></div>
+            <div class="si"><div class="n" id="tp">$2.87M</div><div class="l">TOTAL PAID</div></div>
+            <div class="si"><div class="n" id="on">3,300</div><div class="l">ONLINE NOW</div></div>
         </div>
     </div>
 
-    <!-- WHATSAPP FLOAT -->
-    <a href="https://chat.whatsapp.com/LTY1tFn5fXZBEFgAFbBoNf?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener" class="whatsapp-float">
-        <div class="whatsapp-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp" style="width:55%;height:55%;filter:brightness(0)invert(1);"></div>
-        <span class="whatsapp-text">WhatsApp Group</span>
-    </a>
+    <!-- VIDEO -->
+    <div class="sec">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span style="background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:4px 16px;border-radius:40px;font-size:11px;font-weight:800">▶️ WATCH</span><h3 style="font-size:17px;font-weight:700">Explanation Video</h3></div>
+        <div style="font-size:13px;color:rgba(255,255,255,.8);margin-bottom:16px;background:rgba(255,255,255,.04);padding:12px 16px;border-radius:12px;border-left:4px solid var(--p)">📹 <strong>Watch how Myqashapp works</strong> — See how you can earn by chatting, watching videos, and completing simple tasks.</div>
+        <div class="vc"><iframe src="https://www.youtube.com/embed/D2fil3ejVaU" title="YouTube" allowfullscreen></iframe></div>
+    </div>
 
-    <!-- AFFILIATE BONUS POPUP -->
-    <div class="demo-action-popup" id="affiliateBonusOverlay" style="z-index:99998;">
-        <div class="popup-content" style="max-width:400px;">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                <span style="font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--gold),#e09d2e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">💰 Affiliate Bonus</span>
-                <button onclick="closeAffiliateBonus()" style="background:rgba(255,255,255,.06);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;">✕</button>
+    <!-- LIVE FOREIGNERS -->
+    <div class="sec" id="lcs" style="background:#0a0a2e;border-color:rgba(59,130,246,.12)">
+        <div class="sh"><div class="ic">💬</div><h2>Live Foreigners Online</h2><span class="bd l">🔴 LIVE</span></div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;background:rgba(59,130,246,.06);border-radius:12px;padding:12px 16px;margin-bottom:14px;border:1px solid rgba(59,130,246,.1)">
+            <span style="font-weight:800;font-size:17px">👥 <span id="ac">8</span> members online</span>
+            <span style="font-size:12px;color:rgba(255,255,255,.7);background:rgba(255,255,255,.04);padding:4px 14px;border-radius:40px;font-weight:600">🔥 <span id="ti">Someone is typing...</span></span>
+        </div>
+        <div id="lul"></div>
+    </div>
+
+    <!-- 7 WAYS -->
+    <div class="sec">
+        <div class="sh"><div class="ic">🎯</div><h2>7 Ways to Earn Daily</h2><span class="bd">💰 EARN</span></div>
+        <p style="font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px">Every feature pays real money. Do them all every day and stack your earnings.</p>
+        <div>
+            <div class="wc" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
+                <img class="wi" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Chat">
+                <div><div class="wn">Chat with Foreigners</div><div class="wd">Chat with real members from USA, UK, France, Canada, Australia and Spain.</div><div class="we"><span style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5)">per person</span></div><div style="margin-top:6px"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="ct" onclick="event.stopPropagation()">Start Chatting</a></div></div>
             </div>
-            <p style="color:rgba(255,255,255,.5);font-size:12px;margin-bottom:10px;">3 levels · select your country</p>
-            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0 12px;" id="affiliateCountrySelector">
-                <button class="bonus-country-btn active" data-country="uganda" onclick="updateAffiliate('uganda')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer;">🇺🇬 Uganda</button>
-                <button class="bonus-country-btn" data-country="kenya" onclick="updateAffiliate('kenya')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer;">🇰🇪 Kenya</button>
-                <button class="bonus-country-btn" data-country="nigeria" onclick="updateAffiliate('nigeria')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer;">🇳🇬 Nigeria</button>
-                <button class="bonus-country-btn" data-country="ghana" onclick="updateAffiliate('ghana')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer;">🇬🇭 Ghana</button>
-                <button class="bonus-country-btn" data-country="usd" onclick="updateAffiliate('usd')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer;">🇺🇸 USD</button>
+            <div class="wc" onclick="qPopup()">
+                <img class="wi" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Questions" style="background:#1a1a2e;padding:8px;object-fit:contain">
+                <div><div class="wn">Answering Questions</div><div class="wd">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div><div class="we"><span style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5)">per question</span></div><div style="margin-top:6px"><button class="ct g" onclick="event.stopPropagation();qPopup();return!1">Start Answering</button></div></div>
             </div>
-            <div style="background:rgba(255,255,255,.03);border-radius:16px;padding:14px 16px;margin:8px 0 12px;border:1px solid rgba(255,255,255,.04);">
-                <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);"><span style="font-weight:600;color:rgba(255,255,255,.6);">🔹 Level 1</span><span style="font-weight:800;color:var(--gold);" id="affL1">10,300 UGX</span></div>
-                <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);"><span style="font-weight:600;color:rgba(255,255,255,.6);">🔸 Level 2</span><span style="font-weight:800;color:var(--gold);" id="affL2">5,000 UGX</span></div>
-                <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="font-weight:600;color:rgba(255,255,255,.6);">🔹 Level 3</span><span style="font-weight:800;color:var(--gold);" id="affL3">2,000 UGX</span></div>
+            <div class="wc" onclick="vPlay('Paid TikTok Videos','$3.20','https://www.tiktok.com/embed/v2/6872744864957664518')">
+                <img class="wi" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok" style="background:#1a1a2e;padding:4px">
+                <div><div class="wn">Paid TikTok Videos</div><div class="wd">Watch trending TikTok videos from creators worldwide.</div><div class="we"><span style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5)">per video</span></div><div style="margin-top:6px"><button class="ct g" onclick="event.stopPropagation();vPlay('Paid TikTok Videos','$3.20','https://www.tiktok.com/embed/v2/6872744864957664518');return!1">Watch Videos</button></div></div>
             </div>
-            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn" style="display:block;width:100%;padding:14px;font-size:16px;">🚀 Start Referring Now</a>
-            <p id="affiliateHint" style="text-align:center;margin-top:10px;font-size:12px;color:rgba(255,255,255,.25);">🇺🇬 <span style="color:rgba(255,255,255,.5);font-weight:700;">Uganda</span> · L1: 10,300 | L2: 5,000 | L3: 2,000 UGX</p>
-            <button class="btn-close-popup" onclick="closeAffiliateBonus()" style="margin-top:8px;width:100%;">Close</button>
+            <div class="wc" onclick="affPopup()">
+                <img class="wi" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=100&h=100&fit=crop&crop=center" alt="Affiliate">
+                <div><div class="wn">Affiliate Bonus</div><div class="wd">Earn commissions across 3 referral levels. Unlimited earning potential!</div><div class="we">BONUS</div><div style="margin-top:6px"><button class="ct g" onclick="event.stopPropagation();affPopup();return!1">Start Promoting</button></div></div>
+            </div>
+            <div class="wc" onclick="waPopup()">
+                <img class="wi" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=100&h=100&fit=crop&crop=center" alt="WhatsApp">
+                <div><div class="wn">WhatsApp Posting</div><div class="wd">Share sponsored content on WhatsApp and earn per post.</div><div class="we"><span style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5)">per post</span></div><div style="margin-top:6px"><button class="ct" onclick="event.stopPropagation();waPopup();return!1">Start Posting</button></div></div>
+            </div>
+            <div class="wc" onclick="vPlay('YouTube Earning','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ')">
+                <img class="wi" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube" style="background:#1a1a2e;padding:4px">
+                <div><div class="wn">YouTube Earning</div><div class="wd">Watch trending YouTube videos, engage with content, and earn daily rewards.</div><div class="we"><span style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5)">per day</span></div><div style="margin-top:6px"><button class="ct g" onclick="event.stopPropagation();vPlay('YouTube Earning','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ');return!1">Start Watching</button></div></div>
+            </div>
+            <div class="wc" onclick="spinPopup()">
+                <img class="wi" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=100&h=100&fit=crop&crop=center" alt="Spinning">
+                <div><div class="wn">Paid Spinning</div><div class="wd">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div><div class="we"><span style="font-size:9px;font-weight:600;color:rgba(255,255,255,.5)">per spin</span></div><div style="margin-top:6px"><button class="ct" onclick="event.stopPropagation();spinPopup();return!1">Start Spinning</button></div></div>
+            </div>
         </div>
     </div>
 
-    <style>
-        @keyframes scrollText {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        .country-btn.active {
-            background: var(--primary) !important;
-            color: #fff !important;
-        }
-        .green-highlight {
-            color: var(--primary) !important;
-            font-weight: 900;
-        }
-        .demo-card .stat-card {
-            background: rgba(10, 10, 46, .04);
-            border-radius: var(--radius);
-            padding: 12px 14px;
-            border: 1px solid rgba(10, 10, 46, .04);
-        }
-        .demo-card .stat-card .stat-label {
-            font-size: 11px;
-            font-weight: 700;
-            color: rgba(10, 10, 46, .6);
-            text-transform: uppercase;
-            letter-spacing: .5px;
-        }
-        .demo-card .stat-card .stat-value {
-            font-size: 22px;
-            font-weight: 800;
-            color: #0a0a2e;
-            margin-top: 4px;
-        }
-        .demo-card .stat-card .stat-value small {
-            font-size: 13px;
-            font-weight: 500;
-            color: rgba(10, 10, 46, .5);
-        }
-        .questions-list li {
-            padding: 8px 12px;
-            margin: 4px 0;
-            background: rgba(10, 10, 46, .04);
-            border-radius: 8px;
-            font-size: 13px;
-            color: #0a0a2e;
-            border-left: 3px solid var(--primary);
-            cursor: pointer;
-            list-style: none;
-        }
-        .questions-list li:hover {
-            background: rgba(10, 10, 46, .08);
-            transform: translateX(4px);
-        }
-        .questions-list li strong {
-            color: var(--primary-dark);
-        }
-    </style>
+    <!-- WITHDRAWAL -->
+    <div class="sec">
+        <div class="sh"><div class="ic" style="background:linear-gradient(135deg,var(--g),#e09d2e)">🏦</div><h2>Withdrawal Methods</h2><span class="bd" style="background:var(--g);color:#0a0a2e">💸 FAST</span></div>
+        <p style="font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px">By country — instant payouts</p>
+        <div style="background:rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center">
+            <div class="wg">
+                <div class="it">🇰🇪 Kenya → M-Pesa</div><div class="it">🇨🇲 Cameroon → MoMo</div>
+                <div class="it">🇬🇭 Ghana → MoMo</div><div class="it">🇳🇬 Nigeria → MoMo</div>
+                <div class="it">🇺🇬 Uganda → Mobile Money</div><div class="it">🇷🇼 Rwanda → Mobile Wallet</div>
+                <div class="it">🇿🇦 South Africa → Bank Transfer</div><div class="it">🇧🇼 Botswana → Mobile Money</div>
+            </div>
+        </div>
+    </div>
 
-    <script>
-        // ===== SCROLL PROGRESS & BACK TO TOP =====
-        window.addEventListener('scroll', function() {
-            const s = window.scrollY,
-                d = document.documentElement.scrollHeight - window.innerHeight;
-            document.getElementById('scrollProgress').style.width = (s / d * 100) + '%';
-            document.getElementById('backToTop').style.display = s > 300 ? 'flex' : 'none';
+    <!-- HOW IT WORKS -->
+    <div class="sec">
+        <div class="sh"><div class="ic">🚀</div><h2>How It Works</h2><span class="bd">3 STEPS</span></div>
+        <p style="font-size:14px;color:rgba(255,255,255,.7);margin-bottom:16px">Start earning in 3 simple steps</p>
+        <div class="hs"><div class="sn">1</div><div><div class="st">Sign Up Free</div><div class="sd">Create account in 30 seconds — no card needed.</div></div></div>
+        <div class="hs"><div class="sn">2</div><div><div class="st">Complete Tasks</div><div class="sd">Watch videos, surveys, chat, WhatsApp posts, or train AI.</div></div></div>
+        <div class="hs"><div class="sn">3</div><div><div class="st">Withdraw Instantly</div><div class="sd">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
+        <div style="text-align:center;margin-top:12px"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="btn" style="font-size:16px;padding:14px 32px">Get Started Now</a></div>
+    </div>
+
+    <!-- STORIES -->
+    <div class="sec">
+        <div class="sh"><div class="ic">⭐</div><h2>Success Stories</h2><span class="bd">REAL PEOPLE</span></div>
+        <div class="sc"><img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Kelvin"><div><div class="wn">Kelvin O. · Lagos</div><div class="sa">$2,240 earned last week</div><div style="font-size:13px;color:rgba(255,255,255,.7)">"Cleared my rent in 9 days. Absolutely legit!"</div></div></div>
+        <div class="sc"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Amaka"><div><div class="wn">Amaka N. · Enugu</div><div class="sa">$1,860 earned this month</div><div style="font-size:13px;color:rgba(255,255,255,.7)">"Chatting with foreigners while earning is the best!"</div></div></div>
+        <div class="sc"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Kwame"><div><div class="wn">Kwame B. · Accra</div><div class="sa">$1,120 earned this week</div><div style="font-size:13px;color:rgba(255,255,255,.7)">"MoMo withdrawal in seconds. So reliable!"</div></div></div>
+        <div class="sc"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Faith"><div><div class="wn">Faith W. · Nairobi</div><div class="sa">$980 earned this week</div><div style="font-size:13px;color:rgba(255,255,255,.7)">"Paid my school fees in just 2 weeks!"</div></div></div>
+    </div>
+
+    <!-- LIFETIME -->
+    <div class="sec" style="text-align:center">
+        <div style="font-size:24px;font-weight:900;letter-spacing:-.5px">Lifetime Access</div>
+        <p style="font-size:13px;color:rgba(255,255,255,.7);max-width:380px;margin:6px auto 8px;line-height:1.5"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
+        <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
+            <span style="font-size:20px;font-weight:700;color:rgba(255,255,255,.4);text-decoration:line-through">$10</span>
+            <span style="font-size:38px;font-weight:900;color:var(--p)">$5</span>
+            <span style="background:rgba(201,168,67,.15);padding:6px 18px;border-radius:60px;font-weight:700;font-size:13px;color:var(--g);border:1px solid rgba(201,168,67,.2)">🎯 LIMITED OFFER</span>
+        </div>
+        <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="btn" style="font-size:16px;padding:14px 32px">Activate Lifetime Access</a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="sec">
+        <div class="sh"><div class="ic">❓</div><h2>Frequent Questions</h2><span class="bd">FAQ</span></div>
+        <details><summary>How much can I earn per day? <span style="font-size:14px;color:rgba(255,255,255,.4)">▼</span></summary><div class="fq">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
+        <details><summary>Do I need any experience? <span style="font-size:14px;color:rgba(255,255,255,.4)">▼</span></summary><div class="fq">None at all! Tasks are simple: watching videos, surveys, chatting, WhatsApp posts, and more. Anyone can start earning immediately.</div></details>
+        <details><summary>How do I withdraw? <span style="font-size:14px;color:rgba(255,255,255,.4)">▼</span></summary><div class="fq">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
+        <details><summary>Is it really free to join? <span style="font-size:14px;color:rgba(255,255,255,.4)">▼</span></summary><div class="fq">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
+        <details><summary>How long does it take to get paid? <span style="font-size:14px;color:rgba(255,255,255,.4)">▼</span></summary><div class="fq">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="ft">
+        <div class="fg">
+            <div class="c"><h4>EARN</h4><ul><li>Chat with Foreigners</li><li>Answer Questions</li><li>Paid TikTok Videos</li><li>YouTube Earning</li><li>WhatsApp Posts</li><li>Affiliate Bonus</li></ul></div>
+            <div class="c"><h4>ACCOUNT</h4><ul><li><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="color:rgba(255,255,255,.5);text-decoration:none">Create Account</a></li><li><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="color:rgba(255,255,255,.5);text-decoration:none">Sign In</a></li><li><a href="#" onclick="document.getElementById('lcs').scrollIntoView({behavior:'smooth'});return!1" style="color:rgba(255,255,255,.5);text-decoration:none">Try Demo</a></li></ul></div>
+            <div class="c"><h4>COUNTRIES</h4><ul><li>Uganda</li><li>Kenya</li><li>Tanzania</li><li>Rwanda</li></ul></div>
+        </div>
+        <div class="fb"><span>© 2026 Myqash<span style="color:var(--p)">App</span>. All rights reserved.</span><span>Built for Africa · <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="color:rgba(255,255,255,.4);text-decoration:none">Login</a></span></div>
+    </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:100px;left:24px;z-index:9997;background:var(--p);color:#fff;width:44px;height:44px;border-radius:50%;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(31,187,122,.3);display:none;font-size:20px">↑</button>
+
+<!-- DEMO PAGE -->
+<div class="dp" id="dp">
+    <div style="display:flex;justify-content:space-between;padding:12px 20px;background:rgba(255,255,255,.1);border-radius:16px;margin-bottom:24px;backdrop-filter:blur(8px)">
+        <button onclick="closeD()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);padding:10px 24px;border-radius:12px;font-weight:700;color:#fff;cursor:pointer">← Back</button>
+        <span style="font-size:22px;font-weight:900;color:#fff">Dashboard</span>
+        <span style="width:80px"></span>
+    </div>
+    <div class="dc">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px" id="cd">
+            <button class="cb" data-c="uganda" onclick="swC('uganda')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:var(--p);color:#fff;border:none;cursor:pointer">🇺🇬 Uganda</button>
+            <button class="cb" data-c="kenya" onclick="swC('kenya')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:none;cursor:pointer">🇰🇪 Kenya</button>
+            <button class="cb" data-c="ghana" onclick="swC('ghana')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:none;cursor:pointer">🇬🇭 Ghana</button>
+            <button class="cb" data-c="nigeria" onclick="swC('nigeria')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:none;cursor:pointer">🇳🇬 Nigeria</button>
+            <button class="cb" data-c="usd" onclick="swC('usd')" style="padding:6px 14px;border-radius:12px;font-weight:700;background:rgba(255,255,255,.1);color:#fff;border:none;cursor:pointer">🇺🇸 USD</button>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <span style="font-size:19px;font-weight:700">Welcome: <span style="color:var(--p)">myqashapp</span></span>
+            <span style="background:rgba(201,168,67,.1);padding:6px 18px;border-radius:60px;font-size:12px;font-weight:700;border:1px solid rgba(201,168,67,.1)">✦ PREMIUM</span>
+        </div>
+        <div style="background:rgba(10,10,46,.04);padding:12px 18px;border-radius:80px;border:1px solid rgba(10,10,46,.04);display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+            <span style="background:var(--g);font-weight:700;font-size:11px;padding:4px 16px;border-radius:40px;color:#0a0a2e">🚀</span>
+            Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more.
+        </div>
+        <div id="ds" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px"></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0">
+            <span class="nc" onclick="earn('Chat with Foreigners','$4.60','💬')">💬 Chat</span>
+            <span class="nc" onclick="qPopup()">❓ Questions</span>
+            <span class="nc" onclick="vPlay('Paid TikTok Videos','$3.20','https://www.tiktok.com/embed/v2/6872744864957664518')">🎬 TikTok</span>
+            <span class="nc" onclick="vPlay('YouTube Earning','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ')">📺 YouTube</span>
+            <span class="nc" onclick="waPopup()">📱 WhatsApp</span>
+        </div>
+        <a href="https://star-hela.com/register.php?ref=Myqashapp" class="ac" target="_blank">🔓 Activate Account</a>
+    </div>
+</div>
+
+<!-- VIDEO PLAYER -->
+<div class="ap" id="vp">
+    <div class="pc" style="max-width:600px;padding:24px 20px 28px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <span style="font-size:20px;font-weight:800;color:#fff" id="vt">▶️ Now Playing</span>
+            <span style="font-size:16px;color:var(--p);font-weight:700" id="ve">$0.00</span>
+        </div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;background:#000">
+            <iframe id="vf" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen></iframe>
+        </div>
+        <div style="margin-top:14px"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener" class="cl">💰 Claim Rewards</a></div>
+        <button class="bcp" onclick="closeV()" style="margin-top:10px">Close</button>
+    </div>
+</div>
+
+<!-- ACTION POPUP -->
+<div class="ap" id="ap">
+    <div class="pc">
+        <div id="ai" style="font-size:48px;margin-bottom:10px">🎵</div>
+        <h3 id="at" style="font-size:22px;font-weight:800;color:#fff;margin-bottom:8px">Earn with Music</h3>
+        <p id="ad" style="color:rgba(255,255,255,.7);font-size:14px">You're about to earn real money!</p>
+        <div id="aa" style="font-size:28px;font-weight:900;color:var(--p);margin:6px 0 10px">—</div>
+        <button class="bcp" onclick="closeA()">Got it!</button>
+    </div>
+</div>
+
+<!-- CHAT -->
+<div class="co" id="co">
+    <div class="cp">
+        <div class="cph">
+            <img id="ca" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+            <div><div id="cn" style="font-weight:800;font-size:16px">Emma S.</div><div id="cs" style="font-size:12px;opacity:.7">🇺🇸 USA · Online</div></div>
+            <button onclick="closeC()" style="background:rgba(255,255,255,.06);border:none;color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;margin-left:auto">✕</button>
+        </div>
+        <div class="cma" id="cm"></div>
+        <div class="cub" id="cb">⛔ Chat is paused — <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div>
+        <div class="cpf">
+            <input type="text" id="ci" placeholder="Type a message...">
+            <button id="csb" onclick="sendC()">Send</button>
+        </div>
+    </div>
+</div>
+
+<!-- WITHDRAWAL -->
+<div id="wp">
+    <div class="pc2" id="pc2">
+        <img id="pi" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User">
+        <div style="flex:1;min-width:0">
+            <div style="font-weight:700;font-size:10px;color:var(--p);text-transform:uppercase;letter-spacing:.5px">💸 Live Withdrawal</div>
+            <div id="pn" style="font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">🇰🇪 James K.</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:6px">
+                <span id="pm" style="font-size:10px;color:rgba(255,255,255,.5)">via M-Pesa</span>
+                <span class="ad" id="pa">KSh 2,580</span>
+            </div>
+        </div>
+        <button onclick="this.closest('.pc2').style.display='none'" style="background:rgba(255,255,255,.04);border:none;color:rgba(255,255,255,.5);width:24px;height:24px;border-radius:50%;cursor:pointer;font-size:11px;font-weight:700">✕</button>
+    </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://chat.whatsapp.com/LTY1tFn5fXZBEFgAFbBoNf?s=cl&p=a&mlu=0&ilr=0" target="_blank" rel="noopener" class="wf">
+    <div class="wi2"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp" style="width:55%;height:55%;filter:brightness(0)invert(1)"></div>
+    <span class="wt">WhatsApp Group</span>
+</a>
+
+<!-- AFFILIATE POPUP -->
+<div class="ap" id="affP" style="z-index:99998">
+    <div class="pc" style="max-width:400px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-size:22px;font-weight:900;background:linear-gradient(135deg,var(--g),#e09d2e);-webkit-background-clip:text;-webkit-text-fill-color:transparent">💰 Affiliate Bonus</span>
+            <button onclick="closeAff()" style="background:rgba(255,255,255,.06);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer">✕</button>
+        </div>
+        <p style="color:rgba(255,255,255,.5);font-size:12px;margin-bottom:10px">3 levels · select your country</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:6px 0 12px" id="afc">
+            <button class="ab" data-c="uganda" onclick="updAff('uganda')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer">🇺🇬 Uganda</button>
+            <button class="ab" data-c="kenya" onclick="updAff('kenya')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer">🇰🇪 Kenya</button>
+            <button class="ab" data-c="nigeria" onclick="updAff('nigeria')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer">🇳🇬 Nigeria</button>
+            <button class="ab" data-c="ghana" onclick="updAff('ghana')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer">🇬🇭 Ghana</button>
+            <button class="ab" data-c="usd" onclick="updAff('usd')" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);color:rgba(255,255,255,.7);padding:4px 12px;border-radius:60px;font-size:11px;font-weight:600;cursor:pointer">🇺🇸 USD</button>
+        </div>
+        <div style="background:rgba(255,255,255,.03);border-radius:16px;padding:14px 16px;margin:8px 0 12px;border:1px solid rgba(255,255,255,.04)">
+            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)"><span style="font-weight:600;color:rgba(255,255,255,.6)">🔹 Level 1</span><span style="font-weight:800;color:var(--g)" id="a1">10,300 UGX</span></div>
+            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)"><span style="font-weight:600;color:rgba(255,255,255,.6)">🔸 Level 2</span><span style="font-weight:800;color:var(--g)" id="a2">5,000 UGX</span></div>
+            <div style="display:flex;justify-content:space-between;padding:6px 0"><span style="font-weight:600;color:rgba(255,255,255,.6)">🔹 Level 3</span><span style="font-weight:800;color:var(--g)" id="a3">2,000 UGX</span></div>
+        </div>
+        <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cl" style="display:block;width:100%;padding:14px;font-size:16px">🚀 Start Referring Now</a>
+        <p id="ah" style="text-align:center;margin-top:10px;font-size:12px;color:rgba(255,255,255,.25)">🇺🇬 <span style="color:rgba(255,255,255,.5);font-weight:700">Uganda</span> · L1: 10,300 | L2: 5,000 | L3: 2,000 UGX</p>
+        <button class="bcp" onclick="closeAff()" style="margin-top:8px;width:100%">Close</button>
+    </div>
+</div>
+
+<script>
+    // ===== SCROLL =====
+    window.addEventListener('scroll', function() {
+        let s = window.scrollY,
+            d = document.documentElement.scrollHeight - window.innerHeight;
+        document.getElementById('scrollProgress').style.width = (s / d * 100) + '%';
+        document.getElementById('btt').style.display = s > 300 ? 'flex' : 'none';
+    });
+
+    // ===== COUNTERS =====
+    (function() {
+        let n = 3300;
+        setInterval(() => { n += Math.floor(Math.random() * 14) - 3;
+            n = Math.max(3240, Math.min(3600, n));
+            document.getElementById('lc').textContent = n.toLocaleString();
+            document.getElementById('on').textContent = n.toLocaleString(); }, 2800);
+        let t = 187432;
+        setInterval(() => { t += Math.floor(Math.random() * 5) + 2;
+            t = t > 189500 ? 187000 : t;
+            document.getElementById('tc').textContent = t.toLocaleString(); }, 2500);
+        let h = 187450;
+        setInterval(() => { h += Math.floor(Math.random() * 3) + 1;
+            h = h > 189500 ? 187000 : h;
+            document.getElementById('hc').textContent = h.toLocaleString(); }, 3000);
+        let l = 187432;
+        setInterval(() => { l += Math.floor(Math.random() * 6) + 1;
+            l = l > 189500 ? 187000 : l;
+            document.getElementById('lu').textContent = l.toLocaleString(); }, 5000);
+    })();
+
+    // ===== LIVE FOREIGNERS =====
+    const pp = [
+        { n: 'Emma S.', a: 28, c: '🇺🇸 USA', i: 'https://randomuser.me/api/portraits/women/68.jpg', b: '💕 Loves travel & dancing.',
+            g: '👋 Hi! I\'m Emma!', d: '😍 Upgrade to keep talking! 🔥' },
+        { n: 'James M.', a: 34, c: '🇬🇧 UK', i: 'https://randomuser.me/api/portraits/men/32.jpg', b: '⚽ Football lover.',
+            g: '👋 Hey, James here.', d: '😘 Upgrade now! ❤️' },
+        { n: 'Sophie L.', a: 26, c: '🇨🇦 Canada', i: 'https://randomuser.me/api/portraits/women/44.jpg', b: '🎨 Artist.',
+            g: '👋 Sophie here!', d: '💕 Upgrade! I want to chat! 😩' },
+        { n: 'David R.', a: 41, c: '🇦🇺 Australia', i: 'https://randomuser.me/api/portraits/men/55.jpg', b: '🏄 Surfing.',
+            g: '👋 David here.', d: '🔥 Upgrade to keep going! 🙏' },
+        { n: 'Maria G.', a: 29, c: '🇪🇸 Spain', i: 'https://randomuser.me/api/portraits/women/33.jpg', b: '💃 Flamenco.',
+            g: '👋 Maria!', d: '😍 Upgrade now! ❤️' },
+        { n: 'Thomas K.', a: 37, c: '🇩🇪 Germany', i: 'https://randomuser.me/api/portraits/men/42.jpg', b: '📚 Bookworm.',
+            g: '👋 Thomas here.', d: '💬 Upgrade so we can chat! 😍' },
+        { n: 'Anna P.', a: 31, c: '🇫🇷 France', i: 'https://randomuser.me/api/portraits/women/55.jpg', b: '🥐 Pastry chef.',
+            g: '👋 Anna!', d: '❤️ Please upgrade! ❤️' },
+        { n: 'Luca B.', a: 33, c: '🇮🇹 Italy', i: 'https://randomuser.me/api/portraits/men/62.jpg', b: '🍝 Passionate cook.',
+            g: '👋 Ciao! Luca here.', d: '🔥 Upgrade now! ❤️' }
+    ];
+    let cp = [],
+        ti;
+
+    function gP() { let s = [...pp];
+        for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));
+            [s[i], s[j]] = [s[j], s[i]]; } return s.slice(0, 8); }
+
+    function rL(p) {
+        let c = document.getElementById('lul'),
+            h = '',
+            ms = ['✍️ typing...', '💬 saying hello...', '⌨️ writing...', '💬 replying...'];
+        p.forEach(u => {
+            h += `<div class="uc" data-u="${u.n}" data-g="${u.g}" data-d="${u.d}" data-i="${u.i}" data-c="${u.c}">
+                <div class="ut"><img src="${u.i}" alt="${u.n}"><div class="ui"><div class="un">${u.n}, ${u.a} <span style="display:inline-block;width:8px;height:8px;background:#10b981;border-radius:50%;animation:d 2s ease-in-out infinite"></span></div>
+                <div class="c">${u.c} <span style="background:#dc2626;color:#fff;font-size:9px;font-weight:800;padding:2px 12px;border-radius:40px;animation:d 1.5s ease-in-out infinite">🔴 LIVE</span></div>
+                <div style="font-size:13px;color:rgba(255,255,255,.7)">${u.b}</div><div class="typing" style="font-size:11px;color:rgba(255,255,255,.5)">${ms[Math.floor(Math.random()*ms.length)]}</div></div></div>
+                <div class="ua"><a href="#" class="ch" onclick="event.stopPropagation();openC(this);return!1">💬 Chat</a>
+                <a href="#" class="wa" onclick="event.stopPropagation();vPlay('Watch ${u.n}\'s video','$3.20','https://www.youtube.com/embed/dQw4w9WgXcQ');return!1">▶ Watch</a></div></div>`;
         });
+        c.innerHTML = h;
+        document.getElementById('ac').textContent = p.length;
+        if (ti) clearInterval(ti);
+        ti = setInterval(() => {
+            let els = document.querySelectorAll('.typing'),
+                ms2 = ['✍️ typing...', '💬 saying...', '⌨️ writing...', '💬 replying...'];
+            els.forEach(el => { el.textContent = ms2[Math.floor(Math.random() * ms2.length)]; });
+            let ind = document.getElementById('ti');
+            if (ind) ind.textContent = p[Math.floor(Math.random() * p.length)].n.split(' ')[0] + ' is typing...';
+        }, 3000);
+    }
+    cp = gP();
+    rL(cp);
+    setInterval(() => { cp = gP();
+        rL(cp); }, 480000);
 
-        // ===== COUNTERS =====
-        (function() {
-            let n = 3300;
-            setInterval(() => { n += Math.floor(Math.random() * 14) - 3;
-                n = Math.max(3240, Math.min(3600, n));
-                document.getElementById('liveCounter').textContent = n.toLocaleString();
-                document.getElementById('onlineNow').textContent = n.toLocaleString(); }, 2800);
-            let t = 187432;
-            setInterval(() => { t += Math.floor(Math.random() * 5) + 2;
-                t = t > 189500 ? 187000 : t;
-                document.getElementById('trustCounter').textContent = t.toLocaleString(); }, 2500);
-            let h = 187450;
-            setInterval(() => { h += Math.floor(Math.random() * 3) + 1;
-                h = h > 189500 ? 187000 : h;
-                document.getElementById('heroCounter').textContent = h.toLocaleString(); }, 3000);
-            let l = 187432;
-            setInterval(() => { l += Math.floor(Math.random() * 6) + 1;
-                l = l > 189500 ? 187000 : l;
-                document.getElementById('liveUsers').textContent = l.toLocaleString(); }, 5000);
-        })();
+    // ===== CHAT =====
+    let cl = !1,
+        cu = '',
+        cd = '';
 
-        // ===== LIVE FOREIGNERS =====
-        const profilePool = [
-            { name: 'Emma S.', age: 28, country: '🇺🇸 USA', img: 'https://randomuser.me/api/portraits/women/68.jpg', bio: '💕 Loves travel & dancing.',
-                greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Upgrade so we can keep talking! 🔥' },
-            { name: 'James M.', age: 34, country: '🇬🇧 UK', img: 'https://randomuser.me/api/portraits/men/32.jpg',
-                bio: '⚽ Football lover & gamer.', greeting: '👋 Hey, James here.', desperate: '😘 Upgrade now so we can talk more! ❤️' },
-            { name: 'Sophie L.', age: 26, country: '🇨🇦 Canada', img: 'https://randomuser.me/api/portraits/women/44.jpg',
-                bio: '🎨 Artist & nature enthusiast.', greeting: '👋 Sophie here!', desperate: '💕 Upgrade! I want to chat more! 😩' },
-            { name: 'David R.', age: 41, country: '🇦🇺 Australia', img: 'https://randomuser.me/api/portraits/men/55.jpg',
-                bio: '🏄 Surfing lover.', greeting: '👋 David here.', desperate: '🔥 Upgrade to keep this going! 🙏' },
-            { name: 'Maria G.', age: 29, country: '🇪🇸 Spain', img: 'https://randomuser.me/api/portraits/women/33.jpg',
-                bio: '💃 Flamenco dancer.', greeting: '👋 Maria! You seem cool!', desperate: '😍 Upgrade now! ❤️' },
-            { name: 'Thomas K.', age: 37, country: '🇩🇪 Germany', img: 'https://randomuser.me/api/portraits/men/42.jpg',
-                bio: '📚 Bookworm & cyclist.', greeting: '👋 Thomas here.', desperate: '💬 Upgrade so we can chat more! 😍' },
-            { name: 'Anna P.', age: 31, country: '🇫🇷 France', img: 'https://randomuser.me/api/portraits/women/55.jpg',
-                bio: '🥐 Pastry chef & cat lover.', greeting: '👋 Anna! You look nice!', desperate: '❤️ Please upgrade to keep chatting! ❤️' },
-            { name: 'Luca B.', age: 33, country: '🇮🇹 Italy', img: 'https://randomuser.me/api/portraits/men/62.jpg',
-                bio: '🍝 Passionate cook.', greeting: '👋 Ciao! Luca here.', desperate: '🔥 Upgrade now so we can keep talking! ❤️' }
-        ];
-        let currentProfiles = [],
-            typingInterval;
+    function openC(el) {
+        let c = el.closest('.uc');
+        if (!c) return;
+        cu = c.dataset.u || 'Friend';
+        cd = c.dataset.d || '😍 Upgrade to continue!';
+        document.getElementById('ca').src = c.dataset.i || 'https://randomuser.me/api/portraits/women/68.jpg';
+        document.getElementById('cn').textContent = cu;
+        document.getElementById('cs').textContent = c.dataset.c + ' · Online';
+        let a = document.getElementById('cm');
+        a.innerHTML =
+            `<div class="cm r"><div style="font-weight:700;font-size:12px;margin-bottom:4px">${cu}</div>${c.dataset.g || '👋 Hi!'}<span style="font-size:10px;opacity:.4;display:block;text-align:right;margin-top:4px">just now</span></div>`;
+        document.getElementById('cb').style.display = 'none';
+        document.getElementById('csb').disabled = !1;
+        document.getElementById('ci').disabled = !1;
+        document.getElementById('co').classList.add('active');
+        a.scrollTop = a.scrollHeight;
+    }
 
-        function getRandomProfiles() { let s = [...profilePool];
-            for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1));
-                [s[i], s[j]] = [s[j], s[i]]; } return s.slice(0, 8); }
+    function closeC() { document.getElementById('co').classList.remove('active');
+        cl = !1; }
 
-        function renderLiveUsers(p) {
-            const c = document.getElementById('liveUserList');
-            let h = '';
-            const msgs = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...'];
-            p.forEach((u) => {
-                h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}">
-                    <div class="user-top"><img src="${u.img}" alt="${u.name}"><div class="user-info"><div class="name">${u.name}, ${u.age} <span style="display:inline-block;width:8px;height:8px;background:#10b981;border-radius:50%;animation:pulse-dot 2s ease-in-out infinite;"></span></div>
-                    <div class="country">${u.country} <span style="background:#dc2626;color:#fff;font-size:9px;font-weight:800;padding:2px 12px;border-radius:40px;animation:pulseBadge 1.5s ease-in-out infinite;">🔴 LIVE</span></div>
-                    <div class="bio">${u.bio}</div><div class="status typing-status" style="font-size:11px;color:rgba(255,255,255,.5);">${msgs[Math.floor(Math.random()*msgs.length)]}</div></div></div>
-                    <div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a>
-                    <a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a></div></div>`;
-            });
-            c.innerHTML = h;
-            document.getElementById('activeChatters').textContent = p.length;
-            if (typingInterval) clearInterval(typingInterval);
-            typingInterval = setInterval(() => {
-                const els = document.querySelectorAll('.typing-status');
-                const msgs2 = ['✍️ typing...', '💬 saying hello...', '⌨️ writing...', '💬 replying...'];
-                els.forEach(el => { el.textContent = msgs2[Math.floor(Math.random() * msgs2.length)]; });
-                const ind = document.getElementById('typingIndicator');
-                if (ind) ind.textContent = p[Math.floor(Math.random() * p.length)].name.split(' ')[0] + ' is typing...';
-            }, 3000);
-        }
-        currentProfiles = getRandomProfiles();
-        renderLiveUsers(currentProfiles);
-        setInterval(() => { currentProfiles = getRandomProfiles();
-            renderLiveUsers(currentProfiles); }, 480000);
+    function sendC() {
+        if (cl) { alert('⛔ Chat paused. Upgrade to continue.'); return }
+        let input = document.getElementById('ci'),
+            msg = input.value.trim();
+        if (!msg || !cu) return;
+        let a = document.getElementById('cm'),
+            t = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        a.innerHTML +=
+            `<div class="cm s">${msg}<span style="font-size:10px;opacity:.6;display:block;text-align:right;margin-top:4px">${t}</span></div>`;
+        input.value = '';
+        a.scrollTop = a.scrollHeight;
+        setTimeout(() => {
+            a.innerHTML +=
+                `<div class="cm r"><div style="font-weight:700;font-size:12px;margin-bottom:4px">${cu}</div>${cd}<span style="font-size:10px;opacity:.4;display:block;text-align:right;margin-top:4px">${new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</span></div>`;
+            a.scrollTop = a.scrollHeight;
+            cl = !0;
+            document.getElementById('cb').style.display = 'block';
+            document.getElementById('csb').disabled = !0;
+            document.getElementById('ci').disabled = !0;
+        }, 700);
+    }
+    document.getElementById('ci').addEventListener('keypress', function(e) { if (e.key === 'Enter') sendC(); });
 
-        // ===== CHAT =====
-        let chatLocked = !1,
-            chatUser = '',
-            chatDesperate = '';
+    // ===== DEMO =====
+    function openD() { document.getElementById('dp').classList.add('active');
+        document.body.style.overflow = 'hidden'; }
 
-        function openChatPage(el) {
-            const c = el.closest('.user-card');
-            if (!c) return;
-            chatUser = c.dataset.user || 'Friend';
-            chatDesperate = c.dataset.desperate || '😍 Upgrade to continue!';
-            document.getElementById('chatPageAvatar').src = c.dataset.img || 'https://randomuser.me/api/portraits/women/68.jpg';
-            document.getElementById('chatPageName').textContent = chatUser;
-            document.getElementById('chatPageStatus').textContent = c.dataset.country + ' · Online';
-            const area = document.getElementById('chatMessagesArea');
-            area.innerHTML =
-                `<div class="chat-msg received"><div class="msg-name">${chatUser}</div>${c.dataset.greeting || '👋 Hi!'}<span class="time" style="font-size:10px;opacity:.4;display:block;text-align:right;">just now</span></div>`;
-            document.getElementById('chatUpgradeBanner').style.display = 'none';
-            document.getElementById('chatPageSendBtn').disabled = !1;
-            document.getElementById('chatPageInput').disabled = !1;
-            document.getElementById('chatOverlay').classList.add('active');
-            area.scrollTop = area.scrollHeight;
-        }
+    function closeD() { document.getElementById('dp').classList.remove('active');
+        document.body.style.overflow = ''; }
 
-        function closeChatPage() { document.getElementById('chatOverlay').classList.remove('active');
-            chatLocked = !1; }
+    // ===== VIDEO =====
+    function vPlay(t, a, u) {
+        let ov = document.getElementById('vp'),
+            ifr = document.getElementById('vf');
+        ifr.src = u + '?autoplay=1&rel=0';
+        document.getElementById('vt').textContent = '▶️ ' + t;
+        document.getElementById('ve').textContent = '💰 ' + a;
+        ov.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
-        function sendChatPageMessage() {
-            if (chatLocked) { alert('⛔ Chat is paused. Please upgrade to continue.'); return }
-            const input = document.getElementById('chatPageInput'),
-                msg = input.value.trim();
-            if (!msg || !chatUser) return;
-            const area = document.getElementById('chatMessagesArea'),
-                time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            area.innerHTML +=
-                `<div class="chat-msg sent">${msg}<span class="time" style="font-size:10px;opacity:.6;display:block;text-align:right;">${time}</span></div>`;
-            input.value = '';
-            area.scrollTop = area.scrollHeight;
-            setTimeout(() => {
-                area.innerHTML +=
-                    `<div class="chat-msg received"><div class="msg-name">${chatUser}</div>${chatDesperate}<span class="time" style="font-size:10px;opacity:.4;display:block;text-align:right;">${new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</span></div>`;
-                area.scrollTop = area.scrollHeight;
-                chatLocked = !0;
-                document.getElementById('chatUpgradeBanner').style.display = 'block';
-                document.getElementById('chatPageSendBtn').disabled = !0;
-                document.getElementById('chatPageInput').disabled = !0;
-            }, 700);
-        }
-        document.getElementById('chatPageInput').addEventListener('keypress', function(e) { if (e.key === 'Enter')
-                sendChatPageMessage(); });
+    function closeV() { document.getElementById('vf').src = '';
+        document.getElementById('vp').classList.remove('active');
+        document.body.style.overflow = ''; }
+    document.getElementById('vp').addEventListener('click', function(e) { if (e.target === this) closeV(); });
 
-        // ===== DEMO PAGE =====
-        function openDemoPage() { document.getElementById('demoPage').classList.add('active');
-            document.body.style.overflow = 'hidden'; }
+    // ===== COUNTRY DASHBOARD =====
+    const cdData = {
+        uganda: { currency: 'UGX', label: '🇺🇬 Uganda', stats: { expense: '19,500', profits: '5,600,000',
+                balance: '3,000,000', withdrawn: '2,600,000' } },
+        kenya: { currency: 'KES', label: '🇰🇪 Kenya', stats: { expense: '550', profits: '620,000', balance: '270,000',
+                withdrawn: '350,000' } },
+        ghana: { currency: 'GHS', label: '🇬🇭 Ghana', stats: { expense: '95', profits: '212,000', balance: '92,000',
+                withdrawn: '120,000' } },
+        nigeria: { currency: 'NGN', label: '🇳🇬 Nigeria', stats: { expense: '9,000', profits: '2,420,000',
+                balance: '1,300,000', withdrawn: '1,120,000' } },
+        usd: { currency: 'USD', label: '🇺🇸 USD', stats: { expense: '10', profits: '43,000', balance: '23,000',
+                withdrawn: '20,000' } }
+    };
 
-        function closeDemoPage() { document.getElementById('demoPage').classList.remove('active');
-            document.body.style.overflow = ''; }
+    function swC(c) {
+        let d = cdData[c];
+        document.querySelectorAll('.cb').forEach(b => b.style.background = b.dataset.c === c ? 'var(--p)' :
+        'rgba(255,255,255,.1)');
+        document.getElementById('ds').innerHTML =
+            `<div style="background:rgba(10,10,46,.04);border-radius:16px;padding:12px 14px;border:1px solid rgba(10,10,46,.04)"><div style="font-size:11px;font-weight:700;color:rgba(10,10,46,.6);text-transform:uppercase;letter-spacing:.5px">Expense</div><div style="font-size:22px;font-weight:800;color:#0a0a2e;margin-top:4px">${d.stats.expense} <small style="font-size:13px;font-weight:500;color:rgba(10,10,46,.5)">${d.currency}</small></div></div>
+            <div style="background:rgba(10,10,46,.04);border-radius:16px;padding:12px 14px;border:1px solid rgba(10,10,46,.04)"><div style="font-size:11px;font-weight:700;color:rgba(10,10,46,.6);text-transform:uppercase;letter-spacing:.5px">Profits</div><div style="font-size:22px;font-weight:800;color:#0a0a2e;margin-top:4px">${d.stats.profits} <small style="font-size:13px;font-weight:500;color:rgba(10,10,46,.5)">${d.currency}</small></div></div>
+            <div style="background:rgba(10,10,46,.04);border-radius:16px;padding:12px 14px;border:1px solid rgba(10,10,46,.04)"><div style="font-size:11px;font-weight:700;color:rgba(10,10,46,.6);text-transform:uppercase;letter-spacing:.5px">Balance</div><div style="font-size:22px;font-weight:800;color:#0a0a2e;margin-top:4px">${d.stats.balance} <small style="font-size:13px;font-weight:500;color:rgba(10,10,46,.5)">${d.currency}</small></div></div>
+            <div style="background:rgba(10,10,46,.04);border-radius:16px;padding:12px 14px;border:1px solid rgba(10,10,46,.04)"><div style="font-size:11px;font-weight:700;color:rgba(10,10,46,.6);text-transform:uppercase;letter-spacing:.5px">Withdrawn</div><div style="font-size:22px;font-weight:800;color:#0a0a2e;margin-top:4px">${d.stats.withdrawn} <small style="font-size:13px;font-weight:500;color:rgba(10,10,46,.5)">${d.currency}</small></div></div>`;
+    }
+    swC('uganda');
 
-        // ===== VIDEO PLAYER =====
-        function handleVideoPlay(title, amount, icon, url, platform) {
-            const overlay = document.getElementById('videoPlayerOverlay'),
-                iframe = document.getElementById('videoPlayerIframe');
-            let finalUrl = url;
-            if (platform === 'TikTok') {
-                const vids = ['https://www.tiktok.com/embed/v2/6872744864957664518', 'https://www.tiktok.com/embed/v2/6872744864957664518'];
-                finalUrl = vids[Math.floor(Math.random() * vids.length)];
-            } else if (platform === 'YouTube') {
-                const vids = ['https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/9bZkp7q19f0'];
-                finalUrl = vids[Math.floor(Math.random() * vids.length)];
+    // ===== EARNING =====
+    function earn(t, a, i) {
+        document.getElementById('ai').textContent = i || '💰';
+        document.getElementById('at').textContent = t;
+        document.getElementById('aa').textContent = a;
+        document.getElementById('ad').textContent = 'You earned ' + a + '! Upgrade to claim.';
+        document.getElementById('ap').classList.add('active');
+    }
+
+    function closeA() { document.getElementById('ap').classList.remove('active'); }
+
+    // ===== QUESTIONS =====
+    function qPopup() {
+        let ov = document.getElementById('ap'),
+            pc = ov.querySelector('.pc');
+        let qs = [{ q: 'What is the capital of France?', o: ['London', 'Paris', 'Berlin', 'Madrid'], a: 'Paris' },
+        { q: 'Which planet is the Red Planet?', o: ['Venus', 'Mars', 'Jupiter', 'Saturn'], a: 'Mars' },
+        { q: 'Largest ocean?', o: ['Atlantic', 'Indian', 'Pacific', 'Arctic'], a: 'Pacific' }];
+        let idx = 0,
+            score = 0;
+
+        function rQ() {
+            if (idx >= qs.length) {
+                pc.innerHTML =
+                    `<div style="padding:20px;text-align:center"><div style="font-size:48px">🎉</div><h3 style="color:#f5d65a">Quiz Complete!</h3><p style="color:#fff;font-size:18px">Score: ${score}/${qs.length}</p><p style="color:#2ecc71;font-size:18px;font-weight:700">💰 Earned $${(score*0.50).toFixed(2)}!</p><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cl" style="display:inline-block;margin-top:12px">Claim Prize</a><button class="bcp" onclick="closeA()" style="margin-top:10px;display:block;width:100%">Close</button></div>`;
+                return;
             }
-            iframe.src = finalUrl + '?autoplay=1&rel=0';
-            document.getElementById('videoPlayerTitle').textContent = '▶️ ' + title;
-            document.getElementById('videoPlayerEarn').textContent = '💰 ' + amount;
-            overlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeVideoPlayer() {
-            document.getElementById('videoPlayerIframe').src = '';
-            document.getElementById('videoPlayerOverlay').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        document.getElementById('videoPlayerOverlay').addEventListener('click', function(e) { if (e.target === this)
-                closeVideoPlayer(); });
-
-        // ===== COUNTRY DASHBOARD =====
-        const countryData = {
-            uganda: { currency: 'UGX', label: '🇺🇬 Uganda', stats: { expense: '19,500', profits: '5,600,000',
-                    balance: '3,000,000', withdrawn: '2,600,000' } },
-            kenya: { currency: 'KES', label: '🇰🇪 Kenya', stats: { expense: '550', profits: '620,000',
-                    balance: '270,000', withdrawn: '350,000' } },
-            ghana: { currency: 'GHS', label: '🇬🇭 Ghana', stats: { expense: '95', profits: '212,000',
-                    balance: '92,000', withdrawn: '120,000' } },
-            nigeria: { currency: 'NGN', label: '🇳🇬 Nigeria', stats: { expense: '9,000', profits: '2,420,000',
-                    balance: '1,300,000', withdrawn: '1,120,000' } },
-            usd: { currency: 'USD', label: '🇺🇸 USD', stats: { expense: '10', profits: '43,000', balance: '23,000',
-                    withdrawn: '20,000' } }
-        };
-
-        function switchDashboard(c) {
-            const d = countryData[c];
-            document.querySelectorAll('.country-btn').forEach(b => b.classList.toggle('active', b.dataset.country === c));
-            document.getElementById('dashboardStats').innerHTML =
-                `<div class="stat-card"><div class="stat-label">Expense</div><div class="stat-value">${d.stats.expense} <small>${d.currency}</small></div></div>
-            <div class="stat-card"><div class="stat-label">Profits</div><div class="stat-value">${d.stats.profits} <small>${d.currency}</small></div></div>
-            <div class="stat-card"><div class="stat-label">Balance</div><div class="stat-value">${d.stats.balance} <small>${d.currency}</small></div></div>
-            <div class="stat-card"><div class="stat-label">Withdrawn</div><div class="stat-value">${d.stats.withdrawn} <small>${d.currency}</small></div></div>`;
-        }
-        switchDashboard('uganda');
-
-        // ===== EARNING ACTIONS =====
-        function handleEarning(task, amount, icon) {
-            const overlay = document.getElementById('demoActionPopup');
-            document.getElementById('actionIcon').textContent = icon || '💰';
-            document.getElementById('actionTitle').textContent = task;
-            document.getElementById('actionAmount').textContent = amount;
-            document.getElementById('actionDesc').textContent = 'You earned ' + amount + '! Upgrade to claim.';
-            overlay.classList.add('active');
-        }
-
-        function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active'); }
-
-        // ===== QUESTIONS =====
-        function handleQuestionsPopup() {
-            const overlay = document.getElementById('demoActionPopup');
-            const content = overlay.querySelector('.popup-content');
-            const qs = [
-                { q: 'What is the capital of France?', options: ['London', 'Paris', 'Berlin', 'Madrid'],
-                answer: 'Paris' },
-                { q: 'Which planet is the Red Planet?', options: ['Venus', 'Mars', 'Jupiter', 'Saturn'],
-                answer: 'Mars' },
-                { q: 'Largest ocean?', options: ['Atlantic', 'Indian', 'Pacific', 'Arctic'], answer: 'Pacific' }
-            ];
-            let idx = 0,
-                score = 0;
-
-            function renderQ() {
-                if (idx >= qs.length) {
-                    content.innerHTML =
-                        `<div style="padding:20px;text-align:center;"><div style="font-size:48px;">🎉</div><h3 style="color:#f5d65a;">Quiz Complete!</h3><p style="color:#fff;font-size:18px;">Score: ${score}/${qs.length}</p><p style="color:#2ecc71;font-size:18px;font-weight:700;">💰 Earned $${(score*0.50).toFixed(2)}!</p><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn" style="display:inline-block;margin-top:12px;">Claim Prize</a><button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button></div>`;
-                    return;
-                }
-                const q = qs[idx];
-                let opts = q.options.map(o =>
-                    `<button onclick="answerQ(this,'${o}','${q.answer}')" style="background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.1);color:#fff;padding:10px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;width:100%;">${o}</button>`
+            let q = qs[idx],
+                opts = q.o.map(o =>
+                    `<button onclick="aQ(this,'${o}','${q.a}')" style="background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.1);color:#fff;padding:10px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;width:100%">${o}</button>`
                     ).join('');
-                content.innerHTML =
-                    `<div style="margin-bottom:10px;"><span style="font-size:28px;">❓</span><h3 style="color:#fff;font-size:20px;">Answer Questions</h3><p style="color:rgba(255,255,255,.6);font-size:13px;">Earn $0.50/question</p></div>
-                <div style="background:rgba(255,255,255,.05);border-radius:12px;padding:16px;"><div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;"><span>Q${idx+1}/${qs.length}</span><span>Score: ${score}</span></div>
-                <div style="font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;">${q.q}</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;" id="qOpts">${opts}</div></div>
-                <div id="qResult" style="font-size:16px;font-weight:700;min-height:30px;color:#f5d65a;margin:8px 0;"></div>
-                <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>`;
-                overlay.classList.add('active');
-
-                window.answerQ = function(btn, selected, correct) {
-                    if (btn.dataset.answered) return;
-                    const result = document.getElementById('qResult');
-                    const allBtns = document.querySelectorAll('#qOpts button');
-                    allBtns.forEach(b => b.style.cursor = 'default');
-                    if (selected === correct) {
-                        btn.style.background = 'rgba(46,204,113,0.3)';
-                        btn.style.borderColor = '#2ecc71';
-                        score++;
-                        result.textContent = '✅ Correct! +$0.50';
-                        result.style.color = '#2ecc71';
-                    } else {
-                        btn.style.background = 'rgba(231,76,60,0.3)';
-                        btn.style.borderColor = '#e74c3c';
-                        result.textContent = '❌ Incorrect. Answer: ' + correct;
-                        result.style.color = '#e74c3c';
-                        allBtns.forEach(b => { if (b.textContent === correct) { b.style.background =
-                                'rgba(46,204,113,0.2)';
+            pc.innerHTML =
+                `<div style="margin-bottom:10px"><span style="font-size:28px">❓</span><h3 style="color:#fff;font-size:20px">Answer Questions</h3><p style="color:rgba(255,255,255,.6);font-size:13px">Earn $0.50/question</p></div>
+                <div style="background:rgba(255,255,255,.05);border-radius:12px;padding:16px"><div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px"><span>Q${idx+1}/${qs.length}</span><span>Score: ${score}</span></div>
+                <div style="font-size:18px;font-weight:700;color:#fff;margin-bottom:16px">${q.q}</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px" id="qOpts">${opts}</div></div>
+                <div id="qRes" style="font-size:16px;font-weight:700;min-height:30px;color:#f5d65a;margin:8px 0"></div>
+                <button class="bcp" onclick="closeA()" style="margin-top:10px;display:block;width:100%">Close</button>`;
+            ov.classList.add('active');
+            window.aQ = function(btn, sel, cor) {
+                if (btn.dataset.answered) return;
+                let res = document.getElementById('qRes'),
+                    all = document.querySelectorAll('#qOpts button');
+                all.forEach(b => b.style.cursor = 'default');
+                if (sel === cor) {
+                    btn.style.background = 'rgba(46,204,113,0.3)';
+                    btn.style.borderColor = '#2ecc71';
+                    score++;
+                    res.textContent = '✅ Correct! +$0.50';
+                    res.style.color = '#2ecc71';
+                } else {
+                    btn.style.background = 'rgba(231,76,60,0.3)';
+                    btn.style.borderColor = '#e74c3c';
+                    res.textContent = '❌ Incorrect. Answer: ' + cor;
+                    res.style.color = '#e74c3c';
+                    all.forEach(b => { if (b.textContent === cor) { b.style.background = 'rgba(46,204,113,0.2)';
                             b.style.borderColor = '#2ecc71'; } });
-                    }
-                    btn.dataset.answered = 'true';
-                    setTimeout(() => { idx++;
-                        renderQ(); }, 1500);
-                };
-            }
-            renderQ();
-        }
-
-        // ===== SPINNING =====
-        function handleSpinning() {
-            const overlay = document.getElementById('demoActionPopup');
-            overlay.querySelector('.popup-content').innerHTML =
-                `<div style="margin-bottom:6px;"><span style="font-size:28px;">🎰</span><h3 style="color:#fff;font-size:20px;">Paid Spinning</h3><p style="color:rgba(255,255,255,.6);font-size:13px;">Win up to $50!</p></div>
-            <div style="position:relative;width:220px;height:220px;margin:0 auto 16px;"><div id="wheel" style="width:100%;height:100%;border-radius:50%;position:relative;transition:transform 4s cubic-bezier(0.17,0.67,0.12,0.99);box-shadow:0 0 0 6px #1fbb7a,0 0 0 12px rgba(31,187,122,.2);">
-            ${['$3','$8','$15','$25','$35','$50'].map((p,i)=>`<div style="position:absolute;width:50%;height:50%;top:0;left:50%;transform-origin:0% 100%;transform:rotate(${i*60}deg);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5);padding-left:20px;background:${['#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6','#1abc9c'][i]};">${p}</div>`).join('')}
-            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;background:#0a0a2e;border-radius:50%;border:4px solid #f5d65a;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;color:#f5d65a;z-index:5;">SPIN</div></div></div>
-            <button class="spin-btn" onclick="spinWheel()" style="background:linear-gradient(135deg,#f5d65a,#e09d2e);color:#0a0a2e;border:none;padding:12px 32px;border-radius:60px;font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 4px 20px rgba(245,214,90,.3);">🎡 SPIN</button>
-            <div id="spinResult" style="font-size:24px;font-weight:900;color:#f5d65a;margin-top:8px;min-height:40px;">Click SPIN to win!</div>
-            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn" style="display:inline-block;margin-top:10px;">Claim Prize</a>
-            <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>`;
-            overlay.classList.add('active');
-            window.spinWheel = function() {
-                const wheel = document.getElementById('wheel'),
-                    result = document.getElementById('spinResult');
-                if (!wheel || result.textContent.includes('Won')) return;
-                const prizes = ['$3', '$8', '$15', '$25', '$35', '$50'];
-                const idx = Math.floor(Math.random() * 6);
-                const angle = 360 * (5 + Math.floor(Math.random() * 3)) + (360 - (idx * 60 + 30)) + Math.random() * 20;
-                wheel.style.transform = `rotate(${angle}deg)`;
-                result.textContent = '🎉 You won ' + prizes[idx] + '!';
-                setTimeout(() => { result.textContent += ' 💰 Upgrade to claim!'; }, 500);
+                }
+                btn.dataset.answered = 'true';
+                setTimeout(() => { idx++;
+                    rQ(); }, 1500);
             };
         }
+        rQ();
+    }
 
-        // ===== WHATSAPP POSTING =====
-        function handleWhatsAppPosting() {
-            const overlay = document.getElementById('demoActionPopup');
-            overlay.querySelector('.popup-content').innerHTML =
-                `<div style="margin-bottom:8px;"><span style="font-size:28px;">📱</span><h3 style="color:#fff;font-size:20px;">WhatsApp Posting</h3><p style="color:rgba(255,255,255,.6);font-size:13px;">Share posts, earn $3.33 each!</p></div>
-            <div style="background:#075e54;border-radius:16px;overflow:hidden;max-width:340px;margin:0 auto;">
-                <div style="background:#075e54;padding:10px 16px;color:#fff;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.1);"><span>💬</span><span style="font-weight:700;">WhatsApp Status</span><span style="margin-left:auto;font-size:12px;opacity:.7;" id="waCount">0/3 shared</span></div>
-                <div id="waChat" style="background:#ece5dd;padding:12px;min-height:140px;max-height:180px;overflow-y:auto;">
-                    <div style="background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0a0a2e;margin-left:auto;">📢 Share these posts to earn $10 total!</div>
+    // ===== SPIN =====
+    function spinPopup() {
+        let ov = document.getElementById('ap'),
+            pc = ov.querySelector('.pc');
+        pc.innerHTML =
+            `<div style="margin-bottom:6px"><span style="font-size:28px">🎰</span><h3 style="color:#fff;font-size:20px">Paid Spinning</h3><p style="color:rgba(255,255,255,.6);font-size:13px">Win up to $50!</p></div>
+            <div style="position:relative;width:220px;height:220px;margin:0 auto 16px"><div id="wh" style="width:100%;height:100%;border-radius:50%;position:relative;transition:transform 4s cubic-bezier(0.17,0.67,0.12,0.99);box-shadow:0 0 0 6px #1fbb7a,0 0 0 12px rgba(31,187,122,.2)">
+            ${['$3','$8','$15','$25','$35','$50'].map((p,i)=>`<div style="position:absolute;width:50%;height:50%;top:0;left:50%;transform-origin:0%100%;transform:rotate(${i*60}deg);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5);padding-left:20px;background:${['#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6','#1abc9c'][i]}">${p}</div>`).join('')}
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;background:#0a0a2e;border-radius:50%;border:4px solid #f5d65a;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;color:#f5d65a;z-index:5">SPIN</div></div></div>
+            <button onclick="spinW()" style="background:linear-gradient(135deg,#f5d65a,#e09d2e);color:#0a0a2e;border:none;padding:12px 32px;border-radius:60px;font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 4px 20px rgba(245,214,90,.3)">🎡 SPIN</button>
+            <div id="sr" style="font-size:24px;font-weight:900;color:#f5d65a;margin-top:8px;min-height:40px">Click SPIN to win!</div>
+            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cl" style="display:inline-block;margin-top:10px">Claim Prize</a>
+            <button class="bcp" onclick="closeA()" style="margin-top:10px;display:block;width:100%">Close</button>`;
+        ov.classList.add('active');
+        window.spinW = function() {
+            let wh = document.getElementById('wh'),
+                sr = document.getElementById('sr');
+            if (!wh || sr.textContent.includes('Won')) return;
+            let pz = ['$3', '$8', '$15', '$25', '$35', '$50'],
+                idx = Math.floor(Math.random() * 6),
+                ang = 360 * (5 + Math.floor(Math.random() * 3)) + (360 - (idx * 60 + 30)) + Math.random() * 20;
+            wh.style.transform = `rotate(${ang}deg)`;
+            sr.textContent = '🎉 You won ' + pz[idx] + '!';
+            setTimeout(() => { sr.textContent += ' 💰 Upgrade to claim!'; }, 500);
+        };
+    }
+
+    // ===== WHATSAPP =====
+    function waPopup() {
+        let ov = document.getElementById('ap'),
+            pc = ov.querySelector('.pc');
+        pc.innerHTML =
+            `<div style="margin-bottom:8px"><span style="font-size:28px">📱</span><h3 style="color:#fff;font-size:20px">WhatsApp Posting</h3><p style="color:rgba(255,255,255,.6);font-size:13px">Share posts, earn $3.33 each!</p></div>
+            <div style="background:#075e54;border-radius:16px;overflow:hidden;max-width:340px;margin:0 auto">
+                <div style="background:#075e54;padding:10px 16px;color:#fff;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.1)"><span>💬</span><span style="font-weight:700">WhatsApp Status</span><span style="margin-left:auto;font-size:12px;opacity:.7" id="waC">0/3 shared</span></div>
+                <div id="waCh" style="background:#ece5dd;padding:12px;min-height:140px;max-height:180px;overflow-y:auto">
+                    <div style="background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0a0a2e;margin-left:auto">📢 Share these posts to earn $10 total!</div>
                 </div>
-                <div style="padding:8px 12px;display:flex;gap:8px;background:#075e54;">
-                    <input id="waInput" value="Sharing sponsored content! 💰" style="flex:1;padding:8px 14px;border-radius:30px;border:none;font-size:13px;outline:none;">
-                    <button onclick="shareWA()" style="background:#25d366;color:#fff;border:none;padding:8px 20px;border-radius:30px;font-weight:700;cursor:pointer;">📤 Share</button>
+                <div style="padding:8px 12px;display:flex;gap:8px;background:#075e54">
+                    <input id="waIn" value="Sharing sponsored content! 💰" style="flex:1;padding:8px 14px;border-radius:30px;border:none;font-size:13px;outline:none">
+                    <button onclick="shareWA()" style="background:#25d366;color:#fff;border:none;padding:8px 20px;border-radius:30px;font-weight:700;cursor:pointer">📤 Share</button>
                 </div>
             </div>
-            <div id="waEarned" style="font-size:18px;font-weight:800;color:#25d366;margin-top:8px;">💰 Earned: $0.00</div>
-            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn" style="display:inline-block;margin-top:10px;">💰 Claim Rewards</a>
-            <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>`;
-            overlay.classList.add('active');
-            let shared = 0,
-                earned = 0;
-            const posts = ['🔥 Check out this amazing offer!', '📱 New phone deals! Get 50% off!',
-                '💰 Earn $100 daily working from home!'
-            ];
-            window.shareWA = function() {
-                if (shared >= posts.length) return;
-                const chat = document.getElementById('waChat'),
-                    earnDisplay = document.getElementById('waEarned'),
-                    count = document.getElementById('waCount');
-                const msg = posts[shared];
-                const shareMsg = encodeURIComponent(msg + '\n\n👉 Join Myqashapp! https://myqashapp.com');
-                window.open(`https://wa.me/?text=${shareMsg}`, '_blank');
-                chat.innerHTML +=
-                    `<div style="background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0a0a2e;margin-left:auto;">${msg}<br><div style="background:#f0f0f0;padding:6px 10px;border-radius:8px;margin-top:4px;font-size:11px;border-left:3px solid #25d366;">✅ Shared via WhatsApp</div></div>`;
-                shared++;
-                earned += 3.33;
-                earnDisplay.textContent = '💰 Earned: $' + earned.toFixed(2);
-                count.textContent = shared + '/3 shared';
-                if (shared >= 3) {
-                    chat.innerHTML +=
-                        `<div style="background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0a0a2e;">🎉 All posts shared! You earned $10! ⭐</div>`;
-                    document.querySelector('#waChat + div button').disabled = true;
-                }
-                chat.scrollTop = chat.scrollHeight;
-            };
-        }
-
-        // ===== AFFILIATE =====
-        const AFF_DATA = { uganda: { l1: '10,300', l2: '5,000', l3: '2,000', currency: 'UGX', label: 'Uganda',
-                flag: '🇺🇬' }, kenya: { l1: '300', l2: '150', l3: '50', currency: 'KSh', label: 'Kenya',
-                flag: '🇰🇪' }, nigeria: { l1: '5,000', l2: '2,000', l3: '1,000', currency: '₦', label: 'Nigeria',
-                flag: '🇳🇬' }, ghana: { l1: '50', l2: '30', l3: '20', currency: 'GH₵', label: 'Ghana',
-                flag: '🇬🇭' }, usd: { l1: '3', l2: '2', l3: '1', currency: 'USD', label: 'USD', flag: '🇺🇸' } };
-        let affCurrent = 'uganda';
-
-        function updateAffiliate(c) {
-            const d = AFF_DATA[c];
-            if (!d) return;
-            document.getElementById('affL1').textContent = d.l1 + ' ' + d.currency;
-            document.getElementById('affL2').textContent = d.l2 + ' ' + d.currency;
-            document.getElementById('affL3').textContent = d.l3 + ' ' + d.currency;
-            document.getElementById('affiliateHint').innerHTML =
-                `${d.flag} <span style="color:rgba(255,255,255,.5);font-weight:700;">${d.label}</span> · L1: ${d.l1} | L2: ${d.l2} | L3: ${d.l3} ${d.currency}`;
-            document.querySelectorAll('#affiliateCountrySelector .bonus-country-btn').forEach(b => b.classList.toggle(
-                'active', b.dataset.country === c));
-            affCurrent = c;
-        }
-
-        function openAffiliateBonus() { document.getElementById('affiliateBonusOverlay').classList.add('active');
-            document.body.style.overflow = 'hidden'; }
-
-        function closeAffiliateBonus() { document.getElementById('affiliateBonusOverlay').classList.remove('active');
-            document.body.style.overflow = ''; }
-        document.getElementById('affiliateBonusOverlay').addEventListener('click', function(e) { if (e.target === this)
-                closeAffiliateBonus(); });
-        updateAffiliate('uganda');
-
-        // ===== WITHDRAWAL POPUPS =====
-        (function() {
-            const data = [{ flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', currency: 'KSh' },
-                { flag: '🇬🇭', name: 'Maureen A.', amount: '3,870', method: 'MoMo', currency: 'GH₵' },
-                { flag: '🇺🇬', name: 'Sarah N.', amount: '2,400,000', method: 'Mobile Money', currency: 'UGX' },
-                { flag: '🇳🇬', name: 'Chidi O.', amount: '70,950', method: 'MoMo', currency: '₦' },
-                { flag: '🇿🇦', name: 'Lindiwe M.', amount: '1,020', method: 'Bank Transfer', currency: 'R' },
-                { flag: '🇰🇪', name: 'Omar H.', amount: '4,193', method: 'M-Pesa', currency: 'KSh' },
-                { flag: '🇺🇬', name: 'Robert T.', amount: '500,000', method: 'Mobile Money', currency: 'UGX' },
-                { flag: '🇳🇬', name: 'Amara E.', amount: '32,500', method: 'MoMo', currency: '₦' },
-                { flag: '🇺🇬', name: 'Moses O.', amount: '3,800,000', method: 'Mobile Money', currency: 'UGX' }
-            ];
-            const imgs = ['https://randomuser.me/api/portraits/men/1.jpg', 'https://randomuser.me/api/portraits/women/1.jpg',
-                'https://randomuser.me/api/portraits/men/2.jpg', 'https://randomuser.me/api/portraits/women/2.jpg'
-            ];
-            let used = [];
-
-            function show() {
-                const avail = data.map((_, i) => i).filter(i => !used.includes(i));
-                if (avail.length === 0) used = [];
-                const idx = avail[Math.floor(Math.random() * (avail.length || 1))];
-                used.push(idx);
-                const d = data[idx];
-                document.getElementById('popupUserImage').src = imgs[Math.floor(Math.random() * imgs.length)];
-                document.getElementById('popupUserName').textContent = d.flag + ' ' + d.name;
-                document.getElementById('popupMethod').textContent = 'via ' + d.method;
-                document.getElementById('popupAmount').textContent = d.currency + ' ' + d.amount;
-                document.getElementById('popupCard').style.display = 'flex';
-                document.getElementById('popupCard').style.animation = 'none';
-                void document.getElementById('popupCard').offsetHeight;
-                document.getElementById('popupCard').style.animation = 'slideUp .4s cubic-bezier(.16,1,.3,1) forwards';
+            <div id="waE" style="font-size:18px;font-weight:800;color:#25d366;margin-top:8px">💰 Earned: $0.00</div>
+            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cl" style="display:inline-block;margin-top:10px">💰 Claim Rewards</a>
+            <button class="bcp" onclick="closeA()" style="margin-top:10px;display:block;width:100%">Close</button>`;
+        ov.classList.add('active');
+        let sh = 0,
+            er = 0,
+            posts = ['🔥 Check out this amazing offer!', '📱 New phone deals! Get 50% off!',
+            '💰 Earn $100 daily working from home!'];
+        window.shareWA = function() {
+            if (sh >= posts.length) return;
+            let ch = document.getElementById('waCh'),
+                eD = document.getElementById('waE'),
+                cnt = document.getElementById('waC');
+            let msg = posts[sh];
+            let shareMsg = encodeURIComponent(msg + '\n\n👉 Join Myqashapp! https://myqashapp.com');
+            window.open(`https://wa.me/?text=${shareMsg}`, '_blank');
+            ch.innerHTML +=
+                `<div style="background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0a0a2e;margin-left:auto">${msg}<br><div style="background:#f0f0f0;padding:6px 10px;border-radius:8px;margin-top:4px;font-size:11px;border-left:3px solid #25d366">✅ Shared via WhatsApp</div></div>`;
+            sh++;
+            er += 3.33;
+            eD.textContent = '💰 Earned: $' + er.toFixed(2);
+            cnt.textContent = sh + '/3 shared';
+            if (sh >= 3) {
+                ch.innerHTML +=
+                    `<div style="background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0a0a2e">🎉 All posts shared! You earned $10! ⭐</div>`;
+                document.querySelector('#waCh + div button').disabled = true;
             }
-            setTimeout(show, 600);
-            setInterval(show, 2000);
-        })();
+            ch.scrollTop = ch.scrollHeight;
+        };
+    }
 
-        // Close popups on Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') { closeAffiliateBonus();
-                closeVideoPlayer();
-                closeDemoAction();
-                closeChatPage(); }
-        });
+    // ===== AFFILIATE =====
+    const afD = { uganda: { l1: '10,300', l2: '5,000', l3: '2,000', currency: 'UGX', label: 'Uganda', flag: '🇺🇬' },
+        kenya: { l1: '300', l2: '150', l3: '50', currency: 'KSh', label: 'Kenya', flag: '🇰🇪' },
+        nigeria: { l1: '5,000', l2: '2,000', l3: '1,000', currency: '₦', label: 'Nigeria', flag: '🇳🇬' },
+        ghana: { l1: '50', l2: '30', l3: '20', currency: 'GHS', label: 'Ghana', flag: '🇬🇭' },
+        usd: { l1: '3', l2: '2', l3: '1', currency: 'USD', label: 'USD', flag: '🇺🇸' } };
+    let afCur = 'uganda';
 
-        console.log('✅ Dark blue gradient applied. Code shortened.');
-    </script>
+    function updAff(c) {
+        let d = afD[c];
+        if (!d) return;
+        document.getElementById('a1').textContent = d.l1 + ' ' + d.currency;
+        document.getElementById('a2').textContent = d.l2 + ' ' + d.currency;
+        document.getElementById('a3').textContent = d.l3 + ' ' + d.currency;
+        document.getElementById('ah').innerHTML =
+            `${d.flag} <span style="color:rgba(255,255,255,.5);font-weight:700">${d.label}</span> · L1: ${d.l1} | L2: ${d.l2} | L3: ${d.l3} ${d.currency}`;
+        document.querySelectorAll('#afc .ab').forEach(b => b.style.background = b.dataset.c === c ? 'rgba(31,187,122,.3)' :
+            'rgba(255,255,255,.05)');
+        afCur = c;
+    }
+
+    function affPopup() { document.getElementById('affP').classList.add('active');
+        document.body.style.overflow = 'hidden'; }
+
+    function closeAff() { document.getElementById('affP').classList.remove('active');
+        document.body.style.overflow = ''; }
+    document.getElementById('affP').addEventListener('click', function(e) { if (e.target === this) closeAff(); });
+    updAff('uganda');
+
+    // ===== WITHDRAWAL =====
+    (function() {
+        let d = [{ flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', currency: 'KSh' },
+            { flag: '🇬🇭', name: 'Maureen A.', amount: '3,870', method: 'MoMo', currency: 'GH₵' },
+            { flag: '🇺🇬', name: 'Sarah N.', amount: '2,400,000', method: 'Mobile Money', currency: 'UGX' },
+            { flag: '🇳🇬', name: 'Chidi O.', amount: '70,950', method: 'MoMo', currency: '₦' },
+            { flag: '🇿🇦', name: 'Lindiwe M.', amount: '1,020', method: 'Bank Transfer', currency: 'R' },
+            { flag: '🇰🇪', name: 'Omar H.', amount: '4,193', method: 'M-Pesa', currency: 'KSh' },
+            { flag: '🇺🇬', name: 'Robert T.', amount: '500,000', method: 'Mobile Money', currency: 'UGX' },
+            { flag: '🇳🇬', name: 'Amara E.', amount: '32,500', method: 'MoMo', currency: '₦' },
+            { flag: '🇺🇬', name: 'Moses O.', amount: '3,800,000', method: 'Mobile Money', currency: 'UGX' }
+        ];
+        let imgs = ['https://randomuser.me/api/portraits/men/1.jpg', 'https://randomuser.me/api/portraits/women/1.jpg',
+            'https://randomuser.me/api/portraits/men/2.jpg', 'https://randomuser.me/api/portraits/women/2.jpg'
+        ];
+        let used = [];
+
+        function show() {
+            let avail = d.map((_, i) => i).filter(i => !used.includes(i));
+            if (avail.length === 0) used = [];
+            let idx = avail[Math.floor(Math.random() * (avail.length || 1))];
+            used.push(idx);
+            let it = d[idx];
+            document.getElementById('pi').src = imgs[Math.floor(Math.random() * imgs.length)];
+            document.getElementById('pn').textContent = it.flag + ' ' + it.name;
+            document.getElementById('pm').textContent = 'via ' + it.method;
+            document.getElementById('pa').textContent = it.currency + ' ' + it.amount;
+            let pc = document.getElementById('pc2');
+            pc.style.display = 'flex';
+            pc.style.animation = 'none';
+            void pc.offsetHeight;
+            pc.style.animation = 'u .4s cubic-bezier(.16,1,.3,1) forwards';
+        }
+        setTimeout(show, 600);
+        setInterval(show, 2000);
+    })();
+
+    // ===== ESCAPE =====
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') { closeAff();
+            closeV();
+            closeA();
+            closeC(); }
+    });
+</script>
 </body>
 </html>
