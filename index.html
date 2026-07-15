@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>AfricaJob · Premium earnings</title>
+    <title>Myqashapp · Premium earnings</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900;14..32,1000&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
     <style>
         :root { --primary: #1fbb7a; --primary-dark: #0f7b5a; --primary-glow: rgba(31,187,122,.3); --gold-light: #f5d65a; --shadow-sm: 0 2px 8px rgba(0,0,0,.02); --shadow-md: 0 8px 32px rgba(0,0,0,.04); --shadow-lg: 0 16px 48px rgba(0,0,0,.06); --radius-sm: 12px; --radius-md: 16px; --radius-lg: 20px; --radius-xl: 32px; --transition: all .4s cubic-bezier(.16,1,.3,1); --font-title: 'Playfair Display', serif; --font-body: 'Inter', system-ui, -apple-system, sans-serif }
         * { margin:0; padding:0; box-sizing:border-box }
-        body { background:#0b1a2f; font-family:var(--font-body); color:#fff; min-height:100vh; display:flex; flex-direction:column; align-items:center; overflow-x:hidden; font-size:1.0625rem; line-height:1.6 }
+        body { background:#1a0b2f; font-family:var(--font-body); color:#fff; min-height:100vh; display:flex; flex-direction:column; align-items:center; overflow-x:hidden; font-size:1.0625rem; line-height:1.6 }
         .scroll-progress { position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--primary),var(--gold-light)); z-index:10001; width:0%; transition:width .1s; box-shadow:0 0 20px var(--primary-glow) }
-        .page-wrap { max-width:600px; width:100%; background:#0b1a2f; border-radius:0 0 var(--radius-lg) var(--radius-lg); padding:80px 14px 24px; margin:0 auto; box-shadow:0 0 15px rgba(31,187,122,.15); border:1px solid rgba(31,187,122,.15); position:relative }
+        .page-wrap { max-width:600px; width:100%; background:#1a0b2f; border-radius:0 0 var(--radius-lg) var(--radius-lg); padding:80px 14px 24px; margin:0 auto; box-shadow:0 0 15px rgba(31,187,122,.15); border:1px solid rgba(31,187,122,.15); position:relative }
         .page-wrap::before { content:''; position:absolute; top:-1px; left:20%; right:20%; height:3px; background:linear-gradient(90deg,transparent,var(--primary),var(--gold-light),var(--primary),transparent); background-size:300% 100%; animation:shimmerBorder 4s ease-in-out infinite; border-radius:0 0 50% 50% }
         @keyframes shimmerBorder { 0%,100% { background-position:0% 50% } 50% { background-position:100% 50% } }
-        .header-row { position:fixed; top:0; left:0; right:0; max-width:600px; margin:0 auto; background:rgba(11,26,47,.95); backdrop-filter:blur(20px); z-index:999; display:flex; align-items:center; justify-content:space-between; gap:8px 12px; padding:10px 14px; border-bottom:1px solid rgba(255,255,255,.06); width:100% }
+        .header-row { position:fixed; top:0; left:0; right:0; max-width:600px; margin:0 auto; background:rgba(26,11,47,.95); backdrop-filter:blur(20px); z-index:999; display:flex; align-items:center; justify-content:space-between; gap:8px 12px; padding:10px 14px; border-bottom:1px solid rgba(255,255,255,.06); width:100% }
         .brand { display:flex; align-items:center; gap:6px; flex-shrink:0 }
         .brand-icon { font-size:26px; line-height:1; filter:drop-shadow(0 0 10px var(--primary-glow)); animation:pulseGlow 3s ease-in-out infinite }
         @keyframes pulseGlow { 0%,100% { filter:drop-shadow(0 0 10px var(--primary-glow)) } 50% { filter:drop-shadow(0 0 25px var(--primary-glow)) } }
@@ -37,7 +37,7 @@
         .trust-badge .green-highlight { color:var(--primary); font-weight:900 }
         .section { padding:30px 20px 32px; margin-bottom:20px; border-radius:12px; transition:var(--transition); color:#fff; border:1px solid rgba(255,255,255,.08); animation:fadeInUp .6s ease forwards; opacity:0 }
         @keyframes fadeInUp { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
-        .hero-section { background:linear-gradient(145deg,#0d1f38,#09152a); border:2px solid rgba(31,187,122,.2); text-align:center; position:relative; overflow:hidden; padding:40px 20px 36px }
+        .hero-section { background:linear-gradient(145deg,#2d1547,#1a0b2f); border:2px solid rgba(31,187,122,.2); text-align:center; position:relative; overflow:hidden; padding:40px 20px 36px }
         .hero-section::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle at 30% 50%,rgba(31,187,122,.06),transparent 60%); animation:heroGlow 8s ease-in-out infinite }
         @keyframes heroGlow { 0%,100% { transform:translate(0,0) } 50% { transform:translate(10%,10%) } }
         .hero-section>* { position:relative; z-index:1 }
@@ -52,7 +52,7 @@
         .btn-primary:hover::after { transform:translateX(100%) }
         .btn-primary:hover { transform:translateY(-3px) scale(1.03); box-shadow:0 8px 32px var(--primary-glow) }
         .btn-primary.gold { background:linear-gradient(135deg,var(--gold-light),#e09d2e); box-shadow:0 4px 20px rgba(201,168,67,.3) }
-        .btn-primary.navy { background:linear-gradient(135deg,#2a3f5e,#0b1a2f); box-shadow:0 4px 20px rgba(11,26,47,.3); border-color:rgba(255,255,255,.1) }
+        .btn-primary.navy { background:linear-gradient(135deg,#2a3f5e,#1a0b2f); box-shadow:0 4px 20px rgba(26,11,47,.3); border-color:rgba(255,255,255,.1) }
         .section-header { display:flex; align-items:center; gap:12px; margin-bottom:16px }
         .section-header .icon { width:40px; height:40px; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:18px; color:#fff; flex-shrink:0; box-shadow:0 4px 12px var(--primary-glow) }
         .section-header h2 { font-size:20px; font-weight:800; color:#fff; letter-spacing:-.3px }
@@ -60,15 +60,15 @@
         .section-header .badge.live { background:#dc2626; color:#fff; border-color:#dc2626; animation:pulseBadge 2s ease-in-out infinite }
         @keyframes pulseBadge { 0%,100% { opacity:1 } 50% { opacity:.6 } }
         .section-subtitle { font-size:14px; color:rgba(255,255,255,.7); margin-top:-4px; margin-bottom:16px; line-height:1.6 }
-        .section-stats { background:linear-gradient(145deg,#10263d,#0a1a2e); border:1px solid rgba(31,187,122,.12) }
-        .section-video { background:linear-gradient(145deg,#1a1a2e,#0f0f1f); border:1px solid rgba(255,0,0,.12) }
-        .section-live { background:linear-gradient(145deg,#0d1f30,#091a28); border:1px solid rgba(59,130,246,.15) }
-        .section-ways { background:linear-gradient(145deg,#0f2538,#0a1a2a); border:1px solid rgba(31,187,122,.08) }
-        .section-withdraw { background:linear-gradient(145deg,#1a1a2a,#0f0f1f); border:1px solid rgba(201,168,67,.12) }
-        .section-how { background:linear-gradient(145deg,#10253a,#0a1a2e); border:1px solid rgba(139,92,246,.12) }
-        .section-stories { background:linear-gradient(145deg,#1a102a,#0f0a1f); border:1px solid rgba(236,72,153,.1) }
-        .section-lifetime { background:linear-gradient(145deg,#0d1f2a,#091a22); border:1px solid rgba(31,187,122,.12); text-align:center }
-        .section-faq { background:linear-gradient(145deg,#0a1f2a,#08151f); border:1px solid rgba(20,184,166,.1) }
+        .section-stats { background:linear-gradient(145deg,#2a1547,#1a0b2f); border:1px solid rgba(31,187,122,.12) }
+        .section-video { background:linear-gradient(145deg,#2a1a3e,#1a0a2f); border:1px solid rgba(255,0,0,.12) }
+        .section-live { background:linear-gradient(145deg,#1d1530,#1a0a28); border:1px solid rgba(59,130,246,.15) }
+        .section-ways { background:linear-gradient(145deg,#2a1538,#1a0b2a); border:1px solid rgba(31,187,122,.08) }
+        .section-withdraw { background:linear-gradient(145deg,#2a1a2a,#1a0a1f); border:1px solid rgba(201,168,67,.12) }
+        .section-how { background:linear-gradient(145deg,#2a153a,#1a0b2e); border:1px solid rgba(139,92,246,.12) }
+        .section-stories { background:linear-gradient(145deg,#2a102a,#1a0a1f); border:1px solid rgba(236,72,153,.1) }
+        .section-lifetime { background:linear-gradient(145deg,#1d1f2a,#0a0a1a); border:1px solid rgba(31,187,122,.12); text-align:center }
+        .section-faq { background:linear-gradient(145deg,#1a1f2a,#0a0a1a); border:1px solid rgba(20,184,166,.1) }
         .earnings-scroll { background:rgba(255,255,255,.06); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.06); border-radius:60px; padding:8px 12px; margin:8px 0 0; overflow:hidden; white-space:nowrap }
         .earnings-scroll .scroll-label { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:4px 14px; border-radius:40px; font-size:9px; font-weight:800; display:inline-block; margin-right:8px; text-transform:uppercase; letter-spacing:.5px }
         .earnings-scroll .scroll-content { display:inline-block; font-weight:700; color:#fff; font-size:12px; animation:scrollText 70s linear infinite; white-space:nowrap }
@@ -152,7 +152,7 @@
         details[open] summary .arrow { transform:rotate(180deg) }
         details[open] summary { border-bottom-left-radius:0; border-bottom-right-radius:0; border-bottom-color:transparent }
         details .faq-content { padding:10px 18px 18px; background:rgba(255,255,255,.02); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.04); border-top:none; border-radius:0 0 16px 16px; color:rgba(255,255,255,.7); line-height:1.7; font-size:14px }
-        .footer-section { margin-top:24px; padding-top:24px; border-top:2px solid rgba(255,255,255,.04); background:#060f1a; margin-left:-14px; margin-right:-14px; padding-left:14px; padding-right:14px; padding-bottom:20px; border-radius:0; position:relative; overflow:hidden }
+        .footer-section { margin-top:24px; padding-top:24px; border-top:2px solid rgba(255,255,255,.04); background:#120a1a; margin-left:-14px; margin-right:-14px; padding-left:14px; padding-right:14px; padding-bottom:20px; border-radius:0; position:relative; overflow:hidden }
         .footer-section::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--primary),var(--gold-light),var(--primary),transparent); background-size:300% 100%; animation:shimmerBorder 4s ease-in-out infinite }
         .footer-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px 12px; margin-bottom:16px; position:relative; z-index:1 }
         .footer-grid .col h4 { font-size:14px; font-weight:800; color:#fff; margin-bottom:8px; letter-spacing:.5px; text-transform:uppercase }
@@ -170,23 +170,23 @@
         .back-to-top { position:fixed; bottom:100px; left:24px; z-index:9997; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; width:44px; height:44px; border-radius:50%; border:none; cursor:pointer; box-shadow:0 4px 20px var(--primary-glow); transition:var(--transition); display:none; align-items:center; justify-content:center; font-size:20px }
         .back-to-top:hover { transform:translateY(-4px) scale(1.05); box-shadow:0 8px 32px var(--primary-glow) }
         .back-to-top.visible { display:flex }
-        .demo-page { position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(145deg,#e6f0fa,#c9d8e8); z-index:20000; display:none; flex-direction:column; overflow-y:auto; padding:24px 20px 40px }
+        .demo-page { position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(145deg,#e6e0f0,#c9b8e8); z-index:20000; display:none; flex-direction:column; overflow-y:auto; padding:24px 20px 40px }
         .demo-page.active { display:flex }
         .demo-page .demo-header { display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:rgba(255,255,255,.75); backdrop-filter:blur(8px); border-radius:16px; margin-bottom:24px; flex-shrink:0; box-shadow:0 4px 20px rgba(0,0,0,.04); border:1px solid rgba(255,255,255,.3) }
-        .demo-page .demo-header .back-btn { background:rgba(0,0,0,.06); border:1px solid rgba(0,0,0,.06); padding:10px 24px; border-radius:12px; font-weight:700; font-size:14px; color:#0b1a2f; cursor:pointer; transition:var(--transition) }
+        .demo-page .demo-header .back-btn { background:rgba(0,0,0,.06); border:1px solid rgba(0,0,0,.06); padding:10px 24px; border-radius:12px; font-weight:700; font-size:14px; color:#1a0b2f; cursor:pointer; transition:var(--transition) }
         .demo-page .demo-header .back-btn:hover { background:rgba(0,0,0,.1); transform:scale(1.02) }
-        .demo-page .demo-header .page-title { font-family:var(--font-title); font-weight:900; font-size:22px; color:#0b1a2f; letter-spacing:-.3px }
-        .demo-card { background:rgba(255,255,255,.96); border-radius:20px; padding:28px 24px 32px; border:1px solid rgba(0,0,0,.06); max-width:540px; width:100%; margin:0 auto; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); box-shadow:0 20px 60px rgba(0,0,0,.12); color:#0b1a2f }
-        .demo-card .breadcrumb { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:rgba(11,26,47,.6); margin-bottom:18px; padding-left:4px }
-        .demo-card .breadcrumb span:not(:last-child)::after { content:"›"; margin-left:8px; color:rgba(11,26,47,.3) }
-        .demo-card .welcome-row .greeting { font-size:19px; font-weight:700; color:#0b1a2f; letter-spacing:-.3px }
+        .demo-page .demo-header .page-title { font-family:var(--font-title); font-weight:900; font-size:22px; color:#1a0b2f; letter-spacing:-.3px }
+        .demo-card { background:rgba(255,255,255,.96); border-radius:20px; padding:28px 24px 32px; border:1px solid rgba(0,0,0,.06); max-width:540px; width:100%; margin:0 auto; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); box-shadow:0 20px 60px rgba(0,0,0,.12); color:#1a0b2f }
+        .demo-card .breadcrumb { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; color:rgba(26,11,47,.6); margin-bottom:18px; padding-left:4px }
+        .demo-card .breadcrumb span:not(:last-child)::after { content:"›"; margin-left:8px; color:rgba(26,11,47,.3) }
+        .demo-card .welcome-row .greeting { font-size:19px; font-weight:700; color:#1a0b2f; letter-spacing:-.3px }
         .demo-card .welcome-row .greeting span { background:linear-gradient(135deg,var(--primary),var(--gold-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:800 }
-        .demo-card .premium-badge { background:rgba(201,168,67,.08); padding:6px 18px 6px 14px; border-radius:60px; font-size:12px; font-weight:700; color:#0b1a2f; border:1px solid rgba(201,168,67,.08); display:inline-flex; align-items:center; gap:6px; letter-spacing:.3px; text-transform:uppercase }
+        .demo-card .premium-badge { background:rgba(201,168,67,.08); padding:6px 18px 6px 14px; border-radius:60px; font-size:12px; font-weight:700; color:#1a0b2f; border:1px solid rgba(201,168,67,.08); display:inline-flex; align-items:center; gap:6px; letter-spacing:.3px; text-transform:uppercase }
         .demo-card .premium-badge i { font-style:normal; background:var(--gold-light); padding:2px 12px; border-radius:40px; color:var(--navy); font-size:11px; font-weight:800 }
-        .demo-card .welcome-sub { margin-top:14px; font-size:14px; color:rgba(11,26,47,.8); line-height:1.6; background:rgba(11,26,47,.02); padding:12px 18px; border-radius:80px; border:1px solid rgba(11,26,47,.04); display:flex; align-items:center; gap:10px; flex-wrap:wrap }
+        .demo-card .welcome-sub { margin-top:14px; font-size:14px; color:rgba(26,11,47,.8); line-height:1.6; background:rgba(26,11,47,.02); padding:12px 18px; border-radius:80px; border:1px solid rgba(26,11,47,.04); display:flex; align-items:center; gap:10px; flex-wrap:wrap }
         .demo-card .welcome-sub .badge-new { background:var(--gold-light); font-weight:700; font-size:11px; padding:4px 16px; border-radius:40px; color:var(--navy); letter-spacing:.3px }
-        .demo-card .graph-section .graph-title { font-weight:700; font-size:15px; color:#0b1a2f; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center }
-        .demo-card .graph-section .graph-title span { font-size:12px; color:rgba(11,26,47,.5); font-weight:500 }
+        .demo-card .graph-section .graph-title { font-weight:700; font-size:15px; color:#1a0b2f; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center }
+        .demo-card .graph-section .graph-title span { font-size:12px; color:rgba(26,11,47,.5); font-weight:500 }
         .demo-card .graph-bars { display:flex; align-items:flex-end; justify-content:space-between; height:90px; gap:8px; padding-top:6px }
         .demo-card .graph-bars .bar { flex:1; border-radius:4px 4px 0 0; min-height:10px; transition:var(--transition); position:relative; background:linear-gradient(180deg,var(--primary),var(--primary-dark)) }
         .demo-card .graph-bars .bar:nth-child(2) { background:linear-gradient(180deg,#3b82f6,#2563eb); height:45% }
@@ -196,79 +196,79 @@
         .demo-card .graph-bars .bar:nth-child(6) { background:linear-gradient(180deg,#14b8a6,#0d9488); height:85% }
         .demo-card .graph-bars .bar:nth-child(7) { background:linear-gradient(180deg,#f59e0b,#d97706); height:40% }
         .demo-card .graph-bars .bar:hover { transform:scaleY(1.05); opacity:.9 }
-        .demo-card .graph-labels { display:flex; justify-content:space-between; margin-top:8px; font-size:10px; color:rgba(11,26,47,.4); font-weight:600; text-transform:uppercase }
+        .demo-card .graph-labels { display:flex; justify-content:space-between; margin-top:8px; font-size:10px; color:rgba(26,11,47,.4); font-weight:600; text-transform:uppercase }
         .demo-card .graph-labels span { flex:1; text-align:center }
         .demo-card .stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:8px 0 18px }
-        .demo-card .stat-card .stat-label { font-size:11px; font-weight:700; color:rgba(11,26,47,.6); letter-spacing:.5px; text-transform:uppercase; opacity:.7 }
-        .demo-card .stat-card .stat-value { font-size:24px; font-weight:800; color:#0b1a2f; margin-top:6px; letter-spacing:-.3px }
-        .demo-card .stat-card .stat-value small { font-size:13px; font-weight:500; color:rgba(11,26,47,.5); margin-left:4px }
-        .demo-card .stat-card .stat-sub { font-size:11px; color:rgba(11,26,47,.5); font-weight:500; margin-top:6px; opacity:.6 }
+        .demo-card .stat-card .stat-label { font-size:11px; font-weight:700; color:rgba(26,11,47,.6); letter-spacing:.5px; text-transform:uppercase; opacity:.7 }
+        .demo-card .stat-card .stat-value { font-size:24px; font-weight:800; color:#1a0b2f; margin-top:6px; letter-spacing:-.3px }
+        .demo-card .stat-card .stat-value small { font-size:13px; font-weight:500; color:rgba(26,11,47,.5); margin-left:4px }
+        .demo-card .stat-card .stat-sub { font-size:11px; color:rgba(26,11,47,.5); font-weight:500; margin-top:6px; opacity:.6 }
         .demo-card .stat-card.expense .stat-value { color:#e74c3c }
         .demo-card .stat-card.earnings .stat-value { color:#2ecc71 }
         .demo-card .stat-card.balance .stat-value { color:#3498db }
         .demo-card .stat-card.withdrawn .stat-value { color:var(--gold) }
-        .demo-card .balance-extra { display:flex; justify-content:space-between; align-items:center; margin-top:8px; font-size:11px; color:rgba(11,26,47,.5); border-top:1px solid rgba(11,26,47,.02); padding-top:10px }
-        .demo-card .balance-extra .all-time { font-weight:700; color:#0b1a2f; background:rgba(11,26,47,.04); padding:4px 16px; border-radius:40px; font-size:10px }
-        .demo-card .balance-extra .show-link { font-weight:700; color:rgba(11,26,47,.7); background:rgba(11,26,47,.04); padding:4px 16px; border-radius:40px; border:1px solid rgba(11,26,47,.04); font-size:10px; cursor:default }
-        .demo-card .withdrawn-chip { background:rgba(201,168,67,.08); border-radius:60px; padding:4px 16px; font-weight:800; font-size:20px; color:#0b1a2f; display:inline-block; border:1px solid rgba(201,168,67,.06); margin-top:4px }
-        .demo-card .withdrawn-chip small { font-weight:500; font-size:13px; color:rgba(11,26,47,.5); margin-left:4px }
-        .demo-card .divider-light { height:1px; background:linear-gradient(90deg,transparent,rgba(11,26,47,.06),transparent); margin:14px 0 18px }
+        .demo-card .balance-extra { display:flex; justify-content:space-between; align-items:center; margin-top:8px; font-size:11px; color:rgba(26,11,47,.5); border-top:1px solid rgba(26,11,47,.02); padding-top:10px }
+        .demo-card .balance-extra .all-time { font-weight:700; color:#1a0b2f; background:rgba(26,11,47,.04); padding:4px 16px; border-radius:40px; font-size:10px }
+        .demo-card .balance-extra .show-link { font-weight:700; color:rgba(26,11,47,.7); background:rgba(26,11,47,.04); padding:4px 16px; border-radius:40px; border:1px solid rgba(26,11,47,.04); font-size:10px; cursor:default }
+        .demo-card .withdrawn-chip { background:rgba(201,168,67,.08); border-radius:60px; padding:4px 16px; font-weight:800; font-size:20px; color:#1a0b2f; display:inline-block; border:1px solid rgba(201,168,67,.06); margin-top:4px }
+        .demo-card .withdrawn-chip small { font-weight:500; font-size:13px; color:rgba(26,11,47,.5); margin-left:4px }
+        .demo-card .divider-light { height:1px; background:linear-gradient(90deg,transparent,rgba(26,11,47,.06),transparent); margin:14px 0 18px }
         .demo-card .earn-grid { display:flex; flex-direction:column; gap:12px; margin:16px 0 18px }
         .demo-card .earn-card { border-radius:16px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; box-shadow:var(--shadow-sm); transition:var(--transition); cursor:pointer; background:#f8fafc; border-color:#e2e8f0 }
         .demo-card .earn-card:hover { transform:translateY(-3px) scale(1.01); box-shadow:var(--shadow-md) }
-        .demo-card .earn-left .label { font-weight:600; font-size:15px; color:#0b1a2f; letter-spacing:-.2px }
+        .demo-card .earn-left .label { font-weight:600; font-size:15px; color:#1a0b2f; letter-spacing:-.2px }
         .demo-card .earn-left .amount { font-weight:800; font-size:18px; color:var(--primary); margin-top:2px }
-        .demo-card .earn-left .usd { font-size:13px; color:rgba(11,26,47,.5); font-weight:500; margin-left:4px }
-        .demo-card .earn-right { background:rgba(201,168,67,.06); padding:8px 22px; border-radius:60px; font-size:14px; font-weight:700; color:rgba(11,26,47,.8); border:1px solid rgba(201,168,67,.04) }
+        .demo-card .earn-left .usd { font-size:13px; color:rgba(26,11,47,.5); font-weight:500; margin-left:4px }
+        .demo-card .earn-right { background:rgba(201,168,67,.06); padding:8px 22px; border-radius:60px; font-size:14px; font-weight:700; color:rgba(26,11,47,.8); border:1px solid rgba(201,168,67,.04) }
         .demo-card .activate-btn-wrapper { margin:8px 0 18px; text-align:center }
         .demo-card .activate-btn { display:inline-block; background:linear-gradient(135deg,var(--gold-light),#f0c94a); border:none; color:var(--text-primary); font-weight:800; font-size:17px; padding:16px 32px; border-radius:80px; width:100%; text-align:center; box-shadow:0 8px 0 #c9a843,0 10px 30px rgba(245,214,90,.15); cursor:pointer; letter-spacing:.5px; transition:.1s; border:1px solid rgba(255,255,255,.2); text-decoration:none }
         .demo-card .activate-btn:active { transform:scale(.97) }
         .demo-card .activate-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 8px 0 #b89a3a,0 12px 32px rgba(245,214,90,.2) }
         .demo-card .nav-chips { display:flex; gap:12px; flex-wrap:wrap; margin:8px 0 18px }
-        .demo-card .nav-chip { padding:10px 22px; border-radius:12px; font-size:14px; font-weight:600; color:#0b1a2f; border:1px solid rgba(11,26,47,.04); cursor:pointer; transition:var(--transition); background:#f1f5f9; border-color:#dce4ec }
+        .demo-card .nav-chip { padding:10px 22px; border-radius:12px; font-size:14px; font-weight:600; color:#1a0b2f; border:1px solid rgba(26,11,47,.04); cursor:pointer; transition:var(--transition); background:#f1f5f9; border-color:#dce4ec }
         .demo-card .nav-chip:hover { transform:translateY(-3px); box-shadow:var(--shadow-sm) }
         .country-dashboards { display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 16px }
-        .country-dashboards .country-btn { padding:8px 16px; border-radius:12px; font-size:13px; font-weight:700; color:rgba(11,26,47,.7); cursor:pointer; transition:var(--transition); font-family:inherit; background:#f1f5f9; border-color:#dce4ec }
+        .country-dashboards .country-btn { padding:8px 16px; border-radius:12px; font-size:13px; font-weight:700; color:rgba(26,11,47,.7); cursor:pointer; transition:var(--transition); font-family:inherit; background:#f1f5f9; border-color:#dce4ec }
         .country-dashboards .country-btn:hover { transform:translateY(-2px) }
         .country-dashboards .country-btn.active { background:linear-gradient(135deg,var(--primary),var(--primary-dark)) !important; color:#fff !important; border-color:var(--primary) !important }
         .demo-card .feature-section { border-radius:16px; padding:16px 18px; margin:14px 0 18px; display:none; background:#f8fafc; border-color:#e2e8f0 }
         .demo-card .feature-section.active { display:block }
         .demo-card .feature-section .feature-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px }
-        .demo-card .feature-section .feature-header h4 { font-weight:800; font-size:16px; color:#0b1a2f }
-        .demo-card .feature-section .feature-header span { font-size:12px; color:rgba(11,26,47,.5); font-weight:500 }
-        .music-playlist .track { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(11,26,47,.04) }
+        .demo-card .feature-section .feature-header h4 { font-weight:800; font-size:16px; color:#1a0b2f }
+        .demo-card .feature-section .feature-header span { font-size:12px; color:rgba(26,11,47,.5); font-weight:500 }
+        .music-playlist .track { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(26,11,47,.04) }
         .music-playlist .track:last-child { border-bottom:none }
-        .music-playlist .track span { font-size:14px; font-weight:500; color:#0b1a2f }
+        .music-playlist .track span { font-size:14px; font-weight:500; color:#1a0b2f }
         .music-playlist .track .play-btn { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); border:none; color:#fff; width:34px; height:34px; border-radius:50%; cursor:pointer; transition:var(--transition); box-shadow:0 2px 10px var(--primary-glow) }
         .music-playlist .track .play-btn:hover { transform:scale(1.1); box-shadow:0 4px 20px var(--primary-glow) }
         .tiktok-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px }
-        .tiktok-grid .video-card { background:rgba(11,26,47,.04); border-radius:12px; padding:10px; text-align:center; border:1px solid rgba(11,26,47,.04); transition:var(--transition); cursor:pointer }
+        .tiktok-grid .video-card { background:rgba(26,11,47,.04); border-radius:12px; padding:10px; text-align:center; border:1px solid rgba(26,11,47,.04); transition:var(--transition); cursor:pointer }
         .tiktok-grid .video-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--primary) }
         .tiktok-grid .video-card .thumb { width:100%; aspect-ratio:9/16; border-radius:12px; background-size:cover; background-position:center; position:relative; border-radius:8px; min-height:120px; background-color:#1a1a2e; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.3); font-size:40px }
         .tiktok-grid .video-card .thumb .play-overlay { position:absolute; inset:0; background:rgba(0,0,0,.2); display:flex; align-items:center; justify-content:center; border-radius:8px; font-size:32px; opacity:0; transition:var(--transition); color:#fff }
         .tiktok-grid .video-card:hover .thumb .play-overlay { opacity:1 }
-        .tiktok-grid .video-card .video-title { font-size:12px; font-weight:700; color:#0b1a2f; margin-top:6px }
+        .tiktok-grid .video-card .video-title { font-size:12px; font-weight:700; color:#1a0b2f; margin-top:6px }
         .youtube-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px }
-        .youtube-grid .video-card { background:rgba(11,26,47,.04); border-radius:12px; padding:10px; text-align:center; border:1px solid rgba(11,26,47,.04); transition:var(--transition); cursor:pointer }
+        .youtube-grid .video-card { background:rgba(26,11,47,.04); border-radius:12px; padding:10px; text-align:center; border:1px solid rgba(26,11,47,.04); transition:var(--transition); cursor:pointer }
         .youtube-grid .video-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:#ff0000 }
         .youtube-grid .video-card .thumb { width:100%; aspect-ratio:16/9; border-radius:12px; background-size:cover; background-position:center; position:relative; border-radius:8px; min-height:100px; background-color:#1a1a2e; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.3); font-size:40px }
         .youtube-grid .video-card .thumb .play-overlay { position:absolute; inset:0; background:rgba(0,0,0,.2); display:flex; align-items:center; justify-content:center; border-radius:8px; font-size:32px; opacity:0; transition:var(--transition); color:#fff }
         .youtube-grid .video-card:hover .thumb .play-overlay { opacity:1 }
-        .youtube-grid .video-card .video-title { font-size:12px; font-weight:700; color:#0b1a2f; margin-top:6px }
+        .youtube-grid .video-card .video-title { font-size:12px; font-weight:700; color:#1a0b2f; margin-top:6px }
         .demo-card .profile-list { margin:12px 0 20px }
-        .demo-card .profile-item { border-radius:16px; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; border:1px solid rgba(11,26,47,.04); margin-bottom:10px; transition:var(--transition); background:#f8fafc; border-color:#e2e8f0 }
+        .demo-card .profile-item { border-radius:16px; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; border:1px solid rgba(26,11,47,.04); margin-bottom:10px; transition:var(--transition); background:#f8fafc; border-color:#e2e8f0 }
         .demo-card .profile-item:hover { transform:translateX(6px) }
-        .demo-card .profile-item .avatar { width:44px; height:44px; border-radius:40px; margin-right:14px; overflow:hidden; background:rgba(201,168,67,.06); display:flex; align-items:center; justify-content:center; border:1px solid rgba(11,26,47,.04); flex-shrink:0 }
+        .demo-card .profile-item .avatar { width:44px; height:44px; border-radius:40px; margin-right:14px; overflow:hidden; background:rgba(201,168,67,.06); display:flex; align-items:center; justify-content:center; border:1px solid rgba(26,11,47,.04); flex-shrink:0 }
         .demo-card .profile-item .avatar img { width:100%; height:100%; object-fit:cover }
-        .demo-card .profile-info .name { font-weight:700; font-size:15px; color:#0b1a2f }
-        .demo-card .profile-info .location { font-size:12px; color:rgba(11,26,47,.5); font-weight:500 }
+        .demo-card .profile-info .name { font-weight:700; font-size:15px; color:#1a0b2f }
+        .demo-card .profile-info .location { font-size:12px; color:rgba(26,11,47,.5); font-weight:500 }
         .demo-card .profile-amount { font-weight:700; color:var(--primary); font-size:15px; text-align:right }
-        .demo-card .profile-amount small { font-weight:500; color:rgba(11,26,47,.5); font-size:12px; display:block }
-        .demo-card .footer-note { margin-top:28px; text-align:center; font-size:14px; font-weight:500; color:rgba(11,26,47,.7); padding:14px 10px 6px; border-top:1px solid rgba(201,168,67,.06); background:rgba(11,26,47,.02); border-radius:60px; border:1px solid rgba(11,26,47,.04) }
+        .demo-card .profile-amount small { font-weight:500; color:rgba(26,11,47,.5); font-size:12px; display:block }
+        .demo-card .footer-note { margin-top:28px; text-align:center; font-size:14px; font-weight:500; color:rgba(26,11,47,.7); padding:14px 10px 6px; border-top:1px solid rgba(201,168,67,.06); background:rgba(26,11,47,.02); border-radius:60px; border:1px solid rgba(26,11,47,.04) }
         .demo-card .footer-note span { font-weight:700; background:linear-gradient(135deg,var(--primary),var(--gold-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text }
         .chat-page-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.7); backdrop-filter:blur(20px); z-index:10000; display:none; align-items:center; justify-content:center; padding:16px }
         .chat-page-overlay.active { display:flex }
-        .chat-page { background:#0b1a2f; backdrop-filter:blur(20px); border-radius:20px; max-width:420px; width:100%; height:580px; display:flex; flex-direction:column; box-shadow:var(--shadow-xl); animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); overflow:hidden; border:1px solid rgba(255,255,255,.06) }
+        .chat-page { background:#1a0b2f; backdrop-filter:blur(20px); border-radius:20px; max-width:420px; width:100%; height:580px; display:flex; flex-direction:column; box-shadow:var(--shadow-xl); animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); overflow:hidden; border:1px solid rgba(255,255,255,.06) }
         .chat-page-header { padding:16px 20px; background:linear-gradient(135deg,var(--primary-dark),var(--navy)); color:#fff; display:flex; align-items:center; gap:14px; flex-shrink:0 }
         .chat-page-header img { width:44px; height:44px; border-radius:50%; border:2px solid rgba(255,255,255,.1); object-fit:cover }
         .chat-page-header .info { flex:1; min-width:0 }
@@ -294,7 +294,7 @@
         .chat-page-footer button:hover { transform:scale(1.04); box-shadow:0 8px 24px var(--primary-glow) }
         .chat-page-footer button:disabled { opacity:.5; cursor:not-allowed; transform:none }
         #withdrawalPopup { position:fixed; bottom:120px; right:20px; z-index:9999; max-width:280px; width:auto; pointer-events:none; display:flex; flex-direction:column; gap:8px; }
-        #withdrawalPopup .popup-card { background:rgba(11,26,47,.95); backdrop-filter:blur(20px); border:2px solid rgba(31,187,122,.15); border-radius:14px; padding:10px 14px; box-shadow:var(--shadow-lg); display:flex; align-items:center; gap:10px; pointer-events:auto; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) forwards; width:100%; max-width:280px; }
+        #withdrawalPopup .popup-card { background:rgba(26,11,47,.95); backdrop-filter:blur(20px); border:2px solid rgba(31,187,122,.15); border-radius:14px; padding:10px 14px; box-shadow:var(--shadow-lg); display:flex; align-items:center; gap:10px; pointer-events:auto; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) forwards; width:100%; max-width:280px; }
         #withdrawalPopup .popup-card img { width:36px; height:36px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); flex-shrink:0; }
         #withdrawalPopup .popup-card .info { flex:1; min-width:0; }
         #withdrawalPopup .popup-card .info .title { font-weight:700; font-size:10px; color:var(--primary); text-transform:uppercase; letter-spacing:.5px; margin-bottom:1px; }
@@ -307,22 +307,22 @@
         .whatsapp-float .whatsapp-icon { width:50px; height:50px; border-radius:50%; box-shadow:0 8px 32px rgba(37,211,102,.3); transition:var(--transition); border:2px solid #fff; background:linear-gradient(135deg,#25D366,#128C7E); display:flex; align-items:center; justify-content:center; flex-shrink:0 }
         .whatsapp-float .whatsapp-icon:hover { transform:scale(1.08); box-shadow:0 12px 40px rgba(37,211,102,.4) }
         .whatsapp-float .whatsapp-icon img { width:55%; height:55%; object-fit:contain; display:block; filter:brightness(0) invert(1) }
-        .whatsapp-float .whatsapp-text { background:rgba(11,26,47,.85); backdrop-filter:blur(12px); padding:10px 18px; border-radius:60px; border:1px solid rgba(37,211,102,.3); font-weight:800; font-size:15px; color:#fff; letter-spacing:-.2px; white-space:nowrap; box-shadow:0 8px 32px rgba(0,0,0,.3) }
+        .whatsapp-float .whatsapp-text { background:rgba(26,11,47,.85); backdrop-filter:blur(12px); padding:10px 18px; border-radius:60px; border:1px solid rgba(37,211,102,.3); font-weight:800; font-size:15px; color:#fff; letter-spacing:-.2px; white-space:nowrap; box-shadow:0 8px 32px rgba(0,0,0,.3) }
         .demo-action-popup { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.7); backdrop-filter:blur(12px); z-index:30000; display:none; align-items:center; justify-content:center; padding:20px }
         .demo-action-popup.active { display:flex }
-        .demo-action-popup .popup-content { background:#0b1a2f; backdrop-filter:blur(20px); border-radius:20px; padding:36px 28px 32px; max-width:560px; width:100%; text-align:center; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); box-shadow:var(--shadow-xl); border:1px solid rgba(255,255,255,.06) }
+        .demo-action-popup .popup-content { background:#1a0b2f; backdrop-filter:blur(20px); border-radius:20px; padding:36px 28px 32px; max-width:560px; width:100%; text-align:center; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); box-shadow:var(--shadow-xl); border:1px solid rgba(255,255,255,.06) }
         .demo-action-popup .popup-content .video-wrapper { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin:10px 0 16px; background:#000; }
         .demo-action-popup .popup-content .video-wrapper iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
         .demo-action-popup .popup-content .icon { font-size:48px; margin-bottom:10px }
         .demo-action-popup .popup-content h3 { font-size:22px; font-weight:800; color:#fff; margin-bottom:8px }
         .demo-action-popup .popup-content .earn-amount { font-size:28px; font-weight:900; color:var(--primary); margin:6px 0 10px }
-        .demo-action-popup .popup-content .claim-btn { display:inline-block; background:linear-gradient(135deg,var(--gold-light),#e09d2e); color:#0b1a2f; font-weight:800; font-size:18px; padding:14px 40px; border-radius:12px; text-decoration:none; border:none; cursor:pointer; transition:var(--transition); box-shadow:0 4px 20px rgba(201,168,67,.3); margin-top:8px }
+        .demo-action-popup .popup-content .claim-btn { display:inline-block; background:linear-gradient(135deg,var(--gold-light),#e09d2e); color:#1a0b2f; font-weight:800; font-size:18px; padding:14px 40px; border-radius:12px; text-decoration:none; border:none; cursor:pointer; transition:var(--transition); box-shadow:0 4px 20px rgba(201,168,67,.3); margin-top:8px }
         .demo-action-popup .popup-content .claim-btn:hover { transform:scale(1.04); box-shadow:0 8px 32px rgba(201,168,67,.4) }
         .demo-action-popup .popup-content .btn-close-popup { background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.1); padding:12px 36px; border-radius:12px; font-weight:700; font-size:14px; cursor:pointer; transition:var(--transition); margin-top:8px }
         .demo-action-popup .popup-content .btn-close-popup:hover { background:rgba(255,255,255,.2) }
         .welcome-bonus-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.8); backdrop-filter:blur(12px); z-index:99999; display:none; align-items:center; justify-content:center; padding:20px; animation:fadeIn .3s ease }
         .welcome-bonus-overlay.active { display:flex }
-        .welcome-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#0f1f33,#0a1525); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
+        .welcome-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#2d1547,#1a0b2f); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
         .welcome-bonus-overlay .bonus-popup .close-btn { position:absolute; top:12px; right:14px; background:rgba(255,255,255,.06); border:none; color:rgba(255,255,255,.5); width:30px; height:30px; border-radius:50%; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; font-weight:700 }
         .welcome-bonus-overlay .bonus-popup .close-btn:hover { background:rgba(255,255,255,.12); color:#fff }
         .welcome-bonus-overlay .bonus-popup .bonus-lady { display:flex; justify-content:center; margin-bottom:4px }
@@ -339,14 +339,14 @@
         .welcome-bonus-overlay .bonus-popup .bonus-countdown { background:rgba(255,255,255,.03); border-radius:60px; padding:8px 14px; margin:4px 0 12px; border:1px solid rgba(255,255,255,.04); display:flex; align-items:center; justify-content:center; gap:10px }
         .welcome-bonus-overlay .bonus-popup .bonus-countdown-label { font-size:11px; font-weight:600; color:rgba(255,255,255,.5) }
         .welcome-bonus-overlay .bonus-popup .bonus-countdown-timer { font-size:16px; font-weight:800; color:#fff; background:rgba(0,0,0,.3); padding:3px 12px; border-radius:60px; font-feature-settings:"tnum"; letter-spacing:1px; border:1px solid rgba(255,255,255,.04) }
-        .welcome-bonus-overlay .bonus-popup .bonus-claim-btn { display:block; width:100%; padding:14px 20px; background:linear-gradient(135deg,#f5d65a,#e09d2e); border:none; border-radius:12px; font-size:16px; font-weight:800; color:#0b1a2f; letter-spacing:.3px; cursor:pointer; transition:all .25s; box-shadow:0 6px 0 #b89a3a,0 10px 30px rgba(245,214,90,.12); font-family:inherit; text-transform:uppercase; margin-top:4px; border:1px solid rgba(255,255,255,.1); text-decoration:none; text-align:center }
+        .welcome-bonus-overlay .bonus-popup .bonus-claim-btn { display:block; width:100%; padding:14px 20px; background:linear-gradient(135deg,#f5d65a,#e09d2e); border:none; border-radius:12px; font-size:16px; font-weight:800; color:#1a0b2f; letter-spacing:.3px; cursor:pointer; transition:all .25s; box-shadow:0 6px 0 #b89a3a,0 10px 30px rgba(245,214,90,.12); font-family:inherit; text-transform:uppercase; margin-top:4px; border:1px solid rgba(255,255,255,.1); text-decoration:none; text-align:center }
         .welcome-bonus-overlay .bonus-popup .bonus-claim-btn:active { transform:scale(.97); box-shadow:0 3px 0 #b89a3a }
         .welcome-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
         .welcome-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
         .welcome-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
         .affiliate-bonus-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.8); backdrop-filter:blur(12px); z-index:99998; display:none; align-items:center; justify-content:center; padding:20px; animation:fadeIn .3s ease }
         .affiliate-bonus-overlay.active { display:flex }
-        .affiliate-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#0f1f33,#0a1525); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
+        .affiliate-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#2d1547,#1a0b2f); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
         .affiliate-bonus-overlay .bonus-popup .close-btn { position:absolute; top:12px; right:14px; background:rgba(255,255,255,.06); border:none; color:rgba(255,255,255,.5); width:30px; height:30px; border-radius:50%; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; font-weight:700 }
         .affiliate-bonus-overlay .bonus-popup .close-btn:hover { background:rgba(255,255,255,.12); color:#fff }
         .affiliate-bonus-overlay .bonus-popup .bonus-title { text-align:center; font-size:22px; font-weight:900; letter-spacing:-.3px; background:linear-gradient(135deg,#f5d65a,#f0c94a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:2px }
@@ -360,7 +360,7 @@
         .affiliate-bonus-overlay .bonus-popup .bonus-level:last-child { border-bottom:none; }
         .affiliate-bonus-overlay .bonus-popup .bonus-level .level-label { font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
         .affiliate-bonus-overlay .bonus-popup .bonus-level .level-amount { font-size:16px; font-weight:800; color:var(--gold-light); }
-        .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn { display:block; width:100%; padding:14px 20px; background:linear-gradient(135deg,#f5d65a,#e09d2e); border:none; border-radius:12px; font-size:16px; font-weight:800; color:#0b1a2f; letter-spacing:.3px; cursor:pointer; transition:all .25s; box-shadow:0 6px 0 #b89a3a,0 10px 30px rgba(245,214,90,.12); font-family:inherit; text-transform:uppercase; margin-top:4px; border:1px solid rgba(255,255,255,.1); text-decoration:none; text-align:center }
+        .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn { display:block; width:100%; padding:14px 20px; background:linear-gradient(135deg,#f5d65a,#e09d2e); border:none; border-radius:12px; font-size:16px; font-weight:800; color:#1a0b2f; letter-spacing:.3px; cursor:pointer; transition:all .25s; box-shadow:0 6px 0 #b89a3a,0 10px 30px rgba(245,214,90,.12); font-family:inherit; text-transform:uppercase; margin-top:4px; border:1px solid rgba(255,255,255,.1); text-decoration:none; text-align:center }
         .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:active { transform:scale(.97); box-shadow:0 3px 0 #b89a3a }
         .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
@@ -412,14 +412,14 @@
             .demo-action-popup .popup-content { padding:24px 16px 24px }
         }
         .green-highlight { color:var(--primary) !important; font-weight:900 }
-        .section-live.live-foreigners-section { background:#ffffff !important; color:#0b1a2f !important; border-color:#e0e0e0 !important; padding:20px 16px 22px !important; margin:0 -14px 16px !important; border-radius:0 !important }
-        .section-live.live-foreigners-section .section-header h2 { color:#0b1a2f !important }
+        .section-live.live-foreigners-section { background:#ffffff !important; color:#1a0b2f !important; border-color:#e0e0e0 !important; padding:20px 16px 22px !important; margin:0 -14px 16px !important; border-radius:0 !important }
+        .section-live.live-foreigners-section .section-header h2 { color:#1a0b2f !important }
         .section-live.live-foreigners-section .section-header .icon { background:linear-gradient(135deg,#1fbb7a,#0f7b5a) !important }
         .section-live.live-foreigners-section .section-subtitle { color:#3a5072 !important }
-        .section-live.live-foreigners-section .live-intro .live-count,.section-live.live-foreigners-section .live-intro .live-count span,.section-live.live-foreigners-section .live-intro .live-tip { color:#0b1a2f !important }
+        .section-live.live-foreigners-section .live-intro .live-count,.section-live.live-foreigners-section .live-intro .live-count span,.section-live.live-foreigners-section .live-intro .live-tip { color:#1a0b2f !important }
         .section-live.live-foreigners-section .user-card { background:#f8f9fa !important; border-color:#e9ecef !important }
-        .section-live.live-foreigners-section .user-card .user-info .name,.section-live.live-foreigners-section .user-card .user-info .country,.section-live.live-foreigners-section .user-card .user-info .bio,.section-live.live-foreigners-section .user-card .user-info .status { color:#0b1a2f !important }
-        .section-live.live-foreigners-section .user-card .user-actions .watch { color:#0b1a2f !important; background:rgba(0,0,0,.05) !important }
+        .section-live.live-foreigners-section .user-card .user-info .name,.section-live.live-foreigners-section .user-card .user-info .country,.section-live.live-foreigners-section .user-card .user-info .bio,.section-live.live-foreigners-section .user-card .user-info .status { color:#1a0b2f !important }
+        .section-live.live-foreigners-section .user-card .user-actions .watch { color:#1a0b2f !important; background:rgba(0,0,0,.05) !important }
         .section-live.live-foreigners-section .user-card .user-actions .watch:hover { background:rgba(0,0,0,.1) !important }
         .section-live.live-foreigners-section .live-intro { background:#f8f9fa !important; border-color:#e9ecef !important }
         .section-live.live-foreigners-section .section-header .badge.live { background:#dc2626 !important; color:#fff !important; border-color:#dc2626 !important }
@@ -427,15 +427,15 @@
         .hero-buttons .btn-group .btn-primary { flex:1 1 auto !important; min-width:120px !important; padding:14px 12px !important; font-size:14px !important; height:48px !important; border-radius:12px !important; white-space:nowrap !important }
         .hero-buttons>a.btn-primary { min-width:200px !important; width:auto !important; padding:14px 32px !important; height:54px !important; font-size:15px !important }
         .questions-list { margin:10px 0; padding:0; list-style:none }
-        .questions-list li { padding:8px 12px; margin:4px 0; background:rgba(11,26,47,.05); border-radius:8px; font-size:13px; color:#0b1a2f; border-left:3px solid var(--primary); cursor:pointer; transition:var(--transition) }
-        .questions-list li:hover { background:rgba(11,26,47,.1); transform:translateX(4px) }
+        .questions-list li { padding:8px 12px; margin:4px 0; background:rgba(26,11,47,.05); border-radius:8px; font-size:13px; color:#1a0b2f; border-left:3px solid var(--primary); cursor:pointer; transition:var(--transition) }
+        .questions-list li:hover { background:rgba(26,11,47,.1); transform:translateX(4px) }
         .questions-list li strong { color:var(--primary-dark) }
-        .profile-amount { color:rgba(11,26,47,.4) !important; font-weight:500 !important }
+        .profile-amount { color:rgba(26,11,47,.4) !important; font-weight:500 !important }
         .wheel-container { position:relative; width:240px; height:240px; margin:0 auto 16px; }
         .wheel { width:100%; height:100%; border-radius:50%; position:relative; transition:transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99); box-shadow:0 0 0 6px #1fbb7a,0 0 0 12px rgba(31,187,122,.2); }
         .wheel-segment { position:absolute; width:50%; height:50%; top:0; left:50%; transform-origin:0% 100%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.5); padding-left:20px; }
-        .wheel-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; height:50px; background:#0b1a2f; border-radius:50%; border:4px solid #f5d65a; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:12px; color:#f5d65a; z-index:5; }
-        .spin-btn { background:linear-gradient(135deg,#f5d65a,#e09d2e); color:#0b1a2f; border:none; padding:12px 32px; border-radius:60px; font-weight:800; font-size:18px; cursor:pointer; box-shadow:0 4px 20px rgba(245,214,90,.3); transition:var(--transition); }
+        .wheel-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; height:50px; background:#1a0b2f; border-radius:50%; border:4px solid #f5d65a; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:12px; color:#f5d65a; z-index:5; }
+        .spin-btn { background:linear-gradient(135deg,#f5d65a,#e09d2e); color:#1a0b2f; border:none; padding:12px 32px; border-radius:60px; font-weight:800; font-size:18px; cursor:pointer; box-shadow:0 4px 20px rgba(245,214,90,.3); transition:var(--transition); }
         .spin-btn:hover { transform:scale(1.05); box-shadow:0 8px 32px rgba(245,214,90,.4); }
         .spin-btn:disabled { opacity:.5; cursor:not-allowed; transform:none; }
         .spin-result { font-size:24px; font-weight:900; color:#f5d65a; margin-top:8px; min-height:40px; }
@@ -444,7 +444,7 @@
         .whatsapp-sim .header .icon { font-size:20px; }
         .whatsapp-sim .header .title { font-weight:700; font-size:15px; }
         .whatsapp-sim .chat-area { background:#ece5dd; padding:12px; min-height:180px; max-height:220px; overflow-y:auto; }
-        .whatsapp-sim .chat-area .msg { background:#fff; padding:8px 14px; border-radius:12px; margin-bottom:8px; max-width:85%; font-size:13px; color:#0b1a2f; box-shadow:0 1px 2px rgba(0,0,0,.1); }
+        .whatsapp-sim .chat-area .msg { background:#fff; padding:8px 14px; border-radius:12px; margin-bottom:8px; max-width:85%; font-size:13px; color:#1a0b2f; box-shadow:0 1px 2px rgba(0,0,0,.1); }
         .whatsapp-sim .chat-area .msg .post-content { background:#f0f0f0; padding:8px 12px; border-radius:8px; margin-top:4px; font-size:12px; color:#333; border-left:3px solid #25d366; }
         .whatsapp-sim .chat-area .msg .post-content .share-btn { background:#25d366; color:#fff; border:none; padding:4px 16px; border-radius:40px; font-size:11px; font-weight:700; cursor:pointer; margin-top:4px; transition:var(--transition); }
         .whatsapp-sim .chat-area .msg .post-content .share-btn:hover { transform:scale(1.05); }
@@ -460,7 +460,7 @@
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="page-wrap">
         <div class="header-row">
-            <div class="brand"><span class="brand-icon">🌍</span><span class="brand-name">AFRICA<span>JOB</span></span></div>
+            <div class="brand"><span class="brand-icon">🌍</span><span class="brand-name">MYQASH<span>APP</span></span></div>
             <div class="header-center">
                 <div class="online-badge"><span class="live-dot"></span><span class="count-number" id="liveCounter">3,300</span><span class="label">online</span></div>
                 <span class="pipe-sep">|</span>
@@ -521,7 +521,7 @@
 
         <div class="section section-video">
             <div class="video-label"><span class="badge-video">▶️ WATCH</span><h3>Explanation Video</h3></div>
-            <div class="video-explain">📹 <strong>Watch how AfricaJob works</strong> — See how you can earn by chatting, watching videos, and completing simple tasks. Real members, real payments!</div>
+            <div class="video-explain">📹 <strong>Watch how Myqashapp works</strong> — See how you can earn by chatting, watching videos, and completing simple tasks. Real members, real payments!</div>
             <div class="video-container"><iframe src="https://www.youtube.com/embed/D2fil3ejVaU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
         </div>
 
@@ -641,12 +641,12 @@
             <details><summary>How do I withdraw? <span class="arrow">▼</span></summary><div class="faq-content">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
             <details><summary>Is it really free to join? <span class="arrow">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
             <details><summary>How long does it take to get paid? <span class="arrow">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
-            <details><summary>Can I use this on my phone? <span class="arrow">▼</span></summary><div class="faq-content">Absolutely! AfricaJob works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
+            <details><summary>Can I use this on my phone? <span class="arrow">▼</span></summary><div class="faq-content">Absolutely! Myqashapp works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
         </div>
 
         <div class="footer-section">
             <div class="footer-grid"><div class="col"><h4>EARN</h4><ul><li>Chat with Foreigners</li><li>Answer Questions</li><li>Paid TikTok Videos</li><li>YouTube Earning</li><li>WhatsApp Posts</li><li>Affiliate Bonus</li></ul></div><div class="col"><h4>ACCOUNT</h4><ul><li><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Create Account</a></li><li><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Sign In</a></li><li><a href="#" onclick="document.getElementById('liveChatSection').scrollIntoView({behavior:'smooth'});return!1">Try Demo</a></li></ul></div><div class="col"><h4>COUNTRIES</h4><ul><li>Uganda</li><li>Kenya</li><li>Tanzania</li><li>Rwanda</li></ul></div></div>
-            <div class="footer-bottom"><div class="brand-small">© 2026 Africa<span>Job</span>. All rights reserved.</div><div class="copy">Built for Africa · <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Login</a></div></div>
+            <div class="footer-bottom"><div class="brand-small">© 2026 Myqash<span>App</span>. All rights reserved.</div><div class="copy">Built for Africa · <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Login</a></div></div>
         </div>
     </div>
 
@@ -666,7 +666,7 @@
                 <button class="country-btn" data-country="usd" onclick="switchDashboard('usd')">🇺🇸 USD</button>
             </div>
             <div class="welcome-section">
-                <div class="welcome-row"><div class="greeting">Welcome: <span>africajobug</span></div><div class="premium-badge"><i>✦</i> PREMIUM <span style="font-weight:400;margin-left:4px;">•</span><span style="font-weight:500;color:rgba(11,26,47,0.8);">dashboard</span></div></div>
+                <div class="welcome-row"><div class="greeting">Welcome: <span>myqashappug</span></div><div class="premium-badge"><i>✦</i> PREMIUM <span style="font-weight:400;margin-left:4px;">•</span><span style="font-weight:500;color:rgba(26,11,47,0.8);">dashboard</span></div></div>
                 <div class="welcome-sub"><span class="badge-new">🚀</span>Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more, designed to help you succeed online. 🎉👏👏👏</div>
             </div>
             <div class="graph-section">
@@ -683,7 +683,7 @@
                     <h4>❓ Answer Questions & Earn</h4>
                     <span>Earn $0.50/question</span>
                 </div>
-                <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:12px;">
+                <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:12px;">
                     Click any question below to start earning. You'll chat, watch a video, then answer!
                 </div>
                 <div style="margin:10px 0;">
@@ -708,13 +708,13 @@
                         </li>
                     </div>
                 </div>
-                <div style="margin-top:8px;font-size:12px;color:rgba(11,26,47,0.5);text-align:center;">💡 Answer all questions correctly and earn up to $3.00 daily</div>
+                <div style="margin-top:8px;font-size:12px;color:rgba(26,11,47,0.5);text-align:center;">💡 Answer all questions correctly and earn up to $3.00 daily</div>
             </div>
             
             <!-- TIKTOK SECTION with real working videos -->
             <div class="feature-section" id="tiktokSection">
                 <div class="feature-header"><h4>🎬 TikTok Videos</h4><span>Earn $0.20/video</span></div>
-                <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:10px;">Watch trending TikTok videos and earn real money!</div>
+                <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:10px;">Watch trending TikTok videos and earn real money!</div>
                 <div class="tiktok-grid">
                     <div class="video-card" onclick="handleVideoPlay('TikTok Dance Challenge', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');">▶</div>
@@ -733,13 +733,13 @@
                         <div class="video-title">💪 Fitness Tips</div>
                     </div>
                 </div>
-                <div style="margin-top:10px;font-size:12px;color:rgba(11,26,47,0.5);text-align:center;">🎬 Watch all videos and earn daily</div>
+                <div style="margin-top:10px;font-size:12px;color:rgba(26,11,47,0.5);text-align:center;">🎬 Watch all videos and earn daily</div>
             </div>
             
             <!-- YOUTUBE SECTION -->
             <div class="feature-section" id="youtubeSection">
                 <div class="feature-header"><h4>📺 YouTube Videos</h4><span>Earn $0.25/video</span></div>
-                <div style="font-size:13px;color:rgba(11,26,47,0.7);margin-bottom:10px;">Watch trending YouTube videos and earn daily rewards!</div>
+                <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:10px;">Watch trending YouTube videos and earn daily rewards!</div>
                 <div class="youtube-grid">
                     <div class="video-card" onclick="handleVideoPlay('YouTube Tech Review', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
                         <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');">▶</div>
@@ -758,7 +758,7 @@
                         <div class="video-title">🎮 Gaming Stream</div>
                     </div>
                 </div>
-                <div style="margin-top:10px;font-size:12px;color:rgba(11,26,47,0.5);text-align:center;">📺 Watch all videos and earn daily</div>
+                <div style="margin-top:10px;font-size:12px;color:rgba(26,11,47,0.5);text-align:center;">📺 Watch all videos and earn daily</div>
             </div>
             
             <div class="activate-btn-wrapper"><a href="https://star-hela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank" rel="noopener noreferrer">🔓 Activate Account</a></div>
@@ -771,7 +771,7 @@
                 <span class="nav-chip" onclick="handleWhatsAppPosting();">📱 WhatsApp</span>
             </div>
             <div style="margin-top:4px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-weight:700;font-size:15px;color:#0b1a2f;">Live Members</span><span style="color:rgba(11,26,47,0.5);font-weight:600;">—</span></div>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-weight:700;font-size:15px;color:#1a0b2f;">Live Members</span><span style="color:rgba(26,11,47,0.5);font-weight:600;">—</span></div>
                 <div class="profile-list">
                     <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">—</div></div>
                     <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">—</div></div>
@@ -779,7 +779,7 @@
                     <div class="profile-item"><div class="avatar"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Carlos Rivera"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">—</div></div>
                 </div>
             </div>
-            <div class="footer-note">✦ <span>africajobug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
+            <div class="footer-note">✦ <span>myqashappug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
         </div>
     </div>
 
@@ -1112,7 +1112,7 @@
         bonusSeconds = 86393;
         startBonusCountdown();
         document.querySelectorAll('#bonusCountrySelector .bonus-country-btn').forEach(btn => { btn.addEventListener('click', function() { const country = this.dataset.country; if (country === bonusCurrent) return; updateBonus(country) }) });
-        setTimeout(() => { showWelcomeBonus() }, 15000);
+        setTimeout(() => { showWelcomeBonus() }, 20000);
         switchDashboard('uganda');
 
         // ===== AFFILIATE BONUS - FIXED =====
@@ -1437,7 +1437,7 @@
             }, 4200);
         }
 
-        // ===== WHATSAPP POSTING - FIXED: SHARE → AfricaJob link | CLAIM → StarHela link =====
+        // ===== WHATSAPP POSTING - FIXED: SHARE → Myqashapp link | CLAIM → StarHela link =====
         function handleWhatsAppPosting() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
@@ -1462,7 +1462,7 @@
                     </div>
                     <div class="chat-area" id="waChatArea">
                         <div class="msg" style="background:#dcf8c6;align-self:flex-end;margin-left:auto;">
-                            📢 <strong>AfricaJob</strong><br>
+                            📢 <strong>Myqashapp</strong><br>
                             <span style="font-size:12px;color:rgba(0,0,0,0.6);">Share these posts to earn $10 total!</span>
                         </div>
                     </div>
@@ -1473,7 +1473,7 @@
                 </div>
                 <div class="wa-earned" id="waEarned">💰 Earned: $0.00</div>
                 <!-- Claim button opens StarHela link -->
-                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="claim-btn" style="display:inline-block;margin-top:10px;background:linear-gradient(135deg,var(--gold-light),#e09d2e);color:#0b1a2f;font-weight:800;font-size:16px;padding:12px 32px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:var(--transition);box-shadow:0 4px 20px rgba(201,168,67,.3);">💰 Claim Rewards</a>
+                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="claim-btn" style="display:inline-block;margin-top:10px;background:linear-gradient(135deg,var(--gold-light),#e09d2e);color:#1a0b2f;font-weight:800;font-size:16px;padding:12px 32px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:var(--transition);box-shadow:0 4px 20px rgba(201,168,67,.3);">💰 Claim Rewards</a>
                 <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
             `;
 
@@ -1496,7 +1496,7 @@
             if (window._waSharedCount >= posts.length) {
                 const msg = document.createElement('div');
                 msg.className = 'msg';
-                msg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
+                msg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#1a0b2f;';
                 msg.innerHTML = '✅ <strong>All posts shared!</strong> You earned $10! 🎉';
                 chatArea.appendChild(msg);
                 chatArea.scrollTop = chatArea.scrollHeight;
@@ -1517,20 +1517,20 @@
             const post = posts[window._waSharedCount];
             if (!post) return;
 
-            // SHARE → Opens WhatsApp with AfricaJob link (NOT StarHela)
-            const shareMsg = encodeURIComponent(`${post.emoji} ${post.text}\n\n👉 Join AfricaJob and start earning! https://africajob.com`);
+            // SHARE → Opens WhatsApp with Myqashapp link
+            const shareMsg = encodeURIComponent(`${post.emoji} ${post.text}\n\n👉 Join Myqashapp and start earning! https://myqashapp.com`);
             window.open(`https://wa.me/?text=${shareMsg}`, '_blank');
 
             const userMsg = document.createElement('div');
             userMsg.className = 'msg';
-            userMsg.style.cssText = 'background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;margin-left:auto;align-self:flex-end;';
+            userMsg.style.cssText = 'background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#1a0b2f;margin-left:auto;align-self:flex-end;';
             userMsg.innerHTML = `${post.emoji} <strong>${input.value || 'Sharing sponsored content!'}</strong><br><div class="post-content" style="background:#f0f0f0;padding:8px 12px;border-radius:8px;margin-top:4px;font-size:12px;color:#333;border-left:3px solid #25d366;">${post.text}<br><span style="font-size:10px;color:#888;">✅ Shared via WhatsApp</span></div>`;
             chatArea.appendChild(userMsg);
 
             setTimeout(() => {
                 const sysMsg = document.createElement('div');
                 sysMsg.className = 'msg';
-                sysMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
+                sysMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#1a0b2f;';
                 sysMsg.innerHTML = `✅ <strong>Post ${window._waSharedCount + 1}/${posts.length} shared!</strong> Earned $3.33`;
                 chatArea.appendChild(sysMsg);
                 chatArea.scrollTop = chatArea.scrollHeight;
@@ -1548,7 +1548,7 @@
                     setTimeout(() => {
                         const finalMsg = document.createElement('div');
                         finalMsg.className = 'msg';
-                        finalMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#0b1a2f;';
+                        finalMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#1a0b2f;';
                         finalMsg.innerHTML = '🎉 <strong>All posts shared!</strong> You earned $10! ⭐<br><span style="font-size:11px;color:rgba(0,0,0,0.5);">Click "Claim Rewards" below to get your earnings!</span>';
                         chatArea.appendChild(finalMsg);
                         chatArea.scrollTop = chatArea.scrollHeight;
@@ -1612,7 +1612,7 @@
                             <h3 style="color:#f5d65a;font-size:22px;margin:8px 0;">Quiz Complete!</h3>
                             <p style="color:rgba(255,255,255,0.7);font-size:16px;">You scored <strong style="color:#f5d65a;font-size:24px;">${window._quizScore}</strong> out of ${questions.length}</p>
                             <p style="color:#2ecc71;font-size:18px;font-weight:700;margin-top:8px;">💰 You earned $${(window._quizScore * 0.50).toFixed(2)}!</p>
-                            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#f5d65a,#e09d2e);color:#0b1a2f;padding:10px 32px;border-radius:40px;text-decoration:none;font-weight:700;font-size:15px;">💎 Claim Prize</a>
+                            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#f5d65a,#e09d2e);color:#1a0b2f;padding:10px 32px;border-radius:40px;text-decoration:none;font-weight:700;font-size:15px;">💎 Claim Prize</a>
                         </div>
                     `;
                 }
