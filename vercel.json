@@ -1,1 +1,49 @@
-{<br/>  &quot;headers&quot;: [<br/>    {<br/>      &quot;source&quot;: &quot;/(.*)&quot;,<br/>      &quot;headers&quot;: [<br/>        {<br/>          &quot;key&quot;: &quot;X-Content-Type-Options&quot;,<br/>          &quot;value&quot;: &quot;nosniff&quot;<br/>        },<br/>        {<br/>          &quot;key&quot;: &quot;X-Frame-Options&quot;,<br/>          &quot;value&quot;: &quot;DENY&quot;<br/>        },<br/>        {<br/>          &quot;key&quot;: &quot;X-XSS-Protection&quot;,<br/>          &quot;value&quot;: &quot;1; mode=block&quot;<br/>        },<br/>        {<br/>          &quot;key&quot;: &quot;Referrer-Policy&quot;,<br/>          &quot;value&quot;: &quot;strict-origin-when-cross-origin&quot;<br/>        }<br/>      ]<br/>    },<br/>    {<br/>      &quot;source&quot;: &quot;/static/(.*)&quot;,<br/>      &quot;headers&quot;: [<br/>        {<br/>          &quot;key&quot;: &quot;Cache-Control&quot;,<br/>          &quot;value&quot;: &quot;public, max-age=31536000, immutable&quot;<br/>        }<br/>      ]<br/>    },<br/>    {<br/>      &quot;source&quot;: &quot;/_next/static/(.*)&quot;,<br/>      &quot;headers&quot;: [<br/>        {<br/>          &quot;key&quot;: &quot;Cache-Control&quot;,<br/>          &quot;value&quot;: &quot;public, max-age=31536000, immutable&quot;<br/>        }<br/>      ]<br/>    }<br/>  ],<br/>  &quot;rewrites&quot;: [<br/>    {<br/>      &quot;source&quot;: &quot;/(.*)&quot;,<br/>      &quot;destination&quot;: &quot;/index.html&quot;<br/>    }<br/>  ]<br/>}
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
