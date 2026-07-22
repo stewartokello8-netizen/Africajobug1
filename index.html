@@ -20,6 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900;14..32,1000&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
     <style>
+        /* ... (ALL YOUR EXISTING CSS STYLES REMAIN EXACTLY THE SAME) ... */
+        /* I'm keeping the full CSS from your original code */
         :root {
             --primary: #1fbb7a;
             --primary-dark: #0f7b5a;
@@ -542,6 +544,13 @@
         .whatsapp-sim .footer .send-btn { background:#25d366; color:#fff; border:none; padding:8px 20px; border-radius:30px; font-weight:700; cursor:pointer; }
         .whatsapp-sim .footer .send-btn:hover { background:#1ebe5c; }
         .wa-earned { font-size:18px; font-weight:800; color:#25d366; margin-top:6px; }
+        .icon-chat { background: #25a3d3; }
+        .icon-questions { background: #f39c12; }
+        .icon-tiktok { background: #000000; }
+        .icon-affiliate { background: #9b59b6; }
+        .icon-whatsapp { background: #25D366; }
+        .icon-youtube { background: #FF0000; }
+        .icon-spinning { background: #e67e22; }
     </style>
 </head>
 <body>
@@ -623,65 +632,71 @@
             <div class="section-header"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
             <p class="section-subtitle">Every feature pays real money. Do them all every day and stack your earnings.</p>
             <div class="ways-grid">
-                <!-- CHAT WITH FOREIGNERS -->
+                <!-- 1. CHAT WITH FOREIGNERS -->
                 <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=12" alt="Chat" loading="lazy">
+                    <img class="way-icon" src="https://i.pravatar.cc/100?img=12" alt="Chat with Foreigners" loading="lazy" style="border:2px solid #25a3d3;">
                     <div class="way-content">
-                        <div class="way-name">Chat with Foreigners</div>
+                        <div class="way-name">💬 Chat with Foreigners</div>
                         <div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.</div>
                         <div class="way-earn"><span class="sub">per person</span></div>
                         <div class="way-cta"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn" onclick="event.stopPropagation();">Start Chatting</a></div>
                     </div>
                 </div>
+                <!-- 2. ANSWERING QUESTIONS -->
                 <div class="way-card" onclick="handleQuestionsPopup()">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=13" alt="Questions" loading="lazy" style="background:#1a1a2e;padding:8px;object-fit:contain;">
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Answer Questions" loading="lazy" style="background:#f39c12;padding:10px;object-fit:contain;">
                     <div class="way-content">
-                        <div class="way-name">Answering Questions</div>
+                        <div class="way-name">❓ Answering Questions</div>
                         <div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div>
                         <div class="way-earn"><span class="sub">per question</span></div>
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleQuestionsPopup();return!1">Start Answering</button></div>
                     </div>
                 </div>
+                <!-- 3. PAID TIKTOK VIDEOS -->
                 <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=14" alt="TikTok" loading="lazy" style="background:#1a1a2e;padding:4px;">
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok Videos" loading="lazy" style="background:#000000;padding:10px;object-fit:contain;">
                     <div class="way-content">
-                        <div class="way-name">Paid TikTok Videos</div>
+                        <div class="way-name">🎬 Paid TikTok Videos</div>
                         <div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.</div>
                         <div class="way-earn"><span class="sub">per video</span></div>
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok');return!1">Watch Videos</button></div>
                     </div>
                 </div>
+                <!-- 4. AFFILIATE BONUS -->
                 <div class="way-card" onclick="openAffiliateBonus()">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=15" alt="Affiliate" loading="lazy">
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4c8.png" alt="Affiliate Bonus" loading="lazy" style="background:#9b59b6;padding:10px;object-fit:contain;">
                     <div class="way-content">
-                        <div class="way-name">Affiliate Bonus</div>
+                        <div class="way-name">📈 Affiliate Bonus</div>
                         <div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!</div>
                         <div class="way-earn">BONUS</div>
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();openAffiliateBonus();return!1">Start Promoting</button></div>
                     </div>
                 </div>
+                <!-- 5. WHATSAPP POSTING -->
                 <div class="way-card" onclick="handleWhatsAppPosting()">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=16" alt="WhatsApp" loading="lazy">
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png" alt="WhatsApp Posting" loading="lazy" style="background:#25D366;padding:10px;object-fit:contain;">
                     <div class="way-content">
-                        <div class="way-name">WhatsApp Posting</div>
+                        <div class="way-name">📱 WhatsApp Posting</div>
                         <div class="way-desc">Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.</div>
                         <div class="way-earn"><span class="sub">per post</span></div>
                         <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleWhatsAppPosting();return!1">Start Posting</button></div>
                     </div>
                 </div>
+                <!-- 6. YOUTUBE EARNING -->
                 <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=17" alt="YouTube" loading="lazy" style="background:#1a1a2e;padding:4px;">
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube Earning" loading="lazy" style="background:#FF0000;padding:10px;object-fit:contain;">
                     <div class="way-content">
-                        <div class="way-name">YouTube Earning</div>
+                        <div class="way-name">📺 YouTube Earning</div>
                         <div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.</div>
                         <div class="way-earn"><span class="sub">per day</span></div>
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">Start Watching</button></div>
                     </div>
                 </div>
+                <!-- 7. PAID SPINNING -->
                 <div class="way-card" onclick="handleSpinning()">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=18" alt="Spinning" loading="lazy">
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3af.png" alt="Paid Spinning" loading="lazy" style="background:#e67e22;padding:10px;object-fit:contain;">
                     <div class="way-content">
-                        <div class="way-name">Paid Spinning</div>
+                        <div class="way-name">🎰 Paid Spinning</div>
                         <div class="way-desc">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div>
                         <div class="way-earn"><span class="sub">per spin</span></div>
                         <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleSpinning();return!1">Start Spinning</button></div>
@@ -958,6 +973,10 @@
     </div>
 
     <script>
+        // ===== ALL YOUR JAVASCRIPT FUNCTIONS REMAIN EXACTLY THE SAME =====
+        // ... (the entire script from the original code stays here)
+        // I'm keeping the full JS from your original code
+        
         // ===== SCROLL PROGRESS =====
         window.addEventListener('scroll', function() { const s = window.scrollY, d = document.documentElement.scrollHeight - window.innerHeight; document.getElementById('scrollProgress').style.width = (s / d * 100) + '%' });
         // ===== BACK TO TOP =====
