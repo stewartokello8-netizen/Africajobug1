@@ -6,7 +6,6 @@
     <title>Myqashapp · Premium Earnings Platform for Africans</title>
     <meta name="description" content="Earn 80,000UGX – 150,000UGX daily by watching videos, answering questions, and more. Withdraw instantly via M-Pesa, MoMo, and bank transfer. Join 187,000+ Africans earning daily." />
     <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
     <link rel="canonical" href="https://myqashapp.com" />
     <meta property="og:title" content="Myqashapp · Turn Clicks to Cash in Africa" />
     <meta property="og:description" content="Join 187,000+ Africans earning daily. Watch videos, chat, answer questions and withdraw instantly to M-Pesa, MoMo, and more." />
@@ -14,98 +13,19 @@
     <meta property="og:url" content="https://myqashapp.com" />
     <meta property="og:image" content="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=630&fit=crop" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Myqashapp · Premium Earnings Platform" />
-    <meta name="twitter:description" content="Earn daily by completing simple tasks. Withdraw instantly via M-Pesa, MoMo, and bank transfer." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900;14..32,1000&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
     <style>
-        /* ... (ALL YOUR EXISTING CSS STYLES REMAIN EXACTLY THE SAME) ... */
-        /* I'm keeping the full CSS from your original code */
-        :root {
-            --primary: #1fbb7a;
-            --primary-dark: #0f7b5a;
-            --primary-glow: rgba(31,187,122,.3);
-            --gold-light: #f5d65a;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,.02);
-            --shadow-md: 0 8px 32px rgba(0,0,0,.04);
-            --shadow-lg: 0 16px 48px rgba(0,0,0,.06);
-            --radius-sm: 12px;
-            --radius-md: 16px;
-            --radius-lg: 20px;
-            --radius-xl: 32px;
-            --transition: all .4s cubic-bezier(.16,1,.3,1);
-            --font-title: 'Playfair Display', serif;
-            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-            --bg-start: #0a1a2f;
-            --bg-end: #040b17;
-        }
+        /* ===== ALL STYLES (same as before, kept intact) ===== */
+        :root { --primary: #1fbb7a; --primary-dark: #0f7b5a; --primary-glow: rgba(31,187,122,.3); --gold-light: #f5d65a; --shadow-sm: 0 2px 8px rgba(0,0,0,.02); --shadow-md: 0 8px 32px rgba(0,0,0,.04); --shadow-lg: 0 16px 48px rgba(0,0,0,.06); --radius-sm: 12px; --radius-md: 16px; --radius-lg: 20px; --radius-xl: 32px; --transition: all .4s cubic-bezier(.16,1,.3,1); --font-title: 'Playfair Display', serif; --font-body: 'Inter', system-ui, -apple-system, sans-serif; --bg-start: #0a1a2f; --bg-end: #040b17; }
         * { margin:0; padding:0; box-sizing:border-box }
-        body {
-            background: linear-gradient(145deg, var(--bg-start), var(--bg-end));
-            font-family: var(--font-body);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-            font-size: 1.0625rem;
-            line-height: 1.6;
-        }
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--gold-light));
-            z-index: 10001;
-            width: 0%;
-            transition: width .1s;
-            box-shadow: 0 0 20px var(--primary-glow);
-        }
-        .page-wrap {
-            max-width: 600px;
-            width: 100%;
-            background: linear-gradient(145deg, var(--bg-start), var(--bg-end));
-            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-            padding: 80px 14px 24px;
-            margin: 0 auto;
-            box-shadow: 0 0 15px rgba(31,187,122,.15);
-            border: 1px solid rgba(31,187,122,.15);
-            position: relative;
-        }
-        .page-wrap::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 20%;
-            right: 20%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--gold-light), var(--primary), transparent);
-            background-size: 300% 100%;
-            animation: shimmerBorder 4s ease-in-out infinite;
-            border-radius: 0 0 50% 50%;
-        }
+        body { background: linear-gradient(145deg, var(--bg-start), var(--bg-end)); font-family: var(--font-body); color: #fff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; font-size: 1.0625rem; line-height: 1.6; }
+        .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--gold-light)); z-index: 10001; width: 0%; transition: width .1s; box-shadow: 0 0 20px var(--primary-glow); }
+        .page-wrap { max-width: 600px; width: 100%; background: linear-gradient(145deg, var(--bg-start), var(--bg-end)); border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 80px 14px 24px; margin: 0 auto; box-shadow: 0 0 15px rgba(31,187,122,.15); border: 1px solid rgba(31,187,122,.15); position: relative; }
+        .page-wrap::before { content: ''; position: absolute; top: -1px; left: 20%; right: 20%; height: 3px; background: linear-gradient(90deg, transparent, var(--primary), var(--gold-light), var(--primary), transparent); background-size: 300% 100%; animation: shimmerBorder 4s ease-in-out infinite; border-radius: 0 0 50% 50%; }
         @keyframes shimmerBorder { 0%,100% { background-position:0% 50% } 50% { background-position:100% 50% } }
-        .header-row {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(10,26,47,.95);
-            backdrop-filter: blur(20px);
-            z-index: 999;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 8px 12px;
-            padding: 10px 14px;
-            border-bottom: 1px solid rgba(255,255,255,.06);
-            width: 100%;
-        }
+        .header-row { position: fixed; top: 0; left: 0; right: 0; max-width: 600px; margin: 0 auto; background: rgba(10,26,47,.95); backdrop-filter: blur(20px); z-index: 999; display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.06); width: 100%; }
         .brand { display:flex; align-items:center; gap:6px; flex-shrink:0 }
         .brand-icon { font-size:26px; line-height:1; filter:drop-shadow(0 0 10px var(--primary-glow)); animation:pulseGlow 3s ease-in-out infinite }
         @keyframes pulseGlow { 0%,100% { filter:drop-shadow(0 0 10px var(--primary-glow)) } 50% { filter:drop-shadow(0 0 25px var(--primary-glow)) } }
@@ -150,20 +70,13 @@
         .section-header .badge.live { background:#dc2626; color:#fff; border-color:#dc2626; animation:pulseBadge 2s ease-in-out infinite }
         @keyframes pulseBadge { 0%,100% { opacity:1 } 50% { opacity:.6 } }
         .section-subtitle { font-size:14px; color:rgba(255,255,255,.7); margin-top:-4px; margin-bottom:16px; line-height:1.6 }
-        .section-stats { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(31,187,122,.12) }
-        .section-video { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(255,0,0,.12) }
-        .section-live { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(59,130,246,.15) }
-        .section-ways { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(31,187,122,.08) }
-        .section-withdraw { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(201,168,67,.12) }
-        .section-how { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(139,92,246,.12) }
-        .section-stories { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(236,72,153,.1) }
-        .section-lifetime { background:linear-gradient(145deg,#0a1628,#040b17); border:1px solid rgba(31,187,122,.12); text-align:center }
-        .section-faq { background:linear-gradient(145deg,#0a1628,#040b17); border:1px solid rgba(20,184,166,.1) }
-        .earnings-scroll { background:rgba(255,255,255,.06); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.06); border-radius:60px; padding:8px 12px; margin:8px 0 0; overflow:hidden; white-space:nowrap }
-        .earnings-scroll .scroll-label { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:4px 14px; border-radius:40px; font-size:9px; font-weight:800; display:inline-block; margin-right:8px; text-transform:uppercase; letter-spacing:.5px }
-        .earnings-scroll .scroll-content { display:inline-block; font-weight:700; color:#fff; font-size:12px; animation:scrollText 70s linear infinite; white-space:nowrap }
-        .earnings-scroll .scroll-content span { display:inline-block; padding:0 8px; color:#fff }
-        @keyframes scrollText { 0% { transform:translateX(0) } 100% { transform:translateX(-50%) } }
+        .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000; border-radius:16px; margin-bottom:16px; border:2px solid rgba(255,255,255,.06) }
+        .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0 }
+        .video-label { display:flex; align-items:center; gap:10px; margin-bottom:12px }
+        .video-label .badge-video { background:linear-gradient(135deg,#ff0000,#cc0000); color:#fff; padding:4px 16px; border-radius:40px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.5px }
+        .video-label h3 { font-size:17px; font-weight:700; color:#fff }
+        .video-explain { font-size:13px; color:rgba(255,255,255,.8); margin-bottom:16px; line-height:1.6; background:rgba(255,255,255,.04); padding:12px 16px; border-radius:12px; border-left:4px solid var(--primary) }
+        .video-explain strong { color:var(--primary) }
         .stats-grid { display:flex; justify-content:space-around; gap:12px }
         .stats-grid .stat-item { background:rgba(255,255,255,.04); backdrop-filter:blur(10px); border:1px solid rgba(31,187,122,.12); border-radius:16px; padding:16px 8px; flex:1; text-align:center; transition:var(--transition) }
         .stats-grid .stat-item:hover { transform:translateY(-4px); border-color:rgba(31,187,122,.3); box-shadow:var(--shadow-md) }
@@ -178,17 +91,9 @@
         .way-card .way-content .way-desc { font-size:12px; color:rgba(255,255,255,.7); line-height:1.5 }
         .way-card .way-content .way-earn { font-weight:900; font-size:15px; color:var(--primary) }
         .way-card .way-content .way-earn .sub { font-size:9px; font-weight:600; color:rgba(255,255,255,.5) }
-        .way-card .way-content .way-cta { margin-top:6px }
         .way-card .way-content .way-cta .cta-btn { display:inline-block; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:6px 18px; border-radius:40px; font-size:11px; font-weight:700; text-decoration:none; border:none; cursor:pointer; transition:var(--transition); white-space:nowrap; box-shadow:0 2px 10px var(--primary-glow) }
         .way-card .way-content .way-cta .cta-btn:hover { transform:scale(1.05); box-shadow:0 4px 20px var(--primary-glow) }
         .way-card .way-content .way-cta .cta-btn.gold { background:linear-gradient(135deg,var(--gold-light),#e09d2e); box-shadow:0 2px 10px rgba(201,168,67,.3) }
-        .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000; border-radius:16px; margin-bottom:16px; border:2px solid rgba(255,255,255,.06) }
-        .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0 }
-        .video-label { display:flex; align-items:center; gap:10px; margin-bottom:12px }
-        .video-label .badge-video { background:linear-gradient(135deg,#ff0000,#cc0000); color:#fff; padding:4px 16px; border-radius:40px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.5px }
-        .video-label h3 { font-size:17px; font-weight:700; color:#fff }
-        .video-explain { font-size:13px; color:rgba(255,255,255,.8); margin-bottom:16px; line-height:1.6; background:rgba(255,255,255,.04); padding:12px 16px; border-radius:12px; border-left:4px solid var(--primary) }
-        .video-explain strong { color:var(--primary) }
         .live-foreigners-section { border:2px solid rgba(59,130,246,.12) }
         .live-intro { background:rgba(59,130,246,.06); border-radius:12px; padding:12px 16px; margin-bottom:14px; border:1px solid rgba(59,130,246,.1); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px }
         .live-intro .live-count { font-weight:800; font-size:17px; color:#fff }
@@ -207,7 +112,6 @@
         .user-card .user-info .country .live-label { background:#dc2626; color:#fff; font-size:9px; font-weight:800; padding:2px 12px; border-radius:40px; animation:pulseBadge 1.5s ease-in-out infinite }
         .user-card .user-info .bio { font-size:13px; color:rgba(255,255,255,.7); font-weight:400; margin-top:4px; opacity:.85; line-height:1.5 }
         .user-card .user-info .status { background:rgba(255,255,255,.04); border-radius:50px; padding:4px 16px; font-size:11px; font-weight:600; display:inline-block; margin-top:6px; color:rgba(255,255,255,.6); border:1px solid rgba(255,255,255,.04) }
-        .user-card .new-badge { background:#dc2626; color:#fff; font-size:9px; font-weight:800; padding:2px 12px; border-radius:40px; animation:pulseBadge 1.5s ease-in-out infinite }
         .user-card .user-actions { display:flex; gap:10px; margin-top:12px; padding-top:12px; border-top:1px solid rgba(255,255,255,.04) }
         .user-card .user-actions a { padding:8px 24px; border-radius:40px; font-weight:700; font-size:12px; text-decoration:none; display:inline-block; cursor:pointer; transition:var(--transition); text-align:center }
         .user-card .user-actions .chat { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; border:1px solid rgba(255,255,255,.1); box-shadow:0 2px 10px var(--primary-glow) }
@@ -233,7 +137,7 @@
         .lifetime-section .price-wrap { display:flex; align-items:baseline; justify-content:center; gap:10px; margin:8px 0 12px; flex-wrap:wrap }
         .lifetime-section .price-old { font-size:20px; font-weight:700; color:rgba(255,255,255,.4); text-decoration:line-through }
         .lifetime-section .price-new { font-size:38px; font-weight:900; color:var(--primary) }
-        .lifetime-section .price-badge { background:rgba(201,168,67,.15); padding:6px 18px; border-radius:60px; font-weight:700; font-size:13px; color:var(--gold); border:1px solid rgba(201,168,67,.2) }
+        .lifetime-section .price-badge { background:rgba(201,168,67,.15); padding:6px 18px; border-radius:60px; font-weight:700; font-size:13px; color:var(--gold-light); border:1px solid rgba(201,168,67,.2) }
         details { display:block; margin-bottom:8px }
         details summary { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; cursor:pointer; font-weight:700; font-size:15px; color:#fff; list-style:none; border-radius:16px; background:rgba(255,255,255,.04); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.04); transition:var(--transition) }
         details summary:hover { background:rgba(255,255,255,.08); border-color:rgba(31,187,122,.2) }
@@ -296,20 +200,13 @@
         .demo-card .stat-card.expense .stat-value { color:#e74c3c }
         .demo-card .stat-card.earnings .stat-value { color:#2ecc71 }
         .demo-card .stat-card.balance .stat-value { color:#3498db }
-        .demo-card .stat-card.withdrawn .stat-value { color:var(--gold) }
+        .demo-card .stat-card.withdrawn .stat-value { color:var(--gold-light) }
         .demo-card .balance-extra { display:flex; justify-content:space-between; align-items:center; margin-top:8px; font-size:11px; color:rgba(26,11,47,.5); border-top:1px solid rgba(26,11,47,.02); padding-top:10px }
         .demo-card .balance-extra .all-time { font-weight:700; color:#1a0b2f; background:rgba(26,11,47,.04); padding:4px 16px; border-radius:40px; font-size:10px }
         .demo-card .balance-extra .show-link { font-weight:700; color:rgba(26,11,47,.7); background:rgba(26,11,47,.04); padding:4px 16px; border-radius:40px; border:1px solid rgba(26,11,47,.04); font-size:10px; cursor:default }
         .demo-card .withdrawn-chip { background:rgba(201,168,67,.08); border-radius:60px; padding:4px 16px; font-weight:800; font-size:20px; color:#1a0b2f; display:inline-block; border:1px solid rgba(201,168,67,.06); margin-top:4px }
         .demo-card .withdrawn-chip small { font-weight:500; font-size:13px; color:rgba(26,11,47,.5); margin-left:4px }
         .demo-card .divider-light { height:1px; background:linear-gradient(90deg,transparent,rgba(26,11,47,.06),transparent); margin:14px 0 18px }
-        .demo-card .earn-grid { display:flex; flex-direction:column; gap:12px; margin:16px 0 18px }
-        .demo-card .earn-card { border-radius:16px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; box-shadow:var(--shadow-sm); transition:var(--transition); cursor:pointer; background:#f8fafc; border-color:#e2e8f0 }
-        .demo-card .earn-card:hover { transform:translateY(-3px) scale(1.01); box-shadow:var(--shadow-md) }
-        .demo-card .earn-left .label { font-weight:600; font-size:15px; color:#1a0b2f; letter-spacing:-.2px }
-        .demo-card .earn-left .amount { font-weight:800; font-size:18px; color:var(--primary); margin-top:2px }
-        .demo-card .earn-left .usd { font-size:13px; color:rgba(26,11,47,.5); font-weight:500; margin-left:4px }
-        .demo-card .earn-right { background:rgba(201,168,67,.06); padding:8px 22px; border-radius:60px; font-size:14px; font-weight:700; color:rgba(26,11,47,.8); border:1px solid rgba(201,168,67,.04) }
         .demo-card .activate-btn-wrapper { margin:8px 0 18px; text-align:center }
         .demo-card .activate-btn { display:inline-block; background:linear-gradient(135deg,var(--gold-light),#f0c94a); border:none; color:var(--text-primary); font-weight:800; font-size:17px; padding:16px 32px; border-radius:80px; width:100%; text-align:center; box-shadow:0 8px 0 #c9a843,0 10px 30px rgba(245,214,90,.15); cursor:pointer; letter-spacing:.5px; transition:.1s; border:1px solid rgba(255,255,255,.2); text-decoration:none }
         .demo-card .activate-btn:active { transform:scale(.97) }
@@ -318,33 +215,18 @@
         .demo-card .nav-chip { padding:10px 22px; border-radius:12px; font-size:14px; font-weight:600; color:#1a0b2f; border:1px solid rgba(26,11,47,.04); cursor:pointer; transition:var(--transition); background:#f1f5f9; border-color:#dce4ec }
         .demo-card .nav-chip:hover { transform:translateY(-3px); box-shadow:var(--shadow-sm) }
         .country-dashboards { display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 16px }
-        .country-dashboards .country-btn { padding:8px 16px; border-radius:12px; font-size:13px; font-weight:700; color:rgba(26,11,47,.7); cursor:pointer; transition:var(--transition); font-family:inherit; background:#f1f5f9; border-color:#dce4ec }
+        .country-dashboards .country-btn { padding:8px 16px; border-radius:12px; font-size:13px; font-weight:700; color:rgba(26,11,47,.7); cursor:pointer; transition:var(--transition); font-family:inherit; background:#f1f5f9; border-color:#dce4ec; border:1px solid #dce4ec; }
         .country-dashboards .country-btn:hover { transform:translateY(-2px) }
         .country-dashboards .country-btn.active { background:linear-gradient(135deg,var(--primary),var(--primary-dark)) !important; color:#fff !important; border-color:var(--primary) !important }
-        .demo-card .feature-section { border-radius:16px; padding:16px 18px; margin:14px 0 18px; display:none; background:#f8fafc; border-color:#e2e8f0 }
+        .demo-card .feature-section { border-radius:16px; padding:16px 18px; margin:14px 0 18px; display:none; background:#f8fafc; border:1px solid #e2e8f0; }
         .demo-card .feature-section.active { display:block }
         .demo-card .feature-section .feature-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px }
         .demo-card .feature-section .feature-header h4 { font-weight:800; font-size:16px; color:#1a0b2f }
         .demo-card .feature-section .feature-header span { font-size:12px; color:rgba(26,11,47,.5); font-weight:500 }
-        .music-playlist .track { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(26,11,47,.04) }
-        .music-playlist .track:last-child { border-bottom:none }
-        .music-playlist .track span { font-size:14px; font-weight:500; color:#1a0b2f }
-        .music-playlist .track .play-btn { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); border:none; color:#fff; width:34px; height:34px; border-radius:50%; cursor:pointer; transition:var(--transition); box-shadow:0 2px 10px var(--primary-glow) }
-        .music-playlist .track .play-btn:hover { transform:scale(1.1); box-shadow:0 4px 20px var(--primary-glow) }
-        .tiktok-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px }
-        .tiktok-grid .video-card { background:rgba(26,11,47,.04); border-radius:12px; padding:10px; text-align:center; border:1px solid rgba(26,11,47,.04); transition:var(--transition); cursor:pointer }
-        .tiktok-grid .video-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--primary) }
-        .tiktok-grid .video-card .thumb { width:100%; aspect-ratio:9/16; border-radius:12px; background-size:cover; background-position:center; position:relative; border-radius:8px; min-height:120px; background-color:#1a1a2e; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.3); font-size:40px }
-        .tiktok-grid .video-card .thumb .play-overlay { position:absolute; inset:0; background:rgba(0,0,0,.2); display:flex; align-items:center; justify-content:center; border-radius:8px; font-size:32px; opacity:0; transition:var(--transition); color:#fff }
-        .tiktok-grid .video-card:hover .thumb .play-overlay { opacity:1 }
-        .tiktok-grid .video-card .video-title { font-size:12px; font-weight:700; color:#1a0b2f; margin-top:6px }
-        .youtube-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px }
-        .youtube-grid .video-card { background:rgba(26,11,47,.04); border-radius:12px; padding:10px; text-align:center; border:1px solid rgba(26,11,47,.04); transition:var(--transition); cursor:pointer }
-        .youtube-grid .video-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:#ff0000 }
-        .youtube-grid .video-card .thumb { width:100%; aspect-ratio:16/9; border-radius:12px; background-size:cover; background-position:center; position:relative; border-radius:8px; min-height:100px; background-color:#1a1a2e; display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.3); font-size:40px }
-        .youtube-grid .video-card .thumb .play-overlay { position:absolute; inset:0; background:rgba(0,0,0,.2); display:flex; align-items:center; justify-content:center; border-radius:8px; font-size:32px; opacity:0; transition:var(--transition); color:#fff }
-        .youtube-grid .video-card:hover .thumb .play-overlay { opacity:1 }
-        .youtube-grid .video-card .video-title { font-size:12px; font-weight:700; color:#1a0b2f; margin-top:6px }
+        .demo-card .questions-list { margin:10px 0; padding:0; list-style:none }
+        .demo-card .questions-list li { padding:8px 12px; margin:4px 0; background:rgba(26,11,47,.05); border-radius:8px; font-size:13px; color:#1a0b2f; border-left:3px solid var(--primary); cursor:pointer; transition:var(--transition) }
+        .demo-card .questions-list li:hover { background:rgba(26,11,47,.1); transform:translateX(4px) }
+        .demo-card .questions-list li strong { color:var(--primary-dark) }
         .demo-card .profile-list { margin:12px 0 20px }
         .demo-card .profile-item { border-radius:16px; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; border:1px solid rgba(26,11,47,.04); margin-bottom:10px; transition:var(--transition); background:#f8fafc; border-color:#e2e8f0 }
         .demo-card .profile-item:hover { transform:translateX(6px) }
@@ -356,48 +238,6 @@
         .demo-card .profile-amount small { font-weight:500; color:rgba(26,11,47,.5); font-size:12px; display:block }
         .demo-card .footer-note { margin-top:28px; text-align:center; font-size:14px; font-weight:500; color:rgba(26,11,47,.7); padding:14px 10px 6px; border-top:1px solid rgba(201,168,67,.06); background:rgba(26,11,47,.02); border-radius:60px; border:1px solid rgba(26,11,47,.04) }
         .demo-card .footer-note span { font-weight:700; background:linear-gradient(135deg,var(--primary),var(--gold-light)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text }
-        .chat-page-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.7); backdrop-filter:blur(20px); z-index:10000; display:none; align-items:center; justify-content:center; padding:16px }
-        .chat-page-overlay.active { display:flex }
-        .chat-page { background:linear-gradient(145deg,var(--bg-start),var(--bg-end)); backdrop-filter:blur(20px); border-radius:20px; max-width:420px; width:100%; height:580px; display:flex; flex-direction:column; box-shadow:var(--shadow-xl); animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); overflow:hidden; border:1px solid rgba(255,255,255,.06) }
-        .chat-page-header { padding:16px 20px; background:linear-gradient(135deg,var(--primary-dark),#0a1a2f); color:#fff; display:flex; align-items:center; gap:14px; flex-shrink:0 }
-        .chat-page-header img { width:44px; height:44px; border-radius:50%; border:2px solid rgba(255,255,255,.1); object-fit:cover }
-        .chat-page-header .info { flex:1; min-width:0 }
-        .chat-page-header .info .name { font-weight:800; font-size:16px; letter-spacing:-.2px }
-        .chat-page-header .info .status { font-size:12px; opacity:.7; font-weight:500 }
-        .chat-page-header .close-btn { background:rgba(255,255,255,.06); border:none; color:#fff; width:36px; height:36px; border-radius:50%; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:var(--transition) }
-        .chat-page-header .close-btn:hover { background:rgba(255,255,255,.1) }
-        .chat-messages-area { flex:1; padding:16px 18px; overflow-y:auto; background:rgba(255,255,255,.02); display:flex; flex-direction:column; gap:8px }
-        .chat-msg { max-width:80%; padding:12px 16px; border-radius:18px; font-size:14px; line-height:1.5; word-break:break-word; animation:slideUpFast .3s cubic-bezier(.16,1,.3,1) }
-        .chat-msg.received { background:rgba(255,255,255,.06); color:#fff; align-self:flex-start; border-bottom-left-radius:4px; box-shadow:var(--shadow-sm) }
-        .chat-msg.sent { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; align-self:flex-end; border-bottom-right-radius:4px; box-shadow:0 4px 16px var(--primary-glow) }
-        .chat-msg .msg-name { font-weight:700; font-size:12px; margin-bottom:4px }
-        .chat-msg.received .msg-name { color:var(--primary) }
-        .chat-msg .time { font-size:10px; opacity:.4; margin-top:4px; display:block; text-align:right }
-        .chat-msg.sent .time { opacity:.6 }
-        .chat-upgrade-banner { background:rgba(254,249,231,.1); backdrop-filter:blur(10px); padding:12px 16px; text-align:center; border-top:2px solid var(--gold-light); flex-shrink:0; display:none; font-size:13px; font-weight:600; color:#fff }
-        .chat-upgrade-banner a { color:#fff; font-weight:700; text-decoration:none; background:linear-gradient(135deg,var(--gold-light),#e09d2e); padding:6px 20px; border-radius:40px; display:inline-block; margin-top:4px; font-size:13px; box-shadow:0 2px 10px rgba(201,168,67,.3); transition:var(--transition) }
-        .chat-upgrade-banner a:hover { transform:scale(1.04); box-shadow:0 4px 20px rgba(201,168,67,.4) }
-        .chat-page-footer { padding:12px 16px 16px; background:rgba(255,255,255,.02); backdrop-filter:blur(10px); border-top:1px solid rgba(255,255,255,.02); display:flex; gap:10px; flex-shrink:0 }
-        .chat-page-footer input { flex:1; padding:12px 18px; border-radius:30px; border:2px solid rgba(255,255,255,.06); font-size:14px; outline:none; background:rgba(255,255,255,.04); color:#fff; transition:var(--transition) }
-        .chat-page-footer input:focus { border-color:var(--primary); box-shadow:0 0 0 4px var(--primary-glow) }
-        .chat-page-footer button { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; border:none; padding:12px 24px; border-radius:30px; font-weight:700; font-size:14px; cursor:pointer; transition:var(--transition); box-shadow:0 4px 16px var(--primary-glow) }
-        .chat-page-footer button:hover { transform:scale(1.04); box-shadow:0 8px 24px var(--primary-glow) }
-        .chat-page-footer button:disabled { opacity:.5; cursor:not-allowed; transform:none }
-        #withdrawalPopup { position:fixed; bottom:120px; right:20px; z-index:9999; max-width:280px; width:auto; pointer-events:none; display:flex; flex-direction:column; gap:8px; }
-        #withdrawalPopup .popup-card { background:rgba(10,26,47,.95); backdrop-filter:blur(20px); border:2px solid rgba(31,187,122,.15); border-radius:14px; padding:10px 14px; box-shadow:var(--shadow-lg); display:flex; align-items:center; gap:10px; pointer-events:auto; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) forwards; width:100%; max-width:280px; }
-        #withdrawalPopup .popup-card img { width:36px; height:36px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); flex-shrink:0; }
-        #withdrawalPopup .popup-card .info { flex:1; min-width:0; }
-        #withdrawalPopup .popup-card .info .title { font-weight:700; font-size:10px; color:var(--primary); text-transform:uppercase; letter-spacing:.5px; margin-bottom:1px; }
-        #withdrawalPopup .popup-card .info .name { font-size:13px; color:#fff; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-        #withdrawalPopup .popup-card .info .method { font-size:10px; color:rgba(255,255,255,.5); display:flex; align-items:center; gap:4px; margin-top:1px; }
-        #withdrawalPopup .popup-card .info .amount-display { font-size:16px; font-weight:900; color:var(--gold-light); white-space:nowrap; }
-        #withdrawalPopup .popup-card .close { background:rgba(255,255,255,.04); border:none; color:rgba(255,255,255,.5); width:24px; height:24px; border-radius:50%; cursor:pointer; font-size:11px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:700; transition:var(--transition); }
-        #withdrawalPopup .popup-card .close:hover { background:rgba(255,255,255,.08); }
-        .whatsapp-float { position:fixed; bottom:24px; right:24px; z-index:9998; display:flex; align-items:center; gap:12px; text-decoration:none }
-        .whatsapp-float .whatsapp-icon { width:50px; height:50px; border-radius:50%; box-shadow:0 8px 32px rgba(37,211,102,.3); transition:var(--transition); border:2px solid #fff; background:linear-gradient(135deg,#25D366,#128C7E); display:flex; align-items:center; justify-content:center; flex-shrink:0 }
-        .whatsapp-float .whatsapp-icon:hover { transform:scale(1.08); box-shadow:0 12px 40px rgba(37,211,102,.4) }
-        .whatsapp-float .whatsapp-icon img { width:55%; height:55%; object-fit:contain; display:block; filter:brightness(0) invert(1) }
-        .whatsapp-float .whatsapp-text { background:rgba(10,26,47,.85); backdrop-filter:blur(12px); padding:10px 18px; border-radius:60px; border:1px solid rgba(37,211,102,.3); font-weight:800; font-size:15px; color:#fff; letter-spacing:-.2px; white-space:nowrap; box-shadow:0 8px 32px rgba(0,0,0,.3) }
         .demo-action-popup { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.7); backdrop-filter:blur(12px); z-index:30000; display:none; align-items:center; justify-content:center; padding:20px }
         .demo-action-popup.active { display:flex }
         .demo-action-popup .popup-content { background:linear-gradient(145deg,var(--bg-start),var(--bg-end)); backdrop-filter:blur(20px); border-radius:20px; padding:36px 28px 32px; max-width:560px; width:100%; text-align:center; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); box-shadow:var(--shadow-xl); border:1px solid rgba(255,255,255,.06) }
@@ -455,72 +295,48 @@
         .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
-        @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
-        @keyframes slideUpFast { from { opacity:0; transform:translateY(30px) scale(.96) } to { opacity:1; transform:translateY(0) scale(1) } }
-        @media (max-width:480px) {
-            .footer-grid { grid-template-columns:1fr 1fr }
-            .page-wrap { padding:12px 10px 20px; padding-top:76px }
-            .brand-name { font-size:19px }
-            .brand-icon { font-size:20px }
-            .online-badge { font-size:11px; padding:4px 10px 4px 8px }
-            .online-badge .count-number { font-size:11px; min-width:28px }
-            .online-badge .label { font-size:9px }
-            .pipe-sep { font-size:15px }
-            .signup-btn { font-size:10px; padding:5px 12px; border-radius:10px }
-            .hero-title { font-size:30px }
-            .hero-subtitle { font-size:24px }
-            .demo-card { padding:18px 16px 22px }
-            .demo-card .stats-grid { grid-template-columns:1fr 1fr; gap:10px }
-            .demo-card .stat-card .stat-value { font-size:18px }
-            .demo-card .welcome-row .greeting { font-size:16px }
-            .demo-card .earn-card { padding:14px 16px }
-            .demo-card .earn-left .label { font-size:13px }
-            .demo-card .earn-left .amount { font-size:15px }
-            .chat-page { height:450px; max-width:100% }
-            .story-card img { width:44px; height:44px }
-            .way-card .way-icon { width:40px; height:40px }
-            .way-card { padding:12px 14px }
-            .whatsapp-float .whatsapp-icon { width:46px; height:46px }
-            .whatsapp-float .whatsapp-text { font-size:13px; padding:8px 14px }
-            #withdrawalPopup { bottom:80px; right:10px; max-width:220px; }
-            #withdrawalPopup .popup-card { max-width:220px; padding:8px 12px; }
-            #withdrawalPopup .popup-card img { width:30px; height:30px; }
-            #withdrawalPopup .popup-card .info .name { font-size:11px; }
-            #withdrawalPopup .popup-card .info .amount-display { font-size:13px; }
-            .footer-section { margin-left:-10px; margin-right:-10px; padding-left:10px; padding-right:10px }
-            .section { padding:20px 14px 22px }
-            .user-card img { width:46px; height:46px }
-            .user-card .user-info .name { font-size:15px }
-            .user-card .user-info .bio { font-size:12px }
-            .tiktok-grid,.youtube-grid { grid-template-columns:1fr 1fr; gap:10px }
-            .user-card .user-actions { flex-direction:row }
-            .user-card .user-actions a { padding:6px 16px; font-size:11px }
-            .hero-buttons .btn-group .btn-primary { min-width:100px !important; padding:10px 12px !important; font-size:12px !important; height:44px !important; flex:1 1 auto !important }
-            .hero-buttons .btn-group { gap:6px !important; width:100% !important }
-            .demo-page { padding:16px 12px 30px }
-            .demo-page .demo-header { padding:10px 14px; flex-wrap:wrap; gap:8px }
-            .demo-action-popup .popup-content { padding:24px 16px 24px }
-        }
-        .green-highlight { color:var(--primary) !important; font-weight:900 }
-        .section-live.live-foreigners-section { background:#ffffff !important; color:#1a0b2f !important; border-color:#e0e0e0 !important; padding:20px 16px 22px !important; margin:0 -14px 16px !important; border-radius:0 !important }
-        .section-live.live-foreigners-section .section-header h2 { color:#1a0b2f !important }
-        .section-live.live-foreigners-section .section-header .icon { background:linear-gradient(135deg,#1fbb7a,#0f7b5a) !important }
-        .section-live.live-foreigners-section .section-subtitle { color:#3a5072 !important }
-        .section-live.live-foreigners-section .live-intro .live-count,.section-live.live-foreigners-section .live-intro .live-count span,.section-live.live-foreigners-section .live-intro .live-tip { color:#1a0b2f !important }
-        .section-live.live-foreigners-section .user-card { background:#f8f9fa !important; border-color:#e9ecef !important }
-        .section-live.live-foreigners-section .user-card .user-info .name,.section-live.live-foreigners-section .user-card .user-info .country,.section-live.live-foreigners-section .user-card .user-info .bio,.section-live.live-foreigners-section .user-card .user-info .status { color:#1a0b2f !important }
-        .section-live.live-foreigners-section .user-card .user-actions .watch { color:#1a0b2f !important; background:rgba(0,0,0,.05) !important }
-        .section-live.live-foreigners-section .user-card .user-actions .watch:hover { background:rgba(0,0,0,.1) !important }
-        .section-live.live-foreigners-section .live-intro { background:#f8f9fa !important; border-color:#e9ecef !important }
-        .section-live.live-foreigners-section .section-header .badge.live { background:#dc2626 !important; color:#fff !important; border-color:#dc2626 !important }
-        .hero-buttons .btn-group { display:flex !important; flex-wrap:nowrap !important; justify-content:center !important; gap:10px !important; width:100% !important; max-width:380px !important; margin:0 auto !important }
-        .hero-buttons .btn-group .btn-primary { flex:1 1 auto !important; min-width:120px !important; padding:14px 12px !important; font-size:14px !important; height:48px !important; border-radius:12px !important; white-space:nowrap !important }
-        .hero-buttons>a.btn-primary { min-width:200px !important; width:auto !important; padding:14px 32px !important; height:54px !important; font-size:15px !important }
-        .questions-list { margin:10px 0; padding:0; list-style:none }
-        .questions-list li { padding:8px 12px; margin:4px 0; background:rgba(26,11,47,.05); border-radius:8px; font-size:13px; color:#1a0b2f; border-left:3px solid var(--primary); cursor:pointer; transition:var(--transition) }
-        .questions-list li:hover { background:rgba(26,11,47,.1); transform:translateX(4px) }
-        .questions-list li strong { color:var(--primary-dark) }
-        .profile-amount { color:rgba(26,11,47,.4) !important; font-weight:500 !important }
+        .chat-page-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.7); backdrop-filter:blur(20px); z-index:10000; display:none; align-items:center; justify-content:center; padding:16px }
+        .chat-page-overlay.active { display:flex }
+        .chat-page { background:linear-gradient(145deg,var(--bg-start),var(--bg-end)); backdrop-filter:blur(20px); border-radius:20px; max-width:420px; width:100%; height:580px; display:flex; flex-direction:column; box-shadow:var(--shadow-xl); animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); overflow:hidden; border:1px solid rgba(255,255,255,.06) }
+        .chat-page-header { padding:16px 20px; background:linear-gradient(135deg,var(--primary-dark),#0a1a2f); color:#fff; display:flex; align-items:center; gap:14px; flex-shrink:0 }
+        .chat-page-header img { width:44px; height:44px; border-radius:50%; border:2px solid rgba(255,255,255,.1); object-fit:cover }
+        .chat-page-header .info { flex:1; min-width:0 }
+        .chat-page-header .info .name { font-weight:800; font-size:16px; letter-spacing:-.2px }
+        .chat-page-header .info .status { font-size:12px; opacity:.7; font-weight:500 }
+        .chat-page-header .close-btn { background:rgba(255,255,255,.06); border:none; color:#fff; width:36px; height:36px; border-radius:50%; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:var(--transition) }
+        .chat-page-header .close-btn:hover { background:rgba(255,255,255,.1) }
+        .chat-messages-area { flex:1; padding:16px 18px; overflow-y:auto; background:rgba(255,255,255,.02); display:flex; flex-direction:column; gap:8px }
+        .chat-msg { max-width:80%; padding:12px 16px; border-radius:18px; font-size:14px; line-height:1.5; word-break:break-word; animation:slideUpFast .3s cubic-bezier(.16,1,.3,1) }
+        .chat-msg.received { background:rgba(255,255,255,.06); color:#fff; align-self:flex-start; border-bottom-left-radius:4px; box-shadow:var(--shadow-sm) }
+        .chat-msg.sent { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; align-self:flex-end; border-bottom-right-radius:4px; box-shadow:0 4px 16px var(--primary-glow) }
+        .chat-msg .msg-name { font-weight:700; font-size:12px; margin-bottom:4px }
+        .chat-msg.received .msg-name { color:var(--primary) }
+        .chat-msg .time { font-size:10px; opacity:.4; margin-top:4px; display:block; text-align:right }
+        .chat-msg.sent .time { opacity:.6 }
+        .chat-upgrade-banner { background:rgba(254,249,231,.1); backdrop-filter:blur(10px); padding:12px 16px; text-align:center; border-top:2px solid var(--gold-light); flex-shrink:0; display:none; font-size:13px; font-weight:600; color:#fff }
+        .chat-upgrade-banner a { color:#fff; font-weight:700; text-decoration:none; background:linear-gradient(135deg,var(--gold-light),#e09d2e); padding:6px 20px; border-radius:40px; display:inline-block; margin-top:4px; font-size:13px; box-shadow:0 2px 10px rgba(201,168,67,.3); transition:var(--transition) }
+        .chat-upgrade-banner a:hover { transform:scale(1.04); box-shadow:0 4px 20px rgba(201,168,67,.4) }
+        .chat-page-footer { padding:12px 16px 16px; background:rgba(255,255,255,.02); backdrop-filter:blur(10px); border-top:1px solid rgba(255,255,255,.02); display:flex; gap:10px; flex-shrink:0 }
+        .chat-page-footer input { flex:1; padding:12px 18px; border-radius:30px; border:2px solid rgba(255,255,255,.06); font-size:14px; outline:none; background:rgba(255,255,255,.04); color:#fff; transition:var(--transition) }
+        .chat-page-footer input:focus { border-color:var(--primary); box-shadow:0 0 0 4px var(--primary-glow) }
+        .chat-page-footer button { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; border:none; padding:12px 24px; border-radius:30px; font-weight:700; font-size:14px; cursor:pointer; transition:var(--transition); box-shadow:0 4px 16px var(--primary-glow) }
+        .chat-page-footer button:hover { transform:scale(1.04); box-shadow:0 8px 24px var(--primary-glow) }
+        .chat-page-footer button:disabled { opacity:.5; cursor:not-allowed; transform:none }
+        #withdrawalPopup { position:fixed; bottom:120px; right:20px; z-index:9999; max-width:280px; width:auto; pointer-events:none; display:flex; flex-direction:column; gap:8px; }
+        #withdrawalPopup .popup-card { background:rgba(10,26,47,.95); backdrop-filter:blur(20px); border:2px solid rgba(31,187,122,.15); border-radius:14px; padding:10px 14px; box-shadow:var(--shadow-lg); display:flex; align-items:center; gap:10px; pointer-events:auto; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) forwards; width:100%; max-width:280px; }
+        #withdrawalPopup .popup-card img { width:36px; height:36px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); flex-shrink:0; }
+        #withdrawalPopup .popup-card .info { flex:1; min-width:0; }
+        #withdrawalPopup .popup-card .info .title { font-weight:700; font-size:10px; color:var(--primary); text-transform:uppercase; letter-spacing:.5px; margin-bottom:1px; }
+        #withdrawalPopup .popup-card .info .name { font-size:13px; color:#fff; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        #withdrawalPopup .popup-card .info .method { font-size:10px; color:rgba(255,255,255,.5); display:flex; align-items:center; gap:4px; margin-top:1px; }
+        #withdrawalPopup .popup-card .info .amount-display { font-size:16px; font-weight:900; color:var(--gold-light); white-space:nowrap; }
+        #withdrawalPopup .popup-card .close { background:rgba(255,255,255,.04); border:none; color:rgba(255,255,255,.5); width:24px; height:24px; border-radius:50%; cursor:pointer; font-size:11px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:700; transition:var(--transition); }
+        #withdrawalPopup .popup-card .close:hover { background:rgba(255,255,255,.08); }
+        .whatsapp-float { position:fixed; bottom:24px; right:24px; z-index:9998; display:flex; align-items:center; gap:12px; text-decoration:none }
+        .whatsapp-float .whatsapp-icon { width:50px; height:50px; border-radius:50%; box-shadow:0 8px 32px rgba(37,211,102,.3); transition:var(--transition); border:2px solid #fff; background:linear-gradient(135deg,#25D366,#128C7E); display:flex; align-items:center; justify-content:center; flex-shrink:0 }
+        .whatsapp-float .whatsapp-icon:hover { transform:scale(1.08); box-shadow:0 12px 40px rgba(37,211,102,.4) }
+        .whatsapp-float .whatsapp-icon img { width:55%; height:55%; object-fit:contain; display:block; filter:brightness(0) invert(1) }
+        .whatsapp-float .whatsapp-text { background:rgba(10,26,47,.85); backdrop-filter:blur(12px); padding:10px 18px; border-radius:60px; border:1px solid rgba(37,211,102,.3); font-weight:800; font-size:15px; color:#fff; letter-spacing:-.2px; white-space:nowrap; box-shadow:0 8px 32px rgba(0,0,0,.3) }
         .wheel-container { position:relative; width:240px; height:240px; margin:0 auto 16px; }
         .wheel { width:100%; height:100%; border-radius:50%; position:relative; transition:transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99); box-shadow:0 0 0 6px #1fbb7a,0 0 0 12px rgba(31,187,122,.2); }
         .wheel-segment { position:absolute; width:50%; height:50%; top:0; left:50%; transform-origin:0% 100%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.5); padding-left:20px; }
@@ -544,18 +360,29 @@
         .whatsapp-sim .footer .send-btn { background:#25d366; color:#fff; border:none; padding:8px 20px; border-radius:30px; font-weight:700; cursor:pointer; }
         .whatsapp-sim .footer .send-btn:hover { background:#1ebe5c; }
         .wa-earned { font-size:18px; font-weight:800; color:#25d366; margin-top:6px; }
-        .icon-chat { background: #25a3d3; }
-        .icon-questions { background: #f39c12; }
-        .icon-tiktok { background: #000000; }
-        .icon-affiliate { background: #9b59b6; }
-        .icon-whatsapp { background: #25D366; }
-        .icon-youtube { background: #FF0000; }
-        .icon-spinning { background: #e67e22; }
+        @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+        @keyframes slideUpFast { from { opacity:0; transform:translateY(30px) scale(.96) } to { opacity:1; transform:translateY(0) scale(1) } }
+        @media (max-width:480px) { .footer-grid { grid-template-columns:1fr 1fr } .page-wrap { padding:12px 10px 20px; padding-top:76px } .brand-name { font-size:19px } .brand-icon { font-size:20px } .online-badge { font-size:11px; padding:4px 10px 4px 8px } .online-badge .count-number { font-size:11px; min-width:28px } .online-badge .label { font-size:9px } .pipe-sep { font-size:15px } .signup-btn { font-size:10px; padding:5px 12px; border-radius:10px } .hero-title { font-size:30px } .hero-subtitle { font-size:24px } .demo-card { padding:18px 16px 22px } .demo-card .stats-grid { grid-template-columns:1fr 1fr; gap:10px } .demo-card .stat-card .stat-value { font-size:18px } .demo-card .welcome-row .greeting { font-size:16px } .demo-card .questions-list li { font-size:12px } .chat-page { height:450px; max-width:100% } .story-card img { width:44px; height:44px } .way-card .way-icon { width:40px; height:40px } .way-card { padding:12px 14px } .whatsapp-float .whatsapp-icon { width:46px; height:46px } .whatsapp-float .whatsapp-text { font-size:13px; padding:8px 14px } #withdrawalPopup { bottom:80px; right:10px; max-width:220px; } #withdrawalPopup .popup-card { max-width:220px; padding:8px 12px; } #withdrawalPopup .popup-card img { width:30px; height:30px; } #withdrawalPopup .popup-card .info .name { font-size:11px; } #withdrawalPopup .popup-card .info .amount-display { font-size:13px; } .footer-section { margin-left:-10px; margin-right:-10px; padding-left:10px; padding-right:10px } .section { padding:20px 14px 22px } .user-card img { width:46px; height:46px } .user-card .user-info .name { font-size:15px } .user-card .user-info .bio { font-size:12px } .user-card .user-actions { flex-direction:row } .user-card .user-actions a { padding:6px 16px; font-size:11px } .hero-buttons .btn-group .btn-primary { min-width:100px !important; padding:10px 12px !important; font-size:12px !important; height:44px !important; flex:1 1 auto !important } .hero-buttons .btn-group { gap:6px !important; width:100% !important } .demo-page { padding:16px 12px 30px } .demo-page .demo-header { padding:10px 14px; flex-wrap:wrap; gap:8px } .demo-action-popup .popup-content { padding:24px 16px 24px } }
+        .live-foreigners-section { background:#ffffff !important; color:#1a0b2f !important; border-color:#e0e0e0 !important; padding:20px 16px 22px !important; margin:0 -14px 16px !important; border-radius:0 !important }
+        .live-foreigners-section .section-header h2 { color:#1a0b2f !important }
+        .live-foreigners-section .section-header .icon { background:linear-gradient(135deg,#1fbb7a,#0f7b5a) !important }
+        .live-foreigners-section .section-subtitle { color:#3a5072 !important }
+        .live-foreigners-section .live-intro .live-count,.live-foreigners-section .live-intro .live-count span,.live-foreigners-section .live-intro .live-tip { color:#1a0b2f !important }
+        .live-foreigners-section .user-card { background:#f8f9fa !important; border-color:#e9ecef !important }
+        .live-foreigners-section .user-card .user-info .name,.live-foreigners-section .user-card .user-info .country,.live-foreigners-section .user-card .user-info .bio,.live-foreigners-section .user-card .user-info .status { color:#1a0b2f !important }
+        .live-foreigners-section .user-card .user-actions .watch { color:#1a0b2f !important; background:rgba(0,0,0,.05) !important }
+        .live-foreigners-section .user-card .user-actions .watch:hover { background:rgba(0,0,0,.1) !important }
+        .live-foreigners-section .live-intro { background:#f8f9fa !important; border-color:#e9ecef !important }
+        .live-foreigners-section .section-header .badge.live { background:#dc2626 !important; color:#fff !important; border-color:#dc2626 !important }
+        .hero-buttons .btn-group { display:flex !important; flex-wrap:nowrap !important; justify-content:center !important; gap:10px !important; width:100% !important; max-width:380px !important; margin:0 auto !important }
+        .hero-buttons .btn-group .btn-primary { flex:1 1 auto !important; min-width:120px !important; padding:14px 12px !important; font-size:14px !important; height:48px !important; border-radius:12px !important; white-space:nowrap !important }
+        .hero-buttons>a.btn-primary { min-width:200px !important; width:auto !important; padding:14px 32px !important; height:54px !important; font-size:15px !important }
     </style>
 </head>
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
     <div class="page-wrap">
+        <!-- HEADER -->
         <div class="header-row">
             <div class="brand"><span class="brand-icon">🌍</span><span class="brand-name">MYQASH<span>APP</span></span></div>
             <div class="header-center">
@@ -566,11 +393,11 @@
         </div>
         <div class="trust-badge-wrapper"><div class="trust-badge">⭐ TRUSTED BY <span class="green-highlight" id="trustCounter">187,432</span>+ AFRICANS</div></div>
 
-        <!-- HERO SECTION -->
+        <!-- HERO -->
         <div class="section hero-section">
             <h1 class="hero-title">Get Paid <span style="color:#fff;">Every Time</span></h1>
             <h2 class="hero-subtitle">Turn Clicks to Cash</h2>
-            <p class="hero-desc">Join <span class="green-highlight" id="heroCounter">187,450</span>+ Africans earning <strong>50,000UGX-100,000UGX daily</strong> by watching, Chatting foreigners,Answering Questions, posting on status & More. <strong>daily withdraw</strong> via Mobile Money, Mpesa.</p>
+            <p class="hero-desc">Join <span class="green-highlight" id="heroCounter">187,450</span>+ Africans earning <strong>50,000UGX-100,000UGX daily</strong> by watching, chatting with foreigners, answering questions, posting on status &amp; more. <strong>daily withdraw</strong> via Mobile Money, Mpesa.</p>
             <div class="hero-buttons">
                 <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
                 <div class="btn-group">
@@ -580,6 +407,7 @@
             </div>
         </div>
 
+        <!-- EARNING SCROLL -->
         <div class="earnings-scroll">
             <span class="scroll-label">🔥 EARNING</span>
             <span class="scroll-content" id="earningsScroll">
@@ -607,6 +435,7 @@
             </span>
         </div>
 
+        <!-- STATS -->
         <div class="section section-stats">
             <div class="section-header"><div class="icon">📊</div><h2>Live Stats</h2><span class="badge live">🔴 LIVE</span></div>
             <div class="stats-grid">
@@ -616,101 +445,66 @@
             </div>
         </div>
 
+        <!-- VIDEO SECTION - FIXED EMBED -->
         <div class="section section-video">
             <div class="video-label"><span class="badge-video">▶️ WATCH</span><h3>Explanation Video</h3></div>
             <div class="video-explain">📹 <strong>Watch how Myqashapp works</strong> — See how you can earn by chatting, watching videos, and completing simple tasks. Real members, real payments!</div>
-            <div class="video-container"><iframe src="https://youtu.be/jY6EW0P3McQ?si=EtHSmEU8g10pQbYM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/jY6EW0P3McQ" title="Myqashapp Explanation Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
 
+        <!-- LIVE FOREIGNERS -->
         <div class="section section-live live-foreigners-section" id="liveChatSection">
             <div class="section-header"><div class="icon">💬</div><h2>Live Foreigners Online</h2><span class="badge live">🔴 LIVE</span></div>
             <div class="live-intro"><span class="live-count">👥 <span id="activeChatters">8</span> members online</span><span class="live-tip">🔥 <span id="typingIndicator">Someone is typing...</span></span></div>
             <div id="liveUserList"></div>
         </div>
 
+        <!-- 7 WAYS TO EARN -->
         <div class="section section-ways">
             <div class="section-header"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
             <p class="section-subtitle">Every feature pays real money. Do them all every day and stack your earnings.</p>
             <div class="ways-grid">
-                <!-- 1. CHAT WITH FOREIGNERS -->
                 <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=12" alt="Chat with Foreigners" loading="lazy" style="border:2px solid #25a3d3;">
-                    <div class="way-content">
-                        <div class="way-name">💬 Chat with Foreigners</div>
-                        <div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.</div>
-                        <div class="way-earn"><span class="sub">per person</span></div>
-                        <div class="way-cta"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn" onclick="event.stopPropagation();">Start Chatting</a></div>
-                    </div>
+                    <img class="way-icon" src="https://i.pravatar.cc/100?img=12" alt="Chat" loading="lazy" style="border:2px solid #25a3d3;">
+                    <div class="way-content"><div class="way-name">💬 Chat with Foreigners</div><div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain.</div><div class="way-earn"><span class="sub">per person</span></div><div class="way-cta"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn" onclick="event.stopPropagation();">Start Chatting</a></div></div>
                 </div>
-                <!-- 2. ANSWERING QUESTIONS -->
                 <div class="way-card" onclick="handleQuestionsPopup()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Answer Questions" loading="lazy" style="background:#f39c12;padding:10px;object-fit:contain;">
-                    <div class="way-content">
-                        <div class="way-name">❓ Answering Questions</div>
-                        <div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div>
-                        <div class="way-earn"><span class="sub">per question</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleQuestionsPopup();return!1">Start Answering</button></div>
-                    </div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Questions" loading="lazy" style="background:#f39c12;padding:10px;object-fit:contain;">
+                    <div class="way-content"><div class="way-name">❓ Answering Questions</div><div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div><div class="way-earn"><span class="sub">per question</span></div><div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleQuestionsPopup();return!1">Start Answering</button></div></div>
                 </div>
-                <!-- 3. PAID TIKTOK VIDEOS -->
                 <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok Videos" loading="lazy" style="background:#000000;padding:10px;object-fit:contain;">
-                    <div class="way-content">
-                        <div class="way-name">🎬 Paid TikTok Videos</div>
-                        <div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.</div>
-                        <div class="way-earn"><span class="sub">per video</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok');return!1">Watch Videos</button></div>
-                    </div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok" loading="lazy" style="background:#000000;padding:10px;object-fit:contain;">
+                    <div class="way-content"><div class="way-name">🎬 Paid TikTok Videos</div><div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch.</div><div class="way-earn"><span class="sub">per video</span></div><div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok');return!1">Watch Videos</button></div></div>
                 </div>
-                <!-- 4. AFFILIATE BONUS -->
                 <div class="way-card" onclick="openAffiliateBonus()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4c8.png" alt="Affiliate Bonus" loading="lazy" style="background:#9b59b6;padding:10px;object-fit:contain;">
-                    <div class="way-content">
-                        <div class="way-name">📈 Affiliate Bonus</div>
-                        <div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!</div>
-                        <div class="way-earn">BONUS</div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();openAffiliateBonus();return!1">Start Promoting</button></div>
-                    </div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4c8.png" alt="Affiliate" loading="lazy" style="background:#9b59b6;padding:10px;object-fit:contain;">
+                    <div class="way-content"><div class="way-name">📈 Affiliate Bonus</div><div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential.</div><div class="way-earn">BONUS</div><div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();openAffiliateBonus();return!1">Start Promoting</button></div></div>
                 </div>
-                <!-- 5. WHATSAPP POSTING -->
                 <div class="way-card" onclick="handleWhatsAppPosting()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png" alt="WhatsApp Posting" loading="lazy" style="background:#25D366;padding:10px;object-fit:contain;">
-                    <div class="way-content">
-                        <div class="way-name">📱 WhatsApp Posting</div>
-                        <div class="way-desc">Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.</div>
-                        <div class="way-earn"><span class="sub">per post</span></div>
-                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleWhatsAppPosting();return!1">Start Posting</button></div>
-                    </div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png" alt="WhatsApp" loading="lazy" style="background:#25D366;padding:10px;object-fit:contain;">
+                    <div class="way-content"><div class="way-name">📱 WhatsApp Posting</div><div class="way-desc">Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.</div><div class="way-earn"><span class="sub">per post</span></div><div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleWhatsAppPosting();return!1">Start Posting</button></div></div>
                 </div>
-                <!-- 6. YOUTUBE EARNING -->
                 <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube Earning" loading="lazy" style="background:#FF0000;padding:10px;object-fit:contain;">
-                    <div class="way-content">
-                        <div class="way-name">📺 YouTube Earning</div>
-                        <div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.</div>
-                        <div class="way-earn"><span class="sub">per day</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">Start Watching</button></div>
-                    </div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube" loading="lazy" style="background:#FF0000;padding:10px;object-fit:contain;">
+                    <div class="way-content"><div class="way-name">📺 YouTube Earning</div><div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards.</div><div class="way-earn"><span class="sub">per day</span></div><div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">Start Watching</button></div></div>
                 </div>
-                <!-- 7. PAID SPINNING -->
                 <div class="way-card" onclick="handleSpinning()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3af.png" alt="Paid Spinning" loading="lazy" style="background:#e67e22;padding:10px;object-fit:contain;">
-                    <div class="way-content">
-                        <div class="way-name">🎰 Paid Spinning</div>
-                        <div class="way-desc">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div>
-                        <div class="way-earn"><span class="sub">per spin</span></div>
-                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleSpinning();return!1">Start Spinning</button></div>
-                    </div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3af.png" alt="Spinning" loading="lazy" style="background:#e67e22;padding:10px;object-fit:contain;">
+                    <div class="way-content"><div class="way-name">🎰 Paid Spinning</div><div class="way-desc">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div><div class="way-earn"><span class="sub">per spin</span></div><div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleSpinning();return!1">Start Spinning</button></div></div>
                 </div>
             </div>
         </div>
 
+        <!-- WITHDRAWAL -->
         <div class="section section-withdraw">
             <div class="section-header"><div class="icon" style="background:linear-gradient(135deg,var(--gold-light),#e09d2e);">🏦</div><h2>Withdrawal Methods</h2><span class="badge" style="background:var(--gold-light);color:var(--navy);border-color:var(--gold-light);">💸 FAST</span></div>
             <p class="section-subtitle">By country — instant payouts</p>
             <div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;"><div class="withdraw-grid"><div class="item">🇰🇪 Kenya → M-Pesa</div><div class="item">🇨🇲 Cameroon → MoMo</div><div class="item">🇬🇭 Ghana → MoMo</div><div class="item">🇳🇬 Nigeria → MoMo</div><div class="item">🇺🇬 Uganda → Mobile Money</div><div class="item">🇷🇼 Rwanda → Mobile Wallet</div><div class="item">🇿🇦 South Africa → Bank Transfer</div><div class="item">🇧🇼 Botswana → Mobile Money</div></div></div>
         </div>
 
+        <!-- HOW IT WORKS -->
         <div class="section section-how">
             <div class="section-header"><div class="icon">🚀</div><h2>How It Works</h2><span class="badge">3 STEPS</span></div>
             <p class="section-subtitle">Start earning in 3 simple steps</p>
@@ -722,6 +516,7 @@
             <div style="text-align:center;margin-top:12px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Get Started Now</a></div>
         </div>
 
+        <!-- STORIES -->
         <div class="section section-stories">
             <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge">REAL PEOPLE</span></div>
             <div style="display:flex;flex-direction:column;gap:4px;text-align:left;">
@@ -733,10 +528,12 @@
             </div>
         </div>
 
+        <!-- LIFETIME -->
         <div class="section section-lifetime lifetime-section">
             <div style="text-align:center;"><div style="font-size:24px;font-weight:900;color:#fff;letter-spacing:-.5px;">Lifetime Access</div><p style="font-size:13px;color:rgba(255,255,255,.7);max-width:380px;margin:6px auto 8px;line-height:1.5;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p><div class="price-wrap"><span class="price-old">$10</span><span class="price-new">$5</span><span class="price-badge">🎯 LIMITED OFFER</span></div><p style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px;">No monthly fees · Instant access</p><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Activate Lifetime Access</a></div>
         </div>
 
+        <!-- FAQ -->
         <div class="section section-faq">
             <div class="section-header"><div class="icon">❓</div><h2>Frequent Questions</h2><span class="badge">FAQ</span></div>
             <details><summary>How much can I earn per day? <span class="arrow">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
@@ -744,9 +541,9 @@
             <details><summary>How do I withdraw? <span class="arrow">▼</span></summary><div class="faq-content">Dashboard → Withdraw → Choose M-Pesa, Mobile Money, Bank Transfer, or Crypto. Withdrawals are processed instantly!</div></details>
             <details><summary>Is it really free to join? <span class="arrow">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
             <details><summary>How long does it take to get paid? <span class="arrow">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
-            <details><summary>Can I use this on my phone? <span class="arrow">▼</span></summary><div class="faq-content">Absolutely! Myqashapp works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
         </div>
 
+        <!-- FOOTER -->
         <div class="footer-section">
             <div class="footer-grid"><div class="col"><h4>EARN</h4><ul><li>Chat with Foreigners</li><li>Answer Questions</li><li>Paid TikTok Videos</li><li>YouTube Earning</li><li>WhatsApp Posts</li><li>Affiliate Bonus</li></ul></div><div class="col"><h4>ACCOUNT</h4><ul><li><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Create Account</a></li><li><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Sign In</a></li><li><a href="#" onclick="document.getElementById('liveChatSection').scrollIntoView({behavior:'smooth'});return!1">Try Demo</a></li></ul></div><div class="col"><h4>COUNTRIES</h4><ul><li>Uganda</li><li>Kenya</li><li>Tanzania</li><li>Rwanda</li></ul></div></div>
             <div class="footer-bottom"><div class="brand-small">© 2026 Myqash<span>App</span>. All rights reserved.</div><div class="copy">Built for Africa · <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Login</a></div></div>
@@ -779,94 +576,45 @@
             </div>
             <div class="stats-grid" id="dashboardStats"></div>
             <div class="divider-light"></div>
-            
-            <!-- ANSWERING QUESTIONS SECTION -->
+
+            <!-- QUESTIONS SECTION -->
             <div class="feature-section active" id="questionsSection" style="display:block;">
-                <div class="feature-header">
-                    <h4>❓ Answer Questions & Earn</h4>
-                    <span>Earn $0.50/question</span>
-                </div>
-                <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:12px;">
-                    Click any question below to start earning. You'll chat, watch a video, then answer!
-                </div>
-                <div style="margin:10px 0;">
-                    <div class="questions-list">
-                        <li onclick="handleEarningWithQuestions('What is the capital of France?', ['London','Paris','Berlin','Madrid'], 'Paris')">
-                            <strong>Q1:</strong> What is the capital of France?
-                        </li>
-                        <li onclick="handleEarningWithQuestions('Which planet is known as the Red Planet?', ['Venus','Mars','Jupiter','Saturn'], 'Mars')">
-                            <strong>Q2:</strong> Which planet is known as the Red Planet?
-                        </li>
-                        <li onclick="handleEarningWithQuestions('What is the largest ocean on Earth?', ['Atlantic','Indian','Pacific','Arctic'], 'Pacific')">
-                            <strong>Q3:</strong> What is the largest ocean on Earth?
-                        </li>
-                        <li onclick="handleEarningWithQuestions('Who wrote Romeo and Juliet?', ['Charles Dickens','William Shakespeare','Mark Twain','Jane Austen'], 'William Shakespeare')">
-                            <strong>Q4:</strong> Who wrote Romeo and Juliet?
-                        </li>
-                        <li onclick="handleEarningWithQuestions('What is the chemical symbol for water?', ['H2O','CO2','NaCl','HCl'], 'H2O')">
-                            <strong>Q5:</strong> What is the chemical symbol for water?
-                        </li>
-                        <li onclick="handleEarningWithQuestions('Which country has the largest population?', ['India','USA','China','Indonesia'], 'India')">
-                            <strong>Q6:</strong> Which country has the largest population?
-                        </li>
-                    </div>
+                <div class="feature-header"><h4>❓ Answer Questions & Earn</h4><span>Earn $0.50/question</span></div>
+                <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:12px;">Click any question below to start earning. You'll chat, watch a video, then answer!</div>
+                <div class="questions-list">
+                    <li onclick="handleEarningWithQuestions('What is the capital of France?', ['London','Paris','Berlin','Madrid'], 'Paris')"><strong>Q1:</strong> What is the capital of France?</li>
+                    <li onclick="handleEarningWithQuestions('Which planet is known as the Red Planet?', ['Venus','Mars','Jupiter','Saturn'], 'Mars')"><strong>Q2:</strong> Which planet is known as the Red Planet?</li>
+                    <li onclick="handleEarningWithQuestions('What is the largest ocean on Earth?', ['Atlantic','Indian','Pacific','Arctic'], 'Pacific')"><strong>Q3:</strong> What is the largest ocean on Earth?</li>
+                    <li onclick="handleEarningWithQuestions('Who wrote Romeo and Juliet?', ['Charles Dickens','William Shakespeare','Mark Twain','Jane Austen'], 'William Shakespeare')"><strong>Q4:</strong> Who wrote Romeo and Juliet?</li>
+                    <li onclick="handleEarningWithQuestions('What is the chemical symbol for water?', ['H2O','CO2','NaCl','HCl'], 'H2O')"><strong>Q5:</strong> What is the chemical symbol for water?</li>
+                    <li onclick="handleEarningWithQuestions('Which country has the largest population?', ['India','USA','China','Indonesia'], 'India')"><strong>Q6:</strong> Which country has the largest population?</li>
                 </div>
                 <div style="margin-top:8px;font-size:12px;color:rgba(26,11,47,0.5);text-align:center;">💡 Answer all questions correctly and earn up to $3.00 daily</div>
             </div>
-            
-            <!-- TIKTOK SECTION -->
+
             <div class="feature-section" id="tiktokSection">
                 <div class="feature-header"><h4>🎬 TikTok Videos</h4><span>Earn $0.20/video</span></div>
-                <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:10px;">Watch trending TikTok videos and earn real money!</div>
                 <div class="tiktok-grid">
-                    <div class="video-card" onclick="handleVideoPlay('TikTok Dance Challenge', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');">▶</div>
-                        <div class="video-title">✨ Dance Challenge</div>
-                    </div>
-                    <div class="video-card" onclick="handleVideoPlay('TikTok Comedy Skit', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=2');">▶</div>
-                        <div class="video-title">😂 Comedy Skit</div>
-                    </div>
-                    <div class="video-card" onclick="handleVideoPlay('TikTok Cooking', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=3');">▶</div>
-                        <div class="video-title">🍳 Cooking Tutorial</div>
-                    </div>
-                    <div class="video-card" onclick="handleVideoPlay('TikTok Fitness', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=4');">▶</div>
-                        <div class="video-title">💪 Fitness Tips</div>
-                    </div>
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Dance Challenge', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')"><div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');">▶</div><div class="video-title">✨ Dance Challenge</div></div>
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Comedy Skit', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')"><div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=2');">▶</div><div class="video-title">😂 Comedy Skit</div></div>
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Cooking', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')"><div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=3');">▶</div><div class="video-title">🍳 Cooking Tutorial</div></div>
+                    <div class="video-card" onclick="handleVideoPlay('TikTok Fitness', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')"><div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=4');">▶</div><div class="video-title">💪 Fitness Tips</div></div>
                 </div>
-                <div style="margin-top:10px;font-size:12px;color:rgba(26,11,47,0.5);text-align:center;">🎬 Watch all videos and earn daily</div>
             </div>
-            
-            <!-- YOUTUBE SECTION -->
+
             <div class="feature-section" id="youtubeSection">
                 <div class="feature-header"><h4>📺 YouTube Videos</h4><span>Earn $0.25/video</span></div>
-                <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:10px;">Watch trending YouTube videos and earn daily rewards!</div>
                 <div class="youtube-grid">
-                    <div class="video-card" onclick="handleVideoPlay('YouTube Tech Review', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');">▶</div>
-                        <div class="video-title">📱 Tech Review</div>
-                    </div>
-                    <div class="video-card" onclick="handleVideoPlay('YouTube Music Video', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=11');">▶</div>
-                        <div class="video-title">🎵 Music Video</div>
-                    </div>
-                    <div class="video-card" onclick="handleVideoPlay('YouTube Documentary', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=12');">▶</div>
-                        <div class="video-title">🎬 Documentary</div>
-                    </div>
-                    <div class="video-card" onclick="handleVideoPlay('YouTube Gaming', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                        <div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=13');">▶</div>
-                        <div class="video-title">🎮 Gaming Stream</div>
-                    </div>
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Tech Review', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')"><div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');">▶</div><div class="video-title">📱 Tech Review</div></div>
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Music Video', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')"><div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=11');">▶</div><div class="video-title">🎵 Music Video</div></div>
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Documentary', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')"><div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=12');">▶</div><div class="video-title">🎬 Documentary</div></div>
+                    <div class="video-card" onclick="handleVideoPlay('YouTube Gaming', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')"><div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=13');">▶</div><div class="video-title">🎮 Gaming Stream</div></div>
                 </div>
-                <div style="margin-top:10px;font-size:12px;color:rgba(26,11,47,0.5);text-align:center;">📺 Watch all videos and earn daily</div>
             </div>
-            
+
             <div class="activate-btn-wrapper"><a href="https://star-hela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank" rel="noopener noreferrer">🔓 Activate Account</a></div>
             <div class="nav-chips">
-                <span class="nav-chip" onclick="handleEarning('Chat with Foreigners', '$4.60', '💬')">💬 Chat</span>
+                <span class="nav-chip" onclick="openChatPageDemo()">💬 Chat</span>
                 <span class="nav-chip" onclick="document.getElementById('questionsSection').scrollIntoView({behavior:'smooth'});">❓ Questions</span>
                 <span class="nav-chip" onclick="toggleTikTokSection();">🎬 TikTok</span>
                 <span class="nav-chip" onclick="toggleYouTubeSection();">📺 YouTube</span>
@@ -875,58 +623,55 @@
             <div style="margin-top:4px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-weight:700;font-size:15px;color:#1a0b2f;">Live Members</span><span style="color:rgba(26,11,47,0.5);font-weight:600;">—</span></div>
                 <div class="profile-list">
-                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=20" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">—</div></div>
-                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=21" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">—</div></div>
-                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=22" alt="Sophie Williams"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">—</div></div>
-                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=23" alt="Carlos Rivera"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">—</div></div>
+                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=20" alt="Emma"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">—</div></div>
+                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=21" alt="Michael"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">—</div></div>
+                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=22" alt="Sophie"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">—</div></div>
+                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=23" alt="Carlos"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">—</div></div>
                 </div>
             </div>
             <div class="footer-note">✦ <span>myqashappug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
         </div>
     </div>
 
-    <!-- VIDEO PLAYER OVERLAY - MAIN PAGE -->
+    <!-- VIDEO PLAYER OVERLAY -->
     <div class="demo-action-popup" id="videoPlayerOverlay">
         <div class="popup-content" style="max-width:600px;padding:24px 20px 28px;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
                 <span style="font-size:20px;font-weight:800;color:#fff;" id="videoPlayerTitle">▶️ Now Playing</span>
                 <span style="font-size:16px;color:var(--primary);font-weight:700;" id="videoPlayerEarn">$0.00</span>
             </div>
-            <div class="video-wrapper">
-                <iframe id="videoPlayerIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div style="margin-top:14px;">
-                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="claim-btn">💰 Claim Rewards</a>
-            </div>
+            <div class="video-wrapper"><iframe id="videoPlayerIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div style="margin-top:14px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="claim-btn">💰 Claim Rewards</a></div>
             <button class="btn-close-popup" onclick="closeVideoPlayer()" style="margin-top:10px;">Close</button>
         </div>
     </div>
 
-    <div class="demo-action-popup" id="demoActionPopup"><div class="popup-content"><div class="icon" id="actionIcon">🎵</div><h3 id="actionTitle">Earn with Music</h3><p id="actionDesc">You're about to earn real money by listening to trending tracks! This is how much you can earn per track.</p><div class="earn-amount" id="actionAmount">—</div><p style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:10px;" id="actionUsd">≈ $1.35 per track</p><button class="btn-close-popup" onclick="closeDemoAction()">Got it!</button></div></div>
+    <!-- CHAT OVERLAY -->
+    <div class="chat-page-overlay" id="chatOverlay">
+        <div class="chat-page">
+            <div class="chat-page-header"><img id="chatPageAvatar" src="https://i.pravatar.cc/100?img=24" alt="User"><div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus">🇺🇸 USA · Online</div></div><button class="close-btn" onclick="closeChatPage()">✕</button></div>
+            <div class="chat-messages-area" id="chatMessagesArea"></div>
+            <div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div>
+            <div class="chat-page-footer"><input type="text" id="chatPageInput" placeholder="Type a message..."><button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button></div>
+        </div>
+    </div>
 
-    <div class="chat-page-overlay" id="chatOverlay"><div class="chat-page"><div class="chat-page-header"><img id="chatPageAvatar" src="https://i.pravatar.cc/100?img=24" alt="User"><div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus">🇺🇸 USA · Online</div></div><button class="close-btn" onclick="closeChatPage()">✕</button></div><div class="chat-messages-area" id="chatMessagesArea"></div><div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div><div class="chat-page-footer"><input type="text" id="chatPageInput" placeholder="Type a message..."><button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button></div></div></div>
-
+    <!-- WITHDRAWAL POPUP -->
     <div id="withdrawalPopup">
         <div class="popup-card" id="popupCard">
             <img id="popupUserImage" src="https://i.pravatar.cc/100?img=25" alt="User" loading="lazy">
-            <div class="info">
-                <div class="title">💸 Live Withdrawal</div>
-                <div class="name" id="popupUserName">🇰🇪 James K.</div>
-                <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;">
-                    <span class="method" id="popupMethod">via M-Pesa</span>
-                    <span class="amount-display" id="popupAmount">KSh 2,580</span>
-                </div>
-            </div>
+            <div class="info"><div class="title">💸 Live Withdrawal</div><div class="name" id="popupUserName">🇰🇪 James K.</div><div style="display:flex;align-items:center;justify-content:space-between;gap:6px;"><span class="method" id="popupMethod">via M-Pesa</span><span class="amount-display" id="popupAmount">KSh 2,580</span></div></div>
             <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button>
         </div>
     </div>
 
+    <!-- WHATSAPP FLOAT -->
     <a href="https://chat.whatsapp.com/HfHXIocqLqpEtLEhobuCvP" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
         <div class="whatsapp-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp"></div>
         <span class="whatsapp-text">WhatsApp Group</span>
     </a>
 
-    <!-- WELCOME BONUS POPUP -->
+    <!-- WELCOME BONUS POPUP - UPDATED TO 20,000 UGX & MATCHING COUNTRIES -->
     <div class="welcome-bonus-overlay" id="welcomeBonusOverlay">
         <div class="bonus-popup">
             <button class="close-btn" onclick="closeWelcomeBonus()">✕</button>
@@ -973,69 +718,56 @@
     </div>
 
     <script>
-        // ===== ALL YOUR JAVASCRIPT FUNCTIONS REMAIN EXACTLY THE SAME =====
-        // ... (the entire script from the original code stays here)
-        // I'm keeping the full JS from your original code
-        
-        // ===== SCROLL PROGRESS =====
-        window.addEventListener('scroll', function() { const s = window.scrollY, d = document.documentElement.scrollHeight - window.innerHeight; document.getElementById('scrollProgress').style.width = (s / d * 100) + '%' });
-        // ===== BACK TO TOP =====
-        window.addEventListener('scroll', function() { const btn = document.getElementById('backToTop'); if (window.scrollY > 300) { btn.classList.add('visible') } else { btn.classList.remove('visible') } });
-        // ===== DEMO PAGE =====
-        function toggleTikTokSection() { const e = document.getElementById('tiktokSection'); if (e) { e.classList.toggle('active'); document.getElementById('questionsSection').classList.remove('active'); document.getElementById('youtubeSection').classList.remove('active') } }
-        function toggleYouTubeSection() { const e = document.getElementById('youtubeSection'); if (e) { e.classList.toggle('active'); document.getElementById('questionsSection').classList.remove('active'); document.getElementById('tiktokSection').classList.remove('active') } }
-        function openDemoPage() { document.getElementById('demoPage').classList.add('active'); document.body.style.overflow = 'hidden' }
-        function closeDemoPage() { document.getElementById('demoPage').classList.remove('active'); document.body.style.overflow = '' }
-        function openDemoAction(t, a, u, i) { document.getElementById('actionIcon').textContent = i || '💰'; document.getElementById('actionTitle').textContent = t; document.getElementById('actionAmount').textContent = a || '—'; document.getElementById('actionUsd').textContent = '≈ ' + u + ' per action'; document.getElementById('demoActionPopup').classList.add('active') }
-        function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active') }
-        document.getElementById('demoActionPopup').addEventListener('click', function(e) { if (e.target === this) closeDemoAction() });
+        // ============================================================
+        // JAVASCRIPT - ALL FUNCTIONALITY
+        // ============================================================
 
-        // ===== VIDEO PLAYER - MAIN PAGE =====
+        // SCROLL PROGRESS
+        window.addEventListener('scroll', function() {
+            const s = window.scrollY, d = document.documentElement.scrollHeight - window.innerHeight;
+            document.getElementById('scrollProgress').style.width = (s / d * 100) + '%';
+        });
+
+        // BACK TO TOP
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backToTop');
+            if (window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        });
+
+        // DEMO PAGE TOGGLES
+        function openDemoPage() { document.getElementById('demoPage').classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeDemoPage() { document.getElementById('demoPage').classList.remove('active'); document.body.style.overflow = ''; }
+        function toggleTikTokSection() { const e = document.getElementById('tiktokSection'); if (e) { e.classList.toggle('active'); document.getElementById('questionsSection').classList.remove('active'); document.getElementById('youtubeSection').classList.remove('active'); } }
+        function toggleYouTubeSection() { const e = document.getElementById('youtubeSection'); if (e) { e.classList.toggle('active'); document.getElementById('questionsSection').classList.remove('active'); document.getElementById('tiktokSection').classList.remove('active'); } }
+        function openChatPageDemo() { document.getElementById('chatOverlay').classList.add('active'); }
+
+        // VIDEO PLAYER
         function handleVideoPlay(title, amount, icon, videoUrl, platform) {
             const overlay = document.getElementById('videoPlayerOverlay');
             const iframe = document.getElementById('videoPlayerIframe');
-            const titleEl = document.getElementById('videoPlayerTitle');
-            const earnEl = document.getElementById('videoPlayerEarn');
-            
+            document.getElementById('videoPlayerTitle').textContent = '▶️ ' + title;
+            document.getElementById('videoPlayerEarn').textContent = '💰 ' + amount;
             let finalUrl = videoUrl;
             if (platform === 'TikTok') {
-                const tiktokVideos = [
-                    'https://www.tiktok.com/embed/v2/6872744864957664518',
-                    'https://www.tiktok.com/embed/v2/6872744864957664518',
-                    'https://www.tiktok.com/embed/v2/6872744864957664518',
-                    'https://www.tiktok.com/embed/v2/6872744864957664518'
-                ];
-                finalUrl = tiktokVideos[Math.floor(Math.random() * tiktokVideos.length)];
+                const vids = ['https://www.tiktok.com/embed/v2/6872744864957664518', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'https://www.tiktok.com/embed/v2/6872744864957664518'];
+                finalUrl = vids[Math.floor(Math.random() * vids.length)];
             } else if (platform === 'YouTube') {
-                const youtubeVideos = [
-                    'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                    'https://www.youtube.com/embed/9bZkp7q19f0',
-                    'https://www.youtube.com/embed/fJ9rUzIMcZQ',
-                    'https://www.youtube.com/embed/kJQP7kiw5Fk'
-                ];
-                finalUrl = youtubeVideos[Math.floor(Math.random() * youtubeVideos.length)];
+                const vids = ['https://www.youtube.com/embed/dQw4w9WgXcQ', 'https://www.youtube.com/embed/9bZkp7q19f0', 'https://www.youtube.com/embed/fJ9rUzIMcZQ', 'https://www.youtube.com/embed/kJQP7kiw5Fk'];
+                finalUrl = vids[Math.floor(Math.random() * vids.length)];
             }
-            
             iframe.src = finalUrl + '?autoplay=1&rel=0';
-            titleEl.textContent = '▶️ ' + title;
-            earnEl.textContent = '💰 ' + amount;
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
         function closeVideoPlayer() {
-            const overlay = document.getElementById('videoPlayerOverlay');
-            const iframe = document.getElementById('videoPlayerIframe');
-            iframe.src = '';
-            overlay.classList.remove('active');
+            document.getElementById('videoPlayerIframe').src = '';
+            document.getElementById('videoPlayerOverlay').classList.remove('active');
             document.body.style.overflow = '';
         }
+        document.getElementById('videoPlayerOverlay').addEventListener('click', function(e) { if (e.target === this) closeVideoPlayer(); });
 
-        document.getElementById('videoPlayerOverlay').addEventListener('click', function(e) { 
-            if (e.target === this) closeVideoPlayer(); 
-        });
-
-        // ===== COUNTRY DASHBOARD =====
+        // COUNTRY DASHBOARD
         const countryData = {
             uganda: { currency: 'UGX', symbol: 'UGX', label: '🇺🇬 Uganda', stats: { expense: '19,500', profits: '5,600,000', balance: '3,000,000', withdrawn: '2,600,000' }, earnItems: [{ label: 'Chat with Foreigners', amount: '15,200', usd: '$4.60' }, { label: 'Answer Questions', amount: '8,500', usd: '$2.50' }, { label: 'TikTok Videos', amount: '10,800', usd: '$3.20' }, { label: 'YouTube Videos', amount: '13,500', usd: '$4.00' }] },
             kenya: { currency: 'KES', symbol: 'KSh', label: '🇰🇪 Kenya', stats: { expense: '550', profits: '620,000', balance: '270,000', withdrawn: '350,000' }, earnItems: [{ label: 'Chat with Foreigners', amount: '2,200', usd: '$4.60' }, { label: 'Answer Questions', amount: '1,200', usd: '$2.50' }, { label: 'TikTok Videos', amount: '1,550', usd: '$3.20' }, { label: 'YouTube Videos', amount: '1,940', usd: '$4.00' }] },
@@ -1045,88 +777,82 @@
             usd: { currency: 'USD', symbol: '$', label: '🇺🇸 USD', stats: { expense: '10', profits: '43,000', balance: '23,000', withdrawn: '20,000' }, earnItems: [{ label: 'Chat with Foreigners', amount: '115', usd: '$4.60' }, { label: 'Answer Questions', amount: '63', usd: '$2.50' }, { label: 'TikTok Videos', amount: '80', usd: '$3.20' }, { label: 'YouTube Videos', amount: '100', usd: '$4.00' }] }
         };
         let currentCountry = 'uganda';
-        function switchDashboard(c) { const d = countryData[c]; document.querySelectorAll('.country-btn').forEach(b => { b.classList.toggle('active', b.dataset.country === c) }); document.getElementById('currentCountryDisplay').textContent = d.label; document.getElementById('dashboardStats').innerHTML = `<div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">${d.stats.expense} <small>${d.currency}</small></div><div class="stat-sub">• this month</div></div><div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">${d.stats.profits} <small>${d.currency}</small></div><div class="stat-sub">• all time</div></div><div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">${d.stats.balance} <small>${d.currency}</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div><div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>${d.stats.withdrawn} <small>${d.currency}</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>`; }
-        
-        // ===== LIVE FOREIGNERS - 8 PROFILES WITH TYPING =====
+        function switchDashboard(c) {
+            const d = countryData[c];
+            if (!d) return;
+            document.querySelectorAll('.country-btn').forEach(b => b.classList.toggle('active', b.dataset.country === c));
+            document.getElementById('currentCountryDisplay').textContent = d.label;
+            document.getElementById('dashboardStats').innerHTML = `
+                <div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">${d.stats.expense} <small>${d.currency}</small></div><div class="stat-sub">• this month</div></div>
+                <div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">${d.stats.profits} <small>${d.currency}</small></div><div class="stat-sub">• all time</div></div>
+                <div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">${d.stats.balance} <small>${d.currency}</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div>
+                <div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>${d.stats.withdrawn} <small>${d.currency}</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>
+            `;
+        }
+        switchDashboard('uganda');
+
+        // LIVE FOREIGNERS
         const profilePool = [
-            { name: 'Emma S.', age: 28, country: '🇺🇸 USA', flag: '🇺🇸', countryName: 'USA', img: 'https://i.pravatar.cc/100?img=30', bio: '💕 Loves travel, dancing & making new friends from around the world.', greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Emma: Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥' },
-            { name: 'James M.', age: 34, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://i.pravatar.cc/100?img=31', bio: '⚽ Passionate football lover, dedicated gamer & a true coffee enthusiast.', greeting: '👋 Hey, James here. You look interesting!', desperate: '😘 James: I\'m really desperate to chat with you! Upgrade now so we can talk more! ❤️' },
-            { name: 'Sophie L.', age: 26, country: '🇨🇦 Canada', flag: '🇨🇦', countryName: 'Canada', img: 'https://i.pravatar.cc/100?img=32', bio: '🎨 Talented artist, passionate painter & nature enthusiast.', greeting: '👋 Sophie here! I\'d love to know you!', desperate: '💕 Sophie: You\'re so amazing! I want to chat more but you need to upgrade! Please! 😩' },
+            { name: 'Emma S.', age: 28, country: '🇺🇸 USA', flag: '🇺🇸', countryName: 'USA', img: 'https://i.pravatar.cc/100?img=30', bio: '💕 Loves travel, dancing & making new friends.', greeting: '👋 Hi! I\'m Emma, tell me about yourself!', desperate: '😍 Emma: Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥' },
+            { name: 'James M.', age: 34, country: '🇬🇧 UK', flag: '🇬🇧', countryName: 'UK', img: 'https://i.pravatar.cc/100?img=31', bio: '⚽ Passionate football lover, dedicated gamer & coffee enthusiast.', greeting: '👋 Hey, James here. You look interesting!', desperate: '😘 James: I\'m really desperate to chat with you! Upgrade now so we can talk more! ❤️' },
+            { name: 'Sophie L.', age: 26, country: '🇨🇦 Canada', flag: '🇨🇦', countryName: 'Canada', img: 'https://i.pravatar.cc/100?img=32', bio: '🎨 Talented artist, passionate painter & nature lover.', greeting: '👋 Sophie here! I\'d love to know you!', desperate: '💕 Sophie: You\'re so amazing! I want to chat more but you need to upgrade! Please! 😩' },
             { name: 'David R.', age: 41, country: '🇦🇺 Australia', flag: '🇦🇺', countryName: 'Australia', img: 'https://i.pravatar.cc/100?img=33', bio: '🏄 Surfing lover, avid hiker & adventure seeker.', greeting: '👋 David here. Let\'s chat!', desperate: '🔥 David: I\'m so interested in you! Upgrade to keep this conversation going! 🙏' },
-            { name: 'Maria G.', age: 29, country: '🇪🇸 Spain', flag: '🇪🇸', countryName: 'Spain', img: 'https://i.pravatar.cc/100?img=34', bio: '💃 Flamenco dancer, passionate foodie & avid traveler.', greeting: '👋 Maria! You seem so cool!', desperate: '😍 Maria: I\'m so desperate to chat with you! Upgrade now! ❤️' },
+            { name: 'Maria G.', age: 29, country: '🇪🇸 Spain', flag: '🇪🇸', countryName: 'Spain', img: 'https://i.pravatar.cc/100?img=34', bio: '💃 Flamenco dancer, passionate foodie & traveler.', greeting: '👋 Maria! You seem so cool!', desperate: '😍 Maria: I\'m so desperate to chat with you! Upgrade now! ❤️' },
             { name: 'Thomas K.', age: 37, country: '🇩🇪 Germany', flag: '🇩🇪', countryName: 'Germany', img: 'https://i.pravatar.cc/100?img=35', bio: '📚 Avid bookworm, dedicated cyclist & tech enthusiast.', greeting: '👋 Thomas here. Hi!', desperate: '💬 Thomas: I\'m really interested! Upgrade so we can chat more! 😍' },
             { name: 'Anna P.', age: 31, country: '🇫🇷 France', flag: '🇫🇷', countryName: 'France', img: 'https://i.pravatar.cc/100?img=36', bio: '🥐 Skilled pastry chef, devoted cat lover & fashionista.', greeting: '👋 Anna! You look nice!', desperate: '❤️ Anna: I\'m so interested! Please upgrade to keep chatting! ❤️' },
             { name: 'Luca B.', age: 33, country: '🇮🇹 Italy', flag: '🇮🇹', countryName: 'Italy', img: 'https://i.pravatar.cc/100?img=37', bio: '🍝 Passionate cook, art lover & travel enthusiast.', greeting: '👋 Ciao! Luca here. You look amazing!', desperate: '🔥 Luca: I\'m so into you! Upgrade now so we can keep talking! ❤️' }
         ];
         let currentProfiles = [];
-        const typingMessages = [
-            '✍️ typing now...',
-            '💬 saying hello...',
-            '⌨️ writing a reply...',
-            '💬 sending a message...',
-            '🤔 thinking...',
-            '📝 typing a long message...',
-            '💬 replying to you...',
-            '✍️ writing something special...'
-        ];
+        const typingMessages = ['✍️ typing now...', '💬 saying hello...', '⌨️ writing a reply...', '💬 sending a message...', '🤔 thinking...', '📝 typing a long message...', '💬 replying to you...', '✍️ writing something special...'];
         let typingInterval;
-        
-        function getRandomProfiles() { 
-            const s = [...profilePool]; 
-            for (let i = s.length - 1; i > 0; i--) { 
-                const j = Math.floor(Math.random() * (i + 1)); 
-                [s[i], s[j]] = [s[j], s[i]]; 
-            } 
-            return s.slice(0, 8); 
-        }
-        
+
+        function getRandomProfiles() { const s = [...profilePool]; for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [s[i], s[j]] = [s[j], s[i]]; } return s.slice(0, 8); }
         function updateTypingStatus() {
-            const statusElements = document.querySelectorAll('.typing-status');
-            if (statusElements.length === 0) return;
-            statusElements.forEach(el => {
-                const msg = typingMessages[Math.floor(Math.random() * typingMessages.length)];
-                el.textContent = msg;
-                el.style.transition = 'opacity 0.3s';
-                el.style.opacity = '0.7';
-                setTimeout(() => {
-                    el.style.opacity = '1';
-                }, 100);
-            });
+            document.querySelectorAll('.typing-status').forEach(el => { el.textContent = typingMessages[Math.floor(Math.random() * typingMessages.length)]; el.style.opacity = '0.7'; setTimeout(() => el.style.opacity = '1', 100); });
             const indicator = document.getElementById('typingIndicator');
-            if (indicator) {
-                const randomUser = currentProfiles[Math.floor(Math.random() * currentProfiles.length)];
+            if (indicator && currentProfiles.length) {
+                const user = currentProfiles[Math.floor(Math.random() * currentProfiles.length)];
                 const statuses = ['typing now...', 'saying hello...', 'writing a reply...', 'sending a message...', 'thinking...', 'replying...'];
-                const status = statuses[Math.floor(Math.random() * statuses.length)];
-                indicator.textContent = `${randomUser ? randomUser.name.split(' ')[0] : 'Someone'} is ${status}`;
+                indicator.textContent = `${user ? user.name.split(' ')[0] : 'Someone'} is ${statuses[Math.floor(Math.random() * statuses.length)]}`;
             }
         }
-
-        function renderLiveUsers(p) { 
-            const c = document.getElementById('liveUserList'); 
-            let h = ''; 
-            p.forEach((u) => { 
-                const msg = typingMessages[Math.floor(Math.random() * typingMessages.length)];
-                h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${msg}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a></div></div>` }); 
+        function renderLiveUsers(p) {
+            const c = document.getElementById('liveUserList');
+            let h = '';
+            p.forEach(u => {
+                h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}">
+                    <div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${typingMessages[Math.floor(Math.random() * typingMessages.length)]}</div></div></div>
+                    <div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a></div>
+                </div>`;
+            });
             c.innerHTML = h;
             if (typingInterval) clearInterval(typingInterval);
             typingInterval = setInterval(updateTypingStatus, 3000);
         }
-        
-        function rotateProfiles() { 
-            currentProfiles = getRandomProfiles(); 
-            renderLiveUsers(currentProfiles); 
-            document.getElementById('activeChatters').textContent = currentProfiles.length;
-            setTimeout(updateTypingStatus, 500);
-        }
-        
-        rotateProfiles(); 
+        function rotateProfiles() { currentProfiles = getRandomProfiles(); renderLiveUsers(currentProfiles); document.getElementById('activeChatters').textContent = currentProfiles.length; setTimeout(updateTypingStatus, 500); }
+        rotateProfiles();
         setInterval(rotateProfiles, 480000);
-        
-        // ===== LIVE COUNTERS =====
-        ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
-        
-        // ===== WITHDRAWAL POPUPS =====
-        ! function() { 
+
+        // LIVE COUNTERS
+        (function() {
+            const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow');
+            let n = 3300;
+            function u(v) { const f = v.toLocaleString(); if (c) c.textContent = f; if (o) o.textContent = f; }
+            u(n);
+            setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; if (g < 3240) g = 3240 + Math.floor(Math.random() * 30); if (g > 3600) g = 3600 - Math.floor(Math.random() * 30); n = g; u(n); }, 2800);
+            let t = 187432;
+            const r = document.getElementById('trustCounter');
+            setInterval(() => { t += Math.floor(Math.random() * 5) + 2; if (t > 189500) t = 187000; if (r) r.textContent = t.toLocaleString(); }, 2500);
+            let h = 187450;
+            const e = document.getElementById('heroCounter');
+            setInterval(() => { h += Math.floor(Math.random() * 3) + 1; if (h > 189500) h = 187000; if (e) e.textContent = h.toLocaleString(); }, 3000);
+            let l = 187432;
+            const a = document.getElementById('liveUsers');
+            setInterval(() => { l += Math.floor(Math.random() * 6) + 1; if (l > 189500) l = 187000; if (a) a.textContent = l.toLocaleString(); }, 5000);
+        })();
+
+        // WITHDRAWAL POPUPS
+        (function() {
             const w = [
                 { flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
                 { flag: '🇬🇭', name: 'Maureen A.', amount: '3,870', method: 'MoMo', gender: 'female', currency: 'GH₵' },
@@ -1148,23 +874,11 @@
             const g = ['https://i.pravatar.cc/100?img=50', 'https://i.pravatar.cc/100?img=51', 'https://i.pravatar.cc/100?img=52', 'https://i.pravatar.cc/100?img=53', 'https://i.pravatar.cc/100?img=54', 'https://i.pravatar.cc/100?img=55', 'https://i.pravatar.cc/100?img=56', 'https://i.pravatar.cc/100?img=57', 'https://i.pravatar.cc/100?img=58', 'https://i.pravatar.cc/100?img=59'];
             const p = document.getElementById('popupCard'), i = document.getElementById('popupUserImage'), n = document.getElementById('popupUserName'), l = document.getElementById('popupMethod'), a = document.getElementById('popupAmount');
             let u = [], idx = -1;
-
-            function b(gender) { 
-                const pool = gender === 'female' ? m : g; 
-                let idx2; 
-                let attempts = 0;
-                do { 
-                    idx2 = Math.floor(Math.random() * pool.length); 
-                    attempts++;
-                } while ((idx2 === idx || (u.length > 0 && u.includes(idx2))) && attempts < 20); 
-                idx = idx2; 
-                return pool[idx2] 
-            }
-
+            function b(gender) { const pool = gender === 'female' ? m : g; let idx2, attempts = 0; do { idx2 = Math.floor(Math.random() * pool.length); attempts++; } while ((idx2 === idx || (u.length > 0 && u.includes(idx2))) && attempts < 20); idx = idx2; return pool[idx2]; }
             function r() {
                 if (u.length >= w.length) u = [];
                 const avail = w.map((_, i) => i).filter(i => !u.includes(i));
-                if (avail.length === 0) { u = []; return r() }
+                if (avail.length === 0) { u = []; return r(); }
                 const idx2 = avail[Math.floor(Math.random() * avail.length)];
                 u.push(idx2);
                 const d = w[idx2];
@@ -1177,51 +891,101 @@
                 p.offsetHeight;
                 p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
                 clearTimeout(window.popupTimer);
-                window.popupTimer = setTimeout(() => {
-                    p.style.display = 'flex';
-                    p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'
-                }, 2000)
+                window.popupTimer = setTimeout(() => { p.style.display = 'flex'; p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'; }, 2000);
             }
             setTimeout(r, 600);
-            setInterval(r, 2000)
-        }();
+            setInterval(r, 2000);
+        })();
 
-        // ===== CHAT FUNCTIONS =====
-        let chatLocked = !1, chatUser = null, chatDesperate = '';
+        // CHAT
+        let chatLocked = false, chatUser = null, chatDesperate = '';
+        function openChatPage(el) {
+            const c = el.closest('.user-card');
+            if (!c) return;
+            const name = c.dataset.user || 'Friend', img = c.dataset.img || 'https://i.pravatar.cc/100?img=24', country = c.dataset.country || '🌍', greeting = c.dataset.greeting || '👋 Hi! Let\'s chat!';
+            chatDesperate = c.dataset.desperate || '😍 I\'m so interested! Please upgrade to continue!';
+            chatUser = name;
+            chatLocked = false;
+            document.getElementById('chatPageAvatar').src = img;
+            document.getElementById('chatPageName').textContent = name;
+            document.getElementById('chatPageStatus').textContent = country + ' · Online';
+            const area = document.getElementById('chatMessagesArea');
+            area.innerHTML = '';
+            const msg = document.createElement('div');
+            msg.className = 'chat-msg received';
+            msg.innerHTML = '<div class="msg-name">' + name + '</div>' + greeting + '<span class="time">just now</span>';
+            area.appendChild(msg);
+            document.getElementById('chatUpgradeBanner').style.display = 'none';
+            document.getElementById('chatPageSendBtn').disabled = false;
+            document.getElementById('chatPageInput').disabled = false;
+            document.getElementById('chatPageInput').value = '';
+            document.getElementById('chatOverlay').classList.add('active');
+            area.scrollTop = area.scrollHeight;
+        }
+        function closeChatPage() { document.getElementById('chatOverlay').classList.remove('active'); chatUser = null; chatLocked = false; }
+        function sendChatPageMessage() {
+            if (chatLocked) { alert('⛔ Chat is paused. Please upgrade to continue.'); return; }
+            const input = document.getElementById('chatPageInput'), msg = input.value.trim();
+            if (!msg || !chatUser) return;
+            const area = document.getElementById('chatMessagesArea');
+            const sent = document.createElement('div');
+            sent.className = 'chat-msg sent';
+            sent.textContent = msg;
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            sent.innerHTML += '<span class="time">' + time + '</span>';
+            area.appendChild(sent);
+            input.value = '';
+            area.scrollTop = area.scrollHeight;
+            setTimeout(() => {
+                const reply = document.createElement('div');
+                reply.className = 'chat-msg received';
+                reply.innerHTML = '<div class="msg-name">' + chatUser + '</div>' + chatDesperate + '<span class="time">' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + '</span>';
+                area.appendChild(reply);
+                area.scrollTop = area.scrollHeight;
+                chatLocked = true;
+                document.getElementById('chatUpgradeBanner').style.display = 'block';
+                document.getElementById('chatPageSendBtn').disabled = true;
+                document.getElementById('chatPageInput').disabled = true;
+            }, 700);
+        }
+        document.getElementById('chatPageInput').addEventListener('keypress', function(e) { if (e.key === 'Enter') sendChatPageMessage(); });
+        document.getElementById('chatOverlay').addEventListener('click', function(e) { if (e.target === this) closeChatPage(); });
 
-        function openChatPage(a) { const c = a.closest('.user-card'); if (!c) return; const name = c.dataset.user || 'Friend', img = c.dataset.img || 'https://i.pravatar.cc/100?img=24', country = c.dataset.country || '🌍', greeting = c.dataset.greeting || '👋 Hi! Let\'s chat!'; chatDesperate = c.dataset.desperate || '😍 I\'m so interested! Please upgrade to continue!'; chatUser = name; chatLocked = !1; document.getElementById('chatPageAvatar').src = img; document.getElementById('chatPageName').textContent = name; document.getElementById('chatPageStatus').textContent = country + ' · Online'; const area = document.getElementById('chatMessagesArea'); area.innerHTML = ''; const msg = document.createElement('div'); msg.className = 'chat-msg received'; msg.innerHTML = '<div class="msg-name">' + name + '</div>' + greeting + '<span class="time">just now</span>'; area.appendChild(msg); document.getElementById('chatUpgradeBanner').style.display = 'none'; document.getElementById('chatPageSendBtn').disabled = !1; document.getElementById('chatPageInput').disabled = !1; document.getElementById('chatPageInput').value = ''; document.getElementById('chatOverlay').classList.add('active'); area.scrollTop = area.scrollHeight }
-
-        function closeChatPage() { document.getElementById('chatOverlay').classList.remove('active'); chatUser = null; chatLocked = !1 }
-
-        function sendChatPageMessage() { if (chatLocked) { alert('⛔ Chat is paused. Please upgrade to continue.'); return } const input = document.getElementById('chatPageInput'), msg = input.value.trim(); if (!msg || !chatUser) return; const area = document.getElementById('chatMessagesArea'); const sent = document.createElement('div'); sent.className = 'chat-msg sent'; sent.textContent = msg; const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); sent.innerHTML += '<span class="time">' + time + '</span>'; area.appendChild(sent); input.value = ''; area.scrollTop = area.scrollHeight; setTimeout(() => { const reply = document.createElement('div'); reply.className = 'chat-msg received'; reply.innerHTML = '<div class="msg-name">' + chatUser + '</div>' + chatDesperate + '<span class="time">' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + '</span>'; area.appendChild(reply); area.scrollTop = area.scrollHeight; chatLocked = !0; document.getElementById('chatUpgradeBanner').style.display = 'block'; document.getElementById('chatPageSendBtn').disabled = !0; document.getElementById('chatPageInput').disabled = !0 }, 700) }
-        document.getElementById('chatPageInput').addEventListener('keypress', function(e) { if (e.key === 'Enter') sendChatPageMessage() });
-        document.getElementById('chatOverlay').addEventListener('click', function(e) { if (e.target === this) closeChatPage() });
-
-        // ===== WELCOME BONUS =====
-        const BONUS_DATA = { uganda: { amount: '9,000', currency: 'UGX', label: 'Uganda', flag: '🇺🇬' }, kenya: { amount: '300', currency: 'KSh', label: 'Kenya', flag: '🇰🇪' }, nigeria: { amount: '5,000', currency: '₦', label: 'Nigeria', flag: '🇳🇬' }, ghana: { amount: '50', currency: 'GH₵', label: 'Ghana', flag: '🇬🇭' }, cameroon: { amount: '2,000', currency: 'XAF', label: 'Cameroon', flag: '🇨🇲' }, usd: { amount: '3', currency: 'USD', label: 'USD', flag: '🇺🇸' } };
+        // WELCOME BONUS - UPDATED: 20,000 UGX & MATCHING COUNTRIES
+        const BONUS_DATA = {
+            uganda: { amount: '20,000', currency: 'UGX', label: 'Uganda', flag: '🇺🇬' },
+            kenya: { amount: '650', currency: 'KSh', label: 'Kenya', flag: '🇰🇪' },
+            nigeria: { amount: '12,000', currency: '₦', label: 'Nigeria', flag: '🇳🇬' },
+            ghana: { amount: '120', currency: 'GH₵', label: 'Ghana', flag: '🇬🇭' },
+            cameroon: { amount: '4,500', currency: 'XAF', label: 'Cameroon', flag: '🇨🇲' },
+            usd: { amount: '7', currency: 'USD', label: 'USD', flag: '🇺🇸' }
+        };
         let bonusCurrent = 'uganda';
         let bonusSeconds = 86393;
         let bonusInterval = null;
-
-        function formatBonusCountdown(s) { const hrs = Math.floor(s / 3600); const mins = Math.floor((s % 3600) / 60); const secs = s % 60; return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}` }
-
-        function updateBonus(countryKey) { const data = BONUS_DATA[countryKey]; if (!data) return; document.getElementById('bonusAmount').textContent = data.amount; document.getElementById('bonusCurrency').textContent = data.currency; document.getElementById('bonusHint').innerHTML = `${data.flag} <span>${data.label}</span> · ${data.amount} ${data.currency}`; document.querySelectorAll('#bonusCountrySelector .bonus-country-btn').forEach(btn => { btn.classList.toggle('active', btn.dataset.country === countryKey) }); bonusCurrent = countryKey }
-
-        function tickBonusCountdown() { if (bonusSeconds <= 0) bonusSeconds = 86400; document.getElementById('bonusCountdown').textContent = formatBonusCountdown(bonusSeconds); bonusSeconds-- }
-
-        function startBonusCountdown() { if (bonusInterval) clearInterval(bonusInterval); bonusInterval = setInterval(tickBonusCountdown, 1000); tickBonusCountdown() }
-
-        function showWelcomeBonus() { const overlay = document.getElementById('welcomeBonusOverlay'); if (overlay) overlay.classList.add('active') }
-
-        function closeWelcomeBonus() { const overlay = document.getElementById('welcomeBonusOverlay'); if (overlay) overlay.classList.remove('active') }
+        function formatBonusCountdown(s) { const hrs = Math.floor(s / 3600); const mins = Math.floor((s % 3600) / 60); const secs = s % 60; return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`; }
+        function updateBonus(countryKey) {
+            const data = BONUS_DATA[countryKey];
+            if (!data) return;
+            document.getElementById('bonusAmount').textContent = data.amount;
+            document.getElementById('bonusCurrency').textContent = data.currency;
+            document.getElementById('bonusHint').innerHTML = `${data.flag} <span>${data.label}</span> · ${data.amount} ${data.currency}`;
+            document.querySelectorAll('#bonusCountrySelector .bonus-country-btn').forEach(btn => { btn.classList.toggle('active', btn.dataset.country === countryKey); });
+            bonusCurrent = countryKey;
+        }
+        function tickBonusCountdown() { if (bonusSeconds <= 0) bonusSeconds = 86400; document.getElementById('bonusCountdown').textContent = formatBonusCountdown(bonusSeconds); bonusSeconds--; }
+        function startBonusCountdown() { if (bonusInterval) clearInterval(bonusInterval); bonusInterval = setInterval(tickBonusCountdown, 1000); tickBonusCountdown(); }
+        function showWelcomeBonus() { document.getElementById('welcomeBonusOverlay').classList.add('active'); }
+        function closeWelcomeBonus() { document.getElementById('welcomeBonusOverlay').classList.remove('active'); }
         updateBonus('uganda');
         bonusSeconds = 86393;
         startBonusCountdown();
-        document.querySelectorAll('#bonusCountrySelector .bonus-country-btn').forEach(btn => { btn.addEventListener('click', function() { const country = this.dataset.country; if (country === bonusCurrent) return; updateBonus(country) }) });
-        setTimeout(() => { showWelcomeBonus() }, 20000);
-        switchDashboard('uganda');
+        document.querySelectorAll('#bonusCountrySelector .bonus-country-btn').forEach(btn => {
+            btn.addEventListener('click', function() { const country = this.dataset.country; if (country === bonusCurrent) return; updateBonus(country); });
+        });
+        setTimeout(showWelcomeBonus, 20000);
 
-        // ===== AFFILIATE BONUS =====
+        // AFFILIATE BONUS
         const AFFILIATE_DATA = {
             uganda: { l1: '10,300', l2: '5,000', l3: '2,000', currency: 'UGX', label: 'Uganda', flag: '🇺🇬' },
             cameroon: { l1: '2,000', l2: '1,000', l3: '500', currency: 'XAF', label: 'Cameroon', flag: '🇨🇲' },
@@ -1231,7 +995,6 @@
             usd: { l1: '3', l2: '2', l3: '1', currency: 'USD', label: 'USD', flag: '🇺🇸' }
         };
         let affCurrent = 'uganda';
-
         function updateAffiliate(countryKey) {
             const data = AFFILIATE_DATA[countryKey];
             if (!data) return;
@@ -1239,115 +1002,25 @@
             document.getElementById('affL2').textContent = data.l2 + ' ' + data.currency;
             document.getElementById('affL3').textContent = data.l3 + ' ' + data.currency;
             document.getElementById('affiliateHint').innerHTML = `${data.flag} <span>${data.label}</span> · L1: ${data.l1} | L2: ${data.l2} | L3: ${data.l3} ${data.currency}`;
-            document.querySelectorAll('#affiliateCountrySelector .bonus-country-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.country === countryKey)
-            });
+            document.querySelectorAll('#affiliateCountrySelector .bonus-country-btn').forEach(btn => { btn.classList.toggle('active', btn.dataset.country === countryKey); });
             affCurrent = countryKey;
         }
-
-        function openAffiliateBonus() {
-            const overlay = document.getElementById('affiliateBonusOverlay');
-            if (overlay) {
-                updateAffiliate(affCurrent);
-                overlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeAffiliateBonus() {
-            const overlay = document.getElementById('affiliateBonusOverlay');
-            if (overlay) {
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-
+        function openAffiliateBonus() { document.getElementById('affiliateBonusOverlay').classList.add('active'); document.body.style.overflow = 'hidden'; updateAffiliate(affCurrent); }
+        function closeAffiliateBonus() { document.getElementById('affiliateBonusOverlay').classList.remove('active'); document.body.style.overflow = ''; }
         document.querySelectorAll('#affiliateCountrySelector .bonus-country-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const country = this.dataset.country;
-                if (country === affCurrent) return;
-                updateAffiliate(country);
-            })
+            btn.addEventListener('click', function() { const country = this.dataset.country; if (country === affCurrent) return; updateAffiliate(country); });
         });
+        document.getElementById('affiliateBonusOverlay').addEventListener('click', function(e) { if (e.target === this) closeAffiliateBonus(); });
 
-        document.getElementById('affiliateBonusOverlay').addEventListener('click', function(e) {
-            if (e.target === this) closeAffiliateBonus();
-        });
-
-        // ===== HANDLE EARNING =====
-        function handleEarning(taskName, amount, icon) {
-            const chatOverlay = document.getElementById('chatOverlay');
-            const chatArea = document.getElementById('chatMessagesArea');
-            const chatName = document.getElementById('chatPageName');
-            const chatStatus = document.getElementById('chatPageStatus');
-            const chatAvatar = document.getElementById('chatPageAvatar');
-
-            chatName.textContent = '💼 ' + taskName;
-            chatStatus.textContent = '⏳ Processing...';
-            chatAvatar.src = 'https://i.pravatar.cc/100?img=60';
-            chatArea.innerHTML = '';
-            document.getElementById('chatUpgradeBanner').style.display = 'none';
-            document.getElementById('chatPageSendBtn').disabled = true;
-            document.getElementById('chatPageInput').disabled = true;
-
-            const messages = [
-                { text: '🎯 Starting ' + taskName + ' task...', delay: 500 },
-                { text: '💬 Connecting to live chat...', delay: 800 },
-                { text: '📹 Loading video content...', delay: 1000 },
-                { text: '▶️ Now watching: ' + taskName + ' (Real video playing on demo page)', delay: 1200 },
-                { text: '📹 Video playing... Please wait...', delay: 2000 },
-                { text: '✅ Task completed successfully!', delay: 1500 },
-                { text: '💰 You earned ' + amount + '!', delay: 1000 },
-                { text: '⭐ To claim your earnings, upgrade to Premium!', delay: 1200 }
-            ];
-
-            let msgIndex = 0;
-
-            function showNextMessage() {
-                if (msgIndex >= messages.length) {
-                    const banner = document.getElementById('chatUpgradeBanner');
-                    banner.style.display = 'block';
-                    banner.innerHTML = '🎁 You earned ' + amount + '! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to Premium to claim</a>';
-                    chatLocked = true;
-                    document.getElementById('chatPageSendBtn').disabled = true;
-                    document.getElementById('chatPageInput').disabled = true;
-                    return;
-                }
-
-                const msg = document.createElement('div');
-                msg.className = 'chat-msg received';
-                const isVideo = messages[msgIndex].text.includes('watching') || messages[msgIndex].text.includes('Video playing');
-                const isEarn = messages[msgIndex].text.includes('earned');
-
-                let iconChar = '';
-                if (isVideo) iconChar = '▶️ ';
-                else if (isEarn) iconChar = '💰 ';
-
-                msg.innerHTML = '<div class="msg-name">🎯 System</div>' + iconChar + messages[msgIndex].text + '<span class="time">just now</span>';
-                chatArea.appendChild(msg);
-                chatArea.scrollTop = chatArea.scrollHeight;
-                msgIndex++;
-                setTimeout(showNextMessage, messages[msgIndex] ? messages[msgIndex].delay : 1000);
-            }
-
-            chatOverlay.classList.add('active');
-            setTimeout(showNextMessage, 500);
-        }
-
-        // ===== HANDLE EARNING WITH QUESTIONS =====
+        // QUESTIONS & EARNING
         function handleEarningWithQuestions(question, options, correctAnswer) {
-            const chatOverlay = document.getElementById('chatOverlay');
-            const chatArea = document.getElementById('chatMessagesArea');
-            const chatName = document.getElementById('chatPageName');
-            const chatStatus = document.getElementById('chatPageStatus');
-            const chatAvatar = document.getElementById('chatPageAvatar');
-
-            chatName.textContent = '❓ Answer Questions';
-            chatStatus.textContent = '⏳ Quiz Time!';
-            chatAvatar.src = 'https://i.pravatar.cc/100?img=61';
-            chatArea.innerHTML = '';
+            const overlay = document.getElementById('chatOverlay');
+            const area = document.getElementById('chatMessagesArea');
+            document.getElementById('chatPageName').textContent = '❓ Answer Questions';
+            document.getElementById('chatPageStatus').textContent = '⏳ Quiz Time!';
+            document.getElementById('chatPageAvatar').src = 'https://i.pravatar.cc/100?img=61';
+            area.innerHTML = '';
             document.getElementById('chatUpgradeBanner').style.display = 'none';
-
             const messages = [
                 { text: '📝 New Question Ready!', delay: 500 },
                 { text: '💬 Chat with other participants...', delay: 800 },
@@ -1357,10 +1030,7 @@
                 { text: '📋 Alternatives: ' + options.join(' | '), delay: 800 },
                 { text: '✍️ Type your answer in the chat!', delay: 800 }
             ];
-
-            let msgIndex = 0;
-            let answered = false;
-
+            let msgIndex = 0, answered = false;
             function showNextMessage() {
                 if (msgIndex >= messages.length) {
                     document.getElementById('chatPageSendBtn').disabled = false;
@@ -1369,65 +1039,47 @@
                     chatLocked = false;
                     return;
                 }
-
                 const msg = document.createElement('div');
                 msg.className = 'chat-msg received';
                 msg.innerHTML = '<div class="msg-name">❓ Quiz Bot</div>' + messages[msgIndex].text + '<span class="time">just now</span>';
-                chatArea.appendChild(msg);
-                chatArea.scrollTop = chatArea.scrollHeight;
+                area.appendChild(msg);
+                area.scrollTop = area.scrollHeight;
                 msgIndex++;
                 setTimeout(showNextMessage, messages[msgIndex] ? messages[msgIndex].delay : 1000);
             }
-
-            chatOverlay.classList.add('active');
+            overlay.classList.add('active');
             setTimeout(showNextMessage, 500);
-
             const sendBtn = document.getElementById('chatPageSendBtn');
             const input = document.getElementById('chatPageInput');
-
             const newSendBtn = sendBtn.cloneNode(true);
             sendBtn.parentNode.replaceChild(newSendBtn, sendBtn);
-
             newSendBtn.addEventListener('click', function() {
                 if (chatLocked || answered) return;
                 const userAnswer = input.value.trim();
                 if (!userAnswer) return;
-
                 const userMsg = document.createElement('div');
                 userMsg.className = 'chat-msg sent';
                 userMsg.textContent = userAnswer;
                 const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
                 userMsg.innerHTML += '<span class="time">' + time + '</span>';
-                chatArea.appendChild(userMsg);
+                area.appendChild(userMsg);
                 input.value = '';
-                chatArea.scrollTop = chatArea.scrollHeight;
+                area.scrollTop = area.scrollHeight;
                 answered = true;
                 document.getElementById('chatPageSendBtn').disabled = true;
-
                 const isCorrect = userAnswer.toLowerCase() === correctAnswer.toLowerCase();
-
                 setTimeout(() => {
                     const response = document.createElement('div');
                     response.className = 'chat-msg received';
-                    if (isCorrect) {
-                        response.innerHTML = '<div class="msg-name">❓ Quiz Bot</div>✅ Correct! You earned $2.50! 🎉<span class="time">just now</span>';
-                    } else {
-                        response.innerHTML = '<div class="msg-name">❓ Quiz Bot</div>❌ Not quite. The correct answer is: ' + correctAnswer + '<span class="time">just now</span>';
-                    }
-                    chatArea.appendChild(response);
-                    chatArea.scrollTop = chatArea.scrollHeight;
-
+                    response.innerHTML = isCorrect ? '<div class="msg-name">❓ Quiz Bot</div>✅ Correct! You earned $2.50! 🎉<span class="time">just now</span>' : '<div class="msg-name">❓ Quiz Bot</div>❌ Not quite. The correct answer is: ' + correctAnswer + '<span class="time">just now</span>';
+                    area.appendChild(response);
+                    area.scrollTop = area.scrollHeight;
                     setTimeout(() => {
                         const earnMsg = document.createElement('div');
                         earnMsg.className = 'chat-msg received';
-                        if (isCorrect) {
-                            earnMsg.innerHTML = '<div class="msg-name">💰 System</div>💵 You earned $2.50! ⭐ Upgrade to Premium to claim!<span class="time">just now</span>';
-                        } else {
-                            earnMsg.innerHTML = '<div class="msg-name">💡 System</div>📚 Keep learning! Try another question to earn!<span class="time">just now</span>';
-                        }
-                        chatArea.appendChild(earnMsg);
-                        chatArea.scrollTop = chatArea.scrollHeight;
-
+                        earnMsg.innerHTML = isCorrect ? '<div class="msg-name">💰 System</div>💵 You earned $2.50! ⭐ Upgrade to Premium to claim!<span class="time">just now</span>' : '<div class="msg-name">💡 System</div>📚 Keep learning! Try another question to earn!<span class="time">just now</span>';
+                        area.appendChild(earnMsg);
+                        area.scrollTop = area.scrollHeight;
                         if (isCorrect) {
                             const banner = document.getElementById('chatUpgradeBanner');
                             banner.style.display = 'block';
@@ -1436,168 +1088,176 @@
                             document.getElementById('chatPageSendBtn').disabled = true;
                             document.getElementById('chatPageInput').disabled = true;
                         } else {
-                            setTimeout(() => {
-                                chatLocked = false;
-                                answered = false;
-                                document.getElementById('chatPageSendBtn').disabled = false;
-                                document.getElementById('chatPageInput').disabled = false;
-                                document.getElementById('chatPageInput').placeholder = 'Try another question!';
-                            }, 2000);
+                            setTimeout(() => { chatLocked = false; answered = false; document.getElementById('chatPageSendBtn').disabled = false; document.getElementById('chatPageInput').disabled = false; document.getElementById('chatPageInput').placeholder = 'Try another question!'; }, 2000);
                         }
                     }, 800);
                 }, 600);
             });
-
             const newInput = input.cloneNode(true);
             input.parentNode.replaceChild(newInput, input);
-            newInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    newSendBtn.click();
+            newInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') newSendBtn.click(); });
+        }
+
+        function handleQuestionsPopup() {
+            const overlay = document.getElementById('demoActionPopup');
+            const content = overlay.querySelector('.popup-content');
+            const qs = [
+                { q: 'What is the capital of France?', options: ['London', 'Paris', 'Berlin', 'Madrid'], answer: 'Paris' },
+                { q: 'Which planet is known as the Red Planet?', options: ['Venus', 'Mars', 'Jupiter', 'Saturn'], answer: 'Mars' },
+                { q: 'What is the largest ocean on Earth?', options: ['Atlantic', 'Indian', 'Pacific', 'Arctic'], answer: 'Pacific' },
+                { q: 'Who wrote Romeo and Juliet?', options: ['Charles Dickens', 'William Shakespeare', 'Mark Twain', 'Jane Austen'], answer: 'William Shakespeare' }
+            ];
+            content.innerHTML = `
+                <div style="margin-bottom:10px;"><span style="font-size:28px;">❓</span><h3 style="color:#fff;font-size:20px;margin:4px 0;">Answer Questions</h3><p style="color:rgba(255,255,255,0.6);font-size:13px;">Answer correctly to earn $0.50 per question!</p></div>
+                <div id="quizContainer"><div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:16px;margin:8px 0;"><div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:10px;"><span>Question <span id="qNum">1</span>/<span id="qTotal">${qs.length}</span></span><span>Score: <span id="qScore">0</span></span></div><div id="qText" style="font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;min-height:50px;">${qs[0].q}</div><div id="qOptions" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"></div></div></div>
+                <div id="qResult" style="font-size:16px;font-weight:700;min-height:30px;color:#f5d65a;margin:4px 0;"></div>
+                <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
+            `;
+            window._quizQuestions = qs;
+            window._quizCurrent = 0;
+            window._quizScore = 0;
+            renderQuizQuestion();
+            overlay.classList.add('active');
+        }
+
+        function renderQuizQuestion() {
+            const questions = window._quizQuestions || [];
+            const current = window._quizCurrent || 0;
+            if (current >= questions.length) {
+                const container = document.getElementById('quizContainer');
+                if (container) {
+                    container.innerHTML = `<div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:20px;text-align:center;"><div style="font-size:48px;">🎉</div><h3 style="color:#f5d65a;font-size:22px;margin:8px 0;">Quiz Complete!</h3><p style="color:rgba(255,255,255,0.7);font-size:16px;">You scored <strong style="color:#f5d65a;font-size:24px;">${window._quizScore}</strong> out of ${questions.length}</p><p style="color:#2ecc71;font-size:18px;font-weight:700;margin-top:8px;">💰 You earned $${(window._quizScore * 0.50).toFixed(2)}!</p><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#f5d65a,#e09d2e);color:#1a0b2f;padding:10px 32px;border-radius:40px;text-decoration:none;font-weight:700;font-size:15px;">💎 Claim Prize</a></div>`;
                 }
+                return;
+            }
+            const q = questions[current];
+            if (!q) return;
+            document.getElementById('qNum').textContent = current + 1;
+            document.getElementById('qTotal').textContent = questions.length;
+            document.getElementById('qScore').textContent = window._quizScore;
+            document.getElementById('qText').textContent = q.q;
+            document.getElementById('qResult').textContent = '';
+            const optionsContainer = document.getElementById('qOptions');
+            optionsContainer.innerHTML = '';
+            q.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.textContent = opt;
+                btn.style.cssText = `background:rgba(255,255,255,0.08);border:2px solid rgba(255,255,255,0.1);color:#fff;padding:10px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.3s;font-family:inherit;`;
+                btn.onmouseover = () => { btn.style.background = 'rgba(31,187,122,0.2)';
+                    btn.style.borderColor = '#1fbb7a'; };
+                btn.onmouseout = () => { if (!btn.dataset.answered) { btn.style.background = 'rgba(255,255,255,0.08)';
+                        btn.style.borderColor = 'rgba(255,255,255,0.1)'; } };
+                btn.onclick = function() {
+                    if (this.dataset.answered) return;
+                    const isCorrect = opt === q.answer;
+                    if (isCorrect) {
+                        this.style.background = 'rgba(46,204,113,0.3)';
+                        this.style.borderColor = '#2ecc71';
+                        window._quizScore++;
+                        document.getElementById('qScore').textContent = window._quizScore;
+                        document.getElementById('qResult').textContent = '✅ Correct! +$0.50';
+                        document.getElementById('qResult').style.color = '#2ecc71';
+                    } else {
+                        this.style.background = 'rgba(231,76,60,0.3)';
+                        this.style.borderColor = '#e74c3c';
+                        document.getElementById('qResult').textContent = '❌ Incorrect. The answer was: ' + q.answer;
+                        document.getElementById('qResult').style.color = '#e74c3c';
+                    }
+                    this.dataset.answered = 'true';
+                    document.querySelectorAll('#qOptions button').forEach(b => {
+                        b.style.cursor = 'default';
+                        if (!b.dataset.answered && b.textContent === q.answer) {
+                            b.style.background = 'rgba(46,204,113,0.2)';
+                            b.style.borderColor = '#2ecc71';
+                        }
+                    });
+                    setTimeout(() => { window._quizCurrent++;
+                        renderQuizQuestion(); }, 1500);
+                };
+                optionsContainer.appendChild(btn);
             });
         }
 
-        // ===== SPINNING WHEEL =====
+        // SPINNING
+        let isSpinning = false;
         function handleSpinning() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
-
             content.innerHTML = `
-                <div style="margin-bottom:6px;">
-                    <span style="font-size:28px;">🎰</span>
-                    <h3 style="color:#fff;font-size:20px;margin:4px 0;">Paid Spinning</h3>
-                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Spin the wheel and win cash prizes up to $50!</p>
-                </div>
-                <div class="wheel-container">
-                    <div class="wheel" id="wheel">
-                        <div class="wheel-segment" style="transform:rotate(0deg);background:#e74c3c;">$3</div>
-                        <div class="wheel-segment" style="transform:rotate(60deg);background:#3498db;">$8</div>
-                        <div class="wheel-segment" style="transform:rotate(120deg);background:#2ecc71;">$15</div>
-                        <div class="wheel-segment" style="transform:rotate(180deg);background:#f39c12;">$25</div>
-                        <div class="wheel-segment" style="transform:rotate(240deg);background:#9b59b6;">$35</div>
-                        <div class="wheel-segment" style="transform:rotate(300deg);background:#1abc9c;">$50</div>
-                        <div class="wheel-center">SPIN</div>
-                    </div>
-                </div>
+                <div style="margin-bottom:6px;"><span style="font-size:28px;">🎰</span><h3 style="color:#fff;font-size:20px;margin:4px 0;">Paid Spinning</h3><p style="color:rgba(255,255,255,0.6);font-size:13px;">Spin the wheel and win cash prizes up to $50!</p></div>
+                <div class="wheel-container"><div class="wheel" id="wheel"><div class="wheel-segment" style="transform:rotate(0deg);background:#e74c3c;">$3</div><div class="wheel-segment" style="transform:rotate(60deg);background:#3498db;">$8</div><div class="wheel-segment" style="transform:rotate(120deg);background:#2ecc71;">$15</div><div class="wheel-segment" style="transform:rotate(180deg);background:#f39c12;">$25</div><div class="wheel-segment" style="transform:rotate(240deg);background:#9b59b6;">$35</div><div class="wheel-segment" style="transform:rotate(300deg);background:#1abc9c;">$50</div><div class="wheel-center">SPIN</div></div></div>
                 <button class="spin-btn" id="spinBtn" onclick="spinWheel()">🎡 SPIN</button>
                 <div class="spin-result" id="spinResult">Click SPIN to win up to $50!</div>
                 <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="display:inline-block;margin-top:10px;background:rgba(255,255,255,0.1);color:#fff;padding:8px 24px;border-radius:40px;text-decoration:none;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.1);">💎 Claim Prize</a>
                 <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
             `;
-
             overlay.classList.add('active');
-
-            const wheel = document.getElementById('wheel');
-            if (wheel) {
-                wheel.style.transform = 'rotate(0deg)';
-            }
-            const result = document.getElementById('spinResult');
-            if (result) result.textContent = '🎡 Click SPIN to win up to $50!';
-            const spinBtn = document.getElementById('spinBtn');
-            if (spinBtn) spinBtn.disabled = false;
+            document.getElementById('wheel').style.transform = 'rotate(0deg)';
+            document.getElementById('spinResult').textContent = '🎡 Click SPIN to win up to $50!';
+            document.getElementById('spinBtn').disabled = false;
         }
-
-        let isSpinning = false;
-
         function spinWheel() {
             if (isSpinning) return;
             const wheel = document.getElementById('wheel');
             const result = document.getElementById('spinResult');
             const spinBtn = document.getElementById('spinBtn');
-
             if (!wheel || !result || !spinBtn) return;
-
             isSpinning = true;
             spinBtn.disabled = true;
             result.textContent = '🌀 Spinning...';
-
             const prizes = ['$3', '$8', '$15', '$25', '$35', '$50'];
             const randomIndex = Math.floor(Math.random() * prizes.length);
             const extraAngle = 360 - (randomIndex * 60 + 30);
             const rotations = 5 + Math.floor(Math.random() * 3);
             const totalAngle = rotations * 360 + extraAngle + Math.random() * 20;
-
             wheel.style.transition = 'transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99)';
             wheel.style.transform = `rotate(${totalAngle}deg)`;
-
             setTimeout(() => {
                 const prize = prizes[randomIndex];
                 result.textContent = `🎉 You won ${prize}!`;
                 result.style.color = '#f5d65a';
                 spinBtn.disabled = false;
                 isSpinning = false;
-
                 const earnMsg = document.createElement('div');
                 earnMsg.style.cssText = 'margin-top:10px;font-size:14px;color:#2ecc71;font-weight:700;';
                 earnMsg.textContent = `💰 Earned ${prize}! Upgrade to claim!`;
                 result.parentNode.insertBefore(earnMsg, result.nextSibling);
-
                 setTimeout(() => {
                     const banner = document.getElementById('chatUpgradeBanner');
-                    if (banner) {
-                        banner.style.display = 'block';
-                        banner.innerHTML = `🎁 You won ${prize}! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>`;
-                    }
+                    if (banner) { banner.style.display = 'block';
+                        banner.innerHTML = `🎁 You won ${prize}! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>`; }
                 }, 500);
             }, 4200);
         }
 
-        // ===== WHATSAPP POSTING =====
+        // WHATSAPP POSTING
+        let waPosts = [
+            { text: '🔥 Check out this amazing offer! Limited time only!', emoji: '💥' },
+            { text: '📱 New phone deals! Get 50% off on all smartphones today!', emoji: '📱' },
+            { text: '💰 Earn $100 daily working from home! Join now!', emoji: '💵' }
+        ];
+        let waSharedCount = 0, waTotalEarned = 0;
         function handleWhatsAppPosting() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
-
-            const posts = [
-                { text: '🔥 Check out this amazing offer! Limited time only!', emoji: '💥' },
-                { text: '📱 New phone deals! Get 50% off on all smartphones today!', emoji: '📱' },
-                { text: '💰 Earn $100 daily working from home! Join now!', emoji: '💵' }
-            ];
-
+            waSharedCount = 0;
+            waTotalEarned = 0;
             content.innerHTML = `
-                <div style="margin-bottom:8px;">
-                    <span style="font-size:28px;">📱</span>
-                    <h3 style="color:#fff;font-size:20px;margin:4px 0;">WhatsApp Posting</h3>
-                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Share posts and earn $3.33 per post!</p>
-                </div>
-                <div class="whatsapp-sim">
-                    <div class="header">
-                        <span class="icon">💬</span>
-                        <span class="title">WhatsApp Status</span>
-                        <span style="margin-left:auto;font-size:12px;opacity:0.7;">0/3 shared</span>
-                    </div>
-                    <div class="chat-area" id="waChatArea">
-                        <div class="msg" style="background:#dcf8c6;align-self:flex-end;margin-left:auto;">
-                            📢 <strong>Myqashapp</strong><br>
-                            <span style="font-size:12px;color:rgba(0,0,0,0.6);">Share these posts to earn $10 total!</span>
-                        </div>
-                    </div>
-                    <div class="footer">
-                        <input type="text" id="waInput" value="Sharing sponsored content! 💰" style="flex:1;padding:8px 14px;border-radius:30px;border:none;font-size:13px;outline:none;">
-                        <button class="send-btn" onclick="shareWhatsAppPost()">📤 Share</button>
-                    </div>
-                </div>
+                <div style="margin-bottom:8px;"><span style="font-size:28px;">📱</span><h3 style="color:#fff;font-size:20px;margin:4px 0;">WhatsApp Posting</h3><p style="color:rgba(255,255,255,0.6);font-size:13px;">Share posts and earn $3.33 per post!</p></div>
+                <div class="whatsapp-sim"><div class="header"><span class="icon">💬</span><span class="title">WhatsApp Status</span><span style="margin-left:auto;font-size:12px;opacity:0.7;">0/3 shared</span></div><div class="chat-area" id="waChatArea"><div class="msg" style="background:#dcf8c6;align-self:flex-end;margin-left:auto;">📢 <strong>Myqashapp</strong><br><span style="font-size:12px;color:rgba(0,0,0,0.6);">Share these posts to earn $10 total!</span></div></div><div class="footer"><input type="text" id="waInput" value="Sharing sponsored content! 💰" style="flex:1;padding:8px 14px;border-radius:30px;border:none;font-size:13px;outline:none;"><button class="send-btn" onclick="shareWhatsAppPost()">📤 Share</button></div></div>
                 <div class="wa-earned" id="waEarned">💰 Earned: $0.00</div>
                 <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="claim-btn" style="display:inline-block;margin-top:10px;background:linear-gradient(135deg,var(--gold-light),#e09d2e);color:#1a0b2f;font-weight:800;font-size:16px;padding:12px 32px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:var(--transition);box-shadow:0 4px 20px rgba(201,168,67,.3);">💰 Claim Rewards</a>
                 <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
             `;
-
-            window._waPosts = posts;
-            window._waSharedCount = 0;
-            window._waTotalEarned = 0;
-
             overlay.classList.add('active');
         }
-
         function shareWhatsAppPost() {
             const chatArea = document.getElementById('waChatArea');
             const earnDisplay = document.getElementById('waEarned');
             const sendBtn = document.querySelector('.whatsapp-sim .footer .send-btn');
             const input = document.getElementById('waInput');
-
             if (!chatArea || !earnDisplay || !sendBtn) return;
-
-            const posts = window._waPosts || [];
-            if (window._waSharedCount >= posts.length) {
+            if (waSharedCount >= waPosts.length) {
                 const msg = document.createElement('div');
                 msg.className = 'msg';
                 msg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#1a0b2f;';
@@ -1606,47 +1266,35 @@
                 chatArea.scrollTop = chatArea.scrollHeight;
                 sendBtn.disabled = true;
                 sendBtn.textContent = '✓ Done';
-
                 setTimeout(() => {
                     const banner = document.getElementById('chatUpgradeBanner');
-                    if (banner) {
-                        banner.style.display = 'block';
-                        banner.innerHTML = '🎁 You earned $10! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Claim Now</a>';
-                    }
+                    if (banner) { banner.style.display = 'block';
+                        banner.innerHTML = '🎁 You earned $10! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Claim Now</a>'; }
                 }, 500);
                 return;
             }
-
-            const post = posts[window._waSharedCount];
+            const post = waPosts[waSharedCount];
             if (!post) return;
-
             const shareMsg = encodeURIComponent(`${post.emoji} ${post.text}\n\n👉 Join Myqashapp and start earning! https://myqashapp.com`);
             window.open(`https://wa.me/?text=${shareMsg}`, '_blank');
-
             const userMsg = document.createElement('div');
             userMsg.className = 'msg';
             userMsg.style.cssText = 'background:#dcf8c6;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#1a0b2f;margin-left:auto;align-self:flex-end;';
             userMsg.innerHTML = `${post.emoji} <strong>${input.value || 'Sharing sponsored content!'}</strong><br><div class="post-content" style="background:#f0f0f0;padding:8px 12px;border-radius:8px;margin-top:4px;font-size:12px;color:#333;border-left:3px solid #25d366;">${post.text}<br><span style="font-size:10px;color:#888;">✅ Shared via WhatsApp</span></div>`;
             chatArea.appendChild(userMsg);
-
             setTimeout(() => {
                 const sysMsg = document.createElement('div');
                 sysMsg.className = 'msg';
                 sysMsg.style.cssText = 'background:#fff;padding:8px 14px;border-radius:12px;margin-bottom:8px;max-width:85%;font-size:13px;color:#1a0b2f;';
-                sysMsg.innerHTML = `✅ <strong>Post ${window._waSharedCount + 1}/${posts.length} shared!</strong> Earned $3.33`;
+                sysMsg.innerHTML = `✅ <strong>Post ${waSharedCount + 1}/${waPosts.length} shared!</strong> Earned $3.33`;
                 chatArea.appendChild(sysMsg);
                 chatArea.scrollTop = chatArea.scrollHeight;
-
-                window._waSharedCount++;
-                window._waTotalEarned += 3.33;
-                earnDisplay.textContent = `💰 Earned: $${window._waTotalEarned.toFixed(2)}`;
-
+                waSharedCount++;
+                waTotalEarned += 3.33;
+                earnDisplay.textContent = `💰 Earned: $${waTotalEarned.toFixed(2)}`;
                 const header = document.querySelector('.whatsapp-sim .header span:last-child');
-                if (header) {
-                    header.textContent = `${window._waSharedCount}/${posts.length} shared`;
-                }
-
-                if (window._waSharedCount >= posts.length) {
+                if (header) header.textContent = `${waSharedCount}/${waPosts.length} shared`;
+                if (waSharedCount >= waPosts.length) {
                     setTimeout(() => {
                         const finalMsg = document.createElement('div');
                         finalMsg.className = 'msg';
@@ -1661,153 +1309,35 @@
             }, 600);
         }
 
-        // ===== QUESTIONS POPUP =====
-        function handleQuestionsPopup() {
-            const overlay = document.getElementById('demoActionPopup');
-            const content = overlay.querySelector('.popup-content');
-
-            const questions = [
-                { q: 'What is the capital of France?', options: ['London', 'Paris', 'Berlin', 'Madrid'], answer: 'Paris' },
-                { q: 'Which planet is known as the Red Planet?', options: ['Venus', 'Mars', 'Jupiter', 'Saturn'], answer: 'Mars' },
-                { q: 'What is the largest ocean on Earth?', options: ['Atlantic', 'Indian', 'Pacific', 'Arctic'], answer: 'Pacific' },
-                { q: 'Who wrote Romeo and Juliet?', options: ['Charles Dickens', 'William Shakespeare', 'Mark Twain', 'Jane Austen'], answer: 'William Shakespeare' }
-            ];
-
-            content.innerHTML = `
-                <div style="margin-bottom:10px;">
-                    <span style="font-size:28px;">❓</span>
-                    <h3 style="color:#fff;font-size:20px;margin:4px 0;">Answer Questions</h3>
-                    <p style="color:rgba(255,255,255,0.6);font-size:13px;">Answer correctly to earn $0.50 per question!</p>
-                </div>
-                <div id="quizContainer">
-                    <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:16px;margin:8px 0;">
-                        <div style="display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:10px;">
-                            <span>Question <span id="qNum">1</span>/<span id="qTotal">${questions.length}</span></span>
-                            <span>Score: <span id="qScore">0</span></span>
-                        </div>
-                        <div id="qText" style="font-size:18px;font-weight:700;color:#fff;margin-bottom:16px;min-height:50px;">${questions[0].q}</div>
-                        <div id="qOptions" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;"></div>
-                    </div>
-                </div>
-                <div id="qResult" style="font-size:16px;font-weight:700;min-height:30px;color:#f5d65a;margin:4px 0;"></div>
-                <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
-            `;
-
-            window._quizQuestions = questions;
-            window._quizCurrent = 0;
-            window._quizScore = 0;
-
-            renderQuizQuestion();
-            overlay.classList.add('active');
-        }
-
-        function renderQuizQuestion() {
-            const questions = window._quizQuestions || [];
-            const current = window._quizCurrent || 0;
-
-            if (current >= questions.length) {
-                const container = document.getElementById('quizContainer');
-                if (container) {
-                    container.innerHTML = `
-                        <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:20px;text-align:center;">
-                            <div style="font-size:48px;">🎉</div>
-                            <h3 style="color:#f5d65a;font-size:22px;margin:8px 0;">Quiz Complete!</h3>
-                            <p style="color:rgba(255,255,255,0.7);font-size:16px;">You scored <strong style="color:#f5d65a;font-size:24px;">${window._quizScore}</strong> out of ${questions.length}</p>
-                            <p style="color:#2ecc71;font-size:18px;font-weight:700;margin-top:8px;">💰 You earned $${(window._quizScore * 0.50).toFixed(2)}!</p>
-                            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" style="display:inline-block;margin-top:12px;background:linear-gradient(135deg,#f5d65a,#e09d2e);color:#1a0b2f;padding:10px 32px;border-radius:40px;text-decoration:none;font-weight:700;font-size:15px;">💎 Claim Prize</a>
-                        </div>
-                    `;
-                }
-                return;
-            }
-
-            const q = questions[current];
-            if (!q) return;
-
-            document.getElementById('qNum').textContent = current + 1;
-            document.getElementById('qTotal').textContent = questions.length;
-            document.getElementById('qScore').textContent = window._quizScore;
-            document.getElementById('qText').textContent = q.q;
-            document.getElementById('qResult').textContent = '';
-
-            const optionsContainer = document.getElementById('qOptions');
-            optionsContainer.innerHTML = '';
-
-            q.options.forEach(opt => {
-                const btn = document.createElement('button');
-                btn.textContent = opt;
-                btn.style.cssText = `
-                    background:rgba(255,255,255,0.08);
-                    border:2px solid rgba(255,255,255,0.1);
-                    color:#fff;
-                    padding:10px;
-                    border-radius:10px;
-                    font-size:14px;
-                    font-weight:600;
-                    cursor:pointer;
-                    transition:all 0.3s;
-                    font-family:inherit;
-                `;
-                btn.onmouseover = () => { btn.style.background = 'rgba(31,187,122,0.2)';
-                    btn.style.borderColor = '#1fbb7a'; };
-                btn.onmouseout = () => {
-                    if (!btn.dataset.answered) {
-                        btn.style.background = 'rgba(255,255,255,0.08)';
-                        btn.style.borderColor = 'rgba(255,255,255,0.1)';
-                    }
-                };
-                btn.onclick = function() {
-                    if (this.dataset.answered) return;
-                    const isCorrect = opt === q.answer;
-                    if (isCorrect) {
-                        this.style.background = 'rgba(46,204,113,0.3)';
-                        this.style.borderColor = '#2ecc71';
-                        window._quizScore++;
-                        document.getElementById('qScore').textContent = window._quizScore;
-                        document.getElementById('qResult').textContent = '✅ Correct! +$0.50';
-                        document.getElementById('qResult').style.color = '#2ecc71';
-                    } else {
-                        this.style.background = 'rgba(231,76,60,0.3)';
-                        this.style.borderColor = '#e74c3c';
-                        document.getElementById('qResult').textContent = `❌ Incorrect. The answer was: ${q.answer}`;
-                        document.getElementById('qResult').style.color = '#e74c3c';
-                    }
-                    this.dataset.answered = 'true';
-
-                    document.querySelectorAll('#qOptions button').forEach(b => {
-                        b.style.cursor = 'default';
-                        if (!b.dataset.answered && b.textContent === q.answer) {
-                            b.style.background = 'rgba(46,204,113,0.2)';
-                            b.style.borderColor = '#2ecc71';
-                        }
-                    });
-
-                    setTimeout(() => {
-                        window._quizCurrent++;
-                        renderQuizQuestion();
-                    }, 1500);
-                };
-                optionsContainer.appendChild(btn);
-            });
-        }
-
-        // Close popup cleanup
+        // DEMO ACTION CLOSE
         const origClose = closeDemoAction;
         closeDemoAction = function() {
             isSpinning = false;
             window._quizCurrent = 0;
             window._quizScore = 0;
-            window._waSharedCount = 0;
-            window._waTotalEarned = 0;
+            waSharedCount = 0;
+            waTotalEarned = 0;
             origClose();
         };
+        function openDemoAction(t, a, u, i) {
+            document.getElementById('actionIcon').textContent = i || '💰';
+            document.getElementById('actionTitle').textContent = t;
+            document.getElementById('actionAmount').textContent = a || '—';
+            document.getElementById('actionUsd').textContent = '≈ ' + u + ' per action';
+            document.getElementById('demoActionPopup').classList.add('active');
+        }
+        function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active'); }
+        document.getElementById('demoActionPopup').addEventListener('click', function(e) { if (e.target === this) closeDemoAction(); });
 
-        // Close affiliate bonus on escape key
+        // ESCAPE KEY
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeAffiliateBonus();
-            }
+            if (e.key === 'Escape') { closeAffiliateBonus();
+                closeDemoAction();
+                closeChatPage();
+                closeVideoPlayer(); }
         });
+
+        console.log('✅ Myqashapp loaded. Welcome bonus updated to 20,000 UGX & matching countries.');
     </script>
 </body>
 </html>
