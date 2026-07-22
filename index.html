@@ -408,51 +408,41 @@
         .demo-action-popup .popup-content .claim-btn:hover { transform:scale(1.04); box-shadow:0 8px 32px rgba(201,168,67,.4) }
         .demo-action-popup .popup-content .btn-close-popup { background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.1); padding:12px 36px; border-radius:12px; font-weight:700; font-size:14px; cursor:pointer; transition:var(--transition); margin-top:8px }
         .demo-action-popup .popup-content .btn-close-popup:hover { background:rgba(255,255,255,.2) }
-        .welcome-bonus-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.8); backdrop-filter:blur(12px); z-index:99999; display:none; align-items:center; justify-content:center; padding:20px; animation:fadeIn .3s ease }
-        .welcome-bonus-overlay.active { display:flex }
-        .welcome-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#0d1f38,#060e1a); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
-        .welcome-bonus-overlay .bonus-popup .close-btn { position:absolute; top:12px; right:14px; background:rgba(255,255,255,.06); border:none; color:rgba(255,255,255,.5); width:30px; height:30px; border-radius:50%; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; font-weight:700 }
-        .welcome-bonus-overlay .bonus-popup .close-btn:hover { background:rgba(255,255,255,.12); color:#fff }
-        .welcome-bonus-overlay .bonus-popup .bonus-lady { display:flex; justify-content:center; margin-bottom:4px }
-        .welcome-bonus-overlay .bonus-popup .bonus-lady img { width:64px; height:64px; border-radius:50%; object-fit:cover; object-position:center 30%; border:2px solid rgba(245,214,90,.2); box-shadow:0 6px 24px rgba(31,187,122,.15) }
-        .welcome-bonus-overlay .bonus-popup .bonus-title { text-align:center; font-size:22px; font-weight:900; letter-spacing:-.3px; background:linear-gradient(135deg,#f5d65a,#f0c94a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:2px }
-        .welcome-bonus-overlay .bonus-popup .bonus-sub { text-align:center; font-size:12px; color:rgba(255,255,255,.5); font-weight:500; margin-bottom:10px }
-        .welcome-bonus-overlay .bonus-popup .bonus-country-selector { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin:6px 0 12px }
-        .welcome-bonus-overlay .bonus-popup .bonus-country-btn { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06); color:rgba(255,255,255,.7); padding:4px 12px; border-radius:60px; font-size:11px; font-weight:600; cursor:pointer; transition:all .25s; font-family:inherit }
-        .welcome-bonus-overlay .bonus-popup .bonus-country-btn:hover { background:rgba(31,187,122,.12); border-color:rgba(31,187,122,.25); color:#fff; transform:translateY(-2px) }
-        .welcome-bonus-overlay .bonus-popup .bonus-country-btn.active { background:linear-gradient(135deg,#1fbb7a,#0f7b5a); border-color:#1fbb7a; color:#fff; box-shadow:0 4px 16px rgba(31,187,122,.3) }
-        .welcome-bonus-overlay .bonus-popup .bonus-amount-wrap { background:rgba(255,255,255,.03); border-radius:60px; padding:10px 16px; margin:8px 0 10px; border:1px solid rgba(255,255,255,.04); display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap }
-        .welcome-bonus-overlay .bonus-popup .bonus-amount { font-size:30px; font-weight:900; color:#fff; letter-spacing:-.3px; background:linear-gradient(135deg,#f5d65a,#f0c94a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text }
-        .welcome-bonus-overlay .bonus-popup .bonus-currency { font-size:13px; font-weight:600; color:rgba(255,255,255,.5); background:rgba(255,255,255,.05); padding:3px 12px; border-radius:60px; border:1px solid rgba(255,255,255,.04) }
-        .welcome-bonus-overlay .bonus-popup .bonus-countdown { background:rgba(255,255,255,.03); border-radius:60px; padding:8px 14px; margin:4px 0 12px; border:1px solid rgba(255,255,255,.04); display:flex; align-items:center; justify-content:center; gap:10px }
-        .welcome-bonus-overlay .bonus-popup .bonus-countdown-label { font-size:11px; font-weight:600; color:rgba(255,255,255,.5) }
-        .welcome-bonus-overlay .bonus-popup .bonus-countdown-timer { font-size:16px; font-weight:800; color:#fff; background:rgba(0,0,0,.3); padding:3px 12px; border-radius:60px; font-feature-settings:"tnum"; letter-spacing:1px; border:1px solid rgba(255,255,255,.04) }
-        .welcome-bonus-overlay .bonus-popup .bonus-claim-btn { display:block; width:100%; padding:14px 20px; background:linear-gradient(135deg,#f5d65a,#e09d2e); border:none; border-radius:12px; font-size:16px; font-weight:800; color:#1a0b2f; letter-spacing:.3px; cursor:pointer; transition:all .25s; box-shadow:0 6px 0 #b89a3a,0 10px 30px rgba(245,214,90,.12); font-family:inherit; text-transform:uppercase; margin-top:4px; border:1px solid rgba(255,255,255,.1); text-decoration:none; text-align:center }
-        .welcome-bonus-overlay .bonus-popup .bonus-claim-btn:active { transform:scale(.97); box-shadow:0 3px 0 #b89a3a }
-        .welcome-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
-        .welcome-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
-        .welcome-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
-        .affiliate-bonus-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.8); backdrop-filter:blur(12px); z-index:99998; display:none; align-items:center; justify-content:center; padding:20px; animation:fadeIn .3s ease }
-        .affiliate-bonus-overlay.active { display:flex }
-        .affiliate-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#0d1f38,#060e1a); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
-        .affiliate-bonus-overlay .bonus-popup .close-btn { position:absolute; top:12px; right:14px; background:rgba(255,255,255,.06); border:none; color:rgba(255,255,255,.5); width:30px; height:30px; border-radius:50%; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; font-weight:700 }
-        .affiliate-bonus-overlay .bonus-popup .close-btn:hover { background:rgba(255,255,255,.12); color:#fff }
-        .affiliate-bonus-overlay .bonus-popup .bonus-title { text-align:center; font-size:22px; font-weight:900; letter-spacing:-.3px; background:linear-gradient(135deg,#f5d65a,#f0c94a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:2px }
-        .affiliate-bonus-overlay .bonus-popup .bonus-sub { text-align:center; font-size:12px; color:rgba(255,255,255,.5); font-weight:500; margin-bottom:10px }
-        .affiliate-bonus-overlay .bonus-popup .bonus-country-selector { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin:6px 0 12px }
-        .affiliate-bonus-overlay .bonus-popup .bonus-country-btn { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06); color:rgba(255,255,255,.7); padding:4px 12px; border-radius:60px; font-size:11px; font-weight:600; cursor:pointer; transition:all .25s; font-family:inherit }
-        .affiliate-bonus-overlay .bonus-popup .bonus-country-btn:hover { background:rgba(31,187,122,.12); border-color:rgba(31,187,122,.25); color:#fff; transform:translateY(-2px) }
-        .affiliate-bonus-overlay .bonus-popup .bonus-country-btn.active { background:linear-gradient(135deg,#1fbb7a,#0f7b5a); border-color:#1fbb7a; color:#fff; box-shadow:0 4px 16px rgba(31,187,122,.3) }
-        .affiliate-bonus-overlay .bonus-popup .bonus-levels { background:rgba(255,255,255,.03); border-radius:16px; padding:14px 16px; margin:8px 0 12px; border:1px solid rgba(255,255,255,.04); }
-        .affiliate-bonus-overlay .bonus-popup .bonus-level { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.04); }
-        .affiliate-bonus-overlay .bonus-popup .bonus-level:last-child { border-bottom:none; }
-        .affiliate-bonus-overlay .bonus-popup .bonus-level .level-label { font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
-        .affiliate-bonus-overlay .bonus-popup .bonus-level .level-amount { font-size:16px; font-weight:800; color:var(--gold-light); }
-        .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn { display:block; width:100%; padding:14px 20px; background:linear-gradient(135deg,#f5d65a,#e09d2e); border:none; border-radius:12px; font-size:16px; font-weight:800; color:#1a0b2f; letter-spacing:.3px; cursor:pointer; transition:all .25s; box-shadow:0 6px 0 #b89a3a,0 10px 30px rgba(245,214,90,.12); font-family:inherit; text-transform:uppercase; margin-top:4px; border:1px solid rgba(255,255,255,.1); text-decoration:none; text-align:center }
-        .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:active { transform:scale(.97); box-shadow:0 3px 0 #b89a3a }
-        .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
-        .affiliate-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
-        .affiliate-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
+        .questions-list { margin:10px 0; padding:0; list-style:none }
+        .questions-list li { padding:8px 12px; margin:4px 0; background:rgba(26,11,47,.05); border-radius:8px; font-size:13px; color:#1a0b2f; border-left:3px solid var(--primary); cursor:pointer; transition:var(--transition) }
+        .questions-list li:hover { background:rgba(26,11,47,.1); transform:translateX(4px) }
+        .questions-list li strong { color:var(--primary-dark) }
+        .profile-amount { color:rgba(26,11,47,.4) !important; font-weight:500 !important }
+        .wheel-container { position:relative; width:240px; height:240px; margin:0 auto 16px; }
+        .wheel { width:100%; height:100%; border-radius:50%; position:relative; transition:transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99); box-shadow:0 0 0 6px #1fbb7a,0 0 0 12px rgba(31,187,122,.2); }
+        .wheel-segment { position:absolute; width:50%; height:50%; top:0; left:50%; transform-origin:0% 100%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.5); padding-left:20px; }
+        .wheel-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; height:50px; background:linear-gradient(145deg,#0a1a2f,#040b17); border-radius:50%; border:4px solid #f5d65a; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:12px; color:#f5d65a; z-index:5; }
+        .spin-btn { background:linear-gradient(135deg,#f5d65a,#e09d2e); color:#1a0b2f; border:none; padding:12px 32px; border-radius:60px; font-weight:800; font-size:18px; cursor:pointer; box-shadow:0 4px 20px rgba(245,214,90,.3); transition:var(--transition); }
+        .spin-btn:hover { transform:scale(1.05); box-shadow:0 8px 32px rgba(245,214,90,.4); }
+        .spin-btn:disabled { opacity:.5; cursor:not-allowed; transform:none; }
+        .spin-result { font-size:24px; font-weight:900; color:#f5d65a; margin-top:8px; min-height:40px; }
+        .whatsapp-sim { background:#075e54; border-radius:16px; overflow:hidden; max-width:340px; margin:0 auto; }
+        .whatsapp-sim .header { background:#075e54; padding:12px 16px; color:#fff; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,.1); }
+        .whatsapp-sim .header .icon { font-size:20px; }
+        .whatsapp-sim .header .title { font-weight:700; font-size:15px; }
+        .whatsapp-sim .chat-area { background:#ece5dd; padding:12px; min-height:180px; max-height:220px; overflow-y:auto; }
+        .whatsapp-sim .chat-area .msg { background:#fff; padding:8px 14px; border-radius:12px; margin-bottom:8px; max-width:85%; font-size:13px; color:#1a0b2f; box-shadow:0 1px 2px rgba(0,0,0,.1); }
+        .whatsapp-sim .chat-area .msg .post-content { background:#f0f0f0; padding:8px 12px; border-radius:8px; margin-top:4px; font-size:12px; color:#333; border-left:3px solid #25d366; }
+        .whatsapp-sim .chat-area .msg .post-content .share-btn { background:#25d366; color:#fff; border:none; padding:4px 16px; border-radius:40px; font-size:11px; font-weight:700; cursor:pointer; margin-top:4px; transition:var(--transition); }
+        .whatsapp-sim .chat-area .msg .post-content .share-btn:hover { transform:scale(1.05); }
+        .whatsapp-sim .chat-area .msg .post-content .share-btn:disabled { opacity:.4; cursor:not-allowed; }
+        .whatsapp-sim .footer { background:#075e54; padding:8px 12px; display:flex; gap:8px; }
+        .whatsapp-sim .footer input { flex:1; padding:8px 14px; border-radius:30px; border:none; font-size:13px; outline:none; }
+        .whatsapp-sim .footer .send-btn { background:#25d366; color:#fff; border:none; padding:8px 20px; border-radius:30px; font-weight:700; cursor:pointer; }
+        .whatsapp-sim .footer .send-btn:hover { background:#1ebe5c; }
+        .wa-earned { font-size:18px; font-weight:800; color:#25d366; margin-top:6px; }
+        .icon-chat { background: #25a3d3; }
+        .icon-questions { background: #f39c12; }
+        .icon-tiktok { background: #000000; }
+        .icon-affiliate { background: #9b59b6; }
+        .icon-whatsapp { background: #25D366; }
+        .icon-youtube { background: #FF0000; }
+        .icon-spinning { background: #e67e22; }
         @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
         @keyframes slideUpFast { from { opacity:0; transform:translateY(30px) scale(.96) } to { opacity:1; transform:translateY(0) scale(1) } }
         @media (max-width:480px) {
@@ -514,41 +504,27 @@
         .hero-buttons .btn-group { display:flex !important; flex-wrap:nowrap !important; justify-content:center !important; gap:10px !important; width:100% !important; max-width:380px !important; margin:0 auto !important }
         .hero-buttons .btn-group .btn-primary { flex:1 1 auto !important; min-width:120px !important; padding:14px 12px !important; font-size:14px !important; height:48px !important; border-radius:12px !important; white-space:nowrap !important }
         .hero-buttons>a.btn-primary { min-width:200px !important; width:auto !important; padding:14px 32px !important; height:54px !important; font-size:15px !important }
-        .questions-list { margin:10px 0; padding:0; list-style:none }
-        .questions-list li { padding:8px 12px; margin:4px 0; background:rgba(26,11,47,.05); border-radius:8px; font-size:13px; color:#1a0b2f; border-left:3px solid var(--primary); cursor:pointer; transition:var(--transition) }
-        .questions-list li:hover { background:rgba(26,11,47,.1); transform:translateX(4px) }
-        .questions-list li strong { color:var(--primary-dark) }
-        .profile-amount { color:rgba(26,11,47,.4) !important; font-weight:500 !important }
-        .wheel-container { position:relative; width:240px; height:240px; margin:0 auto 16px; }
-        .wheel { width:100%; height:100%; border-radius:50%; position:relative; transition:transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99); box-shadow:0 0 0 6px #1fbb7a,0 0 0 12px rgba(31,187,122,.2); }
-        .wheel-segment { position:absolute; width:50%; height:50%; top:0; left:50%; transform-origin:0% 100%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; color:#fff; text-shadow:0 1px 3px rgba(0,0,0,.5); padding-left:20px; }
-        .wheel-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; height:50px; background:linear-gradient(145deg,#0a1a2f,#040b17); border-radius:50%; border:4px solid #f5d65a; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:12px; color:#f5d65a; z-index:5; }
-        .spin-btn { background:linear-gradient(135deg,#f5d65a,#e09d2e); color:#1a0b2f; border:none; padding:12px 32px; border-radius:60px; font-weight:800; font-size:18px; cursor:pointer; box-shadow:0 4px 20px rgba(245,214,90,.3); transition:var(--transition); }
-        .spin-btn:hover { transform:scale(1.05); box-shadow:0 8px 32px rgba(245,214,90,.4); }
-        .spin-btn:disabled { opacity:.5; cursor:not-allowed; transform:none; }
-        .spin-result { font-size:24px; font-weight:900; color:#f5d65a; margin-top:8px; min-height:40px; }
-        .whatsapp-sim { background:#075e54; border-radius:16px; overflow:hidden; max-width:340px; margin:0 auto; }
-        .whatsapp-sim .header { background:#075e54; padding:12px 16px; color:#fff; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(255,255,255,.1); }
-        .whatsapp-sim .header .icon { font-size:20px; }
-        .whatsapp-sim .header .title { font-weight:700; font-size:15px; }
-        .whatsapp-sim .chat-area { background:#ece5dd; padding:12px; min-height:180px; max-height:220px; overflow-y:auto; }
-        .whatsapp-sim .chat-area .msg { background:#fff; padding:8px 14px; border-radius:12px; margin-bottom:8px; max-width:85%; font-size:13px; color:#1a0b2f; box-shadow:0 1px 2px rgba(0,0,0,.1); }
-        .whatsapp-sim .chat-area .msg .post-content { background:#f0f0f0; padding:8px 12px; border-radius:8px; margin-top:4px; font-size:12px; color:#333; border-left:3px solid #25d366; }
-        .whatsapp-sim .chat-area .msg .post-content .share-btn { background:#25d366; color:#fff; border:none; padding:4px 16px; border-radius:40px; font-size:11px; font-weight:700; cursor:pointer; margin-top:4px; transition:var(--transition); }
-        .whatsapp-sim .chat-area .msg .post-content .share-btn:hover { transform:scale(1.05); }
-        .whatsapp-sim .chat-area .msg .post-content .share-btn:disabled { opacity:.4; cursor:not-allowed; }
-        .whatsapp-sim .footer { background:#075e54; padding:8px 12px; display:flex; gap:8px; }
-        .whatsapp-sim .footer input { flex:1; padding:8px 14px; border-radius:30px; border:none; font-size:13px; outline:none; }
-        .whatsapp-sim .footer .send-btn { background:#25d366; color:#fff; border:none; padding:8px 20px; border-radius:30px; font-weight:700; cursor:pointer; }
-        .whatsapp-sim .footer .send-btn:hover { background:#1ebe5c; }
-        .wa-earned { font-size:18px; font-weight:800; color:#25d366; margin-top:6px; }
-        .icon-chat { background: #25a3d3; }
-        .icon-questions { background: #f39c12; }
-        .icon-tiktok { background: #000000; }
-        .icon-affiliate { background: #9b59b6; }
-        .icon-whatsapp { background: #25D366; }
-        .icon-youtube { background: #FF0000; }
-        .icon-spinning { background: #e67e22; }
+        .affiliate-bonus-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.8); backdrop-filter:blur(12px); z-index:99998; display:none; align-items:center; justify-content:center; padding:20px; animation:fadeIn .3s ease }
+        .affiliate-bonus-overlay.active { display:flex }
+        .affiliate-bonus-overlay .bonus-popup { max-width:380px; width:100%; background:linear-gradient(145deg,#0d1f38,#060e1a); border-radius:36px; padding:26px 22px 28px; box-shadow:0 30px 80px rgba(0,0,0,.8),0 0 0 1px rgba(31,187,122,.15); border:1px solid rgba(255,255,255,.06); position:relative; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) }
+        .affiliate-bonus-overlay .bonus-popup .close-btn { position:absolute; top:12px; right:14px; background:rgba(255,255,255,.06); border:none; color:rgba(255,255,255,.5); width:30px; height:30px; border-radius:50%; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; font-weight:700 }
+        .affiliate-bonus-overlay .bonus-popup .close-btn:hover { background:rgba(255,255,255,.12); color:#fff }
+        .affiliate-bonus-overlay .bonus-popup .bonus-title { text-align:center; font-size:22px; font-weight:900; letter-spacing:-.3px; background:linear-gradient(135deg,#f5d65a,#f0c94a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:2px }
+        .affiliate-bonus-overlay .bonus-popup .bonus-sub { text-align:center; font-size:12px; color:rgba(255,255,255,.5); font-weight:500; margin-bottom:10px }
+        .affiliate-bonus-overlay .bonus-popup .bonus-country-selector { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin:6px 0 12px }
+        .affiliate-bonus-overlay .bonus-popup .bonus-country-btn { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.06); color:rgba(255,255,255,.7); padding:4px 12px; border-radius:60px; font-size:11px; font-weight:600; cursor:pointer; transition:all .25s; font-family:inherit }
+        .affiliate-bonus-overlay .bonus-popup .bonus-country-btn:hover { background:rgba(31,187,122,.12); border-color:rgba(31,187,122,.25); color:#fff; transform:translateY(-2px) }
+        .affiliate-bonus-overlay .bonus-popup .bonus-country-btn.active { background:linear-gradient(135deg,#1fbb7a,#0f7b5a); border-color:#1fbb7a; color:#fff; box-shadow:0 4px 16px rgba(31,187,122,.3) }
+        .affiliate-bonus-overlay .bonus-popup .bonus-levels { background:rgba(255,255,255,.03); border-radius:16px; padding:14px 16px; margin:8px 0 12px; border:1px solid rgba(255,255,255,.04); }
+        .affiliate-bonus-overlay .bonus-popup .bonus-level { display:flex; justify-content:space-between; align-items:center; padding:6px 0; border-bottom:1px solid rgba(255,255,255,.04); }
+        .affiliate-bonus-overlay .bonus-popup .bonus-level:last-child { border-bottom:none; }
+        .affiliate-bonus-overlay .bonus-popup .bonus-level .level-label { font-size:13px; font-weight:600; color:rgba(255,255,255,.6); }
+        .affiliate-bonus-overlay .bonus-popup .bonus-level .level-amount { font-size:16px; font-weight:800; color:var(--gold-light); }
+        .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn { display:block; width:100%; padding:14px 20px; background:linear-gradient(135deg,#f5d65a,#e09d2e); border:none; border-radius:12px; font-size:16px; font-weight:800; color:#1a0b2f; letter-spacing:.3px; cursor:pointer; transition:all .25s; box-shadow:0 6px 0 #b89a3a,0 10px 30px rgba(245,214,90,.12); font-family:inherit; text-transform:uppercase; margin-top:4px; border:1px solid rgba(255,255,255,.1); text-decoration:none; text-align:center }
+        .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:active { transform:scale(.97); box-shadow:0 3px 0 #b89a3a }
+        .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
+        .affiliate-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
+        .affiliate-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
     </style>
 </head>
 <body>
@@ -920,28 +896,6 @@
         <span class="whatsapp-text">WhatsApp Group</span>
     </a>
 
-    <!-- WELCOME BONUS POPUP - UPDATED -->
-    <div class="welcome-bonus-overlay" id="welcomeBonusOverlay">
-        <div class="bonus-popup">
-            <button class="close-btn" onclick="closeWelcomeBonus()">✕</button>
-            <div class="bonus-lady"><img src="https://i.pravatar.cc/100?img=26" alt="Lady" loading="lazy"></div>
-            <div class="bonus-title">✨ Welcome Bonus</div>
-            <div class="bonus-sub">Will be sent Straight to your Mobile Money Account</div>
-            <div class="bonus-country-selector" id="bonusCountrySelector">
-                <button class="bonus-country-btn active" data-country="uganda">🇺🇬 Uganda</button>
-                <button class="bonus-country-btn" data-country="kenya">🇰🇪 Kenya</button>
-                <button class="bonus-country-btn" data-country="nigeria">🇳🇬 Nigeria</button>
-                <button class="bonus-country-btn" data-country="ghana">🇬🇭 Ghana</button>
-                <button class="bonus-country-btn" data-country="cameroon">🇨🇲 Cameroon</button>
-                <button class="bonus-country-btn" data-country="usd">🇺🇸 USD</button>
-            </div>
-            <div class="bonus-amount-wrap"><span class="bonus-amount" id="bonusAmount">20,000</span><span class="bonus-currency" id="bonusCurrency">UGX</span></div>
-            <div class="bonus-countdown"><span class="bonus-countdown-label">⏳</span><span class="bonus-countdown-timer" id="bonusCountdown">23:59:53</span></div>
-            <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="bonus-claim-btn">🎁 Claim bonus now</a>
-            <div class="bonus-hint" id="bonusHint">🇺🇬 <span>Uganda</span> · 20,000 UGX</div>
-        </div>
-    </div>
-
     <!-- AFFILIATE BONUS POPUP -->
     <div class="affiliate-bonus-overlay" id="affiliateBonusOverlay">
         <div class="bonus-popup">
@@ -1186,37 +1140,6 @@
         function sendChatPageMessage() { if (chatLocked) { alert('⛔ Chat is paused. Please upgrade to continue.'); return } const input = document.getElementById('chatPageInput'), msg = input.value.trim(); if (!msg || !chatUser) return; const area = document.getElementById('chatMessagesArea'); const sent = document.createElement('div'); sent.className = 'chat-msg sent'; sent.textContent = msg; const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); sent.innerHTML += '<span class="time">' + time + '</span>'; area.appendChild(sent); input.value = ''; area.scrollTop = area.scrollHeight; setTimeout(() => { const reply = document.createElement('div'); reply.className = 'chat-msg received'; reply.innerHTML = '<div class="msg-name">' + chatUser + '</div>' + chatDesperate + '<span class="time">' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + '</span>'; area.appendChild(reply); area.scrollTop = area.scrollHeight; chatLocked = !0; document.getElementById('chatUpgradeBanner').style.display = 'block'; document.getElementById('chatPageSendBtn').disabled = !0; document.getElementById('chatPageInput').disabled = !0 }, 700) }
         document.getElementById('chatPageInput').addEventListener('keypress', function(e) { if (e.key === 'Enter') sendChatPageMessage() });
         document.getElementById('chatOverlay').addEventListener('click', function(e) { if (e.target === this) closeChatPage() });
-
-        // ===== WELCOME BONUS - UPDATED =====
-        const BONUS_DATA = { 
-            uganda: { amount: '20,000', currency: 'UGX', label: 'Uganda', flag: '🇺🇬' }, 
-            kenya: { amount: '650', currency: 'KSh', label: 'Kenya', flag: '🇰🇪' }, 
-            nigeria: { amount: '12,000', currency: '₦', label: 'Nigeria', flag: '🇳🇬' }, 
-            ghana: { amount: '120', currency: 'GH₵', label: 'Ghana', flag: '🇬🇭' }, 
-            cameroon: { amount: '4,500', currency: 'XAF', label: 'Cameroon', flag: '🇨🇲' }, 
-            usd: { amount: '7', currency: 'USD', label: 'USD', flag: '🇺🇸' } 
-        };
-        let bonusCurrent = 'uganda';
-        let bonusSeconds = 86393;
-        let bonusInterval = null;
-
-        function formatBonusCountdown(s) { const hrs = Math.floor(s / 3600); const mins = Math.floor((s % 3600) / 60); const secs = s % 60; return `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}` }
-
-        function updateBonus(countryKey) { const data = BONUS_DATA[countryKey]; if (!data) return; document.getElementById('bonusAmount').textContent = data.amount; document.getElementById('bonusCurrency').textContent = data.currency; document.getElementById('bonusHint').innerHTML = `${data.flag} <span>${data.label}</span> · ${data.amount} ${data.currency}`; document.querySelectorAll('#bonusCountrySelector .bonus-country-btn').forEach(btn => { btn.classList.toggle('active', btn.dataset.country === countryKey) }); bonusCurrent = countryKey }
-
-        function tickBonusCountdown() { if (bonusSeconds <= 0) bonusSeconds = 86400; document.getElementById('bonusCountdown').textContent = formatBonusCountdown(bonusSeconds); bonusSeconds-- }
-
-        function startBonusCountdown() { if (bonusInterval) clearInterval(bonusInterval); bonusInterval = setInterval(tickBonusCountdown, 1000); tickBonusCountdown() }
-
-        function showWelcomeBonus() { const overlay = document.getElementById('welcomeBonusOverlay'); if (overlay) overlay.classList.add('active') }
-
-        function closeWelcomeBonus() { const overlay = document.getElementById('welcomeBonusOverlay'); if (overlay) overlay.classList.remove('active') }
-        updateBonus('uganda');
-        bonusSeconds = 86393;
-        startBonusCountdown();
-        document.querySelectorAll('#bonusCountrySelector .bonus-country-btn').forEach(btn => { btn.addEventListener('click', function() { const country = this.dataset.country; if (country === bonusCurrent) return; updateBonus(country) }) });
-        setTimeout(() => { showWelcomeBonus() }, 20000);
-        switchDashboard('uganda');
 
         // ===== AFFILIATE BONUS =====
         const AFFILIATE_DATA = {
@@ -1805,6 +1728,9 @@
                 closeAffiliateBonus();
             }
         });
+
+        // Switch to default country
+        switchDashboard('uganda');
     </script>
 </body>
-  </html>
+</html>
