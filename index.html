@@ -635,6 +635,39 @@
         .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
+
+        /* NEW STYLES FOR LIFETIME COUNTRY SELECTOR */
+        .lifetime-country-selector {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px 0 10px;
+        }
+        .lifetime-country-btn {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.8);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            font-family: inherit;
+        }
+        .lifetime-country-btn:hover {
+            background: rgba(31,187,122,0.15);
+            border-color: #1fbb7a;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .lifetime-country-btn.active {
+            background: linear-gradient(135deg, #1fbb7a, #0f7b5a);
+            border-color: #1fbb7a;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(31,187,122,0.3);
+        }
     </style>
 </head>
 <body>
@@ -813,8 +846,58 @@
             </div>
         </div>
 
+        <!-- LIFETIME ACCESS SECTION - UPDATED WITH COUNTRY SELECTOR ABOVE BENEFITS -->
         <div class="section section-lifetime lifetime-section">
-            <div style="text-align:center;"><div style="font-size:24px;font-weight:900;color:#fff;letter-spacing:-.5px;">Lifetime Access</div><p style="font-size:13px;color:rgba(255,255,255,.7);max-width:380px;margin:6px auto 8px;line-height:1.5;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p><div class="price-wrap"><span class="price-old">$10</span><span class="price-new">$5</span><span class="price-badge">🎯 LIMITED OFFER</span></div><p style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px;">No monthly fees · Instant access</p><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Activate Lifetime Access</a></div>
+            <div style="text-align:center;">
+                <div style="font-size:24px;font-weight:900;color:#fff;letter-spacing:-.5px;">Lifetime Access</div>
+                <p style="font-size:13px;color:rgba(255,255,255,.7);max-width:380px;margin:6px auto 8px;line-height:1.5;">
+                    <strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.
+                </p>
+
+                <!-- Country Selector (ABOVE benefits) -->
+                <div class="lifetime-country-selector" id="lifetimeCountrySelector">
+                    <button class="lifetime-country-btn active" data-country="uganda" data-fee="19500" data-currency="UGX">🇺🇬 Uganda</button>
+                    <button class="lifetime-country-btn" data-country="kenya" data-fee="550" data-currency="KES">🇰🇪 Kenya</button>
+                    <button class="lifetime-country-btn" data-country="ghana" data-fee="95" data-currency="GHS">🇬🇭 Ghana</button>
+                    <button class="lifetime-country-btn" data-country="nigeria" data-fee="9300" data-currency="NGN">🇳🇬 Nigeria</button>
+                    <button class="lifetime-country-btn" data-country="cameroon" data-fee="4500" data-currency="XAF">🇨🇲 Cameroon</button>
+                    <button class="lifetime-country-btn" data-country="usd" data-fee="10" data-currency="USD">🇺🇸 USD</button>
+                </div>
+
+                <div class="price-wrap">
+                    <span class="price-old">$10</span>
+                    <span class="price-new" id="lifetimePriceNew">UGX 19,500</span>
+                    <span class="price-badge">🎯 LIMITED OFFER</span>
+                </div>
+                <p style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px;">No monthly fees · Instant access</p>
+
+                <!-- Benefits List (unchanged) -->
+                <div style="text-align:left;max-width:400px;margin:0 auto 12px;padding:0 10px;">
+                    <div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;color:rgba(255,255,255,0.9);">
+                        <span style="color:#1fbb7a;">✅</span> Unlimited Chats with Foreigners
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;color:rgba(255,255,255,0.9);">
+                        <span style="color:#1fbb7a;">✅</span> Higher Task Earnings (2x Regular)
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;color:rgba(255,255,255,0.9);">
+                        <span style="color:#1fbb7a;">✅</span> Instant Loan Access up to UGX 500K
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;color:rgba(255,255,255,0.9);">
+                        <span style="color:#1fbb7a;">✅</span> Priority Payouts (Instant)
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;color:rgba(255,255,255,0.9);">
+                        <span style="color:#1fbb7a;">✅</span> 24/7 VIP Support
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;color:rgba(255,255,255,0.9);">
+                        <span style="color:#1fbb7a;">✅</span> 30-Day Money-Back Guarantee
+                    </div>
+                    <div style="display:flex;align-items:center;gap:8px;padding:4px 0;font-size:14px;color:rgba(255,255,255,0.9);">
+                        <span style="color:#1fbb7a;">✅</span> Exclusive High-Paying Tasks
+                    </div>
+                </div>
+
+                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Activate Lifetime Access</a>
+            </div>
         </div>
 
         <div class="section section-faq">
@@ -1841,6 +1924,36 @@
 
         // Switch to default country
         switchDashboard('uganda');
+
+        // ===== LIFETIME COUNTRY SELECTOR =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const countryBtns = document.querySelectorAll('#lifetimeCountrySelector .lifetime-country-btn');
+            const priceDisplay = document.getElementById('lifetimePriceNew');
+
+            function updateLifetimePrice(countryKey, fee, currency) {
+                countryBtns.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.country === countryKey);
+                });
+                if (priceDisplay) {
+                    priceDisplay.textContent = `${currency} ${parseFloat(fee).toLocaleString()}`;
+                }
+            }
+
+            // Set default to Uganda (already active in HTML)
+            const defaultBtn = document.querySelector('#lifetimeCountrySelector .lifetime-country-btn[data-country="uganda"]');
+            if (defaultBtn && defaultBtn.classList.contains('active')) {
+                priceDisplay.textContent = `UGX 19,500`;
+            }
+
+            countryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const country = this.dataset.country;
+                    const fee = this.dataset.fee;
+                    const currency = this.dataset.currency;
+                    updateLifetimePrice(country, fee, currency);
+                });
+            });
+        });
     </script>
 </body>
-            </html>
+</html>
