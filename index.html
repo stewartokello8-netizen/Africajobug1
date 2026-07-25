@@ -6,7 +6,6 @@
     <title>Myqashapp · Premium Earnings Platform for Africans</title>
     <meta name="description" content="Earn 80,000UGX – 150,000UGX daily by watching videos, answering questions & more. Withdraw instantly via M-Pesa, MoMo, and bank transfer." />
     <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
     <link rel="canonical" href="https://myqashapp.com" />
     <meta property="og:title" content="Myqashapp · Turn Clicks to Cash in Africa" />
     <meta property="og:description" content="Join 187,000+ Africans earning daily. Watch videos, chat, answer questions and withdraw instantly to M-Pesa, MoMo, and more." />
@@ -20,7 +19,6 @@
     <meta name="twitter:title" content="Myqashapp · Premium Earnings Platform" />
     <meta name="twitter:description" content="Earn daily by completing simple tasks. Withdraw instantly via M-Pesa, MoMo, and bank transfer." />
 
-    <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -261,39 +259,11 @@
         .section-stats { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(31,187,122,.12) }
         .section-video { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(255,0,0,.12) }
         .section-live { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(59,130,246,.15) }
-        /* --- CHANGED: Removed outer border from ways section --- */
-        .section-ways { 
-            background: linear-gradient(145deg,#0d1f38,#060e1a); 
-            border: none; /* Removed outer border */
-            padding: 30px 0 32px; /* Adjusted padding to keep spacing clean */
-        }
+        .section-ways { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(31,187,122,.08) }
         .section-withdraw { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(201,168,67,.12) }
         .section-how { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(139,92,246,.12) }
         .section-stories { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(236,72,153,.1) }
-        /* --- CHANGED: Enhanced lifetime section to look "very nice" --- */
-        .section-lifetime { 
-            background: radial-gradient(circle at 20% 30%, #0f2845, #040b17); 
-            border: 1px solid rgba(31,187,122,.2); 
-            text-align:center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(31,187,122,.1);
-            position: relative;
-            overflow: hidden;
-        }
-        .section-lifetime::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 70% 20%, rgba(31,187,122,.08), transparent 50%);
-            animation: heroGlow 10s ease-in-out infinite;
-            pointer-events: none;
-        }
-        .section-lifetime > * {
-            position: relative;
-            z-index: 2;
-        }
+        .section-lifetime { background:linear-gradient(145deg,#0a1628,#040b17); border:1px solid rgba(31,187,122,.12); text-align:center }
         .section-faq { background:linear-gradient(145deg,#0a1628,#040b17); border:1px solid rgba(20,184,166,.1) }
         .earnings-scroll { background:rgba(255,255,255,.06); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.06); border-radius:60px; padding:8px 12px; margin:8px 0 0; overflow:hidden; white-space:nowrap }
         .earnings-scroll .scroll-label { background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:4px 14px; border-radius:40px; font-size:9px; font-weight:800; display:inline-block; margin-right:8px; text-transform:uppercase; letter-spacing:.5px }
@@ -305,33 +275,22 @@
         .stats-grid .stat-item:hover { transform:translateY(-4px); border-color:rgba(31,187,122,.3); box-shadow:var(--shadow-md) }
         .stats-grid .stat-item .stat-number { font-size:22px; font-weight:900; color:var(--primary); font-feature-settings:"tnum" }
         .stats-grid .stat-item .stat-label { font-size:10px; font-weight:700; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.5px; margin-top:4px }
-        .ways-grid { display:flex; flex-direction:column; gap:12px; margin:6px 0 4px; padding: 0 20px; }
-        .way-card { display:flex; flex-wrap:wrap; align-items:flex-start; gap:12px 14px; background:rgba(255,255,255,.04); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:14px 16px; transition:var(--transition); cursor:pointer }
-        .way-card:hover { background:rgba(255,255,255,.08); border-color:var(--primary); transform:translateX(6px) scale(1.01); box-shadow:var(--shadow-md) }
-        /* --- CHANGED: Enhanced icon styling for clarity --- */
-        .way-card .way-icon { 
-            width: 52px; 
-            height: 52px; 
-            border-radius: 14px; 
-            object-fit: cover; 
-            flex-shrink: 0; 
-            border: 2px solid rgba(255,255,255,.08);
-            background: rgba(255,255,255,.04);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+
+        /* WAYS TO EARN - enlarged cards, no outer separator, images as icons */
+        .ways-grid { display:flex; flex-direction:column; gap:14px; margin:6px 0 4px }
+        .way-card { display:flex; flex-wrap:wrap; align-items:flex-start; gap:12px 14px; background:rgba(255,255,255,.06); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px 20px; transition:var(--transition); cursor:pointer }
+        .way-card:hover { background:rgba(255,255,255,.10); border-color:var(--primary); transform:translateX(6px) scale(1.02); box-shadow:var(--shadow-md) }
+        .way-card .way-icon { width:56px; height:56px; border-radius:14px; object-fit:cover; flex-shrink:0; border:2px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); padding:6px; }
         .way-card .way-content { flex:1; min-width:0; display:flex; flex-direction:column; gap:4px }
-        .way-card .way-content .way-name { font-weight:800; font-size:15px; color:#fff }
-        .way-card .way-content .way-desc { font-size:12px; color:rgba(255,255,255,.7); line-height:1.5 }
-        .way-card .way-content .way-earn { font-weight:900; font-size:15px; color:var(--primary) }
-        .way-card .way-content .way-earn .sub { font-size:9px; font-weight:600; color:rgba(255,255,255,.5) }
+        .way-card .way-content .way-name { font-weight:800; font-size:17px; color:#fff }
+        .way-card .way-content .way-desc { font-size:14px; color:rgba(255,255,255,.8); line-height:1.5 }
+        .way-card .way-content .way-earn { font-weight:900; font-size:16px; color:var(--primary) }
+        .way-card .way-content .way-earn .sub { font-size:10px; font-weight:600; color:rgba(255,255,255,.5) }
         .way-card .way-content .way-cta { margin-top:6px }
-        .way-card .way-content .way-cta .cta-btn { display:inline-block; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:6px 18px; border-radius:40px; font-size:11px; font-weight:700; text-decoration:none; border:none; cursor:pointer; transition:var(--transition); white-space:nowrap; box-shadow:0 2px 10px var(--primary-glow) }
+        .way-card .way-content .way-cta .cta-btn { display:inline-block; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:8px 22px; border-radius:40px; font-size:13px; font-weight:700; text-decoration:none; border:none; cursor:pointer; transition:var(--transition); white-space:nowrap; box-shadow:0 2px 10px var(--primary-glow) }
         .way-card .way-content .way-cta .cta-btn:hover { transform:scale(1.05); box-shadow:0 4px 20px var(--primary-glow) }
         .way-card .way-content .way-cta .cta-btn.gold { background:linear-gradient(135deg,var(--gold-light),#e09d2e); box-shadow:0 2px 10px rgba(201,168,67,.3) }
+
         .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000; border-radius:16px; margin-bottom:16px; border:2px solid rgba(255,255,255,.06) }
         .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0 }
         .video-label { display:flex; align-items:center; gap:10px; margin-bottom:12px }
@@ -344,10 +303,10 @@
         .live-intro .live-count { font-weight:800; font-size:17px; color:#fff }
         .live-intro .live-count span { color:#3b82f6 }
         .live-intro .live-tip { font-size:12px; color:rgba(255,255,255,.7); background:rgba(255,255,255,.04); padding:4px 14px; border-radius:40px; font-weight:600 }
-        .user-card { background:rgba(255,255,255,.04); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:16px 18px; margin-bottom:16px; transition:var(--transition); cursor:pointer; position:relative; overflow:hidden }
+        .user-card { background:rgba(255,255,255,.06); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px 20px; margin-bottom:16px; transition:var(--transition); cursor:pointer; position:relative; overflow:hidden }
         .user-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--primary),#3b82f6,var(--primary)); opacity:0; transition:var(--transition) }
         .user-card:hover::before { opacity:1 }
-        .user-card:hover { background:rgba(255,255,255,.08); box-shadow:0 12px 32px rgba(0,0,0,.06),0 4px 16px rgba(31,187,122,.08); transform:translateX(6px) scale(1.005); border-color:rgba(31,187,122,.2) }
+        .user-card:hover { background:rgba(255,255,255,.10); box-shadow:0 12px 32px rgba(0,0,0,.06),0 4px 16px rgba(31,187,122,.08); transform:translateX(6px) scale(1.005); border-color:rgba(31,187,122,.2) }
         .user-card .user-top { display:flex; align-items:center; gap:16px }
         .user-card img { width:56px; height:56px; border-radius:100%; object-fit:cover; border:3px solid var(--primary); flex-shrink:0 }
         .user-card .user-info { flex:1; min-width:0 }
@@ -380,10 +339,26 @@
         .story-card .story-info .sname { font-weight:800; font-size:14px; color:#fff }
         .story-card .story-info .samount { font-weight:800; font-size:14px; color:var(--primary) }
         .story-card .story-info .sdesc { font-size:13px; color:rgba(255,255,255,.7); line-height:1.4; margin-top:2px }
-        .lifetime-section .price-wrap { display:flex; align-items:baseline; justify-content:center; gap:10px; margin:8px 0 12px; flex-wrap:wrap }
-        .lifetime-section .price-old { font-size:20px; font-weight:700; color:rgba(255,255,255,.4); text-decoration:line-through }
-        .lifetime-section .price-new { font-size:38px; font-weight:900; color:var(--primary) }
-        .lifetime-section .price-badge { background:rgba(201,168,67,.15); padding:6px 18px; border-radius:60px; font-weight:700; font-size:13px; color:var(--gold); border:1px solid rgba(201,168,67,.2) }
+
+        /* LIFETIME ACCESS - styled nicely with country selector */
+        .lifetime-section .lifetime-inner { max-width:420px; margin:0 auto; }
+        .lifetime-section .lifetime-title { font-size:26px; font-weight:900; letter-spacing:-.5px; color:#fff; margin-bottom:2px; }
+        .lifetime-section .lifetime-sub { font-size:14px; color:rgba(255,255,255,.7); margin-bottom:10px; line-height:1.5; }
+        .lifetime-country-selector { display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin:12px 0 14px; }
+        .lifetime-country-btn { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); color:rgba(255,255,255,.8); padding:6px 14px; border-radius:40px; font-size:13px; font-weight:600; cursor:pointer; transition:all .25s; font-family:inherit; }
+        .lifetime-country-btn:hover { background:rgba(31,187,122,.15); border-color:#1fbb7a; color:#fff; transform:translateY(-2px); }
+        .lifetime-country-btn.active { background:linear-gradient(135deg,#1fbb7a,#0f7b5a); border-color:#1fbb7a; color:#fff; box-shadow:0 4px 16px rgba(31,187,122,.3); }
+        .lifetime-price-wrap { display:flex; align-items:baseline; justify-content:center; gap:12px; flex-wrap:wrap; margin:6px 0 4px; }
+        .lifetime-price-old { font-size:20px; font-weight:700; color:rgba(255,255,255,.4); text-decoration:line-through; }
+        .lifetime-price-new { font-size:40px; font-weight:900; color:var(--primary); letter-spacing:-.5px; }
+        .lifetime-price-badge { background:rgba(201,168,67,.15); padding:6px 18px; border-radius:60px; font-weight:700; font-size:13px; color:var(--gold-light); border:1px solid rgba(201,168,67,.2); }
+        .lifetime-benefits { text-align:left; max-width:400px; margin:12px auto 16px; padding:0 4px; }
+        .lifetime-benefits .benefit-item { display:flex; align-items:center; gap:10px; padding:6px 0; font-size:14px; color:rgba(255,255,255,.92); border-bottom:1px solid rgba(255,255,255,.04); }
+        .lifetime-benefits .benefit-item:last-child { border-bottom:none; }
+        .lifetime-benefits .benefit-item .check { color:#1fbb7a; font-weight:700; font-size:16px; flex-shrink:0; }
+        .lifetime-btn { display:inline-block; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; font-weight:800; font-size:17px; padding:14px 40px; border-radius:12px; text-decoration:none; border:2px solid rgba(255,255,255,.08); cursor:pointer; transition:var(--transition); box-shadow:0 4px 20px var(--primary-glow); }
+        .lifetime-btn:hover { transform:translateY(-3px) scale(1.03); box-shadow:0 8px 32px var(--primary-glow); }
+
         details { display:block; margin-bottom:8px }
         details summary { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; cursor:pointer; font-weight:700; font-size:15px; color:#fff; list-style:none; border-radius:16px; background:rgba(255,255,255,.04); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.04); transition:var(--transition) }
         details summary:hover { background:rgba(255,255,255,.08); border-color:rgba(31,187,122,.2) }
@@ -618,8 +593,8 @@
             .demo-card .earn-left .amount { font-size:15px }
             .chat-page { height:450px; max-width:100% }
             .story-card img { width:44px; height:44px }
-            .way-card .way-icon { width:40px; height:40px; font-size:20px; }
-            .way-card { padding:12px 14px }
+            .way-card .way-icon { width:48px; height:48px }
+            .way-card { padding:14px 16px }
             .whatsapp-float .whatsapp-icon { width:46px; height:46px }
             .whatsapp-float .whatsapp-text { font-size:13px; padding:8px 14px }
             #withdrawalPopup { bottom:80px; right:10px; max-width:220px; }
@@ -640,6 +615,8 @@
             .demo-page { padding:16px 12px 30px }
             .demo-page .demo-header { padding:10px 14px; flex-wrap:wrap; gap:8px }
             .demo-action-popup .popup-content { padding:24px 16px 24px }
+            .lifetime-price-new { font-size:32px; }
+            .lifetime-btn { font-size:15px; padding:12px 30px; }
         }
         .green-highlight { color:var(--primary) !important; font-weight:900 }
         .section-live.live-foreigners-section { background:#ffffff !important; color:#1a0b2f !important; border-color:#e0e0e0 !important; padding:20px 16px 22px !important; margin:0 -14px 16px !important; border-radius:0 !important }
@@ -677,6 +654,9 @@
         .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
+
+        /* WAYS TO EARN - image icons */
+        .way-card .way-icon-img { width:56px; height:56px; border-radius:14px; object-fit:cover; flex-shrink:0; border:2px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); padding:6px; }
     </style>
 </head>
 <body>
@@ -742,7 +722,7 @@
             </div>
         </div>
 
-        <!-- VIDEO SECTION - FIXED EMBED -->
+        <!-- VIDEO SECTION -->
         <div class="section section-video">
             <div class="video-label"><span class="badge-video">▶️ WATCH</span><h3>Explanation Video</h3></div>
             <div class="video-explain">📹 <strong>Watch how Myqashapp works</strong> — See how you can earn by chatting, watching videos, and completing simple tasks. Real members, real payments!</div>
@@ -757,13 +737,13 @@
             <div id="liveUserList"></div>
         </div>
 
-        <!-- --- CHANGED: Removed outer border and added clear icons to ways section --- -->
-        <div class="section section-ways">
-            <div class="section-header"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
-            <p class="section-subtitle">Every feature pays real money. Do them all every day and stack your earnings.</p>
-            <div class="ways-grid">
+        <!-- WAYS TO EARN - enlarged cards, no outer separator, images as icons -->
+        <div class="section section-ways" style="border:none; background:transparent; padding:0 0 20px 0;">
+            <div class="section-header" style="padding:0 20px;"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
+            <p class="section-subtitle" style="padding:0 20px;">Every feature pays real money. Do them all every day and stack your earnings.</p>
+            <div class="ways-grid" style="padding:0 4px;">
                 <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
-                    <div class="way-icon" style="background: #25a3d3; border-color: #25a3d3;">💬</div>
+                    <img class="way-icon" src="https://i.pravatar.cc/100?img=12" alt="Chat with Foreigners" loading="lazy" style="border:2px solid #25a3d3; border-radius:14px; padding:4px; background:rgba(37,163,211,0.08);">
                     <div class="way-content">
                         <div class="way-name">💬 Chat with Foreigners</div>
                         <div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.</div>
@@ -772,7 +752,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleQuestionsPopup()">
-                    <div class="way-icon" style="background: #f39c12; border-color: #f39c12;">❓</div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Answer Questions" loading="lazy" style="background:#f39c12;padding:10px;object-fit:contain; border-radius:14px;">
                     <div class="way-content">
                         <div class="way-name">❓ Answering Questions</div>
                         <div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div>
@@ -781,7 +761,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                    <div class="way-icon" style="background: #000; border-color: #000;">🎬</div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok Videos" loading="lazy" style="background:#000000;padding:8px;object-fit:contain; border-radius:14px;">
                     <div class="way-content">
                         <div class="way-name">🎬 Paid TikTok Videos</div>
                         <div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.</div>
@@ -790,7 +770,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="openAffiliateBonus()">
-                    <div class="way-icon" style="background: #9b59b6; border-color: #9b59b6;">📈</div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4c8.png" alt="Affiliate Bonus" loading="lazy" style="background:#9b59b6;padding:10px;object-fit:contain; border-radius:14px;">
                     <div class="way-content">
                         <div class="way-name">📈 Affiliate Bonus</div>
                         <div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!</div>
@@ -799,7 +779,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleWhatsAppPosting()">
-                    <div class="way-icon" style="background: #25D366; border-color: #25D366;">📱</div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png" alt="WhatsApp Posting" loading="lazy" style="background:#25D366;padding:10px;object-fit:contain; border-radius:14px;">
                     <div class="way-content">
                         <div class="way-name">📱 WhatsApp Posting</div>
                         <div class="way-desc">Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.</div>
@@ -808,7 +788,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                    <div class="way-icon" style="background: #FF0000; border-color: #FF0000;">📺</div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube Earning" loading="lazy" style="background:#FF0000;padding:10px;object-fit:contain; border-radius:14px;">
                     <div class="way-content">
                         <div class="way-name">📺 YouTube Earning</div>
                         <div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.</div>
@@ -817,7 +797,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleSpinning()">
-                    <div class="way-icon" style="background: #e67e22; border-color: #e67e22;">🎰</div>
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3af.png" alt="Paid Spinning" loading="lazy" style="background:#e67e22;padding:10px;object-fit:contain; border-radius:14px;">
                     <div class="way-content">
                         <div class="way-name">🎰 Paid Spinning</div>
                         <div class="way-desc">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div>
@@ -856,14 +836,41 @@
             </div>
         </div>
 
-        <!-- --- CHANGED: Enhanced lifetime section to look nice, text untouched --- -->
+        <!-- LIFETIME ACCESS SECTION - nicely styled with country selector -->
         <div class="section section-lifetime lifetime-section">
-            <div style="text-align:center;">
-                <div style="font-size:24px;font-weight:900;color:#fff;letter-spacing:-.5px;">Lifetime Access</div>
-                <p style="font-size:13px;color:rgba(255,255,255,.7);max-width:380px;margin:6px auto 8px;line-height:1.5;"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
-                <div class="price-wrap"><span class="price-old">$10</span><span class="price-new">$5</span><span class="price-badge">🎯 LIMITED OFFER</span></div>
-                <p style="font-size:12px;color:rgba(255,255,255,.6);margin-bottom:12px;">No monthly fees · Instant access</p>
-                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Activate Lifetime Access</a>
+            <div class="lifetime-inner">
+                <div class="lifetime-title">🌟 Lifetime Access</div>
+                <p class="lifetime-sub"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
+
+                <!-- Country Selector -->
+                <div class="lifetime-country-selector" id="lifetimeCountrySelector">
+                    <button class="lifetime-country-btn active" data-country="uganda" data-fee="19500" data-currency="UGX">🇺🇬 Uganda</button>
+                    <button class="lifetime-country-btn" data-country="kenya" data-fee="550" data-currency="KES">🇰🇪 Kenya</button>
+                    <button class="lifetime-country-btn" data-country="ghana" data-fee="95" data-currency="GHS">🇬🇭 Ghana</button>
+                    <button class="lifetime-country-btn" data-country="nigeria" data-fee="9300" data-currency="NGN">🇳🇬 Nigeria</button>
+                    <button class="lifetime-country-btn" data-country="cameroon" data-fee="4500" data-currency="XAF">🇨🇲 Cameroon</button>
+                    <button class="lifetime-country-btn" data-country="usd" data-fee="10" data-currency="USD">🇺🇸 USD</button>
+                </div>
+
+                <div class="lifetime-price-wrap">
+                    <span class="lifetime-price-old">$10</span>
+                    <span class="lifetime-price-new" id="lifetimePriceNew">UGX 19,500</span>
+                    <span class="lifetime-price-badge">🎯 LIMITED OFFER</span>
+                </div>
+                <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:6px;">No monthly fees · Instant access</p>
+
+                <!-- Benefits (all text preserved) -->
+                <div class="lifetime-benefits">
+                    <div class="benefit-item"><span class="check">✅</span> Unlimited Chats with Foreigners</div>
+                    <div class="benefit-item"><span class="check">✅</span> Higher Task Earnings (2x Regular)</div>
+                    <div class="benefit-item"><span class="check">✅</span> Instant Loan Access up to UGX 500K</div>
+                    <div class="benefit-item"><span class="check">✅</span> Priority Payouts (Instant)</div>
+                    <div class="benefit-item"><span class="check">✅</span> 24/7 VIP Support</div>
+                    <div class="benefit-item"><span class="check">✅</span> 30-Day Money-Back Guarantee</div>
+                    <div class="benefit-item"><span class="check">✅</span> Exclusive High-Paying Tasks</div>
+                </div>
+
+                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="lifetime-btn">🔓 Activate Lifetime Access</a>
             </div>
         </div>
 
@@ -1891,6 +1898,36 @@
 
         // Switch to default country
         switchDashboard('uganda');
+
+        // ===== LIFETIME COUNTRY SELECTOR =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const countryBtns = document.querySelectorAll('#lifetimeCountrySelector .lifetime-country-btn');
+            const priceDisplay = document.getElementById('lifetimePriceNew');
+
+            function updateLifetimePrice(countryKey, fee, currency) {
+                countryBtns.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.country === countryKey);
+                });
+                if (priceDisplay) {
+                    priceDisplay.textContent = `${currency} ${parseFloat(fee).toLocaleString()}`;
+                }
+            }
+
+            // Set default to Uganda (already active in HTML)
+            const defaultBtn = document.querySelector('#lifetimeCountrySelector .lifetime-country-btn[data-country="uganda"]');
+            if (defaultBtn && defaultBtn.classList.contains('active')) {
+                priceDisplay.textContent = `UGX 19,500`;
+            }
+
+            countryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const country = this.dataset.country;
+                    const fee = this.dataset.fee;
+                    const currency = this.dataset.currency;
+                    updateLifetimePrice(country, fee, currency);
+                });
+            });
+        });
     </script>
 </body>
 </html>
