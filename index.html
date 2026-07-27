@@ -803,11 +803,22 @@
             <div id="liveUserList"></div>
         </div>
 
-        <!-- WAYS TO EARN - enlarged cards, no outer separator, images as icons -->
+        <!-- WAYS TO EARN - 8 ways with Welcome Bonus first -->
         <div class="section section-ways" style="border:none; background:transparent; padding:0 0 20px 0;">
-            <div class="section-header" style="padding:0 20px;"><div class="icon">🎯</div><h2>7 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
+            <div class="section-header" style="padding:0 20px;"><div class="icon">🎯</div><h2>8 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
             <p class="section-subtitle" style="padding:0 20px;">Every feature pays real money. Do them all every day and stack your earnings.</p>
             <div class="ways-grid" style="padding:0 4px;">
+                <!-- NEW: Welcome Bonus - FIRST CARD -->
+                <div class="way-card" onclick="handleWelcomeBonus()" style="border:2px solid var(--gold-light); background:linear-gradient(145deg, rgba(245,214,90,0.10), rgba(31,187,122,0.05));">
+                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f389.png" alt="Welcome Bonus" loading="lazy" style="background:linear-gradient(135deg, #f5d65a, #e09d2e); padding:10px; object-fit:contain; border-radius:14px; border-color:var(--gold-light);">
+                    <div class="way-content">
+                        <div class="way-name" style="color:var(--gold-light);">🎉 Welcome Bonus</div>
+                        <div class="way-desc">You're officially in! A generous welcome bonus has been sent directly to your account. Start your journey with extra cash—simply sign up and it's yours instantly.</div>
+                        <div class="way-earn" style="color:var(--gold-light);">BONUS</div>
+                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleWelcomeBonus();return!1" style="background:linear-gradient(135deg,var(--gold-light),#e09d2e); color:#1a0b2f;">💰 Claim Bonus</button></div>
+                    </div>
+                </div>
+                <!-- Original 7 ways -->
                 <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
                     <img class="way-icon" src="https://i.pravatar.cc/100?img=12" alt="Chat with Foreigners" loading="lazy" style="border:2px solid #25a3d3; border-radius:14px; padding:4px; background:rgba(37,163,211,0.08);">
                     <div class="way-content">
@@ -894,11 +905,11 @@
         <div class="section section-stories">
             <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge">REAL PEOPLE</span></div>
             <div style="display:flex;flex-direction:column;gap:4px;text-align:left;">
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=1" alt="Kelvin" loading="lazy"><div class="story-info"><div class="sname">Kelvin O. · Lagos</div><div class="samount">$2,240 earned last week</div><div class="sdesc">"Cleared my rent in 9 days. Absolutely legit!"</div></div></div>
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=2" alt="Amaka" loading="lazy"><div class="story-info"><div class="sname">Amaka N. · Enugu</div><div class="samount">$1,860 earned this month</div><div class="sdesc">"Chatting with foreigners while earning is the best!"</div></div></div>
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=3" alt="Kwame" loading="lazy"><div class="story-info"><div class="sname">Kwame B. · Accra</div><div class="samount">$1,120 earned this week</div><div class="sdesc">"MoMo withdrawal in seconds. So reliable!"</div></div></div>
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=4" alt="Faith" loading="lazy"><div class="story-info"><div class="sname">Faith W. · Nairobi</div><div class="samount">$980 earned this week</div><div class="sdesc">"Paid my school fees in just 2 weeks!"</div></div></div>
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=5" alt="Peter" loading="lazy"><div class="story-info"><div class="sname">Peter M. · Kampala</div><div class="samount">$1,550 earned last month</div><div class="sdesc">"Best decision! I earn more than my regular job."</div></div></div>
+                <div class="story-card"><img src="https://i.pravatar.cc/100?img=70" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kelvin O. · Lagos, Nigeria</div><div class="samount">$2,240 earned last week</div><div class="sdesc">"Cleared my rent in 9 days. Absolutely legit and life-changing!"</div></div></div>
+                <div class="story-card"><img src="https://i.pravatar.cc/100?img=71" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Amaka N. · Enugu, Nigeria</div><div class="samount">$1,860 earned this month</div><div class="sdesc">"Chatting with foreigners while earning is the best! I can't believe it's real."</div></div></div>
+                <div class="story-card"><img src="https://i.pravatar.cc/100?img=72" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kwame B. · Accra, Ghana</div><div class="samount">$1,120 earned this week</div><div class="sdesc">"MoMo withdrawal in seconds. So reliable! This platform is a game-changer."</div></div></div>
+                <div class="story-card"><img src="https://i.pravatar.cc/100?img=73" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Faith W. · Nairobi, Kenya</div><div class="samount">$980 earned this week</div><div class="sdesc">"Paid my school fees in just 2 weeks! I'm so grateful for this opportunity."</div></div></div>
+                <div class="story-card"><img src="https://i.pravatar.cc/100?img=74" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Peter M. · Kampala, Uganda</div><div class="samount">$1,550 earned last month</div><div class="sdesc">"Best decision ever! I now earn more than my regular job. Highly recommend!"</div></div></div>
             </div>
         </div>
 
@@ -1139,7 +1150,7 @@
 
     <div id="withdrawalPopup">
         <div class="popup-card" id="popupCard">
-            <img id="popupUserImage" src="https://i.pravatar.cc/100?img=25" alt="User" loading="lazy">
+            <img id="popupUserImage" src="https://i.pravatar.cc/100?img=80" alt="User" loading="lazy">
             <div class="info">
                 <div class="title">💸 Live Withdrawal</div>
                 <div class="name" id="popupUserName">🇰🇪 James K.</div>
@@ -1194,6 +1205,32 @@
         function openDemoAction(t, a, u, i) { document.getElementById('actionIcon').textContent = i || '💰'; document.getElementById('actionTitle').textContent = t; document.getElementById('actionAmount').textContent = a || '—'; document.getElementById('actionUsd').textContent = '≈ ' + u + ' per action'; document.getElementById('demoActionPopup').classList.add('active') }
         function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active') }
         document.getElementById('demoActionPopup').addEventListener('click', function(e) { if (e.target === this) closeDemoAction() });
+
+        // ===== WELCOME BONUS =====
+        function handleWelcomeBonus() {
+            const overlay = document.getElementById('demoActionPopup');
+            const content = overlay.querySelector('.popup-content');
+            content.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <span style="font-size:48px;">🎉</span>
+                    <h3 style="color:#f5d65a;font-size:24px;margin:4px 0;">Welcome Bonus!</h3>
+                    <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.6;">
+                        Congratulations! Your <strong style="color:#f5d65a;">welcome bonus</strong> has been sent directly to your account. 
+                        Start your journey with extra cash — simply sign up and it's yours instantly.
+                    </p>
+                </div>
+                <div style="background:rgba(245,214,90,0.08);border-radius:16px;padding:16px;margin:8px 0;border:1px solid rgba(245,214,90,0.15);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;">
+                        <span style="font-size:14px;color:rgba(255,255,255,0.6);">💰 Bonus Added</span>
+                        <span style="font-size:28px;font-weight:900;color:#f5d65a;">$5.00</span>
+                    </div>
+                    <div style="margin-top:6px;font-size:12px;color:rgba(255,255,255,0.4);">✓ Credited to your account instantly</div>
+                </div>
+                <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="claim-btn" style="display:inline-block;margin-top:10px;background:linear-gradient(135deg,#f5d65a,#e09d2e);color:#1a0b2f;font-weight:800;font-size:16px;padding:12px 32px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:var(--transition);box-shadow:0 4px 20px rgba(201,168,67,.3);">🚀 Claim & Start Earning</a>
+                <button class="btn-close-popup" onclick="closeDemoAction()" style="margin-top:10px;display:block;width:100%;">Close</button>
+            `;
+            overlay.classList.add('active');
+        }
 
         // ===== VIDEO PLAYER - MAIN PAGE =====
         function handleVideoPlay(title, amount, icon, videoUrl, platform) {
@@ -1330,7 +1367,7 @@
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
         
-        // ===== WITHDRAWAL POPUPS =====
+        // ===== WITHDRAWAL POPUPS WITH AFRICAN IMAGES =====
         ! function() { 
             const w = [
                 { flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
@@ -1349,13 +1386,14 @@
                 { flag: '🇿🇦', name: 'Zanele D.', amount: '948', method: 'Bank Transfer', gender: 'female', currency: 'R' },
                 { flag: '🇺🇬', name: 'Peter M.', amount: '2,800,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' }
             ];
-            const m = ['https://i.pravatar.cc/100?img=40', 'https://i.pravatar.cc/100?img=41', 'https://i.pravatar.cc/100?img=42', 'https://i.pravatar.cc/100?img=43', 'https://i.pravatar.cc/100?img=44', 'https://i.pravatar.cc/100?img=45', 'https://i.pravatar.cc/100?img=46', 'https://i.pravatar.cc/100?img=47', 'https://i.pravatar.cc/100?img=48', 'https://i.pravatar.cc/100?img=49'];
-            const g = ['https://i.pravatar.cc/100?img=50', 'https://i.pravatar.cc/100?img=51', 'https://i.pravatar.cc/100?img=52', 'https://i.pravatar.cc/100?img=53', 'https://i.pravatar.cc/100?img=54', 'https://i.pravatar.cc/100?img=55', 'https://i.pravatar.cc/100?img=56', 'https://i.pravatar.cc/100?img=57', 'https://i.pravatar.cc/100?img=58', 'https://i.pravatar.cc/100?img=59'];
+            // African male and female image pools
+            const m = ['https://i.pravatar.cc/100?img=80', 'https://i.pravatar.cc/100?img=81', 'https://i.pravatar.cc/100?img=82', 'https://i.pravatar.cc/100?img=83', 'https://i.pravatar.cc/100?img=84', 'https://i.pravatar.cc/100?img=85'];
+            const g = ['https://i.pravatar.cc/100?img=86', 'https://i.pravatar.cc/100?img=87', 'https://i.pravatar.cc/100?img=88', 'https://i.pravatar.cc/100?img=89', 'https://i.pravatar.cc/100?img=90', 'https://i.pravatar.cc/100?img=91'];
             const p = document.getElementById('popupCard'), i = document.getElementById('popupUserImage'), n = document.getElementById('popupUserName'), l = document.getElementById('popupMethod'), a = document.getElementById('popupAmount');
             let u = [], idx = -1;
 
             function b(gender) { 
-                const pool = gender === 'female' ? m : g; 
+                const pool = gender === 'female' ? g : m; 
                 let idx2; 
                 let attempts = 0;
                 do { 
