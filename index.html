@@ -143,7 +143,6 @@
             --transition: all .4s cubic-bezier(.16,1,.3,1);
             --font-title: 'Playfair Display', serif;
             --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-            /* Updated Colors: Lighter Blue mixed with Dark Blue */
             --bg-start: #0f2847;
             --bg-end: #061224;
         }
@@ -277,7 +276,7 @@
         .stats-grid .stat-item .stat-number { font-size:22px; font-weight:900; color:var(--primary); font-feature-settings:"tnum" }
         .stats-grid .stat-item .stat-label { font-size:10px; font-weight:700; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.5px; margin-top:4px }
 
-        /* WAYS TO EARN - enlarged cards, no outer separator, images as icons */
+        /* WAYS TO EARN - all cards same size */
         .ways-grid { display:flex; flex-direction:column; gap:14px; margin:6px 0 4px }
         .way-card { display:flex; flex-wrap:wrap; align-items:flex-start; gap:12px 14px; background:rgba(255,255,255,.06); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.08); border-radius:18px; padding:18px 20px; transition:var(--transition); cursor:pointer }
         .way-card:hover { background:rgba(255,255,255,.10); border-color:var(--primary); transform:translateX(6px) scale(1.02); box-shadow:var(--shadow-md) }
@@ -721,8 +720,6 @@
         .affiliate-bonus-overlay .bonus-popup .bonus-claim-btn:hover { background:linear-gradient(135deg,#fade5a,#f0c94a); box-shadow:0 6px 0 #a8832e,0 14px 34px rgba(245,214,90,.2); transform:translateY(-2px) }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint { text-align:center; margin-top:10px; font-size:12px; color:rgba(255,255,255,.25); font-weight:500 }
         .affiliate-bonus-overlay .bonus-popup .bonus-hint span { color:rgba(255,255,255,.5); font-weight:700 }
-
-        /* WAYS TO EARN - image icons */
         .way-card .way-icon-img { width:56px; height:56px; border-radius:14px; object-fit:cover; flex-shrink:0; border:2px solid rgba(255,255,255,.08); background:rgba(255,255,255,.04); padding:6px; }
     </style>
 </head>
@@ -804,12 +801,12 @@
             <div id="liveUserList"></div>
         </div>
 
-        <!-- WAYS TO EARN - 8 ways with Welcome Bonus first -->
+        <!-- WAYS TO EARN - Welcome bonus card now SAME SIZE as others -->
         <div class="section section-ways" style="border:none; background:transparent; padding:0 0 20px 0;">
             <div class="section-header" style="padding:0 20px;"><div class="icon">🎯</div><h2>8 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
             <p class="section-subtitle" style="padding:0 20px;">Every feature pays real money. Do them all every day and stack your earnings.</p>
             <div class="ways-grid" style="padding:0 4px;">
-                <!-- NEW: Welcome Bonus - FIRST CARD -->
+                <!-- WELCOME BONUS - Now SAME SIZE as Chat with Foreigners card -->
                 <div class="way-card" onclick="handleWelcomeBonus()" style="border:2px solid var(--gold-light); background:linear-gradient(145deg, rgba(245,214,90,0.10), rgba(31,187,122,0.05));">
                     <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f389.png" alt="Welcome Bonus" loading="lazy" style="background:linear-gradient(135deg, #f5d65a, #e09d2e); padding:10px; object-fit:contain; border-radius:14px; border-color:var(--gold-light);">
                     <div class="way-content">
@@ -819,7 +816,7 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleWelcomeBonus();return!1" style="background:linear-gradient(135deg,var(--gold-light),#e09d2e); color:#1a0b2f;">💰 Claim Bonus</button></div>
                     </div>
                 </div>
-                <!-- Original 7 ways with REAL IMAGES -->
+                <!-- CHAT WITH FOREIGNERS -->
                 <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
                     <img class="way-icon" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop" alt="Chat with Foreigners" loading="lazy" style="border:2px solid #25a3d3; border-radius:14px; padding:4px; background:rgba(37,163,211,0.08);">
                     <div class="way-content">
@@ -829,6 +826,7 @@
                         <div class="way-cta"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn" onclick="event.stopPropagation();">Start Chatting</a></div>
                     </div>
                 </div>
+                <!-- ANSWER QUESTIONS -->
                 <div class="way-card" onclick="handleQuestionsPopup()">
                     <img class="way-icon" src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=100&h=100&fit=crop" alt="Answer Questions" loading="lazy" style="border:2px solid #f39c12; border-radius:14px; padding:4px; background:rgba(243,156,18,0.08);">
                     <div class="way-content">
@@ -838,6 +836,7 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleQuestionsPopup();return!1">Start Answering</button></div>
                     </div>
                 </div>
+                <!-- TIKTOK - CORRECT IMAGE (social media/smartphone) -->
                 <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
                     <img class="way-icon" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop" alt="TikTok Videos" loading="lazy" style="border:2px solid #000000; border-radius:14px; padding:4px; background:rgba(0,0,0,0.08);">
                     <div class="way-content">
@@ -847,6 +846,7 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok');return!1">Watch Videos</button></div>
                     </div>
                 </div>
+                <!-- AFFILIATE BONUS -->
                 <div class="way-card" onclick="openAffiliateBonus()">
                     <img class="way-icon" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop" alt="Affiliate Bonus" loading="lazy" style="border:2px solid #9b59b6; border-radius:14px; padding:4px; background:rgba(155,89,182,0.08);">
                     <div class="way-content">
@@ -856,6 +856,7 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();openAffiliateBonus();return!1">Start Promoting</button></div>
                     </div>
                 </div>
+                <!-- WHATSAPP - CORRECT IMAGE (WhatsApp UI) -->
                 <div class="way-card" onclick="handleWhatsAppPosting()">
                     <img class="way-icon" src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=100&h=100&fit=crop" alt="WhatsApp Posting" loading="lazy" style="border:2px solid #25D366; border-radius:14px; padding:4px; background:rgba(37,211,102,0.08);">
                     <div class="way-content">
@@ -865,6 +866,7 @@
                         <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleWhatsAppPosting();return!1">Start Posting</button></div>
                     </div>
                 </div>
+                <!-- YOUTUBE - CORRECT IMAGE (video player) -->
                 <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
                     <img class="way-icon" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=100&h=100&fit=crop" alt="YouTube Earning" loading="lazy" style="border:2px solid #FF0000; border-radius:14px; padding:4px; background:rgba(255,0,0,0.08);">
                     <div class="way-content">
@@ -874,6 +876,7 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">Start Watching</button></div>
                     </div>
                 </div>
+                <!-- SPINNING - CORRECT IMAGE (wheel/game) -->
                 <div class="way-card" onclick="handleSpinning()">
                     <img class="way-icon" src="https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=100&h=100&fit=crop" alt="Paid Spinning" loading="lazy" style="border:2px solid #e67e22; border-radius:14px; padding:4px; background:rgba(230,126,34,0.08);">
                     <div class="way-content">
@@ -903,7 +906,7 @@
             <div style="text-align:center;margin-top:12px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Get Started Now</a></div>
         </div>
 
-        <!-- SUCCESS STORIES WITH FIXED IMAGES -->
+        <!-- SUCCESS STORIES -->
         <div class="section section-stories">
             <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge">REAL PEOPLE</span></div>
             <div style="display:flex;flex-direction:column;gap:4px;text-align:left;">
@@ -915,13 +918,12 @@
             </div>
         </div>
 
-        <!-- LIFETIME ACCESS SECTION - Premium Column Layout -->
+        <!-- LIFETIME ACCESS SECTION -->
         <div class="section section-lifetime lifetime-section">
             <div class="lifetime-inner">
                 <div class="lifetime-title">🌟 Lifetime Access</div>
                 <p class="lifetime-sub"><strong>Unlock all earning methods</strong> — one-time payment, lifetime earnings.</p>
 
-                <!-- Country Selector -->
                 <div class="lifetime-country-selector" id="lifetimeCountrySelector">
                     <button class="lifetime-country-btn active" data-country="uganda" data-fee="19500" data-currency="UGX">🇺🇬 Uganda</button>
                     <button class="lifetime-country-btn" data-country="kenya" data-fee="550" data-currency="KES">🇰🇪 Kenya</button>
@@ -938,7 +940,6 @@
                 </div>
                 <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:6px;">No monthly fees · Instant access</p>
 
-                <!-- BENEFITS IN A COLUMN – Premium & Clean -->
                 <div class="lifetime-benefits-column">
                     <div class="benefit-item">
                         <span class="check">✅</span>
@@ -1129,7 +1130,7 @@
         </div>
     </div>
 
-    <!-- VIDEO PLAYER OVERLAY - MAIN PAGE -->
+    <!-- VIDEO PLAYER OVERLAY -->
     <div class="demo-action-popup" id="videoPlayerOverlay">
         <div class="popup-content" style="max-width:600px;padding:24px 20px 28px;">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
@@ -1150,7 +1151,7 @@
 
     <div class="chat-page-overlay" id="chatOverlay"><div class="chat-page"><div class="chat-page-header"><img id="chatPageAvatar" src="https://i.pravatar.cc/100?img=24" alt="User"><div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus">🇺🇸 USA · Online</div></div><button class="close-btn" onclick="closeChatPage()">✕</button></div><div class="chat-messages-area" id="chatMessagesArea"></div><div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div><div class="chat-page-footer"><input type="text" id="chatPageInput" placeholder="Type a message..."><button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button></div></div></div>
 
-    <!-- WITHDRAWAL POPUP WITH FIXED IMAGES -->
+    <!-- WITHDRAWAL POPUP WITH UNIQUE FACES -->
     <div id="withdrawalPopup">
         <div class="popup-card" id="popupCard">
             <img id="popupUserImage" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="User" loading="lazy">
@@ -1370,9 +1371,9 @@
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
         
-        // ===== WITHDRAWAL POPUPS WITH AFRICAN IMAGES (FIXED) =====
+        // ===== WITHDRAWAL POPUPS WITH UNIQUE FACES (FIXED - each person gets a different face) =====
         ! function() { 
-            const w = [
+            const withdrawals = [
                 { flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
                 { flag: '🇬🇭', name: 'Maureen A.', amount: '3,870', method: 'MoMo', gender: 'female', currency: 'GH₵' },
                 { flag: '🇺🇬', name: 'Sarah N.', amount: '2,400,000', method: 'Mobile Money', gender: 'female', currency: 'UGX' },
@@ -1389,32 +1390,59 @@
                 { flag: '🇿🇦', name: 'Zanele D.', amount: '948', method: 'Bank Transfer', gender: 'female', currency: 'R' },
                 { flag: '🇺🇬', name: 'Peter M.', amount: '2,800,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' }
             ];
-            // African male and female image pools (using Unsplash for real people images)
-            const m = ['https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop'];
-            const g = ['https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop', 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop'];
+            
+            // Expanded image pools for unique faces
+            const maleImages = [
+                'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=80&h=80&fit=crop'
+            ];
+            
+            const femaleImages = [
+                'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop'
+            ];
+            
             const p = document.getElementById('popupCard'), i = document.getElementById('popupUserImage'), n = document.getElementById('popupUserName'), l = document.getElementById('popupMethod'), a = document.getElementById('popupAmount');
-            let u = [], idx = -1;
+            
+            let usedIndices = [];
+            let lastImageIndex = -1;
+            let lastGender = '';
 
-            function b(gender) { 
-                const pool = gender === 'female' ? g : m; 
-                let idx2; 
-                let attempts = 0;
-                do { 
-                    idx2 = Math.floor(Math.random() * pool.length); 
-                    attempts++;
-                } while ((idx2 === idx || (u.length > 0 && u.includes(idx2))) && attempts < 20); 
-                idx = idx2; 
-                return pool[idx2] 
+            function getUniqueImage(gender) { 
+                const pool = gender === 'female' ? femaleImages : maleImages;
+                let available = pool.map((_, idx) => idx).filter(idx => idx !== lastImageIndex);
+                if (available.length === 0) {
+                    lastImageIndex = -1;
+                    available = pool.map((_, idx) => idx);
+                }
+                const randomIdx = available[Math.floor(Math.random() * available.length)];
+                lastImageIndex = randomIdx;
+                lastGender = gender;
+                return pool[randomIdx];
             }
 
-            function r() {
-                if (u.length >= w.length) u = [];
-                const avail = w.map((_, i) => i).filter(i => !u.includes(i));
-                if (avail.length === 0) { u = []; return r() }
-                const idx2 = avail[Math.floor(Math.random() * avail.length)];
-                u.push(idx2);
-                const d = w[idx2];
-                i.src = b(d.gender);
+            function showNextWithdrawal() {
+                if (usedIndices.length >= withdrawals.length) {
+                    usedIndices = [];
+                }
+                const available = withdrawals.map((_, idx) => idx).filter(idx => !usedIndices.includes(idx));
+                if (available.length === 0) {
+                    usedIndices = [];
+                    return showNextWithdrawal();
+                }
+                const randomIdx = available[Math.floor(Math.random() * available.length)];
+                usedIndices.push(randomIdx);
+                
+                const d = withdrawals[randomIdx];
+                i.src = getUniqueImage(d.gender);
                 n.textContent = d.flag + ' ' + d.name;
                 l.textContent = 'via ' + d.method;
                 a.textContent = d.currency + ' ' + d.amount;
@@ -1422,14 +1450,16 @@
                 p.style.animation = 'none';
                 p.offsetHeight;
                 p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
+                
                 clearTimeout(window.popupTimer);
                 window.popupTimer = setTimeout(() => {
                     p.style.display = 'flex';
-                    p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'
-                }, 2000)
+                    p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
+                }, 2000);
             }
-            setTimeout(r, 600);
-            setInterval(r, 2000)
+            
+            setTimeout(showNextWithdrawal, 600);
+            setInterval(showNextWithdrawal, 2500);
         }();
 
         // ===== CHAT FUNCTIONS =====
@@ -2048,7 +2078,6 @@
                 }
             }
 
-            // Set default to Uganda (already active in HTML)
             const defaultBtn = document.querySelector('#lifetimeCountrySelector .lifetime-country-btn[data-country="uganda"]');
             if (defaultBtn && defaultBtn.classList.contains('active')) {
                 priceDisplay.textContent = `UGX 19,500`;
