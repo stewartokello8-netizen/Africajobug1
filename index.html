@@ -143,8 +143,9 @@
             --transition: all .4s cubic-bezier(.16,1,.3,1);
             --font-title: 'Playfair Display', serif;
             --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-            --bg-start: #0a1a2f;
-            --bg-end: #040b17;
+            /* Updated Colors: Lighter Blue mixed with Dark Blue */
+            --bg-start: #0f2847;
+            --bg-end: #061224;
         }
         * { margin:0; padding:0; box-sizing:border-box }
         body {
@@ -201,7 +202,7 @@
             right: 0;
             max-width: 600px;
             margin: 0 auto;
-            background: rgba(10,26,47,.95);
+            background: rgba(15,40,71,.95);
             backdrop-filter: blur(20px);
             z-index: 999;
             display: flex;
@@ -231,9 +232,9 @@
         .trust-badge-wrapper { padding:12px 0 6px; text-align:center }
         .trust-badge { display:inline-block; background:rgba(255,255,255,.06); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.08); padding:4px 18px; border-radius:60px; font-size:12px; font-weight:700; color:#fff }
         .trust-badge .green-highlight { color:var(--primary); font-weight:900 }
-        .section { padding:30px 20px 32px; margin-bottom:20px; border-radius:12px; transition:var(--transition); color:#fff; border:1px solid rgba(255,255,255,.08); animation:fadeInUp .6s ease forwards; opacity:0; background: linear-gradient(145deg, #0d1f38, #060e1a); }
+        .section { padding:30px 20px 32px; margin-bottom:20px; border-radius:12px; transition:var(--transition); color:#fff; border:1px solid rgba(255,255,255,.08); animation:fadeInUp .6s ease forwards; opacity:0; background: linear-gradient(145deg, #0f2847, #061224); }
         @keyframes fadeInUp { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
-        .hero-section { background:linear-gradient(145deg,#0d1f38,#060e1a); border:2px solid rgba(31,187,122,.2); text-align:center; position:relative; overflow:hidden; padding:40px 20px 36px }
+        .hero-section { background:linear-gradient(145deg,#0f2847,#061224); border:2px solid rgba(31,187,122,.2); text-align:center; position:relative; overflow:hidden; padding:40px 20px 36px }
         .hero-section::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle at 30% 50%,rgba(31,187,122,.06),transparent 60%); animation:heroGlow 8s ease-in-out infinite }
         @keyframes heroGlow { 0%,100% { transform:translate(0,0) } 50% { transform:translate(10%,10%) } }
         .hero-section>* { position:relative; z-index:1 }
@@ -248,7 +249,7 @@
         .btn-primary:hover::after { transform:translateX(100%) }
         .btn-primary:hover { transform:translateY(-3px) scale(1.03); box-shadow:0 8px 32px var(--primary-glow) }
         .btn-primary.gold { background:linear-gradient(135deg,var(--gold-light),#e09d2e); box-shadow:0 4px 20px rgba(201,168,67,.3) }
-        .btn-primary.navy { background:linear-gradient(135deg,#1a3a5a,#040b17); box-shadow:0 4px 20px rgba(10,26,47,.3); border-color:rgba(255,255,255,.1) }
+        .btn-primary.navy { background:linear-gradient(135deg,#1a3a5a,#061224); box-shadow:0 4px 20px rgba(10,26,47,.3); border-color:rgba(255,255,255,.1) }
         .section-header { display:flex; align-items:center; gap:12px; margin-bottom:16px }
         .section-header .icon { width:40px; height:40px; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:18px; color:#fff; flex-shrink:0; box-shadow:0 4px 12px var(--primary-glow) }
         .section-header h2 { font-size:20px; font-weight:800; color:#fff; letter-spacing:-.3px }
@@ -256,13 +257,13 @@
         .section-header .badge.live { background:#dc2626; color:#fff; border-color:#dc2626; animation:pulseBadge 2s ease-in-out infinite }
         @keyframes pulseBadge { 0%,100% { opacity:1 } 50% { opacity:.6 } }
         .section-subtitle { font-size:14px; color:rgba(255,255,255,.7); margin-top:-4px; margin-bottom:16px; line-height:1.6 }
-        .section-stats { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(31,187,122,.12) }
-        .section-video { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(255,0,0,.12) }
-        .section-live { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(59,130,246,.15) }
-        .section-ways { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(31,187,122,.08) }
-        .section-withdraw { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(201,168,67,.12) }
-        .section-how { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(139,92,246,.12) }
-        .section-stories { background:linear-gradient(145deg,#0d1f38,#060e1a); border:1px solid rgba(236,72,153,.1) }
+        .section-stats { background:linear-gradient(145deg,#0f2847,#061224); border:1px solid rgba(31,187,122,.12) }
+        .section-video { background:linear-gradient(145deg,#0f2847,#061224); border:1px solid rgba(255,0,0,.12) }
+        .section-live { background:linear-gradient(145deg,#0f2847,#061224); border:1px solid rgba(59,130,246,.15) }
+        .section-ways { background:linear-gradient(145deg,#0f2847,#061224); border:1px solid rgba(31,187,122,.08) }
+        .section-withdraw { background:linear-gradient(145deg,#0f2847,#061224); border:1px solid rgba(201,168,67,.12) }
+        .section-how { background:linear-gradient(145deg,#0f2847,#061224); border:1px solid rgba(139,92,246,.12) }
+        .section-stories { background:linear-gradient(145deg,#0f2847,#061224); border:1px solid rgba(236,72,153,.1) }
         .section-lifetime { background:linear-gradient(145deg,#0a1628,#040b17); border:1px solid rgba(31,187,122,.12); text-align:center }
         .section-faq { background:linear-gradient(145deg,#0a1628,#040b17); border:1px solid rgba(20,184,166,.1) }
         .earnings-scroll { background:rgba(255,255,255,.06); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.06); border-radius:60px; padding:8px 12px; margin:8px 0 0; overflow:hidden; white-space:nowrap }
@@ -433,7 +434,7 @@
         details[open] summary .arrow { transform:rotate(180deg) }
         details[open] summary { border-bottom-left-radius:0; border-bottom-right-radius:0; border-bottom-color:transparent }
         details .faq-content { padding:10px 18px 18px; background:rgba(255,255,255,.02); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.04); border-top:none; border-radius:0 0 16px 16px; color:rgba(255,255,255,.7); line-height:1.7; font-size:14px }
-        .footer-section { margin-top:24px; padding-top:24px; border-top:2px solid rgba(255,255,255,.04); background:#040b17; margin-left:-14px; margin-right:-14px; padding-left:14px; padding-right:14px; padding-bottom:20px; border-radius:0; position:relative; overflow:hidden }
+        .footer-section { margin-top:24px; padding-top:24px; border-top:2px solid rgba(255,255,255,.04); background:#061224; margin-left:-14px; margin-right:-14px; padding-left:14px; padding-right:14px; padding-bottom:20px; border-radius:0; position:relative; overflow:hidden }
         .footer-section::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--primary),var(--gold-light),var(--primary),transparent); background-size:300% 100%; animation:shimmerBorder 4s ease-in-out infinite }
         .footer-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px 12px; margin-bottom:16px; position:relative; z-index:1 }
         .footer-grid .col h4 { font-size:14px; font-weight:800; color:#fff; margin-bottom:8px; letter-spacing:.5px; text-transform:uppercase }
@@ -453,7 +454,7 @@
         .back-to-top.visible { display:flex }
         .demo-page { position:fixed; top:0; left:0; width:100%; height:100%; background:linear-gradient(145deg,var(--bg-start),var(--bg-end)); z-index:20000; display:none; flex-direction:column; overflow-y:auto; padding:24px 20px 40px }
         .demo-page.active { display:flex }
-        .demo-page .demo-header { display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:rgba(10,26,47,.75); backdrop-filter:blur(8px); border-radius:16px; margin-bottom:24px; flex-shrink:0; box-shadow:0 4px 20px rgba(0,0,0,.04); border:1px solid rgba(255,255,255,.1) }
+        .demo-page .demo-header { display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:rgba(15,40,71,.75); backdrop-filter:blur(8px); border-radius:16px; margin-bottom:24px; flex-shrink:0; box-shadow:0 4px 20px rgba(0,0,0,.04); border:1px solid rgba(255,255,255,.1) }
         .demo-page .demo-header .back-btn { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.06); padding:10px 24px; border-radius:12px; font-weight:700; font-size:14px; color:#fff; cursor:pointer; transition:var(--transition) }
         .demo-page .demo-header .back-btn:hover { background:rgba(255,255,255,.1); transform:scale(1.02) }
         .demo-page .demo-header .page-title { font-family:var(--font-title); font-weight:900; font-size:22px; color:#fff; letter-spacing:-.3px }
@@ -575,7 +576,7 @@
         .chat-page-footer button:hover { transform:scale(1.04); box-shadow:0 8px 24px var(--primary-glow) }
         .chat-page-footer button:disabled { opacity:.5; cursor:not-allowed; transform:none }
         #withdrawalPopup { position:fixed; bottom:120px; right:20px; z-index:9999; max-width:280px; width:auto; pointer-events:none; display:flex; flex-direction:column; gap:8px; }
-        #withdrawalPopup .popup-card { background:rgba(10,26,47,.95); backdrop-filter:blur(20px); border:2px solid rgba(31,187,122,.15); border-radius:14px; padding:10px 14px; box-shadow:var(--shadow-lg); display:flex; align-items:center; gap:10px; pointer-events:auto; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) forwards; width:100%; max-width:280px; }
+        #withdrawalPopup .popup-card { background:rgba(15,40,71,.95); backdrop-filter:blur(20px); border:2px solid rgba(31,187,122,.15); border-radius:14px; padding:10px 14px; box-shadow:var(--shadow-lg); display:flex; align-items:center; gap:10px; pointer-events:auto; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) forwards; width:100%; max-width:280px; }
         #withdrawalPopup .popup-card img { width:36px; height:36px; border-radius:50%; object-fit:cover; border:2px solid var(--primary); flex-shrink:0; }
         #withdrawalPopup .popup-card .info { flex:1; min-width:0; }
         #withdrawalPopup .popup-card .info .title { font-weight:700; font-size:10px; color:var(--primary); text-transform:uppercase; letter-spacing:.5px; margin-bottom:1px; }
@@ -588,7 +589,7 @@
         .whatsapp-float .whatsapp-icon { width:50px; height:50px; border-radius:50%; box-shadow:0 8px 32px rgba(37,211,102,.3); transition:var(--transition); border:2px solid #fff; background:linear-gradient(135deg,#25D366,#128C7E); display:flex; align-items:center; justify-content:center; flex-shrink:0 }
         .whatsapp-float .whatsapp-icon:hover { transform:scale(1.08); box-shadow:0 12px 40px rgba(37,211,102,.4) }
         .whatsapp-float .whatsapp-icon img { width:55%; height:55%; object-fit:contain; display:block; filter:brightness(0) invert(1) }
-        .whatsapp-float .whatsapp-text { background:rgba(10,26,47,.85); backdrop-filter:blur(12px); padding:10px 18px; border-radius:60px; border:1px solid rgba(37,211,102,.3); font-weight:800; font-size:15px; color:#fff; letter-spacing:-.2px; white-space:nowrap; box-shadow:0 8px 32px rgba(0,0,0,.3) }
+        .whatsapp-float .whatsapp-text { background:rgba(15,40,71,.85); backdrop-filter:blur(12px); padding:10px 18px; border-radius:60px; border:1px solid rgba(37,211,102,.3); font-weight:800; font-size:15px; color:#fff; letter-spacing:-.2px; white-space:nowrap; box-shadow:0 8px 32px rgba(0,0,0,.3) }
         .demo-action-popup { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.7); backdrop-filter:blur(12px); z-index:30000; display:none; align-items:center; justify-content:center; padding:20px }
         .demo-action-popup.active { display:flex }
         .demo-action-popup .popup-content { background:linear-gradient(145deg,var(--bg-start),var(--bg-end)); backdrop-filter:blur(20px); border-radius:20px; padding:36px 28px 32px; max-width:560px; width:100%; text-align:center; animation:slideUpFast .4s cubic-bezier(.16,1,.3,1); box-shadow:var(--shadow-xl); border:1px solid rgba(255,255,255,.06) }
@@ -818,9 +819,9 @@
                         <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleWelcomeBonus();return!1" style="background:linear-gradient(135deg,var(--gold-light),#e09d2e); color:#1a0b2f;">💰 Claim Bonus</button></div>
                     </div>
                 </div>
-                <!-- Original 7 ways -->
+                <!-- Original 7 ways with REAL IMAGES -->
                 <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
-                    <img class="way-icon" src="https://i.pravatar.cc/100?img=12" alt="Chat with Foreigners" loading="lazy" style="border:2px solid #25a3d3; border-radius:14px; padding:4px; background:rgba(37,163,211,0.08);">
+                    <img class="way-icon" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop" alt="Chat with Foreigners" loading="lazy" style="border:2px solid #25a3d3; border-radius:14px; padding:4px; background:rgba(37,163,211,0.08);">
                     <div class="way-content">
                         <div class="way-name">💬 Chat with Foreigners</div>
                         <div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.</div>
@@ -829,7 +830,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleQuestionsPopup()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png" alt="Answer Questions" loading="lazy" style="background:#f39c12;padding:10px;object-fit:contain; border-radius:14px;">
+                    <img class="way-icon" src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=100&h=100&fit=crop" alt="Answer Questions" loading="lazy" style="border:2px solid #f39c12; border-radius:14px; padding:4px; background:rgba(243,156,18,0.08);">
                     <div class="way-content">
                         <div class="way-name">❓ Answering Questions</div>
                         <div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div>
@@ -838,7 +839,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f447.png" alt="TikTok Videos" loading="lazy" style="background:#000000;padding:8px;object-fit:contain; border-radius:14px;">
+                    <img class="way-icon" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=100&h=100&fit=crop" alt="TikTok Videos" loading="lazy" style="border:2px solid #000000; border-radius:14px; padding:4px; background:rgba(0,0,0,0.08);">
                     <div class="way-content">
                         <div class="way-name">🎬 Paid TikTok Videos</div>
                         <div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.</div>
@@ -847,7 +848,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="openAffiliateBonus()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4c8.png" alt="Affiliate Bonus" loading="lazy" style="background:#9b59b6;padding:10px;object-fit:contain; border-radius:14px;">
+                    <img class="way-icon" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop" alt="Affiliate Bonus" loading="lazy" style="border:2px solid #9b59b6; border-radius:14px; padding:4px; background:rgba(155,89,182,0.08);">
                     <div class="way-content">
                         <div class="way-name">📈 Affiliate Bonus</div>
                         <div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!</div>
@@ -856,7 +857,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleWhatsAppPosting()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png" alt="WhatsApp Posting" loading="lazy" style="background:#25D366;padding:10px;object-fit:contain; border-radius:14px;">
+                    <img class="way-icon" src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=100&h=100&fit=crop" alt="WhatsApp Posting" loading="lazy" style="border:2px solid #25D366; border-radius:14px; padding:4px; background:rgba(37,211,102,0.08);">
                     <div class="way-content">
                         <div class="way-name">📱 WhatsApp Posting</div>
                         <div class="way-desc">Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.</div>
@@ -865,7 +866,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fa.png" alt="YouTube Earning" loading="lazy" style="background:#FF0000;padding:10px;object-fit:contain; border-radius:14px;">
+                    <img class="way-icon" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=100&h=100&fit=crop" alt="YouTube Earning" loading="lazy" style="border:2px solid #FF0000; border-radius:14px; padding:4px; background:rgba(255,0,0,0.08);">
                     <div class="way-content">
                         <div class="way-name">📺 YouTube Earning</div>
                         <div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.</div>
@@ -874,7 +875,7 @@
                     </div>
                 </div>
                 <div class="way-card" onclick="handleSpinning()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3af.png" alt="Paid Spinning" loading="lazy" style="background:#e67e22;padding:10px;object-fit:contain; border-radius:14px;">
+                    <img class="way-icon" src="https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=100&h=100&fit=crop" alt="Paid Spinning" loading="lazy" style="border:2px solid #e67e22; border-radius:14px; padding:4px; background:rgba(230,126,34,0.08);">
                     <div class="way-content">
                         <div class="way-name">🎰 Paid Spinning</div>
                         <div class="way-desc">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div>
@@ -902,14 +903,15 @@
             <div style="text-align:center;margin-top:12px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Get Started Now</a></div>
         </div>
 
+        <!-- SUCCESS STORIES WITH FIXED IMAGES -->
         <div class="section section-stories">
             <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge">REAL PEOPLE</span></div>
             <div style="display:flex;flex-direction:column;gap:4px;text-align:left;">
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=70" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kelvin O. · Lagos, Nigeria</div><div class="samount">$2,240 earned last week</div><div class="sdesc">"Cleared my rent in 9 days. Absolutely legit and life-changing!"</div></div></div>
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=71" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Amaka N. · Enugu, Nigeria</div><div class="samount">$1,860 earned this month</div><div class="sdesc">"Chatting with foreigners while earning is the best! I can't believe it's real."</div></div></div>
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=72" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kwame B. · Accra, Ghana</div><div class="samount">$1,120 earned this week</div><div class="sdesc">"MoMo withdrawal in seconds. So reliable! This platform is a game-changer."</div></div></div>
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=73" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Faith W. · Nairobi, Kenya</div><div class="samount">$980 earned this week</div><div class="sdesc">"Paid my school fees in just 2 weeks! I'm so grateful for this opportunity."</div></div></div>
-                <div class="story-card"><img src="https://i.pravatar.cc/100?img=74" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Peter M. · Kampala, Uganda</div><div class="samount">$1,550 earned last month</div><div class="sdesc">"Best decision ever! I now earn more than my regular job. Highly recommend!"</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kelvin O. · Lagos, Nigeria</div><div class="samount">$2,240 earned last week</div><div class="sdesc">"Cleared my rent in 9 days. Absolutely legit and life-changing!"</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Amaka N. · Enugu, Nigeria</div><div class="samount">$1,860 earned this month</div><div class="sdesc">"Chatting with foreigners while earning is the best! I can't believe it's real."</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kwame B. · Accra, Ghana</div><div class="samount">$1,120 earned this week</div><div class="sdesc">"MoMo withdrawal in seconds. So reliable! This platform is a game-changer."</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Faith W. · Nairobi, Kenya</div><div class="samount">$980 earned this week</div><div class="sdesc">"Paid my school fees in just 2 weeks! I'm so grateful for this opportunity."</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Peter M. · Kampala, Uganda</div><div class="samount">$1,550 earned last month</div><div class="sdesc">"Best decision ever! I now earn more than my regular job. Highly recommend!"</div></div></div>
             </div>
         </div>
 
@@ -1148,9 +1150,10 @@
 
     <div class="chat-page-overlay" id="chatOverlay"><div class="chat-page"><div class="chat-page-header"><img id="chatPageAvatar" src="https://i.pravatar.cc/100?img=24" alt="User"><div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus">🇺🇸 USA · Online</div></div><button class="close-btn" onclick="closeChatPage()">✕</button></div><div class="chat-messages-area" id="chatMessagesArea"></div><div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div><div class="chat-page-footer"><input type="text" id="chatPageInput" placeholder="Type a message..."><button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button></div></div></div>
 
+    <!-- WITHDRAWAL POPUP WITH FIXED IMAGES -->
     <div id="withdrawalPopup">
         <div class="popup-card" id="popupCard">
-            <img id="popupUserImage" src="https://i.pravatar.cc/100?img=80" alt="User" loading="lazy">
+            <img id="popupUserImage" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="User" loading="lazy">
             <div class="info">
                 <div class="title">💸 Live Withdrawal</div>
                 <div class="name" id="popupUserName">🇰🇪 James K.</div>
@@ -1367,7 +1370,7 @@
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
         
-        // ===== WITHDRAWAL POPUPS WITH AFRICAN IMAGES =====
+        // ===== WITHDRAWAL POPUPS WITH AFRICAN IMAGES (FIXED) =====
         ! function() { 
             const w = [
                 { flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
@@ -1386,9 +1389,9 @@
                 { flag: '🇿🇦', name: 'Zanele D.', amount: '948', method: 'Bank Transfer', gender: 'female', currency: 'R' },
                 { flag: '🇺🇬', name: 'Peter M.', amount: '2,800,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' }
             ];
-            // African male and female image pools
-            const m = ['https://i.pravatar.cc/100?img=80', 'https://i.pravatar.cc/100?img=81', 'https://i.pravatar.cc/100?img=82', 'https://i.pravatar.cc/100?img=83', 'https://i.pravatar.cc/100?img=84', 'https://i.pravatar.cc/100?img=85'];
-            const g = ['https://i.pravatar.cc/100?img=86', 'https://i.pravatar.cc/100?img=87', 'https://i.pravatar.cc/100?img=88', 'https://i.pravatar.cc/100?img=89', 'https://i.pravatar.cc/100?img=90', 'https://i.pravatar.cc/100?img=91'];
+            // African male and female image pools (using Unsplash for real people images)
+            const m = ['https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop'];
+            const g = ['https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop', 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop'];
             const p = document.getElementById('popupCard'), i = document.getElementById('popupUserImage'), n = document.getElementById('popupUserName'), l = document.getElementById('popupMethod'), a = document.getElementById('popupAmount');
             let u = [], idx = -1;
 
