@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-    <title>Myqashapp · Premium Earnings Platform for Africans</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a1628" />
     <meta name="description" content="Earn 80,000UGX – 150,000UGX daily by watching videos, answering questions & more. Withdraw instantly via M-Pesa, MoMo, and bank transfer." />
+    <title>Myqashapp · Premium Earnings Platform for Africans</title>
     <link rel="canonical" href="https://myqashapp.com" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myqashapp.com" />
     <meta property="og:title" content="Myqashapp · Turn Clicks to Cash in Africa" />
     <meta property="og:description" content="Join 187,000+ Africans earning daily. Watch videos, chat, answer questions and withdraw instantly to M-Pesa, MoMo, and more." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=630&fit=crop" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=630&fit=crop&crop=center" />
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Myqashapp · Turn Clicks to Cash in Africa" />
+    <meta name="twitter:description" content="Join 187,000+ Africans earning daily. Watch videos, chat, answer questions and withdraw instantly to M-Pesa, MoMo, and more." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&h=630&fit=crop&crop=center" />
+    
+    <!-- Structured Data for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Myqashapp",
+        "url": "https://myqashapp.com",
+        "description": "Earn 80,000UGX – 150,000UGX daily by watching videos, answering questions & more. Withdraw instantly via M-Pesa, MoMo, and bank transfer.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://myqashapp.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900;14..32,1000&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet" />
@@ -778,11 +806,11 @@
                 window.popupTimer = setTimeout(() => {
                     p.style.display = 'flex';
                     p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
-                }, 2200); // FASTER: was 3500
+                }, 2200);
             }
 
             setTimeout(showNextPopup, 800);
-            setInterval(showNextPopup, 2800); // FASTER: was 4000
+            setInterval(showNextPopup, 2800);
         }();
 
         // ===== CHAT FUNCTIONS =====
