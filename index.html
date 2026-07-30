@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <!-- EARNINGS SCROLL -->
+        <!-- EARNINGS SCROLL - 24+ items -->
         <div class="earnings-scroll">
             <span class="scroll-label">🔥 EARNING</span>
             <span class="scroll-content" id="earningsScroll">
@@ -69,6 +69,9 @@
                 <span>🇨🇲 Marie B. earned XAF 23,900 &nbsp;|&nbsp; </span>
                 <span>🇬🇭 Yaw A. earned GH₵ 4,850 &nbsp;|&nbsp; </span>
                 <span>🇺🇬 Esther K. earned UGX 215,340 &nbsp;|&nbsp; </span>
+                <span>🇹🇿 Juma H. earned TSh 36,700 &nbsp;|&nbsp; </span>
+                <span>🇿🇲 Chanda M. earned ZMW 2,100 &nbsp;|&nbsp; </span>
+                <span>🇲🇼 Grace P. earned MWK 12,500 &nbsp;|&nbsp; </span>
             </span>
         </div>
 
@@ -117,7 +120,7 @@
             <p class="section-subtitle">Start earning in 3 simple steps</p>
             <div style="display:flex;flex-direction:column;gap:6px;text-align:left;">
                 <div class="how-step"><div class="step-num">1</div><div class="step-info"><div class="step-title">Sign Up Free</div><div class="step-desc">Create account in 30 seconds — no card needed.</div></div></div>
-                <div class="how-step"><div class="step-num">2</div><div class="step-info"><div class="step-title">Complete Tasks</div><div class="step-desc">Watch videos, surveys, chat, WhatsApp posts, or train AI.</div></div></div>
+                <div class="how-step"><div class="step-num">2</div><div class="step-info"><div class="step-title">Complete Tasks</div><div class="step-desc">Watch videos, surveys, chatting, WhatsApp posts, or train AI.</div></div></div>
                 <div class="how-step"><div class="step-num">3</div><div class="step-info"><div class="step-title">Withdraw Instantly</div><div class="step-desc">M-Pesa, MoMo, Bank Transfer — daily!</div></div></div>
             </div>
             <div style="text-align:center;margin-top:12px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Get Started Now</a></div>
@@ -256,7 +259,7 @@
 
     <div class="chat-page-overlay" id="chatOverlay"><div class="chat-page"><div class="chat-page-header"><img id="chatPageAvatar" src="https://i.pravatar.cc/100?img=24" alt="User"><div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus">🇺🇸 USA · Online</div></div><button class="close-btn" onclick="closeChatPage()">✕</button></div><div class="chat-messages-area" id="chatMessagesArea"></div><div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div><div class="chat-page-footer"><input type="text" id="chatPageInput" placeholder="Type a message..."><button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button></div></div></div>
 
-    <!-- WITHDRAWAL POPUP -->
+    <!-- WITHDRAWAL POPUP - 20+ unique entries with non-repeating images -->
     <div id="withdrawalPopup">
         <div class="popup-card" id="popupCard">
             <img id="popupUserImage" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="User" loading="lazy">
@@ -475,7 +478,7 @@
         function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active') }
         document.getElementById('demoActionPopup').addEventListener('click', function(e) { if (e.target === this) closeDemoAction() });
 
-        // ===== WELCOME BONUS =====
+        // ===== WELCOME BONUS (no amount shown) =====
         function handleWelcomeBonus() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
@@ -558,7 +561,7 @@
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
         
-        // ===== WITHDRAWAL POPUPS =====
+        // ===== WITHDRAWAL POPUPS - 20+ entries with non-repeating images =====
         ! function() { 
             const withdrawals = [
                 { flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
@@ -575,21 +578,29 @@
                 { flag: '🇰🇪', name: 'Grace W.', amount: '1,445', method: 'M-Pesa', gender: 'female', currency: 'KSh' },
                 { flag: '🇺🇬', name: 'Esther K.', amount: '1,200,000', method: 'Mobile Money', gender: 'female', currency: 'UGX' },
                 { flag: '🇿🇦', name: 'Zanele D.', amount: '948', method: 'Bank Transfer', gender: 'female', currency: 'R' },
-                { flag: '🇺🇬', name: 'Peter M.', amount: '2,800,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' }
+                { flag: '🇺🇬', name: 'Peter M.', amount: '2,800,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' },
+                { flag: '🇹🇿', name: 'Juma H.', amount: '36,700', method: 'M-Pesa', gender: 'male', currency: 'TSh' },
+                { flag: '🇿🇲', name: 'Chanda M.', amount: '2,100', method: 'Mobile Money', gender: 'female', currency: 'ZMW' },
+                { flag: '🇲🇼', name: 'Grace P.', amount: '12,500', method: 'Mobile Money', gender: 'female', currency: 'MWK' },
+                { flag: '🇨🇲', name: 'Samuel B.', amount: '6,200', method: 'MoMo', gender: 'male', currency: 'XAF' },
+                { flag: '🇧🇼', name: 'Kabelo S.', amount: '19,400', method: 'Mobile Money', gender: 'male', currency: 'BWP' }
             ];
-            const maleImages = ['https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=80&h=80&fit=crop'];
-            const femaleImages = ['https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop'];
+            const maleImages = ['https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1501183007986-d0d080b147c9?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=80&h=80&fit=crop'];
+            const femaleImages = ['https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1517842645767-c639042777db?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1502323777036-f29e3972d82f?w=80&h=80&fit=crop'];
             const p = document.getElementById('popupCard'), i = document.getElementById('popupUserImage'), n = document.getElementById('popupUserName'), l = document.getElementById('popupMethod'), a = document.getElementById('popupAmount');
             let usedIndices = [];
-            let lastImageIndex = -1;
-            let lastGender = '';
+            let lastMaleImageIndex = -1;
+            let lastFemaleImageIndex = -1;
             function getUniqueImage(gender) { 
                 const pool = gender === 'female' ? femaleImages : maleImages;
-                let available = pool.map((_, idx) => idx).filter(idx => idx !== lastImageIndex);
-                if (available.length === 0) { lastImageIndex = -1; available = pool.map((_, idx) => idx); }
+                let lastIdx = gender === 'female' ? lastFemaleImageIndex : lastMaleImageIndex;
+                let available = pool.map((_, idx) => idx).filter(idx => idx !== lastIdx);
+                if (available.length === 0) { 
+                    lastIdx = -1; 
+                    available = pool.map((_, idx) => idx);
+                }
                 const randomIdx = available[Math.floor(Math.random() * available.length)];
-                lastImageIndex = randomIdx;
-                lastGender = gender;
+                if (gender === 'female') { lastFemaleImageIndex = randomIdx; } else { lastMaleImageIndex = randomIdx; }
                 return pool[randomIdx];
             }
             function showNextWithdrawal() {
