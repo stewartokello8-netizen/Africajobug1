@@ -262,7 +262,7 @@
         <div class="popup-card" id="popupCard">
             <img id="popupUserImage" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="User" loading="lazy">
             <div class="info">
-                <div class="title">💸 Live Withdrawal</div>
+                <div class="title" id="popupTitle">💸 Live Withdrawal</div>
                 <div class="name" id="popupUserName">🇰🇪 James K.</div>
                 <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;">
                     <span class="method" id="popupMethod">via M-Pesa</span>
@@ -558,8 +558,9 @@
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
         
-        // ===== WITHDRAWAL POPUPS - 20+ entries with non-repeating images =====
+        // ===== WITHDRAWAL & ACTIVATION POPUPS - alternating with non-repeating images =====
         ! function() { 
+            // 24 withdrawal entries
             const withdrawals = [
                 { flag: '🇰🇪', name: 'James K.', amount: '2,580', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
                 { flag: '🇬🇭', name: 'Maureen A.', amount: '3,870', method: 'MoMo', gender: 'female', currency: 'GH₵' },
@@ -583,14 +584,88 @@
                 { flag: '🇧🇼', name: 'Kabelo S.', amount: '19,400', method: 'Mobile Money', gender: 'male', currency: 'BWP' },
                 { flag: '🇺🇬', name: 'John W.', amount: '450,000', method: 'Mobile Money', gender: 'male', currency: 'UGX' },
                 { flag: '🇰🇪', name: 'Mary A.', amount: '3,200', method: 'M-Pesa', gender: 'female', currency: 'KSh' },
-                { flag: '🇳🇬', name: 'David O.', amount: '45,000', method: 'MoMo', gender: 'male', currency: '₦' }
+                { flag: '🇳🇬', name: 'David O.', amount: '45,000', method: 'MoMo', gender: 'male', currency: '₦' },
+                { flag: '🇬🇭', name: 'Ama K.', amount: '1,850', method: 'MoMo', gender: 'female', currency: 'GH₵' }
             ];
-            const maleImages = ['https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1501183007986-d0d080b147c9?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1504297050568-910d24c426d3?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1508272039867-9ab4e8adf6a1?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1509537521255-3e71c0bdb1a1?w=80&h=80&fit=crop'];
-            const femaleImages = ['https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1517842645767-c639042777db?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1502323777036-f29e3972d82f?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1519360717394-4ccf1aa7a6a2?w=80&h=80&fit=crop','https://images.unsplash.com/photo-1513010963136-383d3fc1bea4?w=80&h=80&fit=crop'];
-            const p = document.getElementById('popupCard'), i = document.getElementById('popupUserImage'), n = document.getElementById('popupUserName'), l = document.getElementById('popupMethod'), a = document.getElementById('popupAmount');
-            let usedIndices = [];
+
+            // 24 activation entries
+            const activations = [
+                { flag: '🇺🇬', name: 'Peter O.', amount: 'Paid for activation', method: 'Mobile Money', gender: 'male', currency: 'UGX' },
+                { flag: '🇰🇪', name: 'Grace M.', amount: 'Paid for activation', method: 'M-Pesa', gender: 'female', currency: 'KSh' },
+                { flag: '🇳🇬', name: 'Tunde A.', amount: 'Paid for activation', method: 'MoMo', gender: 'male', currency: '₦' },
+                { flag: '🇬🇭', name: 'Esi B.', amount: 'Paid for activation', method: 'MoMo', gender: 'female', currency: 'GH₵' },
+                { flag: '🇺🇬', name: 'Rebecca N.', amount: 'Paid for activation', method: 'Mobile Money', gender: 'female', currency: 'UGX' },
+                { flag: '🇿🇦', name: 'Thabo M.', amount: 'Paid for activation', method: 'Bank Transfer', gender: 'male', currency: 'R' },
+                { flag: '🇰🇪', name: 'David K.', amount: 'Paid for activation', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
+                { flag: '🇳🇬', name: 'Chioma E.', amount: 'Paid for activation', method: 'MoMo', gender: 'female', currency: '₦' },
+                { flag: '🇺🇬', name: 'Samuel T.', amount: 'Paid for activation', method: 'Mobile Money', gender: 'male', currency: 'UGX' },
+                { flag: '🇷🇼', name: 'Jeanne U.', amount: 'Paid for activation', method: 'Mobile Wallet', gender: 'female', currency: 'RWF' },
+                { flag: '🇬🇭', name: 'Kwame A.', amount: 'Paid for activation', method: 'MoMo', gender: 'male', currency: 'GH₵' },
+                { flag: '🇰🇪', name: 'Faith N.', amount: 'Paid for activation', method: 'M-Pesa', gender: 'female', currency: 'KSh' },
+                { flag: '🇺🇬', name: 'Joseph M.', amount: 'Paid for activation', method: 'Mobile Money', gender: 'male', currency: 'UGX' },
+                { flag: '🇹🇿', name: 'Asha H.', amount: 'Paid for activation', method: 'M-Pesa', gender: 'female', currency: 'TSh' },
+                { flag: '🇨🇲', name: 'Paul B.', amount: 'Paid for activation', method: 'MoMo', gender: 'male', currency: 'XAF' },
+                { flag: '🇺🇬', name: 'Dorothy K.', amount: 'Paid for activation', method: 'Mobile Money', gender: 'female', currency: 'UGX' },
+                { flag: '🇳🇬', name: 'Emeka O.', amount: 'Paid for activation', method: 'MoMo', gender: 'male', currency: '₦' },
+                { flag: '🇰🇪', name: 'Jane W.', amount: 'Paid for activation', method: 'M-Pesa', gender: 'female', currency: 'KSh' },
+                { flag: '🇬🇭', name: 'Yaw S.', amount: 'Paid for activation', method: 'MoMo', gender: 'male', currency: 'GH₵' },
+                { flag: '🇺🇬', name: 'Susan A.', amount: 'Paid for activation', method: 'Mobile Money', gender: 'female', currency: 'UGX' },
+                { flag: '🇿🇲', name: 'Mulenga C.', amount: 'Paid for activation', method: 'Mobile Money', gender: 'male', currency: 'ZMW' },
+                { flag: '🇷🇼', name: 'Marie U.', amount: 'Paid for activation', method: 'Mobile Wallet', gender: 'female', currency: 'RWF' },
+                { flag: '🇰🇪', name: 'Patrick M.', amount: 'Paid for activation', method: 'M-Pesa', gender: 'male', currency: 'KSh' },
+                { flag: '🇺🇬', name: 'Rose N.', amount: 'Paid for activation', method: 'Mobile Money', gender: 'female', currency: 'UGX' }
+            ];
+
+            // Reliable image pools using Unsplash
+            const maleImages = [
+                'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1501183007986-d0d080b147c9?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1504297050568-910d24c426d3?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1508272039867-9ab4e8adf6a1?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1509537521255-3e71c0bdb1a1?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1503443207922-dff89d3fd0c1?w=80&h=80&fit=crop'
+            ];
+            
+            const femaleImages = [
+                'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1517842645767-c639042777db?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1502323777036-f29e3972d82f?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1519360717394-4ccf1aa7a6a2?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1513010963136-383d3fc1bea4?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1502680390469-be75c86d4ab0?w=80&h=80&fit=crop',
+                'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=80&h=80&fit=crop'
+            ];
+
+            const p = document.getElementById('popupCard');
+            const i = document.getElementById('popupUserImage');
+            const n = document.getElementById('popupUserName');
+            const l = document.getElementById('popupMethod');
+            const a = document.getElementById('popupAmount');
+            const t = document.getElementById('popupTitle');
+
+            let usedWithdrawalIndices = [];
+            let usedActivationIndices = [];
             let lastMaleImageIndex = -1;
             let lastFemaleImageIndex = -1;
+            let isWithdrawal = true;
+
             function getUniqueImage(gender) { 
                 const pool = gender === 'female' ? femaleImages : maleImages;
                 let lastIdx = gender === 'female' ? lastFemaleImageIndex : lastMaleImageIndex;
@@ -603,29 +678,52 @@
                 if (gender === 'female') { lastFemaleImageIndex = randomIdx; } else { lastMaleImageIndex = randomIdx; }
                 return pool[randomIdx];
             }
-            function showNextWithdrawal() {
-                if (usedIndices.length >= withdrawals.length) { usedIndices = []; }
-                const available = withdrawals.map((_, idx) => idx).filter(idx => !usedIndices.includes(idx));
-                if (available.length === 0) { usedIndices = []; return showNextWithdrawal(); }
-                const randomIdx = available[Math.floor(Math.random() * available.length)];
-                usedIndices.push(randomIdx);
-                const d = withdrawals[randomIdx];
-                i.src = getUniqueImage(d.gender);
-                n.textContent = d.flag + ' ' + d.name;
-                l.textContent = 'via ' + d.method;
-                a.textContent = d.currency + ' ' + d.amount;
+
+            function showNextPopup() {
+                isWithdrawal = !isWithdrawal;
+                
+                if (isWithdrawal) {
+                    if (usedWithdrawalIndices.length >= withdrawals.length) { usedWithdrawalIndices = []; }
+                    const available = withdrawals.map((_, idx) => idx).filter(idx => !usedWithdrawalIndices.includes(idx));
+                    if (available.length === 0) { usedWithdrawalIndices = []; return showNextPopup(); }
+                    const randomIdx = available[Math.floor(Math.random() * available.length)];
+                    usedWithdrawalIndices.push(randomIdx);
+                    const d = withdrawals[randomIdx];
+                    i.src = getUniqueImage(d.gender);
+                    n.textContent = d.flag + ' ' + d.name;
+                    l.textContent = 'via ' + d.method;
+                    a.textContent = d.currency + ' ' + d.amount;
+                    t.textContent = '💸 Live Withdrawal';
+                    t.style.color = '#00c6fb';
+                } else {
+                    if (usedActivationIndices.length >= activations.length) { usedActivationIndices = []; }
+                    const available = activations.map((_, idx) => idx).filter(idx => !usedActivationIndices.includes(idx));
+                    if (available.length === 0) { usedActivationIndices = []; return showNextPopup(); }
+                    const randomIdx = available[Math.floor(Math.random() * available.length)];
+                    usedActivationIndices.push(randomIdx);
+                    const d = activations[randomIdx];
+                    i.src = getUniqueImage(d.gender);
+                    n.textContent = d.flag + ' ' + d.name;
+                    l.textContent = 'via ' + d.method;
+                    a.textContent = d.amount;
+                    t.textContent = '🔓 Live Activation';
+                    t.style.color = '#00b894';
+                }
+
                 p.style.display = 'flex';
                 p.style.animation = 'none';
                 p.offsetHeight;
                 p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
+                
                 clearTimeout(window.popupTimer);
                 window.popupTimer = setTimeout(() => {
                     p.style.display = 'flex';
                     p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
-                }, 2000);
+                }, 3500);
             }
-            setTimeout(showNextWithdrawal, 600);
-            setInterval(showNextWithdrawal, 2500);
+
+            setTimeout(showNextPopup, 800);
+            setInterval(showNextPopup, 4000);
         }();
 
         // ===== CHAT FUNCTIONS =====
