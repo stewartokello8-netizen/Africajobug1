@@ -138,6 +138,7 @@
             </div>
         </div>
 
+        <!-- FAQ SECTION - ADDED MORE QUESTIONS -->
         <div class="section section-faq">
             <div class="section-header"><div class="icon">❓</div><h2>Frequent Questions</h2><span class="badge">FAQ</span></div>
             <details><summary>How much can I earn per day? <span class="arrow">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details>
@@ -146,6 +147,10 @@
             <details><summary>Is it really free to join? <span class="arrow">▼</span></summary><div class="faq-content">Yes! Sign up is completely free. No hidden fees or charges. You only pay for premium features if you choose to upgrade.</div></details>
             <details><summary>How long does it take to get paid? <span class="arrow">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
             <details><summary>Can I use this on my phone? <span class="arrow">▼</span></summary><div class="faq-content">Absolutely! Myqashapp works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
+            <details><summary>What countries can join? <span class="arrow">▼</span></summary><div class="faq-content">Myqashapp is available in all African countries including Uganda, Kenya, Nigeria, Ghana, South Africa, Tanzania, Rwanda, Cameroon, and more!</div></details>
+            <details><summary>Is there a referral program? <span class="arrow">▼</span></summary><div class="faq-content">Yes! You earn commissions across 3 referral levels. Share your link and earn passive income from your referrals' activity.</div></details>
+            <details><summary>What payment methods are supported? <span class="arrow">▼</span></summary><div class="faq-content">We support M-Pesa, Airtel Money, MoMo, Bank Transfer, and Crypto. Choose the method that works best for you!</div></details>
+            <details><summary>How do I get started? <span class="arrow">▼</span></summary><div class="faq-content">Simply click "Register Now" above, complete your profile, and start earning immediately. It takes less than 2 minutes!</div></details>
         </div>
 
         <div class="footer-section">
@@ -316,9 +321,9 @@
             return (ugx / 3500).toFixed(2);
         }
 
-        // ===== MAIN PAGE: WAYS TO EARN (dynamic amounts) =====
+        // ===== MAIN PAGE: WAYS TO EARN - WELCOME BONUS FIXED AT 10,000 UGX =====
         const waysData = [
-            { name: '🎉 Welcome Bonus', desc: 'Once you\'re officially in! A generous welcome bonus will be sent directly to your account. Start your journey with extra cash—simply sign up and it\'s yours instantly.', icon: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f389.png', style: 'border:2px solid #00b894; background:linear-gradient(145deg, rgba(0,184,148,0.10), rgba(0,150,255,0.05));', btnText: '💰 Claim Bonus', btnClass: 'gold', onClick: 'handleWelcomeBonus()' },
+            { name: '🎉 Welcome Bonus', desc: 'Once you\'re officially in! A generous welcome bonus will be sent directly to your account. Start your journey with extra cash—simply sign up and it\'s yours instantly.', icon: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f389.png', style: 'border:2px solid #00b894; background:linear-gradient(145deg, rgba(0,184,148,0.10), rgba(0,150,255,0.05));', btnText: '💰 Claim Bonus', btnClass: 'gold', onClick: 'handleWelcomeBonus()', fixedAmount: 10000 },
             { name: '💬 Chat with Foreigners', desc: 'Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.', icon: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop', style: '', btnText: 'Start Chatting', btnClass: '', onClick: "window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')" },
             { name: '❓ Answering Questions', desc: 'Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!', icon: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=100&h=100&fit=crop', style: '', btnText: 'Start Answering', btnClass: 'gold', onClick: 'handleQuestionsPopup()' },
             { name: '🎬 Paid TikTok Videos', desc: 'Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.', icon: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4f1.png', style: '', btnText: 'Watch Videos', btnClass: 'gold', onClick: "handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')" },
@@ -334,15 +339,20 @@
             let html = '';
             waysData.forEach((w, idx) => {
                 let ugx;
-                switch(w.name) {
-                    case '💬 Chat with Foreigners': ugx = 17000; break;
-                    case '❓ Answering Questions': ugx = 3000; break;
-                    case '🎬 Paid TikTok Videos': ugx = 4000; break;
-                    case '📈 Affiliate Bonus': ugx = 10000; break;
-                    case '📱 WhatsApp Posting': ugx = 5000; break;
-                    case '📺 YouTube Earning': ugx = 4000; break;
-                    case '🎰 Paid Spinning': ugx = 50000; break;
-                    default: ugx = randomAmount(3000, 20000);
+                // Welcome Bonus fixed at 10,000 UGX
+                if (w.fixedAmount) {
+                    ugx = w.fixedAmount;
+                } else {
+                    switch(w.name) {
+                        case '💬 Chat with Foreigners': ugx = 17000; break;
+                        case '❓ Answering Questions': ugx = 3000; break;
+                        case '🎬 Paid TikTok Videos': ugx = 4000; break;
+                        case '📈 Affiliate Bonus': ugx = 10000; break;
+                        case '📱 WhatsApp Posting': ugx = 5000; break;
+                        case '📺 YouTube Earning': ugx = 4000; break;
+                        case '🎰 Paid Spinning': ugx = 50000; break;
+                        default: ugx = randomAmount(3000, 20000);
+                    }
                 }
                 const usd = usdFromUGX(ugx);
                 const earnText = `Earn ${formatUGX(ugx)} UGX ($${usd})`;
@@ -475,7 +485,7 @@
         function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active') }
         document.getElementById('demoActionPopup').addEventListener('click', function(e) { if (e.target === this) closeDemoAction() });
 
-        // ===== WELCOME BONUS - CONSTANT 10,000 UGX =====
+        // ===== WELCOME BONUS POPUP =====
         function handleWelcomeBonus() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
