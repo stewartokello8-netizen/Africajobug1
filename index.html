@@ -260,7 +260,7 @@
     <!-- WITHDRAWAL POPUP - 50 WITHDRAWALS (FOCUS ON UGANDA) + 30 ACTIVATIONS -->
     <div id="withdrawalPopup">
         <div class="popup-card" id="popupCard">
-            <img id="popupUserImage" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="User" loading="lazy">
+            <img id="popupUserImage" src="https://i.pravatar.cc/80?img=1" alt="User" loading="lazy">
             <div class="info">
                 <div class="title" id="popupTitle">💸 Live Withdrawal</div>
                 <div class="name" id="popupUserName">🇺🇬 Sarah N.</div>
@@ -475,7 +475,7 @@
         function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active') }
         document.getElementById('demoActionPopup').addEventListener('click', function(e) { if (e.target === this) closeDemoAction() });
 
-        // ===== WELCOME BONUS (no amount shown) =====
+        // ===== WELCOME BONUS - CONSTANT 10,000 UGX =====
         function handleWelcomeBonus() {
             const overlay = document.getElementById('demoActionPopup');
             const content = overlay.querySelector('.popup-content');
@@ -484,14 +484,14 @@
                     <span style="font-size:48px;">🎉</span>
                     <h3 style="color:#00b894;font-size:24px;margin:4px 0;">Welcome Bonus!</h3>
                     <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.6;">
-                        Congratulations! Your <strong style="color:#00b894;">welcome bonus</strong> will be sent directly to your account. 
+                        Congratulations! Your <strong style="color:#00b894;">10,000 UGX welcome bonus</strong> will be sent directly to your account. 
                         Start your journey with extra cash — simply sign up, activate your account and it's yours instantly.
                     </p>
                 </div>
                 <div style="background:rgba(0,184,148,0.08);border-radius:16px;padding:16px;margin:8px 0;border:1px solid rgba(0,184,148,0.15);">
                     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px;">
-                        <span style="font-size:14px;color:rgba(255,255,255,0.6);">💰 Bonus Added</span>
-                        <span style="font-size:28px;font-weight:900;color:#00b894;">✓</span>
+                        <span style="font-size:14px;color:rgba(255,255,255,0.6);">💰 Bonus Amount</span>
+                        <span style="font-size:28px;font-weight:900;color:#00b894;">10,000 UGX</span>
                     </div>
                     <div style="margin-top:6px;font-size:12px;color:rgba(255,255,255,0.4);">✓ Credited to your account instantly</div>
                 </div>
@@ -560,7 +560,7 @@
         
         // ===== WITHDRAWAL & ACTIVATION POPUPS - 50 withdrawals (mostly Uganda) + 30 activations =====
         ! function() { 
-            // 50 WITHDRAWAL ENTRIES - Focus on Uganda (30+ Uganda entries)
+            // 50 WITHDRAWAL ENTRIES - Focus on Uganda (35+ Uganda entries)
             const withdrawals = [];
             const ugandaNames = [
                 'Sarah N.', 'Robert T.', 'Moses O.', 'Esther K.', 'Peter M.', 
@@ -568,12 +568,13 @@
                 'Susan A.', 'Rose N.', 'David O.', 'Grace M.', 'Paul K.',
                 'Mary A.', 'James O.', 'Alice N.', 'George M.', 'Faith K.',
                 'Catherine N.', 'Richard O.', 'Patricia A.', 'Michael K.', 'Helen N.',
-                'Steven M.', 'Margaret O.', 'Charles K.', 'Elizabeth N.', 'Daniel O.'
+                'Steven M.', 'Margaret O.', 'Charles K.', 'Elizabeth N.', 'Daniel O.',
+                'Ruth A.', 'Jane M.', 'Robert K.', 'Sarah O.', 'Peter K.'
             ];
             
-            // Generate 50 withdrawals - 35 Uganda, 15 from other countries
+            // Generate 50 withdrawals - 38 Uganda, 12 from other countries
             for (let i = 0; i < 50; i++) {
-                const isUganda = i < 35;
+                const isUganda = i < 38;
                 let flag, name, currency, method, gender, amount;
                 
                 if (isUganda) {
@@ -644,45 +645,19 @@
                 activations.push({ flag, name, amount: 'Paid for activation', method, gender, currency });
             }
 
-            // Reliable image pools using Unsplash
-            const maleImages = [
-                'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1531384441138-2736e62e0919?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1501183007986-d0d080b147c9?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1504297050568-910d24c426d3?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1508272039867-9ab4e8adf6a1?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1509537521255-3e71c0bdb1a1?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1500048993953-d23a436266cf?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1503443207922-dff89d3fd0c1?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1503275573160-6dd4c68d1495?w=80&h=80&fit=crop'
-            ];
+            // RELIABLE IMAGE POOLS - Using Pravatar for guaranteed working images
+            const maleImages = [];
+            const femaleImages = [];
             
-            const femaleImages = [
-                'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1463453091185-61582044d556?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1517842645767-c639042777db?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1502323777036-f29e3972d82f?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1519360717394-4ccf1aa7a6a2?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1513010963136-383d3fc1bea4?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1502680390469-be75c86d4ab0?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=80&h=80&fit=crop',
-                'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=80&h=80&fit=crop'
-            ];
+            // Generate 50+ unique male images using Pravatar
+            for (let i = 1; i <= 60; i++) {
+                maleImages.push(`https://i.pravatar.cc/80?img=${i}`);
+            }
+            
+            // Generate 50+ unique female images using Pravatar
+            for (let i = 61; i <= 120; i++) {
+                femaleImages.push(`https://i.pravatar.cc/80?img=${i}`);
+            }
 
             const p = document.getElementById('popupCard');
             const i = document.getElementById('popupUserImage');
@@ -693,20 +668,30 @@
 
             let usedWithdrawalIndices = [];
             let usedActivationIndices = [];
-            let lastMaleImageIndex = -1;
-            let lastFemaleImageIndex = -1;
+            let usedMaleImages = [];
+            let usedFemaleImages = [];
             let isWithdrawal = true;
 
             function getUniqueImage(gender) { 
                 const pool = gender === 'female' ? femaleImages : maleImages;
-                let lastIdx = gender === 'female' ? lastFemaleImageIndex : lastMaleImageIndex;
-                let available = pool.map((_, idx) => idx).filter(idx => idx !== lastIdx);
-                if (available.length === 0) { 
-                    lastIdx = -1; 
-                    available = pool.map((_, idx) => idx);
+                const usedPool = gender === 'female' ? usedFemaleImages : usedMaleImages;
+                
+                // If we've used all images, reset
+                if (usedPool.length >= pool.length) {
+                    if (gender === 'female') { usedFemaleImages = []; } else { usedMaleImages = []; }
                 }
+                
+                const available = pool.map((_, idx) => idx).filter(idx => !usedPool.includes(idx));
+                if (available.length === 0) {
+                    if (gender === 'female') { usedFemaleImages = []; } else { usedMaleImages = []; }
+                    const resetAvailable = pool.map((_, idx) => idx);
+                    const randomIdx2 = resetAvailable[Math.floor(Math.random() * resetAvailable.length)];
+                    if (gender === 'female') { usedFemaleImages.push(randomIdx2); } else { usedMaleImages.push(randomIdx2); }
+                    return pool[randomIdx2];
+                }
+                
                 const randomIdx = available[Math.floor(Math.random() * available.length)];
-                if (gender === 'female') { lastFemaleImageIndex = randomIdx; } else { lastMaleImageIndex = randomIdx; }
+                if (gender === 'female') { usedFemaleImages.push(randomIdx); } else { usedMaleImages.push(randomIdx); }
                 return pool[randomIdx];
             }
 
