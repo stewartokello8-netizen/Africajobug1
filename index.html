@@ -636,7 +636,7 @@
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
         
-        // ===== WITHDRAWAL & ACTIVATION POPUPS - FIXED IMAGES =====
+        // ===== WITHDRAWAL & ACTIVATION POPUPS - FIXED GENDER IMAGES =====
         !function() {
             // 50 WITHDRAWAL ENTRIES - Focus on Uganda
             const withdrawals = [];
@@ -650,6 +650,20 @@
                 'Ruth A.', 'Jane M.', 'Robert K.', 'Sarah O.', 'Peter K.'
             ];
 
+            // Map of names to gender (explicitly defined)
+            const nameGenderMap = {
+                'Sarah N.': 'female', 'Esther K.': 'female', 'Rebecca N.': 'female', 'Dorothy K.': 'female',
+                'Susan A.': 'female', 'Rose N.': 'female', 'Grace M.': 'female', 'Mary A.': 'female',
+                'Alice N.': 'female', 'Faith K.': 'female', 'Catherine N.': 'female', 'Patricia A.': 'female',
+                'Helen N.': 'female', 'Margaret O.': 'female', 'Elizabeth N.': 'female', 'Ruth A.': 'female',
+                'Jane M.': 'female', 'Sarah O.': 'female',
+                'Robert T.': 'male', 'Moses O.': 'male', 'Peter M.': 'male', 'John W.': 'male',
+                'Samuel T.': 'male', 'Joseph M.': 'male', 'David O.': 'male', 'Paul K.': 'male',
+                'James O.': 'male', 'George M.': 'male', 'Richard O.': 'male', 'Michael K.': 'male',
+                'Steven M.': 'male', 'Charles K.': 'male', 'Daniel O.': 'male', 'Robert K.': 'male',
+                'Peter K.': 'male'
+            };
+
             for (let i = 0; i < 50; i++) {
                 const isUganda = i < 38;
                 let flag, name, currency, method, gender, amount;
@@ -660,7 +674,7 @@
                     name = ugandaNames[nameIdx];
                     currency = 'UGX';
                     method = ['Mobile Money', 'Airtel Money', 'M-Pesa'][Math.floor(Math.random() * 3)];
-                    gender = name.includes('M.') || name.includes('O.') || name.includes('K.') || name.includes('M.') ? 'male' : 'female';
+                    gender = nameGenderMap[name] || (name.includes('M.') || name.includes('O.') || name.includes('K.') || name.includes('M.') ? 'male' : 'female');
                     amount = randomAmount(200000, 4800000).toLocaleString();
                 } else {
                     const countries = [
@@ -674,7 +688,7 @@
                     currency = country.currency;
                     method = country.method;
                     name = country.names[Math.floor(Math.random() * country.names.length)];
-                    gender = name.includes('K.') || name.includes('M.') || name.includes('O.') ? 'male' : 'female';
+                    gender = nameGenderMap[name] || (name.includes('K.') || name.includes('M.') || name.includes('O.') ? 'male' : 'female');
                     if (currency === 'KSh') amount = randomAmount(1000, 15000).toLocaleString();
                     else if (currency === '₦') amount = randomAmount(10000, 150000).toLocaleString();
                     else if (currency === 'GH₵') amount = randomAmount(100, 5000).toLocaleString();
@@ -695,6 +709,17 @@
                 'Esther N.', 'John M.', 'Sarah O.', 'Robert K.', 'Moses A.'
             ];
 
+            const actNameGenderMap = {
+                'Grace M.': 'female', 'Rebecca N.': 'female', 'Dorothy K.': 'female', 'Susan A.': 'female',
+                'Rose N.': 'female', 'Mary A.': 'female', 'Alice N.': 'female', 'Faith K.': 'female',
+                'Catherine N.': 'female', 'Patricia A.': 'female', 'Helen N.': 'female', 'Margaret O.': 'female',
+                'Elizabeth N.': 'female', 'Esther N.': 'female', 'Sarah O.': 'female',
+                'Peter O.': 'male', 'Samuel T.': 'male', 'Joseph M.': 'male', 'David O.': 'male',
+                'James O.': 'male', 'George M.': 'male', 'Richard O.': 'male', 'Michael K.': 'male',
+                'Steven M.': 'male', 'Charles K.': 'male', 'Daniel O.': 'male', 'Paul K.': 'male',
+                'John M.': 'male', 'Robert K.': 'male', 'Moses A.': 'male'
+            };
+
             for (let i = 0; i < 30; i++) {
                 const isUganda = i < 25;
                 let flag, name, gender, method, currency;
@@ -704,7 +729,7 @@
                     name = actUgandaNames[i % actUgandaNames.length];
                     method = ['Mobile Money', 'Airtel Money', 'M-Pesa'][Math.floor(Math.random() * 3)];
                     currency = 'UGX';
-                    gender = name.includes('M.') || name.includes('O.') || name.includes('K.') || name.includes('M.') ? 'male' : 'female';
+                    gender = actNameGenderMap[name] || (name.includes('M.') || name.includes('O.') || name.includes('K.') || name.includes('M.') ? 'male' : 'female');
                 } else {
                     const countries = [
                         { flag: '🇰🇪', currency: 'KSh', method: 'M-Pesa', names: ['David K.', 'Faith N.', 'Patrick M.', 'Jane W.'] },
@@ -716,18 +741,19 @@
                     currency = country.currency;
                     method = country.method;
                     name = country.names[Math.floor(Math.random() * country.names.length)];
-                    gender = name.includes('K.') || name.includes('M.') || name.includes('O.') ? 'male' : 'female';
+                    gender = nameGenderMap[name] || (name.includes('K.') || name.includes('M.') || name.includes('O.') ? 'male' : 'female');
                 }
 
                 activations.push({ flag, name, amount: 'Paid for activation', method, gender, currency });
             }
 
-            // ===== RELIABLE IMAGE POOLS - Using randomuser.me for reliable gender-specific images =====
+            // ===== RELIABLE GENDER-SPECIFIC IMAGES =====
+            // Using randomuser.me for reliable gender-specific images
             const maleImages = [];
             const femaleImages = [];
             
-            // Generate 50 male and 50 female images using randomuser.me
-            for (let i = 1; i <= 50; i++) {
+            // Generate 60 male and 60 female images
+            for (let i = 1; i <= 60; i++) {
                 maleImages.push(`https://randomuser.me/api/portraits/men/${i}.jpg`);
                 femaleImages.push(`https://randomuser.me/api/portraits/women/${i}.jpg`);
             }
@@ -750,12 +776,15 @@
                 const pool = gender === 'female' ? femaleImages : maleImages;
                 const usedPool = gender === 'female' ? usedFemaleImages : usedMaleImages;
 
+                // Reset if all images have been used
                 if (usedPool.length >= pool.length) {
                     if (gender === 'female') { usedFemaleImages = []; } else { usedMaleImages = []; }
                 }
 
+                // Find available image index
                 const available = pool.map((_, idx) => idx).filter(idx => !usedPool.includes(idx));
                 if (available.length === 0) {
+                    // Reset and try again
                     if (gender === 'female') { usedFemaleImages = []; } else { usedMaleImages = []; }
                     const resetAvailable = pool.map((_, idx) => idx);
                     const randomIdx2 = resetAvailable[Math.floor(Math.random() * resetAvailable.length)];
