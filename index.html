@@ -201,87 +201,8 @@
         <div class="section section-ways" style="border:none; background:transparent; padding:0 0 20px 0;">
             <div class="section-header" style="padding:0 20px;"><div class="icon">🎯</div><h2>8 Ways to Earn Daily</h2><span class="badge">💰 EARN</span></div>
             <p class="section-subtitle" style="padding:0 20px;">Every feature pays real money. Do them all every day and stack your earnings.</p>
-            <div class="ways-grid" style="padding:0 4px;">
-                <!-- WELCOME BONUS -->
-                <div class="way-card" onclick="handleWelcomeBonus()" style="border:2px solid #f7931e; background:linear-gradient(145deg, rgba(247,147,30,0.10), rgba(255,107,53,0.05));">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f389.png" alt="Welcome Bonus" loading="lazy" style="background:linear-gradient(135deg, #f7931e, #e07b0e); padding:10px; object-fit:contain; border-radius:14px; border-color:#f7931e;">
-                    <div class="way-content">
-                        <div class="way-name" style="color:#f7931e;">🎉 Welcome Bonus</div>
-                        <div class="way-desc">Once you're officially in! A generous welcome bonus will be sent directly to your account. Start your journey with extra cash—simply sign up and it's yours instantly.</div>
-                        <div class="way-earn" style="color:#f7931e;">BONUS</div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleWelcomeBonus();return!1" style="background:linear-gradient(135deg,#f7931e,#e07b0e); color:#1a0b2f;">💰 Claim Bonus</button></div>
-                    </div>
-                </div>
-                <!-- CHAT WITH FOREIGNERS -->
-                <div class="way-card" onclick="window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop" alt="Chat with Foreigners" loading="lazy" style="border:2px solid #25a3d3; border-radius:14px; padding:4px; background:rgba(37,163,211,0.08);">
-                    <div class="way-content">
-                        <div class="way-name">💬 Chat with Foreigners</div>
-                        <div class="way-desc">Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.</div>
-                        <div class="way-earn"><span class="sub">per person</span></div>
-                        <div class="way-cta"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" class="cta-btn" onclick="event.stopPropagation();">Start Chatting</a></div>
-                    </div>
-                </div>
-                <!-- ANSWER QUESTIONS -->
-                <div class="way-card" onclick="handleQuestionsPopup()">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=100&h=100&fit=crop" alt="Answer Questions" loading="lazy" style="border:2px solid #f39c12; border-radius:14px; padding:4px; background:rgba(243,156,18,0.08);">
-                    <div class="way-content">
-                        <div class="way-name">❓ Answering Questions</div>
-                        <div class="way-desc">Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!</div>
-                        <div class="way-earn"><span class="sub">per question</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleQuestionsPopup();return!1">Start Answering</button></div>
-                    </div>
-                </div>
-                <!-- TIKTOK -->
-                <div class="way-card" onclick="handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4f1.png" alt="TikTok Videos" loading="lazy" style="border:2px solid #000000; border-radius:14px; padding:10px; background:rgba(0,0,0,0.08); object-fit:contain;">
-                    <div class="way-content">
-                        <div class="way-name">🎬 Paid TikTok Videos</div>
-                        <div class="way-desc">Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.</div>
-                        <div class="way-earn"><span class="sub">per video</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok');return!1">Watch Videos</button></div>
-                    </div>
-                </div>
-                <!-- AFFILIATE BONUS -->
-                <div class="way-card" onclick="openAffiliateBonus()">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop" alt="Affiliate Bonus" loading="lazy" style="border:2px solid #9b59b6; border-radius:14px; padding:4px; background:rgba(155,89,182,0.08);">
-                    <div class="way-content">
-                        <div class="way-name">📈 Affiliate Bonus</div>
-                        <div class="way-desc">Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!</div>
-                        <div class="way-earn">BONUS</div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();openAffiliateBonus();return!1">Start Promoting</button></div>
-                    </div>
-                </div>
-                <!-- WHATSAPP -->
-                <div class="way-card" onclick="handleWhatsAppPosting()">
-                    <img class="way-icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png" alt="WhatsApp Posting" loading="lazy" style="border:2px solid #25D366; border-radius:14px; padding:10px; background:rgba(37,211,102,0.08); object-fit:contain;">
-                    <div class="way-content">
-                        <div class="way-name">📱 WhatsApp Posting</div>
-                        <div class="way-desc">Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.</div>
-                        <div class="way-earn"><span class="sub">per post</span></div>
-                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleWhatsAppPosting();return!1">Start Posting</button></div>
-                    </div>
-                </div>
-                <!-- YOUTUBE -->
-                <div class="way-card" onclick="handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=100&h=100&fit=crop" alt="YouTube Earning" loading="lazy" style="border:2px solid #FF0000; border-radius:14px; padding:4px; background:rgba(255,0,0,0.08);">
-                    <div class="way-content">
-                        <div class="way-name">📺 YouTube Earning</div>
-                        <div class="way-desc">Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.</div>
-                        <div class="way-earn"><span class="sub">per day</span></div>
-                        <div class="way-cta"><button class="cta-btn gold" onclick="event.stopPropagation();handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">Start Watching</button></div>
-                    </div>
-                </div>
-                <!-- SPINNING -->
-                <div class="way-card" onclick="handleSpinning()">
-                    <img class="way-icon" src="https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=100&h=100&fit=crop" alt="Paid Spinning" loading="lazy" style="border:2px solid #e67e22; border-radius:14px; padding:4px; background:rgba(230,126,34,0.08);">
-                    <div class="way-content">
-                        <div class="way-name">🎰 Paid Spinning</div>
-                        <div class="way-desc">Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.</div>
-                        <div class="way-earn"><span class="sub">per spin</span></div>
-                        <div class="way-cta"><button class="cta-btn" onclick="event.stopPropagation();handleSpinning();return!1">Start Spinning</button></div>
-                    </div>
-                </div>
+            <div class="ways-grid" style="padding:0 4px;" id="waysGridMain">
+                <!-- dynamically filled -->
             </div>
         </div>
 
@@ -395,7 +316,7 @@
             
             <!-- ANSWERING QUESTIONS SECTION -->
             <div class="feature-section active" id="questionsSection" style="display:block;">
-                <div class="feature-header"><h4>❓ Answer Questions & Earn</h4><span>Earn $0.50/question</span></div>
+                <div class="feature-header"><h4>❓ Answer Questions & Earn</h4><span id="questionsEarnDisplay">Earn 3,000 - 20,000 UGX ($0.90 - $5.99)</span></div>
                 <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:12px;">Click any question below to start earning. You'll chat, watch a video, then answer!</div>
                 <div style="margin:10px 0;">
                     <div class="questions-list">
@@ -412,7 +333,7 @@
             
             <!-- TIKTOK SECTION -->
             <div class="feature-section" id="tiktokSection">
-                <div class="feature-header"><h4>🎬 TikTok Videos</h4><span>Earn $0.20/video</span></div>
+                <div class="feature-header"><h4>🎬 TikTok Videos</h4><span id="tiktokEarnDisplay">Earn 3,000 - 20,000 UGX ($0.90 - $5.99)</span></div>
                 <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:10px;">Watch trending TikTok videos and earn real money!</div>
                 <div class="tiktok-grid">
                     <div class="video-card" onclick="handleVideoPlay('TikTok Dance Challenge', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')"><div class="thumb" style="background-image:url('https://picsum.photos/200/350?random=1');">▶</div><div class="video-title">✨ Dance Challenge</div></div>
@@ -425,7 +346,7 @@
             
             <!-- YOUTUBE SECTION -->
             <div class="feature-section" id="youtubeSection">
-                <div class="feature-header"><h4>📺 YouTube Videos</h4><span>Earn $0.25/video</span></div>
+                <div class="feature-header"><h4>📺 YouTube Videos</h4><span id="youtubeEarnDisplay">Earn 3,000 - 20,000 UGX ($0.90 - $5.99)</span></div>
                 <div style="font-size:13px;color:rgba(26,11,47,0.7);margin-bottom:10px;">Watch trending YouTube videos and earn daily rewards!</div>
                 <div class="youtube-grid">
                     <div class="video-card" onclick="handleVideoPlay('YouTube Tech Review', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')"><div class="thumb" style="background-image:url('https://picsum.photos/200/113?random=10');">▶</div><div class="video-title">📱 Tech Review</div></div>
@@ -437,20 +358,13 @@
             </div>
             
             <div class="activate-btn-wrapper"><a href="https://star-hela.com/register.php?ref=Myqashapp" class="activate-btn" target="_blank" rel="noopener noreferrer">🔓 Activate Account</a></div>
-            <div class="nav-chips">
-                <span class="nav-chip" onclick="handleEarning('Chat with Foreigners', '$4.60', '💬')">💬 Chat</span>
-                <span class="nav-chip" onclick="document.getElementById('questionsSection').scrollIntoView({behavior:'smooth'});">❓ Questions</span>
-                <span class="nav-chip" onclick="toggleTikTokSection();">🎬 TikTok</span>
-                <span class="nav-chip" onclick="toggleYouTubeSection();">📺 YouTube</span>
-                <span class="nav-chip" onclick="handleWhatsAppPosting();">📱 WhatsApp</span>
+            <div class="nav-chips" id="demoNavChips">
+                <!-- dynamically filled -->
             </div>
             <div style="margin-top:4px;">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="font-weight:700;font-size:15px;color:#1a0b2f;">Live Members</span><span style="color:rgba(26,11,47,0.5);font-weight:600;">—</span></div>
-                <div class="profile-list">
-                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=20" alt="Emma Dubois"></div><div class="profile-info"><div class="name">Emma Dubois</div><div class="location">📍 Paris, France</div></div><div class="profile-amount">—</div></div>
-                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=21" alt="Michael Johnson"></div><div class="profile-info"><div class="name">Michael Johnson</div><div class="location">📍 Toronto, Canada</div></div><div class="profile-amount">—</div></div>
-                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=22" alt="Sophie Williams"></div><div class="profile-info"><div class="name">Sophie Williams</div><div class="location">📍 Sydney, Australia</div></div><div class="profile-amount">—</div></div>
-                    <div class="profile-item"><div class="avatar"><img src="https://i.pravatar.cc/100?img=23" alt="Carlos Rivera"></div><div class="profile-info"><div class="name">Carlos Rivera</div><div class="location">📍 Madrid, Spain</div></div><div class="profile-amount">—</div></div>
+                <div class="profile-list" id="demoProfileList">
+                    <!-- dynamically filled -->
                 </div>
             </div>
             <div class="footer-note">✦ <span>myqashappug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
@@ -524,6 +438,145 @@
     </div>
 
     <script>
+        // ===== HELPER: random amount between min and max =====
+        function randomAmount(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function formatUGX(amount) {
+            return amount.toLocaleString();
+        }
+
+        function usdFromUGX(ugx) {
+            return (ugx / 3500).toFixed(2);
+        }
+
+        // ===== MAIN PAGE: WAYS TO EARN (dynamic amounts) =====
+        const waysData = [
+            { name: '🎉 Welcome Bonus', desc: 'Once you\'re officially in! A generous welcome bonus will be sent directly to your account. Start your journey with extra cash—simply sign up and it\'s yours instantly.', icon: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f389.png', style: 'border:2px solid #f7931e; background:linear-gradient(145deg, rgba(247,147,30,0.10), rgba(255,107,53,0.05));', btnText: '💰 Claim Bonus', btnClass: 'gold', onClick: 'handleWelcomeBonus()' },
+            { name: '💬 Chat with Foreigners', desc: 'Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.', icon: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop', style: '', btnText: 'Start Chatting', btnClass: '', onClick: "window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')" },
+            { name: '❓ Answering Questions', desc: 'Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!', icon: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=100&h=100&fit=crop', style: '', btnText: 'Start Answering', btnClass: 'gold', onClick: 'handleQuestionsPopup()' },
+            { name: '🎬 Paid TikTok Videos', desc: 'Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.', icon: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4f1.png', style: '', btnText: 'Watch Videos', btnClass: 'gold', onClick: "handleVideoPlay('Paid TikTok Videos', '$3.20', '🎬', 'https://www.tiktok.com/embed/v2/6872744864957664518', 'TikTok')" },
+            { name: '📈 Affiliate Bonus', desc: 'Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!', icon: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop', style: '', btnText: 'Start Promoting', btnClass: 'gold', onClick: 'openAffiliateBonus()' },
+            { name: '📱 WhatsApp Posting', desc: 'Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.', icon: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4ac.png', style: '', btnText: 'Start Posting', btnClass: '', onClick: 'handleWhatsAppPosting()' },
+            { name: '📺 YouTube Earning', desc: 'Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.', icon: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=100&h=100&fit=crop', style: '', btnText: 'Start Watching', btnClass: 'gold', onClick: "handleVideoPlay('YouTube Earning', '$4.00', '📺', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube')" },
+            { name: '🎰 Paid Spinning', desc: 'Spin the wheel and win cash prizes! Every spin gives you a chance to earn real money.', icon: 'https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=100&h=100&fit=crop', style: '', btnText: 'Start Spinning', btnClass: '', onClick: 'handleSpinning()' }
+        ];
+
+        function renderWaysGrid(containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            let html = '';
+            waysData.forEach((w, idx) => {
+                const ugx = randomAmount(3000, 20000);
+                const usd = usdFromUGX(ugx);
+                const earnText = `Earn ${formatUGX(ugx)} UGX ($${usd})`;
+                const btnAction = w.onClick;
+                const btnClass = w.btnClass ? `cta-btn ${w.btnClass}` : 'cta-btn';
+                html += `
+                    <div class="way-card" onclick="${btnAction}" style="${w.style || ''}">
+                        <img class="way-icon" src="${w.icon}" alt="${w.name}" loading="lazy" style="border-radius:14px; padding:6px; background:rgba(255,255,255,0.04); object-fit:cover;">
+                        <div class="way-content">
+                            <div class="way-name">${w.name}</div>
+                            <div class="way-desc">${w.desc}</div>
+                            <div class="way-earn">${earnText}</div>
+                            <div class="way-cta"><button class="${btnClass}" onclick="event.stopPropagation();${btnAction};return!1">${w.btnText}</button></div>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // ===== LIVE FOREIGNERS: dynamic amounts on chat buttons =====
+        function renderLiveUsersWithAmounts(profiles) {
+            const container = document.getElementById('liveUserList');
+            if (!container) return;
+            let html = '';
+            profiles.forEach((u) => {
+                const ugx = randomAmount(17000, 50000);
+                const formatted = formatUGX(ugx);
+                const msg = typingMessages[Math.floor(Math.random() * typingMessages.length)];
+                html += `
+                    <div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}">
+                        <div class="user-top">
+                            <img src="${u.img}" alt="${u.name}" loading="lazy">
+                            <div class="user-info">
+                                <div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div>
+                                <div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div>
+                                <div class="bio">${u.bio}</div>
+                                <div class="status typing-status">${msg}</div>
+                            </div>
+                        </div>
+                        <div class="user-actions">
+                            <a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat · Earn ${formatted} UGX</a>
+                            <a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // ===== DEMO PAGE: Live Members with dynamic amounts =====
+        const demoProfilePool = [
+            { name: 'Emma Dubois', location: '📍 Paris, France', img: 'https://i.pravatar.cc/100?img=20' },
+            { name: 'Michael Johnson', location: '📍 Toronto, Canada', img: 'https://i.pravatar.cc/100?img=21' },
+            { name: 'Sophie Williams', location: '📍 Sydney, Australia', img: 'https://i.pravatar.cc/100?img=22' },
+            { name: 'Carlos Rivera', location: '📍 Madrid, Spain', img: 'https://i.pravatar.cc/100?img=23' }
+        ];
+
+        function renderDemoProfiles() {
+            const container = document.getElementById('demoProfileList');
+            if (!container) return;
+            let html = '';
+            demoProfilePool.forEach(p => {
+                const ugx = randomAmount(17000, 50000);
+                const formatted = formatUGX(ugx);
+                html += `
+                    <div class="profile-item">
+                        <div class="avatar"><img src="${p.img}" alt="${p.name}"></div>
+                        <div class="profile-info"><div class="name">${p.name}</div><div class="location">${p.location}</div></div>
+                        <div class="profile-amount" style="font-size:13px;">💬 Earn ${formatted} UGX</div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // ===== DEMO PAGE: Nav chips with dynamic amounts =====
+        function renderDemoNavChips() {
+            const container = document.getElementById('demoNavChips');
+            if (!container) return;
+            const chips = [
+                { label: '💬 Chat', action: "handleEarning('Chat with Foreigners', '$4.60', '💬')" },
+                { label: '❓ Questions', action: "document.getElementById('questionsSection').scrollIntoView({behavior:'smooth'});" },
+                { label: '🎬 TikTok', action: "toggleTikTokSection();" },
+                { label: '📺 YouTube', action: "toggleYouTubeSection();" },
+                { label: '📱 WhatsApp', action: "handleWhatsAppPosting();" }
+            ];
+            let html = '';
+            chips.forEach(c => {
+                const ugx = randomAmount(3000, 20000);
+                const usd = usdFromUGX(ugx);
+                html += `<span class="nav-chip" onclick="${c.action}">${c.label} · ${formatUGX(ugx)} UGX ($${usd})</span>`;
+            });
+            container.innerHTML = html;
+        }
+
+        // ===== DEMO PAGE: Update earn displays =====
+        function updateDemoEarnDisplays() {
+            const elements = ['questionsEarnDisplay', 'tiktokEarnDisplay', 'youtubeEarnDisplay'];
+            elements.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const ugx = randomAmount(3000, 20000);
+                    const usd = usdFromUGX(ugx);
+                    el.textContent = `Earn ${formatUGX(ugx)} UGX ($${usd})`;
+                }
+            });
+        }
+
         // ===== SCROLL PROGRESS =====
         window.addEventListener('scroll', function() { const s = window.scrollY, d = document.documentElement.scrollHeight - window.innerHeight; document.getElementById('scrollProgress').style.width = (s / d * 100) + '%' });
         window.addEventListener('scroll', function() { const btn = document.getElementById('backToTop'); if (window.scrollY > 300) { btn.classList.add('visible') } else { btn.classList.remove('visible') } });
@@ -531,7 +584,13 @@
         // ===== DEMO PAGE =====
         function toggleTikTokSection() { const e = document.getElementById('tiktokSection'); if (e) { e.classList.toggle('active'); document.getElementById('questionsSection').classList.remove('active'); document.getElementById('youtubeSection').classList.remove('active') } }
         function toggleYouTubeSection() { const e = document.getElementById('youtubeSection'); if (e) { e.classList.toggle('active'); document.getElementById('questionsSection').classList.remove('active'); document.getElementById('tiktokSection').classList.remove('active') } }
-        function openDemoPage() { document.getElementById('demoPage').classList.add('active'); document.body.style.overflow = 'hidden' }
+        function openDemoPage() { 
+            document.getElementById('demoPage').classList.add('active'); 
+            document.body.style.overflow = 'hidden';
+            renderDemoProfiles();
+            renderDemoNavChips();
+            updateDemoEarnDisplays();
+        }
         function closeDemoPage() { document.getElementById('demoPage').classList.remove('active'); document.body.style.overflow = '' }
         function openDemoAction(t, a, u, i) { document.getElementById('actionIcon').textContent = i || '💰'; document.getElementById('actionTitle').textContent = t; document.getElementById('actionAmount').textContent = a || '—'; document.getElementById('actionUsd').textContent = '≈ ' + u + ' per action'; document.getElementById('demoActionPopup').classList.add('active') }
         function closeDemoAction() { document.getElementById('demoActionPopup').classList.remove('active') }
@@ -614,8 +673,7 @@
         let typingInterval;
         function getRandomProfiles() { const s = [...profilePool]; for (let i = s.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [s[i], s[j]] = [s[j], s[i]]; } return s.slice(0, 8); }
         function updateTypingStatus() { const statusElements = document.querySelectorAll('.typing-status'); if (statusElements.length === 0) return; statusElements.forEach(el => { const msg = typingMessages[Math.floor(Math.random() * typingMessages.length)]; el.textContent = msg; el.style.transition = 'opacity 0.3s'; el.style.opacity = '0.7'; setTimeout(() => { el.style.opacity = '1'; }, 100); }); const indicator = document.getElementById('typingIndicator'); if (indicator) { const randomUser = currentProfiles[Math.floor(Math.random() * currentProfiles.length)]; const statuses = ['typing now...','saying hello...','writing a reply...','sending a message...','thinking...','replying...']; const status = statuses[Math.floor(Math.random() * statuses.length)]; indicator.textContent = `${randomUser ? randomUser.name.split(' ')[0] : 'Someone'} is ${status}`; } }
-        function renderLiveUsers(p) { const c = document.getElementById('liveUserList'); let h = ''; p.forEach((u) => { const msg = typingMessages[Math.floor(Math.random() * typingMessages.length)]; h += `<div class="user-card" data-user="${u.name}" data-greeting="${u.greeting}" data-desperate="${u.desperate}" data-img="${u.img}" data-country="${u.country}"><div class="user-top"><img src="${u.img}" alt="${u.name}" loading="lazy"><div class="user-info"><div class="name">${u.name}, ${u.age} <span class="online-dot"></span></div><div class="country">${u.country} <span class="live-label">🔴 LIVE</span></div><div class="bio">${u.bio}</div><div class="status typing-status">${msg}</div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this);return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();handleVideoPlay('Watch ${u.name}\'s video', '$3.20', '▶️', 'https://www.youtube.com/embed/dQw4w9WgXcQ', 'YouTube');return!1">▶ Watch</a></div></div>` }); c.innerHTML = h; if (typingInterval) clearInterval(typingInterval); typingInterval = setInterval(updateTypingStatus, 3000); }
-        function rotateProfiles() { currentProfiles = getRandomProfiles(); renderLiveUsers(currentProfiles); document.getElementById('activeChatters').textContent = currentProfiles.length; setTimeout(updateTypingStatus, 500); }
+        function rotateProfiles() { currentProfiles = getRandomProfiles(); renderLiveUsersWithAmounts(currentProfiles); document.getElementById('activeChatters').textContent = currentProfiles.length; setTimeout(updateTypingStatus, 500); }
         rotateProfiles(); setInterval(rotateProfiles, 480000);
         
         // ===== LIVE COUNTERS =====
@@ -1148,6 +1206,13 @@
                     updateLifetimePrice(country, fee, currency);
                 });
             });
+
+            // Render main ways grid
+            renderWaysGrid('waysGridMain');
+            // Initial render of demo profiles and nav chips (will be re-rendered on demo open)
+            renderDemoProfiles();
+            renderDemoNavChips();
+            updateDemoEarnDisplays();
         });
     </script>
 </body>
