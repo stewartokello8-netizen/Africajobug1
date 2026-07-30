@@ -262,7 +262,7 @@
 
     <div class="chat-page-overlay" id="chatOverlay"><div class="chat-page"><div class="chat-page-header"><img id="chatPageAvatar" src="https://i.pravatar.cc/100?img=24" alt="User"><div class="info"><div class="name" id="chatPageName">Emma S.</div><div class="status" id="chatPageStatus">🇺🇸 USA · Online</div></div><button class="close-btn" onclick="closeChatPage()">✕</button></div><div class="chat-messages-area" id="chatMessagesArea"></div><div class="chat-upgrade-banner" id="chatUpgradeBanner">⛔ Chat is paused — <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to continue</a></div><div class="chat-page-footer"><input type="text" id="chatPageInput" placeholder="Type a message..."><button id="chatPageSendBtn" onclick="sendChatPageMessage()">Send</button></div></div></div>
 
-    <!-- WITHDRAWAL POPUP - 50 WITHDRAWALS (FOCUS ON UGANDA) + 30 ACTIVATIONS -->
+    <!-- WITHDRAWAL POPUP - 50 WITHDRAWALS + 30 ACTIVATIONS (3 withdrawals → 1 activation → repeat) -->
     <div id="withdrawalPopup">
         <div class="popup-card" id="popupCard">
             <img id="popupUserImage" src="https://i.pravatar.cc/80?img=1" alt="User" loading="lazy">
@@ -339,7 +339,6 @@
             let html = '';
             waysData.forEach((w, idx) => {
                 let ugx;
-                // Welcome Bonus fixed at 10,000 UGX
                 if (w.fixedAmount) {
                     ugx = w.fixedAmount;
                 } else {
@@ -379,7 +378,7 @@
             if (!container) return;
             let html = '';
             profiles.forEach((u) => {
-                const ugx = 17000; // fixed amount as requested
+                const ugx = 17000;
                 const formatted = formatUGX(ugx);
                 const msg = typingMessages[Math.floor(Math.random() * typingMessages.length)];
                 html += `
@@ -417,7 +416,7 @@
             if (!container) return;
             let html = '';
             demoProfilePool.forEach(p => {
-                const ugx = 17000; // fixed amount as requested
+                const ugx = 17000;
                 const formatted = formatUGX(ugx);
                 html += `
                     <div class="profile-item">
@@ -568,12 +567,12 @@
         // ===== LIVE COUNTERS =====
         ! function() { const c = document.getElementById('liveCounter'), o = document.getElementById('onlineNow'); let n = 3300; function u(v) { const f = v.toLocaleString(); c && (c.textContent = f); o && (o.textContent = f) } u(n); setInterval(() => { let d = Math.floor(Math.random() * 14) - 3, g = n + d; g < 3240 && (g = 3240 + Math.floor(Math.random() * 30)); g > 3600 && (g = 3600 - Math.floor(Math.random() * 30)); n = g; u(n) }, 2800); let t = 187432; const r = document.getElementById('trustCounter'); setInterval(() => { t += Math.floor(Math.random() * 5) + 2; t > 189500 && (t = 187000); r && (r.textContent = t.toLocaleString()) }, 2500); let h = 187450; const e = document.getElementById('heroCounter'); setInterval(() => { h += Math.floor(Math.random() * 3) + 1; h > 189500 && (h = 187000); e && (e.textContent = h.toLocaleString()) }, 3000); let l = 187432; const a = document.getElementById('liveUsers'); setInterval(() => { l += Math.floor(Math.random() * 6) + 1; l > 189500 && (l = 187000); a.textContent = l.toLocaleString() }, 5000) }();
         
-        // ===== WITHDRAWAL & ACTIVATION POPUPS - 50 withdrawals (mostly Uganda) + 30 activations =====
-        ! function() { 
-            // 50 WITHDRAWAL ENTRIES - Focus on Uganda (35+ Uganda entries)
+        // ===== WITHDRAWAL & ACTIVATION POPUPS - 3 withdrawals → 1 activation → repeat =====
+        !function() {
+            // 50 WITHDRAWAL ENTRIES - Focus on Uganda
             const withdrawals = [];
             const ugandaNames = [
-                'Sarah N.', 'Robert T.', 'Moses O.', 'Esther K.', 'Peter M.', 
+                'Sarah N.', 'Robert T.', 'Moses O.', 'Esther K.', 'Peter M.',
                 'John W.', 'Rebecca N.', 'Samuel T.', 'Joseph M.', 'Dorothy K.',
                 'Susan A.', 'Rose N.', 'David O.', 'Grace M.', 'Paul K.',
                 'Mary A.', 'James O.', 'Alice N.', 'George M.', 'Faith K.',
@@ -581,12 +580,11 @@
                 'Steven M.', 'Margaret O.', 'Charles K.', 'Elizabeth N.', 'Daniel O.',
                 'Ruth A.', 'Jane M.', 'Robert K.', 'Sarah O.', 'Peter K.'
             ];
-            
-            // Generate 50 withdrawals - 38 Uganda, 12 from other countries
+
             for (let i = 0; i < 50; i++) {
                 const isUganda = i < 38;
                 let flag, name, currency, method, gender, amount;
-                
+
                 if (isUganda) {
                     const nameIdx = i % ugandaNames.length;
                     flag = '🇺🇬';
@@ -613,7 +611,7 @@
                     else if (currency === 'GH₵') amount = randomAmount(100, 5000).toLocaleString();
                     else amount = randomAmount(100, 5000).toLocaleString();
                 }
-                
+
                 withdrawals.push({ flag, name, amount, method, gender, currency });
             }
 
@@ -627,11 +625,11 @@
                 'Margaret O.', 'Charles K.', 'Elizabeth N.', 'Daniel O.', 'Paul K.',
                 'Esther N.', 'John M.', 'Sarah O.', 'Robert K.', 'Moses A.'
             ];
-            
+
             for (let i = 0; i < 30; i++) {
                 const isUganda = i < 25;
                 let flag, name, gender, method, currency;
-                
+
                 if (isUganda) {
                     flag = '🇺🇬';
                     name = actUgandaNames[i % actUgandaNames.length];
@@ -651,23 +649,15 @@
                     name = country.names[Math.floor(Math.random() * country.names.length)];
                     gender = name.includes('K.') || name.includes('M.') || name.includes('O.') ? 'male' : 'female';
                 }
-                
+
                 activations.push({ flag, name, amount: 'Paid for activation', method, gender, currency });
             }
 
             // RELIABLE IMAGE POOLS - Using Pravatar for guaranteed working images
             const maleImages = [];
             const femaleImages = [];
-            
-            // Generate 50+ unique male images using Pravatar
-            for (let i = 1; i <= 60; i++) {
-                maleImages.push(`https://i.pravatar.cc/80?img=${i}`);
-            }
-            
-            // Generate 50+ unique female images using Pravatar
-            for (let i = 61; i <= 120; i++) {
-                femaleImages.push(`https://i.pravatar.cc/80?img=${i}`);
-            }
+            for (let i = 1; i <= 60; i++) maleImages.push(`https://i.pravatar.cc/80?img=${i}`);
+            for (let i = 61; i <= 120; i++) femaleImages.push(`https://i.pravatar.cc/80?img=${i}`);
 
             const p = document.getElementById('popupCard');
             const i = document.getElementById('popupUserImage');
@@ -680,17 +670,16 @@
             let usedActivationIndices = [];
             let usedMaleImages = [];
             let usedFemaleImages = [];
-            let isWithdrawal = true;
+            let withdrawalCount = 0;
 
-            function getUniqueImage(gender) { 
+            function getUniqueImage(gender) {
                 const pool = gender === 'female' ? femaleImages : maleImages;
                 const usedPool = gender === 'female' ? usedFemaleImages : usedMaleImages;
-                
-                // If we've used all images, reset
+
                 if (usedPool.length >= pool.length) {
                     if (gender === 'female') { usedFemaleImages = []; } else { usedMaleImages = []; }
                 }
-                
+
                 const available = pool.map((_, idx) => idx).filter(idx => !usedPool.includes(idx));
                 if (available.length === 0) {
                     if (gender === 'female') { usedFemaleImages = []; } else { usedMaleImages = []; }
@@ -699,19 +688,17 @@
                     if (gender === 'female') { usedFemaleImages.push(randomIdx2); } else { usedMaleImages.push(randomIdx2); }
                     return pool[randomIdx2];
                 }
-                
+
                 const randomIdx = available[Math.floor(Math.random() * available.length)];
                 if (gender === 'female') { usedFemaleImages.push(randomIdx); } else { usedMaleImages.push(randomIdx); }
                 return pool[randomIdx];
             }
 
             function showNextPopup() {
-                isWithdrawal = !isWithdrawal;
-                
-                if (isWithdrawal) {
+                if (withdrawalCount < 3) {
                     if (usedWithdrawalIndices.length >= withdrawals.length) { usedWithdrawalIndices = []; }
                     const available = withdrawals.map((_, idx) => idx).filter(idx => !usedWithdrawalIndices.includes(idx));
-                    if (available.length === 0) { usedWithdrawalIndices = []; return showNextPopup(); }
+                    if (available.length === 0) { usedWithdrawalIndices = []; }
                     const randomIdx = available[Math.floor(Math.random() * available.length)];
                     usedWithdrawalIndices.push(randomIdx);
                     const d = withdrawals[randomIdx];
@@ -721,10 +708,11 @@
                     a.textContent = d.currency + ' ' + d.amount;
                     t.textContent = '💸 Live Withdrawal';
                     t.style.color = '#00c6fb';
+                    withdrawalCount++;
                 } else {
                     if (usedActivationIndices.length >= activations.length) { usedActivationIndices = []; }
                     const available = activations.map((_, idx) => idx).filter(idx => !usedActivationIndices.includes(idx));
-                    if (available.length === 0) { usedActivationIndices = []; return showNextPopup(); }
+                    if (available.length === 0) { usedActivationIndices = []; }
                     const randomIdx = available[Math.floor(Math.random() * available.length)];
                     usedActivationIndices.push(randomIdx);
                     const d = activations[randomIdx];
@@ -734,13 +722,14 @@
                     a.textContent = d.amount;
                     t.textContent = '🔓 Live Activation';
                     t.style.color = '#00b894';
+                    withdrawalCount = 0;
                 }
 
                 p.style.display = 'flex';
                 p.style.animation = 'none';
                 p.offsetHeight;
                 p.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
-                
+
                 clearTimeout(window.popupTimer);
                 window.popupTimer = setTimeout(() => {
                     p.style.display = 'flex';
