@@ -42,10 +42,15 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:'Inter',system-ui,sans-serif;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;font-size:1.0625rem;line-height:1.6}.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#00c6fb,#005bea);z-index:10001;width:0%;transition:width .1s;box-shadow:0 0 20px rgba(0,150,255,.3)}.page-wrap{max-width:960px;width:100%;background:linear-gradient(145deg,#0a1628,#040b17);border-radius:0;padding:80px 24px 24px;margin:0 auto;box-shadow:0 0 15px rgba(0,150,255,.15);border:1px solid rgba(0,150,255,.15);position:relative}.page-wrap::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:3px;background:linear-gradient(90deg,transparent,#00c6fb,#005bea,#00c6fb,transparent);background-size:300% 100%;animation:shimmerBorder 4s ease-in-out infinite;border-radius:0 0 50% 50%}@keyframes shimmerBorder{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}.header-row{position:fixed;top:0;left:0;right:0;max-width:960px;margin:0 auto;background:rgba(10,22,40,.95);backdrop-filter:blur(20px);z-index:999;display:flex;align-items:center;justify-content:space-between;gap:8px 12px;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);width:100%}.brand{display:flex;align-items:center;gap:6px;flex-shrink:0}.brand-icon{display:none}.brand-name{font-size:22px;font-weight:900;letter-spacing:-.3px;color:#fff;white-space:nowrap}.brand-name span{background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.header-center{display:flex;align-items:center;gap:6px 10px;flex-shrink:0}.pipe-sep{color:rgba(255,255,255,.2);font-weight:300;font-size:18px;user-select:none;flex-shrink:0}.online-badge{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.06);padding:4px 12px 4px 8px;border-radius:60px;border:1px solid rgba(255,255,255,.08);font-weight:700;font-size:13px;color:#fff;white-space:nowrap;flex-shrink:0}.online-badge .live-dot{display:inline-block;width:8px;height:8px;background:#00c6fb;border-radius:50%;box-shadow:0 0 0 2px rgba(0,150,255,.3);animation:pulse-dot 1.8s ease-in-out infinite;flex-shrink:0}.online-badge .count-number{font-weight:800;color:#fff;min-width:35px;display:inline-block;text-align:center;font-feature-settings:"tnum";font-size:14px}.online-badge .label{font-weight:500;color:rgba(255,255,255,.6);font-size:11px}.signup-btn{background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;border:none;padding:6px 14px;border-radius:12px;font-weight:700;font-size:12px;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;gap:4px;box-shadow:0 4px 20px rgba(0,150,255,.3);border:1px solid rgba(255,255,255,.1);white-space:nowrap;text-decoration:none;flex-shrink:0;position:relative;overflow:hidden}.signup-btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.1),transparent);transform:translateX(-100%);transition:.6s}.signup-btn:hover::after{transform:translateX(100%)}.signup-btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 8px 32px rgba(0,150,255,.3)}@keyframes pulse-dot{0%{opacity:.6;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}100%{opacity:.6;transform:scale(.9)}}
 
-        /* ===== CURRENCY SELECTOR - ABOVE TRUST BADGE ===== */
-        .currency-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:10px;padding:6px 0 14px 0;width:100%;overflow-x:auto}.currency-btn{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.10);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:40px;cursor:pointer;transition:all .25s ease;font-family:'Inter',system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;flex-shrink:0;background:rgba(10,22,40,.7);backdrop-filter:blur(4px);box-shadow:0 2px 8px rgba(0,0,0,.2)}.currency-btn i{font-size:16px;color:rgba(255,255,255,.7)}.currency-btn:hover{background:rgba(0,150,255,.15);border-color:rgba(0,150,255,.4);transform:translateY(-2px)}.currency-btn.active{background:linear-gradient(135deg,#00c6fb,#005bea)!important;border-color:#00c6fb!important;color:#fff;box-shadow:0 4px 20px rgba(0,150,255,.3)}.currency-btn.active i{color:#fff}
+        /* ===== COMPACT CURRENCY SELECTOR - ABOVE TRUST BADGE ===== */
+        .currency-row{display:flex;flex-wrap:nowrap;justify-content:center;align-items:center;gap:4px;padding:4px 0 10px 0;width:100%;overflow-x:auto}
+        .currency-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);color:#fff;font-weight:600;font-size:11px;padding:5px 10px;border-radius:30px;cursor:pointer;transition:all .2s ease;font-family:'Inter',system-ui,sans-serif;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;flex-shrink:0;background:rgba(10,22,40,.7);backdrop-filter:blur(4px);box-shadow:0 1px 4px rgba(0,0,0,.2)}
+        .currency-btn i{font-size:11px;color:rgba(255,255,255,.6)}
+        .currency-btn:hover{background:rgba(0,150,255,.15);border-color:rgba(0,150,255,.4);transform:translateY(-1px)}
+        .currency-btn.active{background:linear-gradient(135deg,#00c6fb,#005bea)!important;border-color:#00c6fb!important;color:#fff;box-shadow:0 2px 10px rgba(0,150,255,.3)}
+        .currency-btn.active i{color:#fff}
 
-        .trust-badge-wrapper{padding:6px 0 12px;text-align:center}.trust-badge{display:inline-block;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);padding:4px 18px;border-radius:60px;font-size:12px;font-weight:700;color:#fff}.green-highlight{color:#00c6fb;font-weight:900}.section{padding:30px 20px 32px;margin-bottom:20px;border-radius:12px;transition:all .4s cubic-bezier(.16,1,.3,1);color:#fff;border:1px solid rgba(255,255,255,.08);animation:fadeInUp .6s ease forwards;opacity:0;background:linear-gradient(145deg,#0a1628,#040b17)}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.hero-section{background:linear-gradient(145deg,#0a1628,#040b17);border:2px solid rgba(0,150,255,.2);text-align:center;position:relative;overflow:hidden;padding:40px 20px 36px}.hero-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(0,150,255,.06),transparent 60%);animation:heroGlow 8s ease-in-out infinite}@keyframes heroGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(10%,10%)}}.hero-section>*{position:relative;z-index:1}.hero-title{font-family:'Inter',sans-serif;font-size:42px;font-weight:900;margin:0 0 4px;line-height:1.1;color:#fff;letter-spacing:-.5px}.hero-subtitle{font-family:'Inter',sans-serif;font-size:32px;font-weight:900;margin:0 0 10px;color:#fff;letter-spacing:-.3px;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-desc{font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;max-width:420px;margin:0 auto 18px}.hero-desc strong{color:#00c6fb;font-weight:800}.hero-buttons{display:flex;flex-direction:column;align-items:center;gap:12px}.hero-buttons .btn-group{display:flex;flex-wrap:nowrap;justify-content:center;gap:10px}.btn-primary{display:inline-flex;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;font-weight:700;font-size:15px;padding:14px 20px;border-radius:12px;text-decoration:none;border:2px solid rgba(255,255,255,.08);cursor:pointer;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,150,255,.3);position:relative;overflow:hidden;min-width:0;flex:1 1 auto;align-items:center;justify-content:center;height:54px}.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:.6s}.btn-primary:hover::after{transform:translateX(100%)}.btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 32px rgba(0,150,255,.3)}.btn-primary.gold{background:linear-gradient(135deg,#00b894,#00a381);box-shadow:0 4px 20px rgba(0,184,148,.3)}.btn-primary.navy{background:linear-gradient(135deg,#1a3a5a,#040b17);box-shadow:0 4px 20px rgba(10,26,47,.3);border-color:rgba(255,255,255,.1)}.section-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}.section-header .icon{width:40px;height:40px;background:linear-gradient(135deg,#00c6fb,#005bea);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(0,150,255,.3)}.section-header h2{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.3px}.section-header .badge{margin-left:auto;background:rgba(0,150,255,.2);padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;color:#00c6fb;border:1px solid rgba(0,150,255,.2);text-transform:uppercase;letter-spacing:.5px}.section-header .badge.live{background:#dc2626;color:#fff;border-color:#dc2626;animation:pulseBadge 2s ease-in-out infinite}@keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.6}}.section-subtitle{font-size:14px;color:rgba(255,255,255,.7);margin-top:-4px;margin-bottom:16px;line-height:1.6}.stats-grid{display:flex;justify-content:space-around;gap:12px}.stats-grid .stat-item{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(0,150,255,.12);border-radius:16px;padding:16px 8px;flex:1;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1)}.stats-grid .stat-item:hover{transform:translateY(-4px);border-color:rgba(0,150,255,.3);box-shadow:0 8px 32px rgba(0,0,0,.04)}.stats-grid .stat-item .stat-number{font-size:22px;font-weight:900;color:#00c6fb;font-feature-settings:"tnum"}.stats-grid .stat-item .stat-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}.ways-grid{display:flex;flex-direction:column;gap:14px;margin:6px 0 4px}.way-card{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 14px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px 20px;transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer}.way-card:hover{background:rgba(255,255,255,.10);border-color:#00c6fb;transform:translateX(6px) scale(1.02);box-shadow:0 8px 32px rgba(0,0,0,.04)}.way-card .way-icon{width:56px;height:56px;border-radius:14px;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);padding:6px}.way-card .way-content{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}.way-card .way-content .way-name{font-weight:800;font-size:17px;color:#fff}.way-card .way-content .way-desc{font-size:14px;color:rgba(255,255,255,.8);line-height:1.5}.way-card .way-content .way-earn{font-weight:900;font-size:16px;color:#00c6fb}.way-card .way-content .way-earn .sub{font-size:10px;font-weight:600;color:rgba(255,255,255,.5)}.way-card .way-content .way-cta .cta-btn{display:inline-block;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;padding:8px 22px;border-radius:40px;font-size:13px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);white-space:nowrap;box-shadow:0 2px 10px rgba(0,150,255,.3)}.way-card .way-content .way-cta .cta-btn:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(0,150,255,.3)}.way-card .way-content .way-cta .cta-btn.gold{background:linear-gradient(135deg,#00b894,#00a381);box-shadow:0 2px 10px rgba(0,184,148,.3);color:#fff}.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;border-radius:16px;margin-bottom:16px;border:2px solid rgba(255,255,255,.06)}.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}.video-label{display:flex;align-items:center;gap:10px;margin-bottom:12px}.video-label .badge-video{background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:4px 16px;border-radius:40px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}.video-label h3{font-size:17px;font-weight:700;color:#fff}.video-explain{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:16px;line-height:1.6;background:rgba(255,255,255,.04);padding:12px 16px;border-radius:12px;border-left:4px solid #00c6fb}.video-explain strong{color:#00c6fb}
+        .trust-badge-wrapper{padding:4px 0 10px;text-align:center}.trust-badge{display:inline-block;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);padding:4px 18px;border-radius:60px;font-size:12px;font-weight:700;color:#fff}.green-highlight{color:#00c6fb;font-weight:900}.section{padding:30px 20px 32px;margin-bottom:20px;border-radius:12px;transition:all .4s cubic-bezier(.16,1,.3,1);color:#fff;border:1px solid rgba(255,255,255,.08);animation:fadeInUp .6s ease forwards;opacity:0;background:linear-gradient(145deg,#0a1628,#040b17)}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.hero-section{background:linear-gradient(145deg,#0a1628,#040b17);border:2px solid rgba(0,150,255,.2);text-align:center;position:relative;overflow:hidden;padding:40px 20px 36px}.hero-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(0,150,255,.06),transparent 60%);animation:heroGlow 8s ease-in-out infinite}@keyframes heroGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(10%,10%)}}.hero-section>*{position:relative;z-index:1}.hero-title{font-family:'Inter',sans-serif;font-size:42px;font-weight:900;margin:0 0 4px;line-height:1.1;color:#fff;letter-spacing:-.5px}.hero-subtitle{font-family:'Inter',sans-serif;font-size:32px;font-weight:900;margin:0 0 10px;color:#fff;letter-spacing:-.3px;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero-desc{font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;max-width:420px;margin:0 auto 18px}.hero-desc strong{color:#00c6fb;font-weight:800}.hero-buttons{display:flex;flex-direction:column;align-items:center;gap:12px}.hero-buttons .btn-group{display:flex;flex-wrap:nowrap;justify-content:center;gap:10px}.btn-primary{display:inline-flex;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;font-weight:700;font-size:15px;padding:14px 20px;border-radius:12px;text-decoration:none;border:2px solid rgba(255,255,255,.08);cursor:pointer;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,150,255,.3);position:relative;overflow:hidden;min-width:0;flex:1 1 auto;align-items:center;justify-content:center;height:54px}.btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:.6s}.btn-primary:hover::after{transform:translateX(100%)}.btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 32px rgba(0,150,255,.3)}.btn-primary.gold{background:linear-gradient(135deg,#00b894,#00a381);box-shadow:0 4px 20px rgba(0,184,148,.3)}.btn-primary.navy{background:linear-gradient(135deg,#1a3a5a,#040b17);box-shadow:0 4px 20px rgba(10,26,47,.3);border-color:rgba(255,255,255,.1)}.section-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}.section-header .icon{width:40px;height:40px;background:linear-gradient(135deg,#00c6fb,#005bea);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(0,150,255,.3)}.section-header h2{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.3px}.section-header .badge{margin-left:auto;background:rgba(0,150,255,.2);padding:4px 16px;border-radius:40px;font-size:10px;font-weight:700;color:#00c6fb;border:1px solid rgba(0,150,255,.2);text-transform:uppercase;letter-spacing:.5px}.section-header .badge.live{background:#dc2626;color:#fff;border-color:#dc2626;animation:pulseBadge 2s ease-in-out infinite}@keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.6}}.section-subtitle{font-size:14px;color:rgba(255,255,255,.7);margin-top:-4px;margin-bottom:16px;line-height:1.6}.stats-grid{display:flex;justify-content:space-around;gap:12px}.stats-grid .stat-item{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(0,150,255,.12);border-radius:16px;padding:16px 8px;flex:1;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1)}.stats-grid .stat-item:hover{transform:translateY(-4px);border-color:rgba(0,150,255,.3);box-shadow:0 8px 32px rgba(0,0,0,.04)}.stats-grid .stat-item .stat-number{font-size:22px;font-weight:900;color:#00c6fb;font-feature-settings:"tnum"}.stats-grid .stat-item .stat-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}.ways-grid{display:flex;flex-direction:column;gap:14px;margin:6px 0 4px}.way-card{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 14px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px 20px;transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer}.way-card:hover{background:rgba(255,255,255,.10);border-color:#00c6fb;transform:translateX(6px) scale(1.02);box-shadow:0 8px 32px rgba(0,0,0,.04)}.way-card .way-icon{width:56px;height:56px;border-radius:14px;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);padding:6px}.way-card .way-content{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}.way-card .way-content .way-name{font-weight:800;font-size:17px;color:#fff}.way-card .way-content .way-desc{font-size:14px;color:rgba(255,255,255,.8);line-height:1.5}.way-card .way-content .way-earn{font-weight:900;font-size:16px;color:#00c6fb}.way-card .way-content .way-earn .sub{font-size:10px;font-weight:600;color:rgba(255,255,255,.5)}.way-card .way-content .way-cta .cta-btn{display:inline-block;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;padding:8px 22px;border-radius:40px;font-size:13px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);white-space:nowrap;box-shadow:0 2px 10px rgba(0,150,255,.3)}.way-card .way-content .way-cta .cta-btn:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(0,150,255,.3)}.way-card .way-content .way-cta .cta-btn.gold{background:linear-gradient(135deg,#00b894,#00a381);box-shadow:0 2px 10px rgba(0,184,148,.3);color:#fff}.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;border-radius:16px;margin-bottom:16px;border:2px solid rgba(255,255,255,.06)}.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}.video-label{display:flex;align-items:center;gap:10px;margin-bottom:12px}.video-label .badge-video{background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;padding:4px 16px;border-radius:40px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}.video-label h3{font-size:17px;font-weight:700;color:#fff}.video-explain{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:16px;line-height:1.6;background:rgba(255,255,255,.04);padding:12px 16px;border-radius:12px;border-left:4px solid #00c6fb}.video-explain strong{color:#00c6fb}
 
         /* ===== LIVE FOREIGNERS SECTION (MAIN PAGE) ===== */
         .live-foreigners-section {
@@ -584,7 +589,7 @@
             <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="signup-btn">Sign Up</a>
         </div>
 
-        <!-- ===== CURRENCY SELECTOR – ABOVE TRUST BADGE ===== -->
+        <!-- ===== COMPACT CURRENCY SELECTOR – ABOVE TRUST BADGE ===== -->
         <div class="currency-row" id="currencyRow">
             <button class="currency-btn active" data-currency="UGX"><i class="fas fa-coins"></i> UGX</button>
             <button class="currency-btn" data-currency="KES"><i class="fas fa-coins"></i> KSh</button>
@@ -599,7 +604,7 @@
         <div class="section hero-section">
             <h1 class="hero-title">Get Paid <span style="color:#fff;">Every Time</span></h1>
             <h2 class="hero-subtitle">Turn Clicks to Cash</h2>
-            <p class="hero-desc">Join <span class="green-highlight" id="heroCounter">187,450</span>+ Africans earning <strong>50,000UGX - 100,000UGX </strong> by watching videos, Chatting people worldwide, Answering Qns, Spinning to win <strong>daily withdraw</strong> via Mobile Money, No Experience Needed.</p>
+            <p class="hero-desc">Join <span class="green-highlight" id="heroCounter">187,450</span>+ Africans earning <strong id="heroEarningRange">50,000UGX - 100,000UGX</strong> by watching videos, Chatting people worldwide, Answering Qns, Spinning to win <strong>daily withdraw</strong> via Mobile Money, No Experience Needed.</p>
             <div class="hero-buttons">
                 <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
                 <div class="btn-group">
@@ -613,30 +618,30 @@
         <div class="earnings-scroll">
             <span class="scroll-label">🔥 EARNING</span>
             <span class="scroll-content" id="earningsScroll">
-                <span>🇰🇪 James K. earned KSh 1,612 &nbsp;|&nbsp; </span>
-                <span>🇬🇭 Maureen A. earned GH₵ 1,129 &nbsp;|&nbsp; </span>
-                <span>🇺🇬 Sarah N. earned UGX 56,240 &nbsp;|&nbsp; </span>
-                <span>🇳🇬 Chidi O. earned ₦ 16,800 &nbsp;|&nbsp; </span>
-                <span>🇿🇦 Lindiwe M. earned R 258 &nbsp;|&nbsp; </span>
-                <span>🇰🇪 Omar H. earned KSh 1,200 &nbsp;|&nbsp; </span>
-                <span>🇷🇼 Diane U. earned RWF 14,800 &nbsp;|&nbsp; </span>
-                <span>🇨🇲 Samuel B. earned XAF 6,200 &nbsp;|&nbsp; </span>
-                <span>🇧🇼 Kabelo S. earned BWP 19,400 &nbsp;|&nbsp; </span>
-                <span>🇬🇭 Akosua K. earned GH₵ 2,150 &nbsp;|&nbsp; </span>
-                <span>🇺🇬 Robert T. earned UGX 51,430 &nbsp;|&nbsp; </span>
-                <span>🇳🇬 Amara E. earned ₦ 32,500 &nbsp;|&nbsp; </span>
-                <span>🇰🇪 Grace W. earned KSh 1,445 &nbsp;|&nbsp; </span>
-                <span>🇳🇬 Tunde A. earned ₦ 25,500 &nbsp;|&nbsp; </span>
-                <span>🇺🇬 Moses O. earned UGX 189,810 &nbsp;|&nbsp; </span>
-                <span>🇿🇦 Zanele D. earned R 948 &nbsp;|&nbsp; </span>
-                <span>🇰🇪 Faith N. earned KSh 5,121 &nbsp;|&nbsp; </span>
-                <span>🇷🇼 Jean P. earned RWF 23,400 &nbsp;|&nbsp; </span>
-                <span>🇨🇲 Marie B. earned XAF 23,900 &nbsp;|&nbsp; </span>
-                <span>🇬🇭 Yaw A. earned GH₵ 4,850 &nbsp;|&nbsp; </span>
-                <span>🇺🇬 Esther K. earned UGX 215,340 &nbsp;|&nbsp; </span>
-                <span>🇹🇿 Juma H. earned TSh 36,700 &nbsp;|&nbsp; </span>
-                <span>🇿🇲 Chanda M. earned ZMW 2,100 &nbsp;|&nbsp; </span>
-                <span>🇲🇼 Grace P. earned MWK 12,500 &nbsp;|&nbsp; </span>
+                <span data-amount="1612" data-currency="KES">🇰🇪 James K. earned KSh 1,612 &nbsp;|&nbsp; </span>
+                <span data-amount="1129" data-currency="GHS">🇬🇭 Maureen A. earned GH₵ 1,129 &nbsp;|&nbsp; </span>
+                <span data-amount="56240" data-currency="UGX">🇺🇬 Sarah N. earned UGX 56,240 &nbsp;|&nbsp; </span>
+                <span data-amount="16800" data-currency="NGN">🇳🇬 Chidi O. earned ₦ 16,800 &nbsp;|&nbsp; </span>
+                <span data-amount="258" data-currency="ZAR">🇿🇦 Lindiwe M. earned R 258 &nbsp;|&nbsp; </span>
+                <span data-amount="1200" data-currency="KES">🇰🇪 Omar H. earned KSh 1,200 &nbsp;|&nbsp; </span>
+                <span data-amount="14800" data-currency="RWF">🇷🇼 Diane U. earned RWF 14,800 &nbsp;|&nbsp; </span>
+                <span data-amount="6200" data-currency="XAF">🇨🇲 Samuel B. earned XAF 6,200 &nbsp;|&nbsp; </span>
+                <span data-amount="19400" data-currency="BWP">🇧🇼 Kabelo S. earned BWP 19,400 &nbsp;|&nbsp; </span>
+                <span data-amount="2150" data-currency="GHS">🇬🇭 Akosua K. earned GH₵ 2,150 &nbsp;|&nbsp; </span>
+                <span data-amount="51430" data-currency="UGX">🇺🇬 Robert T. earned UGX 51,430 &nbsp;|&nbsp; </span>
+                <span data-amount="32500" data-currency="NGN">🇳🇬 Amara E. earned ₦ 32,500 &nbsp;|&nbsp; </span>
+                <span data-amount="1445" data-currency="KES">🇰🇪 Grace W. earned KSh 1,445 &nbsp;|&nbsp; </span>
+                <span data-amount="25500" data-currency="NGN">🇳🇬 Tunde A. earned ₦ 25,500 &nbsp;|&nbsp; </span>
+                <span data-amount="189810" data-currency="UGX">🇺🇬 Moses O. earned UGX 189,810 &nbsp;|&nbsp; </span>
+                <span data-amount="948" data-currency="ZAR">🇿🇦 Zanele D. earned R 948 &nbsp;|&nbsp; </span>
+                <span data-amount="5121" data-currency="KES">🇰🇪 Faith N. earned KSh 5,121 &nbsp;|&nbsp; </span>
+                <span data-amount="23400" data-currency="RWF">🇷🇼 Jean P. earned RWF 23,400 &nbsp;|&nbsp; </span>
+                <span data-amount="23900" data-currency="XAF">🇨🇲 Marie B. earned XAF 23,900 &nbsp;|&nbsp; </span>
+                <span data-amount="4850" data-currency="GHS">🇬🇭 Yaw A. earned GH₵ 4,850 &nbsp;|&nbsp; </span>
+                <span data-amount="215340" data-currency="UGX">🇺🇬 Esther K. earned UGX 215,340 &nbsp;|&nbsp; </span>
+                <span data-amount="36700" data-currency="TZS">🇹🇿 Juma H. earned TSh 36,700 &nbsp;|&nbsp; </span>
+                <span data-amount="2100" data-currency="ZMW">🇿🇲 Chanda M. earned ZMW 2,100 &nbsp;|&nbsp; </span>
+                <span data-amount="12500" data-currency="MWK">🇲🇼 Grace P. earned MWK 12,500 &nbsp;|&nbsp; </span>
             </span>
         </div>
 
@@ -693,11 +698,11 @@
         <div class="section section-stories">
             <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge">REAL PEOPLE</span></div>
             <div style="display:flex;flex-direction:column;gap:4px;text-align:left;">
-                <div class="story-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kelvin O. · Lagos, Nigeria</div><div class="samount">2,240,000 UGX earned last week</div><div class="sdesc">"Cleared my rent in 9 days. Absolutely legit and life-changing!"</div></div></div>
-                <div class="story-card"><img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Amaka N. · Enugu, Nigeria</div><div class="samount">1,860,000 UGX earned this month</div><div class="sdesc">"Chatting with foreigners while earning is the best! I can't believe it's real."</div></div></div>
-                <div class="story-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kwame B. · Accra, Ghana</div><div class="samount">1,120,000 UGX earned this week</div><div class="sdesc">"MoMo withdrawal in seconds. So reliable! This platform is a game-changer."</div></div></div>
-                <div class="story-card"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Faith W. · Nairobi, Kenya</div><div class="samount">980,000 UGX earned this week</div><div class="sdesc">"Paid my school fees in just 2 weeks! I'm so grateful for this opportunity."</div></div></div>
-                <div class="story-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Peter M. · Kampala, Uganda</div><div class="samount">1,550,000 UGX earned last month</div><div class="sdesc">"Best decision ever! I now earn more than my regular job. Highly recommend!"</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kelvin O. · Lagos, Nigeria</div><div class="samount" data-amount="2240000" data-currency="UGX">2,240,000 UGX earned last week</div><div class="sdesc">"Cleared my rent in 9 days. Absolutely legit and life-changing!"</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Amaka N. · Enugu, Nigeria</div><div class="samount" data-amount="1860000" data-currency="UGX">1,860,000 UGX earned this month</div><div class="sdesc">"Chatting with foreigners while earning is the best! I can't believe it's real."</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kwame B. · Accra, Ghana</div><div class="samount" data-amount="1120000" data-currency="UGX">1,120,000 UGX earned this week</div><div class="sdesc">"MoMo withdrawal in seconds. So reliable! This platform is a game-changer."</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Faith W. · Nairobi, Kenya</div><div class="samount" data-amount="980000" data-currency="UGX">980,000 UGX earned this week</div><div class="sdesc">"Paid my school fees in just 2 weeks! I'm so grateful for this opportunity."</div></div></div>
+                <div class="story-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Peter M. · Kampala, Uganda</div><div class="samount" data-amount="1550000" data-currency="UGX">1,550,000 UGX earned last month</div><div class="sdesc">"Best decision ever! I now earn more than my regular job. Highly recommend!"</div></div></div>
             </div>
         </div>
 
@@ -758,10 +763,10 @@
                     <div class="earnings">
                         <div class="label"><i class="fas fa-coins"></i> EARNING</div>
                         <div class="earnings-grid" id="demoEarningsGrid">
-                            <div class="earn-card">+UGX 11,257 <small>just now</small></div>
-                            <div class="earn-card">+UGX 13,103 <small>1m ago</small></div>
-                            <div class="earn-card">+UGX 16,636 <small>3m ago</small></div>
-                            <div class="earn-card">+UGX 15,773 <small>5m ago</small></div>
+                            <div class="earn-card" data-amount="11257" data-currency="UGX">+UGX 11,257 <small>just now</small></div>
+                            <div class="earn-card" data-amount="13103" data-currency="UGX">+UGX 13,103 <small>1m ago</small></div>
+                            <div class="earn-card" data-amount="16636" data-currency="UGX">+UGX 16,636 <small>3m ago</small></div>
+                            <div class="earn-card" data-amount="15773" data-currency="UGX">+UGX 15,773 <small>5m ago</small></div>
                         </div>
                     </div>
                     <div class="people-strip-wrapper">
@@ -862,7 +867,7 @@
                 <div class="name" id="popupUserName">🇺🇬 Sarah N.</div>
                 <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;">
                     <span class="method" id="popupMethod">via Mobile Money</span>
-                    <span class="amount-display" id="popupAmount">UGX 2,400,000</span>
+                    <span class="amount-display" id="popupAmount" data-amount="2400000" data-currency="UGX">UGX 2,400,000</span>
                 </div>
                 <div style="margin-top:2px;">
                     <span class="live-indicator"><span class="live-dot-small"></span> LIVE · <span id="popupTime">just now</span></span>
@@ -907,66 +912,196 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-        function formatUGX(amount) {
-            return amount.toLocaleString();
+        function formatNumber(num) {
+            return num.toLocaleString();
         }
 
         function usdFromUGX(ugx) {
             return (ugx / 3500).toFixed(2);
         }
 
-        // ===== CURRENCY SELECTOR =====
+        // ===== CURRENCY SELECTOR - COMPACT & UPDATES ENTIRE PAGE =====
         (function() {
-            const R = { UGX:1, KES:.027, GHS:.00039, NGN:.12, USD:.00027 };
-            const S = { UGX:'UGX', KES:'KSh', GHS:'GH₵', NGN:'₦', USD:'$' };
-            const BASE = { price:50000, withdraw:2400000 };
+            const RATES = { 
+                UGX: 1, 
+                KES: 0.027, 
+                GHS: 0.00039, 
+                NGN: 0.12, 
+                USD: 0.00027,
+                ZAR: 0.00032,
+                RWF: 0.00082,
+                XAF: 0.0018,
+                BWP: 0.0011,
+                TZS: 0.00069,
+                ZMW: 0.00045,
+                MWK: 0.00028
+            };
+            const SYMBOLS = { 
+                UGX: 'UGX', 
+                KES: 'KSh', 
+                GHS: 'GH₵', 
+                NGN: '₦', 
+                USD: '$',
+                ZAR: 'R',
+                RWF: 'RWF',
+                XAF: 'XAF',
+                BWP: 'BWP',
+                TZS: 'TSh',
+                ZMW: 'ZMW',
+                MWK: 'MWK'
+            };
 
-            // Find all price elements on the page that need to be updated
-            // We'll update the hero description and earnings scroll items
-            const heroPriceEl = document.querySelector('.hero-desc strong');
-            const trustCounter = document.getElementById('trustCounter');
-            
-            // Store original values for reference
-            const originalHeroText = heroPriceEl ? heroPriceEl.textContent : '50,000UGX - 100,000UGX';
-            
-            // Extract the numeric values from the hero text
-            let heroValues = [50000, 100000];
-            if (heroPriceEl) {
-                const match = heroPriceEl.textContent.match(/([\d,]+)UGX - ([\d,]+)UGX/);
-                if (match) {
-                    heroValues = [parseInt(match[1].replace(/,/g,'')), parseInt(match[2].replace(/,/g,''))];
+            let currentCurrency = 'UGX';
+
+            // ---- Update Hero Earning Range ----
+            function updateHero(currency) {
+                const rate = RATES[currency] || 1;
+                const sym = SYMBOLS[currency] || currency;
+                const heroEl = document.getElementById('heroEarningRange');
+                if (heroEl) {
+                    const val1 = Math.round(50000 * rate);
+                    const val2 = Math.round(100000 * rate);
+                    heroEl.textContent = `${formatNumber(val1)}${sym} - ${formatNumber(val2)}${sym}`;
                 }
             }
 
-            function updateAllPrices(currency) {
-                const rate = R[currency] || 1;
-                const sym = S[currency] || currency;
-                
-                // Update hero section
-                if (heroPriceEl) {
-                    const val1 = Math.round(heroValues[0] * rate);
-                    const val2 = Math.round(heroValues[1] * rate);
-                    heroPriceEl.textContent = `${val1.toLocaleString()}${sym} - ${val2.toLocaleString()}${sym}`;
-                }
-                
-                // Update earnings scroll items - find all spans with currency values
-                const scrollItems = document.querySelectorAll('.earnings-scroll .scroll-content span');
-                scrollItems.forEach(item => {
-                    // Find and replace currency amounts
-                    const text = item.textContent;
-                    // Match patterns like "earned KSh 1,612" or "earned UGX 56,240"
-                    const match = text.match(/(earned )([A-Z]{2,4}) ([\d,]+)/);
-                    if (match) {
-                        const oldAmount = parseInt(match[3].replace(/,/g,''));
-                        const newAmount = Math.round(oldAmount / R[match[2]] * rate);
-                        item.textContent = text.replace(match[0], `${match[1]}${sym} ${newAmount.toLocaleString()}`);
+            // ---- Update Earnings Scroll ----
+            function updateEarningsScroll(currency) {
+                const rate = RATES[currency] || 1;
+                const sym = SYMBOLS[currency] || currency;
+                const items = document.querySelectorAll('#earningsScroll span[data-amount]');
+                items.forEach(item => {
+                    const amount = parseInt(item.dataset.amount);
+                    const origCurrency = item.dataset.currency;
+                    if (!isNaN(amount)) {
+                        // Convert to UGX first, then to target currency
+                        const ugxAmount = amount / (RATES[origCurrency] || 1);
+                        const newAmount = Math.round(ugxAmount * rate);
+                        // Update text content
+                        const text = item.textContent;
+                        const match = text.match(/^(.*?earned\s+)[A-Za-z]+/);
+                        if (match) {
+                            const prefix = match[1];
+                            const suffix = text.replace(/^.*?earned\s+[A-Za-z]+\s+[\d,]+/, '');
+                            item.textContent = `${prefix}${sym} ${formatNumber(newAmount)}${suffix}`;
+                        }
                     }
                 });
-                
-                // Update trust counter (optional - keep as is)
-                // trustCounter remains unchanged as requested
             }
 
+            // ---- Update Success Stories ----
+            function updateStories(currency) {
+                const rate = RATES[currency] || 1;
+                const sym = SYMBOLS[currency] || currency;
+                const items = document.querySelectorAll('.story-card .samount[data-amount]');
+                items.forEach(item => {
+                    const amount = parseInt(item.dataset.amount);
+                    if (!isNaN(amount)) {
+                        const ugxAmount = amount / (RATES[item.dataset.currency] || 1);
+                        const newAmount = Math.round(ugxAmount * rate);
+                        const text = item.textContent;
+                        const match = text.match(/^([\d,]+)\s+[A-Za-z]+/);
+                        if (match) {
+                            const suffix = text.replace(/^[\d,]+\s+[A-Za-z]+/, '');
+                            item.textContent = `${formatNumber(newAmount)} ${sym}${suffix}`;
+                        }
+                    }
+                });
+            }
+
+            // ---- Update Withdrawal Popup ----
+            function updateWithdrawalPopup(currency) {
+                const rate = RATES[currency] || 1;
+                const sym = SYMBOLS[currency] || currency;
+                const popupAmount = document.getElementById('popupAmount');
+                if (popupAmount && popupAmount.dataset.amount) {
+                    const amount = parseInt(popupAmount.dataset.amount);
+                    if (!isNaN(amount)) {
+                        const ugxAmount = amount / (RATES[popupAmount.dataset.currency] || 1);
+                        const newAmount = Math.round(ugxAmount * rate);
+                        const text = popupAmount.textContent;
+                        const match = text.match(/^[A-Za-z]+\s+([\d,]+)/);
+                        if (match) {
+                            popupAmount.textContent = `${sym} ${formatNumber(newAmount)}`;
+                            popupAmount.dataset.currency = currency;
+                        }
+                    }
+                }
+            }
+
+            // ---- Update Live Chat Earnings (Demo Page) ----
+            function updateDemoEarnings(currency) {
+                const rate = RATES[currency] || 1;
+                const sym = SYMBOLS[currency] || currency;
+                const cards = document.querySelectorAll('#demoEarningsGrid .earn-card[data-amount]');
+                cards.forEach(card => {
+                    const amount = parseInt(card.dataset.amount);
+                    if (!isNaN(amount)) {
+                        const ugxAmount = amount / (RATES[card.dataset.currency] || 1);
+                        const newAmount = Math.round(ugxAmount * rate);
+                        const text = card.textContent;
+                        const match = text.match(/^\+[A-Za-z]+\s+([\d,]+)/);
+                        if (match) {
+                            const suffix = text.replace(/^\+[A-Za-z]+\s+[\d,]+/, '');
+                            card.innerHTML = `+${sym} ${formatNumber(newAmount)}${suffix}`;
+                            card.dataset.currency = currency;
+                        }
+                    }
+                });
+            }
+
+            // ---- Update Affiliate Bonus Popup ----
+            function updateAffiliateBonus(currency) {
+                const rate = RATES[currency] || 1;
+                const sym = SYMBOLS[currency] || currency;
+                const levels = ['affL1', 'affL2', 'affL3'];
+                const baseAmounts = [10300, 5000, 2000];
+                levels.forEach((id, idx) => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        const newAmount = Math.round(baseAmounts[idx] * rate);
+                        el.textContent = `${formatNumber(newAmount)} ${sym}`;
+                    }
+                });
+                const hint = document.getElementById('affiliateHint');
+                if (hint) {
+                    const flag = hint.textContent.match(/^[^\s]+/);
+                    const label = hint.textContent.match(/<span>([^<]+)<\/span>/);
+                    if (label) {
+                        const l1 = Math.round(10300 * rate);
+                        const l2 = Math.round(5000 * rate);
+                        const l3 = Math.round(2000 * rate);
+                        hint.innerHTML = `${flag ? flag[0] : '🇺🇬'} <span>${label[1]}</span> · L1: ${formatNumber(l1)} | L2: ${formatNumber(l2)} | L3: ${formatNumber(l3)} ${sym}`;
+                    }
+                }
+            }
+
+            // ---- Master Update Function ----
+            function updateAllPrices(currency) {
+                currentCurrency = currency;
+                updateHero(currency);
+                updateEarningsScroll(currency);
+                updateStories(currency);
+                updateWithdrawalPopup(currency);
+                updateDemoEarnings(currency);
+                updateAffiliateBonus(currency);
+                
+                // Update currency symbols in the "Ways to Earn" section
+                document.querySelectorAll('.way-earn').forEach(el => {
+                    const text = el.textContent;
+                    const match = text.match(/Earn\s+([\d,]+)\s+[A-Za-z]+\s+\(\$([\d.]+)\)/);
+                    if (match) {
+                        const amount = parseInt(match[1].replace(/,/g,''));
+                        const usd = parseFloat(match[2]);
+                        const rate = RATES[currency] || 1;
+                        const sym = SYMBOLS[currency] || currency;
+                        const newAmount = Math.round(amount * rate);
+                        el.textContent = `Earn ${formatNumber(newAmount)} ${sym} ($${usd.toFixed(2)})`;
+                    }
+                });
+            }
+
+            // ---- Attach Click Events ----
             document.querySelectorAll('.currency-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
@@ -975,7 +1110,7 @@
                 });
             });
 
-            // Initialize with UGX
+            // ---- Initialize with UGX ----
             updateAllPrices('UGX');
         })();
 
@@ -1012,7 +1147,7 @@
                     }
                 }
                 const usd = usdFromUGX(ugx);
-                const earnText = `Earn ${formatUGX(ugx)} UGX ($${usd})`;
+                const earnText = `Earn ${formatNumber(ugx)} UGX ($${usd})`;
                 const btnAction = w.onClick;
                 const btnClass = w.btnClass ? `cta-btn ${w.btnClass}` : 'cta-btn';
                 html += `
@@ -1045,7 +1180,7 @@
             chips.forEach(c => {
                 const ugx = 17000;
                 const usd = usdFromUGX(ugx);
-                html += `<span class="nav-chip" onclick="${c.action}">${c.label} · ${formatUGX(ugx)} UGX ($${usd})</span>`;
+                html += `<span class="nav-chip" onclick="${c.action}">${c.label} · ${formatNumber(ugx)} UGX ($${usd})</span>`;
             });
             container.innerHTML = html;
         }
@@ -1146,16 +1281,16 @@
                     const nameIdx = i % ugandaNames.length;
                     flag = '🇺🇬'; name = ugandaNames[nameIdx]; currency = 'UGX'; method = ['Mobile Money','Airtel Money','M-Pesa'][Math.floor(Math.random() * 3)];
                     gender = nameGenderMap[name] || (name.includes('M.') || name.includes('O.') || name.includes('K.') || name.includes('M.') ? 'male' : 'female');
-                    amount = randomAmount(200000, 4800000).toLocaleString();
+                    amount = randomAmount(200000, 4800000);
                 } else {
-                    const countries = [{ flag:'🇰🇪',currency:'KSh',method:'M-Pesa',names:['James K.','Omar H.','Grace W.','David K.','Faith N.','Patrick M.','Jane W.']},{ flag:'🇳🇬',currency:'₦',method:'MoMo',names:['Chidi O.','Amara E.','Tunde A.','Chioma E.','Emeka O.','David O.']},{ flag:'🇬🇭',currency:'GH₵',method:'MoMo',names:['Maureen A.','Akosua K.','Kwame A.','Esi B.','Yaw S.','Ama K.']},{ flag:'🇿🇦',currency:'R',method:'Bank Transfer',names:['Lindiwe M.','Zanele D.','Thabo M.']}];
+                    const countries = [{ flag:'🇰🇪',currency:'KES',method:'M-Pesa',names:['James K.','Omar H.','Grace W.','David K.','Faith N.','Patrick M.','Jane W.']},{ flag:'🇳🇬',currency:'NGN',method:'MoMo',names:['Chidi O.','Amara E.','Tunde A.','Chioma E.','Emeka O.','David O.']},{ flag:'🇬🇭',currency:'GHS',method:'MoMo',names:['Maureen A.','Akosua K.','Kwame A.','Esi B.','Yaw S.','Ama K.']},{ flag:'🇿🇦',currency:'ZAR',method:'Bank Transfer',names:['Lindiwe M.','Zanele D.','Thabo M.']}];
                     const country = countries[Math.floor(Math.random() * countries.length)];
                     flag = country.flag; currency = country.currency; method = country.method; name = country.names[Math.floor(Math.random() * country.names.length)];
                     gender = nameGenderMap[name] || (name.includes('K.') || name.includes('M.') || name.includes('O.') ? 'male' : 'female');
-                    if (currency === 'KSh') amount = randomAmount(1000, 15000).toLocaleString();
-                    else if (currency === '₦') amount = randomAmount(10000, 150000).toLocaleString();
-                    else if (currency === 'GH₵') amount = randomAmount(100, 5000).toLocaleString();
-                    else amount = randomAmount(100, 5000).toLocaleString();
+                    if (currency === 'KES') amount = randomAmount(1000, 15000);
+                    else if (currency === 'NGN') amount = randomAmount(10000, 150000);
+                    else if (currency === 'GHS') amount = randomAmount(100, 5000);
+                    else amount = randomAmount(100, 5000);
                 }
                 withdrawals.push({ flag, name, amount, method, gender, currency });
             }
@@ -1189,7 +1324,10 @@
                 i.src = getUniqueImage(d.gender);
                 n.textContent = d.flag + ' ' + d.name;
                 l.textContent = 'via ' + d.method;
-                a.textContent = d.currency + ' ' + d.amount;
+                const sym = { UGX:'UGX', KES:'KSh', GHS:'GH₵', NGN:'₦', USD:'$', ZAR:'R', RWF:'RWF', XAF:'XAF', BWP:'BWP', TZS:'TSh', ZMW:'ZMW', MWK:'MWK' };
+                a.textContent = (sym[d.currency] || d.currency) + ' ' + d.amount.toLocaleString();
+                a.dataset.amount = d.amount;
+                a.dataset.currency = d.currency;
                 t.textContent = '💸 Live Withdrawal';
                 t.style.color = '#00c6fb';
                 timeEl.textContent = 'just now';
@@ -1216,7 +1354,7 @@
         document.getElementById('chatOverlay').addEventListener('click', function(e) { if (e.target === this) closeChatPage() });
 
         // ===== AFFILIATE BONUS =====
-        const AFFILIATE_DATA = { uganda: { l1: '10,300', l2: '5,000', l3: '2,000', currency: 'UGX', label: 'Uganda', flag: '🇺🇬' }, cameroon: { l1: '2,000', l2: '1,000', l3: '500', currency: 'XAF', label: 'Cameroon', flag: '🇨🇲' }, ghana: { l1: '50', l2: '30', l3: '20', currency: 'GH₵', label: 'Ghana', flag: '🇬🇭' }, kenya: { l1: '300', l2: '150', l3: '50', currency: 'KSh', label: 'Kenya', flag: '🇰🇪' }, nigeria: { l1: '5,000', l2: '2,000', l3: '1,000', currency: '₦', label: 'Nigeria', flag: '🇳🇬' }, usd: { l1: '3', l2: '2', l3: '1', currency: 'USD', label: 'USD', flag: '🇺🇸' } };
+        const AFFILIATE_DATA = { uganda: { l1: '10,300', l2: '5,000', l3: '2,000', currency: 'UGX', label: 'Uganda', flag: '🇺🇬' }, cameroon: { l1: '2,000', l2: '1,000', l3: '500', currency: 'XAF', label: 'Cameroon', flag: '🇨🇲' }, ghana: { l1: '50', l2: '30', l3: '20', currency: 'GHS', label: 'Ghana', flag: '🇬🇭' }, kenya: { l1: '300', l2: '150', l3: '50', currency: 'KES', label: 'Kenya', flag: '🇰🇪' }, nigeria: { l1: '5,000', l2: '2,000', l3: '1,000', currency: 'NGN', label: 'Nigeria', flag: '🇳🇬' }, usd: { l1: '3', l2: '2', l3: '1', currency: 'USD', label: 'USD', flag: '🇺🇸' } };
         let affCurrent = 'uganda';
         function updateAffiliate(countryKey) { const data = AFFILIATE_DATA[countryKey]; if (!data) return; document.getElementById('affL1').textContent = data.l1 + ' ' + data.currency; document.getElementById('affL2').textContent = data.l2 + ' ' + data.currency; document.getElementById('affL3').textContent = data.l3 + ' ' + data.currency; document.getElementById('affiliateHint').innerHTML = `${data.flag} <span>${data.label}</span> · L1: ${data.l1} | L2: ${data.l2} | L3: ${data.l3} ${data.currency}`; document.querySelectorAll('#affiliateCountrySelector .bonus-country-btn').forEach(btn => { btn.classList.toggle('active', btn.dataset.country === countryKey) }); affCurrent = countryKey; }
         function openAffiliateBonus() { const overlay = document.getElementById('affiliateBonusOverlay'); if (overlay) { updateAffiliate(affCurrent); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; } }
