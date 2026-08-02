@@ -54,22 +54,25 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .green-highlight{color:#00c6fb;font-weight:900}
 .section{padding:30px 20px 32px;margin-bottom:20px;border-radius:12px;transition:all .4s cubic-bezier(.16,1,.3,1);color:#fff;border:1px solid rgba(255,255,255,.08);animation:fadeInUp .6s ease forwards;opacity:0;background:linear-gradient(145deg,#0a1628,#040b17)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.hero-section{background:linear-gradient(145deg,#0a1628,#040b17);border:2px solid rgba(0,150,255,.2);text-align:center;position:relative;overflow:hidden;padding:45px 30px 35px}
+
+/* HERO SECTION - Fixed to match screenshot */
+.hero-section{background:linear-gradient(145deg,#0a1628,#040b17);border:2px solid rgba(0,150,255,.2);text-align:center;position:relative;overflow:hidden;padding:40px 20px 35px}
 .hero-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30%50%,rgba(0,150,255,.06),transparent 60%);animation:heroGlow 8s ease-in-out infinite}
 @keyframes heroGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(10%,10%)}}
 .hero-section>*{position:relative;z-index:1}
-.hero-title{font-family:Inter,sans-serif;font-size:40px;font-weight:900;margin:0 0 4px;line-height:1.1;color:#fff;letter-spacing:-.5px}
-.hero-subtitle{font-family:Inter,sans-serif;font-size:30px;font-weight:900;margin:0 0 10px;color:#fff;letter-spacing:-.3px;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-desc{font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;max-width:480px;margin:0 auto 18px}
+.hero-title{font-family:Inter,sans-serif;font-size:38px;font-weight:900;margin:0 0 2px;line-height:1.1;color:#fff;letter-spacing:-.5px}
+.hero-subtitle{font-family:Inter,sans-serif;font-size:28px;font-weight:900;margin:0 0 8px;color:#fff;letter-spacing:-.3px;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:13px;color:rgba(255,255,255,.85);line-height:1.6;max-width:480px;margin:0 auto 14px}
 .hero-desc strong{color:#00c6fb;font-weight:800}
-.hero-buttons{display:flex;flex-direction:column;align-items:center;gap:12px}
-.hero-buttons .btn-group{display:flex;flex-wrap:nowrap;justify-content:center;gap:10px}
-.btn-primary{display:inline-flex;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;font-weight:700;font-size:15px;padding:14px 20px;border-radius:12px;text-decoration:none;border:2px solid rgba(255,255,255,.08);cursor:pointer;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,150,255,.3);position:relative;overflow:hidden;min-width:0;flex:1 1 auto;align-items:center;justify-content:center;height:50px}
+.hero-buttons{display:flex;flex-direction:column;align-items:center;gap:10px}
+.hero-buttons .btn-group{display:flex;flex-wrap:nowrap;justify-content:center;gap:10px;width:100%;max-width:380px}
+.btn-primary{display:inline-flex;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;font-weight:700;font-size:15px;padding:12px 24px;border-radius:12px;text-decoration:none;border:2px solid rgba(255,255,255,.08);cursor:pointer;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,150,255,.3);position:relative;overflow:hidden;min-width:120px;align-items:center;justify-content:center;height:48px}
 .btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:.6s}
 .btn-primary:hover::after{transform:translateX(100%)}
 .btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 32px rgba(0,150,255,.3)}
 .btn-primary.gold{background:linear-gradient(135deg,#00b894,#00a381);box-shadow:0 4px 20px rgba(0,184,148,.3)}
 .btn-primary.navy{background:linear-gradient(135deg,#1a3a5a,#040b17);box-shadow:0 4px 20px rgba(10,26,47,.3);border-color:rgba(255,255,255,.1)}
+
 .section-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .section-header .icon{width:40px;height:40px;background:linear-gradient(135deg,#00c6fb,#005bea);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(0,150,255,.3)}
 .section-header h2{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.3px}
@@ -77,11 +80,16 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .section-header .badge.live{background:#dc2626;color:#fff;border-color:#dc2626;animation:pulseBadge 2s ease-in-out infinite}
 @keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.6}}
 .section-subtitle{font-size:14px;color:rgba(255,255,255,.7);margin-top:-4px;margin-bottom:16px;line-height:1.6}
+
+/* Section Dividers */
+.section-divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);margin:10px 0 20px}
+
 .stats-grid{display:flex;justify-content:space-around;gap:12px}
 .stats-grid .stat-item{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(0,150,255,.12);border-radius:16px;padding:16px 8px;flex:1;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1)}
 .stats-grid .stat-item:hover{transform:translateY(-4px);border-color:rgba(0,150,255,.3);box-shadow:0 8px 32px rgba(0,0,0,.04)}
 .stats-grid .stat-item .stat-number{font-size:22px;font-weight:900;color:#00c6fb;font-feature-settings:"tnum"}
 .stats-grid .stat-item .stat-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
 .ways-grid{display:flex;flex-direction:column;gap:14px;margin:6px 0 4px}
 .way-card{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 14px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px 20px;transition:all .4s cubic-bezier(.16,1,.3,1);cursor:pointer}
 .way-card:hover{background:rgba(255,255,255,.10);border-color:#00c6fb;transform:translateX(6px) scale(1.02);box-shadow:0 8px 32px rgba(0,0,0,.04)}
@@ -93,6 +101,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .way-card .way-content .way-cta .cta-btn{display:inline-block;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;padding:8px 22px;border-radius:40px;font-size:13px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .4s cubic-bezier(.16,1,.3,1);white-space:nowrap;box-shadow:0 2px 10px rgba(0,150,255,.3)}
 .way-card .way-content .way-cta .cta-btn:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(0,150,255,.3)}
 .way-card .way-content .way-cta .cta-btn.gold{background:linear-gradient(135deg,#00b894,#00a381);box-shadow:0 2px 10px rgba(0,184,148,.3);color:#fff}
+
 .video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;border-radius:16px;margin-bottom:16px;border:2px solid rgba(255,255,255,.06)}
 .video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
 .video-label{display:flex;align-items:center;gap:10px;margin-bottom:12px}
@@ -100,6 +109,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .video-label h3{font-size:17px;font-weight:700;color:#fff}
 .video-explain{font-size:13px;color:rgba(255,255,255,.8);margin-bottom:16px;line-height:1.6;background:rgba(255,255,255,.04);padding:12px 16px;border-radius:12px;border-left:4px solid #00c6fb}
 .video-explain strong{color:#00c6fb}
+
 .live-foreigners-section{background:#f0f2f5!important;color:#1a0b2f!important;border-color:#d1d5db!important;padding:20px 16px 22px!important;margin:0 -24px 16px!important;border-radius:0!important}
 .live-foreigners-section .section-header h2{color:#1a0b2f!important}
 .live-foreigners-section .section-header .icon{background:linear-gradient(135deg,#00c6fb,#005bea)!important}
@@ -132,15 +142,22 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .earnings-scroll .scroll-content{display:inline-block;font-weight:700;color:#fff;font-size:12px;white-space:nowrap;padding-left:4px;position:relative;z-index:1;animation:scrollText 40s linear infinite}
 .earnings-scroll .scroll-content span{display:inline-block;padding:0 8px;color:#fff}
 @keyframes scrollText{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Withdrawal Methods - Clean with top divider */
+.withdraw-section .section-withdraw{padding-top:20px}
 .withdraw-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;max-width:420px;margin:0 auto}
 .withdraw-grid .item{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);padding:8px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.04);text-align:center;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);transition:all .4s cubic-bezier(.16,1,.3,1)}
 .withdraw-grid .item:hover{transform:translateY(-3px);border-color:#00b894}
+
+/* How It Works */
 .how-step{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:14px 18px;margin-bottom:10px;transition:all .4s cubic-bezier(.16,1,.3,1)}
 .how-step:hover{transform:translateX(6px);border-color:#00c6fb}
 .how-step .step-num{width:40px;height:40px;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;flex-shrink:0;box-shadow:0 4px 12px rgba(0,150,255,.3)}
 .how-step .step-info{flex:1}
 .how-step .step-info .step-title{font-weight:800;font-size:15px;color:#fff}
 .how-step .step-info .step-desc{font-size:13px;color:rgba(255,255,255,.7)}
+
+/* Success Stories */
 .story-card{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:12px 16px;margin-bottom:10px;transition:all .4s cubic-bezier(.16,1,.3,1)}
 .story-card:hover{transform:translateX(6px);border-color:rgba(0,150,255,.2)}
 .story-card img{width:52px;height:52px;border-radius:100%;object-fit:cover;border:2px solid #00c6fb;flex-shrink:0}
@@ -148,6 +165,8 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .story-card .story-info .sname{font-weight:800;font-size:14px;color:#fff}
 .story-card .story-info .samount{font-weight:800;font-size:14px;color:#00c6fb}
 .story-card .story-info .sdesc{font-size:13px;color:rgba(255,255,255,.7);line-height:1.4;margin-top:2px}
+
+/* FAQ */
 details summary{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;cursor:pointer;font-weight:700;font-size:15px;color:#fff;list-style:none;border-radius:16px;background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);transition:all .4s cubic-bezier(.16,1,.3,1)}
 details summary:hover{background:rgba(255,255,255,.08);border-color:rgba(0,150,255,.2)}
 details summary::-webkit-details-marker{display:none}
@@ -155,6 +174,8 @@ details summary .arrow{font-size:14px;color:rgba(255,255,255,.4);transition:tran
 details[open] summary .arrow{transform:rotate(180deg)}
 details[open] summary{border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom-color:transparent}
 details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-top:none;border-radius:0 0 16px 16px;color:rgba(255,255,255,.7);line-height:1.7;font-size:14px}
+
+/* Footer */
 .footer-section{margin-top:24px;padding-top:24px;border-top:2px solid rgba(255,255,255,.04);background:#040b17;margin-left:-24px;margin-right:-24px;padding-left:24px;padding-right:24px;padding-bottom:20px;border-radius:0;position:relative;overflow:hidden}
 .footer-section::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#00c6fb,#005bea,#00c6fb,transparent);background-size:300%100%;animation:shimmerBorder 4s ease-in-out infinite}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px 12px;margin-bottom:16px;position:relative;z-index:1}
@@ -198,9 +219,8 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 .chat-footer button{background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;border:none;padding:10px 20px;border-radius:30px;font-weight:700;font-size:13px;cursor:pointer;transition:all .4s;box-shadow:0 4px 16px rgba(0,150,255,.3)}
 .chat-footer button:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(0,150,255,.3)}
 .chat-footer button:disabled{opacity:.5;cursor:not-allowed;transform:none}
-@keyframes slideUpFast{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
 
-/* WITHDRAWAL POPUP - White Background Smaller */
+/* WITHDRAWAL POPUP */
 #withdrawalPopup{position:fixed;bottom:100px;left:20px;z-index:9999;width:calc(100% - 40px);max-width:480px;pointer-events:none;display:flex;flex-direction:column;gap:6px}
 #withdrawalPopup .popup-card{background:#fff;backdrop-filter:blur(20px);border:2px solid #e2e8f0;border-radius:12px;padding:12px 14px;box-shadow:0 8px 32px rgba(0,0,0,.1);display:flex;align-items:center;gap:10px;pointer-events:auto;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1) forwards;width:100%;max-width:480px}
 #withdrawalPopup .popup-card img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid #00c6fb;flex-shrink:0}
@@ -214,7 +234,7 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 .popup-card .live-indicator{display:inline-flex;align-items:center;gap:3px;font-size:8px;font-weight:700;color:#10b981;background:rgba(16,185,129,0.15);padding:1px 8px 1px 5px;border-radius:40px;border:1px solid rgba(16,185,129,0.2);margin-top:2px;animation:pulse-dot 1.2s ease-in-out infinite}
 .popup-card .live-indicator .live-dot-small{display:inline-block;width:5px;height:5px;background:#10b981;border-radius:50%;box-shadow:0 0 0 2px rgba(16,185,129,0.25);animation:pulse-dot 1.2s ease-in-out infinite}
 
-/* ACTION POPUP - White Background Smaller */
+/* ACTION POPUP */
 .action-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:30000;display:none;align-items:center;justify-content:center;padding:20px}
 .action-popup-overlay.active{display:flex}
 .action-popup{background:#fff;border-radius:20px;padding:24px 22px 22px;max-width:380px;width:100%;text-align:center;animation:slideUpFast .3s cubic-bezier(.16,1,.3,1);box-shadow:0 20px 60px rgba(0,0,0,.2)}
@@ -228,13 +248,13 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 .action-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 30px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
 .action-popup .btn-close:hover{background:#e2e8f0}
 
-/* QUESTIONS POPUP - Smaller */
+/* QUESTIONS POPUP */
 .questions-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:30000;display:none;align-items:center;justify-content:center;padding:20px}
 .questions-popup-overlay.active{display:flex}
 .questions-popup{background:#fff;border-radius:20px;padding:22px 20px 20px;max-width:380px;width:100%;animation:slideUpFast .3s cubic-bezier(.16,1,.3,1);box-shadow:0 20px 60px rgba(0,0,0,.2)}
 .questions-popup .icon{font-size:36px;text-align:center;margin-bottom:2px}
 .questions-popup h3{font-size:17px;font-weight:800;color:#1a0b2f;text-align:center;margin-bottom:8px}
-.questions-popup .question-item{background:#f8fafc;border-radius:12px;padding:12px 14px;margin-bottom:8px;border:1px solid #e2e8f0;cursor:pointer;transition:all .3s}
+.questions-popup .question-item{background:#f8fafc;border-radius:12px;padding:10px 14px;margin-bottom:8px;border:1px solid #e2e8f0;cursor:pointer;transition:all .3s}
 .questions-popup .question-item:hover{background:#f1f5f9;transform:translateX(4px)}
 .questions-popup .question-item .q{font-weight:600;font-size:13px;color:#1a0b2f}
 .questions-popup .question-item .a{font-size:12px;color:#64748b;margin-top:2px}
@@ -244,7 +264,7 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 .questions-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 30px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
 .questions-popup .btn-close:hover{background:#e2e8f0}
 
-/* VIDEO POPUP - Smaller */
+/* VIDEO POPUP */
 .video-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:30000;display:none;align-items:center;justify-content:center;padding:20px}
 .video-popup-overlay.active{display:flex}
 .video-popup{background:#fff;border-radius:20px;padding:20px 18px 22px;max-width:520px;width:100%;animation:slideUpFast .3s cubic-bezier(.16,1,.3,1);box-shadow:0 20px 60px rgba(0,0,0,.2)}
@@ -257,7 +277,7 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 .video-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 30px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
 .video-popup .btn-close:hover{background:#e2e8f0}
 
-/* WHEEL POPUP - Smaller */
+/* WHEEL POPUP */
 .wheel-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);z-index:30000;display:none;align-items:center;justify-content:center;padding:20px}
 .wheel-popup-overlay.active{display:flex}
 .wheel-popup{background:#fff;border-radius:20px;padding:22px 20px 20px;max-width:380px;width:100%;text-align:center;animation:slideUpFast .3s cubic-bezier(.16,1,.3,1);box-shadow:0 20px 60px rgba(0,0,0,.2)}
@@ -276,6 +296,8 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 .wheel-popup .claim-btn:hover{transform:scale(1.02);box-shadow:0 6px 24px rgba(0,184,148,.3)}
 .wheel-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 30px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
 .wheel-popup .btn-close:hover{background:#e2e8f0}
+
+@keyframes slideUpFast{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
 
 /* DEMO PAGE */
 .demo-page{position:fixed;top:0;left:0;width:100%;height:100%;background:#f8fafc;z-index:20000;display:none;flex-direction:column;overflow-y:auto;padding:20px 16px 30px}
@@ -438,13 +460,13 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 </div>
 <div class="trust-badge-wrapper"><div class="trust-badge">⭐ TRUSTED BY <span class="green-highlight" id="trustCounter">187,432</span>+ AFRICANS</div></div>
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION - Fixed to match screenshot -->
 <div class="section hero-section">
 <h1 class="hero-title">Get Paid <span style="color:#fff;">Every Time</span></h1>
 <h2 class="hero-subtitle">Turn Clicks to Cash</h2>
 <p class="hero-desc">Join <span class="green-highlight" id="heroCounter">187,450</span>+ Africans earning <strong id="heroEarningRange">50,000UGX - 100,000UGX</strong> by watching videos, Chatting people worldwide, Answering Qns, Spinning to win <strong>daily withdraw</strong> via Mobile Money, No Experience Needed.</p>
 <div class="hero-buttons">
-<a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
+<a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="min-width:180px;width:auto;padding:12px 32px;">Register Now</a>
 <div class="btn-group">
 <a href="#" class="btn-primary gold" onclick="openDemoPage();return!1">Try Free Demo</a>
 <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary navy">Login</a>
@@ -502,7 +524,7 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 </div>
 </div>
 
-<!-- LIVE FOREIGNERS - 8 Profiles -->
+<!-- LIVE FOREIGNERS -->
 <div class="section section-live live-foreigners-section" id="liveChatSection">
 <div class="section-header"><div class="icon">💬</div><h2>Live Foreigners Online</h2><span class="badge live">🔴 LIVE</span></div>
 <div class="live-intro"><span class="live-count">👥 <span id="activeChatters">8</span> members online</span><span class="live-tip">🔥 <span id="typingIndicator">Someone is typing...</span></span></div>
@@ -516,12 +538,29 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 <div class="ways-grid" style="padding:0 4px;" id="waysGridMain"></div>
 </div>
 
+<!-- SECTION DIVIDER -->
+<div class="section-divider"></div>
+
 <!-- WITHDRAWAL METHODS -->
 <div class="section section-withdraw">
 <div class="section-header"><div class="icon" style="background:linear-gradient(135deg,#00b894,#00a381);">🏦</div><h2>Withdrawal Methods</h2><span class="badge" style="background:#00b894;color:#0a1628;border-color:#00b894;">💸 FAST</span></div>
 <p class="section-subtitle">By country — instant payouts</p>
-<div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;"><div class="withdraw-grid"><div class="item">🇰🇪 Kenya → M-Pesa</div><div class="item">🇨🇲 Cameroon → MoMo</div><div class="item">🇬🇭 Ghana → MoMo</div><div class="item">🇳🇬 Nigeria → MoMo</div><div class="item">🇺🇬 Uganda → Mobile Money</div><div class="item">🇷🇼 Rwanda → Mobile Wallet</div><div class="item">🇿🇦 South Africa → Bank Transfer</div><div class="item">🇧🇼 Botswana → Mobile Money</div></div></div>
+<div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;">
+<div class="withdraw-grid">
+<div class="item" onclick="openWithdrawalPopup('🇰🇪 Kenya','M-Pesa')">🇰🇪 Kenya → M-Pesa</div>
+<div class="item" onclick="openWithdrawalPopup('🇨🇲 Cameroon','MoMo')">🇨🇲 Cameroon → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇬🇭 Ghana','MoMo')">🇬🇭 Ghana → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇳🇬 Nigeria','MoMo')">🇳🇬 Nigeria → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇺🇬 Uganda','Mobile Money')">🇺🇬 Uganda → Mobile Money</div>
+<div class="item" onclick="openWithdrawalPopup('🇷🇼 Rwanda','Mobile Wallet')">🇷🇼 Rwanda → Mobile Wallet</div>
+<div class="item" onclick="openWithdrawalPopup('🇿🇦 South Africa','Bank Transfer')">🇿🇦 South Africa → Bank Transfer</div>
+<div class="item" onclick="openWithdrawalPopup('🇧🇼 Botswana','Mobile Money')">🇧🇼 Botswana → Mobile Money</div>
 </div>
+</div>
+</div>
+
+<!-- SECTION DIVIDER -->
+<div class="section-divider"></div>
 
 <!-- HOW IT WORKS -->
 <div class="section section-how">
@@ -535,6 +574,9 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 <div style="text-align:center;margin-top:12px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:16px;padding:14px 32px;">Get Started Now</a></div>
 </div>
 
+<!-- SECTION DIVIDER -->
+<div class="section-divider"></div>
+
 <!-- SUCCESS STORIES -->
 <div class="section section-stories">
 <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge">REAL PEOPLE</span></div>
@@ -546,6 +588,9 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 <div class="story-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Peter M. · Kampala, Uganda</div><div class="samount" data-amount="1550000" data-currency="UGX">1,550,000 UGX earned last month</div><div class="sdesc">"Best decision ever! I now earn more than my regular job. Highly recommend!"</div></div></div>
 </div>
 </div>
+
+<!-- SECTION DIVIDER -->
+<div class="section-divider"></div>
 
 <!-- FAQ -->
 <div class="section section-faq">
@@ -569,9 +614,7 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 </div>
 </div>
 
-<!-- ============================================================ -->
 <!-- CHAT OVERLAY -->
-<!-- ============================================================ -->
 <div class="chat-overlay" id="chatOverlay" onclick="if(event.target===this)closeChatOverlay()">
 <div class="chat-box">
 <div class="chat-box-header">
@@ -597,9 +640,7 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 </div>
 </div>
 
-<!-- ============================================================ -->
 <!-- WITHDRAWAL POPUP -->
-<!-- ============================================================ -->
 <div id="withdrawalPopup">
 <div class="popup-card" id="popupCard">
 <img id="popupUserImage" src="https://i.pravatar.cc/80?img=1" alt="User" loading="lazy">
@@ -618,9 +659,7 @@ details .faq-content{padding:10px 18px 18px;background:rgba(255,255,255,.02);bac
 </div>
 </div>
 
-<!-- ============================================================ -->
-<!-- QUESTIONS POPUP - 3 Sample Questions -->
-<!-- ============================================================ -->
+<!-- QUESTIONS POPUP -->
 <div class="questions-popup-overlay" id="questionsPopupOverlay" onclick="if(event.target===this)closeQuestionsPopup()">
 <div class="questions-popup">
 <div class="icon">❓</div>
@@ -651,9 +690,7 @@ function openQuestionsPopup(){document.getElementById('questionsPopupOverlay').c
 function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').classList.remove('active');document.body.style.overflow=''}
 </script>
 
-<!-- ============================================================ -->
 <!-- ACTION POPUP -->
-<!-- ============================================================ -->
 <div class="action-popup-overlay" id="actionPopupOverlay" onclick="if(event.target===this)closeActionPopup()">
 <div class="action-popup">
 <div class="icon" id="popupIcon">🎵</div>
@@ -666,9 +703,7 @@ function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').
 </div>
 </div>
 
-<!-- ============================================================ -->
 <!-- VIDEO POPUP -->
-<!-- ============================================================ -->
 <div class="video-popup-overlay" id="videoPopupOverlay" onclick="if(event.target===this)closeVideoPopup()">
 <div class="video-popup">
 <div class="video-title">
@@ -681,9 +716,7 @@ function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').
 </div>
 </div>
 
-<!-- ============================================================ -->
 <!-- WHEEL POPUP -->
-<!-- ============================================================ -->
 <div class="wheel-popup-overlay" id="wheelPopupOverlay" onclick="if(event.target===this)closeWheelPopup()">
 <div class="wheel-popup">
 <div class="icon">🎰</div>
@@ -707,9 +740,7 @@ function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').
 </div>
 </div>
 
-<!-- ============================================================ -->
 <!-- DEMO PAGE -->
-<!-- ============================================================ -->
 <div class="demo-page" id="demoPage">
 <div class="demo-header"><button class="back-btn" onclick="closeDemoPage()">← Back</button><span class="page-title">Dashboard</span><span style="width:80px;"></span></div>
 <div class="demo-card">
@@ -821,9 +852,7 @@ function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').
 </div>
 </div>
 
-<!-- ============================================================ -->
 <!-- WHATSAPP FLOAT -->
-<!-- ============================================================ -->
 <a href="https://chat.whatsapp.com/HfHXIocqLqpEtLEhobuCvP" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
 <div class="whatsapp-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp"></div>
 <span class="whatsapp-text">WhatsApp Group</span>
@@ -900,6 +929,7 @@ function closeActionPopup(){
 }
 
 function openActivationPopup(){openActionPopup('🔓 Activate Account','Get 10,000 UGX Bonus!','$2.86','🔓')}
+function openWithdrawalPopup(country, method){openActionPopup('💸 Withdrawal via '+method,'Up to 2,600,000 UGX','$743','💸')}
 
 // ============================================================
 // VIDEO POPUP FUNCTIONS
