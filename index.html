@@ -59,18 +59,18 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .section:hover{border-color:rgba(0,198,251,.15);box-shadow:0 8px 40px rgba(0,198,251,.05)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
-/* HERO SECTION - Increased font by 2px */
+/* HERO SECTION - FONT INCREASED */
 .hero-section{background:#0a1628;border:2px solid rgba(0,150,255,.2);text-align:center;position:relative;overflow:hidden;padding:35px 16px 30px;border-radius:12px}
 .hero-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30%50%,rgba(0,198,251,.05),transparent 60%);animation:heroGlow 8s ease-in-out infinite;pointer-events:none}
 @keyframes heroGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(10%,10%)}}
 .hero-section>*{position:relative;z-index:1}
-.hero-title{font-family:Inter,sans-serif;font-size:34px;font-weight:900;margin:0 0 2px;line-height:1.1;color:#fff;letter-spacing:-.5px}
-.hero-subtitle{font-family:Inter,sans-serif;font-size:26px;font-weight:900;margin:0 0 6px;color:#fff;letter-spacing:-.3px;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-desc{font-size:14px;color:rgba(255,255,255,.85);line-height:1.6;max-width:480px;margin:0 auto 12px}
+.hero-title{font-family:Inter,sans-serif;font-size:38px;font-weight:900;margin:0 0 2px;line-height:1.1;color:#fff;letter-spacing:-.5px}
+.hero-subtitle{font-family:Inter,sans-serif;font-size:30px;font-weight:900;margin:0 0 6px;color:#fff;letter-spacing:-.3px;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:rgba(255,255,255,.85);line-height:1.6;max-width:480px;margin:0 auto 12px}
 .hero-desc strong{color:#00c6fb;font-weight:800}
 .hero-buttons{display:flex;flex-direction:column;align-items:center;gap:10px}
 .hero-buttons .btn-group{display:flex;flex-wrap:nowrap;justify-content:center;gap:8px;width:100%;max-width:380px}
-.btn-primary{display:inline-flex;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,150,255,.3);position:relative;overflow:hidden;min-width:90px;align-items:center;justify-content:center;height:40px}
+.btn-primary{display:inline-flex;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,150,255,.3);position:relative;overflow:hidden;min-width:90px;align-items:center;justify-content:center;height:42px}
 .btn-primary::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);transition:.6s}
 .btn-primary:hover::after{transform:translateX(100%)}
 .btn-primary:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 8px 32px rgba(0,150,255,.4)}
@@ -110,6 +110,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .way-card .way-content .way-cta .cta-btn:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(0,150,255,.3)}
 .way-card .way-content .way-cta .cta-btn.gold{background:linear-gradient(135deg,#00b894,#00a381);box-shadow:0 2px 12px rgba(0,184,148,.2)}
 
+/* REMOVED OUTER SEPARATOR - No divider above stories & faq */
 .section-divider{width:80%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),rgba(0,198,251,.15),rgba(255,255,255,.06),transparent);margin:10px auto 20px}
 
 .video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;background:#000;border-radius:12px;margin-bottom:12px;border:2px solid rgba(255,255,255,.06);box-shadow:0 8px 32px rgba(0,0,0,.3)}
@@ -445,7 +446,7 @@ details .faq-content{padding:10px 16px 14px;background:rgba(255,255,255,.02);bac
   .footer-grid{grid-template-columns:1fr 1fr}
   .hero-title{font-size:30px}
   .hero-subtitle{font-size:22px}
-  .hero-desc{font-size:13px}
+  .hero-desc{font-size:14px}
   .btn-primary{font-size:12px;padding:8px 14px;min-width:80px;height:36px}
   .section{padding:18px 10px 20px}
   .stats-grid .stat-item .stat-number{font-size:18px}
@@ -513,7 +514,7 @@ details .faq-content{padding:10px 16px 14px;background:rgba(255,255,255,.02);bac
 </div>
 <div class="trust-badge-wrapper"><div class="trust-badge">⭐ TRUSTED BY <span class="green-highlight" id="trustCounter">187,432</span>+ AFRICANS</div></div>
 
-<!-- HERO SECTION - Increased font by 2px -->
+<!-- HERO SECTION - FONT INCREASED -->
 <div class="section hero-section">
 <h1 class="hero-title">Get Paid Every Time</h1>
 <h2 class="hero-subtitle">Turn Clicks to Cash</h2>
@@ -586,8 +587,7 @@ details .faq-content{padding:10px 16px 14px;background:rgba(255,255,255,.02);bac
 <div class="ways-grid" style="padding:0 4px;" id="waysGridMain"></div>
 </div>
 
-<div class="section-divider"></div>
-
+<!-- DIVIDER REMOVED - No separator above Withdrawal section -->
 <div class="section section-withdraw">
 <div class="section-header"><div class="icon" style="background:linear-gradient(135deg,#00b894,#00a381);">🏦</div><h2>Withdrawal Methods</h2><span class="badge" style="background:#00b894;color:#0a1628;border-color:#00b894;">💸 FAST</span></div>
 <p class="section-subtitle">By country — instant payouts</p>
@@ -605,8 +605,7 @@ details .faq-content{padding:10px 16px 14px;background:rgba(255,255,255,.02);bac
 </div>
 </div>
 
-<div class="section-divider"></div>
-
+<!-- DIVIDER REMOVED - No separator above How It Works -->
 <div class="section section-how">
 <div class="section-header"><div class="icon">🚀</div><h2>How It Works</h2><span class="badge">3 STEPS</span></div>
 <p class="section-subtitle">Start earning in 3 simple steps</p>
@@ -618,7 +617,8 @@ details .faq-content{padding:10px 16px 14px;background:rgba(255,255,255,.02);bac
 <div style="text-align:center;margin-top:10px;"><a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size:15px;padding:12px 28px;">Get Started Now</a></div>
 </div>
 
-<div class="section section-stories">
+<!-- SUCCESS STORIES - No outer separator -->
+<div class="section section-stories" style="border-top:2px solid rgba(0,198,251,.15);">
 <div class="section-header"><div class="icon">⭐</div><h2>Success Stories</h2><span class="badge">REAL PEOPLE</span></div>
 <div style="display:flex;flex-direction:column;gap:4px;text-align:left;">
 <div class="story-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop" alt="African profile" loading="lazy"><div class="story-info"><div class="sname">Kelvin O. · Lagos, Nigeria</div><div class="samount" data-amount="2240000" data-currency="UGX">2,240,000 UGX earned last week</div><div class="sdesc">"Cleared my rent in 9 days. Absolutely legit and life-changing!"</div></div></div>
@@ -629,7 +629,8 @@ details .faq-content{padding:10px 16px 14px;background:rgba(255,255,255,.02);bac
 </div>
 </div>
 
-<div class="section section-faq">
+<!-- FREQUENT QUESTIONS - No outer separator -->
+<div class="section section-faq" style="border-top:2px solid rgba(0,198,251,.15);">
 <div class="section-header"><div class="icon">❓</div><h2>Frequent Questions</h2><span class="badge">FAQ</span></div>
 <div class="faq-item"><details><summary>How much can I earn per day? <span class="arrow">▼</span></summary><div class="faq-content">Earn $5–$50+ daily depending on tasks, referrals, and engagement. The more active you are, the more you earn!</div></details></div>
 <div class="faq-item"><details><summary>Do I need any experience? <span class="arrow">▼</span></summary><div class="faq-content">None at all! Tasks are simple: watching videos, surveys, chatting, WhatsApp posts, and more. Anyone can start earning immediately.</div></details></div>
@@ -780,7 +781,6 @@ function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').
 <div class="demo-header"><button class="back-btn" onclick="closeDemoPage()">← Back</button><span class="page-title">Dashboard</span><span style="width:80px;"></span></div>
 <div class="demo-card">
 <div class="breadcrumb"><span>Home</span><span>Dashboard</span><span class="current" id="currentCountryDisplay">🇺🇬 Uganda</span></div>
-<!-- COUNTRY SELECTOR - Increased font by 2px -->
 <div class="country-dashboards" id="countryDashboards">
 <button class="country-btn active" data-country="uganda" onclick="switchDashboard('uganda')" style="font-size:15px;padding:7px 16px;">🇺🇬 Uganda</button>
 <button class="country-btn" data-country="kenya" onclick="switchDashboard('kenya')" style="font-size:15px;padding:7px 16px;">🇰🇪 Kenya</button>
