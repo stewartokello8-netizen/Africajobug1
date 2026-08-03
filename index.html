@@ -307,7 +307,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 </div>
 </div>
 
-<!-- SERVICE BALANCE - UPDATED TO MATCH GRAPH -->
+<!-- SERVICE BALANCE - WITH CWF ADDED -->
 <div class="service-balance">
 <div class="sb-title">💰 SERVICE BALANCE</div>
 <div class="sb-item"><span class="label">WhatsApp Earnings</span><span class="value" id="sbWhatsApp">UGX 1,240,000</span></div>
@@ -317,6 +317,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 <div class="sb-item"><span class="label">YouTube Earnings</span><span class="value" id="sbYouTube">UGX 1,450,000</span></div>
 <div class="sb-item"><span class="label">Survey Earnings</span><span class="value" id="sbSurvey">UGX 350,000</span></div>
 <div class="sb-item"><span class="label">Blog Earnings</span><span class="value" id="sbBlog">UGX 200,000</span></div>
+<div class="sb-item"><span class="label">Cwf (Cash Wallet Fund)</span><span class="value" id="sbCwf">UGX 840,500</span></div>
 <div class="sb-total"><span class="total-label">Total Balance</span><span class="total-value" id="serviceTotalBalance">UGX 5,600,000</span></div>
 </div>
 
@@ -504,7 +505,7 @@ function usdFromUGX(u){return(u/3500).toFixed(2)}
   function dE(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#demoEarningsGrid .earn-card[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^\+[A-Za-z]+\s+([\d,]+)/);if(m){var suf=tx.replace(/^\+[A-Za-z]+\s+[\d,]+/,'');e.innerHTML='+'+s+' '+fmt(na)+suf;e.dataset.currency=c}}})}
   function aB(c){var r=R[c]||1,s=S[c]||c,l=['affL1','affL2','affL3'],ba=[10300,5000,2000];l.forEach(function(id,i){var e=document.getElementById(id);if(e){e.textContent=fmt(Math.round(ba[i]*r))+' '+s}});var h=document.getElementById('affiliateHint');if(h){var flag=h.textContent.match(/^[^\s]+/),label=h.textContent.match(/<span>([^<]+)<\/span>/);if(label){var l1=Math.round(10300*r),l2=Math.round(5000*r),l3=Math.round(2000*r);h.innerHTML=(flag?flag[0]:'🇺🇬')+' <span>'+label[1]+'</span> · L1: '+fmt(l1)+' | L2: '+fmt(l2)+' | L3: '+fmt(l3)+' '+s}}}
   function wTE(c){var s=S[c]||c;document.querySelectorAll('.way-card .way-earn').forEach(function(e,i){var amt={0:10000,1:'',2:'',3:'',4:'',5:'',6:'',7:50000}[i]||'';if(e&&i===0)amt=10000;if(e&&i===7)amt=50000;if(e&&amt!=='')e.textContent='Earn '+fmt(amt)+' '+s;else if(e&&amt==='')e.textContent=''})}
-  function updateServiceBalance(c){var r=R[c]||1,s=S[c]||c;var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000};var total=0;Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*r);el.textContent=s+' '+fmt(val);total+=val}});var totalEl=document.getElementById('serviceTotalBalance');if(totalEl){totalEl.textContent=s+' '+fmt(total)}}
+  function updateServiceBalance(c){var r=R[c]||1,s=S[c]||c;var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000,sbCwf:840500};var total=0;Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*r);el.textContent=s+' '+fmt(val);total+=val}});var totalEl=document.getElementById('serviceTotalBalance');if(totalEl){totalEl.textContent=s+' '+fmt(total)}}
   function upd(c){cur=c;h(c);eS(c);sS(c);wP(c);dE(c);aB(c);wTE(c);updateServiceBalance(c)}
   document.querySelectorAll('.currency-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.currency-btn').forEach(function(x){x.classList.remove('active')});this.classList.add('active');upd(this.dataset.currency)})});upd('UGX')
 })();
@@ -558,7 +559,7 @@ var countryData={
 
 function switchDashboard(c){var d=countryData[c];document.querySelectorAll('.country-btn').forEach(function(b){b.classList.toggle('active',b.dataset.country===c)});document.getElementById('currentCountryDisplay').textContent=d.label;document.getElementById('dashboardStats').innerHTML='<div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">'+d.stats.expense+' <small>'+d.currency+'</small></div><div class="stat-sub">• this month</div></div><div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">'+d.stats.profits+' <small>'+d.currency+'</small></div><div class="stat-sub">• all time</div></div><div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">'+d.stats.balance+' <small>'+d.currency+'</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div><div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>'+d.stats.withdrawn+' <small>'+d.currency+'</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>';
 // Update service balance items with new currency
-var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000};
+var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000,sbCwf:840500};
 var total=0;
 Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*0.001);el.textContent=d.symbol+' '+fmt(val);total+=val}});
 var totalEl=document.getElementById('serviceTotalBalance');if(totalEl){totalEl.textContent=d.symbol+' '+fmt(total)}}
