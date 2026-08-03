@@ -606,7 +606,7 @@ function renderWaysGrid(cid){var c=document.getElementById(cid);if(!c)return;var
 c.innerHTML=h}
 
 // ============================================================
-// LIVE FOREIGNERS — WITH TYPING BUBBLE (FULLY WORKING)
+// LIVE FOREIGNERS — WITH TYPING BUBBLE + CHAT OVERLAY SUPPORT
 // ============================================================
 
 var profilePool = [
@@ -624,14 +624,15 @@ var typingMessages = ['typing now... ✍️','saying hello... 💬','writing a r
 function shuffleArray(arr){for(var i=arr.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
 function getRandomProfiles(){var s=shuffleArray([...profilePool]);return s.slice(0,8)}
 
-// THIS is the key function — now includes the typing bubble HTML
+// RENDER LIVE USERS — includes typing bubble + data attributes for chat overlay
 function renderLiveUsers(profiles){
   var c=document.getElementById('liveUserList');if(!c)return;
   var h='';
   profiles.forEach(function(u){
     var msg=typingMessages[Math.floor(Math.random()*typingMessages.length)];
     var emojis=['💬','✍️','💭','📝','🤔','👋','🔥','💕'];var emoji=emojis[Math.floor(Math.random()*emojis.length)];
-    h+='<div class="user-card"><div class="user-top"><img src="'+u.img+'" alt="'+u.name+'" loading="lazy"><div class="user-info"><div class="name">'+u.name+', '+u.age+' <span class="online-dot"></span></div><div class="country">'+u.country+' <span class="live-label">🔴 LIVE</span></div><div class="bio">'+u.bio+'</div><div class="typing-bubble"><span class="typing-emoji">'+emoji+'</span><span class="typing-dots"><span></span><span></span><span></span></span><span class="typing-text">'+msg+'</span></div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();alert(\'💬 Chat with '+u.name+'\');return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert(\'▶️ Watch '+u.name+'\'s video\');return!1">▶ Watch</a></div></div>';
+    // IMPORTANT: data-user, data-img, data-country + onclick="openChatPage(this)"
+    h+='<div class="user-card" data-user="'+u.name+'" data-img="'+u.img+'" data-country="'+u.country+'" onclick="openChatPage(this)"><div class="user-top"><img src="'+u.img+'" alt="'+u.name+'" loading="lazy"><div class="user-info"><div class="name">'+u.name+', '+u.age+' <span class="online-dot"></span></div><div class="country">'+u.country+' <span class="live-label">🔴 LIVE</span></div><div class="bio">'+u.bio+'</div><div class="typing-bubble"><span class="typing-emoji">'+emoji+'</span><span class="typing-dots"><span></span><span></span><span></span></span><span class="typing-text">'+msg+'</span></div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this.closest(\'.user-card\'));return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert(\'▶️ Watch '+u.name+'\'s video\');return!1">▶ Watch</a></div></div>';
   });
   c.innerHTML=h;
   document.getElementById('activeChatters').textContent=profiles.length;
@@ -640,7 +641,7 @@ function renderLiveUsers(profiles){
 function rotateProfiles(){var p=getRandomProfiles();renderLiveUsers(p);var tip=document.getElementById('typingIndicator');if(tip){var names=p.map(function(x){return x.name.split(' ')[0]});tip.textContent=names[Math.floor(Math.random()*names.length)]+' is typing... 🔥'}}
 
 // ============================================================
-// DEMO PAGE FUNCTIONS (unchanged)
+// DEMO PAGE FUNCTIONS
 // ============================================================
 var countryData={
   uganda:{currency:'UGX',symbol:'UGX',label:'🇺🇬 Uganda',stats:{expense:'19,500',profits:'5,600,000',balance:'196,200',withdrawn:'2,600,000'},activationFee:'19,000'},
@@ -656,13 +657,111 @@ function switchDashboard(c){var d=countryData[c];document.querySelectorAll('.cou
 function openDemoPage(){document.getElementById('demoPage').classList.add('active');document.body.style.overflow='hidden';initDemoChat()}
 function closeDemoPage(){document.getElementById('demoPage').classList.remove('active');document.body.style.overflow=''}
 
-// Chat overlay functions
+// ============================================================
+// CHAT OVERLAY — WORKS WITH CLICKING ON PROFILES
+// ============================================================
 var chatLocked=!1,chatUser=null;
-function openChatPage(a){var c=a.closest('.user-card');if(!c)c=a;var name=c.dataset.user||'Friend',img=c.dataset.img||'https://randomuser.me/api/portraits/women/1.jpg',country=c.dataset.country||'🌍';chatUser=name;chatLocked=!1;document.getElementById('chatAvatar').src=img;document.getElementById('chatName').textContent=name;document.getElementById('chatStatus').textContent=country+' · Online';document.getElementById('chatGreetingName').textContent=name;document.getElementById('chatGreetingText').textContent='👋 Hi! I\'m '+name+', tell me about yourself!';var area=document.getElementById('chatMessages');area.innerHTML='';var msg=document.createElement('div');msg.className='chat-msg received';msg.innerHTML='<div class="msg-name">'+name+'</div>👋 Hi! I\'m '+name+', tell me about yourself!<span class="time">just now</span>';area.appendChild(msg);document.getElementById('chatUpgradeBanner').style.display='none';document.getElementById('chatSendBtn').disabled=!1;document.getElementById('chatInput').disabled=!1;document.getElementById('chatInput').value='';document.getElementById('chatOverlay').classList.add('active');document.body.style.overflow='hidden';area.scrollTop=area.scrollHeight}
-function openChatPageFromDemo(){var rand=profilePool[Math.floor(Math.random()*profilePool.length)];openChatPage(rand)}
-function closeChatOverlay(){document.getElementById('chatOverlay').classList.remove('active');document.body.style.overflow=''}
-function sendChatMessage(){if(chatLocked){alert('⛔ Chat is paused. Please upgrade to continue.');return}var input=document.getElementById('chatInput'),msg=input.value.trim();if(!msg||!chatUser)return;var area=document.getElementById('chatMessages');var sent=document.createElement('div');sent.className='chat-msg sent';sent.textContent=msg;var time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});sent.innerHTML+='<span class="time">'+time+'</span>';area.appendChild(sent);input.value='';area.scrollTop=area.scrollHeight;setTimeout(function(){var reply=document.createElement('div');reply.className='chat-msg received';reply.innerHTML='<div class="msg-name">'+chatUser+'</div>😍 '+chatUser+': Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥<span class="time">'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+'</span>';area.appendChild(reply);area.scrollTop=area.scrollHeight;chatLocked=!0;document.getElementById('chatUpgradeBanner').style.display='block';document.getElementById('chatSendBtn').disabled=!0;document.getElementById('chatInput').disabled=!0},700)}
-document.getElementById('chatInput').addEventListener('keypress',function(e){if(e.key==='Enter')sendChatMessage()});
+
+function openChatPage(element){
+  // element can be the .user-card itself or the "Chat" button inside it
+  var card = element.closest ? element.closest('.user-card') : element;
+  if (!card) {
+    // fallback: if element is the card itself
+    card = element;
+  }
+  if (!card || !card.dataset) {
+    // try to find the nearest user-card
+    var parent = element.parentElement;
+    while (parent && !parent.classList.contains('user-card')) {
+      parent = parent.parentElement;
+    }
+    if (parent) card = parent;
+  }
+  if (!card || !card.dataset) {
+    alert('Could not find user data.');
+    return;
+  }
+  
+  var name = card.dataset.user || 'Friend';
+  var img = card.dataset.img || 'https://randomuser.me/api/portraits/women/1.jpg';
+  var country = card.dataset.country || '🌍';
+  
+  chatUser = name;
+  chatLocked = false;
+  
+  document.getElementById('chatAvatar').src = img;
+  document.getElementById('chatName').textContent = name;
+  document.getElementById('chatStatus').textContent = country + ' · Online';
+  document.getElementById('chatGreetingName').textContent = name;
+  document.getElementById('chatGreetingText').textContent = '👋 Hi! I\'m ' + name + ', tell me about yourself!';
+  
+  var area = document.getElementById('chatMessages');
+  area.innerHTML = '';
+  var msg = document.createElement('div');
+  msg.className = 'chat-msg received';
+  msg.innerHTML = '<div class="msg-name">' + name + '</div>👋 Hi! I\'m ' + name + ', tell me about yourself!<span class="time">just now</span>';
+  area.appendChild(msg);
+  
+  document.getElementById('chatUpgradeBanner').style.display = 'none';
+  document.getElementById('chatSendBtn').disabled = false;
+  document.getElementById('chatInput').disabled = false;
+  document.getElementById('chatInput').value = '';
+  document.getElementById('chatOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  area.scrollTop = area.scrollHeight;
+}
+
+function openChatPageFromDemo(){
+  var rand = profilePool[Math.floor(Math.random() * profilePool.length)];
+  // create a fake element with dataset
+  var fakeEl = {
+    dataset: {
+      user: rand.name,
+      img: rand.img,
+      country: rand.country
+    },
+    closest: function() { return this; }
+  };
+  openChatPage(fakeEl);
+}
+
+function closeChatOverlay(){
+  document.getElementById('chatOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function sendChatMessage(){
+  if (chatLocked) { alert('⛔ Chat is paused. Please upgrade to continue.'); return; }
+  var input = document.getElementById('chatInput');
+  var msg = input.value.trim();
+  if (!msg || !chatUser) return;
+  
+  var area = document.getElementById('chatMessages');
+  var sent = document.createElement('div');
+  sent.className = 'chat-msg sent';
+  sent.textContent = msg;
+  var time = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+  sent.innerHTML += '<span class="time">' + time + '</span>';
+  area.appendChild(sent);
+  input.value = '';
+  area.scrollTop = area.scrollHeight;
+  
+  setTimeout(function(){
+    var reply = document.createElement('div');
+    reply.className = 'chat-msg received';
+    reply.innerHTML = '<div class="msg-name">' + chatUser + '</div>😍 ' + chatUser + ': Oh my god, I\'m so into you! Please upgrade so we can keep talking! 🔥<span class="time">' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) + '</span>';
+    area.appendChild(reply);
+    area.scrollTop = area.scrollHeight;
+    chatLocked = true;
+    document.getElementById('chatUpgradeBanner').style.display = 'block';
+    document.getElementById('chatSendBtn').disabled = true;
+    document.getElementById('chatInput').disabled = true;
+  }, 700);
+}
+
+document.getElementById('chatInput').addEventListener('keypress', function(e){
+  if (e.key === 'Enter') sendChatMessage();
+});
 
 // Popup functions
 function openVideoPopup(title,amount,videoUrl){document.getElementById('videoPopupTitle').textContent='▶️ '+title;document.getElementById('videoPopupEarn').textContent='💰 '+amount;document.getElementById('videoPopupIframe').src=videoUrl+'?autoplay=1&rel=0';document.getElementById('videoPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
