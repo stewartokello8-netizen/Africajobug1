@@ -310,7 +310,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 </div>
 </div>
 
-<!-- SERVICE BALANCE - WITH PROPER CALCULATIONS - FIXED -->
+<!-- SERVICE BALANCE - WITH COUNTRY-SPECIFIC AMOUNTS -->
 <div class="service-balance">
 <div class="sb-title">💰 SERVICE BALANCE</div>
 <div class="sb-item"><span class="label">WhatsApp Earnings</span><span class="value" id="sbWhatsApp">UGX 1,240,000</span></div>
@@ -563,11 +563,12 @@ var countryData={
 };
 
 function switchDashboard(c){var d=countryData[c];document.querySelectorAll('.country-btn').forEach(function(b){b.classList.toggle('active',b.dataset.country===c)});document.getElementById('currentCountryDisplay').textContent=d.label;document.getElementById('dashboardStats').innerHTML='<div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">'+d.stats.expense+' <small>'+d.currency+'</small></div><div class="stat-sub">• this month</div></div><div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">'+d.stats.profits+' <small>'+d.currency+'</small></div><div class="stat-sub">• all time</div></div><div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">'+d.stats.balance+' <small>'+d.currency+'</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div><div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>'+d.stats.withdrawn+' <small>'+d.currency+'</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>';
-// Update service balance items - FIXED: No division by 1000
+// Update service balance items with country-specific amounts
 var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000,sbCwf:840500};
+// For other countries, convert using the currency rate
+var r=R[d.currency]||1;
 var total=0;
-Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]); // Removed * 0.001
-el.textContent=d.symbol+' '+fmt(val);total+=val}});
+Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*r);el.textContent=d.symbol+' '+fmt(val);total+=val}});
 var totalEl=document.getElementById('serviceTotalBalance');if(totalEl){totalEl.textContent=d.symbol+' '+fmt(total)}}
 
 function openDemoPage(){document.getElementById('demoPage').classList.add('active');document.body.style.overflow='hidden';initDemoChat()}
@@ -679,7 +680,7 @@ document.addEventListener('DOMContentLoaded',function(){
   setInterval(showNextPopup,4000);
 });
 
-// Withdrawal popup simulation - multiple countries with black African images
+// Withdrawal popup simulation - multiple countries with correct currencies
 !function(){var w=[];
 // Uganda profiles (more frequent)
 var ugandaNames=['James K.','Sarah N.','Robert T.','Esther K.','Peter M.','John W.','Rebecca N.','Samuel T.','Joseph M.','Dorothy K.','David O.','Grace M.','Paul K.','Mary A.','George M.','Alice N.','Richard O.','Patricia A.','Michael K.','Helen N.'];
