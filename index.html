@@ -66,7 +66,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 .hero-buttons>a.btn-primary:first-child{min-width:220px!important;width:auto!important;padding:14px 32px!important;height:54px!important;font-size:15px!important}
 
 /* ===== STRETCHED LIVE GLOBAL CHAT ON DEMO ===== */
-.phone-live{width:100%;max-width:100%;padding:14px}
+.phone-live{width:100%;max-width:100%;padding:16px 14px}
 .phone-live .header h2{font-size:16px}
 .phone-live .earnings-grid{grid-template-columns:1fr 1fr 1fr 1fr}
 .phone-live .chat-feed{max-height:200px}
@@ -181,15 +181,15 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 <p class="section-subtitle">By country — instant payouts</p>
 <div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;">
 <div class="withdraw-grid">
-<div class="item" onclick="openWithdrawalPopup('🇰🇪 Kenya','M-Pesa')">🇰🇪 Kenya → M-Pesa</div>
-<div class="item" onclick="openWithdrawalPopup('🇨🇲 Cameroon','MoMo')">🇨🇲 Cameroon → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇬🇭 Ghana','MoMo')">🇬🇭 Ghana → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇳🇬 Nigeria','MoMo')">🇳🇬 Nigeria → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇺🇬 Uganda','Mobile Money')">🇺🇬 Uganda → Mobile Money</div>
-<div class="item" onclick="openWithdrawalPopup('🇷🇼 Rwanda','Mobile Wallet')">🇷🇼 Rwanda → Mobile Wallet</div>
-<div class="item" onclick="openWithdrawalPopup('🇿🇦 South Africa','Bank Transfer')">🇿🇦 South Africa → Bank Transfer</div>
-<div class="item" onclick="openWithdrawalPopup('🇧🇼 Botswana','Mobile Money')">🇧🇼 Botswana → Mobile Money</div>
-<div class="item" onclick="openWithdrawalPopup('🇹🇿 Tanzania','M-Pesa')">🇹🇿 Tanzania → M-Pesa</div>
+<div class="item" onclick="openWithdrawalPopup('🇰🇪 Kenya','M-Pesa','KES')">🇰🇪 Kenya → M-Pesa</div>
+<div class="item" onclick="openWithdrawalPopup('🇨🇲 Cameroon','MoMo','XAF')">🇨🇲 Cameroon → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇬🇭 Ghana','MoMo','GHS')">🇬🇭 Ghana → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇳🇬 Nigeria','MoMo','NGN')">🇳🇬 Nigeria → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇺🇬 Uganda','Mobile Money','UGX')">🇺🇬 Uganda → Mobile Money</div>
+<div class="item" onclick="openWithdrawalPopup('🇷🇼 Rwanda','Mobile Wallet','RWF')">🇷🇼 Rwanda → Mobile Wallet</div>
+<div class="item" onclick="openWithdrawalPopup('🇿🇦 South Africa','Bank Transfer','ZAR')">🇿🇦 South Africa → Bank Transfer</div>
+<div class="item" onclick="openWithdrawalPopup('🇧🇼 Botswana','Mobile Money','BWP')">🇧🇼 Botswana → Mobile Money</div>
+<div class="item" onclick="openWithdrawalPopup('🇹🇿 Tanzania','M-Pesa','TZS')">🇹🇿 Tanzania → M-Pesa</div>
 <div class="item" onclick="openLiveActivationPopup()" style="background:linear-gradient(135deg,#00b894,#00a381);color:#fff;border-color:#00b894;">🔓 Paid Activation</div>
 </div>
 </div>
@@ -644,7 +644,7 @@ function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').
 function showAnswer(el){var a=el.querySelector('.a');if(a){a.style.display='block'}}
 function openWheelPopup(){document.getElementById('wheelPopupOverlay').classList.add('active');document.body.style.overflow='hidden';var w=document.getElementById('wheel');if(w)w.style.transform='rotate(0deg)';var r=document.getElementById('spinResult');if(r)r.textContent='Click SPIN to win up to $50!';var sb=document.getElementById('spinBtn');if(sb)sb.disabled=false}
 function closeWheelPopup(){document.getElementById('wheelPopupOverlay').classList.remove('active');document.body.style.overflow='';isSpinning=false}
-function openWithdrawalPopup(country,method){openActionPopup('💸 Withdrawal via '+method,'Up to 2,600,000 UGX','$743','💸')}
+function openWithdrawalPopup(country,method,currency){openActionPopup('💸 Withdrawal via '+method,'Up to 2,600,000','$743','💸')}
 
 var isSpinning=false;
 function spinWheel(){if(isSpinning)return;var w=document.getElementById('wheel'),r=document.getElementById('spinResult'),sb=document.getElementById('spinBtn');if(!w||!r||!sb)return;isSpinning=true;sb.disabled=true;r.textContent='🌀 Spinning...';var prizes=['$3','$8','$15','$25','$35','$50'];var ri=Math.floor(Math.random()*prizes.length);var extra=360-(ri*60+30);var rots=5+Math.floor(Math.random()*3);var total=rots*360+extra+Math.random()*20;w.style.transition='transform 4s cubic-bezier(0.17,0.67,0.12,0.99)';w.style.transform='rotate('+total+'deg)';setTimeout(function(){var prize=prizes[ri];r.textContent='🎉 You won '+prize+'!';r.style.color='#00b894';sb.disabled=false;isSpinning=false;var earnMsg=document.createElement('div');earnMsg.style.cssText='margin-top:10px;font-size:14px;color:#2ecc71;font-weight:700;';earnMsg.textContent='💰 Earned '+prize+'! Upgrade to claim!';r.parentNode.insertBefore(earnMsg,r.nextSibling);setTimeout(function(){var banner=document.getElementById('chatUpgradeBanner');if(banner){banner.style.display='block';banner.innerHTML='🎁 You won '+prize+'! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>'}},500)},4200)}
@@ -708,20 +708,23 @@ var ghanaNames=['Kwame B.','Akosua K.','Yaw A.','Esi B.','Ama K.'];
 var nigeriaNames=['Chidi O.','Amara E.','Tunde A.','Chioma E.','Emeka O.'];
 var tanzaniaNames=['Juma H.','Zainab M.','Salim R.','Asha K.'];
 var southAfricaNames=['Thabo M.','Zanele D.','Lindiwe M.'];
+var cameroonNames=['Samuel B.','Marie B.','Jean P.','David M.'];
 
 var allProfiles=[];
-// Add Uganda profiles (more frequent - about 40% of all)
-for(var i=0;i<25;i++){var idx=i%ugandaNames.length;allProfiles.push({flag:'🇺🇬',name:ugandaNames[idx],method:['Mobile Money','Airtel Money','M-Pesa'][Math.floor(Math.random()*3)],gender:ugandaNames[idx].includes('N.')||ugandaNames[idx].includes('K.')||ugandaNames[idx].includes('M.')||ugandaNames[idx].includes('A.')?'female':'male',currency:'UGX',amount:rnd(200000,4800000)})}
+// Add Uganda profiles (more frequent)
+for(var i=0;i<20;i++){var idx=i%ugandaNames.length;allProfiles.push({flag:'🇺🇬',name:ugandaNames[idx],method:['Mobile Money','Airtel Money','M-Pesa'][Math.floor(Math.random()*3)],gender:ugandaNames[idx].includes('N.')||ugandaNames[idx].includes('K.')||ugandaNames[idx].includes('M.')||ugandaNames[idx].includes('A.')?'female':'male',currency:'UGX',amount:rnd(200000,4800000)})}
 // Add Kenya profiles
-for(var i=0;i<10;i++){var idx=i%kenyaNames.length;allProfiles.push({flag:'🇰🇪',name:kenyaNames[idx],method:'M-Pesa',gender:kenyaNames[idx].includes('W.')||kenyaNames[idx].includes('N.')?'female':'male',currency:'KES',amount:rnd(1000,15000)})}
+for(var i=0;i<8;i++){var idx=i%kenyaNames.length;allProfiles.push({flag:'🇰🇪',name:kenyaNames[idx],method:'M-Pesa',gender:kenyaNames[idx].includes('W.')||kenyaNames[idx].includes('N.')?'female':'male',currency:'KES',amount:rnd(1000,15000)})}
 // Add Ghana profiles
-for(var i=0;i<8;i++){var idx=i%ghanaNames.length;allProfiles.push({flag:'🇬🇭',name:ghanaNames[idx],method:'MoMo',gender:ghanaNames[idx].includes('A.')||ghanaNames[idx].includes('B.')?'female':'male',currency:'GHS',amount:rnd(100,5000)})}
+for(var i=0;i<6;i++){var idx=i%ghanaNames.length;allProfiles.push({flag:'🇬🇭',name:ghanaNames[idx],method:'MoMo',gender:ghanaNames[idx].includes('A.')||ghanaNames[idx].includes('B.')?'female':'male',currency:'GHS',amount:rnd(100,5000)})}
 // Add Nigeria profiles
-for(var i=0;i<10;i++){var idx=i%nigeriaNames.length;allProfiles.push({flag:'🇳🇬',name:nigeriaNames[idx],method:'MoMo',gender:nigeriaNames[idx].includes('E.')||nigeriaNames[idx].includes('C.')?'female':'male',currency:'NGN',amount:rnd(10000,150000)})}
+for(var i=0;i<8;i++){var idx=i%nigeriaNames.length;allProfiles.push({flag:'🇳🇬',name:nigeriaNames[idx],method:'MoMo',gender:nigeriaNames[idx].includes('E.')||nigeriaNames[idx].includes('C.')?'female':'male',currency:'NGN',amount:rnd(10000,150000)})}
 // Add Tanzania profiles
-for(var i=0;i<6;i++){var idx=i%tanzaniaNames.length;allProfiles.push({flag:'🇹🇿',name:tanzaniaNames[idx],method:'M-Pesa',gender:tanzaniaNames[idx].includes('M.')||tanzaniaNames[idx].includes('K.')?'female':'male',currency:'TZS',amount:rnd(5000,50000)})}
+for(var i=0;i<5;i++){var idx=i%tanzaniaNames.length;allProfiles.push({flag:'🇹🇿',name:tanzaniaNames[idx],method:'M-Pesa',gender:tanzaniaNames[idx].includes('M.')||tanzaniaNames[idx].includes('K.')?'female':'male',currency:'TZS',amount:rnd(5000,50000)})}
 // Add South Africa profiles
-for(var i=0;i<6;i++){var idx=i%southAfricaNames.length;allProfiles.push({flag:'🇿🇦',name:southAfricaNames[idx],method:'Bank Transfer',gender:southAfricaNames[idx].includes('D.')||southAfricaNames[idx].includes('M.')?'female':'male',currency:'ZAR',amount:rnd(100,5000)})}
+for(var i=0;i<5;i++){var idx=i%southAfricaNames.length;allProfiles.push({flag:'🇿🇦',name:southAfricaNames[idx],method:'Bank Transfer',gender:southAfricaNames[idx].includes('D.')||southAfricaNames[idx].includes('M.')?'female':'male',currency:'ZAR',amount:rnd(100,5000)})}
+// Add Cameroon profiles
+for(var i=0;i<5;i++){var idx=i%cameroonNames.length;allProfiles.push({flag:'🇨🇲',name:cameroonNames[idx],method:'MoMo',gender:cameroonNames[idx].includes('B.')||cameroonNames[idx].includes('P.')?'female':'male',currency:'XAF',amount:rnd(2000,30000)})}
 
 var p=document.getElementById('popupCard'),ui=document.getElementById('popupUserImage'),un=document.getElementById('popupUserName'),um=document.getElementById('popupMethod'),ua=document.getElementById('popupAmount'),ut=document.getElementById('popupTitle'),utime=document.getElementById('popupTime');
 var usedIdx=[],usedM=[],usedF=[];
