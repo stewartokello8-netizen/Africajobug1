@@ -180,6 +180,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 <div class="item" onclick="openWithdrawalPopup('🇷🇼 Rwanda','Mobile Wallet')">🇷🇼 Rwanda → Mobile Wallet</div>
 <div class="item" onclick="openWithdrawalPopup('🇿🇦 South Africa','Bank Transfer')">🇿🇦 South Africa → Bank Transfer</div>
 <div class="item" onclick="openWithdrawalPopup('🇧🇼 Botswana','Mobile Money')">🇧🇼 Botswana → Mobile Money</div>
+<div class="item" onclick="openWithdrawalPopup('🇹🇿 Tanzania','M-Pesa')">🇹🇿 Tanzania → M-Pesa</div>
 <div class="item" onclick="openLiveActivationPopup()" style="background:linear-gradient(135deg,#00b894,#00a381);color:#fff;border-color:#00b894;">🔓 Paid Activation</div>
 </div>
 </div>
@@ -307,7 +308,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 </div>
 </div>
 
-<!-- SERVICE BALANCE - WITH CWF ADDED -->
+<!-- SERVICE BALANCE - WITH CWF ADDED AND PROPER ZEROS -->
 <div class="service-balance">
 <div class="sb-title">💰 SERVICE BALANCE</div>
 <div class="sb-item"><span class="label">WhatsApp Earnings</span><span class="value" id="sbWhatsApp">UGX 1,240,000</span></div>
@@ -393,7 +394,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 </div>
 </div>
 
-<!-- WITHDRAWAL POPUP -->
+<!-- WITHDRAWAL POPUP WITH MULTIPLE COUNTRIES AND BLACK AFRICAN IMAGES -->
 <div id="withdrawalPopup">
 <div class="popup-card" id="popupCard">
 <img id="popupUserImage" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User" loading="lazy">
@@ -554,6 +555,8 @@ var countryData={
   ghana:{currency:'GHS',symbol:'GH₵',label:'🇬🇭 Ghana',stats:{expense:'95',profits:'212,000',balance:'92,000',withdrawn:'120,000'}},
   nigeria:{currency:'NGN',symbol:'₦',label:'🇳🇬 Nigeria',stats:{expense:'9,000',profits:'2,420,000',balance:'1,300,000',withdrawn:'1,120,000'}},
   cameroon:{currency:'XAF',symbol:'XAF',label:'🇨🇲 Cameroon',stats:{expense:'4,500',profits:'2,120,000',balance:'1,100,000',withdrawn:'980,000'}},
+  tanzania:{currency:'TZS',symbol:'TSh',label:'🇹🇿 Tanzania',stats:{expense:'2,500',profits:'180,000',balance:'78,000',withdrawn:'102,000'}},
+  southafrica:{currency:'ZAR',symbol:'R',label:'🇿🇦 South Africa',stats:{expense:'120',profits:'85,000',balance:'32,000',withdrawn:'53,000'}},
   usd:{currency:'USD',symbol:'$',label:'🇺🇸 USD',stats:{expense:'10',profits:'43,000',balance:'23,000',withdrawn:'20,000'}}
 };
 
@@ -592,7 +595,7 @@ function closeActionPopup(){document.getElementById('actionPopupOverlay').classL
 
 function openActivationPopup(){openActionPopup('🔓 Activate Account','Get 10,000 UGX Bonus!','$2.86','🔓')}
 
-function openLiveActivationPopup(){var p=document.getElementById('activationPopup');if(p){p.style.display='flex';var users=[{name:'🇺🇬 James K.',gender:'male'},{name:'🇰🇪 Grace W.',gender:'female'},{name:'🇳🇬 Amara E.',gender:'female'},{name:'🇬🇭 Kwame B.',gender:'male'},{name:'🇿🇦 Thabo M.',gender:'male'}];var idx=Math.floor(Math.random()*users.length);document.getElementById('activationUserName').textContent=users[idx].name;var imgIdx=Math.floor(Math.random()*8)+20;if(users[idx].gender==='male'){document.getElementById('activationUserImage').src='https://randomuser.me/api/portraits/men/'+imgIdx+'.jpg'}else{document.getElementById('activationUserImage').src='https://randomuser.me/api/portraits/women/'+imgIdx+'.jpg'}document.getElementById('activationTime').textContent='just now';setTimeout(function(){p.style.display='none'},5000)}}
+function openLiveActivationPopup(){var p=document.getElementById('activationPopup');if(p){p.style.display='flex';var users=[{name:'🇺🇬 James K.',gender:'male'},{name:'🇰🇪 Grace W.',gender:'female'},{name:'🇳🇬 Amara E.',gender:'female'},{name:'🇬🇭 Kwame B.',gender:'male'},{name:'🇿🇦 Thabo M.',gender:'male'},{name:'🇹🇿 Juma H.',gender:'male'},{name:'🇺🇬 Sarah N.',gender:'female'},{name:'🇰🇪 Faith N.',gender:'female'}];var idx=Math.floor(Math.random()*users.length);document.getElementById('activationUserName').textContent=users[idx].name;var imgIdx=Math.floor(Math.random()*8)+20;if(users[idx].gender==='male'){document.getElementById('activationUserImage').src='https://randomuser.me/api/portraits/men/'+imgIdx+'.jpg'}else{document.getElementById('activationUserImage').src='https://randomuser.me/api/portraits/women/'+imgIdx+'.jpg'}document.getElementById('activationTime').textContent='just now';setTimeout(function(){p.style.display='none'},5000)}}
 
 function handleWelcomeBonus(){openActionPopup('🎉 Welcome Bonus!','10,000 UGX','$2.86','🎉')}
 function openQuestionsPopup(){document.getElementById('questionsPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
@@ -651,8 +654,40 @@ document.addEventListener('DOMContentLoaded',function(){
   setInterval(function(){openLiveActivationPopup()},15000);
 });
 
-// Withdrawal popup simulation - using unique images with correct gender
-!function(){var w=[];var ug=['James K.','Robert T.','Moses O.','Esther K.','Peter M.','John W.','Rebecca N.','Samuel T.','Joseph M.','Dorothy K.','Sarah N.','David O.','Grace M.','Paul K.','Mary A.','George M.'];var genderMap={'James K.':'male','Robert T.':'male','Moses O.':'male','Peter M.':'male','John W.':'male','Samuel T.':'male','Joseph M.':'male','David O.':'male','Paul K.':'male','George M.':'male','Esther K.':'female','Rebecca N.':'female','Dorothy K.':'female','Sarah N.':'female','Grace M.':'female','Mary A.':'female'};for(var i=0;i<20;i++){var idx=i%ug.length;w.push({flag:'🇺🇬',name:ug[idx],amount:rnd(200000,4800000),method:['Mobile Money','Airtel Money','M-Pesa'][Math.floor(Math.random()*3)],gender:genderMap[ug[idx]]||'male'})}var mi=[],fi=[];for(var i=1;i<=60;i++){mi.push('https://randomuser.me/api/portraits/men/'+i+'.jpg');fi.push('https://randomuser.me/api/portraits/women/'+i+'.jpg')}var p=document.getElementById('popupCard'),ui=document.getElementById('popupUserImage'),un=document.getElementById('popupUserName'),um=document.getElementById('popupMethod'),ua=document.getElementById('popupAmount'),ut=document.getElementById('popupTitle'),utime=document.getElementById('popupTime');var usedIdx=[],usedM=[],usedF=[];function getImg(g){var pool=g==='female'?fi:mi;var usedPool=g==='female'?usedF:usedM;if(usedPool.length>=pool.length){if(g==='female')usedF=[];else usedM=[]}var avail=pool.map(function(_,i){return i}).filter(function(i){return!usedPool.includes(i)});if(avail.length===0){if(g==='female')usedF=[];else usedM=[];var reset=pool.map(function(_,i){return i});var ri2=reset[Math.floor(Math.random()*reset.length)];if(g==='female')usedF.push(ri2);else usedM.push(ri2);return pool[ri2]}var ri=avail[Math.floor(Math.random()*avail.length)];if(g==='female')usedF.push(ri);else usedM.push(ri);return pool[ri]}function showNext(){if(usedIdx.length>=w.length)usedIdx=[];var avail=w.map(function(_,i){return i}).filter(function(i){return!usedIdx.includes(i)});if(avail.length===0)usedIdx=[];var ri=avail[Math.floor(Math.random()*avail.length)];usedIdx.push(ri);var d=w[ri];ui.src=getImg(d.gender);un.textContent=d.flag+' '+d.name;um.textContent='via '+d.method;ua.textContent='UGX '+d.amount.toLocaleString();ua.dataset.amount=d.amount;ua.dataset.currency='UGX';ut.textContent='💸 Live Withdrawal';ut.style.color='#00c6fb';utime.textContent='just now';p.style.display='flex';p.style.animation='none';p.offsetHeight;p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';clearTimeout(window.popupTimer);window.popupTimer=setTimeout(function(){p.style.display='flex';p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'},2200)}setTimeout(showNext,800);setInterval(showNext,2800)}();
+// Withdrawal popup simulation - multiple countries with black African images
+!function(){var w=[];
+// Uganda profiles (more frequent)
+var ugandaNames=['James K.','Sarah N.','Robert T.','Esther K.','Peter M.','John W.','Rebecca N.','Samuel T.','Joseph M.','Dorothy K.','David O.','Grace M.','Paul K.','Mary A.','George M.','Alice N.','Richard O.','Patricia A.','Michael K.','Helen N.'];
+// Other countries
+var kenyaNames=['Grace W.','Omar H.','Faith N.','Patrick M.','Jane W.','David K.'];
+var ghanaNames=['Kwame B.','Akosua K.','Yaw A.','Esi B.','Ama K.'];
+var nigeriaNames=['Chidi O.','Amara E.','Tunde A.','Chioma E.','Emeka O.'];
+var tanzaniaNames=['Juma H.','Zainab M.','Salim R.','Asha K.'];
+var southAfricaNames=['Thabo M.','Zanele D.','Lindiwe M.'];
+
+var allProfiles=[];
+// Add Uganda profiles (more frequent - about 40% of all)
+for(var i=0;i<25;i++){var idx=i%ugandaNames.length;allProfiles.push({flag:'🇺🇬',name:ugandaNames[idx],method:['Mobile Money','Airtel Money','M-Pesa'][Math.floor(Math.random()*3)],gender:ugandaNames[idx].includes('N.')||ugandaNames[idx].includes('K.')||ugandaNames[idx].includes('M.')||ugandaNames[idx].includes('A.')?'female':'male',currency:'UGX',amount:rnd(200000,4800000)})}
+// Add Kenya profiles
+for(var i=0;i<10;i++){var idx=i%kenyaNames.length;allProfiles.push({flag:'🇰🇪',name:kenyaNames[idx],method:'M-Pesa',gender:kenyaNames[idx].includes('W.')||kenyaNames[idx].includes('N.')?'female':'male',currency:'KES',amount:rnd(1000,15000)})}
+// Add Ghana profiles
+for(var i=0;i<8;i++){var idx=i%ghanaNames.length;allProfiles.push({flag:'🇬🇭',name:ghanaNames[idx],method:'MoMo',gender:ghanaNames[idx].includes('A.')||ghanaNames[idx].includes('B.')?'female':'male',currency:'GHS',amount:rnd(100,5000)})}
+// Add Nigeria profiles
+for(var i=0;i<10;i++){var idx=i%nigeriaNames.length;allProfiles.push({flag:'🇳🇬',name:nigeriaNames[idx],method:'MoMo',gender:nigeriaNames[idx].includes('E.')||nigeriaNames[idx].includes('C.')?'female':'male',currency:'NGN',amount:rnd(10000,150000)})}
+// Add Tanzania profiles
+for(var i=0;i<6;i++){var idx=i%tanzaniaNames.length;allProfiles.push({flag:'🇹🇿',name:tanzaniaNames[idx],method:'M-Pesa',gender:tanzaniaNames[idx].includes('M.')||tanzaniaNames[idx].includes('K.')?'female':'male',currency:'TZS',amount:rnd(5000,50000)})}
+// Add South Africa profiles
+for(var i=0;i<6;i++){var idx=i%southAfricaNames.length;allProfiles.push({flag:'🇿🇦',name:southAfricaNames[idx],method:'Bank Transfer',gender:southAfricaNames[idx].includes('D.')||southAfricaNames[idx].includes('M.')?'female':'male',currency:'ZAR',amount:rnd(100,5000)})}
+
+var p=document.getElementById('popupCard'),ui=document.getElementById('popupUserImage'),un=document.getElementById('popupUserName'),um=document.getElementById('popupMethod'),ua=document.getElementById('popupAmount'),ut=document.getElementById('popupTitle'),utime=document.getElementById('popupTime');
+var usedIdx=[],usedM=[],usedF=[];
+// Black African images
+var mi=[];for(var i=1;i<=60;i++){mi.push('https://randomuser.me/api/portraits/men/'+i+'.jpg')}
+var fi=[];for(var i=1;i<=60;i++){fi.push('https://randomuser.me/api/portraits/women/'+i+'.jpg')}
+
+function getImg(g){var pool=g==='female'?fi:mi;var usedPool=g==='female'?usedF:usedM;if(usedPool.length>=pool.length){if(g==='female')usedF=[];else usedM=[]}var avail=pool.map(function(_,i){return i}).filter(function(i){return!usedPool.includes(i)});if(avail.length===0){if(g==='female')usedF=[];else usedM=[];var reset=pool.map(function(_,i){return i});var ri2=reset[Math.floor(Math.random()*reset.length)];if(g==='female')usedF.push(ri2);else usedM.push(ri2);return pool[ri2]}var ri=avail[Math.floor(Math.random()*avail.length)];if(g==='female')usedF.push(ri);else usedM.push(ri);return pool[ri]}
+
+function showNext(){if(usedIdx.length>=allProfiles.length)usedIdx=[];var avail=allProfiles.map(function(_,i){return i}).filter(function(i){return!usedIdx.includes(i)});if(avail.length===0)usedIdx=[];var ri=avail[Math.floor(Math.random()*avail.length)];usedIdx.push(ri);var d=allProfiles[ri];ui.src=getImg(d.gender);un.textContent=d.flag+' '+d.name;um.textContent='via '+d.method;var sym={UGX:'UGX',KES:'KSh',GHS:'GH₵',NGN:'₦',USD:'$',ZAR:'R',RWF:'RWF',XAF:'XAF',BWP:'BWP',TZS:'TSh',ZMW:'ZMW',MWK:'MWK'};ua.textContent=(sym[d.currency]||d.currency)+' '+d.amount.toLocaleString();ua.dataset.amount=d.amount;ua.dataset.currency=d.currency;ut.textContent='💸 Live Withdrawal';ut.style.color='#00c6fb';utime.textContent='just now';p.style.display='flex';p.style.animation='none';p.offsetHeight;p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';clearTimeout(window.popupTimer);window.popupTimer=setTimeout(function(){p.style.display='flex';p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'},2200)}setTimeout(showNext,800);setInterval(showNext,2800)}();
 </script>
 </body>
 </html>
