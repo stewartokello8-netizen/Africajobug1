@@ -79,12 +79,13 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="signup-btn">Sign Up</a>
 </div>
 
-<!-- CURRENCY ROW -->
+<!-- CURRENCY ROW - NOT on welcome overlay -->
 <div class="currency-row" id="currencyRow">
 <button class="currency-btn active" data-currency="UGX"><i class="fas fa-coins"></i> UGX</button>
 <button class="currency-btn" data-currency="KES"><i class="fas fa-coins"></i> KSh</button>
 <button class="currency-btn" data-currency="GHS"><i class="fas fa-coins"></i> GH₵</button>
 <button class="currency-btn" data-currency="NGN"><i class="fas fa-coins"></i> Naira</button>
+<button class="currency-btn" data-currency="XAF"><i class="fas fa-coins"></i> XAF</button>
 <button class="currency-btn" data-currency="USD"><i class="fas fa-dollar-sign"></i> USD</button>
 </div>
 
@@ -155,7 +156,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 </div>
 </div>
 
-<!-- LIVE FOREIGNERS -->
+<!-- LIVE FOREIGNERS - with typing simulation -->
 <div class="section section-live live-foreigners-section" id="liveChatSection">
 <div class="section-header"><div class="icon">💬</div><h2>Live Foreigners Online</h2><span class="badge live">🔴 LIVE</span></div>
 <div class="live-intro"><span class="live-count">👥 <span id="activeChatters">8</span> members online</span><span class="live-tip">🔥 <span id="typingIndicator">Someone is typing...</span></span></div>
@@ -175,15 +176,15 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 <p class="section-subtitle">By country — instant payouts</p>
 <div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;">
 <div class="withdraw-grid">
-<div class="item" onclick="openWithdrawalPopup('🇰🇪 Kenya','M-Pesa')">🇰🇪 Kenya → M-Pesa</div>
-<div class="item" onclick="openWithdrawalPopup('🇨🇲 Cameroon','MoMo')">🇨🇲 Cameroon → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇬🇭 Ghana','MoMo')">🇬🇭 Ghana → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇳🇬 Nigeria','MoMo')">🇳🇬 Nigeria → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇺🇬 Uganda','Mobile Money')">🇺🇬 Uganda → Mobile Money</div>
-<div class="item" onclick="openWithdrawalPopup('🇷🇼 Rwanda','Mobile Wallet')">🇷🇼 Rwanda → Mobile Wallet</div>
-<div class="item" onclick="openWithdrawalPopup('🇿🇦 South Africa','Bank Transfer')">🇿🇦 South Africa → Bank Transfer</div>
-<div class="item" onclick="openWithdrawalPopup('🇧🇼 Botswana','Mobile Money')">🇧🇼 Botswana → Mobile Money</div>
-<div class="item" onclick="openWithdrawalPopup('🇹🇿 Tanzania','M-Pesa')">🇹🇿 Tanzania → M-Pesa</div>
+<div class="item" onclick="openWithdrawalPopup('🇰🇪 Kenya','M-Pesa','KES',1200)">🇰🇪 Kenya → M-Pesa</div>
+<div class="item" onclick="openWithdrawalPopup('🇨🇲 Cameroon','MoMo','XAF',4500)">🇨🇲 Cameroon → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇬🇭 Ghana','MoMo','GHS',150)">🇬🇭 Ghana → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇳🇬 Nigeria','MoMo','NGN',8000)">🇳🇬 Nigeria → MoMo</div>
+<div class="item" onclick="openWithdrawalPopup('🇺🇬 Uganda','Mobile Money','UGX',2400000)">🇺🇬 Uganda → Mobile Money</div>
+<div class="item" onclick="openWithdrawalPopup('🇷🇼 Rwanda','Mobile Wallet','RWF',12000)">🇷🇼 Rwanda → Mobile Wallet</div>
+<div class="item" onclick="openWithdrawalPopup('🇿🇦 South Africa','Bank Transfer','ZAR',450)">🇿🇦 South Africa → Bank Transfer</div>
+<div class="item" onclick="openWithdrawalPopup('🇧🇼 Botswana','Mobile Money','BWP',1200)">🇧🇼 Botswana → Mobile Money</div>
+<div class="item" onclick="openWithdrawalPopup('🇹🇿 Tanzania','M-Pesa','TZS',15000)">🇹🇿 Tanzania → M-Pesa</div>
 <div class="item" onclick="openLiveActivationPopup()" style="background:linear-gradient(135deg,#00b894,#00a381);color:#fff;border-color:#00b894;">🔓 Paid Activation</div>
 </div>
 </div>
@@ -282,7 +283,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 </div>
 </div>
 
-<!-- LIVE GLOBAL CHAT -->
+<!-- STRETCHED LIVE GLOBAL CHAT -->
 <div style="margin-top:4px;">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-weight:700;font-size:13px;color:#1a0b2f;">🌐 Live Global Chat</span><span style="color:rgba(26,11,47,0.5);font-weight:600;">279 chatting</span></div>
 <div class="phone-live">
@@ -408,7 +409,7 @@ body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system
 <div class="name" id="popupUserName">🇺🇬 James K.</div>
 <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;">
 <span class="method" id="popupMethod">via Mobile Money</span>
-<span class="amount-display" id="popupAmount" data-amount="2400000" data-currency="UGX">UGX 2,400,000</span>
+<span class="amount-display" id="popupAmount">UGX 2,400,000</span>
 </div>
 <div style="margin-top:2px;">
 <span class="live-indicator"><span class="live-dot-small"></span> LIVE · <span id="popupTime">just now</span></span>
@@ -638,7 +639,23 @@ function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').
 function showAnswer(el){var a=el.querySelector('.a');if(a){a.style.display='block'}}
 function openWheelPopup(){document.getElementById('wheelPopupOverlay').classList.add('active');document.body.style.overflow='hidden';var w=document.getElementById('wheel');if(w)w.style.transform='rotate(0deg)';var r=document.getElementById('spinResult');if(r)r.textContent='Click SPIN to win up to $50!';var sb=document.getElementById('spinBtn');if(sb)sb.disabled=false}
 function closeWheelPopup(){document.getElementById('wheelPopupOverlay').classList.remove('active');document.body.style.overflow='';isSpinning=false}
-function openWithdrawalPopup(country,method){openActionPopup('💸 Withdrawal via '+method,'Up to 2,600,000 UGX','$743','💸')}
+function openWithdrawalPopup(country,method,currencyCode,amount){
+  var symbols = {UGX:'UGX', KES:'KSh', GHS:'GH₵', NGN:'₦', XAF:'XAF', USD:'$', ZAR:'R', TZS:'TSh', RWF:'RWF', BWP:'BWP'};
+  var sym = symbols[currencyCode] || currencyCode;
+  var displayAmount = sym + ' ' + fmt(amount);
+  var img = document.getElementById('popupUserImage');
+  var isMale = Math.random() > 0.5;
+  var idx = Math.floor(Math.random() * 60) + 1;
+  img.src = isMale ? 'https://randomuser.me/api/portraits/men/'+idx+'.jpg' : 'https://randomuser.me/api/portraits/women/'+idx+'.jpg';
+  document.getElementById('popupUserName').textContent = country + ' ' + (isMale ? 'James K.' : 'Grace W.');
+  document.getElementById('popupMethod').textContent = 'via ' + method;
+  document.getElementById('popupAmount').textContent = displayAmount;
+  document.getElementById('popupCard').style.display = 'flex';
+  document.getElementById('popupCard').style.animation = 'slideUpFast 0.4s forwards';
+  setTimeout(function(){
+    document.getElementById('popupCard').style.display = 'none';
+  }, 3500);
+}
 
 var isSpinning=false;
 function spinWheel(){if(isSpinning)return;var w=document.getElementById('wheel'),r=document.getElementById('spinResult'),sb=document.getElementById('spinBtn');if(!w||!r||!sb)return;isSpinning=true;sb.disabled=true;r.textContent='🌀 Spinning...';var prizes=['$3','$8','$15','$25','$35','$50'];var ri=Math.floor(Math.random()*prizes.length);var extra=360-(ri*60+30);var rots=5+Math.floor(Math.random()*3);var total=rots*360+extra+Math.random()*20;w.style.transition='transform 4s cubic-bezier(0.17,0.67,0.12,0.99)';w.style.transform='rotate('+total+'deg)';setTimeout(function(){var prize=prizes[ri];r.textContent='🎉 You won '+prize+'!';r.style.color='#00b894';sb.disabled=false;isSpinning=false;var earnMsg=document.createElement('div');earnMsg.style.cssText='margin-top:10px;font-size:14px;color:#2ecc71;font-weight:700;';earnMsg.textContent='💰 Earned '+prize+'! Upgrade to claim!';r.parentNode.insertBefore(earnMsg,r.nextSibling);setTimeout(function(){var banner=document.getElementById('chatUpgradeBanner');if(banner){banner.style.display='block';banner.innerHTML='🎁 You won '+prize+'! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>'}},500)},4200)}
@@ -712,6 +729,8 @@ for(var i=0;i<10;i++){var idx=i%kenyaNames.length;allProfiles.push({flag:'🇰�
 for(var i=0;i<8;i++){var idx=i%ghanaNames.length;allProfiles.push({flag:'🇬🇭',name:ghanaNames[idx],method:'MoMo',gender:ghanaNames[idx].includes('A.')||ghanaNames[idx].includes('B.')?'female':'male',currency:'GHS',amount:rnd(100,5000)})}
 // Add Nigeria profiles
 for(var i=0;i<10;i++){var idx=i%nigeriaNames.length;allProfiles.push({flag:'🇳🇬',name:nigeriaNames[idx],method:'MoMo',gender:nigeriaNames[idx].includes('E.')||nigeriaNames[idx].includes('C.')?'female':'male',currency:'NGN',amount:rnd(10000,150000)})}
+// Add Cameroon profiles (XAF)
+for(var i=0;i<8;i++){var names=['Samuel B.','Marie B.','Pierre M.','Alice N.'];var idx=i%names.length;allProfiles.push({flag:'🇨🇲',name:names[idx],method:'MoMo',gender:names[idx].includes('B.')||names[idx].includes('N.')?'female':'male',currency:'XAF',amount:rnd(2000,15000)})}
 // Add Tanzania profiles
 for(var i=0;i<6;i++){var idx=i%tanzaniaNames.length;allProfiles.push({flag:'🇹🇿',name:tanzaniaNames[idx],method:'M-Pesa',gender:tanzaniaNames[idx].includes('M.')||tanzaniaNames[idx].includes('K.')?'female':'male',currency:'TZS',amount:rnd(5000,50000)})}
 // Add South Africa profiles
@@ -728,4 +747,4 @@ function getImg(g){var pool=g==='female'?fi:mi;var usedPool=g==='female'?usedF:u
 function showNext(){if(usedIdx.length>=allProfiles.length)usedIdx=[];var avail=allProfiles.map(function(_,i){return i}).filter(function(i){return!usedIdx.includes(i)});if(avail.length===0)usedIdx=[];var ri=avail[Math.floor(Math.random()*avail.length)];usedIdx.push(ri);var d=allProfiles[ri];ui.src=getImg(d.gender);un.textContent=d.flag+' '+d.name;um.textContent='via '+d.method;var sym={UGX:'UGX',KES:'KSh',GHS:'GH₵',NGN:'₦',USD:'$',ZAR:'R',RWF:'RWF',XAF:'XAF',BWP:'BWP',TZS:'TSh',ZMW:'ZMW',MWK:'MWK'};ua.textContent=(sym[d.currency]||d.currency)+' '+d.amount.toLocaleString();ua.dataset.amount=d.amount;ua.dataset.currency=d.currency;ut.textContent='💸 Live Withdrawal';ut.style.color='#00c6fb';utime.textContent='just now';p.style.display='flex';p.style.animation='none';p.offsetHeight;p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';clearTimeout(window.popupTimer);window.popupTimer=setTimeout(function(){p.style.display='flex';p.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards'},2200)}setTimeout(showNext,800);setInterval(showNext,2800)}();
 </script>
 </body>
-                                                                   </html>
+  </html>
