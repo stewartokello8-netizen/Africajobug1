@@ -498,20 +498,30 @@ function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a}
 function fmt(n){return n.toLocaleString()}
 function usdFromUGX(u){return(u/3500).toFixed(2)}
 
-// Currency handling
-(function(){
-  var R={UGX:1,KES:.027,GHS:.0042,NGN:.133,USD:.0005,ZAR:.00032,RWF:.00082,XAF:.0018,BWP:.0011,TZS:.00069,ZMW:.00045,MWK:.00028},S={UGX:'UGX',KES:'KSh',GHS:'GH₵',NGN:'₦',USD:'$',ZAR:'R',RWF:'RWF',XAF:'XAF',BWP:'BWP',TZS:'TSh',ZMW:'ZMW',MWK:'MWK'},cur='UGX';
-  function h(c){var s=S[c]||c,e=document.getElementById('heroEarningRange');if(!e)return;var a,b;switch(c){case'UGX':a=50000;b=100000;break;case'GHS':a=150;b=200;break;case'NGN':a=20000;b=50000;break;case'USD':a=50;b=100;break;case'KES':a=1350;b=2700;break;default:a=Math.round(50000*R[c]);b=Math.round(100000*R[c])}e.textContent=fmt(a)+s+' - '+fmt(b)+s}
-  function eS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#earningsScroll span[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount),oc=e.dataset.currency;if(!isNaN(a)){var ua=a/(R[oc]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^(.*?earned\s+)[A-Za-z]+/);if(m){var pre=m[1],suf=tx.replace(/^.*?earned\s+[A-Za-z]+\s+[\d,]+/,'');e.textContent=pre+s+' '+fmt(na)+suf}}})}
-  function sS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('.story-card .samount[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^([\d,]+)\s+[A-Za-z]+/);if(m){var suf=tx.replace(/^[\d,]+\s+[A-Za-z]+/,'');e.textContent=fmt(na)+' '+s+suf}}})}
-  function wP(c){var r=R[c]||1,s=S[c]||c,a=document.getElementById('popupAmount');if(a&&a.dataset.amount){var am=parseInt(a.dataset.amount);if(!isNaN(am)){var ua=am/(R[a.dataset.currency]||1),na=Math.round(ua*r),tx=a.textContent,m=tx.match(/^[A-Za-z]+\s+([\d,]+)/);if(m){a.textContent=s+' '+fmt(na);a.dataset.currency=c}}}}
-  function dE(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#demoEarningsGrid .earn-card[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^\+[A-Za-z]+\s+([\d,]+)/);if(m){var suf=tx.replace(/^\+[A-Za-z]+\s+[\d,]+/,'');e.innerHTML='+'+s+' '+fmt(na)+suf;e.dataset.currency=c}}})}
-  function aB(c){var r=R[c]||1,s=S[c]||c,l=['affL1','affL2','affL3'],ba=[10300,5000,2000];l.forEach(function(id,i){var e=document.getElementById(id);if(e){e.textContent=fmt(Math.round(ba[i]*r))+' '+s}});var h=document.getElementById('affiliateHint');if(h){var flag=h.textContent.match(/^[^\s]+/),label=h.textContent.match(/<span>([^<]+)<\/span>/);if(label){var l1=Math.round(10300*r),l2=Math.round(5000*r),l3=Math.round(2000*r);h.innerHTML=(flag?flag[0]:'🇺🇬')+' <span>'+label[1]+'</span> · L1: '+fmt(l1)+' | L2: '+fmt(l2)+' | L3: '+fmt(l3)+' '+s}}}
-  function wTE(c){var s=S[c]||c;document.querySelectorAll('.way-card .way-earn').forEach(function(e,i){var amt={0:10000,1:'',2:'',3:'',4:'',5:'',6:'',7:50000}[i]||'';if(e&&i===0)amt=10000;if(e&&i===7)amt=50000;if(e&&amt!=='')e.textContent='Earn '+fmt(amt)+' '+s;else if(e&&amt==='')e.textContent=''})}
-  function updateServiceBalance(c){var r=R[c]||1,s=S[c]||c;var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000,sbCwf:840500};var total=0;Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*r);el.textContent=s+' '+fmt(val);total+=val}});var totalEl=document.getElementById('serviceTotalBalance');if(totalEl){totalEl.textContent=s+' '+fmt(total)}}
-  function upd(c){cur=c;h(c);eS(c);sS(c);wP(c);dE(c);aB(c);wTE(c);updateServiceBalance(c)}
-  document.querySelectorAll('.currency-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.currency-btn').forEach(function(x){x.classList.remove('active')});this.classList.add('active');upd(this.dataset.currency)})});upd('UGX')
-})();
+// Currency handling with conversion rates
+var R={UGX:1,KES:.027,GHS:.0042,NGN:.133,USD:.0005,ZAR:.00032,RWF:.00082,XAF:.0018,BWP:.0011,TZS:.00069,ZMW:.00045,MWK:.00028};
+var S={UGX:'UGX',KES:'KSh',GHS:'GH₵',NGN:'₦',USD:'$',ZAR:'R',RWF:'RWF',XAF:'XAF',BWP:'BWP',TZS:'TSh',ZMW:'ZMW',MWK:'MWK'};
+var cur='UGX';
+
+function h(c){var s=S[c]||c,e=document.getElementById('heroEarningRange');if(!e)return;var a,b;switch(c){case'UGX':a=50000;b=100000;break;case'GHS':a=150;b=200;break;case'NGN':a=20000;b=50000;break;case'USD':a=50;b=100;break;case'KES':a=1350;b=2700;break;default:a=Math.round(50000*R[c]);b=Math.round(100000*R[c])}e.textContent=fmt(a)+s+' - '+fmt(b)+s}
+
+function eS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#earningsScroll span[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount),oc=e.dataset.currency;if(!isNaN(a)){var ua=a/(R[oc]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^(.*?earned\s+)[A-Za-z]+/);if(m){var pre=m[1],suf=tx.replace(/^.*?earned\s+[A-Za-z]+\s+[\d,]+/,'');e.textContent=pre+s+' '+fmt(na)+suf}}})}
+
+function sS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('.story-card .samount[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^([\d,]+)\s+[A-Za-z]+/);if(m){var suf=tx.replace(/^[\d,]+\s+[A-Za-z]+/,'');e.textContent=fmt(na)+' '+s+suf}}})}
+
+function wP(c){var r=R[c]||1,s=S[c]||c,a=document.getElementById('popupAmount');if(a&&a.dataset.amount){var am=parseInt(a.dataset.amount);if(!isNaN(am)){var ua=am/(R[a.dataset.currency]||1),na=Math.round(ua*r),tx=a.textContent,m=tx.match(/^[A-Za-z]+\s+([\d,]+)/);if(m){a.textContent=s+' '+fmt(na);a.dataset.currency=c}}}}
+
+function dE(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#demoEarningsGrid .earn-card[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^\+[A-Za-z]+\s+([\d,]+)/);if(m){var suf=tx.replace(/^\+[A-Za-z]+\s+[\d,]+/,'');e.innerHTML='+'+s+' '+fmt(na)+suf;e.dataset.currency=c}}})}
+
+function aB(c){var r=R[c]||1,s=S[c]||c,l=['affL1','affL2','affL3'],ba=[10300,5000,2000];l.forEach(function(id,i){var e=document.getElementById(id);if(e){e.textContent=fmt(Math.round(ba[i]*r))+' '+s}});var h=document.getElementById('affiliateHint');if(h){var flag=h.textContent.match(/^[^\s]+/),label=h.textContent.match(/<span>([^<]+)<\/span>/);if(label){var l1=Math.round(10300*r),l2=Math.round(5000*r),l3=Math.round(2000*r);h.innerHTML=(flag?flag[0]:'🇺🇬')+' <span>'+label[1]+'</span> · L1: '+fmt(l1)+' | L2: '+fmt(l2)+' | L3: '+fmt(l3)+' '+s}}}
+
+function wTE(c){var s=S[c]||c;document.querySelectorAll('.way-card .way-earn').forEach(function(e,i){var amt={0:10000,1:'',2:'',3:'',4:'',5:'',6:'',7:50000}[i]||'';if(e&&i===0)amt=10000;if(e&&i===7)amt=50000;if(e&&amt!=='')e.textContent='Earn '+fmt(amt)+' '+s;else if(e&&amt==='')e.textContent=''})}
+
+function updateServiceBalance(c){var r=R[c]||1,s=S[c]||c;var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000,sbCwf:840500};var total=0;Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*r);el.textContent=s+' '+fmt(val);total+=val}});var totalEl=document.getElementById('serviceTotalBalance');if(totalEl){totalEl.textContent=s+' '+fmt(total)}}
+
+function upd(c){cur=c;h(c);eS(c);sS(c);wP(c);dE(c);aB(c);wTE(c);updateServiceBalance(c)}
+
+document.querySelectorAll('.currency-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.currency-btn').forEach(function(x){x.classList.remove('active')});this.classList.add('active');upd(this.dataset.currency)})});upd('UGX');
 
 // Ways data with branded images
 var waysData=[
@@ -563,9 +573,8 @@ var countryData={
 };
 
 function switchDashboard(c){var d=countryData[c];document.querySelectorAll('.country-btn').forEach(function(b){b.classList.toggle('active',b.dataset.country===c)});document.getElementById('currentCountryDisplay').textContent=d.label;document.getElementById('dashboardStats').innerHTML='<div class="stat-card expense"><div class="stat-label">Expense</div><div class="stat-value">'+d.stats.expense+' <small>'+d.currency+'</small></div><div class="stat-sub">• this month</div></div><div class="stat-card earnings"><div class="stat-label">Total Profits</div><div class="stat-value">'+d.stats.profits+' <small>'+d.currency+'</small></div><div class="stat-sub">• all time</div></div><div class="stat-card balance" style="grid-column:span 1;"><div class="stat-label">Balance</div><div class="stat-value">'+d.stats.balance+' <small>'+d.currency+'</small></div><div class="balance-extra" style="border-top:none;padding-top:2px;margin-top:2px;"><span class="all-time">ALL TIME</span><span class="show-link">Show full stats ›</span></div></div><div class="stat-card withdrawn"><div class="stat-label">Withdrawn</div><div class="stat-value" style="display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;"><span>'+d.stats.withdrawn+' <small>'+d.currency+'</small></span><span class="withdrawn-chip">12% <small>+</small></span></div><div class="stat-sub">• 30 days</div></div>';
-// Update service balance items with country-specific amounts
+// Update service balance with country-specific currency
 var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000,sbCwf:840500};
-// For other countries, convert using the currency rate
 var r=R[d.currency]||1;
 var total=0;
 Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*r);el.textContent=d.symbol+' '+fmt(val);total+=val}});
