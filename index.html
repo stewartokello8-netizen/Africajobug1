@@ -663,14 +663,9 @@ function closeDemoPage(){document.getElementById('demoPage').classList.remove('a
 var chatLocked=!1,chatUser=null;
 
 function openChatPage(element){
-  // element can be the .user-card itself or the "Chat" button inside it
   var card = element.closest ? element.closest('.user-card') : element;
-  if (!card) {
-    // fallback: if element is the card itself
-    card = element;
-  }
+  if (!card) { card = element; }
   if (!card || !card.dataset) {
-    // try to find the nearest user-card
     var parent = element.parentElement;
     while (parent && !parent.classList.contains('user-card')) {
       parent = parent.parentElement;
@@ -713,7 +708,6 @@ function openChatPage(element){
 
 function openChatPageFromDemo(){
   var rand = profilePool[Math.floor(Math.random() * profilePool.length)];
-  // create a fake element with dataset
   var fakeEl = {
     dataset: {
       user: rand.name,
@@ -797,7 +791,7 @@ function addRandomDemoReply(){var teaching=demoMessages.filter(function(m){retur
 function initDemoChat(){if(demoUSERS.length===0){fetchDemoUserPhotos()}else{renderDemoTopPeople();renderDemoMessages()}if(demoChatInterval1)clearInterval(demoChatInterval1);if(demoChatInterval2)clearInterval(demoChatInterval2);if(demoChatInterval3)clearInterval(demoChatInterval3);demoChatInterval1=setInterval(function(){addRandomDemoTeachingMessage()},7000+Math.random()*4000);demoChatInterval2=setInterval(function(){addRandomDemoReply()},5000+Math.random()*3000);demoChatInterval3=setInterval(function(){updateDemoEarningsGrid()},5000)}
 
 // ============================================================
-// INITIALIZATION
+// INITIALIZATION — FIXED POPUP ROTATION
 // ============================================================
 document.addEventListener('DOMContentLoaded',function(){
   renderWaysGrid('waysGridMain');
@@ -810,10 +804,68 @@ document.addEventListener('DOMContentLoaded',function(){
 
   window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});
 
-  // Withdrawal popup simulation
-  var popupCard=document.getElementById('popupCard');
-  if(popupCard){setInterval(function(){popupCard.style.display='flex';popupCard.style.animation='slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';setTimeout(function(){popupCard.style.display='none'},3500)},12000)}
+  // ===== FIXED: POPUP ROTATION — Withdrawal + Activation =====
+  var popupCard = document.getElementById('popupCard');
+  var popupCount = 0;
+  
+  function showNextPopup() {
+    popupCount++;
+    // Every 4th popup is an activation, others are withdrawals
+    if (popupCount % 4 === 0) {
+      openLiveActivationPopup();
+    } else {
+      showWithdrawalPopup();
+    }
+  }
+  
+  function showWithdrawalPopup() {
+    if (!popupCard) return;
+    // Random user data for variety
+    var names = ['James K.','Sarah N.','Robert T.','Esther K.','Peter M.','John W.','Rebecca N.','Samuel T.','Joseph M.','Dorothy K.'];
+    var countries = ['🇺🇬 Uganda','🇰🇪 Kenya','🇬🇭 Ghana','🇳🇬 Nigeria','🇹🇿 Tanzania','🇿🇦 South Africa'];
+    var methods = ['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'];
+    var amounts = [2400000, 1800000, 3200000, 950000, 2100000, 1500000, 2800000, 1200000, 3600000, 800000];
+    var images = [
+      'https://randomuser.me/api/portraits/men/1.jpg',
+      'https://randomuser.me/api/portraits/women/2.jpg',
+      'https://randomuser.me/api/portraits/men/3.jpg',
+      'https://randomuser.me/api/portraits/women/4.jpg',
+      'https://randomuser.me/api/portraits/men/5.jpg',
+      'https://randomuser.me/api/portraits/women/6.jpg',
+      'https://randomuser.me/api/portraits/men/7.jpg',
+      'https://randomuser.me/api/portraits/women/8.jpg',
+      'https://randomuser.me/api/portraits/men/9.jpg',
+      'https://randomuser.me/api/portraits/women/10.jpg'
+    ];
+    var idx = Math.floor(Math.random() * names.length);
+    var cidx = Math.floor(Math.random() * countries.length);
+    var midx = Math.floor(Math.random() * methods.length);
+    var aidx = Math.floor(Math.random() * amounts.length);
+    
+    document.getElementById('popupUserImage').src = images[idx % images.length];
+    document.getElementById('popupUserName').textContent = countries[cidx] + ' ' + names[idx];
+    document.getElementById('popupMethod').textContent = 'via ' + methods[midx];
+    document.getElementById('popupAmount').textContent = 'UGX ' + amounts[aidx].toLocaleString();
+    document.getElementById('popupAmount').dataset.amount = amounts[aidx];
+    document.getElementById('popupTime').textContent = 'just now';
+    document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
+    
+    popupCard.style.display = 'flex';
+    popupCard.style.animation = 'none';
+    popupCard.offsetHeight; // trigger reflow
+    popupCard.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
+    
+    // Auto-hide after 3.5 seconds
+    if (window.popupTimer) clearTimeout(window.popupTimer);
+    window.popupTimer = setTimeout(function() {
+      popupCard.style.display = 'none';
+    }, 3500);
+  }
+  
+  // Start the popup rotation
+  setTimeout(showNextPopup, 3000);
+  setInterval(showNextPopup, 4200);
 });
 </script>
 </body>
-</html>
+  </html>
