@@ -586,20 +586,17 @@ function sS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('.story-card .s
 function wP(c){var r=R[c]||1,s=S[c]||c,a=document.getElementById('popupAmount');if(a&&a.dataset.amount){var am=parseInt(a.dataset.amount);if(!isNaN(am)){var ua=am/(R[a.dataset.currency]||1),na=Math.round(ua*r),tx=a.textContent,m=tx.match(/^[A-Za-z]+\s+([\d,]+)/);if(m){a.textContent=s+' '+fmt(na);a.dataset.currency=c}}}}
 function dE(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#demoEarningsGrid .earn-card[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^\+[A-Za-z]+\s+([\d,]+)/);if(m){var suf=tx.replace(/^\+[A-Za-z]+\s+[\d,]+/,'');e.innerHTML='+'+s+' '+fmt(na)+suf;e.dataset.currency=c}}})}
 function aB(c){var r=R[c]||1,s=S[c]||c,l=['affL1','affL2','affL3'],ba=[10300,5000,2000];l.forEach(function(id,i){var e=document.getElementById(id);if(e){e.textContent=fmt(Math.round(ba[i]*r))+' '+s}});var h=document.getElementById('affiliateHint');if(h){var flag=h.textContent.match(/^[^\s]+/),label=h.textContent.match(/<span>([^<]+)<\/span>/);if(label){var l1=Math.round(10300*r),l2=Math.round(5000*r),l3=Math.round(2000*r);h.innerHTML=(flag?flag[0]:'🇺🇬')+' <span>'+label[1]+'</span> · L1: '+fmt(l1)+' | L2: '+fmt(l2)+' | L3: '+fmt(l3)+' '+s}}}
-function wTE(c){var s=S[c]||c;document.querySelectorAll('.way-card .way-earn').forEach(function(e,i){var amt={0:500000,1:10000,2:'',3:'',4:'',5:'',6:'',7:'',8:'',9:'',10:50000}[i]||'';if(e&&i===0)amt=500000;if(e&&i===1)amt=10000;if(e&&i===9)amt=50000;if(e&&amt!=='')e.textContent='Earn '+fmt(amt)+' '+s;else if(e&&amt==='')e.textContent=''})}
+function wTE(c){var s=S[c]||c;document.querySelectorAll('.way-card .way-earn').forEach(function(e,i){var amt={0:500000,1:10000,2:'',3:'',4:'',5:'',6:'',7:'',8:'',9:'',10:50000}[i]||'';if(e&&i===0)amt=500000;if(e&&i===1)amt=10000;if(e&&i===10)amt=50000;if(e&&amt!=='')e.textContent='Earn '+fmt(amt)+' '+s;else if(e&&amt==='')e.textContent=''})}
 function updateServiceBalance(c){var r=R[c]||1,s=S[c]||c;var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000,sbCwf:840500};var total=0;Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*r);el.textContent=s+' '+fmt(val);total+=val}});var totalEl=document.getElementById('serviceTotalBalance');if(totalEl){totalEl.textContent=s+' '+fmt(total)}}
 function upd(c){cur=c;h(c);eS(c);sS(c);wP(c);dE(c);aB(c);wTE(c);updateServiceBalance(c)}
 document.querySelectorAll('.currency-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.currency-btn').forEach(function(x){x.classList.remove('active')});this.classList.add('active');upd(this.dataset.currency)})});upd('UGX');
 
 // ============================================================
-// WAYS TO EARN DATA — WITH YOUR IMAGE FOR TOP BONUSES
+// WAYS TO EARN DATA — UPDATED: Top Bonuses (short text), Welcome Bonus, then rest, with Play Online Games and Forex Trading Signal moved to bottom (after Paid Spinning)
 // ============================================================
-// Using base64 encoded version of your image for immediate display
-var topBonusImage = "data:image/webp;base64,UklGRlBUAABXRUJQVlA4IENUAAAwoACdASo4ADgAPm00l0gkIqIhIhKb6IANiWdu+Uu8VcAVeZxHrABs8+CkU4H1ft/WQyctabv0R/l/+p/Jf4/2J/Mfpf9z/u3+Q/yP95/KH2B9S/rP9z/3H+I/2HuP/3PtN9T/1/+8/7P/E+oP8r+u35v+4/43/t/4r2F/tP7P+7f139Lf0N/k/8F+4HwC/lf86/bj/Yf5T2W/6/0R9m/13/h/yHsBeyf1D/h/4T/Af9f/Cf///5/ZP7D/nf/f/lP9h8gfzP++/9j/Lf6T9vvsF/iX9H/6n+P9bP95/3/9F+//7U/23/d/872A/5F/XP+9/iPbb/3/93/3//T/t/fH+9/9j/0f7f/U/vz9gf89/qv/d/0v+h/bH6Zf6j/2/6P/b/+X/Xf///wf//3Vfvn///9F/7/9L/5wAAAAAAAAAAAAAAAAAAAOv3dRQLlEzPP1t3wXpr+buu1KJou6p4dVMX1nt63u1ZPEmoAlR0UiyOLM0WpC3M0mKHCGV2bfES43+F0eJGKhLxJrn2DvKbj+fouKv8uO05p3kFfQNq1fwgd53SRdksvvrSr0ykVNC+OxnM0UyqN5TDiO5Px5rPpB3KQ9n3Puln5Sqv2k+6Dqg15dPx5pDNOkfCJrWGpYhW9yYHzJdRQ+gzzBZ/LaADu/0T2gtohGS7zrOJYV/rS6TGBaAITyWwdO+mnfQHvC0jKY/TA+6yOMQJhwe87t6NbJOKdLK6eF0K2Qh3UJ/nI6YxAgmm01ukABc82m8KBWpMRpNxZhg0F1Aq/Hn0vLzyOZPseK+qjQ7tBT+8ut0SBLhsOZ+fM0B13icZSN9DwjX08tm3POa3PYNp9rX0rM5taLNL1bzQNQykCzm6g+jyz/VrLxXY7n89+2Hj0PVltn7d/aEY0/n7fzhKJp3v2OZws95J5oZzChH6jw8GXK/27QSS4IXVJZk/AOD8xyu7F6Ns+yGdp/+f9T9vgIt7R1JQ5ymN9pKyWGxW7N5/Bv8Q8Fbrr7Hc2mFtsarruxwzGzg40WBlPSeGdL/UDKrlA+xaxYcLWzJfU9AgKkCwgDSkIkLHY3UClm22Tn2sGJ+yj9LS4ovhV6d7+Qqk2xmJN6/NTgGdJh2B1S0QK/IFbJ/sWtKPRZPzDWkY//Qm6enF2dmWvR76tLvfsmW+nmOuALo1r+55pOW10/gcK4B0Vb0+ZR5yKcMx21WmJgbb2CpDWkBy2dS9v55LdAV6kASgWNWEDzgd8rd8ZPlLbw+lPHK+g2s3DNNXJUnj8Swr2rQMH5M+M1pE/26EsKq17iG/49dE04F4wZ4Zl+GC8CVZESOkgcZ/Ks0VlJ+6++RwDDprh9JN/VIwAAAAAAA==";
-
 var waysData = [
-  // 1. TOP BONUSES — FIRST with YOUR image
-  {name:'🏆 Top Bonuses',desc:'🔥 Rank #1-20 & win 500,000 UGX weekly! Top performers take home massive bonuses every week. Climb the leaderboard and claim your prize!',icon:topBonusImage,style:'border:2px solid #f59e0b; background:linear-gradient(145deg, rgba(245,158,11,0.12), rgba(0,150,255,0.04));',btnText:'🏅 View Rankings',btnClass:'gold',onClick:"alert('🏆 Top Bonuses: Rank in top 1-20 and win up to 500,000 UGX weekly! Keep performing to stay on the leaderboard!')",fixedAmount:500000},
+  // 1. TOP BONUSES — FIRST (shorter text, working image)
+  {name:'🏆 Top Bonuses',desc:'🔥 Rank #1-20 & win 500,000 UGX weekly! Top performers take home massive bonuses every week. Climb the leaderboard and claim your prize!',icon:'https://images.unsplash.com/photo-1579820186654-42f5a6d3b8f1?w=100&h=100&fit=crop',style:'border:2px solid #f59e0b; background:linear-gradient(145deg, rgba(245,158,11,0.12), rgba(0,150,255,0.04));',btnText:'🏅 View Rankings',btnClass:'gold',onClick:"alert('🏆 Top Bonuses: Rank in top 1-20 and win up to 500,000 UGX weekly! Keep performing to stay on the leaderboard!')",fixedAmount:500000},
   
   // 2. WELCOME BONUS — SECOND
   {name:'🎉 Welcome Bonus',desc:'Get 10,000 UGX free when you sign up and activate your account!',icon:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop',style:'border:2px solid #00b894; background:linear-gradient(145deg, rgba(0,184,148,0.10), rgba(0,150,255,0.05));',btnText:'💰 Claim Bonus',btnClass:'gold',onClick:'handleWelcomeBonus()',fixedAmount:10000},
@@ -794,6 +791,7 @@ function openLiveActivationPopup(){
   var p=document.getElementById('activationPopup');
   if(p){
     p.style.display='flex';
+    // Users with gender-specific images and names
     var users = [
       {flag:'🇺🇬', name:'James K.', fee:'19,000 UGX', gender:'male', img:'https://randomuser.me/api/portraits/men/1.jpg'},
       {flag:'🇰🇪', name:'Grace W.', fee:'550 KSh', gender:'female', img:'https://randomuser.me/api/portraits/women/2.jpg'},
@@ -819,6 +817,7 @@ function showAnswer(el){var a=el.querySelector('.a');if(a){a.style.display='bloc
 function openWheelPopup(){document.getElementById('wheelPopupOverlay').classList.add('active');document.body.style.overflow='hidden';var w=document.getElementById('wheel');if(w)w.style.transform='rotate(0deg)';var r=document.getElementById('spinResult');if(r)r.textContent='Click SPIN to win up to $50!';var sb=document.getElementById('spinBtn');if(sb)sb.disabled=false}
 function closeWheelPopup(){document.getElementById('wheelPopupOverlay').classList.remove('active');document.body.style.overflow='';isSpinning=false}
 function openWithdrawalPopup(country,method){
+  // Gender-matched withdrawal popup
   var users = [
     {name:'James K.', img:'https://randomuser.me/api/portraits/men/1.jpg', gender:'male'},
     {name:'Sarah N.', img:'https://randomuser.me/api/portraits/women/2.jpg', gender:'female'},
@@ -886,6 +885,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
   window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});
 
+  // POPUP ROTATION — Withdrawal + Activation (gender-matched)
   var popupCard = document.getElementById('popupCard');
   var popupCount = 0;
   
@@ -900,6 +900,7 @@ document.addEventListener('DOMContentLoaded',function(){
   
   function showWithdrawalPopup() {
     if (!popupCard) return;
+    // Gender-matched data
     var users = [
       {name:'James K.', img:'https://randomuser.me/api/portraits/men/1.jpg', gender:'male'},
       {name:'Sarah N.', img:'https://randomuser.me/api/portraits/women/2.jpg', gender:'female'},
