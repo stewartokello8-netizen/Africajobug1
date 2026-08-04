@@ -586,27 +586,53 @@ function sS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('.story-card .s
 function wP(c){var r=R[c]||1,s=S[c]||c,a=document.getElementById('popupAmount');if(a&&a.dataset.amount){var am=parseInt(a.dataset.amount);if(!isNaN(am)){var ua=am/(R[a.dataset.currency]||1),na=Math.round(ua*r),tx=a.textContent,m=tx.match(/^[A-Za-z]+\s+([\d,]+)/);if(m){a.textContent=s+' '+fmt(na);a.dataset.currency=c}}}}
 function dE(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#demoEarningsGrid .earn-card[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^\+[A-Za-z]+\s+([\d,]+)/);if(m){var suf=tx.replace(/^\+[A-Za-z]+\s+[\d,]+/,'');e.innerHTML='+'+s+' '+fmt(na)+suf;e.dataset.currency=c}}})}
 function aB(c){var r=R[c]||1,s=S[c]||c,l=['affL1','affL2','affL3'],ba=[10300,5000,2000];l.forEach(function(id,i){var e=document.getElementById(id);if(e){e.textContent=fmt(Math.round(ba[i]*r))+' '+s}});var h=document.getElementById('affiliateHint');if(h){var flag=h.textContent.match(/^[^\s]+/),label=h.textContent.match(/<span>([^<]+)<\/span>/);if(label){var l1=Math.round(10300*r),l2=Math.round(5000*r),l3=Math.round(2000*r);h.innerHTML=(flag?flag[0]:'🇺🇬')+' <span>'+label[1]+'</span> · L1: '+fmt(l1)+' | L2: '+fmt(l2)+' | L3: '+fmt(l3)+' '+s}}}
-function wTE(c){var s=S[c]||c;document.querySelectorAll('.way-card .way-earn').forEach(function(e,i){var amt={0:10000,1:'',2:'',3:'',4:'',5:'',6:'',7:50000}[i]||'';if(e&&i===0)amt=10000;if(e&&i===7)amt=50000;if(e&&amt!=='')e.textContent='Earn '+fmt(amt)+' '+s;else if(e&&amt==='')e.textContent=''})}
+function wTE(c){var s=S[c]||c;document.querySelectorAll('.way-card .way-earn').forEach(function(e,i){var amt={0:500000,1:10000,2:'',3:'',4:'',5:'',6:'',7:'',8:'',9:'',10:50000}[i]||'';if(e&&i===0)amt=500000;if(e&&i===1)amt=10000;if(e&&i===10)amt=50000;if(e&&amt!=='')e.textContent='Earn '+fmt(amt)+' '+s;else if(e&&amt==='')e.textContent=''})}
 function updateServiceBalance(c){var r=R[c]||1,s=S[c]||c;var items={sbWhatsApp:1240000,sbDeposit:19500,sbAds:520000,sbTikTok:980000,sbYouTube:1450000,sbSurvey:350000,sbBlog:200000,sbCwf:840500};var total=0;Object.keys(items).forEach(function(id){var el=document.getElementById(id);if(el){var val=Math.round(items[id]*r);el.textContent=s+' '+fmt(val);total+=val}});var totalEl=document.getElementById('serviceTotalBalance');if(totalEl){totalEl.textContent=s+' '+fmt(total)}}
 function upd(c){cur=c;h(c);eS(c);sS(c);wP(c);dE(c);aB(c);wTE(c);updateServiceBalance(c)}
 document.querySelectorAll('.currency-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.currency-btn').forEach(function(x){x.classList.remove('active')});this.classList.add('active');upd(this.dataset.currency)})});upd('UGX');
 
-// Ways data
-var waysData=[
-{name:'🎉 Welcome Bonus',desc:'Get 10,000 UGX free when you sign up and activate your account!',icon:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop',style:'border:2px solid #00b894; background:linear-gradient(145deg, rgba(0,184,148,0.10), rgba(0,150,255,0.05));',btnText:'💰 Claim Bonus',btnClass:'gold',onClick:'handleWelcomeBonus()',fixedAmount:10000},
-{name:'💬 Chat with Foreigners',desc:'Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.',icon:'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop',style:'',btnText:'Start Chatting',btnClass:'',onClick:"window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')"},
-{name:'❓ Answering Questions',desc:'Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!',icon:'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=100&h=100&fit=crop',style:'',btnText:'Start Answering',btnClass:'gold',onClick:'openQuestionsPopup()'},
-{name:'🎬 Paid TikTok Videos',desc:'Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.',icon:'https://img.icons8.com/color/96/tiktok.png',style:'',btnText:'Watch Videos',btnClass:'gold',onClick:"openVideoPopup('🎬 TikTok Video','$3.20','https://www.tiktok.com/embed/v2/6872744864957664518')"},
-{name:'📈 Affiliate Bonus',desc:'Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!',icon:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop',style:'',btnText:'Start Promoting',btnClass:'gold',onClick:'openAffiliateBonus()'},
-{name:'📱 WhatsApp Posting',desc:'Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.',icon:'https://img.icons8.com/color/96/whatsapp.png',style:'',btnText:'Start Posting',btnClass:'',onClick:'handleWhatsAppPosting()'},
-{name:'📺 YouTube Earning',desc:'Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.',icon:'https://img.icons8.com/color/96/youtube-play.png',style:'',btnText:'Start Watching',btnClass:'gold',onClick:"openVideoPopup('📺 YouTube Video','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ')"},
-{name:'🎰 Paid Spinning',desc:'Spin the wheel and win cash prizes up to 50,000 UGX! Every spin gives you a chance to earn real money.',icon:'https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=100&h=100&fit=crop',style:'',btnText:'Start Spinning',btnClass:'',onClick:'openWheelPopup()'}
+// ============================================================
+// WAYS TO EARN DATA — UPDATED WITH NEW METHODS
+// ============================================================
+var waysData = [
+  // 1. TOP BONUSES — FIRST
+  {name:'🏆 Top Bonuses',desc:'🌟 PERFORMANCE REWARDS! Rank in the top 1-20 positions and walk away with 500,000 UGX weekly! The higher you rank, the bigger the bonus. Stay consistent, climb the leaderboard, and claim your share of weekly prizes!',icon:'https://images.unsplash.com/photo-1579820186654-42f5a6d3b8f1?w=100&h=100&fit=crop',style:'border:2px solid #f59e0b; background:linear-gradient(145deg, rgba(245,158,11,0.12), rgba(0,150,255,0.04));',btnText:'🏅 View Rankings',btnClass:'gold',onClick:"alert('🏆 Top Bonuses: Rank in top 1-20 and win up to 500,000 UGX weekly! Keep performing to stay on the leaderboard!')",fixedAmount:500000},
+  
+  // 2. WELCOME BONUS — SECOND
+  {name:'🎉 Welcome Bonus',desc:'Get 10,000 UGX free when you sign up and activate your account!',icon:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop',style:'border:2px solid #00b894; background:linear-gradient(145deg, rgba(0,184,148,0.10), rgba(0,150,255,0.05));',btnText:'💰 Claim Bonus',btnClass:'gold',onClick:'handleWelcomeBonus()',fixedAmount:10000},
+  
+  // 3. PLAY ONLINE GAMES — NEW
+  {name:'🎮 Play Online Games',desc:'Play fun and exciting online games like trivia, puzzles, memory challenges, and more! Each game you play earns you real money. Compete with friends and win daily prizes!',icon:'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=100&h=100&fit=crop',style:'',btnText:'🎯 Play Now',btnClass:'gold',onClick:"alert('🎮 Play Online Games! Earn real money by playing trivia, puzzles, memory games and more! Start playing now and win daily prizes!')",fixedAmount:0},
+  
+  // 4. FOREX TRADING SIGNAL — NEW
+  {name:'📈 Forex Trading Signal',desc:'Get premium Forex trading signals delivered directly to you! Expert analysis and market insights to help you trade smarter. Earn by following winning signals with our curated strategy.',icon:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=100&h=100&fit=crop',style:'',btnText:'📊 Get Signals',btnClass:'',onClick:"alert('📈 Forex Trading Signal: Get expert trading signals and market insights! Follow our curated strategy to maximize your trading earnings.')",fixedAmount:0},
+  
+  // 5. CHAT WITH FOREIGNERS
+  {name:'💬 Chat with Foreigners',desc:'Chat with real members from USA, UK, France, Canada, Australia and Spain. Exchange 5 messages per person and earn.',icon:'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop',style:'',btnText:'Start Chatting',btnClass:'',onClick:"window.open('https://star-hela.com/register.php?ref=Myqashapp','_blank')"},
+  
+  // 6. ANSWERING QUESTIONS
+  {name:'❓ Answering Questions',desc:'Answer trivia questions, surveys, and quizzes. Get paid for every correct answer!',icon:'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=100&h=100&fit=crop',style:'',btnText:'Start Answering',btnClass:'gold',onClick:'openQuestionsPopup()'},
+  
+  // 7. PAID TIKTOK VIDEOS
+  {name:'🎬 Paid TikTok Videos',desc:'Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with.',icon:'https://img.icons8.com/color/96/tiktok.png',style:'',btnText:'Watch Videos',btnClass:'gold',onClick:"openVideoPopup('🎬 TikTok Video','$3.20','https://www.tiktok.com/embed/v2/6872744864957664518')"},
+  
+  // 8. AFFILIATE BONUS
+  {name:'📈 Affiliate Bonus',desc:'Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn!',icon:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop',style:'',btnText:'Start Promoting',btnClass:'gold',onClick:'openAffiliateBonus()'},
+  
+  // 9. WHATSAPP POSTING
+  {name:'📱 WhatsApp Posting',desc:'Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily.',icon:'https://img.icons8.com/color/96/whatsapp.png',style:'',btnText:'Start Posting',btnClass:'',onClick:'handleWhatsAppPosting()'},
+  
+  // 10. YOUTUBE EARNING
+  {name:'📺 YouTube Earning',desc:'Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income.',icon:'https://img.icons8.com/color/96/youtube-play.png',style:'',btnText:'Start Watching',btnClass:'gold',onClick:"openVideoPopup('📺 YouTube Video','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ')"},
+  
+  // 11. PAID SPINNING
+  {name:'🎰 Paid Spinning',desc:'Spin the wheel and win cash prizes up to 50,000 UGX! Every spin gives you a chance to earn real money.',icon:'https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=100&h=100&fit=crop',style:'',btnText:'Start Spinning',btnClass:'',onClick:'openWheelPopup()',fixedAmount:50000}
 ];
-function renderWaysGrid(cid){var c=document.getElementById(cid);if(!c)return;var h='';waysData.forEach(function(w,i){var ugx=w.fixedAmount||{0:10000,7:50000}[i]||0;var et='';if(i===0)et='Earn 10,000 UGX';else if(i===7)et='Earn 50,000 UGX';var bc=w.btnClass?'cta-btn '+w.btnClass:'cta-btn';h+='<div class="way-card" onclick="'+w.onClick+'" style="'+(w.style||'')+'"><img class="way-icon" src="'+w.icon+'" alt="'+w.name+'" loading="lazy" style="border-radius:14px; padding:6px; background:rgba(255,255,255,0.04); object-fit:cover;"><div class="way-content"><div class="way-name">'+w.name+'</div><div class="way-desc">'+w.desc+'</div><div class="way-earn">'+et+'</div><div class="way-cta"><button class="'+bc+'" onclick="event.stopPropagation();'+w.onClick+';return!1">'+w.btnText+'</button></div></div></div>'});
-c.innerHTML=h}
+
+function renderWaysGrid(cid){var c=document.getElementById(cid);if(!c)return;var h='';waysData.forEach(function(w,i){var ugx=w.fixedAmount||0;var et='';if(i===0)et='🏆 Win 500,000 UGX Weekly!';else if(i===1)et='Earn 10,000 UGX';else if(i===10)et='Earn 50,000 UGX';var bc=w.btnClass?'cta-btn '+w.btnClass:'cta-btn';h+='<div class="way-card" onclick="'+w.onClick+'" style="'+(w.style||'')+'"><img class="way-icon" src="'+w.icon+'" alt="'+w.name+'" loading="lazy" style="border-radius:14px; padding:6px; background:rgba(255,255,255,0.04); object-fit:cover;"><div class="way-content"><div class="way-name">'+w.name+'</div><div class="way-desc">'+w.desc+'</div><div class="way-earn">'+et+'</div><div class="way-cta"><button class="'+bc+'" onclick="event.stopPropagation();'+w.onClick+';return!1">'+w.btnText+'</button></div></div></div>'});c.innerHTML=h}
 
 // ============================================================
-// LIVE FOREIGNERS — WITH TYPING BUBBLE + CHAT OVERLAY SUPPORT
+// LIVE FOREIGNERS
 // ============================================================
 
 var profilePool = [
@@ -624,20 +650,18 @@ var typingMessages = ['typing now... ✍️','saying hello... 💬','writing a r
 function shuffleArray(arr){for(var i=arr.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}return arr}
 function getRandomProfiles(){var s=shuffleArray([...profilePool]);return s.slice(0,8)}
 
-// RENDER LIVE USERS — includes typing bubble + data attributes for chat overlay
+// RENDER LIVE USERS
 function renderLiveUsers(profiles){
   var c=document.getElementById('liveUserList');if(!c)return;
   var h='';
   profiles.forEach(function(u){
     var msg=typingMessages[Math.floor(Math.random()*typingMessages.length)];
     var emojis=['💬','✍️','💭','📝','🤔','👋','🔥','💕'];var emoji=emojis[Math.floor(Math.random()*emojis.length)];
-    // IMPORTANT: data-user, data-img, data-country + onclick="openChatPage(this)"
     h+='<div class="user-card" data-user="'+u.name+'" data-img="'+u.img+'" data-country="'+u.country+'" onclick="openChatPage(this)"><div class="user-top"><img src="'+u.img+'" alt="'+u.name+'" loading="lazy"><div class="user-info"><div class="name">'+u.name+', '+u.age+' <span class="online-dot"></span></div><div class="country">'+u.country+' <span class="live-label">🔴 LIVE</span></div><div class="bio">'+u.bio+'</div><div class="typing-bubble"><span class="typing-emoji">'+emoji+'</span><span class="typing-dots"><span></span><span></span><span></span></span><span class="typing-text">'+msg+'</span></div></div></div><div class="user-actions"><a href="#" class="chat" onclick="event.stopPropagation();openChatPage(this.closest(\'.user-card\'));return!1">💬 Chat</a><a href="#" class="watch" onclick="event.stopPropagation();alert(\'▶️ Watch '+u.name+'\'s video\');return!1">▶ Watch</a></div></div>';
   });
   c.innerHTML=h;
   document.getElementById('activeChatters').textContent=profiles.length;
 }
-
 function rotateProfiles(){var p=getRandomProfiles();renderLiveUsers(p);var tip=document.getElementById('typingIndicator');if(tip){var names=p.map(function(x){return x.name.split(' ')[0]});tip.textContent=names[Math.floor(Math.random()*names.length)]+' is typing... 🔥'}}
 
 // ============================================================
@@ -658,7 +682,7 @@ function openDemoPage(){document.getElementById('demoPage').classList.add('activ
 function closeDemoPage(){document.getElementById('demoPage').classList.remove('active');document.body.style.overflow=''}
 
 // ============================================================
-// CHAT OVERLAY — WORKS WITH CLICKING ON PROFILES
+// CHAT OVERLAY
 // ============================================================
 var chatLocked=!1,chatUser=null;
 
@@ -763,14 +787,71 @@ function closeVideoPopup(){document.getElementById('videoPopupIframe').src='';do
 function openActionPopup(title,amount,usd,icon){document.getElementById('popupIcon').textContent=icon||'💰';document.getElementById('popupTitle').textContent=title;document.getElementById('popupAmount').textContent=amount||'—';document.getElementById('popupUsd').textContent='≈ '+(usd||'$1.35');document.getElementById('actionPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeActionPopup(){document.getElementById('actionPopupOverlay').classList.remove('active');document.body.style.overflow=''}
 function openActivationPopup(){openActionPopup('🔓 Activate Account','Get 10,000 UGX Bonus!','$2.86','🔓')}
-function openLiveActivationPopup(){var p=document.getElementById('activationPopup');if(p){p.style.display='flex';var users=[{flag:'🇺🇬',name:'James K.',fee:'19,000 UGX'},{flag:'🇰🇪',name:'Grace W.',fee:'550 KSh'},{flag:'🇬🇭',name:'Kwame B.',fee:'90 GH₵'},{flag:'🇳🇬',name:'Amara E.',fee:'9,000 Naira'},{flag:'🇹🇿',name:'Juma H.',fee:'12,000 TZS'},{flag:'🇿🇦',name:'Thabo M.',fee:'120 ZAR'}];var idx=Math.floor(Math.random()*users.length);document.getElementById('activationUserName').textContent=users[idx].flag+' '+users[idx].name;document.querySelector('#activationPopup .amount-display').textContent=users[idx].fee;document.getElementById('activationTime').textContent='just now';setTimeout(function(){p.style.display='none'},5000)}}
+function openLiveActivationPopup(){
+  var p=document.getElementById('activationPopup');
+  if(p){
+    p.style.display='flex';
+    // Users with gender-specific images and names
+    var users = [
+      {flag:'🇺🇬', name:'James K.', fee:'19,000 UGX', gender:'male', img:'https://randomuser.me/api/portraits/men/1.jpg'},
+      {flag:'🇰🇪', name:'Grace W.', fee:'550 KSh', gender:'female', img:'https://randomuser.me/api/portraits/women/2.jpg'},
+      {flag:'🇬🇭', name:'Kwame B.', fee:'90 GH₵', gender:'male', img:'https://randomuser.me/api/portraits/men/3.jpg'},
+      {flag:'🇳🇬', name:'Amara E.', fee:'9,000 Naira', gender:'female', img:'https://randomuser.me/api/portraits/women/4.jpg'},
+      {flag:'🇹🇿', name:'Juma H.', fee:'12,000 TZS', gender:'male', img:'https://randomuser.me/api/portraits/men/5.jpg'},
+      {flag:'🇿🇦', name:'Thabo M.', fee:'120 ZAR', gender:'male', img:'https://randomuser.me/api/portraits/men/6.jpg'},
+      {flag:'🇷🇼', name:'Diane U.', fee:'3,000 RWF', gender:'female', img:'https://randomuser.me/api/portraits/women/7.jpg'},
+      {flag:'🇨🇲', name:'Marie B.', fee:'2,000 XAF', gender:'female', img:'https://randomuser.me/api/portraits/women/8.jpg'}
+    ];
+    var idx = Math.floor(Math.random() * users.length);
+    document.getElementById('activationUserImage').src = users[idx].img;
+    document.getElementById('activationUserName').textContent = users[idx].flag+' '+users[idx].name;
+    document.querySelector('#activationPopup .amount-display').textContent = users[idx].fee;
+    document.getElementById('activationTime').textContent = 'just now';
+    setTimeout(function(){p.style.display='none'},5000)
+  }
+}
 function handleWelcomeBonus(){openActionPopup('🎉 Welcome Bonus!','10,000 UGX','$2.86','🎉')}
 function openQuestionsPopup(){document.getElementById('questionsPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').classList.remove('active');document.body.style.overflow=''}
 function showAnswer(el){var a=el.querySelector('.a');if(a){a.style.display='block'}}
 function openWheelPopup(){document.getElementById('wheelPopupOverlay').classList.add('active');document.body.style.overflow='hidden';var w=document.getElementById('wheel');if(w)w.style.transform='rotate(0deg)';var r=document.getElementById('spinResult');if(r)r.textContent='Click SPIN to win up to $50!';var sb=document.getElementById('spinBtn');if(sb)sb.disabled=false}
 function closeWheelPopup(){document.getElementById('wheelPopupOverlay').classList.remove('active');document.body.style.overflow='';isSpinning=false}
-function openWithdrawalPopup(country,method){openActionPopup('💸 Withdrawal via '+method,'Up to 2,600,000 UGX','$743','💸')}
+function openWithdrawalPopup(country,method){
+  // Gender-matched withdrawal popup
+  var users = [
+    {name:'James K.', img:'https://randomuser.me/api/portraits/men/1.jpg', gender:'male'},
+    {name:'Sarah N.', img:'https://randomuser.me/api/portraits/women/2.jpg', gender:'female'},
+    {name:'Robert T.', img:'https://randomuser.me/api/portraits/men/3.jpg', gender:'male'},
+    {name:'Esther K.', img:'https://randomuser.me/api/portraits/women/4.jpg', gender:'female'},
+    {name:'Peter M.', img:'https://randomuser.me/api/portraits/men/5.jpg', gender:'male'},
+    {name:'Grace W.', img:'https://randomuser.me/api/portraits/women/6.jpg', gender:'female'},
+    {name:'Joseph M.', img:'https://randomuser.me/api/portraits/men/7.jpg', gender:'male'},
+    {name:'Rebecca N.', img:'https://randomuser.me/api/portraits/women/8.jpg', gender:'female'},
+    {name:'Samuel T.', img:'https://randomuser.me/api/portraits/men/9.jpg', gender:'male'},
+    {name:'Dorothy K.', img:'https://randomuser.me/api/portraits/women/10.jpg', gender:'female'}
+  ];
+  var amounts = [2400000, 1800000, 3200000, 950000, 2100000, 1500000, 2800000, 1200000, 3600000, 800000];
+  var idx = Math.floor(Math.random() * users.length);
+  
+  document.getElementById('popupUserImage').src = users[idx].img;
+  document.getElementById('popupUserName').textContent = country + ' ' + users[idx].name;
+  document.getElementById('popupMethod').textContent = 'via ' + method;
+  document.getElementById('popupAmount').textContent = 'UGX ' + amounts[idx].toLocaleString();
+  document.getElementById('popupAmount').dataset.amount = amounts[idx];
+  document.getElementById('popupTime').textContent = 'just now';
+  document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
+  
+  var card = document.getElementById('popupCard');
+  card.style.display = 'flex';
+  card.style.animation = 'none';
+  card.offsetHeight;
+  card.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
+  
+  if (window.popupTimer) clearTimeout(window.popupTimer);
+  window.popupTimer = setTimeout(function() {
+    card.style.display = 'none';
+  }, 3500);
+}
 var isSpinning=false;
 function spinWheel(){if(isSpinning)return;var w=document.getElementById('wheel'),r=document.getElementById('spinResult'),sb=document.getElementById('spinBtn');if(!w||!r||!sb)return;isSpinning=true;sb.disabled=true;r.textContent='🌀 Spinning...';var prizes=['$3','$8','$15','$25','$35','$50'];var ri=Math.floor(Math.random()*prizes.length);var extra=360-(ri*60+30);var rots=5+Math.floor(Math.random()*3);var total=rots*360+extra+Math.random()*20;w.style.transition='transform 4s cubic-bezier(0.17,0.67,0.12,0.99)';w.style.transform='rotate('+total+'deg)';setTimeout(function(){var prize=prizes[ri];r.textContent='🎉 You won '+prize+'!';r.style.color='#00b894';sb.disabled=false;isSpinning=false;var earnMsg=document.createElement('div');earnMsg.style.cssText='margin-top:10px;font-size:14px;color:#2ecc71;font-weight:700;';earnMsg.textContent='💰 Earned '+prize+'! Upgrade to claim!';r.parentNode.insertBefore(earnMsg,r.nextSibling);setTimeout(function(){var banner=document.getElementById('chatUpgradeBanner');if(banner){banner.style.display='block';banner.innerHTML='🎁 You won '+prize+'! <a href="https://star-hela.com/register.php?ref=Myqashapp" target="_blank">Upgrade to claim</a>'}},500)},4200)}
 function handleWhatsAppPosting(){var shareMsg=encodeURIComponent('🔥 Check out Myqashapp! Earn real money daily by watching videos, chatting, and completing tasks! 💰\n\n👉 Join now: https://myqashapp.com');window.open('https://wa.me/?text='+shareMsg,'_blank');setTimeout(function(){openActionPopup('📱 WhatsApp Posting','5,000 UGX','$1.43','📱')},500)}
@@ -791,7 +872,7 @@ function addRandomDemoReply(){var teaching=demoMessages.filter(function(m){retur
 function initDemoChat(){if(demoUSERS.length===0){fetchDemoUserPhotos()}else{renderDemoTopPeople();renderDemoMessages()}if(demoChatInterval1)clearInterval(demoChatInterval1);if(demoChatInterval2)clearInterval(demoChatInterval2);if(demoChatInterval3)clearInterval(demoChatInterval3);demoChatInterval1=setInterval(function(){addRandomDemoTeachingMessage()},7000+Math.random()*4000);demoChatInterval2=setInterval(function(){addRandomDemoReply()},5000+Math.random()*3000);demoChatInterval3=setInterval(function(){updateDemoEarningsGrid()},5000)}
 
 // ============================================================
-// INITIALIZATION — FIXED POPUP ROTATION
+// INITIALIZATION
 // ============================================================
 document.addEventListener('DOMContentLoaded',function(){
   renderWaysGrid('waysGridMain');
@@ -804,13 +885,12 @@ document.addEventListener('DOMContentLoaded',function(){
 
   window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});
 
-  // ===== FIXED: POPUP ROTATION — Withdrawal + Activation =====
+  // POPUP ROTATION — Withdrawal + Activation (gender-matched)
   var popupCard = document.getElementById('popupCard');
   var popupCount = 0;
   
   function showNextPopup() {
     popupCount++;
-    // Every 4th popup is an activation, others are withdrawals
     if (popupCount % 4 === 0) {
       openLiveActivationPopup();
     } else {
@@ -820,30 +900,29 @@ document.addEventListener('DOMContentLoaded',function(){
   
   function showWithdrawalPopup() {
     if (!popupCard) return;
-    // Random user data for variety
-    var names = ['James K.','Sarah N.','Robert T.','Esther K.','Peter M.','John W.','Rebecca N.','Samuel T.','Joseph M.','Dorothy K.'];
+    // Gender-matched data
+    var users = [
+      {name:'James K.', img:'https://randomuser.me/api/portraits/men/1.jpg', gender:'male'},
+      {name:'Sarah N.', img:'https://randomuser.me/api/portraits/women/2.jpg', gender:'female'},
+      {name:'Robert T.', img:'https://randomuser.me/api/portraits/men/3.jpg', gender:'male'},
+      {name:'Esther K.', img:'https://randomuser.me/api/portraits/women/4.jpg', gender:'female'},
+      {name:'Peter M.', img:'https://randomuser.me/api/portraits/men/5.jpg', gender:'male'},
+      {name:'Grace W.', img:'https://randomuser.me/api/portraits/women/6.jpg', gender:'female'},
+      {name:'Joseph M.', img:'https://randomuser.me/api/portraits/men/7.jpg', gender:'male'},
+      {name:'Rebecca N.', img:'https://randomuser.me/api/portraits/women/8.jpg', gender:'female'},
+      {name:'Samuel T.', img:'https://randomuser.me/api/portraits/men/9.jpg', gender:'male'},
+      {name:'Dorothy K.', img:'https://randomuser.me/api/portraits/women/10.jpg', gender:'female'}
+    ];
     var countries = ['🇺🇬 Uganda','🇰🇪 Kenya','🇬🇭 Ghana','🇳🇬 Nigeria','🇹🇿 Tanzania','🇿🇦 South Africa'];
     var methods = ['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'];
     var amounts = [2400000, 1800000, 3200000, 950000, 2100000, 1500000, 2800000, 1200000, 3600000, 800000];
-    var images = [
-      'https://randomuser.me/api/portraits/men/1.jpg',
-      'https://randomuser.me/api/portraits/women/2.jpg',
-      'https://randomuser.me/api/portraits/men/3.jpg',
-      'https://randomuser.me/api/portraits/women/4.jpg',
-      'https://randomuser.me/api/portraits/men/5.jpg',
-      'https://randomuser.me/api/portraits/women/6.jpg',
-      'https://randomuser.me/api/portraits/men/7.jpg',
-      'https://randomuser.me/api/portraits/women/8.jpg',
-      'https://randomuser.me/api/portraits/men/9.jpg',
-      'https://randomuser.me/api/portraits/women/10.jpg'
-    ];
-    var idx = Math.floor(Math.random() * names.length);
+    var idx = Math.floor(Math.random() * users.length);
     var cidx = Math.floor(Math.random() * countries.length);
     var midx = Math.floor(Math.random() * methods.length);
     var aidx = Math.floor(Math.random() * amounts.length);
     
-    document.getElementById('popupUserImage').src = images[idx % images.length];
-    document.getElementById('popupUserName').textContent = countries[cidx] + ' ' + names[idx];
+    document.getElementById('popupUserImage').src = users[idx].img;
+    document.getElementById('popupUserName').textContent = countries[cidx] + ' ' + users[idx].name;
     document.getElementById('popupMethod').textContent = 'via ' + methods[midx];
     document.getElementById('popupAmount').textContent = 'UGX ' + amounts[aidx].toLocaleString();
     document.getElementById('popupAmount').dataset.amount = amounts[aidx];
@@ -852,20 +931,18 @@ document.addEventListener('DOMContentLoaded',function(){
     
     popupCard.style.display = 'flex';
     popupCard.style.animation = 'none';
-    popupCard.offsetHeight; // trigger reflow
+    popupCard.offsetHeight;
     popupCard.style.animation = 'slideUpFast 0.4s cubic-bezier(0.16,1,0.3,1) forwards';
     
-    // Auto-hide after 3.5 seconds
     if (window.popupTimer) clearTimeout(window.popupTimer);
     window.popupTimer = setTimeout(function() {
       popupCard.style.display = 'none';
     }, 3500);
   }
   
-  // Start the popup rotation
   setTimeout(showNextPopup, 3000);
   setInterval(showNextPopup, 4200);
 });
 </script>
 </body>
-  </html>
+</html>
