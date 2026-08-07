@@ -108,7 +108,6 @@
     #withdrawalPopup .popup-card .close{background:#f1f5f9;border:none;color:#64748b;width:20px;height:20px;border-radius:50%;cursor:pointer;font-size:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;transition:all .3s}
     #withdrawalPopup .popup-card .close:hover{background:#e2e8f0}
     .popup-card .live-indicator{display:inline-flex;align-items:center;gap:3px;font-size:7px;font-weight:700;color:#10b981;background:rgba(16,185,129,0.12);padding:1px 6px 1px 4px;border-radius:40px;border:1px solid rgba(16,185,129,0.2);animation:pulse-dot 1.2s ease-in-out infinite}
-    /* activation popup inherits same compact style */
     #activationPopup{position:fixed;bottom:90px;left:20px;z-index:9999;width:calc(100% - 40px);max-width:420px;pointer-events:none;display:none;flex-direction:column;gap:4px}
     #activationPopup .popup-card{background:#fff!important;border:1.5px solid rgba(0,184,148,.3);border-radius:10px;padding:8px 12px;box-shadow:0 6px 20px rgba(0,0,0,.12);display:flex;align-items:center;gap:8px;pointer-events:auto;animation:slideUpFast .35s cubic-bezier(.16,1,.3,1) forwards;width:100%;max-width:420px}
     #activationPopup .popup-card img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid #00b894;flex-shrink:0}
@@ -118,7 +117,6 @@
     #activationPopup .popup-card .info .amount-display{font-size:13px;font-weight:900;color:#00b894;white-space:nowrap}
     #activationPopup .popup-card .close{background:#f1f5f9;border:none;color:#64748b;width:20px;height:20px;border-radius:50%;cursor:pointer;font-size:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;transition:all .3s}
     #activationPopup .popup-card .close:hover{background:#e2e8f0}
-
     .chat-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(20px);z-index:40000;display:none;align-items:center;justify-content:center;padding:16px}.chat-overlay.active{display:flex}.chat-box{background:linear-gradient(145deg,#0a1628,#040b17);border-radius:20px;max-width:420px;width:100%;height:480px;display:flex;flex-direction:column;box-shadow:0 16px 48px rgba(0,0,0,.04);overflow:hidden;border:1px solid rgba(255,255,255,.06)}.chat-box-header{padding:12px 16px;background:linear-gradient(135deg,#005bea,#0a1628);color:#fff;display:flex;align-items:center;gap:10px;flex-shrink:0}.chat-box-header img{width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.1);object-fit:cover}.chat-box-header .info{flex:1;min-width:0}.chat-box-header .info .name{font-weight:800;font-size:14px}.chat-box-header .info .status{font-size:10px;opacity:.7;font-weight:500}.chat-box-header .close-btn{background:rgba(255,255,255,.06);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .4s}.chat-box-header .close-btn:hover{background:rgba(255,255,255,.1)}.chat-messages{flex:1;padding:12px 14px;overflow-y:auto;background:rgba(255,255,255,.02);display:flex;flex-direction:column;gap:5px}.chat-msg{max-width:80%;padding:8px 12px;border-radius:14px;font-size:12px;line-height:1.4;word-break:break-word;animation:slideUpFast .3s cubic-bezier(.16,1,.3,1)}.chat-msg.received{background:rgba(255,255,255,.06);color:#fff;align-self:flex-start;border-bottom-left-radius:3px}.chat-msg.sent{background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;align-self:flex-end;border-bottom-right-radius:3px;box-shadow:0 4px 16px rgba(0,150,255,.3)}.chat-msg .msg-name{font-weight:700;font-size:10px;margin-bottom:2px}.chat-msg.received .msg-name{color:#00c6fb}.chat-msg .time{font-size:8px;opacity:.4;margin-top:2px;display:block;text-align:right}.chat-upgrade-banner{background:rgba(254,249,231,.1);padding:8px 12px;text-align:center;border-top:2px solid #00b894;flex-shrink:0;display:none;font-size:11px;font-weight:600;color:#fff}.chat-upgrade-banner a{color:#fff;font-weight:700;text-decoration:none;background:linear-gradient(135deg,#00b894,#00a381);padding:3px 14px;border-radius:40px;display:inline-block;margin-top:2px;font-size:11px;box-shadow:0 2px 10px rgba(0,184,148,.3);transition:all .4s}.chat-upgrade-banner a:hover{transform:scale(1.04);box-shadow:0 4px 20px rgba(0,184,148,.4)}.chat-footer{padding:8px 12px 12px;background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.02);display:flex;gap:6px;flex-shrink:0}.chat-footer input{flex:1;padding:8px 14px;border-radius:30px;border:2px solid rgba(255,255,255,.06);font-size:12px;outline:none;background:rgba(255,255,255,.04);color:#fff;transition:all .4s}.chat-footer input:focus{border-color:#00c6fb;box-shadow:0 0 0 4px rgba(0,150,255,.3)}.chat-footer button{background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;border:none;padding:8px 16px;border-radius:30px;font-weight:700;font-size:12px;cursor:pointer;transition:all .4s;box-shadow:0 4px 16px rgba(0,150,255,.3)}.chat-footer button:hover{transform:scale(1.04);box-shadow:0 8px 24px rgba(0,150,255,.3)}.chat-footer button:disabled{opacity:.5;cursor:not-allowed;transform:none}
     .action-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:30000;display:none;align-items:center;justify-content:center;padding:16px}.action-popup-overlay.active{display:flex}.action-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:18px;padding:22px 18px 20px;max-width:340px;width:100%;text-align:center;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}.action-popup .icon{font-size:40px;margin-bottom:4px}.action-popup h3{font-size:17px;font-weight:800;color:#1a0b2f;margin-bottom:4px}.action-popup .desc{font-size:12px;color:#64748b;line-height:1.5;margin-bottom:8px}.action-popup .earn-amount{font-size:24px;font-weight:900;color:#00b894;margin:4px 0 4px}.action-popup .earn-usd{font-size:11px;color:#94a3b8;margin-bottom:8px}.action-popup .claim-btn{display:inline-block;background:linear-gradient(135deg,#00b894,#00a381);color:#fff;font-weight:800;font-size:14px;padding:10px 28px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(0,184,148,.2);width:100%;margin-top:2px}.action-popup .claim-btn:hover{transform:scale(1.02);box-shadow:0 6px 24px rgba(0,184,148,.3)}.action-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 28px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}.action-popup .btn-close:hover{background:#e2e8f0}
     .video-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:30000;display:none;align-items:center;justify-content:center;padding:16px}.video-popup-overlay.active{display:flex}.video-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:18px;padding:18px 16px 20px;max-width:480px;width:100%;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}.video-popup .video-title{font-size:15px;font-weight:800;color:#1a0b2f;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}.video-popup .video-title span{color:#00b894;font-size:13px}.video-popup .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000;box-shadow:0 4px 20px rgba(0,0,0,.1)}.video-popup .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}.video-popup .claim-btn{display:inline-block;background:linear-gradient(135deg,#00b894,#00a381);color:#fff;font-weight:800;font-size:14px;padding:10px 28px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(0,184,148,.2);width:100%;margin-top:8px}.video-popup .claim-btn:hover{transform:scale(1.02);box-shadow:0 6px 24px rgba(0,184,148,.3)}.video-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 28px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}.video-popup .btn-close:hover{background:#e2e8f0}
@@ -235,7 +233,7 @@
 <p class="section-subtitle">By country — instant payouts</p>
 <div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;">
 <div class="withdraw-grid">
-<!-- REMOVED all onclick handlers - these are now DISPLAY ONLY -->
+<!-- REMOVED all onclick handlers - DISPLAY ONLY -->
 <div class="item no-click">🇰🇪 Kenya → M-Pesa</div>
 <div class="item no-click">🇨🇲 Cameroon → MoMo</div>
 <div class="item no-click">🇬🇭 Ghana → MoMo</div>
@@ -522,6 +520,23 @@ function fmt(n){return n.toLocaleString()}
 var R={UGX:1,KES:0.027,GHS:0.0042,NGN:0.133,USD:0.0005,ZAR:0.00032,RWF:0.00082,XAF:0.0018,BWP:0.0011,TZS:0.00069,ZMW:0.00045,MWK:0.00028};
 var S={UGX:'UGX',KES:'KES',GHS:'GHS',NGN:'NGN',USD:'USD',ZAR:'ZAR',RWF:'RWF',XAF:'XAF',BWP:'BWP',TZS:'TZS',ZMW:'ZMW',MWK:'MWK'};
 var cur='UGX';
+
+// Currency range mappings for different countries
+var currencyRanges = {
+  'UGX': { min: 300000, max: 5000000, symbol: 'UGX' },
+  'KES': { min: 10000, max: 200000, symbol: 'KES' },
+  'GHS': { min: 1500, max: 30000, symbol: 'GHS' },
+  'NGN': { min: 45000, max: 750000, symbol: 'NGN' },
+  'USD': { min: 150, max: 2500, symbol: 'USD' },
+  'ZAR': { min: 2500, max: 40000, symbol: 'ZAR' },
+  'RWF': { min: 250000, max: 4000000, symbol: 'RWF' },
+  'XAF': { min: 150000, max: 2500000, symbol: 'XAF' },
+  'BWP': { min: 4000, max: 60000, symbol: 'BWP' },
+  'TZS': { min: 700000, max: 12000000, symbol: 'TZS' },
+  'ZMW': { min: 4000, max: 60000, symbol: 'ZMW' },
+  'MWK': { min: 250000, max: 4000000, symbol: 'MWK' }
+};
+
 function h(c){var s=S[c]||S.UGX;var e=document.getElementById('heroEarningRange');if(!e)return;var a,b;switch(c){case'UGX':a=50000;b=100000;break;case'KES':a=1350;b=2700;break;case'GHS':a=210;b=420;break;case'NGN':a=6650;b=13300;break;case'USD':a=25;b=50;break;default:a=Math.round(50000*R[c]);b=Math.round(100000*R[c])}e.textContent=fmt(a)+s+' - '+fmt(b)+s}
 function eS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#earningsScroll span[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount),oc=e.dataset.currency;if(!isNaN(a)){var ua=a/(R[oc]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^(.*?earned\s+)[A-Za-z]+/);if(m){var pre=m[1],suf=tx.replace(/^.*?earned\s+[A-Za-z]+\s+[\d,]+/,'');e.textContent=pre+s+' '+fmt(na)+suf}}})}
 function sS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('.story-card .samount[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^([\d,]+)\s+[A-Za-z]+/);if(m){var suf=tx.replace(/^[\d,]+\s+[A-Za-z]+/,'');e.textContent=fmt(na)+' '+s+suf}}})}
@@ -709,13 +724,45 @@ var activationUsers = [
 ];
 var withdrawalIndex = 0;
 var activationIndex = 0;
+var usedAmounts = [];
+
 function openLiveActivationPopup(){var p=document.getElementById('activationPopup');if(p){p.style.display='flex';var user=activationUsers[activationIndex % activationUsers.length];activationIndex++;document.getElementById('activationUserImage').src=user.img;document.getElementById('activationUserName').textContent=user.flag+' '+user.name;document.querySelector('#activationPopup .amount-display').textContent=user.fee;document.getElementById('activationTime').textContent='just now';setTimeout(function(){p.style.display='none'},5000)}}
-function getRandomWithdrawalAmount(){
-  var min = 500000;
-  var max = 3500000;
-  var amount = Math.round((Math.random() * (max - min) + min) / 50000) * 50000;
+
+function getRandomWithdrawalAmount(currency){
+  var range = currencyRanges[currency] || currencyRanges['UGX'];
+  var min = range.min;
+  var max = range.max;
+  var amount;
+  var attempts = 0;
+  do {
+    amount = Math.round((Math.random() * (max - min) + min) / 50000) * 50000;
+    if(amount < min) amount = min;
+    if(amount > max) amount = max;
+    attempts++;
+  } while(usedAmounts.includes(amount) && attempts < 20);
+  usedAmounts.push(amount);
+  if(usedAmounts.length > 50) usedAmounts.shift();
   return amount;
 }
+
+function getCurrencyForCountry(country){
+  if(country.indexOf('Kenya') > -1) return 'KES';
+  else if(country.indexOf('Nigeria') > -1) return 'NGN';
+  else if(country.indexOf('Ghana') > -1) return 'GHS';
+  else if(country.indexOf('Tanzania') > -1) return 'TZS';
+  else if(country.indexOf('South Africa') > -1) return 'ZAR';
+  else if(country.indexOf('Rwanda') > -1) return 'RWF';
+  else if(country.indexOf('Cameroon') > -1) return 'XAF';
+  else if(country.indexOf('Botswana') > -1) return 'BWP';
+  else if(country.indexOf('Zambia') > -1) return 'ZMW';
+  else if(country.indexOf('Malawi') > -1) return 'MWK';
+  else return 'UGX';
+}
+
+function getSymbolForCurrency(currency){
+  return currencyRanges[currency] ? currencyRanges[currency].symbol : 'UGX';
+}
+
 // AUTO POPUP ONLY - No manual clicks
 function showWithdrawalPopup(){
   if(!popupCard) return;
@@ -726,28 +773,18 @@ function showWithdrawalPopup(){
   var methods = ['Mobile Money', 'M-Pesa', 'MoMo', 'Bank Transfer', 'Airtel Money'];
   var midx = Math.floor(Math.random() * methods.length);
   
-  var baseAmount = getRandomWithdrawalAmount();
+  var userCurrency = getCurrencyForCountry(user.country);
+  var userSymbol = getSymbolForCurrency(userCurrency);
   
-  var userCurrency = 'UGX';
-  var userSymbol = 'UGX';
-  if(user.country.indexOf('Kenya') > -1) { userCurrency = 'KES'; userSymbol = 'KES'; }
-  else if(user.country.indexOf('Nigeria') > -1) { userCurrency = 'NGN'; userSymbol = 'NGN'; }
-  else if(user.country.indexOf('Ghana') > -1) { userCurrency = 'GHS'; userSymbol = 'GHS'; }
-  else if(user.country.indexOf('Tanzania') > -1) { userCurrency = 'TZS'; userSymbol = 'TZS'; }
-  else if(user.country.indexOf('South Africa') > -1) { userCurrency = 'ZAR'; userSymbol = 'ZAR'; }
-  else if(user.country.indexOf('Rwanda') > -1) { userCurrency = 'RWF'; userSymbol = 'RWF'; }
-  else if(user.country.indexOf('Cameroon') > -1) { userCurrency = 'XAF'; userSymbol = 'XAF'; }
-  else if(user.country.indexOf('Botswana') > -1) { userCurrency = 'BWP'; userSymbol = 'BWP'; }
-  else if(user.country.indexOf('Zambia') > -1) { userCurrency = 'ZMW'; userSymbol = 'ZMW'; }
-  else if(user.country.indexOf('Malawi') > -1) { userCurrency = 'MWK'; userSymbol = 'MWK'; }
+  // Get random amount for this currency
+  var amount = getRandomWithdrawalAmount(userCurrency);
   
   var amountElement = document.getElementById('popupAmount');
   if (amountElement) {
-    amountElement.dataset.amount = baseAmount;
-    amountElement.dataset.currency = 'UGX';
-    var rate = R[userCurrency] || 1;
-    var displayAmount = Math.round(baseAmount * rate);
-    amountElement.textContent = userSymbol + ' ' + displayAmount.toLocaleString();
+    // Store the amount in the currency's own value
+    amountElement.dataset.amount = amount;
+    amountElement.dataset.currency = userCurrency;
+    amountElement.textContent = userSymbol + ' ' + amount.toLocaleString();
   }
   
   document.getElementById('popupUserImage').src = user.img;
@@ -766,6 +803,7 @@ function showWithdrawalPopup(){
     popupCard.style.display = 'none';
   }, 3500);
 }
+
 function handleWelcomeBonus(){openActionPopup('🎉 Welcome Bonus!','10,000 UGX','$2.86','🎉')}
 function openQuestionsPopup(){document.getElementById('questionsPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').classList.remove('active');document.body.style.overflow=''}
