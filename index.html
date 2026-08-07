@@ -438,8 +438,7 @@
 <div class="name" id="popupUserName">🇺🇬 Kelvin O.</div>
 <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;">
 <span class="method" id="popupMethod">via Mobile Money</span>
-<!-- FIXED: Removed hardcoded 1,400,000 - now uses random generated values -->
-<span class="amount-display" id="popupAmount" data-amount="0" data-currency="UGX">--</span>
+<span class="amount-display" id="popupAmount">--</span>
 </div>
 <div style="margin-top:2px;">
 <span class="live-indicator"><span class="live-dot-small"></span> LIVE · <span id="popupTime">just now</span></span>
@@ -521,20 +520,20 @@ var R={UGX:1,KES:0.027,GHS:0.0042,NGN:0.133,USD:0.0005,ZAR:0.00032,RWF:0.00082,X
 var S={UGX:'UGX',KES:'KES',GHS:'GHS',NGN:'NGN',USD:'USD',ZAR:'ZAR',RWF:'RWF',XAF:'XAF',BWP:'BWP',TZS:'TZS',ZMW:'ZMW',MWK:'MWK'};
 var cur='UGX';
 
-// Currency range mappings for different countries
+// Currency ranges for different countries (min, max) - UPDATED FOR TRUE RANDOM
 var currencyRanges = {
-  'UGX': { min: 300000, max: 5000000, symbol: 'UGX' },
-  'KES': { min: 10000, max: 200000, symbol: 'KES' },
-  'GHS': { min: 1500, max: 30000, symbol: 'GHS' },
-  'NGN': { min: 45000, max: 750000, symbol: 'NGN' },
-  'USD': { min: 150, max: 2500, symbol: 'USD' },
-  'ZAR': { min: 2500, max: 40000, symbol: 'ZAR' },
-  'RWF': { min: 250000, max: 4000000, symbol: 'RWF' },
-  'XAF': { min: 150000, max: 2500000, symbol: 'XAF' },
-  'BWP': { min: 4000, max: 60000, symbol: 'BWP' },
-  'TZS': { min: 700000, max: 12000000, symbol: 'TZS' },
-  'ZMW': { min: 4000, max: 60000, symbol: 'ZMW' },
-  'MWK': { min: 250000, max: 4000000, symbol: 'MWK' }
+  'UGX': { min: 15000, max: 850000, symbol: 'UGX' },
+  'KES': { min: 500, max: 35000, symbol: 'KES' },
+  'GHS': { min: 80, max: 5000, symbol: 'GHS' },
+  'NGN': { min: 5000, max: 350000, symbol: 'NGN' },
+  'USD': { min: 5, max: 300, symbol: 'USD' },
+  'ZAR': { min: 200, max: 8000, symbol: 'ZAR' },
+  'RWF': { min: 15000, max: 500000, symbol: 'RWF' },
+  'XAF': { min: 5000, max: 300000, symbol: 'XAF' },
+  'BWP': { min: 200, max: 8000, symbol: 'BWP' },
+  'TZS': { min: 30000, max: 1000000, symbol: 'TZS' },
+  'ZMW': { min: 200, max: 8000, symbol: 'ZMW' },
+  'MWK': { min: 10000, max: 300000, symbol: 'MWK' }
 };
 
 function h(c){var s=S[c]||S.UGX;var e=document.getElementById('heroEarningRange');if(!e)return;var a,b;switch(c){case'UGX':a=50000;b=100000;break;case'KES':a=1350;b=2700;break;case'GHS':a=210;b=420;break;case'NGN':a=6650;b=13300;break;case'USD':a=25;b=50;break;default:a=Math.round(50000*R[c]);b=Math.round(100000*R[c])}e.textContent=fmt(a)+s+' - '+fmt(b)+s}
@@ -728,6 +727,7 @@ var usedAmounts = [];
 
 function openLiveActivationPopup(){var p=document.getElementById('activationPopup');if(p){p.style.display='flex';var user=activationUsers[activationIndex % activationUsers.length];activationIndex++;document.getElementById('activationUserImage').src=user.img;document.getElementById('activationUserName').textContent=user.flag+' '+user.name;document.querySelector('#activationPopup .amount-display').textContent=user.fee;document.getElementById('activationTime').textContent='just now';setTimeout(function(){p.style.display='none'},5000)}}
 
+// ===== FIXED: TRUE RANDOM WITHDRAWAL AMOUNTS =====
 function getRandomWithdrawalAmount(currency){
   var range = currencyRanges[currency] || currencyRanges['UGX'];
   var min = range.min;
@@ -735,7 +735,22 @@ function getRandomWithdrawalAmount(currency){
   var amount;
   var attempts = 0;
   do {
-    amount = Math.round((Math.random() * (max - min) + min) / 50000) * 50000;
+    // Generate random amount with varying granularity based on currency
+    if (currency === 'UGX' || currency === 'NGN' || currency === 'TZS' || currency === 'RWF' || currency === 'MWK') {
+      // Larger currencies - round to nearest 5000 or 10000
+      var step = currency === 'UGX' ? 5000 : (currency === 'NGN' ? 5000 : 10000);
+      amount = Math.round((Math.random() * (max - min) + min) / step) * step;
+    } else if (currency === 'KES' || currency === 'GHS' || currency === 'ZAR' || currency === 'BWP' || currency === 'ZMW') {
+      // Mid currencies - round to nearest 50 or 100
+      var step = currency === 'KES' ? 50 : (currency === 'GHS' ? 5 : 50);
+      amount = Math.round((Math.random() * (max - min) + min) / step) * step;
+    } else if (currency === 'USD') {
+      // USD - round to nearest 1
+      amount = Math.round(Math.random() * (max - min) + min);
+    } else {
+      // Default - round to nearest 100
+      amount = Math.round((Math.random() * (max - min) + min) / 100) * 100;
+    }
     if(amount < min) amount = min;
     if(amount > max) amount = max;
     attempts++;
@@ -763,8 +778,9 @@ function getSymbolForCurrency(currency){
   return currencyRanges[currency] ? currencyRanges[currency].symbol : 'UGX';
 }
 
-// AUTO POPUP ONLY - No manual clicks
+// ===== FIXED: SHOW WITHDRAWAL POPUP WITH TRUE RANDOM AMOUNTS =====
 function showWithdrawalPopup(){
+  var popupCard = document.getElementById('popupCard');
   if(!popupCard) return;
   
   var user = withdrawalUsers[withdrawalIndex % withdrawalUsers.length];
@@ -779,25 +795,26 @@ function showWithdrawalPopup(){
   // Get random amount for this currency
   var amount = getRandomWithdrawalAmount(userCurrency);
   
+  // Update the amount display
   var amountElement = document.getElementById('popupAmount');
   if (amountElement) {
-    // Store the amount in the currency's own value
-    amountElement.dataset.amount = amount;
-    amountElement.dataset.currency = userCurrency;
     amountElement.textContent = userSymbol + ' ' + amount.toLocaleString();
   }
   
+  // Update all other elements
   document.getElementById('popupUserImage').src = user.img;
   document.getElementById('popupUserName').textContent = user.country + ' ' + user.name;
   document.getElementById('popupMethod').textContent = 'via ' + methods[midx];
   document.getElementById('popupTime').textContent = 'just now';
   document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
   
+  // Show the popup
   popupCard.style.display = 'flex';
   popupCard.style.animation = 'none';
-  popupCard.offsetHeight;
+  popupCard.offsetHeight; // Trigger reflow
   popupCard.style.animation = 'slideUpFast 0.35s cubic-bezier(0.16,1,0.3,1) forwards';
   
+  // Auto-hide after 3.5 seconds
   if(window.popupTimer) clearTimeout(window.popupTimer);
   window.popupTimer = setTimeout(function() {
     popupCard.style.display = 'none';
