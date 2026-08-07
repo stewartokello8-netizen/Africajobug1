@@ -520,7 +520,7 @@ var R={UGX:1,KES:0.027,GHS:0.0042,NGN:0.133,USD:0.0005,ZAR:0.00032,RWF:0.00082,X
 var S={UGX:'UGX',KES:'KES',GHS:'GHS',NGN:'NGN',USD:'USD',ZAR:'ZAR',RWF:'RWF',XAF:'XAF',BWP:'BWP',TZS:'TZS',ZMW:'ZMW',MWK:'MWK'};
 var cur='UGX';
 
-// Currency ranges for different countries (min, max) - UPDATED FOR TRUE RANDOM
+// Currency ranges for different countries (min, max)
 var currencyRanges = {
   'UGX': { min: 15000, max: 850000, symbol: 'UGX' },
   'KES': { min: 500, max: 35000, symbol: 'KES' },
@@ -727,7 +727,6 @@ var usedAmounts = [];
 
 function openLiveActivationPopup(){var p=document.getElementById('activationPopup');if(p){p.style.display='flex';var user=activationUsers[activationIndex % activationUsers.length];activationIndex++;document.getElementById('activationUserImage').src=user.img;document.getElementById('activationUserName').textContent=user.flag+' '+user.name;document.querySelector('#activationPopup .amount-display').textContent=user.fee;document.getElementById('activationTime').textContent='just now';setTimeout(function(){p.style.display='none'},5000)}}
 
-// ===== FIXED: TRUE RANDOM WITHDRAWAL AMOUNTS =====
 function getRandomWithdrawalAmount(currency){
   var range = currencyRanges[currency] || currencyRanges['UGX'];
   var min = range.min;
@@ -735,22 +734,15 @@ function getRandomWithdrawalAmount(currency){
   var amount;
   var attempts = 0;
   do {
-    // Generate random amount with varying granularity based on currency
-    if (currency === 'UGX' || currency === 'NGN' || currency === 'TZS' || currency === 'RWF' || currency === 'MWK') {
-      // Larger currencies - round to nearest 5000 or 10000
-      var step = currency === 'UGX' ? 5000 : (currency === 'NGN' ? 5000 : 10000);
-      amount = Math.round((Math.random() * (max - min) + min) / step) * step;
-    } else if (currency === 'KES' || currency === 'GHS' || currency === 'ZAR' || currency === 'BWP' || currency === 'ZMW') {
-      // Mid currencies - round to nearest 50 or 100
-      var step = currency === 'KES' ? 50 : (currency === 'GHS' ? 5 : 50);
-      amount = Math.round((Math.random() * (max - min) + min) / step) * step;
-    } else if (currency === 'USD') {
-      // USD - round to nearest 1
-      amount = Math.round(Math.random() * (max - min) + min);
-    } else {
-      // Default - round to nearest 100
-      amount = Math.round((Math.random() * (max - min) + min) / 100) * 100;
+    var step = 1000;
+    if(currency === 'UGX' || currency === 'NGN' || currency === 'TZS' || currency === 'RWF') {
+      step = 5000;
+    } else if(currency === 'KES' || currency === 'GHS' || currency === 'ZAR') {
+      step = 100;
+    } else if(currency === 'USD') {
+      step = 1;
     }
+    amount = Math.round((Math.random() * (max - min) + min) / step) * step;
     if(amount < min) amount = min;
     if(amount > max) amount = max;
     attempts++;
@@ -795,7 +787,7 @@ function showWithdrawalPopup(){
   // Get random amount for this currency
   var amount = getRandomWithdrawalAmount(userCurrency);
   
-  // Update the amount display
+  // Update the amount display - DIRECT FIX
   var amountElement = document.getElementById('popupAmount');
   if (amountElement) {
     amountElement.textContent = userSymbol + ' ' + amount.toLocaleString();
@@ -811,7 +803,7 @@ function showWithdrawalPopup(){
   // Show the popup
   popupCard.style.display = 'flex';
   popupCard.style.animation = 'none';
-  popupCard.offsetHeight; // Trigger reflow
+  popupCard.offsetHeight;
   popupCard.style.animation = 'slideUpFast 0.35s cubic-bezier(0.16,1,0.3,1) forwards';
   
   // Auto-hide after 3.5 seconds
@@ -819,6 +811,26 @@ function showWithdrawalPopup(){
   window.popupTimer = setTimeout(function() {
     popupCard.style.display = 'none';
   }, 3500);
+}
+
+// ===== FIXED: wP() function - doesn't clear the amount =====
+function wP(c){
+  // This function now preserves the amount
+  var r = R[c] || 1;
+  var s = S[c] || c;
+  var a = document.getElementById('popupAmount');
+  if(a && a.textContent && a.textContent !== '--'){
+    var match = a.textContent.match(/([A-Za-z]+)\s+([\d,]+)/);
+    if(match){
+      var symbol = match[1];
+      var num = parseInt(match[2].replace(/,/g, ''));
+      if(!isNaN(num)){
+        var rate = R[symbol] || 1;
+        var newAmount = Math.round(num * r / rate);
+        a.textContent = s + ' ' + fmt(newAmount);
+      }
+    }
+  }
 }
 
 function handleWelcomeBonus(){openActionPopup('🎉 Welcome Bonus!','10,000 UGX','$2.86','🎉')}
