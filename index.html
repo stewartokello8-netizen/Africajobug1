@@ -233,7 +233,6 @@
 <p class="section-subtitle">By country — instant payouts</p>
 <div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;">
 <div class="withdraw-grid">
-<!-- REMOVED all onclick handlers - DISPLAY ONLY -->
 <div class="item no-click">🇰🇪 Kenya → M-Pesa</div>
 <div class="item no-click">🇨🇲 Cameroon → MoMo</div>
 <div class="item no-click">🇬🇭 Ghana → MoMo</div>
@@ -439,7 +438,8 @@
 <div class="name" id="popupUserName">🇺🇬 Kelvin O.</div>
 <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;">
 <span class="method" id="popupMethod">via Mobile Money</span>
-<span class="amount-display" id="popupAmount" data-amount="1400000" data-currency="UGX">UGX 1,400,000</span>
+<!-- FIXED: Removed hardcoded 1,400,000 - now uses random generated values -->
+<span class="amount-display" id="popupAmount" data-amount="0" data-currency="UGX">--</span>
 </div>
 <div style="margin-top:2px;">
 <span class="live-indicator"><span class="live-dot-small"></span> LIVE · <span id="popupTime">just now</span></span>
@@ -540,7 +540,7 @@ var currencyRanges = {
 function h(c){var s=S[c]||S.UGX;var e=document.getElementById('heroEarningRange');if(!e)return;var a,b;switch(c){case'UGX':a=50000;b=100000;break;case'KES':a=1350;b=2700;break;case'GHS':a=210;b=420;break;case'NGN':a=6650;b=13300;break;case'USD':a=25;b=50;break;default:a=Math.round(50000*R[c]);b=Math.round(100000*R[c])}e.textContent=fmt(a)+s+' - '+fmt(b)+s}
 function eS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#earningsScroll span[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount),oc=e.dataset.currency;if(!isNaN(a)){var ua=a/(R[oc]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^(.*?earned\s+)[A-Za-z]+/);if(m){var pre=m[1],suf=tx.replace(/^.*?earned\s+[A-Za-z]+\s+[\d,]+/,'');e.textContent=pre+s+' '+fmt(na)+suf}}})}
 function sS(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('.story-card .samount[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^([\d,]+)\s+[A-Za-z]+/);if(m){var suf=tx.replace(/^[\d,]+\s+[A-Za-z]+/,'');e.textContent=fmt(na)+' '+s+suf}}})}
-function wP(c){var r=R[c]||1,s=S[c]||c,a=document.getElementById('popupAmount');if(a&&a.dataset.amount){var am=parseInt(a.dataset.amount);if(!isNaN(am)){var ua=am/(R[a.dataset.currency]||1),na=Math.round(ua*r),tx=a.textContent,m=tx.match(/^[A-Za-z]+\s+([\d,]+)/);if(m){a.textContent=s+' '+fmt(na);a.dataset.currency=c}}}}
+function wP(c){var r=R[c]||1,s=S[c]||c,a=document.getElementById('popupAmount');if(a&&a.dataset.amount){var am=parseInt(a.dataset.amount);if(!isNaN(am) && am > 0){var ua=am/(R[a.dataset.currency]||1),na=Math.round(ua*r),tx=a.textContent,m=tx.match(/^[A-Za-z]+\s+([\d,]+)/);if(m){a.textContent=s+' '+fmt(na);a.dataset.currency=c}}}}
 function dE(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('#demoEarningsGrid .earn-card[data-amount]').forEach(function(e){var a=parseInt(e.dataset.amount);if(!isNaN(a)){var ua=a/(R[e.dataset.currency]||1),na=Math.round(ua*r),tx=e.textContent,m=tx.match(/^\+[A-Za-z]+\s+([\d,]+)/);if(m){var suf=tx.replace(/^\+[A-Za-z]+\s+[\d,]+/,'');e.innerHTML='+'+s+' '+fmt(na)+suf;e.dataset.currency=c}}})}
 function aB(c){var r=R[c]||1,s=S[c]||c,l=['affL1','affL2','affL3'],ba=[10300,5000,2000];l.forEach(function(id,i){var e=document.getElementById(id);if(e){e.textContent=fmt(Math.round(ba[i]*r))+' '+s}});var h=document.getElementById('affiliateHint');if(h){var flag=h.textContent.match(/^[^\s]+/),label=h.textContent.match(/<span>([^<]+)<\/span>/);if(label){var l1=Math.round(10300*r),l2=Math.round(5000*r),l3=Math.round(2000*r);h.innerHTML=(flag?flag[0]:'🇺🇬')+' <span>'+label[1]+'</span> · L1: '+fmt(l1)+' | L2: '+fmt(l2)+' | L3: '+fmt(l3)+' '+s}}}
 function wTE(c){var r=R[c]||1,s=S[c]||c;document.querySelectorAll('.way-card .way-earn').forEach(function(e,i){if(!e)return;if(i===0){var val=Math.round(500000*r);e.textContent='🏆 Win '+fmt(val)+' '+s+' Weekly!'}else if(i===1){var val=Math.round(10000*r);e.textContent='Earn '+fmt(val)+' '+s}else if(i===8){var val=Math.round(50000*r);e.textContent='Earn '+fmt(val)+' '+s}else{e.textContent=''}})}
