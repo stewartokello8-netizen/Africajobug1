@@ -129,6 +129,13 @@
     .section-faq details:last-child{margin-bottom:0}
     .hero-buttons>a.btn-primary:first-child{min-width:220px!important;width:auto!important;padding:14px 32px!important;height:54px!important;font-size:15px!important}
     .floating-install{position:fixed;bottom:240px;right:20px;z-index:9997;background:rgba(10,22,40,.92);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:12px;box-shadow:0 8px 32px rgba(0,0,0,.4);transition:all .3s ease;max-width:240px;cursor:pointer;text-decoration:none;color:#fff;opacity:0;visibility:hidden;transform:translateY(10px)}.floating-install.visible{opacity:1;visibility:visible;transform:translateY(0)}.floating-install:hover{transform:translateY(-3px) scale(1.02);border-color:rgba(0,198,251,.4);box-shadow:0 12px 48px rgba(0,150,255,.2)}.floating-install .app-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#00c6fb,#005bea);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(0,150,255,.3)}.floating-install .app-icon i{font-size:20px}.floating-install .install-info{display:flex;flex-direction:column;gap:1px;min-width:0}.floating-install .install-info .title{font-weight:700;font-size:12px;color:#fff;white-space:nowrap}.floating-install .install-info .sub{font-size:9px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:4px;flex-wrap:wrap}.floating-install .install-info .sub .badge{background:rgba(255,255,255,.08);padding:1px 8px;border-radius:30px;font-size:7px;font-weight:600;color:rgba(255,255,255,.7)}.floating-install .install-btn{background:linear-gradient(135deg,#00c6fb,#005bea);border:none;color:#fff;padding:4px 12px;border-radius:30px;font-size:10px;font-weight:700;cursor:pointer;transition:all .3s;white-space:nowrap;border:1px solid rgba(255,255,255,.1);flex-shrink:0}.floating-install .install-btn:hover{transform:scale(1.04);box-shadow:0 4px 16px rgba(0,150,255,.3)}@media(max-width:480px){.floating-install{bottom:220px;right:8px;padding:8px 12px;max-width:190px}.floating-install .app-icon{width:34px;height:34px;font-size:15px}.floating-install .app-icon i{font-size:17px}.floating-install .install-info .title{font-size:10px}.floating-install .install-info .sub{font-size:8px}.floating-install .install-btn{font-size:9px;padding:3px 10px}}
+    /* Large video overlay */
+    .video-popup-overlay .video-popup .video-wrapper iframe{width:100%;height:100%;border:0}
+    .video-popup-overlay .video-popup{max-width:640px;padding:18px 16px 20px}
+    .video-popup-overlay .video-popup .video-title{font-size:16px}
+    .video-popup-overlay .video-popup .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000}
+    .video-popup-overlay .video-popup .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+    @media(max-width:480px){.video-popup-overlay .video-popup{max-width:100%;padding:12px 10px 16px}}
   </style>
 </head>
 <body>
@@ -208,10 +215,10 @@
 </div>
 </div>
 <div class="section section-video">
-<div class="video-label"><span class="badge-video">▶️ WATCH</span><h3>Explanation Video</h3></div>
-<div class="video-explain">📹 <strong>Watch how Myqashapp works</strong> — See how you can earn by chatting, watching videos, and completing simple tasks. Real members, real payments!</div>
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/jY6EW0P3McQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="video-label"><span class="badge-video">▶️ WATCH</span><h3>How to Register & Activate Your Account</h3></div>
+<div class="video-explain">📹 <strong>Watch how to register, create your account, and activate it</strong> — Follow this step-by-step guide to get started on Myqashapp and begin earning today!</div>
+<div class="video-container" onclick="openVideoPopup('📺 How to Register & Activate Your Account','Free','https://www.youtube.com/embed/I_J64kpYvok?autoplay=1&rel=0')" style="cursor:pointer;">
+<iframe src="https://www.youtube.com/embed/I_J64kpYvok?rel=0" title="How to Register & Activate Your Account" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 <div class="section section-live live-foreigners-section" id="liveChatSection">
@@ -321,7 +328,7 @@
 <div class="icon-circle blue">💬</div>
 <div><div class="action-label">Chat</div><div class="action-time">Talk & Earn</div></div>
 </div>
-<div class="action-card" onclick="openVideoPopup('▶️ YouTube Video','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ')">
+<div class="action-card" onclick="openVideoPopup('▶️ YouTube Video','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0')">
 <div class="icon-circle red">▶</div>
 <div><div class="action-label">YouTube</div><div class="action-time">Watch & Earn</div></div>
 </div>
@@ -371,7 +378,7 @@
 <div class="sb-item"><span class="label">Cwf (Cash Wallet Fund)</span><span class="value" id="sbCwf">UGX 840,500</span></div>
 <div class="sb-total"><span class="total-label">Total Balance</span><span class="total-value" id="serviceTotalBalance">UGX 5,600,000</span></div>
 </div>
-<div class="activate-btn-wrapper"><a href="#" class="activate-btn" onclick="openActivationPopup();return!1">🔓 Activate Account</a></div>
+<div class="activate-btn-wrapper"><a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="activate-btn">🔓 Activate Account</a></div>
 <div class="footer-note">✦ <span>myqashappug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
 </div>
 <div class="demo-footer-nice">
@@ -426,10 +433,10 @@
 <div class="video-popup">
 <div class="video-title">
 <span id="videoPopupTitle">▶️ Now Playing</span>
-<span id="videoPopupEarn">💰 $3.20</span>
+<span id="videoPopupEarn">💰 Free</span>
 </div>
 <div class="video-wrapper"><iframe id="videoPopupIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn">💰 Claim Rewards</a>
+<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn">💰 Register Now</a>
 <button class="btn-close" onclick="closeVideoPopup()">Close</button>
 </div>
 </div>
@@ -534,15 +541,15 @@ function upd(c){cur=c;h(c);eS(c);sS(c);wP(c);dE(c);aB(c);wTE(c);updateServiceBal
 document.querySelectorAll('.currency-btn').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.currency-btn').forEach(function(x){x.classList.remove('active')});this.classList.add('active');upd(this.dataset.currency)})});upd('UGX');
 var topBonusImage = "https://i.imgur.com/Sfl3Dhv.png";
 var waysData = [
-  {name:'Top Bonuses',desc:'🔥 Rank #1-20 & win 500,000 UGX weekly! Top performers take home massive bonuses every week. Climb the leaderboard and claim your prize!',icon:topBonusImage,style:'border:2px solid #f59e0b; background:linear-gradient(145deg, rgba(245,158,11,0.12), rgba(0,150,255,0.04));',badge:'TRENDING',badgeClass:'trending',btnText:'🏅 View Rankings',btnClass:'gold',onClick:"alert('🏆 Top Bonuses: Rank in top 1-20 and win up to 500,000 UGX weekly!')",fixedAmount:500000},
+  {name:'Top Bonuses',desc:'🔥 Rank #1-20 & win 500,000 UGX weekly! Top performers take home massive bonuses every week. Climb the leaderboard and claim your prize!',icon:topBonusImage,style:'border:2px solid #f59e0b; background:linear-gradient(145deg, rgba(245,158,11,0.12), rgba(0,150,255,0.04));',badge:'TRENDING',badgeClass:'trending',btnText:'🏅 View Rankings',btnClass:'gold',onClick:"window.open('https://mulaearn.com/register.php?ref=Myqashapp','_blank')",fixedAmount:500000},
   {name:'Welcome Bonus',desc:'Get 10,000 UGX free when you sign up and activate your account! 🎉 Start your earning journey with a free bonus.',icon:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop',style:'border:2px solid #00b894; background:linear-gradient(145deg, rgba(0,184,148,0.10), rgba(0,150,255,0.05));',badge:'HOT',badgeClass:'hot',btnText:'💰 Claim Bonus',btnClass:'gold',onClick:'handleWelcomeBonus()',fixedAmount:10000},
-  {name:'Teach Foreigners Local Languages',desc:'🌍 Teach foreigners languages like Luganda, Kiswahili, Acholi, and more! They pay you for every lesson. Share your language and earn daily!',icon:'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop',style:'border:2px solid #8b5cf6; background:linear-gradient(145deg, rgba(139,92,246,0.10), rgba(0,150,255,0.05));',badge:'PREMIUM',badgeClass:'premium',btnText:'📚 Start Teaching',btnClass:'',onClick:"alert('🌍 Teach Foreigners! Start teaching your local language and earn up to 50,000 UGX per session! Click Chat to begin.')",fixedAmount:50000},
+  {name:'Teach Foreigners Local Languages',desc:'🌍 Teach foreigners languages like Luganda, Kiswahili, Acholi, and more! They pay you for every lesson. Share your language and earn daily!',icon:'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop',style:'border:2px solid #8b5cf6; background:linear-gradient(145deg, rgba(139,92,246,0.10), rgba(0,150,255,0.05));',badge:'PREMIUM',badgeClass:'premium',btnText:'📚 Start Teaching',btnClass:'',onClick:"window.open('https://mulaearn.com/register.php?ref=Myqashapp','_blank')",fixedAmount:50000},
   {name:'Chat with Foreigners',desc:'Get paid by chatting and keeping company with people from around the world. Exchange messages, make friends, and earn real money daily!',icon:'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=100&h=100&fit=crop',style:'',badge:'PREMIUM',badgeClass:'premium',btnText:'Start Chatting',btnClass:'',onClick:"window.open('https://mulaearn.com/register.php?ref=Myqashapp','_blank')"},
   {name:'Answering Questions',desc:'Answer trivia questions, surveys, and quizzes. Get paid for every correct answer! Test your knowledge and earn daily rewards.',icon:'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=100&h=100&fit=crop',style:'',badge:'',badgeClass:'',btnText:'Start Answering',btnClass:'gold',onClick:'openQuestionsPopup()'},
   {name:'Paid TikTok Videos',desc:'Watch trending TikTok videos from creators worldwide. Earn for every video you watch and engage with the content.',icon:'https://img.icons8.com/color/96/tiktok.png',style:'',badge:'',badgeClass:'',btnText:'Watch Videos',btnClass:'gold',onClick:"openVideoPopup('🎬 TikTok Video','$3.20','https://www.tiktok.com/embed/v2/6872744864957664518')"},
   {name:'Affiliate Bonus',desc:'Earn commissions across 3 referral levels. Unlimited earning potential — share your link and earn passive income from your referrals!',icon:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=100&h=100&fit=crop',style:'',badge:'',badgeClass:'',btnText:'Start Promoting',btnClass:'gold',onClick:'openAffiliateBonus()'},
   {name:'WhatsApp Posting',desc:'Share sponsored content on WhatsApp and earn per post. Simple, fast, and pays daily. Just copy, paste, and earn!',icon:'https://img.icons8.com/color/96/whatsapp.png',style:'',badge:'',badgeClass:'',btnText:'Start Posting',btnClass:'',onClick:'handleWhatsAppPosting()'},
-  {name:'YouTube Earning',desc:'Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income by watching and interacting.',icon:'https://img.icons8.com/color/96/youtube-play.png',style:'',badge:'',badgeClass:'',btnText:'Start Watching',btnClass:'gold',onClick:"openVideoPopup('📺 YouTube Video','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ')"},
+  {name:'YouTube Earning',desc:'Watch trending YouTube videos, engage with content, and earn daily rewards. Stack consistent income by watching and interacting.',icon:'https://img.icons8.com/color/96/youtube-play.png',style:'',badge:'',badgeClass:'',btnText:'Start Watching',btnClass:'gold',onClick:"openVideoPopup('📺 YouTube Video','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0')"},
   {name:'Paid Spinning',desc:'Spin the wheel and win cash prizes up to 50,000 UGX! Every spin gives you a chance to earn real money instantly.',icon:'https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=100&h=100&fit=crop',style:'',badge:'',badgeClass:'',btnText:'Start Spinning',btnClass:'',onClick:'openWheelPopup()',fixedAmount:50000},
   {name:'Play Online Games',desc:'Play fun and exciting online games like trivia, puzzles, memory challenges, and more! Each game you play earns you real money. Compete with friends and win daily prizes!',icon:'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=100&h=100&fit=crop',style:'',badge:'',badgeClass:'',btnText:'🎯 Play Now',btnClass:'gold',onClick:"alert('🎮 Play Online Games! Earn real money by playing trivia, puzzles, memory games and more! Start playing now and win daily prizes!')",fixedAmount:0},
   {name:'Forex Trading Signal',desc:'Get premium Forex trading signals delivered directly to you! Expert analysis and market insights to help you trade smarter. Earn by following winning signals with our curated strategy.',icon:'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=100&h=100&fit=crop',style:'',badge:'',badgeClass:'',btnText:'📊 Get Signals',btnClass:'',onClick:"alert('📈 Forex Trading Signal: Get expert trading signals and market insights! Follow our curated strategy to maximize your trading earnings.')",fixedAmount:0}
@@ -595,7 +602,7 @@ function openChatPageFromDemo(){var rand=profilePool[Math.floor(Math.random()*pr
 function closeChatOverlay(){document.getElementById('chatOverlay').classList.remove('active');document.body.style.overflow='';resetChatState();}
 function sendChatMessage(){if(chatLocked){alert('⛔ Chat is paused. Please upgrade to continue.');return;}var input=document.getElementById('chatInput');var msg=input.value.trim();if(!msg||!chatUser)return;var area=document.getElementById('chatMessages');var sent=document.createElement('div');sent.className='chat-msg sent';sent.textContent=msg;var time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});sent.innerHTML+='<span class="time">'+time+'</span>';area.appendChild(sent);input.value='';area.scrollTop=area.scrollHeight;if(chatTeachingMode){var earnAmt=Math.floor(Math.random()*30000)+15000;chatEarnAmount=earnAmt;setTimeout(function(){var reply=document.createElement('div');reply.className='chat-msg received';reply.innerHTML='<div class="msg-name">'+chatUser+'</div>😍 Wow! That\'s amazing! You taught me something new! You earned <strong style="color:#2ecc71;">+UGX '+fmt(earnAmt)+'</strong> for teaching me! 🎉<span class="time">'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+'</span>';area.appendChild(reply);area.scrollTop=area.scrollHeight;chatLocked=true;document.getElementById('chatUpgradeBanner').style.display='block';document.getElementById('chatSendBtn').disabled=true;document.getElementById('chatInput').disabled=true;chatTeachingMode=false;},800);}else{setTimeout(function(){var replies=['😊 That\'s interesting! Tell me more about your culture!','🌍 I love learning about Africa! What else can you teach me?','💬 That\'s so cool! Can you teach me more words?','✨ Amazing! I want to learn more! Please teach me!'];var reply=document.createElement('div');reply.className='chat-msg received';reply.innerHTML='<div class="msg-name">'+chatUser+'</div>'+replies[Math.floor(Math.random()*replies.length)]+'<span class="time">'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+'</span>';area.appendChild(reply);area.scrollTop=area.scrollHeight;},600);}}
 document.getElementById('chatInput').addEventListener('keypress',function(e){if(e.key==='Enter')sendChatMessage();});
-function openVideoPopup(title,amount,videoUrl){document.getElementById('videoPopupTitle').textContent='▶️ '+title;document.getElementById('videoPopupEarn').textContent='💰 '+amount;document.getElementById('videoPopupIframe').src=videoUrl+'?autoplay=1&rel=0';document.getElementById('videoPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
+function openVideoPopup(title,amount,videoUrl){document.getElementById('videoPopupTitle').textContent='▶️ '+title;document.getElementById('videoPopupEarn').textContent='💰 '+amount;document.getElementById('videoPopupIframe').src=videoUrl;document.getElementById('videoPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeVideoPopup(){document.getElementById('videoPopupIframe').src='';document.getElementById('videoPopupOverlay').classList.remove('active');document.body.style.overflow=''}
 function openActionPopup(title,amount,usd,icon){document.getElementById('popupIcon').textContent=icon||'💰';document.getElementById('popupTitle').textContent=title;document.getElementById('popupAmount').textContent=amount||'—';document.getElementById('popupUsd').textContent='≈ '+(usd||'$1.35');document.getElementById('actionPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeActionPopup(){document.getElementById('actionPopupOverlay').classList.remove('active');document.body.style.overflow=''}
