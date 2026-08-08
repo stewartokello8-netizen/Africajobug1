@@ -710,9 +710,9 @@ var withdrawalIndex = 0;
 var activationIndex = 0;
 function openLiveActivationPopup(){var p=document.getElementById('activationPopup');if(p){p.style.display='flex';var user=activationUsers[activationIndex % activationUsers.length];activationIndex++;document.getElementById('activationUserImage').src=user.img;document.getElementById('activationUserName').textContent=user.flag+' '+user.name;document.querySelector('#activationPopup .amount-display').textContent=user.fee;document.getElementById('activationTime').textContent='just now';setTimeout(function(){p.style.display='none'},5000)}}
 function getRandomWithdrawalAmount(){
-  // Generate random amount between 500,000 and 3,500,000 (in UGX)
-  var min = 500000;
-  var max = 3500000;
+  // Generate random amount between 250,000 and 5,000,000 (in UGX)
+  var min = 250000;
+  var max = 5000000;
   // Round to nearest 50,000 for cleaner numbers
   var amount = Math.round((Math.random() * (max - min) + min) / 50000) * 50000;
   return amount;
