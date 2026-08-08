@@ -780,7 +780,59 @@ document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('floatingInstall').classList.add('visible');
   }, 5000);
   
-  renderWaysGrid('waysGridMain');rotateProfiles();setInterval(rotateProfiles,35000);switchDashboard('uganda');var n=3300;setInterval(function(){n+=Math.floor(Math.random()*6)-3;if(n<3240)n=3240+Math.floor(Math.random()*30);if(n>3600)n=3600-Math.floor(Math.random()*30);document.getElementById('liveCounter').textContent=n.toLocaleString();document.getElementById('onlineNow').textContent=n.toLocaleString()},2800);var t=187432;setInterval(function(){t+=Math.floor(Math.random()*5)+2;if(t>189500)t=187000;document.getElementById('trustCounter').textContent=t.toLocaleString();document.getElementById('heroCounter').textContent=t.toLocaleString();document.getElementById('liveUsers').textContent=t.toLocaleString()},3000);window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});var popupCard=document.getElementById('popupCard');var popupCount=0;function showNextPopup(){popupCount++;if(popupCount%4===0){openLiveActivationPopup();}else{showWithdrawalPopup();}}function showWithdrawalPopup(){if(!popupCard)return;var user=withdrawalUsers[withdrawalIndex % withdrawalUsers.length];withdrawalIndex++;var methods=['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'];var midx=Math.floor(Math.random()*methods.length);var amount=getRandomWithdrawalAmount();var userCurrency='UGX';var userSymbol='UGX';if(user.country.indexOf('Kenya')>-1){userCurrency='KES';userSymbol='KES';}else if(user.country.indexOf('Nigeria')>-1){userCurrency='NGN';userSymbol='NGN';}else if(user.country.indexOf('Ghana')>-1){userCurrency='GHS';userSymbol='GHS';}else if(user.country.indexOf('Tanzania')>-1){userCurrency='TZS';userSymbol='TZS';}else if(user.country.indexOf('South Africa')>-1){userCurrency='ZAR';userSymbol='ZAR';}else if(user.country.indexOf('Rwanda')>-1){userCurrency='RWF';userSymbol='RWF';}else if(user.country.indexOf('Cameroon')>-1){userCurrency='XAF';userSymbol='XAF';}else if(user.country.indexOf('Botswana')>-1){userCurrency='BWP';userSymbol='BWP';}else if(user.country.indexOf('Zambia')>-1){userCurrency='ZMW';userSymbol='ZMW';}else if(user.country.indexOf('Malawi')>-1){userCurrency='MWK';userSymbol='MWK';}var convertedAmount=Math.round(amount*R[userCurrency]);document.getElementById('popupUserImage').src=user.img;document.getElementById('popupUserName').textContent=user.country+' '+user.name;document.getElementById('popupMethod').textContent='via '+methods[midx];document.getElementById('popupAmount').textContent=userSymbol+' '+convertedAmount.toLocaleString();document.getElementById('popupTime').textContent='just now';document.getElementById('popupTitle').textContent='💸 Live Withdrawal';popupCard.style.display='flex';popupCard.style.animation='none';popupCard.offsetHeight;popupCard.style.animation='slideUpFast 0.35s cubic-bezier(0.16,1,0.3,1) forwards';if(window.popupTimer)clearTimeout(window.popupTimer);window.popupTimer=setTimeout(function(){popupCard.style.display='none';},3500);}setTimeout(showNextPopup,3000);setInterval(showNextPopup,4200);});
+  renderWaysGrid('waysGridMain');rotateProfiles();setInterval(rotateProfiles,35000);switchDashboard('uganda');var n=3300;setInterval(function(){n+=Math.floor(Math.random()*6)-3;if(n<3240)n=3240+Math.floor(Math.random()*30);if(n>3600)n=3600-Math.floor(Math.random()*30);document.getElementById('liveCounter').textContent=n.toLocaleString();document.getElementById('onlineNow').textContent=n.toLocaleString()},2800);var t=187432;setInterval(function(){t+=Math.floor(Math.random()*5)+2;if(t>189500)t=187000;document.getElementById('trustCounter').textContent=t.toLocaleString();document.getElementById('heroCounter').textContent=t.toLocaleString();document.getElementById('liveUsers').textContent=t.toLocaleString()},3000);window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});var popupCard=document.getElementById('popupCard');var popupCount=0;
+  
+  // THIS IS THE FIXED FUNCTION — now calls getRandomWithdrawalAmount()
+  function showWithdrawalPopup(){
+    if(!popupCard)return;
+    var user = withdrawalUsers[withdrawalIndex % withdrawalUsers.length];
+    withdrawalIndex++;
+    var methods = ['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'];
+    var midx = Math.floor(Math.random()*methods.length);
+    
+    // 🔥 FIXED: Now calls getRandomWithdrawalAmount() instead of hardcoded value
+    var amount = getRandomWithdrawalAmount();
+    
+    var userCurrency = 'UGX';
+    var userSymbol = 'UGX';
+    if(user.country.indexOf('Kenya')>-1){userCurrency='KES';userSymbol='KES';}
+    else if(user.country.indexOf('Nigeria')>-1){userCurrency='NGN';userSymbol='NGN';}
+    else if(user.country.indexOf('Ghana')>-1){userCurrency='GHS';userSymbol='GHS';}
+    else if(user.country.indexOf('Tanzania')>-1){userCurrency='TZS';userSymbol='TZS';}
+    else if(user.country.indexOf('South Africa')>-1){userCurrency='ZAR';userSymbol='ZAR';}
+    else if(user.country.indexOf('Rwanda')>-1){userCurrency='RWF';userSymbol='RWF';}
+    else if(user.country.indexOf('Cameroon')>-1){userCurrency='XAF';userSymbol='XAF';}
+    else if(user.country.indexOf('Botswana')>-1){userCurrency='BWP';userSymbol='BWP';}
+    else if(user.country.indexOf('Zambia')>-1){userCurrency='ZMW';userSymbol='ZMW';}
+    else if(user.country.indexOf('Malawi')>-1){userCurrency='MWK';userSymbol='MWK';}
+    
+    var convertedAmount = Math.round(amount * R[userCurrency]);
+    document.getElementById('popupUserImage').src = user.img;
+    document.getElementById('popupUserName').textContent = user.country+' '+user.name;
+    document.getElementById('popupMethod').textContent = 'via '+methods[midx];
+    document.getElementById('popupAmount').textContent = userSymbol+' '+convertedAmount.toLocaleString();
+    document.getElementById('popupTime').textContent = 'just now';
+    document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
+    popupCard.style.display = 'flex';
+    popupCard.style.animation = 'none';
+    popupCard.offsetHeight;
+    popupCard.style.animation = 'slideUpFast 0.35s cubic-bezier(0.16,1,0.3,1) forwards';
+    if(window.popupTimer) clearTimeout(window.popupTimer);
+    window.popupTimer = setTimeout(function(){ popupCard.style.display = 'none'; }, 3500);
+  }
+  
+  function showNextPopup(){
+    popupCount++;
+    if(popupCount%4===0){
+      openLiveActivationPopup();
+    }else{
+      showWithdrawalPopup();
+    }
+  }
+  
+  setTimeout(showNextPopup, 3000);
+  setInterval(showNextPopup, 4200);
+});
 </script>
 </body>
 </html>
