@@ -297,8 +297,160 @@
 <div class="footer-bottom"><div class="brand-small">© 2026 Myqash<span>App</span>. All rights reserved.</div><div class="copy">Built for Africa · <a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank">Login</a></div></div>
 </div>
 </div>
-<!-- ===== ALL YOUR DEMO PAGE, CHAT, POPUPS ETC. KEPT INTACT ===== -->
-<!-- ... (demo page, chat overlay, action popup, video popup, questions popup, wheel popup, whatsapp float) ... -->
+
+<!-- ===== DEMO PAGE ===== -->
+<div class="demo-page" id="demoPage">
+<div class="demo-header"><button class="back-btn" onclick="closeDemoPage()">← Back</button><span class="page-title">Dashboard</span><span style="width:80px;"></span></div>
+<div class="demo-card">
+<div class="breadcrumb"><span>Home</span><span>Dashboard</span><span class="current" id="currentCountryDisplay">🇺🇬 Uganda</span></div>
+<div class="country-dashboards" id="countryDashboards">
+<button class="country-btn active" data-country="uganda" onclick="switchDashboard('uganda')">🇺🇬 Uganda</button>
+<button class="country-btn" data-country="kenya" onclick="switchDashboard('kenya')">🇰🇪 Kenya</button>
+<button class="country-btn" data-country="ghana" onclick="switchDashboard('ghana')">🇬🇭 Ghana</button>
+<button class="country-btn" data-country="nigeria" onclick="switchDashboard('nigeria')">🇳🇬 Nigeria</button>
+<button class="country-btn" data-country="cameroon" onclick="switchDashboard('cameroon')">🇨🇲 Cameroon</button>
+<button class="country-btn" data-country="tanzania" onclick="switchDashboard('tanzania')">🇹🇿 Tanzania</button>
+<button class="country-btn" data-country="southafrica" onclick="switchDashboard('southafrica')">🇿🇦 South Africa</button>
+<button class="country-btn" data-country="usd" onclick="switchDashboard('usd')">🇺🇸 USD</button>
+</div>
+<div class="welcome-section">
+<div class="welcome-row"><div class="greeting">Welcome: <span>Myqashapp</span></div><div class="premium-badge"><i>✦</i> PREMIUM <span style="font-weight:400;margin-left:4px;">•</span><span style="font-weight:500;color:rgba(26,11,47,0.8);">dashboard</span></div></div>
+<div class="welcome-sub"><span class="badge-new">🚀</span>Boost your digital journey with <strong>10+ smart tools</strong> — Ads, YouTube, trivia, and more! 🎉👏👏👏</div>
+</div>
+<div class="graph-section">
+<div class="graph-title"><span>📈 Earnings Overview</span><span>Last 7 days</span></div>
+<div class="graph-bars"><div class="bar" style="height:60%;"></div><div class="bar" style="height:45%;"></div><div class="bar" style="height:70%;"></div><div class="bar" style="height:30%;"></div><div class="bar" style="height:55%;"></div><div class="bar" style="height:85%;"></div><div class="bar" style="height:40%;"></div></div>
+<div class="graph-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+</div>
+<div class="stats-grid" id="dashboardStats"></div>
+<div class="divider-light"></div>
+<div class="action-cards">
+<div class="action-card" onclick="handleWhatsAppPosting()">
+<div class="icon-circle green">💬</div>
+<div><div class="action-label">WhatsApp</div><div class="action-time">Share & Earn</div></div>
+</div>
+<div class="action-card" onclick="openChatPageFromDemo()">
+<div class="icon-circle blue">💬</div>
+<div><div class="action-label">Chat</div><div class="action-time">Talk & Earn</div></div>
+</div>
+<div class="action-card" onclick="openVideoPopup('▶️ YouTube Video','$4.00','https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0')">
+<div class="icon-circle red">▶</div>
+<div><div class="action-label">YouTube</div><div class="action-time">Watch & Earn</div></div>
+</div>
+<div class="action-card" onclick="openVideoPopup('🎵 TikTok Video','$3.20','https://www.tiktok.com/embed/v2/6872744864957664518')">
+<div class="icon-circle purple">🎵</div>
+<div><div class="action-label">TikTok</div><div class="action-time">Watch & Earn</div></div>
+</div>
+</div>
+<div style="margin-top:4px;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-weight:700;font-size:13px;color:#1a0b2f;">🌐 Live Global Chat</span><span style="color:rgba(26,11,47,0.5);font-weight:600;">279 chatting</span></div>
+<div class="phone-live">
+<div class="header">
+<h2><i class="fas fa-globe-americas"></i> Live Global Chat</h2>
+<span class="online-badge"><i class="fas fa-circle"></i> 279 chatting</span>
+</div>
+<div class="earnings">
+<div class="label"><i class="fas fa-coins"></i> EARNING</div>
+<div class="earnings-grid" id="demoEarningsGrid">
+<div class="earn-card" data-amount="20800" data-currency="UGX">+UGX 20,800 <small>1m ago</small></div>
+<div class="earn-card" data-amount="14800" data-currency="UGX">+UGX 14,800 <small>1m ago</small></div>
+<div class="earn-card" data-amount="23000" data-currency="UGX">+UGX 23,000 <small>7m ago</small></div>
+<div class="earn-card" data-amount="21300" data-currency="UGX">+UGX 21,300 <small>5m ago</small></div>
+</div>
+</div>
+<div class="people-strip-wrapper"><div class="people-strip" id="demoTopPeople"></div></div>
+<div class="chat-feed" id="demoChatFeed"></div>
+<div class="typing-indicator" id="demoTypingIndicator">
+<span style="font-weight:500;">James W.</span> typing...
+<span class="dots"><span></span><span></span><span></span></span>
+<span class="right">Emma L. just now</span>
+</div>
+<div class="footer">
+<span class="live-badge"><i class="fas fa-circle"></i> LIVE</span>
+<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="join-btn"><i class="fas fa-comment-dots"></i> Join Chat →</a>
+</div>
+</div>
+</div>
+<div class="service-balance">
+<div class="sb-title">💰 SERVICE BALANCE</div>
+<div class="sb-item"><span class="label">WhatsApp Earnings</span><span class="value" id="sbWhatsApp">UGX 1,240,000</span></div>
+<div class="sb-item"><span class="label">Deposit Balance</span><span class="value" id="sbDeposit">UGX 19,500</span></div>
+<div class="sb-item"><span class="label">Ads Earnings</span><span class="value" id="sbAds">UGX 520,000</span></div>
+<div class="sb-item"><span class="label">TikTok Earnings</span><span class="value" id="sbTikTok">UGX 980,000</span></div>
+<div class="sb-item"><span class="label">YouTube Earnings</span><span class="value" id="sbYouTube">UGX 1,450,000</span></div>
+<div class="sb-item"><span class="label">Survey Earnings</span><span class="value" id="sbSurvey">UGX 350,000</span></div>
+<div class="sb-item"><span class="label">Blog Earnings</span><span class="value" id="sbBlog">UGX 200,000</span></div>
+<div class="sb-item"><span class="label">Cwf (Cash Wallet Fund)</span><span class="value" id="sbCwf">UGX 840,500</span></div>
+<div class="sb-total"><span class="total-label">Total Balance</span><span class="total-value" id="serviceTotalBalance">UGX 5,600,000</span></div>
+</div>
+<div class="activate-btn-wrapper"><a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="activate-btn">🔓 Activate Account</a></div>
+<div class="footer-note">✦ <span>myqashappug</span> — your gateway to global opportunities. Stay focused, stay inspired. ✦</div>
+</div>
+<div class="demo-footer-nice">
+<div class="footer-grid">
+<div class="col"><h4>EARN</h4><ul><li>Chat with Foreigners</li><li>Answer Questions</li><li>Paid TikTok Videos</li><li>YouTube Earning</li><li>WhatsApp Posts</li></ul></div>
+<div class="col"><h4>ACCOUNT</h4><ul><li onclick="closeDemoPage()" style="cursor:pointer;color:rgba(255,255,255,0.5);padding:3px 0;font-weight:500;font-size:11px">Back to Home</li><li><a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:11px;font-weight:500">Sign Up</a></li><li><a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:11px;font-weight:500">Login</a></li></ul></div>
+<div class="col"><h4>SUPPORT</h4><ul><li>Help Center</li><li>FAQ</li><li>Contact Us</li></ul></div>
+</div>
+<div class="footer-bottom">
+<div class="brand-small">© 2026 Myqash<span>App</span></div>
+<div class="badges"><span>Secure</span><span>Instant</span><span>24/7</span></div>
+<div class="copy">Built for Africa · <a href="#">187,000+ members</a></div>
+</div>
+</div>
+</div>
+
+<!-- ===== CHAT OVERLAY ===== -->
+<div class="chat-overlay" id="chatOverlay" onclick="if(event.target===this)closeChatOverlay()">
+<div class="chat-box">
+<div class="chat-box-header">
+<img id="chatAvatar" src="https://i.pravatar.cc/100?img=30" alt="User">
+<div class="info">
+<div class="name" id="chatName">Emma S.</div>
+<div class="status" id="chatStatus">🇺🇸 USA · Online</div>
+</div>
+<button class="close-btn" onclick="closeChatOverlay()">✕</button>
+</div>
+<div class="chat-messages" id="chatMessages">
+<div class="chat-msg received">
+<div class="msg-name" id="chatGreetingName">Emma S.</div>
+<span id="chatGreetingText">👋 Hi! I'm Emma S. I'm interested in learning a local language like Luganda, Kiswahili, Acholi, or any other for basic travel needs. I'll pay for it!</span>
+<span class="time">just now</span>
+</div>
+</div>
+<div class="chat-upgrade-banner" id="chatUpgradeBanner">🔓 Upgrade to claim your earnings and continue teaching! <a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank">Upgrade Now</a></div>
+<div class="chat-footer">
+<input type="text" id="chatInput" placeholder="Type a message...">
+<button id="chatSendBtn" onclick="sendChatMessage()">Send</button>
+</div>
+</div>
+</div>
+
+<!-- ===== ACTION POPUP ===== -->
+<div class="action-popup-overlay" id="actionPopupOverlay" onclick="if(event.target===this)closeActionPopup()">
+<div class="action-popup">
+<div class="icon" id="popupIcon">🎵</div>
+<h3 id="popupTitle">Earn with Music</h3>
+<p class="desc" id="popupDesc">You're about to earn real money! Complete this action to receive your earnings.</p>
+<div class="earn-amount" id="popupAmount">—</div>
+<div class="earn-usd" id="popupUsd">≈ $1.35</div>
+<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn">💰 Claim Rewards</a>
+<button class="btn-close" onclick="closeActionPopup()">Close</button>
+</div>
+</div>
+
+<!-- ===== VIDEO POPUP ===== -->
+<div class="video-popup-overlay" id="videoPopupOverlay" onclick="if(event.target===this)closeVideoPopup()">
+<div class="video-popup">
+<div class="video-title">
+<span id="videoPopupTitle">▶️ Now Playing</span>
+<span id="videoPopupEarn">💰 Free</span>
+</div>
+<div class="video-wrapper"><iframe id="videoPopupIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn">💰 Register Now</a>
+<button class="btn-close" onclick="closeVideoPopup()">Close</button>
+</div>
+</div>
 
 <!-- ===== WITHDRAWAL POPUP - FIXED ===== -->
 <div id="withdrawalPopup">
@@ -338,6 +490,55 @@
 </div>
 </div>
 <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close" style="background:#f1f5f9;border:none;color:#64748b;width:20px;height:20px;border-radius:50%;cursor:pointer;font-size:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:700;transition:all .3s">✕</button>
+</div>
+</div>
+
+<!-- ===== QUESTIONS POPUP ===== -->
+<div class="questions-popup-overlay" id="questionsPopupOverlay" onclick="if(event.target===this)closeQuestionsPopup()">
+<div class="questions-popup">
+<div class="icon">❓</div>
+<h3>Sample Questions</h3>
+<div class="question-item" onclick="showAnswer(this)">
+<div class="q">Q1: What is the capital of France?</div>
+<div class="a" style="display:none;"><strong>Answer:</strong> Paris</div>
+<button class="try-btn" onclick="event.stopPropagation();alert('✅ You selected Paris! Correct answer! You earned 3,000 UGX! 🎉')">Try Answer →</button>
+</div>
+<div class="question-item" onclick="showAnswer(this)">
+<div class="q">Q2: Which planet is known as the Red Planet?</div>
+<div class="a" style="display:none;"><strong>Answer:</strong> Mars</div>
+<button class="try-btn" onclick="event.stopPropagation();alert('✅ You selected Mars! Correct answer! You earned 3,000 UGX! 🎉')">Try Answer →</button>
+</div>
+<div class="question-item" onclick="showAnswer(this)">
+<div class="q">Q3: What is the largest ocean on Earth?</div>
+<div class="a" style="display:none;"><strong>Answer:</strong> Pacific</div>
+<button class="try-btn" onclick="event.stopPropagation();alert('✅ You selected Pacific! Correct answer! You earned 3,000 UGX! 🎉')">Try Answer →</button>
+</div>
+<div style="text-align:center;font-size:11px;color:#94a3b8;margin-top:4px;">💡 Answer correctly to earn up to 20,000 UGX daily!</div>
+<button class="btn-close" onclick="closeQuestionsPopup()">Close</button>
+</div>
+</div>
+
+<!-- ===== WHEEL POPUP ===== -->
+<div class="wheel-popup-overlay" id="wheelPopupOverlay" onclick="if(event.target===this)closeWheelPopup()">
+<div class="wheel-popup">
+<div class="icon">🎰</div>
+<h3>Paid Spinning</h3>
+<p class="desc">Spin the wheel and win amazing cash prizes!</p>
+<div class="wheel-container">
+<div class="wheel" id="wheel">
+<div class="wheel-segment" style="transform:rotate(0deg);background:#e74c3c;">$3</div>
+<div class="wheel-segment" style="transform:rotate(60deg);background:#3498db;">$8</div>
+<div class="wheel-segment" style="transform:rotate(120deg);background:#2ecc71;">$15</div>
+<div class="wheel-segment" style="transform:rotate(180deg);background:#f39c12;">$25</div>
+<div class="wheel-segment" style="transform:rotate(240deg);background:#9b59b6;">$35</div>
+<div class="wheel-segment" style="transform:rotate(300deg);background:#1abc9c;">$50</div>
+<div class="wheel-center">SPIN</div>
+</div>
+</div>
+<button class="spin-btn" id="spinBtn" onclick="spinWheel()">🎡 SPIN</button>
+<div class="spin-result" id="spinResult">Click SPIN to win up to $50!</div>
+<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn" style="margin-top:4px;">💎 Claim Prize</a>
+<button class="btn-close" onclick="closeWheelPopup()">Close</button>
 </div>
 </div>
 
@@ -472,40 +673,34 @@ function openLiveActivationPopup(){
 }
 
 // ============================================================
-// THE FIXED FUNCTION - Shows correct amounts for each profile
+// FIXED: showWithdrawalPopup - Now correctly displays amounts
 // ============================================================
 function showWithdrawalPopup() {
   var popupCard = document.getElementById('popupCard');
   if (!popupCard) return;
   
-  // Get the next profile from the list
   var profile = withdrawalProfiles[withdrawalIndex % withdrawalProfiles.length];
   withdrawalIndex++;
   
-  // Get amount directly from profile
   var amount = profile.amount;
   var currency = profile.currency;
   var displayAmount = currency + ' ' + amount.toLocaleString();
   
-  // Set all elements
   document.getElementById('popupUserImage').src = profile.img;
   document.getElementById('popupUserName').textContent = profile.country + ' ' + profile.name;
   document.getElementById('popupMethod').textContent = 'via ' + ['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'][Math.floor(Math.random() * 5)];
   document.getElementById('popupTime').textContent = 'just now';
   
-  // CRITICAL: Set the amount directly using textContent
   var amountEl = document.getElementById('popupAmount');
   if (amountEl) {
     amountEl.textContent = displayAmount;
   }
   
-  // Show the popup
   popupCard.style.display = 'flex';
   popupCard.style.animation = 'none';
   popupCard.offsetHeight;
   popupCard.style.animation = 'slideUpFast 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
   
-  // Auto hide after 4 seconds
   if (window.popupTimer) clearTimeout(window.popupTimer);
   window.popupTimer = setTimeout(function() {
     popupCard.style.display = 'none';
@@ -516,17 +711,30 @@ function showWithdrawalPopup() {
 // START THE AUTOMATIC POPUPS
 // ============================================================
 document.addEventListener('DOMContentLoaded', function() {
-  // First popup after 3 seconds
   setTimeout(showWithdrawalPopup, 3000);
-  // Then every 4.2 seconds
   setInterval(showWithdrawalPopup, 4200);
 });
 
 // ============================================================
-// ALL YOUR OTHER FUNCTIONS (keep everything else)
+// ALL YOUR OTHER FUNCTIONS (kept intact)
 // ============================================================
-// ... (all your other JavaScript functions like openDemoPage, 
-// openChatPage, sendChatMessage, openVideoPopup, etc.)
+function openDemoPage(){document.getElementById('demoPage').classList.add('active');document.body.style.overflow='hidden';}
+function closeDemoPage(){document.getElementById('demoPage').classList.remove('active');document.body.style.overflow='';}
+function openChatPageFromDemo(){alert('Chat feature coming soon!');}
+function handleWhatsAppPosting(){alert('WhatsApp posting feature coming soon!');}
+function openVideoPopup(title,amount,url){alert('Video: '+title);}
+function closeVideoPopup(){}
+function openActionPopup(){}
+function closeActionPopup(){}
+function openQuestionsPopup(){document.getElementById('questionsPopupOverlay').classList.add('active');}
+function closeQuestionsPopup(){document.getElementById('questionsPopupOverlay').classList.remove('active');}
+function showAnswer(el){var a=el.querySelector('.a');if(a)a.style.display='block';}
+function openWheelPopup(){document.getElementById('wheelPopupOverlay').classList.add('active');}
+function closeWheelPopup(){document.getElementById('wheelPopupOverlay').classList.remove('active');}
+function spinWheel(){alert('Spinning...');}
+function sendChatMessage(){alert('Message sent!');}
+function closeChatOverlay(){document.getElementById('chatOverlay').classList.remove('active');}
+function switchDashboard(country){document.querySelectorAll('.country-btn').forEach(b=>b.classList.remove('active'));document.querySelector('.country-btn[data-country="'+country+'"]').classList.add('active');}
 </script>
 </body>
 </html>
