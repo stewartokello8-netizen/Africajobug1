@@ -26,19 +26,21 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system-ui,sans-serif;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;font-size:1.0625rem;line-height:1.6}
     
-    /* LIVE WITHDRAWAL STRIP - WHITE BG, LARGER, NO "WITHDRAW" TEXT */
-    .live-withdrawal-strip{position:fixed;left:16px;bottom:100px;z-index:9997;background:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.25),0 0 30px rgba(0,198,251,0.08);display:flex;align-items:center;gap:12px;max-width:420px;min-width:280px;overflow:hidden;pointer-events:none;height:60px;border:1px solid rgba(0,0,0,0.06)}
-    .live-withdrawal-strip .strip-icon{font-size:16px;color:#dc2626;flex-shrink:0;animation:pulse-dot 1.2s ease-in-out infinite}
-    .live-withdrawal-strip .strip-icon i{font-size:16px}
-    .live-withdrawal-strip .strip-items{flex:1;overflow:hidden;position:relative;height:40px;min-width:180px}
-    .live-withdrawal-strip .strip-items .item{display:flex;align-items:center;gap:8px;font-size:14px;color:#1a0b2f;white-space:nowrap;position:absolute;top:0;left:0;width:100%;opacity:0;transform:translateX(40px);transition:opacity 0.6s ease,transform 0.6s ease;height:40px}
+    /* LIVE WITHDRAWAL STRIP - UPDATED: REMOVED "WITHDRAW" TEXT, LARGER, FITS CONTENT */
+    .live-withdrawal-strip{position:fixed;left:16px;bottom:100px;z-index:9997;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.25),0 0 30px rgba(0,198,251,0.08);display:flex;align-items:center;gap:14px;max-width:480px;min-width:320px;overflow:hidden;pointer-events:none;height:76px;border:1px solid rgba(0,0,0,0.06)}
+    .live-withdrawal-strip .strip-icon{font-size:18px;color:#dc2626;flex-shrink:0;animation:pulse-dot 1.2s ease-in-out infinite}
+    .live-withdrawal-strip .strip-icon i{font-size:18px}
+    .live-withdrawal-strip .strip-items{flex:1;overflow:hidden;position:relative;height:54px;min-width:200px}
+    .live-withdrawal-strip .strip-items .item{display:flex;align-items:center;gap:10px;font-size:15px;color:#1a0b2f;white-space:nowrap;position:absolute;top:0;left:0;width:100%;opacity:0;transform:translateX(40px);transition:opacity 0.6s ease,transform 0.6s ease;height:54px}
     .live-withdrawal-strip .strip-items .item.active{opacity:1;transform:translateX(0)}
     .live-withdrawal-strip .strip-items .item.exit{opacity:0;transform:translateX(-40px)}
-    .live-withdrawal-strip .strip-items .item .flag{font-size:20px;flex-shrink:0}
-    .live-withdrawal-strip .strip-items .item .name{font-weight:600;color:#1a0b2f;font-size:13px;flex-shrink:0}
-    .live-withdrawal-strip .strip-items .item .amount{font-weight:700;color:#00b894;background:rgba(0,184,148,0.1);padding:2px 12px;border-radius:30px;font-size:14px;flex-shrink:0}
-    .live-withdrawal-strip .strip-items .item .time{font-size:9px;color:rgba(0,0,0,0.3);flex-shrink:0}
-    .live-withdrawal-strip .strip-badge{background:#dc2626;color:#fff;font-size:8px;padding:3px 12px;border-radius:40px;flex-shrink:0;animation:pulseBadge 2s ease-in-out infinite;font-weight:700;letter-spacing:0.5px}
+    .live-withdrawal-strip .strip-items .item .flag{font-size:24px;flex-shrink:0}
+    .live-withdrawal-strip .strip-items .item .name{font-weight:700;color:#1a0b2f;font-size:15px;flex-shrink:0}
+    .live-withdrawal-strip .strip-items .item .action{color:#1a0b2f;font-weight:500;font-size:14px;flex-shrink:0}
+    .live-withdrawal-strip .strip-items .item .amount{font-weight:800;color:#00b894;background:rgba(0,184,148,0.12);padding:4px 14px;border-radius:30px;font-size:15px;flex-shrink:0}
+    .live-withdrawal-strip .strip-items .item .time{font-size:10px;color:rgba(0,0,0,0.35);flex-shrink:0;font-weight:600}
+    .live-withdrawal-strip .strip-items .item .approved{background:#00b894;color:#fff;font-size:8px;padding:2px 10px;border-radius:30px;font-weight:700;letter-spacing:0.3px;flex-shrink:0}
+    .live-withdrawal-strip .strip-badge{background:#dc2626;color:#fff;font-size:8px;padding:3px 14px;border-radius:40px;flex-shrink:0;animation:pulseBadge 2s ease-in-out infinite;font-weight:700;letter-spacing:0.5px}
     @keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.5}}
     @keyframes pulse-dot{0%{opacity:.6;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}100%{opacity:.6;transform:scale(.9)}}
     
@@ -406,7 +408,7 @@
     .phone-live .footer .join-btn i{font-size:10px}
     .phone-live .footer .live-badge{color:#0a0a0a;font-size:9px}
     .phone-live .footer .live-badge i{color:#e74c3c;margin-right:2px}
-    @media(max-width:480px){.footer-grid{grid-template-columns:1fr 1fr}.page-wrap{padding:12px 10px 20px;padding-top:76px}.brand-name{font-size:19px}.online-badge{font-size:11px;padding:4px 10px 4px 8px}.online-badge .count-number{font-size:11px;min-width:28px}.online-badge .label{font-size:9px}.pipe-sep{font-size:15px}.signup-btn{font-size:10px;padding:5px 12px;border-radius:10px}.hero-title{font-size:30px}.hero-subtitle{font-size:24px}.demo-card{padding:18px 16px 22px}.demo-card .stats-grid{grid-template-columns:1fr 1fr;gap:10px}.demo-card .stat-card .stat-value{font-size:18px}.demo-card .welcome-row .greeting{font-size:16px}.chat-page{height:450px;max-width:100%}.story-card img{width:44px;height:44px}.way-card .way-icon-wrapper{width:64px;height:64px}.way-card .way-icon{width:58px;height:58px}.way-card{padding:14px 16px;flex-direction:column;gap:8px}.way-card .way-desc{font-size:13px}.way-card .way-name{font-size:19px}.way-card .way-badge{font-size:10px}.way-card .way-earn{font-size:16px}.way-card .way-cta .cta-btn{font-size:13px}.whatsapp-float .whatsapp-icon{width:54px;height:54px}.footer-section{margin-left:-10px;margin-right:-10px;padding-left:10px;padding-right:10px}.section{padding:20px 14px 22px}.user-card img{width:46px;height:46px}.user-card .user-info .name{font-size:15px}.user-card .user-info .bio{font-size:12px}.user-card .user-actions{flex-direction:row}.user-card .user-actions a{padding:6px 16px;font-size:11px}.hero-buttons .btn-group .btn-primary{min-width:100px!important;padding:10px 12px!important;font-size:12px!important;height:44px!important;flex:1 1 auto!important}.hero-buttons .btn-group{gap:6px!important;width:100%!important}.demo-page{padding:16px 12px 30px}.demo-page .demo-header{padding:10px 14px;flex-wrap:wrap;gap:8px}.demo-action-popup .popup-content{padding:24px 16px 24px}.live-withdrawal-strip{left:8px;bottom:80px;max-width:260px;min-width:180px;padding:10px 14px;height:50px}.live-withdrawal-strip .strip-items .item .name{font-size:11px}.live-withdrawal-strip .strip-items .item .amount{font-size:12px;padding:2px 8px}.live-withdrawal-strip .strip-items .item .flag{font-size:17px}.live-withdrawal-strip .strip-badge{font-size:7px;padding:2px 10px}.live-withdrawal-strip .strip-icon{font-size:14px}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr 1fr}.page-wrap{padding:12px 10px 20px;padding-top:76px}.brand-name{font-size:19px}.online-badge{font-size:11px;padding:4px 10px 4px 8px}.online-badge .count-number{font-size:11px;min-width:28px}.online-badge .label{font-size:9px}.pipe-sep{font-size:15px}.signup-btn{font-size:10px;padding:5px 12px;border-radius:10px}.hero-title{font-size:30px}.hero-subtitle{font-size:24px}.demo-card{padding:18px 16px 22px}.demo-card .stats-grid{grid-template-columns:1fr 1fr;gap:10px}.demo-card .stat-card .stat-value{font-size:18px}.demo-card .welcome-row .greeting{font-size:16px}.chat-page{height:450px;max-width:100%}.story-card img{width:44px;height:44px}.way-card .way-icon-wrapper{width:64px;height:64px}.way-card .way-icon{width:58px;height:58px}.way-card{padding:14px 16px;flex-direction:column;gap:8px}.way-card .way-desc{font-size:13px}.way-card .way-name{font-size:19px}.way-card .way-badge{font-size:10px}.way-card .way-earn{font-size:16px}.way-card .way-cta .cta-btn{font-size:13px}.whatsapp-float .whatsapp-icon{width:54px;height:54px}.footer-section{margin-left:-10px;margin-right:-10px;padding-left:10px;padding-right:10px}.section{padding:20px 14px 22px}.user-card img{width:46px;height:46px}.user-card .user-info .name{font-size:15px}.user-card .user-info .bio{font-size:12px}.user-card .user-actions{flex-direction:row}.user-card .user-actions a{padding:6px 16px;font-size:11px}.hero-buttons .btn-group .btn-primary{min-width:100px!important;padding:10px 12px!important;font-size:12px!important;height:44px!important;flex:1 1 auto!important}.hero-buttons .btn-group{gap:6px!important;width:100%!important}.demo-page{padding:16px 12px 30px}.demo-page .demo-header{padding:10px 14px;flex-wrap:wrap;gap:8px}.demo-action-popup .popup-content{padding:24px 16px 24px}.live-withdrawal-strip{left:8px;bottom:80px;max-width:300px;min-width:220px;padding:10px 14px;height:64px}.live-withdrawal-strip .strip-items .item .name{font-size:13px}.live-withdrawal-strip .strip-items .item .amount{font-size:13px;padding:2px 10px}.live-withdrawal-strip .strip-items .item .flag{font-size:20px}.live-withdrawal-strip .strip-badge{font-size:7px;padding:2px 10px}.live-withdrawal-strip .strip-icon{font-size:16px}}
     .chat-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(20px);z-index:40000;display:none;align-items:center;justify-content:center;padding:16px}.chat-overlay.active{display:flex}.chat-box{background:linear-gradient(145deg,#0a1628,#040b17);border-radius:20px;max-width:420px;width:100%;height:500px;display:flex;flex-direction:column;box-shadow:0 16px 48px rgba(0,0,0,.04);overflow:hidden;border:1px solid rgba(255,255,255,.06)}
     .chat-box-header{padding:12px 16px;background:linear-gradient(135deg,#005bea,#0a1628);color:#fff;display:flex;align-items:center;gap:10px;flex-shrink:0}
     .chat-box-header img{width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.1);object-fit:cover}
@@ -517,7 +519,7 @@
   <span class="install-btn">Install</span>
 </div>
 
-<!-- LIVE WITHDRAWAL STRIP - NO "WITHDRAW" TEXT, LIVE ICON ONLY -->
+<!-- LIVE WITHDRAWAL STRIP - UPDATED: REMOVED "WITHDRAW" TEXT, ENLARGED, NEW FORMAT -->
 <div class="live-withdrawal-strip" id="withdrawalStrip">
   <span class="strip-icon"><i class="fas fa-circle"></i></span>
   <div class="strip-items" id="stripItems"></div>
@@ -865,25 +867,29 @@
 </a>
 
 <script>
-// ========== LIVE WITHDRAWAL STRIP ==========
+// ========== LIVE WITHDRAWAL STRIP - UPDATED: REMOVED "WITHDRAW" TEXT, NEW FORMAT ==========
 (function() {
   const container = document.getElementById('stripItems');
   if (!container) return;
-  const names = ['Faith N.','Kelvin O.','Akosua K.','Chidi O.','Lindiwe M.','Omar H.','Diane U.','Samuel B.','Kabelo S.','Yaw A.','Robert T.','Amara E.','Grace W.','Tunde A.','Moses O.','Zanele D.','Peter M.','Jean P.','Marie B.','Kwame B.','Esther K.','Juma H.','Chanda M.','Grace P.','Amina S.','Kwesi A.','Fatima D.','Sipho N.','Zuri M.','Kofi A.','Nia J.','Thabo M.','Yara K.','Liam O.','Priya S.','Noah T.','Sarah W.'];
-  const flags = ['🇺🇬','🇰🇪','🇬🇭','🇳🇬','🇿🇦','🇹🇿','🇷🇼','🇨🇲','🇧🇼','🇿🇲','🇲🇼'];
-  const rnd = arr => arr[Math.floor(Math.random() * arr.length)];
-  const gen = () => {
-    const amt = Math.floor(Math.random() * (4000000 - 200000 + 1)) + 200000;
-    return { flag: rnd(flags), name: rnd(names), amount: amt.toLocaleString(), time: Math.floor(Math.random() * 15) + 1 + 'm ago' };
-  };
-  let items = [];
-  for (let i = 0; i < 40; i++) items.push(gen());
+  // Fixed withdrawal items matching requested format: "Grace W, Just withdrew 2,500,000ugx. Just now indicator.. Approved."
+  const withdrawals = [
+    { flag: '🇺🇬', name: 'Grace W', action: 'withdrew', amount: '2,500,000', time: 'Just now', approved: true },
+    { flag: '🇰🇪', name: 'Kelvin O.', action: 'withdrew', amount: '1,800,000', time: '2m ago', approved: true },
+    { flag: '🇬🇭', name: 'Akosua K.', action: 'withdrew', amount: '980,000', time: '4m ago', approved: true },
+    { flag: '🇳🇬', name: 'Chidi O.', action: 'withdrew', amount: '2,100,000', time: '7m ago', approved: true },
+    { flag: '🇿🇦', name: 'Lindiwe M.', action: 'withdrew', amount: '750,000', time: '12m ago', approved: true },
+    { flag: '🇺🇬', name: 'Robert T.', action: 'withdrew', amount: '3,200,000', time: '15m ago', approved: true },
+    { flag: '🇰🇪', name: 'Peter M.', action: 'withdrew', amount: '1,450,000', time: '19m ago', approved: true },
+    { flag: '🇳🇬', name: 'Amara E.', action: 'withdrew', amount: '2,850,000', time: '23m ago', approved: true },
+    { flag: '🇺🇬', name: 'Faith N.', action: 'withdrew', amount: '1,980,000', time: '28m ago', approved: true },
+    { flag: '🇬🇭', name: 'Kwame B.', action: 'withdrew', amount: '1,120,000', time: '32m ago', approved: true }
+  ];
   let idx = 0, active = null;
   const render = i => {
-    const item = items[i % items.length];
+    const w = withdrawals[i % withdrawals.length];
     const div = document.createElement('div');
     div.className = 'item active';
-    div.innerHTML = `<span class="flag">${item.flag}</span><span class="name">${item.name}</span><span class="amount">UGX ${item.amount}</span><span class="time">${item.time}</span>`;
+    div.innerHTML = `<span class="flag">${w.flag}</span><span class="name">${w.name}</span><span class="action">Just withdrew</span><span class="amount">UGX ${w.amount}</span><span class="time">${w.time}</span><span class="approved">✅ Approved</span>`;
     return div;
   };
   const next = () => {
@@ -901,10 +907,10 @@
   container.appendChild(first);
   active = first;
   idx = 1;
-  setInterval(next, 4500 + Math.random() * 2500);
+  setInterval(next, 4000 + Math.random() * 1500); // Faster rotation
 })();
 
-// ========== REST OF ORIGINAL JAVASCRIPT (FULL, NOT SHORTENED) ==========
+// ========== REST OF ORIGINAL JAVASCRIPT (FULL) ==========
 function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a}
 function fmt(n){return n.toLocaleString()}
 var R={UGX:1,KES:0.027,GHS:0.0042,NGN:0.133,USD:0.0005,ZAR:0.00032,RWF:0.00082,XAF:0.0018,BWP:0.0011,TZS:0.00069,ZMW:0.00045,MWK:0.00028};
@@ -1038,7 +1044,28 @@ document.addEventListener('DOMContentLoaded',function(){
   setTimeout(function(){
     document.getElementById('floatingInstall').classList.add('visible');
   }, 5000);
-  renderWaysGrid('waysGridMain');rotateProfiles();setInterval(rotateProfiles,35000);switchDashboard('uganda');var n=3300;setInterval(function(){n+=Math.floor(Math.random()*6)-3;if(n<3240)n=3240+Math.floor(Math.random()*30);if(n>3600)n=3600-Math.floor(Math.random()*30);document.getElementById('liveCounter').textContent=n.toLocaleString();document.getElementById('onlineNow').textContent=n.toLocaleString()},2800);var t=187432;setInterval(function(){t+=Math.floor(Math.random()*5)+2;if(t>189500)t=187000;document.getElementById('trustCounter').textContent=t.toLocaleString();document.getElementById('heroCounter').textContent=t.toLocaleString();document.getElementById('liveUsers').textContent=t.toLocaleString()},3000);window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});
+  renderWaysGrid('waysGridMain');rotateProfiles();setInterval(rotateProfiles,35000);switchDashboard('uganda');
+  // SPEED UP ONLINE NOW SECTION: faster updates
+  var n=3300;
+  setInterval(function(){
+    n+=Math.floor(Math.random()*8)-4; // Increased randomness for faster change
+    if(n<3200)n=3200+Math.floor(Math.random()*40);
+    if(n>3650)n=3650-Math.floor(Math.random()*40);
+    document.getElementById('liveCounter').textContent=n.toLocaleString();
+    document.getElementById('onlineNow').textContent=n.toLocaleString();
+  }, 1800); // Reduced from 2800ms to 1800ms (faster)
+  
+  // SPEED UP LIVE STAT INCREASE: faster increments
+  var t=187432;
+  setInterval(function(){
+    t+=Math.floor(Math.random()*8)+3; // Increased increment range
+    if(t>189800)t=187000;
+    document.getElementById('trustCounter').textContent=t.toLocaleString();
+    document.getElementById('heroCounter').textContent=t.toLocaleString();
+    document.getElementById('liveUsers').textContent=t.toLocaleString();
+  }, 2000); // Reduced from 3000ms to 2000ms (faster)
+  
+  window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});
 });
 </script>
 </body>
