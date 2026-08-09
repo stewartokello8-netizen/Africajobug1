@@ -140,7 +140,6 @@
   </style>
 </head>
 <body>
-<!-- ===== ALL YOUR HTML CONTENT ===== -->
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="floating-install" id="floatingInstall">
   <div class="app-icon"><i class="fas fa-mobile-alt"></i></div>
@@ -245,7 +244,6 @@
 <p class="section-subtitle">By country — instant payouts</p>
 <div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;">
 <div class="withdraw-grid">
-<!-- REMOVED: All manual onclick handlers removed - now only display -->
 <div class="item">🇰🇪 Kenya → M-Pesa</div>
 <div class="item">🇨🇲 Cameroon → MoMo</div>
 <div class="item">🇬🇭 Ghana → MoMo</div>
@@ -693,33 +691,44 @@ function openLiveActivationPopup(){
 }
 
 // ============================================================
-// AUTOMATIC POPUP ONLY - No manual triggers
+// AUTOMATIC POPUP ONLY - FIXED AMOUNT DISPLAY
 // ============================================================
 function showWithdrawalPopup(){
   var popupCard = document.getElementById('popupCard');
   if(!popupCard) return;
   
+  // Get the next profile from the list
   var profile = withdrawalProfiles[withdrawalIndex % withdrawalProfiles.length];
   withdrawalIndex++;
+  
+  // Debug: Log the profile to console
+  console.log('Profile:', profile);
   
   var methods = ['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'];
   var midx = Math.floor(Math.random() * methods.length);
   
+  // Get the amount and currency from the profile
   var userCurrency = profile.currency || 'UGX';
   var userSymbol = userCurrency;
   var amount = profile.amount;
   var displayAmount = userSymbol + ' ' + amount.toLocaleString();
   
+  // Debug: Log the amount
+  console.log('Display Amount:', displayAmount);
+  
+  // Set all the popup elements
   document.getElementById('popupUserImage').src = profile.img;
   document.getElementById('popupUserName').textContent = profile.country + ' ' + profile.name;
   document.getElementById('popupMethod').textContent = 'via ' + methods[midx];
   document.getElementById('popupTime').textContent = 'just now';
   document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
   
-  // CRITICAL: Set the amount with visible styling
+  // CRITICAL FIX: Set the amount with multiple methods to ensure it displays
   var amountEl = document.getElementById('popupAmount');
   if (amountEl) {
+    // Set the text content
     amountEl.textContent = displayAmount;
+    // Make sure it's visible
     amountEl.style.display = 'inline-block';
     amountEl.style.fontSize = '14px';
     amountEl.style.fontWeight = '900';
@@ -730,13 +739,17 @@ function showWithdrawalPopup(){
     amountEl.style.border = '1px solid rgba(0,184,148,0.2)';
   }
   
+  // Show the popup with animation
   popupCard.style.display = 'flex';
   popupCard.style.animation = 'none';
-  popupCard.offsetHeight;
+  popupCard.offsetHeight; // Trigger reflow
   popupCard.style.animation = 'slideUpFast 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
   
+  // Auto-hide after 4 seconds
   if(window.popupTimer) clearTimeout(window.popupTimer);
-  window.popupTimer = setTimeout(function(){ popupCard.style.display = 'none'; }, 4000);
+  window.popupTimer = setTimeout(function(){ 
+    popupCard.style.display = 'none'; 
+  }, 4000);
 }
 
 // ============================================================
