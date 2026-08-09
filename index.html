@@ -140,7 +140,7 @@
   </style>
 </head>
 <body>
-<!-- ===== ALL YOUR HTML CONTENT KEPT EXACTLY AS YOU HAD IT ===== -->
+<!-- ===== ALL YOUR HTML CONTENT ===== -->
 <div class="scroll-progress" id="scrollProgress"></div>
 <div class="floating-install" id="floatingInstall">
   <div class="app-icon"><i class="fas fa-mobile-alt"></i></div>
@@ -245,16 +245,17 @@
 <p class="section-subtitle">By country — instant payouts</p>
 <div style="background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.04);border-radius:16px;padding:10px 8px;text-align:center;">
 <div class="withdraw-grid">
-<div class="item" onclick="openWithdrawalPopup('🇰🇪 Kenya','M-Pesa')">🇰🇪 Kenya → M-Pesa</div>
-<div class="item" onclick="openWithdrawalPopup('🇨🇲 Cameroon','MoMo')">🇨🇲 Cameroon → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇬🇭 Ghana','MoMo')">🇬🇭 Ghana → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇳🇬 Nigeria','MoMo')">🇳🇬 Nigeria → MoMo</div>
-<div class="item" onclick="openWithdrawalPopup('🇺🇬 Uganda','Mobile Money')">🇺🇬 Uganda → Mobile Money</div>
-<div class="item" onclick="openWithdrawalPopup('🇷🇼 Rwanda','Mobile Wallet')">🇷🇼 Rwanda → Mobile Wallet</div>
-<div class="item" onclick="openWithdrawalPopup('🇿🇦 South Africa','Bank Transfer')">🇿🇦 South Africa → Bank Transfer</div>
-<div class="item" onclick="openWithdrawalPopup('🇧🇼 Botswana','Mobile Money')">🇧🇼 Botswana → Mobile Money</div>
-<div class="item" onclick="openWithdrawalPopup('🇹🇿 Tanzania','M-Pesa')">🇹🇿 Tanzania → M-Pesa</div>
-<div class="item" onclick="openLiveActivationPopup()" style="background:linear-gradient(135deg,#00b894,#00a381);color:#fff;border-color:#00b894;">🔓 Paid Activation</div>
+<!-- REMOVED: All manual onclick handlers removed - now only display -->
+<div class="item">🇰🇪 Kenya → M-Pesa</div>
+<div class="item">🇨🇲 Cameroon → MoMo</div>
+<div class="item">🇬🇭 Ghana → MoMo</div>
+<div class="item">🇳🇬 Nigeria → MoMo</div>
+<div class="item">🇺🇬 Uganda → Mobile Money</div>
+<div class="item">🇷🇼 Rwanda → Mobile Wallet</div>
+<div class="item">🇿🇦 South Africa → Bank Transfer</div>
+<div class="item">🇧🇼 Botswana → Mobile Money</div>
+<div class="item">🇹🇿 Tanzania → M-Pesa</div>
+<div class="item" style="background:linear-gradient(135deg,#00b894,#00a381);color:#fff;border-color:#00b894;">🔓 Paid Activation</div>
 </div>
 </div>
 </div>
@@ -443,22 +444,25 @@
 </div>
 </div>
 
-<!-- ===== WITHDRAWAL POPUP - FIXED ===== -->
+<!-- ===== WITHDRAWAL POPUP - FIXED WITH VISIBLE AMOUNT ===== -->
 <div id="withdrawalPopup">
   <div class="popup-card" id="popupCard" style="display:flex;">
     <img id="popupUserImage" src="" alt="User" loading="lazy">
-    <div class="info">
-      <div class="title" id="popupTitle">💸 Live Withdrawal</div>
-      <div class="name" id="popupUserName"></div>
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap;">
-        <span class="method" id="popupMethod"></span>
-        <span class="amount-display" id="popupAmount"></span>
+    <div class="info" style="flex:1; min-width:0;">
+      <div class="title" id="popupTitle" style="font-weight:700; font-size:8px; color:#00c6fb; text-transform:uppercase; letter-spacing:.4px; margin-bottom:0;">💸 Live Withdrawal</div>
+      <div class="name" id="popupUserName" style="font-size:11px; color:#1a0b2f; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"></div>
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:6px; flex-wrap:wrap; margin-top:2px;">
+        <span class="method" id="popupMethod" style="font-size:9px; color:#64748b; display:flex; align-items:center; gap:3px;"></span>
+        <span id="popupAmount" style="font-size:14px; font-weight:900; color:#00b894; white-space:nowrap; background:rgba(0,184,148,0.08); padding:2px 10px; border-radius:20px; border:1px solid rgba(0,184,148,0.15);">UGX 0</span>
       </div>
-      <div style="margin-top:2px;">
-        <span class="live-indicator">🔴 LIVE · <span id="popupTime">just now</span></span>
+      <div style="margin-top:3px;">
+        <span class="live-indicator" style="display:inline-flex; align-items:center; gap:3px; font-size:7px; font-weight:700; color:#10b981; background:rgba(16,185,129,0.12); padding:1px 8px 1px 6px; border-radius:40px; border:1px solid rgba(16,185,129,0.2); animation:pulse-dot 1.2s ease-in-out infinite;">
+          <span style="display:inline-block; width:6px; height:6px; background:#10b981; border-radius:50%; animation:pulse-dot 1.2s ease-in-out infinite;"></span>
+          LIVE · <span id="popupTime">just now</span>
+        </span>
       </div>
     </div>
-    <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close">✕</button>
+    <button class="close" onclick="this.closest('.popup-card').style.display='none'" aria-label="Close" style="background:#f1f5f9; border:none; color:#64748b; width:22px; height:22px; border-radius:50%; cursor:pointer; font-size:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-weight:700; transition:all .3s;">✕</button>
   </div>
 </div>
 
@@ -539,7 +543,6 @@ var cur='UGX';
 // ============================================================
 // COMPLETE LIST OF 70 PROFILES WITH THEIR FIXED AMOUNTS
 // EACH PROFILE AND AMOUNT ARE TIED TOGETHER AS ONE UNIT
-// NO RANDOM NUMBERS - ALL 70 AMOUNTS FROM YOUR LIST
 // ============================================================
 var withdrawalProfiles = [
   {name:'Kelvin O.', country:'🇺🇬 Uganda', img:'https://randomuser.me/api/portraits/men/1.jpg', amount:1234000, currency:'UGX'},
@@ -689,35 +692,9 @@ function openLiveActivationPopup(){
   }
 }
 
-// FIXED: This function now correctly displays the profile's specific amount
-function openWithdrawalPopup(country, method){
-  var profile = withdrawalProfiles[withdrawalIndex % withdrawalProfiles.length];
-  withdrawalIndex++;
-  
-  // Use the profile's own currency and amount
-  var userCurrency = profile.currency || 'UGX';
-  var userSymbol = userCurrency;
-  var amount = profile.amount;
-  var displayAmount = userSymbol + ' ' + amount.toLocaleString();
-  
-  document.getElementById('popupUserImage').src = profile.img;
-  document.getElementById('popupUserName').textContent = profile.country + ' ' + profile.name;
-  document.getElementById('popupMethod').textContent = 'via ' + method;
-  document.getElementById('popupAmount').textContent = displayAmount;
-  document.getElementById('popupTime').textContent = 'just now';
-  document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
-  
-  var card = document.getElementById('popupCard');
-  card.style.display = 'flex';
-  card.style.animation = 'none';
-  card.offsetHeight;
-  card.style.animation = 'slideUpFast 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-  
-  if(window.popupTimer) clearTimeout(window.popupTimer);
-  window.popupTimer = setTimeout(function(){ card.style.display = 'none'; }, 4000);
-}
-
-// FIXED: Auto popup rotation now also shows correct amounts
+// ============================================================
+// AUTOMATIC POPUP ONLY - No manual triggers
+// ============================================================
 function showWithdrawalPopup(){
   var popupCard = document.getElementById('popupCard');
   if(!popupCard) return;
@@ -728,7 +705,6 @@ function showWithdrawalPopup(){
   var methods = ['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'];
   var midx = Math.floor(Math.random() * methods.length);
   
-  // Use the profile's own currency and amount
   var userCurrency = profile.currency || 'UGX';
   var userSymbol = userCurrency;
   var amount = profile.amount;
@@ -737,9 +713,22 @@ function showWithdrawalPopup(){
   document.getElementById('popupUserImage').src = profile.img;
   document.getElementById('popupUserName').textContent = profile.country + ' ' + profile.name;
   document.getElementById('popupMethod').textContent = 'via ' + methods[midx];
-  document.getElementById('popupAmount').textContent = displayAmount;
   document.getElementById('popupTime').textContent = 'just now';
   document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
+  
+  // CRITICAL: Set the amount with visible styling
+  var amountEl = document.getElementById('popupAmount');
+  if (amountEl) {
+    amountEl.textContent = displayAmount;
+    amountEl.style.display = 'inline-block';
+    amountEl.style.fontSize = '14px';
+    amountEl.style.fontWeight = '900';
+    amountEl.style.color = '#00b894';
+    amountEl.style.background = 'rgba(0,184,148,0.1)';
+    amountEl.style.padding = '2px 12px';
+    amountEl.style.borderRadius = '20px';
+    amountEl.style.border = '1px solid rgba(0,184,148,0.2)';
+  }
   
   popupCard.style.display = 'flex';
   popupCard.style.animation = 'none';
