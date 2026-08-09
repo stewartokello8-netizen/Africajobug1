@@ -26,39 +26,30 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system-ui,sans-serif;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;font-size:1.0625rem;line-height:1.6}
     
-    /* ENHANCED WHATSAPP GLOW WITH BADGE "1" */
+    /* LIVE WITHDRAWAL STRIP - WHITE BG, LARGER, NO "WITHDRAW" TEXT */
+    .live-withdrawal-strip{position:fixed;left:16px;bottom:100px;z-index:9997;background:#fff;border-radius:14px;padding:12px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.25),0 0 30px rgba(0,198,251,0.08);display:flex;align-items:center;gap:12px;max-width:420px;min-width:280px;overflow:hidden;pointer-events:none;height:60px;border:1px solid rgba(0,0,0,0.06)}
+    .live-withdrawal-strip .strip-icon{font-size:16px;color:#dc2626;flex-shrink:0;animation:pulse-dot 1.2s ease-in-out infinite}
+    .live-withdrawal-strip .strip-icon i{font-size:16px}
+    .live-withdrawal-strip .strip-items{flex:1;overflow:hidden;position:relative;height:40px;min-width:180px}
+    .live-withdrawal-strip .strip-items .item{display:flex;align-items:center;gap:8px;font-size:14px;color:#1a0b2f;white-space:nowrap;position:absolute;top:0;left:0;width:100%;opacity:0;transform:translateX(40px);transition:opacity 0.6s ease,transform 0.6s ease;height:40px}
+    .live-withdrawal-strip .strip-items .item.active{opacity:1;transform:translateX(0)}
+    .live-withdrawal-strip .strip-items .item.exit{opacity:0;transform:translateX(-40px)}
+    .live-withdrawal-strip .strip-items .item .flag{font-size:20px;flex-shrink:0}
+    .live-withdrawal-strip .strip-items .item .name{font-weight:600;color:#1a0b2f;font-size:13px;flex-shrink:0}
+    .live-withdrawal-strip .strip-items .item .amount{font-weight:700;color:#00b894;background:rgba(0,184,148,0.1);padding:2px 12px;border-radius:30px;font-size:14px;flex-shrink:0}
+    .live-withdrawal-strip .strip-items .item .time{font-size:9px;color:rgba(0,0,0,0.3);flex-shrink:0}
+    .live-withdrawal-strip .strip-badge{background:#dc2626;color:#fff;font-size:8px;padding:3px 12px;border-radius:40px;flex-shrink:0;animation:pulseBadge 2s ease-in-out infinite;font-weight:700;letter-spacing:0.5px}
+    @keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.5}}
+    @keyframes pulse-dot{0%{opacity:.6;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}100%{opacity:.6;transform:scale(.9)}}
+    
+    /* ENHANCED WHATSAPP GLOW */
     .whatsapp-float{position:fixed;bottom:90px;right:24px;z-index:9998;display:flex;align-items:center;text-decoration:none}
-    .whatsapp-float .whatsapp-icon{width:64px;height:64px;border-radius:50%;transition:all .4s cubic-bezier(.16,1,.3,1);border:2px solid #fff;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:whatsappPulse 2.2s ease-in-out infinite;box-shadow:0 0 25px rgba(37,211,102,0.7),0 0 60px rgba(37,211,102,0.25),0 0 100px rgba(37,211,102,0.1);position:relative}
+    .whatsapp-float .whatsapp-icon{width:64px;height:64px;border-radius:50%;transition:all .4s cubic-bezier(.16,1,.3,1);border:2px solid #fff;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:whatsappPulse 2.2s ease-in-out infinite;box-shadow:0 0 25px rgba(37,211,102,0.7),0 0 60px rgba(37,211,102,0.25),0 0 100px rgba(37,211,102,0.1)}
     .whatsapp-float .whatsapp-icon:hover{transform:scale(1.12);box-shadow:0 0 40px rgba(37,211,102,0.9),0 0 80px rgba(37,211,102,0.4),0 0 120px rgba(37,211,102,0.2);animation-play-state:paused}
     .whatsapp-float .whatsapp-icon img{width:55%;height:55%;object-fit:contain;display:block;filter:brightness(0) invert(1)}
-    .whatsapp-float .whatsapp-badge{position:absolute;top:-4px;right:-4px;background:#dc2626;color:#fff;font-size:11px;font-weight:800;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 2px 8px rgba(220,38,38,0.4);animation:pulseBadge 1.5s ease-in-out infinite}
     @keyframes whatsappPulse{0%{box-shadow:0 0 20px rgba(37,211,102,0.6),0 0 50px rgba(37,211,102,0.15),0 0 80px rgba(37,211,102,0.05)}50%{box-shadow:0 0 40px rgba(37,211,102,0.9),0 0 80px rgba(37,211,102,0.3),0 0 120px rgba(37,211,102,0.15)}100%{box-shadow:0 0 20px rgba(37,211,102,0.6),0 0 50px rgba(37,211,102,0.15),0 0 80px rgba(37,211,102,0.05)}}
-    @keyframes pulseBadge{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
     
-    /* HORIZONTAL WITHDRAWAL NOTIFICATION - LIKE SCREENSHOT */
-    .withdrawal-notification{position:fixed;left:20px;bottom:100px;z-index:9997;background:#fff;border-radius:60px;padding:10px 20px 10px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.2),0 0 40px rgba(0,150,255,0.05);display:flex;align-items:center;gap:10px;max-width:420px;opacity:0;transform:translateX(-30px);transition:opacity 0.5s ease,transform 0.5s ease;pointer-events:auto;border:1px solid rgba(0,0,0,0.05)}
-    .withdrawal-notification.show{opacity:1;transform:translateX(0)}
-    .withdrawal-notification .notif-icon{font-size:18px;flex-shrink:0}
-    .withdrawal-notification .notif-text{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:13px;color:#1a0b2f}
-    .withdrawal-notification .notif-text .name{font-weight:700;color:#1a0b2f}
-    .withdrawal-notification .notif-text .action{color:#64748b}
-    .withdrawal-notification .notif-text .amount{font-weight:700;color:#0a1628}
-    .withdrawal-notification .notif-text .currency{font-weight:600;color:#64748b;font-size:12px}
-    .withdrawal-notification .notif-verified{display:inline-flex;align-items:center;gap:4px;color:#16a34a;font-size:12px;font-weight:600;background:#dcfce7;padding:2px 10px;border-radius:40px;flex-shrink:0}
-    .withdrawal-notification .notif-verified i{font-size:11px}
-    .withdrawal-notification .notif-time{color:#94a3b8;font-size:11px;font-weight:500;flex-shrink:0}
-    .withdrawal-notification .notif-close{background:transparent;border:none;color:#94a3b8;cursor:pointer;font-size:16px;padding:0 4px;transition:color .3s;flex-shrink:0}
-    .withdrawal-notification .notif-close:hover{color:#1a0b2f}
-    @media(max-width:480px){.withdrawal-notification{left:8px;bottom:80px;max-width:280px;padding:8px 14px 8px 12px;font-size:11px}.withdrawal-notification .notif-text{font-size:11px}.withdrawal-notification .notif-verified{font-size:10px;padding:1px 8px}.withdrawal-notification .notif-time{font-size:9px}}
-    
-    /* HERO TEXT - MADE CLEARER/BRIGHTER */
-    .hero-title{font-family:Inter,sans-serif;font-size:42px;font-weight:900;margin:0 0 4px;line-height:1.1;color:#ffffff !important;letter-spacing:-.5px;text-shadow:0 0 30px rgba(0,150,255,0.08)}
-    .hero-subtitle{font-family:Inter,sans-serif;font-size:32px;font-weight:900;margin:0 0 10px;color:#fff;letter-spacing:-.3px;background:linear-gradient(135deg,#00c6fb,#3b82f6,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-shadow:0 0 40px rgba(0,198,251,0.15)}
-    .hero-desc{font-size:15px;color:#ffffff !important;line-height:1.8;max-width:440px;margin:0 auto 18px;text-shadow:0 1px 10px rgba(0,0,0,0.2);font-weight:500;opacity:1}
-    .hero-desc strong{color:#00c6fb;font-weight:800}
-    .green-highlight{color:#00c6fb !important;font-weight:900;text-shadow:0 0 20px rgba(0,198,251,0.2)}
-    
-    /* ALL ORIGINAL STYLES (UNTOUCHED) */
+    /* ALL ORIGINAL STYLES (FULL RESTORED) */
     .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#00c6fb,#005bea);z-index:10001;width:0%;transition:width .1s;box-shadow:0 0 20px rgba(0,150,255,.3)}
     .page-wrap{max-width:960px;width:100%;background:linear-gradient(145deg,#0a1628,#040b17);border-radius:0;padding:80px 24px 24px;margin:0 auto;box-shadow:0 0 15px rgba(0,150,255,.15);border:1px solid rgba(0,150,255,.15);position:relative}
     .page-wrap::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:3px;background:linear-gradient(90deg,transparent,#00c6fb,#005bea,#00c6fb,transparent);background-size:300%100%;animation:shimmerBorder 4s ease-in-out infinite;border-radius:0 0 50%50%}@keyframes shimmerBorder{0%,100%{background-position:0%50%}50%{background-position:100%50%}}
@@ -89,6 +80,10 @@
     .hero-section{background:linear-gradient(145deg,#0a1628,#040b17);border:2px solid rgba(0,150,255,.2);text-align:center;position:relative;overflow:hidden;padding:40px 20px 36px}
     .hero-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30%50%,rgba(0,150,255,.06),transparent 60%);animation:heroGlow 8s ease-in-out infinite}@keyframes heroGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(10%,10%)}}
     .hero-section>*{position:relative;z-index:1}
+    .hero-title{font-family:Inter,sans-serif;font-size:42px;font-weight:900;margin:0 0 4px;line-height:1.1;color:#fff;letter-spacing:-.5px}
+    .hero-subtitle{font-family:Inter,sans-serif;font-size:32px;font-weight:900;margin:0 0 10px;color:#fff;letter-spacing:-.3px;background:linear-gradient(135deg,#00c6fb,#005bea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-desc{font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;max-width:420px;margin:0 auto 18px}
+    .hero-desc strong{color:#00c6fb;font-weight:800}
     .hero-buttons{display:flex;flex-direction:column;align-items:center;gap:12px}
     .hero-buttons .btn-group{display:flex;flex-wrap:nowrap;justify-content:center;gap:10px}
     .btn-primary{display:inline-flex;background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;font-weight:700;font-size:14px;padding:12px 18px;border-radius:12px;text-decoration:none;border:2px solid rgba(255,255,255,.08);cursor:pointer;text-align:center;transition:all .4s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 20px rgba(0,150,255,.3);position:relative;overflow:hidden;min-width:0;flex:1 1 auto;align-items:center;justify-content:center;height:48px}
@@ -198,7 +193,12 @@
     .footer-bottom .copy{font-size:12px;color:rgba(255,255,255,.4)}
     .footer-bottom .copy a{color:rgba(255,255,255,.4);text-decoration:none;font-weight:700;transition:all .4s cubic-bezier(.16,1,.3,1)}
     .footer-bottom .copy a:hover{color:#00c6fb}
+    .whatsapp-float .whatsapp-icon{animation:whatsappGlow 2s ease-in-out infinite;box-shadow:0 0 20px rgba(37,211,102,0.6),0 0 60px rgba(37,211,102,0.2)}@keyframes whatsappGlow{0%,100%{box-shadow:0 0 20px rgba(37,211,102,0.5),0 0 40px rgba(37,211,102,0.15)}50%{box-shadow:0 0 40px rgba(37,211,102,0.9),0 0 80px rgba(37,211,102,0.3)}}
     .earnings-scroll .scroll-content{animation:scrollText 40s linear infinite!important}
+    .whatsapp-float{position:fixed;bottom:90px;right:24px;z-index:9998;display:flex;align-items:center;text-decoration:none}
+    .whatsapp-float .whatsapp-icon{width:64px;height:64px;border-radius:50%;transition:all .4s cubic-bezier(.16,1,.3,1);border:2px solid #fff;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .whatsapp-float .whatsapp-icon:hover{transform:scale(1.08)}
+    .whatsapp-float .whatsapp-icon img{width:55%;height:55%;object-fit:contain;display:block;filter:brightness(0) invert(1)}
     .earnings-scroll{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.06);border-radius:60px;padding:8px 12px;margin:8px 0 0;overflow:hidden;white-space:nowrap;position:relative;width:100%}
     .earnings-scroll .scroll-label{background:linear-gradient(135deg,#00c6fb,#005bea);color:#fff;padding:4px 14px;border-radius:40px;font-size:9px;font-weight:800;display:inline-block;margin-right:8px;text-transform:uppercase;letter-spacing:.5px;position:relative;z-index:2}
     .earnings-scroll .scroll-content{display:inline-block;font-weight:700;color:#fff;font-size:12px;white-space:nowrap;padding-left:4px;position:relative;z-index:1}
@@ -406,7 +406,7 @@
     .phone-live .footer .join-btn i{font-size:10px}
     .phone-live .footer .live-badge{color:#0a0a0a;font-size:9px}
     .phone-live .footer .live-badge i{color:#e74c3c;margin-right:2px}
-    @media(max-width:480px){.footer-grid{grid-template-columns:1fr 1fr}.page-wrap{padding:12px 10px 20px;padding-top:76px}.brand-name{font-size:19px}.online-badge{font-size:11px;padding:4px 10px 4px 8px}.online-badge .count-number{font-size:11px;min-width:28px}.online-badge .label{font-size:9px}.pipe-sep{font-size:15px}.signup-btn{font-size:10px;padding:5px 12px;border-radius:10px}.hero-title{font-size:30px}.hero-subtitle{font-size:24px}.demo-card{padding:18px 16px 22px}.demo-card .stats-grid{grid-template-columns:1fr 1fr;gap:10px}.demo-card .stat-card .stat-value{font-size:18px}.demo-card .welcome-row .greeting{font-size:16px}.chat-page{height:450px;max-width:100%}.story-card img{width:44px;height:44px}.way-card .way-icon-wrapper{width:64px;height:64px}.way-card .way-icon{width:58px;height:58px}.way-card{padding:14px 16px;flex-direction:column;gap:8px}.way-card .way-desc{font-size:13px}.way-card .way-name{font-size:19px}.way-card .way-badge{font-size:10px}.way-card .way-earn{font-size:16px}.way-card .way-cta .cta-btn{font-size:13px}.whatsapp-float .whatsapp-icon{width:54px;height:54px}.footer-section{margin-left:-10px;margin-right:-10px;padding-left:10px;padding-right:10px}.section{padding:20px 14px 22px}.user-card img{width:46px;height:46px}.user-card .user-info .name{font-size:15px}.user-card .user-info .bio{font-size:12px}.user-card .user-actions{flex-direction:row}.user-card .user-actions a{padding:6px 16px;font-size:11px}.hero-buttons .btn-group .btn-primary{min-width:100px!important;padding:10px 12px!important;font-size:12px!important;height:44px!important;flex:1 1 auto!important}.hero-buttons .btn-group{gap:6px!important;width:100%!important}.demo-page{padding:16px 12px 30px}.demo-page .demo-header{padding:10px 14px;flex-wrap:wrap;gap:8px}.demo-action-popup .popup-content{padding:24px 16px 24px}.withdrawal-notification{left:8px;bottom:80px;max-width:260px;padding:8px 12px}.withdrawal-notification .notif-text{font-size:11px}.withdrawal-notification .notif-verified{font-size:10px;padding:1px 8px}.withdrawal-notification .notif-time{font-size:9px}}
+    @media(max-width:480px){.footer-grid{grid-template-columns:1fr 1fr}.page-wrap{padding:12px 10px 20px;padding-top:76px}.brand-name{font-size:19px}.online-badge{font-size:11px;padding:4px 10px 4px 8px}.online-badge .count-number{font-size:11px;min-width:28px}.online-badge .label{font-size:9px}.pipe-sep{font-size:15px}.signup-btn{font-size:10px;padding:5px 12px;border-radius:10px}.hero-title{font-size:30px}.hero-subtitle{font-size:24px}.demo-card{padding:18px 16px 22px}.demo-card .stats-grid{grid-template-columns:1fr 1fr;gap:10px}.demo-card .stat-card .stat-value{font-size:18px}.demo-card .welcome-row .greeting{font-size:16px}.chat-page{height:450px;max-width:100%}.story-card img{width:44px;height:44px}.way-card .way-icon-wrapper{width:64px;height:64px}.way-card .way-icon{width:58px;height:58px}.way-card{padding:14px 16px;flex-direction:column;gap:8px}.way-card .way-desc{font-size:13px}.way-card .way-name{font-size:19px}.way-card .way-badge{font-size:10px}.way-card .way-earn{font-size:16px}.way-card .way-cta .cta-btn{font-size:13px}.whatsapp-float .whatsapp-icon{width:54px;height:54px}.footer-section{margin-left:-10px;margin-right:-10px;padding-left:10px;padding-right:10px}.section{padding:20px 14px 22px}.user-card img{width:46px;height:46px}.user-card .user-info .name{font-size:15px}.user-card .user-info .bio{font-size:12px}.user-card .user-actions{flex-direction:row}.user-card .user-actions a{padding:6px 16px;font-size:11px}.hero-buttons .btn-group .btn-primary{min-width:100px!important;padding:10px 12px!important;font-size:12px!important;height:44px!important;flex:1 1 auto!important}.hero-buttons .btn-group{gap:6px!important;width:100%!important}.demo-page{padding:16px 12px 30px}.demo-page .demo-header{padding:10px 14px;flex-wrap:wrap;gap:8px}.demo-action-popup .popup-content{padding:24px 16px 24px}.live-withdrawal-strip{left:8px;bottom:80px;max-width:260px;min-width:180px;padding:10px 14px;height:50px}.live-withdrawal-strip .strip-items .item .name{font-size:11px}.live-withdrawal-strip .strip-items .item .amount{font-size:12px;padding:2px 8px}.live-withdrawal-strip .strip-items .item .flag{font-size:17px}.live-withdrawal-strip .strip-badge{font-size:7px;padding:2px 10px}.live-withdrawal-strip .strip-icon{font-size:14px}}
     .chat-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(20px);z-index:40000;display:none;align-items:center;justify-content:center;padding:16px}.chat-overlay.active{display:flex}.chat-box{background:linear-gradient(145deg,#0a1628,#040b17);border-radius:20px;max-width:420px;width:100%;height:500px;display:flex;flex-direction:column;box-shadow:0 16px 48px rgba(0,0,0,.04);overflow:hidden;border:1px solid rgba(255,255,255,.06)}
     .chat-box-header{padding:12px 16px;background:linear-gradient(135deg,#005bea,#0a1628);color:#fff;display:flex;align-items:center;gap:10px;flex-shrink:0}
     .chat-box-header img{width:36px;height:36px;border-radius:50%;border:2px solid rgba(255,255,255,.1);object-fit:cover}
@@ -517,18 +517,11 @@
   <span class="install-btn">Install</span>
 </div>
 
-<!-- HORIZONTAL WITHDRAWAL NOTIFICATION - LEFT CORNER -->
-<div class="withdrawal-notification" id="withdrawalNotif">
-  <span class="notif-icon">💸</span>
-  <span class="notif-text">
-    <span class="name" id="notifName">Emma T.</span>
-    <span class="action">withdrew</span>
-    <span class="amount" id="notifAmount">UGX 115,65</span>
-    <span class="currency">UGX</span>
-  </span>
-  <span class="notif-verified"><i class="fas fa-check-circle"></i> Verified</span>
-  <span class="notif-time" id="notifTime">just now</span>
-  <button class="notif-close" onclick="closeNotification()">✕</button>
+<!-- LIVE WITHDRAWAL STRIP - NO "WITHDRAW" TEXT, LIVE ICON ONLY -->
+<div class="live-withdrawal-strip" id="withdrawalStrip">
+  <span class="strip-icon"><i class="fas fa-circle"></i></span>
+  <div class="strip-items" id="stripItems"></div>
+  <span class="strip-badge">LIVE</span>
 </div>
 
 <div class="page-wrap">
@@ -600,8 +593,8 @@
 <div class="section section-video">
 <div class="video-label"><span class="badge-video">▶️ WATCH</span><h3>How to Register & Activate Your Account</h3></div>
 <div class="video-explain">📹 <strong>Watch how to register, create your account, and activate it</strong> — Follow this step-by-step guide to get started on Myqashapp and begin earning today!</div>
-<div class="video-container" onclick="openVideoPopup('📺 How to Register & Activate Your Account','Free','https://archive.org/embed/lv_0_20260809213302')" style="cursor:pointer;">
-<iframe src="https://archive.org/embed/lv_0_20260809213302" title="How to Register & Activate Your Account" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="video-container" onclick="openVideoPopup('📺 How to Register & Activate Your Account','Free','https://www.youtube.com/embed/PMYHInzwi6w?autoplay=1&rel=0')" style="cursor:pointer;">
+<iframe src="https://www.youtube.com/embed/PMYHInzwi6w?rel=0" title="How to Register & Activate Your Account" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 <div class="section section-live live-foreigners-section" id="liveChatSection">
@@ -867,46 +860,51 @@
 <button class="btn-close" onclick="closeWheelPopup()">Close</button>
 </div>
 </div>
-
-<!-- WHATSAPP FLOAT WITH BADGE "1" -->
 <a href="https://wa.me/256753738856" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
-  <div class="whatsapp-icon">
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp">
-    <span class="whatsapp-badge">1</span>
-  </div>
+<div class="whatsapp-icon"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z'/%3E%3C/svg%3E" alt="WhatsApp"></div>
 </a>
 
 <script>
-// ========== HORIZONTAL WITHDRAWAL NOTIFICATION ==========
-function showNotification() {
-  var notif = document.getElementById('withdrawalNotif');
-  var names = ['Emma T.', 'John M.', 'Sarah K.', 'David O.', 'Faith N.', 'Kelvin O.', 'Amara E.', 'Kwame B.', 'Peter M.', 'Grace W.'];
-  var amounts = ['115,65', '245,00', '178,50', '320,00', '560,00', '890,00', '234,00', '412,00', '678,00', '1255,00'];
-  var idx = Math.floor(Math.random() * names.length);
-  document.getElementById('notifName').textContent = names[idx];
-  document.getElementById('notifAmount').textContent = 'UGX ' + amounts[idx];
-  notif.classList.add('show');
-  // Auto hide after 5 seconds
-  clearTimeout(window.notifTimeout);
-  window.notifTimeout = setTimeout(function() {
-    notif.classList.remove('show');
-  }, 5000);
-}
+// ========== LIVE WITHDRAWAL STRIP ==========
+(function() {
+  const container = document.getElementById('stripItems');
+  if (!container) return;
+  const names = ['Faith N.','Kelvin O.','Akosua K.','Chidi O.','Lindiwe M.','Omar H.','Diane U.','Samuel B.','Kabelo S.','Yaw A.','Robert T.','Amara E.','Grace W.','Tunde A.','Moses O.','Zanele D.','Peter M.','Jean P.','Marie B.','Kwame B.','Esther K.','Juma H.','Chanda M.','Grace P.','Amina S.','Kwesi A.','Fatima D.','Sipho N.','Zuri M.','Kofi A.','Nia J.','Thabo M.','Yara K.','Liam O.','Priya S.','Noah T.','Sarah W.'];
+  const flags = ['🇺🇬','🇰🇪','🇬🇭','🇳🇬','🇿🇦','🇹🇿','🇷🇼','🇨🇲','🇧🇼','🇿🇲','🇲🇼'];
+  const rnd = arr => arr[Math.floor(Math.random() * arr.length)];
+  const gen = () => {
+    const amt = Math.floor(Math.random() * (4000000 - 200000 + 1)) + 200000;
+    return { flag: rnd(flags), name: rnd(names), amount: amt.toLocaleString(), time: Math.floor(Math.random() * 15) + 1 + 'm ago' };
+  };
+  let items = [];
+  for (let i = 0; i < 40; i++) items.push(gen());
+  let idx = 0, active = null;
+  const render = i => {
+    const item = items[i % items.length];
+    const div = document.createElement('div');
+    div.className = 'item active';
+    div.innerHTML = `<span class="flag">${item.flag}</span><span class="name">${item.name}</span><span class="amount">UGX ${item.amount}</span><span class="time">${item.time}</span>`;
+    return div;
+  };
+  const next = () => {
+    if (active) { active.className = 'item exit'; setTimeout(() => { if (active && active.parentNode) active.remove(); active = null; }, 600); }
+    setTimeout(() => {
+      const nw = render(idx);
+      container.appendChild(nw);
+      active = nw;
+      void nw.offsetWidth;
+      nw.className = 'item active';
+      idx++;
+    }, 650);
+  };
+  const first = render(0);
+  container.appendChild(first);
+  active = first;
+  idx = 1;
+  setInterval(next, 4500 + Math.random() * 2500);
+})();
 
-function closeNotification() {
-  document.getElementById('withdrawalNotif').classList.remove('show');
-  clearTimeout(window.notifTimeout);
-}
-
-// Show first notification after 3 seconds, then every 8-12 seconds
-setTimeout(showNotification, 3000);
-setInterval(function() {
-  if (Math.random() < 0.5) {
-    showNotification();
-  }
-}, 10000 + Math.random() * 5000);
-
-// ========== REST OF ORIGINAL JAVASCRIPT (COMPLETELY UNTOUCHED) ==========
+// ========== REST OF ORIGINAL JAVASCRIPT (FULL, NOT SHORTENED) ==========
 function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a}
 function fmt(n){return n.toLocaleString()}
 var R={UGX:1,KES:0.027,GHS:0.0042,NGN:0.133,USD:0.0005,ZAR:0.00032,RWF:0.00082,XAF:0.0018,BWP:0.0011,TZS:0.00069,ZMW:0.00045,MWK:0.00028};
