@@ -596,8 +596,15 @@ function resetChatState() {
     document.getElementById('chatSendBtn').disabled = false;
     document.getElementById('chatInput').disabled = false;
     document.getElementById('chatInput').value = '';
+    // Clear messages
+    var area = document.getElementById('chatMessages');
+    if (area) {
+        area.innerHTML = '';
+    }
 }
 function openChatPage(element){
+    resetChatState();
+    
     // Get the user card element properly
     var card = element;
     if (!card) return;
@@ -613,7 +620,6 @@ function openChatPage(element){
         return;
     }
     
-    resetChatState();
     var name = card.dataset.user || 'Friend';
     var img = card.dataset.img || 'https://randomuser.me/api/portraits/women/1.jpg';
     var country = card.dataset.country || '🌍';
@@ -753,9 +759,11 @@ var activationIndex = 0;
 function openLiveActivationPopup(){var p=document.getElementById('activationPopup');if(p){p.style.display='flex';var user=activationUsers[activationIndex % activationUsers.length];activationIndex++;document.getElementById('activationUserImage').src=user.img;document.getElementById('activationUserName').textContent=user.flag+' '+user.name;document.querySelector('#activationPopup .amount-display').textContent=user.fee;document.getElementById('activationTime').textContent='just now';setTimeout(function(){p.style.display='none'},5000)}}
 
 function openWithdrawalPopup(country, method) {
+    // Get the next user and amount
     var user = withdrawalUsers[withdrawalUserIndex % withdrawalUsers.length];
     withdrawalUserIndex++;
     
+    // Get the next amount from the list
     var amount = withdrawalAmounts[withdrawalAmountIndex % withdrawalAmounts.length];
     withdrawalAmountIndex++;
     
@@ -775,6 +783,7 @@ function openWithdrawalPopup(country, method) {
     
     var convertedAmount = Math.round(amount * R[userCurrency]);
     
+    // Update the popup
     document.getElementById('popupUserImage').src = user.img;
     document.getElementById('popupUserName').textContent = country + ' ' + user.name;
     document.getElementById('popupMethod').textContent = 'via ' + method;
