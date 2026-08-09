@@ -26,7 +26,7 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system-ui,sans-serif;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;font-size:1.0625rem;line-height:1.6}
     
-    /* LIVE WITHDRAWAL STRIP - UPDATED: REMOVED "WITHDRAW" TEXT, LARGER, FITS CONTENT */
+    /* LIVE WITHDRAWAL STRIP - UPDATED: REMOVED "WITHDRAW" TEXT, LARGER, NEW FORMAT */
     .live-withdrawal-strip{position:fixed;left:16px;bottom:100px;z-index:9997;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.25),0 0 30px rgba(0,198,251,0.08);display:flex;align-items:center;gap:14px;max-width:480px;min-width:320px;overflow:hidden;pointer-events:none;height:76px;border:1px solid rgba(0,0,0,0.06)}
     .live-withdrawal-strip .strip-icon{font-size:18px;color:#dc2626;flex-shrink:0;animation:pulse-dot 1.2s ease-in-out infinite}
     .live-withdrawal-strip .strip-icon i{font-size:18px}
@@ -444,6 +444,22 @@
     .action-popup .claim-btn:hover{transform:scale(1.02);box-shadow:0 6px 24px rgba(0,184,148,.3)}
     .action-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 28px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
     .action-popup .btn-close:hover{background:#e2e8f0}
+
+    /* UPDATED WITHDRAWAL POPUP WITH HUMAN IMAGE & CLEAR AMOUNT */
+    .withdrawal-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:30000;display:none;align-items:center;justify-content:center;padding:16px}.withdrawal-popup-overlay.active{display:flex}
+    .withdrawal-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:18px;padding:24px 20px 22px;max-width:360px;width:100%;text-align:center;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}
+    .withdrawal-popup .user-image{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #00b894;margin:0 auto 10px;display:block;box-shadow:0 4px 16px rgba(0,184,148,.2)}
+    .withdrawal-popup .user-name{font-size:16px;font-weight:700;color:#1a0b2f;margin-bottom:2px}
+    .withdrawal-popup .user-detail{font-size:12px;color:#64748b;margin-bottom:12px}
+    .withdrawal-popup .amount-label{font-size:11px;color:#94a3b8;font-weight:500;text-transform:uppercase;letter-spacing:0.5px}
+    .withdrawal-popup .amount-value{font-size:32px;font-weight:900;color:#00b894;margin:4px 0 2px}
+    .withdrawal-popup .amount-currency{font-size:16px;font-weight:600;color:#64748b}
+    .withdrawal-popup .status-badge{display:inline-block;background:#dc2626;color:#fff;font-size:10px;font-weight:700;padding:4px 16px;border-radius:40px;margin-top:4px;animation:pulseBadge 2s ease-in-out infinite}
+    .withdrawal-popup .claim-btn{display:inline-block;background:linear-gradient(135deg,#00b894,#00a381);color:#fff;font-weight:800;font-size:14px;padding:10px 28px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(0,184,148,.2);width:100%;margin-top:12px}
+    .withdrawal-popup .claim-btn:hover{transform:scale(1.02);box-shadow:0 6px 24px rgba(0,184,148,.3)}
+    .withdrawal-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 28px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
+    .withdrawal-popup .btn-close:hover{background:#e2e8f0}
+
     .video-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:30000;display:none;align-items:center;justify-content:center;padding:16px}.video-popup-overlay.active{display:flex}
     .video-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:18px;padding:18px 16px 20px;max-width:480px;width:100%;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}
     .video-popup .video-title{font-size:15px;font-weight:800;color:#1a0b2f;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
@@ -519,7 +535,7 @@
   <span class="install-btn">Install</span>
 </div>
 
-<!-- LIVE WITHDRAWAL STRIP - UPDATED: REMOVED "WITHDRAW" TEXT, ENLARGED, NEW FORMAT -->
+<!-- LIVE WITHDRAWAL STRIP -->
 <div class="live-withdrawal-strip" id="withdrawalStrip">
   <span class="strip-icon"><i class="fas fa-circle"></i></span>
   <div class="strip-items" id="stripItems"></div>
@@ -595,8 +611,8 @@
 <div class="section section-video">
 <div class="video-label"><span class="badge-video">▶️ WATCH</span><h3>How to Register & Activate Your Account</h3></div>
 <div class="video-explain">📹 <strong>Watch how to register, create your account, and activate it</strong> — Follow this step-by-step guide to get started on Myqashapp and begin earning today!</div>
-<div class="video-container" onclick="openVideoPopup('📺 How to Register & Activate Your Account','Free','https://www.youtube.com/embed/PMYHInzwi6w?autoplay=1&rel=0')" style="cursor:pointer;">
-<iframe src="https://www.youtube.com/embed/PMYHInzwi6w?rel=0" title="How to Register & Activate Your Account" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="video-container" onclick="openVideoPopup('📺 How to Register & Activate Your Account','Free','https://www.youtube.com/embed/dDSMv9ML_yY?autoplay=1&rel=0')" style="cursor:pointer;">
+<iframe src="https://www.youtube.com/embed/dDSMv9ML_yY?rel=0" title="How to Register & Activate Your Account" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 </div>
 <div class="section section-live live-foreigners-section" id="liveChatSection">
@@ -662,7 +678,7 @@
 <details><summary>How long does it take to get paid? <span class="arrow">▼</span></summary><div class="faq-content">Payments are processed instantly! You'll receive your money within seconds after withdrawal request.</div></details>
 <details><summary>Can I use this on my phone? <span class="arrow">▼</span></summary><div class="faq-content">Absolutely! Myqashapp works perfectly on all devices — phone, tablet, or desktop. Earn from anywhere!</div></details>
 <details><summary>What countries can join? <span class="arrow">▼</span></summary><div class="faq-content">Myqashapp is available in all African countries including Uganda, Kenya, Nigeria, Ghana, South Africa, Tanzania, Rwanda, Cameroon, and more!</div></details>
-<details><summary>Is there a referral program? <span class="arrow">▼</span></summary><div class="faq-content">Yes! You earn commissions across 3 referral levels. Share your link and earn passive income from your referrals' activity.</div></details>
+<!-- Referral FAQ REMOVED as requested -->
 <details><summary>What payment methods are supported? <span class="arrow">▼</span></summary><div class="faq-content">We support M-Pesa, Airtel Money, MoMo, Bank Transfer, and Crypto. Choose the method that works best for you!</div></details>
 <details><summary>How do I get started? <span class="arrow">▼</span></summary><div class="faq-content">Simply click "Register Now" above, complete your profile, and start earning immediately. It takes less than 2 minutes!</div></details>
 </div>
@@ -806,6 +822,22 @@
 <button class="btn-close" onclick="closeActionPopup()">Close</button>
 </div>
 </div>
+
+<!-- UPDATED WITHDRAWAL POPUP WITH HUMAN IMAGE & CLEAR AMOUNT -->
+<div class="withdrawal-popup-overlay" id="withdrawalPopupOverlay" onclick="if(event.target===this)closeWithdrawalPopup()">
+<div class="withdrawal-popup">
+<img class="user-image" id="withdrawalUserImage" src="https://randomuser.me/api/portraits/women/1.jpg" alt="User">
+<div class="user-name" id="withdrawalUserName">Grace W.</div>
+<div class="user-detail" id="withdrawalUserDetail">🇺🇬 Uganda · Member since 2025</div>
+<div class="amount-label">💰 Withdrawal Amount</div>
+<div class="amount-value" id="withdrawalAmount">2,500,000</div>
+<div class="amount-currency">UGX</div>
+<div class="status-badge">✅ Approved · Just now</div>
+<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn">💳 View Transaction</a>
+<button class="btn-close" onclick="closeWithdrawalPopup()">Close</button>
+</div>
+</div>
+
 <div class="video-popup-overlay" id="videoPopupOverlay" onclick="if(event.target===this)closeVideoPopup()">
 <div class="video-popup">
 <div class="video-title">
@@ -867,29 +899,28 @@
 </a>
 
 <script>
-// ========== LIVE WITHDRAWAL STRIP - UPDATED: REMOVED "WITHDRAW" TEXT, NEW FORMAT ==========
+// ========== LIVE WITHDRAWAL STRIP ==========
 (function() {
   const container = document.getElementById('stripItems');
   if (!container) return;
-  // Fixed withdrawal items matching requested format: "Grace W, Just withdrew 2,500,000ugx. Just now indicator.. Approved."
   const withdrawals = [
-    { flag: '🇺🇬', name: 'Grace W', action: 'withdrew', amount: '2,500,000', time: 'Just now', approved: true },
-    { flag: '🇰🇪', name: 'Kelvin O.', action: 'withdrew', amount: '1,800,000', time: '2m ago', approved: true },
-    { flag: '🇬🇭', name: 'Akosua K.', action: 'withdrew', amount: '980,000', time: '4m ago', approved: true },
-    { flag: '🇳🇬', name: 'Chidi O.', action: 'withdrew', amount: '2,100,000', time: '7m ago', approved: true },
-    { flag: '🇿🇦', name: 'Lindiwe M.', action: 'withdrew', amount: '750,000', time: '12m ago', approved: true },
-    { flag: '🇺🇬', name: 'Robert T.', action: 'withdrew', amount: '3,200,000', time: '15m ago', approved: true },
-    { flag: '🇰🇪', name: 'Peter M.', action: 'withdrew', amount: '1,450,000', time: '19m ago', approved: true },
-    { flag: '🇳🇬', name: 'Amara E.', action: 'withdrew', amount: '2,850,000', time: '23m ago', approved: true },
-    { flag: '🇺🇬', name: 'Faith N.', action: 'withdrew', amount: '1,980,000', time: '28m ago', approved: true },
-    { flag: '🇬🇭', name: 'Kwame B.', action: 'withdrew', amount: '1,120,000', time: '32m ago', approved: true }
+    { flag: '🇺🇬', name: 'Grace W', action: 'Just withdrew', amount: '2,500,000', time: 'Just now', approved: true },
+    { flag: '🇰🇪', name: 'Kelvin O.', action: 'Just withdrew', amount: '1,800,000', time: '2m ago', approved: true },
+    { flag: '🇬🇭', name: 'Akosua K.', action: 'Just withdrew', amount: '980,000', time: '4m ago', approved: true },
+    { flag: '🇳🇬', name: 'Chidi O.', action: 'Just withdrew', amount: '2,100,000', time: '7m ago', approved: true },
+    { flag: '🇿🇦', name: 'Lindiwe M.', action: 'Just withdrew', amount: '750,000', time: '12m ago', approved: true },
+    { flag: '🇺🇬', name: 'Robert T.', action: 'Just withdrew', amount: '3,200,000', time: '15m ago', approved: true },
+    { flag: '🇰🇪', name: 'Peter M.', action: 'Just withdrew', amount: '1,450,000', time: '19m ago', approved: true },
+    { flag: '🇳🇬', name: 'Amara E.', action: 'Just withdrew', amount: '2,850,000', time: '23m ago', approved: true },
+    { flag: '🇺🇬', name: 'Faith N.', action: 'Just withdrew', amount: '1,980,000', time: '28m ago', approved: true },
+    { flag: '🇬🇭', name: 'Kwame B.', action: 'Just withdrew', amount: '1,120,000', time: '32m ago', approved: true }
   ];
   let idx = 0, active = null;
   const render = i => {
     const w = withdrawals[i % withdrawals.length];
     const div = document.createElement('div');
     div.className = 'item active';
-    div.innerHTML = `<span class="flag">${w.flag}</span><span class="name">${w.name}</span><span class="action">Just withdrew</span><span class="amount">UGX ${w.amount}</span><span class="time">${w.time}</span><span class="approved">✅ Approved</span>`;
+    div.innerHTML = `<span class="flag">${w.flag}</span><span class="name">${w.name}</span><span class="action">${w.action}</span><span class="amount">UGX ${w.amount}</span><span class="time">${w.time}</span><span class="approved">✅ Approved</span>`;
     return div;
   };
   const next = () => {
@@ -907,7 +938,7 @@
   container.appendChild(first);
   active = first;
   idx = 1;
-  setInterval(next, 4000 + Math.random() * 1500); // Faster rotation
+  setInterval(next, 4000 + Math.random() * 1500);
 })();
 
 // ========== REST OF ORIGINAL JAVASCRIPT (FULL) ==========
@@ -1018,8 +1049,39 @@ function openChatPageFromDemo(){var rand=profilePool[Math.floor(Math.random()*pr
 function closeChatOverlay(){document.getElementById('chatOverlay').classList.remove('active');document.body.style.overflow='';resetChatState();}
 function sendChatMessage(){if(chatLocked){alert('⛔ Chat is paused. Please upgrade to continue.');return;}var input=document.getElementById('chatInput');var msg=input.value.trim();if(!msg||!chatUser)return;var area=document.getElementById('chatMessages');var sent=document.createElement('div');sent.className='chat-msg sent';sent.textContent=msg;var time=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});sent.innerHTML+='<span class="time">'+time+'</span>';area.appendChild(sent);input.value='';area.scrollTop=area.scrollHeight;if(chatTeachingMode){var earnAmt=Math.floor(Math.random()*30000)+15000;chatEarnAmount=earnAmt;setTimeout(function(){var reply=document.createElement('div');reply.className='chat-msg received';reply.innerHTML='<div class="msg-name">'+chatUser+'</div>😍 Wow! That\'s amazing! You taught me something new! You earned <strong style="color:#2ecc71;">+UGX '+fmt(earnAmt)+'</strong> for teaching me! 🎉<span class="time">'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+'</span>';area.appendChild(reply);area.scrollTop=area.scrollHeight;chatLocked=true;document.getElementById('chatUpgradeBanner').style.display='block';document.getElementById('chatSendBtn').disabled=true;document.getElementById('chatInput').disabled=true;chatTeachingMode=false;},800);}else{setTimeout(function(){var replies=['😊 That\'s interesting! Tell me more about your culture!','🌍 I love learning about Africa! What else can you teach me?','💬 That\'s so cool! Can you teach me more words?','✨ Amazing! I want to learn more! Please teach me!'];var reply=document.createElement('div');reply.className='chat-msg received';reply.innerHTML='<div class="msg-name">'+chatUser+'</div>'+replies[Math.floor(Math.random()*replies.length)]+'<span class="time">'+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})+'</span>';area.appendChild(reply);area.scrollTop=area.scrollHeight;},600);}}
 document.getElementById('chatInput').addEventListener('keypress',function(e){if(e.key==='Enter')sendChatMessage();});
+
+// UPDATED VIDEO POPUP WITH NEW LINK
 function openVideoPopup(title,amount,videoUrl){document.getElementById('videoPopupTitle').textContent='▶️ '+title;document.getElementById('videoPopupEarn').textContent='💰 '+amount;document.getElementById('videoPopupIframe').src=videoUrl;document.getElementById('videoPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeVideoPopup(){document.getElementById('videoPopupIframe').src='';document.getElementById('videoPopupOverlay').classList.remove('active');document.body.style.overflow=''}
+
+// UPDATED WITHDRAWAL POPUP FUNCTIONS
+function openWithdrawalPopup(name, amount, currency, country, image) {
+  document.getElementById('withdrawalUserImage').src = image || 'https://randomuser.me/api/portraits/women/1.jpg';
+  document.getElementById('withdrawalUserName').textContent = name || 'Grace W.';
+  document.getElementById('withdrawalUserDetail').textContent = country || '🇺🇬 Uganda · Member since 2025';
+  document.getElementById('withdrawalAmount').textContent = amount ? amount.toLocaleString() : '2,500,000';
+  document.getElementById('withdrawalPopupOverlay').classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeWithdrawalPopup(){document.getElementById('withdrawalPopupOverlay').classList.remove('active');document.body.style.overflow=''}
+
+// TRIGGER WITHDRAWAL POPUP ON CLICK OF WITHDRAWAL ITEMS
+document.addEventListener('click', function(e) {
+  const item = e.target.closest('.strip-items .item');
+  if (item) {
+    const nameEl = item.querySelector('.name');
+    const amountEl = item.querySelector('.amount');
+    if (nameEl && amountEl) {
+      const name = nameEl.textContent.trim();
+      const amountText = amountEl.textContent.replace(/[^0-9,]/g, '').replace(/,/g, '');
+      const amountNum = parseInt(amountText, 10);
+      if (!isNaN(amountNum)) {
+        openWithdrawalPopup(name, amountNum, 'UGX', '🇺🇬 Uganda', 'https://randomuser.me/api/portraits/' + (Math.random() > 0.5 ? 'women' : 'men') + '/' + (Math.floor(Math.random() * 50) + 1) + '.jpg');
+      }
+    }
+  }
+});
+
 function openActionPopup(title,amount,usd,icon){document.getElementById('popupIcon').textContent=icon||'💰';document.getElementById('popupTitle').textContent=title;document.getElementById('popupAmount').textContent=amount||'—';document.getElementById('popupUsd').textContent='≈ '+(usd||'$1.35');document.getElementById('actionPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeActionPopup(){document.getElementById('actionPopupOverlay').classList.remove('active');document.body.style.overflow=''}
 function handleWelcomeBonus(){openActionPopup('🎉 Welcome Bonus!','10,000 UGX','$2.86','🎉')}
@@ -1045,26 +1107,22 @@ document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('floatingInstall').classList.add('visible');
   }, 5000);
   renderWaysGrid('waysGridMain');rotateProfiles();setInterval(rotateProfiles,35000);switchDashboard('uganda');
-  // SPEED UP ONLINE NOW SECTION: faster updates
   var n=3300;
   setInterval(function(){
-    n+=Math.floor(Math.random()*8)-4; // Increased randomness for faster change
+    n+=Math.floor(Math.random()*8)-4;
     if(n<3200)n=3200+Math.floor(Math.random()*40);
     if(n>3650)n=3650-Math.floor(Math.random()*40);
     document.getElementById('liveCounter').textContent=n.toLocaleString();
     document.getElementById('onlineNow').textContent=n.toLocaleString();
-  }, 1800); // Reduced from 2800ms to 1800ms (faster)
-  
-  // SPEED UP LIVE STAT INCREASE: faster increments
+  }, 1800);
   var t=187432;
   setInterval(function(){
-    t+=Math.floor(Math.random()*8)+3; // Increased increment range
+    t+=Math.floor(Math.random()*8)+3;
     if(t>189800)t=187000;
     document.getElementById('trustCounter').textContent=t.toLocaleString();
     document.getElementById('heroCounter').textContent=t.toLocaleString();
     document.getElementById('liveUsers').textContent=t.toLocaleString();
-  }, 2000); // Reduced from 3000ms to 2000ms (faster)
-  
+  }, 2000);
   window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('scrollProgress').style.width=(s/d*100)+'%'});
 });
 </script>
