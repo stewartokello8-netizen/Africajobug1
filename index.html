@@ -603,6 +603,7 @@ function resetChatState() {
     }
 }
 function openChatPage(element){
+    // Reset chat state first
     resetChatState();
     
     // Get the user card element properly
@@ -666,7 +667,7 @@ function openActionPopup(title,amount,usd,icon){document.getElementById('popupIc
 function closeActionPopup(){document.getElementById('actionPopupOverlay').classList.remove('active');document.body.style.overflow=''}
 function openActivationPopup(){openActionPopup('🔓 Activate Account','Get 10,000 UGX Bonus!','$2.86','🔓')}
 
-// Updated withdrawal amounts array from the provided list
+// ===== WITHDRAWAL AMOUNTS - All 70 amounts from your list =====
 var withdrawalAmounts = [
   1234000, 3876000, 498000, 4512000, 2067000, 789000, 3245000, 1890000, 
   4678000, 567000, 2901000, 3456000, 1123000, 4234000, 678000, 2345000, 
@@ -678,10 +679,11 @@ var withdrawalAmounts = [
   3789000, 1456000, 4678000, 567000, 2678000, 3234000, 1890000, 4345000, 
   789000, 2456000, 3567000, 1123000, 4901000, 2012000
 ];
+
 var withdrawalUserIndex = 0;
 var withdrawalAmountIndex = 0;
 
-// Array of 70 user profiles with country flags
+// 70 unique users with country flags
 var withdrawalUsers = [];
 var countries = [
   {flag:'🇺🇬', country:'Uganda'},
@@ -699,7 +701,6 @@ var countries = [
 var firstNames = ['Kelvin','Faith','Robert','Esther','Peter','Grace','Joseph','Rebecca','Samuel','Dorothy','Michael','Patience','Kwame','Akosua','Kofi','Abena','Juma','Fatima','Ali','Zainab','Thabo','Lindiwe','Sipho','Zanele','Diane','Jean','Marie','Chidi','Amara','Tunde','Ngozi','Moses','Omar','Maureen','Yaw','Kabelo','Chanda','John','Sarah','David','Mary','Emmanuel','Joyce','Solomon','Brenda','Patrick','Chantal','Francis','Monique','Andrew','Rose','Themba','Nokuthula','Musa','Precious','Henry','Margaret','William','Florence','George','Veronica','Julius','Caroline','Lawrence','Gloria','Victor','Beatrice','Augustine','Claudine','Martin','Sandrine'];
 var lastNames = ['O.','N.','K.','T.','M.','A.','B.','E.','U.','Z.','D.','S.','P.','C.','R.','L.','H.','F.','J.','W.'];
 
-// Generate 70 unique users
 for (var i = 0; i < 70; i++) {
     var countryIdx = i % countries.length;
     var c = countries[countryIdx];
@@ -763,7 +764,7 @@ function openWithdrawalPopup(country, method) {
     var user = withdrawalUsers[withdrawalUserIndex % withdrawalUsers.length];
     withdrawalUserIndex++;
     
-    // Get the next amount from the list
+    // Get the next amount from the list (cycling through all 70)
     var amount = withdrawalAmounts[withdrawalAmountIndex % withdrawalAmounts.length];
     withdrawalAmountIndex++;
     
