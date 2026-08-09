@@ -443,7 +443,7 @@
 </div>
 </div>
 
-<!-- ===== WITHDRAWAL POPUP - COMPLETELY EMPTY, NO HARDCODED VALUES ===== -->
+<!-- ===== WITHDRAWAL POPUP - FIXED ===== -->
 <div id="withdrawalPopup">
   <div class="popup-card" id="popupCard" style="display:flex;">
     <img id="popupUserImage" src="" alt="User" loading="lazy">
@@ -689,19 +689,21 @@ function openLiveActivationPopup(){
   }
 }
 
+// FIXED: This function now correctly displays the profile's specific amount
 function openWithdrawalPopup(country, method){
   var profile = withdrawalProfiles[withdrawalIndex % withdrawalProfiles.length];
   withdrawalIndex++;
   
+  // Use the profile's own currency and amount
   var userCurrency = profile.currency || 'UGX';
   var userSymbol = userCurrency;
   var amount = profile.amount;
-  var convertedAmount = Math.round(amount * (R[userCurrency] || 1));
+  var displayAmount = userSymbol + ' ' + amount.toLocaleString();
   
   document.getElementById('popupUserImage').src = profile.img;
   document.getElementById('popupUserName').textContent = profile.country + ' ' + profile.name;
   document.getElementById('popupMethod').textContent = 'via ' + method;
-  document.getElementById('popupAmount').textContent = userSymbol + ' ' + convertedAmount.toLocaleString();
+  document.getElementById('popupAmount').textContent = displayAmount;
   document.getElementById('popupTime').textContent = 'just now';
   document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
   
@@ -713,6 +715,39 @@ function openWithdrawalPopup(country, method){
   
   if(window.popupTimer) clearTimeout(window.popupTimer);
   window.popupTimer = setTimeout(function(){ card.style.display = 'none'; }, 4000);
+}
+
+// FIXED: Auto popup rotation now also shows correct amounts
+function showWithdrawalPopup(){
+  var popupCard = document.getElementById('popupCard');
+  if(!popupCard) return;
+  
+  var profile = withdrawalProfiles[withdrawalIndex % withdrawalProfiles.length];
+  withdrawalIndex++;
+  
+  var methods = ['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'];
+  var midx = Math.floor(Math.random() * methods.length);
+  
+  // Use the profile's own currency and amount
+  var userCurrency = profile.currency || 'UGX';
+  var userSymbol = userCurrency;
+  var amount = profile.amount;
+  var displayAmount = userSymbol + ' ' + amount.toLocaleString();
+  
+  document.getElementById('popupUserImage').src = profile.img;
+  document.getElementById('popupUserName').textContent = profile.country + ' ' + profile.name;
+  document.getElementById('popupMethod').textContent = 'via ' + methods[midx];
+  document.getElementById('popupAmount').textContent = displayAmount;
+  document.getElementById('popupTime').textContent = 'just now';
+  document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
+  
+  popupCard.style.display = 'flex';
+  popupCard.style.animation = 'none';
+  popupCard.offsetHeight;
+  popupCard.style.animation = 'slideUpFast 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+  
+  if(window.popupTimer) clearTimeout(window.popupTimer);
+  window.popupTimer = setTimeout(function(){ popupCard.style.display = 'none'; }, 4000);
 }
 
 // ============================================================
@@ -831,34 +866,6 @@ document.addEventListener('DOMContentLoaded',function(){
     }else{
       showWithdrawalPopup();
     }
-  }
-  function showWithdrawalPopup(){
-    if(!popupCard)return;
-    var profile = withdrawalProfiles[withdrawalIndex % withdrawalProfiles.length];
-    withdrawalIndex++;
-    
-    var methods=['Mobile Money','M-Pesa','MoMo','Bank Transfer','Airtel Money'];
-    var midx=Math.floor(Math.random()*methods.length);
-    
-    var userCurrency = profile.currency || 'UGX';
-    var userSymbol = userCurrency;
-    var amount = profile.amount;
-    var convertedAmount = Math.round(amount * (R[userCurrency] || 1));
-    
-    document.getElementById('popupUserImage').src = profile.img;
-    document.getElementById('popupUserName').textContent = profile.country + ' ' + profile.name;
-    document.getElementById('popupMethod').textContent = 'via ' + methods[midx];
-    document.getElementById('popupAmount').textContent = userSymbol + ' ' + convertedAmount.toLocaleString();
-    document.getElementById('popupTime').textContent = 'just now';
-    document.getElementById('popupTitle').textContent = '💸 Live Withdrawal';
-    
-    popupCard.style.display = 'flex';
-    popupCard.style.animation = 'none';
-    popupCard.offsetHeight;
-    popupCard.style.animation = 'slideUpFast 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-    
-    if(window.popupTimer) clearTimeout(window.popupTimer);
-    window.popupTimer = setTimeout(function(){ popupCard.style.display = 'none'; }, 4000);
   }
   setTimeout(showNextPopup, 3000);
   setInterval(showNextPopup, 4200);
