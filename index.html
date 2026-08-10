@@ -26,7 +26,7 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system-ui,sans-serif;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;font-size:1.0625rem;line-height:1.6}
     
-    /* LIVE WITHDRAWAL STRIP - UPDATED: REMOVED "WITHDRAW" TEXT, LARGER, NEW FORMAT */
+    /* LIVE WITHDRAWAL STRIP */
     .live-withdrawal-strip{position:fixed;left:16px;bottom:100px;z-index:9997;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.25),0 0 30px rgba(0,198,251,0.08);display:flex;align-items:center;gap:14px;max-width:480px;min-width:320px;overflow:hidden;pointer-events:none;height:76px;border:1px solid rgba(0,0,0,0.06)}
     .live-withdrawal-strip .strip-icon{font-size:18px;color:#dc2626;flex-shrink:0;animation:pulse-dot 1.2s ease-in-out infinite}
     .live-withdrawal-strip .strip-icon i{font-size:18px}
@@ -44,14 +44,12 @@
     @keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.5}}
     @keyframes pulse-dot{0%{opacity:.6;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}100%{opacity:.6;transform:scale(.9)}}
     
-    /* ENHANCED WHATSAPP GLOW */
     .whatsapp-float{position:fixed;bottom:90px;right:24px;z-index:9998;display:flex;align-items:center;text-decoration:none}
     .whatsapp-float .whatsapp-icon{width:64px;height:64px;border-radius:50%;transition:all .4s cubic-bezier(.16,1,.3,1);border:2px solid #fff;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:whatsappPulse 2.2s ease-in-out infinite;box-shadow:0 0 25px rgba(37,211,102,0.7),0 0 60px rgba(37,211,102,0.25),0 0 100px rgba(37,211,102,0.1)}
     .whatsapp-float .whatsapp-icon:hover{transform:scale(1.12);box-shadow:0 0 40px rgba(37,211,102,0.9),0 0 80px rgba(37,211,102,0.4),0 0 120px rgba(37,211,102,0.2);animation-play-state:paused}
     .whatsapp-float .whatsapp-icon img{width:55%;height:55%;object-fit:contain;display:block;filter:brightness(0) invert(1)}
     @keyframes whatsappPulse{0%{box-shadow:0 0 20px rgba(37,211,102,0.6),0 0 50px rgba(37,211,102,0.15),0 0 80px rgba(37,211,102,0.05)}50%{box-shadow:0 0 40px rgba(37,211,102,0.9),0 0 80px rgba(37,211,102,0.3),0 0 120px rgba(37,211,102,0.15)}100%{box-shadow:0 0 20px rgba(37,211,102,0.6),0 0 50px rgba(37,211,102,0.15),0 0 80px rgba(37,211,102,0.05)}}
     
-    /* ALL ORIGINAL STYLES (FULL RESTORED) */
     .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#00c6fb,#005bea);z-index:10001;width:0%;transition:width .1s;box-shadow:0 0 20px rgba(0,150,255,.3)}
     .page-wrap{max-width:960px;width:100%;background:linear-gradient(145deg,#0a1628,#040b17);border-radius:0;padding:80px 24px 24px;margin:0 auto;box-shadow:0 0 15px rgba(0,150,255,.15);border:1px solid rgba(0,150,255,.15);position:relative}
     .page-wrap::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:3px;background:linear-gradient(90deg,transparent,#00c6fb,#005bea,#00c6fb,transparent);background-size:300%100%;animation:shimmerBorder 4s ease-in-out infinite;border-radius:0 0 50%50%}@keyframes shimmerBorder{0%,100%{background-position:0%50%}50%{background-position:100%50%}}
@@ -445,17 +443,16 @@
     .action-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 28px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
     .action-popup .btn-close:hover{background:#e2e8f0}
 
-    /* UPDATED WITHDRAWAL POPUP WITH HUMAN IMAGE & CLEAR AMOUNT */
+    /* UPDATED WITHDRAWAL POPUP - WIDER, WITH REAL IMAGE, CLEAR FORMAT */
     .withdrawal-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:30000;display:none;align-items:center;justify-content:center;padding:16px}.withdrawal-popup-overlay.active{display:flex}
-    .withdrawal-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:18px;padding:24px 20px 22px;max-width:360px;width:100%;text-align:center;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}
-    .withdrawal-popup .user-image{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #00b894;margin:0 auto 10px;display:block;box-shadow:0 4px 16px rgba(0,184,148,.2)}
-    .withdrawal-popup .user-name{font-size:16px;font-weight:700;color:#1a0b2f;margin-bottom:2px}
-    .withdrawal-popup .user-detail{font-size:12px;color:#64748b;margin-bottom:12px}
-    .withdrawal-popup .amount-label{font-size:11px;color:#94a3b8;font-weight:500;text-transform:uppercase;letter-spacing:0.5px}
-    .withdrawal-popup .amount-value{font-size:32px;font-weight:900;color:#00b894;margin:4px 0 2px}
-    .withdrawal-popup .amount-currency{font-size:16px;font-weight:600;color:#64748b}
-    .withdrawal-popup .status-badge{display:inline-block;background:#dc2626;color:#fff;font-size:10px;font-weight:700;padding:4px 16px;border-radius:40px;margin-top:4px;animation:pulseBadge 2s ease-in-out infinite}
-    .withdrawal-popup .claim-btn{display:inline-block;background:linear-gradient(135deg,#00b894,#00a381);color:#fff;font-weight:800;font-size:14px;padding:10px 28px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(0,184,148,.2);width:100%;margin-top:12px}
+    .withdrawal-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:20px;padding:28px 24px 24px;max-width:420px;width:100%;text-align:center;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}
+    .withdrawal-popup .user-image{width:80px;height:80px;border-radius:50%;object-fit:cover;border:4px solid #00b894;margin:0 auto 10px;display:block;box-shadow:0 4px 20px rgba(0,184,148,.25)}
+    .withdrawal-popup .user-name{font-size:20px;font-weight:800;color:#1a0b2f;margin-bottom:2px}
+    .withdrawal-popup .user-action{font-size:15px;color:#64748b;font-weight:500;margin-bottom:4px}
+    .withdrawal-popup .amount-value{font-size:38px;font-weight:900;color:#00b894;margin:6px 0 2px}
+    .withdrawal-popup .amount-currency{font-size:18px;font-weight:600;color:#64748b;margin-bottom:4px}
+    .withdrawal-popup .status-badge{display:inline-block;background:#dc2626;color:#fff;font-size:11px;font-weight:700;padding:5px 20px;border-radius:40px;margin-top:4px;animation:pulseBadge 2s ease-in-out infinite}
+    .withdrawal-popup .claim-btn{display:inline-block;background:linear-gradient(135deg,#00b894,#00a381);color:#fff;font-weight:800;font-size:15px;padding:12px 28px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(0,184,148,.2);width:100%;margin-top:14px}
     .withdrawal-popup .claim-btn:hover{transform:scale(1.02);box-shadow:0 6px 24px rgba(0,184,148,.3)}
     .withdrawal-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 28px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
     .withdrawal-popup .btn-close:hover{background:#e2e8f0}
@@ -566,7 +563,8 @@
 <div class="hero-buttons">
 <a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
 <div class="btn-group">
-<a href="#" class="btn-primary gold" onclick="openDemoPage();return!1">Try Free Demo</a>
+<!-- UPDATED: "Try Free Demo" changed to "Try Demo First" -->
+<a href="#" class="btn-primary gold" onclick="openDemoPage();return!1">Try Demo First</a>
 <a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary navy">Login</a>
 </div>
 </div>
@@ -823,17 +821,16 @@
 </div>
 </div>
 
-<!-- UPDATED WITHDRAWAL POPUP WITH HUMAN IMAGE & CLEAR AMOUNT -->
+<!-- UPDATED WITHDRAWAL POPUP - WIDER, WITH REAL IMAGE, CLEAR FORMAT -->
 <div class="withdrawal-popup-overlay" id="withdrawalPopupOverlay" onclick="if(event.target===this)closeWithdrawalPopup()">
 <div class="withdrawal-popup">
 <img class="user-image" id="withdrawalUserImage" src="https://randomuser.me/api/portraits/women/1.jpg" alt="User">
 <div class="user-name" id="withdrawalUserName">Grace W.</div>
-<div class="user-detail" id="withdrawalUserDetail">🇺🇬 Uganda · Member since 2025</div>
-<div class="amount-label">💰 Withdrawal Amount</div>
+<div class="user-action" id="withdrawalUserAction">Just withdrew</div>
 <div class="amount-value" id="withdrawalAmount">2,500,000</div>
 <div class="amount-currency">UGX</div>
-<div class="status-badge">✅ Approved · Just now</div>
-<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn">💳 View Transaction</a>
+<div class="status-badge">✅ Just now</div>
+<a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" class="claim-btn">💰 View Transaction</a>
 <button class="btn-close" onclick="closeWithdrawalPopup()">Close</button>
 </div>
 </div>
@@ -940,6 +937,40 @@
   idx = 1;
   setInterval(next, 4000 + Math.random() * 1500);
 })();
+
+// ========== WITHDRAWAL POPUP FUNCTIONS ==========
+function openWithdrawalPopup(name, amount, image) {
+  document.getElementById('withdrawalUserImage').src = image || 'https://randomuser.me/api/portraits/women/1.jpg';
+  document.getElementById('withdrawalUserName').textContent = name || 'Grace W.';
+  document.getElementById('withdrawalUserAction').textContent = 'Just withdrew';
+  document.getElementById('withdrawalAmount').textContent = amount ? amount.toLocaleString() : '2,500,000';
+  document.getElementById('withdrawalPopupOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeWithdrawalPopup() {
+  document.getElementById('withdrawalPopupOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// TRIGGER WITHDRAWAL POPUP ON CLICK OF WITHDRAWAL ITEMS
+document.addEventListener('click', function(e) {
+  const item = e.target.closest('.strip-items .item');
+  if (item) {
+    const nameEl = item.querySelector('.name');
+    const amountEl = item.querySelector('.amount');
+    if (nameEl && amountEl) {
+      const name = nameEl.textContent.trim();
+      const amountText = amountEl.textContent.replace(/[^0-9,]/g, '').replace(/,/g, '');
+      const amountNum = parseInt(amountText, 10);
+      if (!isNaN(amountNum)) {
+        const gender = Math.random() > 0.5 ? 'women' : 'men';
+        const num = Math.floor(Math.random() * 50) + 1;
+        const img = 'https://randomuser.me/api/portraits/' + gender + '/' + num + '.jpg';
+        openWithdrawalPopup(name, amountNum, img);
+      }
+    }
+  }
+});
 
 // ========== REST OF ORIGINAL JAVASCRIPT (FULL) ==========
 function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a}
@@ -1053,34 +1084,6 @@ document.getElementById('chatInput').addEventListener('keypress',function(e){if(
 // UPDATED VIDEO POPUP WITH NEW LINK
 function openVideoPopup(title,amount,videoUrl){document.getElementById('videoPopupTitle').textContent='▶️ '+title;document.getElementById('videoPopupEarn').textContent='💰 '+amount;document.getElementById('videoPopupIframe').src=videoUrl;document.getElementById('videoPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeVideoPopup(){document.getElementById('videoPopupIframe').src='';document.getElementById('videoPopupOverlay').classList.remove('active');document.body.style.overflow=''}
-
-// UPDATED WITHDRAWAL POPUP FUNCTIONS
-function openWithdrawalPopup(name, amount, currency, country, image) {
-  document.getElementById('withdrawalUserImage').src = image || 'https://randomuser.me/api/portraits/women/1.jpg';
-  document.getElementById('withdrawalUserName').textContent = name || 'Grace W.';
-  document.getElementById('withdrawalUserDetail').textContent = country || '🇺🇬 Uganda · Member since 2025';
-  document.getElementById('withdrawalAmount').textContent = amount ? amount.toLocaleString() : '2,500,000';
-  document.getElementById('withdrawalPopupOverlay').classList.add('active');
-  document.body.style.overflow='hidden';
-}
-function closeWithdrawalPopup(){document.getElementById('withdrawalPopupOverlay').classList.remove('active');document.body.style.overflow=''}
-
-// TRIGGER WITHDRAWAL POPUP ON CLICK OF WITHDRAWAL ITEMS
-document.addEventListener('click', function(e) {
-  const item = e.target.closest('.strip-items .item');
-  if (item) {
-    const nameEl = item.querySelector('.name');
-    const amountEl = item.querySelector('.amount');
-    if (nameEl && amountEl) {
-      const name = nameEl.textContent.trim();
-      const amountText = amountEl.textContent.replace(/[^0-9,]/g, '').replace(/,/g, '');
-      const amountNum = parseInt(amountText, 10);
-      if (!isNaN(amountNum)) {
-        openWithdrawalPopup(name, amountNum, 'UGX', '🇺🇬 Uganda', 'https://randomuser.me/api/portraits/' + (Math.random() > 0.5 ? 'women' : 'men') + '/' + (Math.floor(Math.random() * 50) + 1) + '.jpg');
-      }
-    }
-  }
-});
 
 function openActionPopup(title,amount,usd,icon){document.getElementById('popupIcon').textContent=icon||'💰';document.getElementById('popupTitle').textContent=title;document.getElementById('popupAmount').textContent=amount||'—';document.getElementById('popupUsd').textContent='≈ '+(usd||'$1.35');document.getElementById('actionPopupOverlay').classList.add('active');document.body.style.overflow='hidden'}
 function closeActionPopup(){document.getElementById('actionPopupOverlay').classList.remove('active');document.body.style.overflow=''}
