@@ -26,7 +26,6 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system-ui,sans-serif;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;font-size:1.0625rem;line-height:1.6}
     
-    /* LIVE WITHDRAWAL STRIP */
     .live-withdrawal-strip{position:fixed;left:16px;bottom:100px;z-index:9997;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.25),0 0 30px rgba(0,198,251,0.08);display:flex;align-items:center;gap:14px;max-width:480px;min-width:320px;overflow:hidden;pointer-events:none;height:76px;border:1px solid rgba(0,0,0,0.06)}
     .live-withdrawal-strip .strip-icon{font-size:18px;color:#dc2626;flex-shrink:0;animation:pulse-dot 1.2s ease-in-out infinite}
     .live-withdrawal-strip .strip-icon i{font-size:18px}
@@ -443,16 +442,16 @@
     .action-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:10px 28px;border-radius:12px;font-weight:700;font-size:13px;cursor:pointer;transition:all .3s;margin-top:8px;width:100%}
     .action-popup .btn-close:hover{background:#e2e8f0}
 
-    /* UPDATED WITHDRAWAL POPUP - FIXED IMAGE & AMOUNT VISIBILITY */
+    /* FIXED WITHDRAWAL POPUP - LARGER, CLEAR AMOUNT, WORKING IMAGE */
     .withdrawal-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:30000;display:none;align-items:center;justify-content:center;padding:16px}.withdrawal-popup-overlay.active{display:flex}
-    .withdrawal-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:20px;padding:30px 28px 26px;max-width:460px;width:100%;text-align:center;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}
-    .withdrawal-popup .user-image{width:90px;height:90px;border-radius:50%;object-fit:cover;border:4px solid #00b894;margin:0 auto 12px;display:block;box-shadow:0 4px 20px rgba(0,184,148,.25)}
-    .withdrawal-popup .user-name{font-size:22px;font-weight:800;color:#1a0b2f;margin-bottom:2px}
-    .withdrawal-popup .user-action{font-size:16px;color:#64748b;font-weight:500;margin-bottom:6px}
-    .withdrawal-popup .amount-value{font-size:42px;font-weight:900;color:#00b894;margin:8px 0 2px;letter-spacing:-0.5px}
-    .withdrawal-popup .amount-currency{font-size:18px;font-weight:600;color:#64748b;margin-bottom:6px}
-    .withdrawal-popup .status-badge{display:inline-block;background:#dc2626;color:#fff;font-size:12px;font-weight:700;padding:6px 24px;border-radius:40px;margin-top:6px;animation:pulseBadge 2s ease-in-out infinite}
-    .withdrawal-popup .claim-btn{display:inline-block;background:linear-gradient(135deg,#00b894,#00a381);color:#fff;font-weight:800;font-size:16px;padding:14px 28px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(0,184,148,.2);width:100%;margin-top:16px}
+    .withdrawal-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:20px;padding:32px 30px 28px;max-width:500px;width:100%;text-align:center;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25)}
+    .withdrawal-popup .user-image{width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid #00b894;margin:0 auto 14px;display:block;box-shadow:0 4px 20px rgba(0,184,148,.25)}
+    .withdrawal-popup .user-name{font-size:24px;font-weight:800;color:#1a0b2f;margin-bottom:4px}
+    .withdrawal-popup .user-action{font-size:18px;color:#64748b;font-weight:500;margin-bottom:8px}
+    .withdrawal-popup .amount-value{font-size:48px;font-weight:900;color:#00b894;margin:10px 0 4px;letter-spacing:-0.5px;word-break:break-word}
+    .withdrawal-popup .amount-currency{font-size:20px;font-weight:600;color:#64748b;margin-bottom:8px}
+    .withdrawal-popup .status-badge{display:inline-block;background:#dc2626;color:#fff;font-size:13px;font-weight:700;padding:6px 28px;border-radius:40px;margin-top:8px;animation:pulseBadge 2s ease-in-out infinite}
+    .withdrawal-popup .claim-btn{display:inline-block;background:linear-gradient(135deg,#00b894,#00a381);color:#fff;font-weight:800;font-size:16px;padding:14px 28px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(0,184,148,.2);width:100%;margin-top:18px}
     .withdrawal-popup .claim-btn:hover{transform:scale(1.02);box-shadow:0 6px 24px rgba(0,184,148,.3)}
     .withdrawal-popup .btn-close{background:#f1f5f9;color:#1a0b2f;border:none;padding:12px 28px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;transition:all .3s;margin-top:10px;width:100%}
     .withdrawal-popup .btn-close:hover{background:#e2e8f0}
@@ -559,7 +558,7 @@
 <div class="section hero-section">
 <h1 class="hero-title">Get Paid <span style="color:#fff;">Every Time</span></h1>
 <h2 class="hero-subtitle">Turn Clicks to Cash</h2>
-<p class="hero-desc">Join <span class="green-highlight" id="heroCounter">187,450</span>+ Africans earning <strong id="heroEarningRange">100,000UGX - 150,000UGX</strong> to Chat with Foreigners and earn Without Limits just talk, learn, and get paid! Plus 12+ other ways to earn from your phone <strong>daily withdraw</strong> via Mobile Money.</p>
+<p class="hero-desc">Join <span class="green-highlight" id="heroCounter">187,450</span>+ Africans earning <strong id="heroEarningRange">50,000UGX - 100,000UGX</strong> by watching videos, Chatting people worldwide, Answering Qns, Spinning to win <strong>daily withdraw</strong> via Mobile Money, No Experience Needed.</p>
 <div class="hero-buttons">
 <a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
 <div class="btn-group">
@@ -819,10 +818,10 @@
 </div>
 </div>
 
-<!-- UPDATED WITHDRAWAL POPUP - FIXED IMAGE & AMOUNT -->
+<!-- FIXED WITHDRAWAL POPUP - WORKING IMAGE, CLEAR AMOUNT -->
 <div class="withdrawal-popup-overlay" id="withdrawalPopupOverlay" onclick="if(event.target===this)closeWithdrawalPopup()">
 <div class="withdrawal-popup">
-<img class="user-image" id="withdrawalUserImage" src="https://i.pravatar.cc/150?img=1" alt="User">
+<img class="user-image" id="withdrawalUserImage" src="https://i.pravatar.cc/150?img=1" alt="User" onerror="this.src='https://ui-avatars.com/api/?name=Grace+W&size=150&background=00b894&color=fff&bold=true'">
 <div class="user-name" id="withdrawalUserName">Grace W.</div>
 <div class="user-action" id="withdrawalUserAction">Just withdrew</div>
 <div class="amount-value" id="withdrawalAmount">2,500,000</div>
@@ -936,12 +935,16 @@
   setInterval(next, 4000 + Math.random() * 1500);
 })();
 
-// ========== WITHDRAWAL POPUP FUNCTIONS - FIXED IMAGE ==========
+// ========== WITHDRAWAL POPUP FUNCTIONS - FIXED ==========
 function openWithdrawalPopup(name, amount) {
-  // Use pravatar.cc for reliable images
+  // Use reliable image service with fallback
   const imgNum = Math.floor(Math.random() * 70) + 1;
-  const gender = Math.random() > 0.5 ? 'women' : 'men';
-  document.getElementById('withdrawalUserImage').src = 'https://i.pravatar.cc/150?img=' + imgNum;
+  const imgUrl = 'https://i.pravatar.cc/150?img=' + imgNum;
+  const imgElement = document.getElementById('withdrawalUserImage');
+  imgElement.src = imgUrl;
+  imgElement.onerror = function() {
+    this.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name || 'Grace+W') + '&size=150&background=00b894&color=fff&bold=true';
+  };
   document.getElementById('withdrawalUserName').textContent = name || 'Grace W.';
   document.getElementById('withdrawalUserAction').textContent = 'Just withdrew';
   document.getElementById('withdrawalAmount').textContent = amount ? amount.toLocaleString() : '2,500,000';
