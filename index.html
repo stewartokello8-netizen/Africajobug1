@@ -93,6 +93,8 @@
     .btn-primary:hover::after{transform:translateX(100%)}
     .btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 8px 32px rgba(0,184,148,.3)}
     .btn-primary.gold{background:linear-gradient(135deg,#00b894,#00a381);box-shadow:0 4px 20px rgba(0,184,148,.3)}
+    .btn-primary.orange{background:linear-gradient(135deg,#f59e0b,#d97706)!important;box-shadow:0 4px 20px rgba(245,158,11,.3)!important;border-color:rgba(245,158,11,.3)!important}
+    .btn-primary.orange:hover{box-shadow:0 8px 32px rgba(245,158,11,.4)!important}
     .btn-primary.navy{background:linear-gradient(135deg,#1a3a5a,#040b17);box-shadow:0 4px 20px rgba(10,26,47,.3);border-color:rgba(255,255,255,.1)}
     .section-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
     .section-header .icon{width:40px;height:40px;background:linear-gradient(135deg,#00b894,#00a381);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(0,184,148,.3)}
@@ -442,8 +444,8 @@
     .action-popup .btn-close:hover{background:#e2e8f0}
 
     /* WITHDRAWAL POPUP - MOVED FURTHER DOWN */
-    .withdrawal-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:30000;display:none;align-items:flex-end;justify-content:center;padding:16px 16px 60px;}.withdrawal-popup-overlay.active{display:flex}
-    .withdrawal-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:20px 20px 20px 20px;padding:32px 30px 28px;max-width:500px;width:100%;text-align:center;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25);margin-bottom:20px}
+    .withdrawal-popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:30000;display:none;align-items:flex-end;justify-content:center;padding:16px 16px 80px;}.withdrawal-popup-overlay.active{display:flex}
+    .withdrawal-popup{background:linear-gradient(145deg,#fff,#f8fafc);border-radius:20px 20px 20px 20px;padding:32px 30px 28px;max-width:500px;width:100%;text-align:center;animation:slideUpFast .4s cubic-bezier(.16,1,.3,1);box-shadow:0 24px 64px rgba(0,0,0,.25);margin-bottom:10px}
     .withdrawal-popup .user-image{width:100px;height:100px;border-radius:50%;object-fit:cover;border:4px solid #00b894;margin:0 auto 14px;display:block;box-shadow:0 4px 20px rgba(0,184,148,.25)}
     .withdrawal-popup .user-name{font-size:24px;font-weight:800;color:#1a0b2f;margin-bottom:4px}
     .withdrawal-popup .user-action{font-size:18px;color:#64748b;font-weight:500;margin-bottom:8px}
@@ -561,7 +563,7 @@
 <div class="hero-buttons">
 <a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary">Register Now</a>
 <div class="btn-group">
-<a href="#" class="btn-primary gold" onclick="openDemoPage();return!1">Try Demo First</a>
+<a href="#" class="btn-primary orange" onclick="openDemoPage();return!1">Try Demo First</a>
 <a href="https://mulaearn.com/register.php?ref=Myqashapp" target="_blank" rel="noopener noreferrer" class="btn-primary navy">Login</a>
 </div>
 </div>
