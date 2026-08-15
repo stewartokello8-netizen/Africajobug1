@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a1628" />
   <meta name="description" content="Earn 80,000UGX – 150,000UGX daily by watching videos, answering questions & more. Withdraw instantly via M-Pesa, MoMo, and bank transfer." />
   <title>Myqashapp · Premium Earnings Platform for Africans</title>
@@ -24,6 +25,7 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:linear-gradient(145deg,#0a1628,#040b17);font-family:Inter,system-ui,sans-serif;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;overflow-x:hidden;font-size:1.0625rem;line-height:1.6}
+    
     .live-withdrawal-strip{position:fixed;left:16px;bottom:100px;z-index:9997;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.25),0 0 30px rgba(0,198,251,0.08);display:flex;align-items:center;gap:14px;max-width:680px;width:calc(100% - 32px);min-width:360px;overflow:hidden;pointer-events:none;height:90px;border:1px solid rgba(0,0,0,0.06)}
     .live-withdrawal-strip .strip-icon{font-size:20px;color:#dc2626;flex-shrink:0;animation:pulse-dot 1.2s ease-in-out infinite}
     .live-withdrawal-strip .strip-icon i{font-size:20px}
@@ -40,12 +42,14 @@
     .live-withdrawal-strip .strip-badge{background:#dc2626;color:#fff;font-size:9px;padding:4px 16px;border-radius:40px;flex-shrink:0;animation:pulseBadge 2s ease-in-out infinite;font-weight:700;letter-spacing:0.5px}
     @keyframes pulseBadge{0%,100%{opacity:1}50%{opacity:.5}}
     @keyframes pulse-dot{0%{opacity:.6;transform:scale(.9)}50%{opacity:1;transform:scale(1.15)}100%{opacity:.6;transform:scale(.9)}}
+    
     .whatsapp-float{position:fixed;bottom:90px;right:24px;z-index:9998;display:flex;align-items:center;text-decoration:none;position:relative}
     .whatsapp-float .whatsapp-icon{width:64px;height:64px;border-radius:50%;transition:all .4s cubic-bezier(.16,1,.3,1);border:2px solid #fff;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;flex-shrink:0;animation:whatsappPulse 2.2s ease-in-out infinite;box-shadow:0 0 25px rgba(37,211,102,0.7),0 0 60px rgba(37,211,102,0.25),0 0 100px rgba(37,211,102,0.1)}
     .whatsapp-float .whatsapp-icon:hover{transform:scale(1.12);box-shadow:0 0 40px rgba(37,211,102,0.9),0 0 80px rgba(37,211,102,0.4),0 0 120px rgba(37,211,102,0.2);animation-play-state:paused}
     .whatsapp-float .whatsapp-icon img{width:55%;height:55%;object-fit:contain;display:block;filter:brightness(0) invert(1)}
     @keyframes whatsappPulse{0%{box-shadow:0 0 20px rgba(37,211,102,0.6),0 0 50px rgba(37,211,102,0.15),0 0 80px rgba(37,211,102,0.05)}50%{box-shadow:0 0 40px rgba(37,211,102,0.9),0 0 80px rgba(37,211,102,0.3),0 0 120px rgba(37,211,102,0.15)}100%{box-shadow:0 0 20px rgba(37,211,102,0.6),0 0 50px rgba(37,211,102,0.15),0 0 80px rgba(37,211,102,0.05)}}
     .whatsapp-float .whatsapp-badge{position:absolute;top:-8px;right:-8px;background:#dc2626;color:#fff;font-size:11px;font-weight:800;min-width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0 6px;border:2px solid #fff;box-shadow:0 2px 10px rgba(220,38,38,0.4);animation:pulseBadge 1.5s ease-in-out infinite;z-index:10;line-height:1}
+    
     .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#00b894,#00a381);z-index:10001;width:0%;transition:width .1s;box-shadow:0 0 20px rgba(0,184,148,.3)}
     .page-wrap{max-width:960px;width:100%;background:linear-gradient(145deg,#0a1628,#040b17);border-radius:0;padding:80px 24px 24px;margin:0 auto;box-shadow:0 0 15px rgba(0,184,148,.15);border:1px solid rgba(0,184,148,.15);position:relative}
     .page-wrap::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:3px;background:linear-gradient(90deg,transparent,#00b894,#00a381,#00b894,transparent);background-size:300%100%;animation:shimmerBorder 4s ease-in-out infinite;border-radius:0 0 50%50%}@keyframes shimmerBorder{0%,100%{background-position:0%50%}50%{background-position:100%50%}}
@@ -154,7 +158,7 @@
     .live-foreigners-section .user-card .user-actions .watch{background:rgba(0,0,0,.05)!important;color:#0a0a0a!important;border:1px solid rgba(255,255,255,.06)}
     .live-foreigners-section .user-card .user-actions .watch:hover{background:rgba(0,0,0,.1)!important;transform:scale(1.05)}
     
-    /* COUNTRIES SECTION */
+    /* COUNTRIES SECTION - HORIZONTAL 3 COLUMN GRID */
     .countries-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:8px}
     .country-group{background:rgba(255,255,255,.04);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:16px 14px}
     .country-group .group-title{font-size:13px;font-weight:800;color:#00b894;margin-bottom:8px;letter-spacing:.3px;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:6px}
@@ -613,7 +617,7 @@
 <div class="ways-grid" style="padding:0 4px;" id="waysGridMain"></div>
 </div>
 
-<!-- COUNTRIES SECTION - REPLACES "HOW IT WORKS" -->
+<!-- COUNTRIES SECTION - REPLACES "HOW IT WORKS" - HORIZONTAL 3 COLUMN LAYOUT -->
 <div class="section section-countries">
 <div class="section-header"><div class="icon">🌍</div><h2>Myqashapp Works in Many Countries</h2><span class="badge">GLOBAL</span></div>
 <div class="countries-grid">
